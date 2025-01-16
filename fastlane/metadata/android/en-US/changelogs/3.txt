@@ -1,0 +1,6 @@
+- Redesigned book details screen, added a download progress bar and re-written book download backend.
+- Added swipe actions in the library and added buttons to open & delete the ebook file.
+- Added animations in the bottom navigation bar and improved animations when navigating between screens.
+- Added about screen in settings, click on the settings card to open it.
+
+And more! click [here](https://github.com/Pool-Of-Tears/Myne/releases/tag/v1.1.0) for full changelog.

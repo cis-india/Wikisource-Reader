@@ -1,0 +1,13 @@
+Myne is a FOSS Android application for downloading and reading ebooks from Project Gutenberg. It uses the GutenDex API to fetch metadata for ebooks in the backend. Additionally, it functions as an EPUB reader, allowing you to easily import and immerse yourself in your favorite EPUB books!
+
+Highlights:
+
+- Clean & beautiful UI based on Google's material design three guidelines.
+- Browse and download over 70k free ebooks available in multiple languages and updated daily.
+- Comes with inbuilt ebook reader while also having an option to use third-party ebook readers
+- Compatible with Android 7.0 and above (API 24+)
+- Supports Material You theming in devices running on Android 12+
+- Comes in both light and dark mode.
+- MAD: UI and logic written with pure Kotlin. Single activity, no fragments, only composable destinations.
+
+PS: *The name of the app is inspired from the main character of an anime called Ascendance of a Bookworm.*

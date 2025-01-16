@@ -1,0 +1,5 @@
+- Added an inbuilt ebook reader.
+
+- Switched to the self-hosted Instance of GutenDex API, loading times for books and other metadata should be faster than before.
+
+And more! visit https://github.com/Pool-Of-Tears/Myne/releases/tag/v1.2.0 for full changelog.

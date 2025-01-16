@@ -1,0 +1,163 @@
+<resources>
+    <!-- Others Strings -->
+    <string name="not_applicable">N/A</string>
+    <string name="woops">"Ups!"</string>
+    <string name="confirm">Confirmă</string>
+    <string name="cancel">Anulează</string>
+    <string name="ok">OK</string>
+    <string name="got_it">Got it</string>
+    <string name="no_app_to_handle_epub">Nu pot găsi nicio aplicație pentru a deschide un fișier epub.</string>
+    <string name="network_error">Ups! Nu a reușit să se conecteze cu serverul.</string>
+    <string name="network_error_retry">Încearcă din nou</string>
+    <string name="error">Ups! Ceva a mers rău.</string>
+    <string name="no_app_to_handle_content">Nu s-a găsit nicio aplicație pentru a deschide acest conținut.</string>
+
+    <!-- Navigation titles -->
+    <string name="navigation_home">Acasă</string>
+    <string name="navigation_categories">Categorii</string>
+    <string name="navigation_library">Librărie</string>
+    <string name="navigation_settings">Setări</string>
+
+    <!-- ToolTips -->
+    <string name="library_tooltip">TIP! Swipe library items left or right to share or view book details.</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_screen_title">Mulțumim pentru instalarea Myne!</string>
+    <string name="welcome_screen_desc">Alegeți cititorul preferat de cărți electronice pentru a vă începe călătoria de citire.</string>
+    <string name="welcome_screen_button">Începeți</string>
+
+    <!-- Home screen. -->
+    <string name="home_header">Toate Cărțile</string>
+    <string name="home_language_icon_desc">Sortează după limbă</string>
+    <string name="home_search_icon_desc">Caută cărți</string>
+    <string name="language_menu_title">Răsfoiește după limbă</string>
+
+    <!-- Categories screen. -->
+    <string name="categories_header">Categorii</string>
+    <string name="no_books_found_for_lang_and_cat">Nu există cărți disponibile în limba %s pentru această categorie.</string>
+    <!-- Categories -->
+    <string name="category_animal">Animais</string>
+    <string name="category_children">Crianças</string>
+    <string name="category_classics">Clássicos</string>
+    <string name="category_countries">Países</string>
+    <string name="category_crime">Crime</string>
+    <string name="category_education">Educação</string>
+    <string name="category_fiction">Ficção</string>
+    <string name="category_geography">Geografia</string>
+    <string name="category_history">História</string>
+    <string name="category_literature">Literatura</string>
+    <string name="category_law">Lei</string>
+    <string name="category_music">Música</string>
+    <string name="category_periodicals">Periódicos</string>
+    <string name="category_psychology">Psicologia</string>
+    <string name="category_philosophy">Filosofia</string>
+    <string name="category_religion">Religião</string>
+    <string name="category_romance">Romance</string>
+    <string name="category_science">Ciência</string>
+
+    <!-- Library screen. -->
+    <string name="library_header">Librărie</string>
+    <string name="empty_library">Nimic aici!</string>
+    <string name="import_button_text">Importă</string>
+    <string name="import_button_onboarding">Importați propriile cărți!</string>
+    <string name="import_button_onboarding_desc">Acum puteți importa propriile cărți în format EPUB și să le citiți în Myne.</string>
+    <string name="import_button_desc">Importează carte EPUB</string>
+    <string name="external_book_info_unavailable">Disponibil doar pentru cărți interne.</string>
+    <string name="epub_importing">Se importă… Vă rugăm să așteptați.</string>
+    <string name="epub_imported">Importat cu succes!</string>
+    <string name="epub_import_error">Import eșuat!</string>
+    <string name="open_app_chooser">Deschide cu…</string>
+    <string name="share_app_chooser">Împărtășiți cu…</string>
+    <string name="library_read_button">Citește</string>
+    <string name="library_delete_button">Șterge</string>
+    <string name="library_delete_dialog_title">Ești sigur de asta?</string>
+
+    <!-- Reader Detail Screen -->
+    <string name="reader_detail_header">Ebook Reader</string>
+    <string name="start_reading_button">Începe</string>
+    <string name="continue_reading_button">Rezumă</string>
+    <string name="reader_chapters_list">Capitole</string>
+
+    <!--Reader Screen -->
+    <string name="reader_max_font_size_reached">Îmi pare rău, nu pot merge mai sus de atât!</string>
+    <string name="reader_min_font_size_reached">Îmi pare rău, nu pot merge mai jos de atât!</string>
+    <string name="reader_font_style_chooser">Schimbați FontStyle</string>
+    <string name="reader_chapter_list_title">Capitole</string>
+
+    <!-- Text selection -->
+    <string name="copy">Copiază</string>
+    <string name="copied">Copiat!</string>
+    <string name="web_search">Căutare pe web</string>
+    <string name="share">Partajează</string>
+    <string name="translate">Tradu</string>
+    <string name="dictionary">Semnificație</string>
+
+    <!-- Settings screen. -->
+    <string name="settings_header">Setări</string>
+    <string name="app_desc">Descărcător de Ebook</string>
+    <string name="made_by">Făcut cu ❤ de Shivam</string>
+    <string name="general_settings_header">General</string>
+    <string name="default_reader_setting">Cititor implicit</string>
+    <string name="default_reader_dialog_title">Deschideți ebook-uri cu…</string>
+    <string name="reader_option_inbuilt">Cititor încorporat</string>
+    <string name="reader_option_external">Cititor extern</string>
+    <string name="default_locale_setting">Limbă implicită</string>
+    <string name="default_locale_setting_desc">Selectați limba preferată.</string>
+    <string name="locale_setting_not_found">Ne pare rău! Această funcție nu este încă suportată de sistemul dvs. de operare.</string>
+    <string name="display_setting_header">Afișare</string>
+    <string name="theme_setting">Tema implicită</string>
+    <string name="theme_dialog_title">Tema implicită</string>
+    <string name="theme_option_light">Lumină</string>
+    <string name="theme_option_dark">Întuneric</string>
+    <string name="theme_option_system">Implicit în sistem</string>
+    <string name="theme_dialog_apply_button">Aplicați</string>
+    <string name="amoled_theme_setting">Tema întunecată</string>
+    <string name="amoled_theme_setting_disabled_desc">Activare temă neagră AMOLED</string>
+    <string name="amoled_theme_setting_enabled_desc">Dezactivare temă neagră AMOLED</string>
+    <string name="material_you_setting" translatable="false">Material You</string>
+    <string name="material_you_setting_disabled_desc">Activați Material You</string>
+    <string name="material_you_setting_enabled_desc">Dezactivați Material You</string>
+    <string name="material_you_error">Această funcție este disponibilă numai pentru dispozitivele care rulează Android 12 sau o versiune ulterioară.</string>
+    <string name="miscellaneous_setting_header">Diverse</string>
+    <string name="license_setting">Licență &amp; Recunoștințe</string>
+    <string name="license_setting_desc">Licențe de sursă deschisă.</string>
+    <string name="about_setting">Informații despre aplicație</string>
+    <string name="about_setting_desc">Afișează informații despre Aplicație &amp; link-uri utile</string>
+
+    <!-- Books card -->
+    <string name="cover_image_desc">Imaginea copertei cărții</string>
+
+    <!-- Book Detail Screen -->
+    <string name="book_detail_header">Detalii despre carte</string>
+    <string name="back_button_desc">Înapoi.</string>
+    <string name="share_button_desc">Împărtășiți această carte.</string>
+    <string name="share_intent_header">Împărtășiți asta folosind…</string>
+    <string name="read_book_button">Începeți să citiți</string>
+    <string name="download_book_button">Descarcă</string>
+    <string name="download_started">Descărcarea începută!</string>
+    <string name="book_synopsis">Sinopsis</string>
+    <string name="book_synopsis_not_found">Indisponibil</string>
+
+    <!-- About Screen -->
+    <string name="about_header">Despre</string>
+    <string name="about_desc">O aplicație Android gratuită &amp; sursă deschisă pentru a descărca ebook-uri de la Project GutenBerg.</string>
+    <string name="developed_by">Dezvoltat de</string>
+    <string name="project_contributors">Contribuitori la Proiect</string>
+    <string name="project_contributors_desc">Întâlnește-i pe contribuitorii noștri minunați.</string>
+    <string name="useful_links">Link-uri Utile</string>
+    <string name="link_readme">README</string>
+    <string name="link_readme_desc">Consultă README-ul aplicației pe Github.</string>
+    <string name="link_website">Site web</string>
+    <string name="link_website_desc">Vizitați site-ul nostru pentru mai multe informații.</string>
+    <string name="link_privacy_policy">Politica de Confidențialitate</string>
+    <string name="link_privacy_policy_desc">Citește ultima noastră politică de confidențialitate.</string>
+    <string name="link_gh_issue">Probleme Github</string>
+    <string name="link_gh_issue_desc">Creează o problemă pe Github.</string>
+    <string name="link_telegram">Grup Telegram</string>
+    <string name="link_telegram_desc">Petrece timp cu noi pe Telegram!</string>
+    <string name="link_support">Susține Dezvoltarea</string>
+    <string name="link_support_desc">Crezi că merit biscuiți? Dă clic aici!</string>
+
+    <!-- Open source libraries screen -->
+    <string name="open_source_licenses_header">Licențe</string>
+</resources>

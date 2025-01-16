@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name" translatable="false">Wikisource Reader</string>
+    <!-- Others Strings -->
+    <string name="not_applicable">N/A</string>
+    <string name="woops">"Whoops!!"</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="got_it">Got it</string>
+    <string name="no_app_to_handle_epub">Cannot find any app to open epub file.</string>
+    <string name="network_error">Oops! Failed to connect with the server.</string>
+    <string name="network_error_retry">Try Again</string>
+    <string name="error">Oops! Something went wrong.</string>
+    <string name="no_app_to_handle_content">Can\'t find any app to open this content.</string>
+
+    <!-- Navigation titles -->
+    <string name="navigation_home">Home</string>
+    <string name="navigation_categories">Categories</string>
+    <string name="navigation_library">Library</string>
+    <string name="navigation_settings">Settings</string>
+
+    <!-- ToolTips -->
+    <string name="library_tooltip">TIP! Swipe library items left or right to share or view book details.</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_screen_title">Thanks for installing Wikisource Reader!</string>
+    <string name="welcome_screen_desc">Choose your preferred ebook reader to embark on your reading journey.</string>
+    <string name="welcome_screen_button">Get Started</string>
+
+    <!-- Home screen. -->
+    <string name="home_header">All Books</string>
+    <string name="home_language_icon_desc">Sort by language</string>
+    <string name="home_search_icon_desc">Search books</string>
+    <string name="language_menu_title">Browse by language</string>
+
+    <!-- Categories screen. -->
+    <string name="categories_header">Categories</string>
+    <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>
+    <!-- Categories -->
+    <string name="category_animal">Animals</string>
+    <string name="category_children">Children</string>
+    <string name="category_classics">Classics</string>
+    <string name="category_countries">Countries</string>
+    <string name="category_crime">Crime</string>
+    <string name="category_education">Education</string>
+    <string name="category_fiction">Fiction</string>
+    <string name="category_geography">Geography</string>
+    <string name="category_history">History</string>
+    <string name="category_literature">Literature</string>
+    <string name="category_law">Law</string>
+    <string name="category_music">Music</string>
+    <string name="category_periodicals">Periodicals</string>
+    <string name="category_psychology">Psychology</string>
+    <string name="category_philosophy">Philosophy</string>
+    <string name="category_religion">Religion</string>
+    <string name="category_romance">Romance</string>
+    <string name="category_science">Science</string>
+
+    <!-- Library screen. -->
+    <string name="library_header">Library</string>
+    <string name="empty_library">Nothing Here!</string>
+    <string name="import_button_text">Import</string>
+    <string name="import_button_onboarding">Import your own books!</string>
+    <string name="import_button_onboarding_desc">Now you can import your own EPUB books and read them in Myne.</string>
+    <string name="import_button_desc">Import epub book</string>
+    <string name="external_book_info_unavailable">Only available for internal books.</string>
+    <string name="epub_importing">Importing… \nPlease wait.</string>
+    <string name="epub_imported">Imported successfully!</string>
+    <string name="epub_import_error">Failed to import!</string>
+    <string name="open_app_chooser">Open with…</string>
+    <string name="share_app_chooser">Share with…</string>
+    <string name="library_read_button">Read</string>
+    <string name="library_delete_button">Delete</string>
+    <string name="library_delete_dialog_title">Are you sure about that?</string>
+
+    <!-- Reader Detail Screen -->
+    <string name="reader_detail_header">Ebook Reader</string>
+    <string name="start_reading_button">Start</string>
+    <string name="continue_reading_button">Resume</string>
+    <string name="reader_chapters_list">Chapters</string>
+
+    <!--Reader Screen -->
+    <string name="reader_max_font_size_reached">Sorry, cannot go any higher than that!</string>
+    <string name="reader_min_font_size_reached">Sorry, cannot go any lower than that!</string>
+    <string name="reader_font_style_chooser">Change FontStyle</string>
+    <string name="reader_chapter_list_title">Chapters</string>
+
+    <!-- Text selection -->
+    <string name="copy">Copy</string>
+    <string name="copied">Copied!</string>
+    <string name="web_search">Web Search</string>
+    <string name="share">Share</string>
+    <string name="translate">Translate</string>
+    <string name="dictionary">Meaning</string>
+
+    <!-- Settings screen. -->
+    <string name="settings_header">Settings</string>
+    <string name="app_desc">Wikisource Reader</string>
+    <string name="made_by">Forked for Wikisource by CIS A2K, originally made by Shivam.</string>
+    <string name="general_settings_header">General</string>
+    <string name="default_reader_setting">Default Reader</string>
+    <string name="default_reader_dialog_title">Open ebooks with…</string>
+    <string name="reader_option_inbuilt">Inbuilt Reader</string>
+    <string name="reader_option_external">External Reader</string>
+    <string name="default_locale_setting">Default Locale</string>
+    <string name="default_locale_setting_desc">Select your preferred locale.</string>
+    <string name="locale_setting_not_found">Sorry! this feature is not yet supported by your OS.</string>
+    <string name="display_setting_header">Display</string>
+    <string name="theme_setting">Default Theme</string>
+    <string name="theme_dialog_title">Change Theme</string>
+    <string name="theme_option_light">Light</string>
+    <string name="theme_option_dark">Dark</string>
+    <string name="theme_option_system">System Default</string>
+    <string name="theme_dialog_apply_button">Apply</string>
+    <string name="amoled_theme_setting">Black Theme</string>
+    <string name="amoled_theme_setting_disabled_desc">Enable Amoled Black Theme</string>
+    <string name="amoled_theme_setting_enabled_desc">Disable Amoled Black Theme</string>
+    <string name="material_you_setting" translatable="false">Material You</string>
+    <string name="material_you_setting_disabled_desc">Enable Material You</string>
+    <string name="material_you_setting_enabled_desc">Disable Material You</string>
+    <string name="material_you_error">This feature is only for devices running Android 12 or above.</string>
+    <string name="miscellaneous_setting_header">Miscellaneous</string>
+    <string name="license_setting">License &amp; Acknowledgements</string>
+    <string name="license_setting_desc">Open source licenses.</string>
+    <string name="about_setting">App Information</string>
+    <string name="about_setting_desc">Show App information &amp; useful links</string>
+
+    <!-- Books card -->
+    <string name="cover_image_desc">Book cover image</string>
+
+    <!-- Book Detail Screen -->
+    <string name="book_detail_header">Book Details</string>
+    <string name="back_button_desc">Go back.</string>
+    <string name="share_button_desc">Share this book.</string>
+    <string name="share_intent_header">Share this using…</string>
+    <string name="read_book_button">Start Reading</string>
+    <string name="download_book_button">Download</string>
+    <string name="download_started">Download Started!</string>
+    <string name="book_synopsis">Synopsis</string>
+    <string name="book_synopsis_not_found">Not available</string>
+
+    <!-- About Screen -->
+    <string name="about_header">About</string>
+    <string name="about_desc">An app to read freely-licensed texts from Wikisource.</string>
+    <string name="developed_by">Developed By</string>
+    <string name="dev_name" translatable="false">Starry Shivam</string>
+    <string name="project_contributors">Project Contributors</string>
+    <string name="project_contributors_desc">Meet our wonderful contributors.</string>
+    <string name="useful_links">Useful Links</string>
+    <string name="link_readme">README</string>
+    <string name="link_readme_desc">Checkout app\'s README on Github.</string>
+    <string name="link_website">Website</string>
+    <string name="link_website_desc">Visit our website for more information.</string>
+    <string name="link_privacy_policy">Privacy Policy</string>
+    <string name="link_privacy_policy_desc">Read our latest privacy policy.</string>
+    <string name="link_gh_issue">Github Issues</string>
+    <string name="link_gh_issue_desc">Create an issue on Github.</string>
+    <string name="link_telegram">Telegram Group</string>
+    <string name="link_telegram_desc">Hang out with us on Telegram!</string>
+    <string name="link_support">Support Development</string>
+    <string name="link_support_desc">Think I deserve cookies? Click here!</string>
+
+    <!-- Open source libraries screen -->
+    <string name="open_source_licenses_header">Licenses</string>
+    <string name="category_collections">Collections</string>
+    <string name="category_novels">Novels</string>
+    <string name="category_plays">Plays</string>
+    <string name="category_poetry">Poetry</string>
+    <string name="category_stories">Stories</string>
+    <string name="category_essays">Essays</string>
+    <string name="developed_by_ws">Developed for Wikisource by</string>
+    <string name="based_on">Based on</string>
+    <string name="org_name">CIS A2K</string>
+    <string name="category_shortstories">Short Stories</string>
+    <string name="category_narration">Narration</string>
+    <string name="category_biography">Biography</string>
+    <string name="category_novella">Novella</string>
+</resources>

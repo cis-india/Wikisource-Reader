@@ -1,0 +1,162 @@
+<resources>
+    <!-- Others Strings -->
+    <string name="not_applicable">N/A</string>
+    <string name="woops">"Jejda!"</string>
+    <string name="confirm">Potvrdit</string>
+    <string name="cancel">Zrušit</string>
+    <string name="ok">OK</string>
+    <string name="got_it">Got it</string>
+    <string name="no_app_to_handle_epub">Nepodařilo se najít aplikaci, která by dokázala otevřít soubor epub.</string>
+    <string name="network_error">Oops! Failed to connect with the server.</string>
+    <string name="network_error_retry">Try Again</string>
+    <string name="error">Jejda! Něco se pokazilo.</string>
+    <string name="no_app_to_handle_content">Nelze najít aplikaci pro otevření tohoto obsahu.</string>
+
+    <!-- Navigation titles -->
+    <string name="navigation_home">Domů</string>
+    <string name="navigation_categories">Kategorie</string>
+    <string name="navigation_library">Knihovna</string>
+    <string name="navigation_settings">Nastavení</string>
+
+    <!-- ToolTips -->
+    <string name="library_tooltip">TIP! Swipe library items left or right to share or view book details.</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_screen_title">Děkujeme za instalaci Myne!</string>
+    <string name="welcome_screen_desc">Vyberte si svůj preferovaný čtečku elektronických knih a vydejte se na cestu čtení.</string>
+    <string name="welcome_screen_button">Get Started</string>
+
+    <!-- Home screen. -->
+    <string name="home_header">Všechny knihy</string>
+    <string name="home_language_icon_desc">Sort by language</string>
+    <string name="home_search_icon_desc">Hledat knihy</string>
+    <string name="language_menu_title">Browse by language</string>
+
+    <!-- Categories screen. -->
+    <string name="categories_header">Kategorie</string>
+    <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>
+    <!-- Categories -->
+    <string name="category_animal">Zvířata</string>
+    <string name="category_children">Děti</string>
+    <string name="category_classics">Klasika</string>
+    <string name="category_countries">Země</string>
+    <string name="category_crime">Zločin</string>
+    <string name="category_education">Vzdělání</string>
+    <string name="category_fiction">Fikce</string>
+    <string name="category_geography">Geografie</string>
+    <string name="category_history">Historie</string>
+    <string name="category_literature">Literatura</string>
+    <string name="category_law">Právo</string>
+    <string name="category_music">Hudba</string>
+    <string name="category_periodicals">Periodika</string>
+    <string name="category_psychology">Psychologie</string>
+    <string name="category_philosophy">Filozofie</string>
+    <string name="category_religion">Náboženství</string>
+    <string name="category_romance">Romantika</string>
+    <string name="category_science">Věda</string>
+
+    <!-- Library screen. -->
+    <string name="library_header">Knihovna</string>
+    <string name="empty_library">Nic tu není!</string>
+    <string name="import_button_text">Importovat</string>
+    <string name="import_button_onboarding">Importujte své vlastní knihy!</string>
+    <string name="import_button_onboarding_desc">Nyní můžete importovat své vlastní knihy ve formátu EPUB a číst je v aplikaci Myne.</string>
+    <string name="import_button_desc">Importovat knihu EPUB</string>
+    <string name="external_book_info_unavailable">Dostupné pouze pro interní knihy.</string>
+    <string name="epub_importing">Probíhá importování… Prosím čekejte.</string>
+    <string name="epub_imported">Úspěšně importováno!</string>
+    <string name="epub_import_error">Selhalo importování!</string>
+    <string name="open_app_chooser">Otevřít pomocí…</string>
+    <string name="share_app_chooser">Sdílet s…</string>
+    <string name="library_read_button">Číst</string>
+    <string name="library_delete_button">Odstranit</string>
+    <string name="library_delete_dialog_title">Opravdu?</string>
+
+    <!-- Reader Detail Screen -->
+    <string name="reader_detail_header">Čtečka e-knih</string>
+    <string name="start_reading_button">Začít</string>
+    <string name="continue_reading_button">Pokračovat</string>
+    <string name="reader_chapters_list">Kapitoly</string>
+
+    <!--Reader Screen -->
+    <string name="reader_max_font_size_reached">Je nám líto, ale výš už to nejde!</string>
+    <string name="reader_min_font_size_reached">Je nám líto, ale níž už to nejde!</string>
+    <string name="reader_font_style_chooser">Change FontStyle</string>
+    <string name="reader_chapter_list_title">Kapitoly</string>
+
+    <!-- Text selection -->
+    <string name="copy">Kopírovat</string>
+    <string name="copied">Zkopírováno!</string>
+    <string name="web_search">Webový vyhledávač</string>
+    <string name="share">Sdílet</string>
+    <string name="translate">Přeložit</string>
+    <string name="dictionary">Význam</string>
+
+    <!-- Settings screen. -->
+    <string name="settings_header">Nastavení</string>
+    <string name="app_desc">Stahování e-knih</string>
+    <string name="made_by">S ❤ vytvořil Shivam</string>
+    <string name="general_settings_header">Obecné</string>
+    <string name="default_reader_setting">Výchozí čtečka</string>
+    <string name="default_reader_dialog_title">Otevírat e-knihy pomocí…</string>
+    <string name="reader_option_inbuilt">Vestavěný čtečka</string>
+    <string name="reader_option_external">Externí čtečka</string>
+    <string name="default_locale_setting">Výchozí lokalizace</string>
+    <string name="default_locale_setting_desc">Vyberte svůj preferovaný jazyk.</string>
+    <string name="locale_setting_not_found">Omlouváme se! Tato funkce zatím není podporována vaším operačním systémem.</string>
+    <string name="display_setting_header">Zobrazení</string>
+    <string name="theme_setting">Výchozí motiv</string>
+    <string name="theme_dialog_title">Změnit motiv</string>
+    <string name="theme_option_light">Světlé</string>
+    <string name="theme_option_dark">Temné</string>
+    <string name="theme_option_system">Systémová výchozí</string>
+    <string name="theme_dialog_apply_button">Použít</string>
+    <string name="amoled_theme_setting">Černé téma</string>
+    <string name="amoled_theme_setting_disabled_desc">Povolit černé téma AMOLED</string>
+    <string name="amoled_theme_setting_enabled_desc">Zakázat černé téma AMOLED</string>
+    <string name="material_you_setting_disabled_desc">Povolit Material You</string>
+    <string name="material_you_setting_enabled_desc">Zakázat Material You</string>
+    <string name="material_you_error">Tato funkce je určena pouze pro zařízení se systémem Android 12 nebo novějším.</string>
+    <string name="miscellaneous_setting_header">Různé</string>
+    <string name="license_setting">Licence a poděkování</string>
+    <string name="license_setting_desc">Licence open source.</string>
+    <string name="about_setting">Informace o aplikaci</string>
+    <string name="about_setting_desc">Zobrazit informace o aplikaci a užitečné odkazy</string>
+
+    <!-- Books card -->
+    <string name="cover_image_desc">Obrázek na obálce knihy</string>
+
+    <!-- Book Detail Screen -->
+    <string name="book_detail_header">Podrobnosti o knize</string>
+    <string name="back_button_desc">Vrátit se.</string>
+    <string name="share_button_desc">Sdílet tuto knihu.</string>
+    <string name="share_intent_header">Sdílet pomocí…</string>
+    <string name="read_book_button">Začít číst</string>
+    <string name="download_book_button">Stáhnout</string>
+    <string name="download_started">Stahování spuštěno!</string>
+    <string name="book_synopsis">Stručný obsah knihy</string>
+    <string name="book_synopsis_not_found">Nedostupné</string>
+
+    <!-- About Screen -->
+    <string name="about_header">O aplikaci</string>
+    <string name="about_desc">Bezplatná aplikace pro Android s otevřeným zdrojovým kódem ke stahování elektronických knih z projektu GutenBerg.</string>
+    <string name="developed_by">Vyvinul</string>
+    <string name="project_contributors">Přispěvatelé projektu</string>
+    <string name="project_contributors_desc">Seznamte se s našimi úžasnými přispěvateli.</string>
+    <string name="useful_links">Užitečné odkazy</string>
+    <string name="link_readme">README</string>
+    <string name="link_readme_desc">Zkontrolujte README aplikace na Githubu.</string>
+    <string name="link_website">Webová stránka</string>
+    <string name="link_website_desc">Navštivte naše webové stránky pro více informací.</string>
+    <string name="link_privacy_policy">Zásady ochrany osobních údajů</string>
+    <string name="link_privacy_policy_desc">Přečtěte si naše nejnovější zásady ochrany osobních údajů.</string>
+    <string name="link_gh_issue">Problémy na Githubu</string>
+    <string name="link_gh_issue_desc">Vytvořte problém na Githubu.</string>
+    <string name="link_telegram">Telegramová skupina</string>
+    <string name="link_telegram_desc">Pobavte se s námi na Telegramu!</string>
+    <string name="link_support">Podpora vývoje</string>
+    <string name="link_support_desc">Myslíte si, že si zasloužím sušenky? Klikněte sem!</string>
+
+    <!-- Open source libraries screen -->
+    <string name="open_source_licenses_header">Licence</string>
+</resources>
