@@ -46,10 +46,6 @@ import kotlin.coroutines.suspendCoroutine
 class BookAPI(context: Context) {
 
     private val baseApiUrl = "https://wsindex.toolforge.org/books"
-    private val googleBooksUrl = "https://www.googleapis.com/books/v1/volumes"
-
-    private val googleApiKey =
-        BuildConfig.GOOGLE_API_KEY ?: "AIzaSyBCaXx-U0sbEpGVPWylSggC4RaR4gCGkVE" // Backup API key
 
     private val okHttpClient by lazy {
         // Create an OkHttpClient with a cache and a network interceptor.

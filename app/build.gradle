@@ -10,17 +10,6 @@ plugins {
 
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 
-String getGoogleApiKey() {
-    def propFile = rootProject.file("./local.properties")
-    def properties = new Properties()
-    if (propFile.exists()) {
-        properties.load(new FileInputStream(propFile))
-        return properties.getProperty('GOOGLE_API_KEY', "null")
-    } else {
-        return "null"
-    }
-}
-
 android {
     namespace 'com.cis.wsreader'
     compileSdk 35
@@ -41,7 +30,6 @@ android {
             arg('room.schemaLocation', "$projectDir/schemas")
         }
 
-        buildConfigField("String", "GOOGLE_API_KEY", getGoogleApiKey())
     }
 
     buildTypes {
