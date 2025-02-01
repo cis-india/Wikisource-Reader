@@ -16,6 +16,7 @@
 
 package com.cis.wsreader.ui.screens.library.viewmodels
 
+import android.app.Application
 import android.content.Context
 import android.net.Uri
 import android.util.Log
@@ -23,8 +24,9 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.cis.wsreader.data.model.Book
 import com.cis.wsreader.database.library.LibraryDao
 import com.cis.wsreader.database.library.LibraryItem
 import com.cis.wsreader.epub.EpubParser
@@ -32,42 +34,76 @@ import com.cis.wsreader.helpers.PreferenceUtil
 import com.cis.wsreader.helpers.book.BookDownloader
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileInputStream
 import javax.inject.Inject
+import com.cis.wsreader.utils.EventChannel
+import com.cis.wsreader.reader.OpeningError
+import com.cis.wsreader.reader.ReaderActivityContract
 
 
 @HiltViewModel
 class LibraryViewModel @Inject constructor(
+    application: Application,
     private val libraryDao: LibraryDao,
     private val epubParser: EpubParser,
     private val preferenceUtil: PreferenceUtil
-) : ViewModel() {
+) : AndroidViewModel(application) {
 
-    val allItems: LiveData<List<LibraryItem>> = libraryDao.getAllItems()
+    private val app get() = getApplication<com.cis.wsreader.MyneApp>()
+    //val books = app.bookRepository.books()
+    val channel = EventChannel(Channel<Event>(Channel.BUFFERED), viewModelScope)
+
+    //val allItems: LiveData<List<LibraryItem>> = libraryDao.getAllItems()
+    val allItems: LiveData<List<Book>> = app.bookRepository.books()
 
     private val _showOnboardingTapTargets: MutableState<Boolean> = mutableStateOf(
         value = preferenceUtil.getBoolean(PreferenceUtil.LIBRARY_ONBOARDING_BOOL, true)
     )
     val showOnboardingTapTargets: State<Boolean> = _showOnboardingTapTargets
 
+    /*
     fun deleteItemFromDB(item: LibraryItem) {
         epubParser.removeBookFromCache(item.filePath)
         viewModelScope.launch(Dispatchers.IO) { libraryDao.delete(item) }
+    }
+     */
+
+    fun deletePublication(book: Book) =
+        viewModelScope.launch {
+            app.bookshelf.deleteBook(book)
+        }
+
+    fun openPublication(
+        bookId: Long,
+    ) {
+        viewModelScope.launch {
+            app.readerRepository
+                .open(bookId)
+                .onFailure {
+                    channel.send(Event.OpenPublicationError(it))
+                }
+                .onSuccess {
+                    val arguments = ReaderActivityContract.Arguments(bookId)
+                    channel.send(Event.LaunchReader(arguments))
+                }
+        }
     }
 
     fun getInternalReaderSetting() = preferenceUtil.getBoolean(
         PreferenceUtil.INTERNAL_READER_BOOL, true
     )
 
+    /*
     fun shouldShowLibraryTooltip(): Boolean {
         return preferenceUtil.getBoolean(PreferenceUtil.LIBRARY_SWIPE_TOOLTIP_BOOL, true)
                 && allItems.value?.isNotEmpty() == true
                 && allItems.value?.any { !it.isExternalBook } == true
-    }
+    }*/
 
     fun libraryTooltipDismissed() = preferenceUtil.putBoolean(
         PreferenceUtil.LIBRARY_SWIPE_TOOLTIP_BOOL, false
@@ -87,6 +123,8 @@ class LibraryViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val result = runCatching {
                 fileUris.forEach { uri ->
+                    app.bookshelf.importPublicationFromStorage(uri)
+                    /*
                     context.contentResolver.openInputStream(uri)?.use { fis ->
                         if (fis !is FileInputStream) {
                             throw IllegalArgumentException("File input stream is not valid.")
@@ -110,7 +148,7 @@ class LibraryViewModel @Inject constructor(
                         )
 
                         libraryDao.insert(libraryItem)
-                    }
+                    }*/
                 }
 
                 // Add delay here so user can see the import progress bar even if
@@ -141,5 +179,16 @@ class LibraryViewModel @Inject constructor(
         // write the file to the internal storage
         bookFile.outputStream().use { fileStream.copyTo(it) }
         bookFile.absolutePath
+    }
+
+    sealed class Event {
+
+        class OpenPublicationError(
+            val error: OpeningError,
+        ) : Event()
+
+        class LaunchReader(
+            val arguments: ReaderActivityContract.Arguments,
+        ) : Event()
     }
 }

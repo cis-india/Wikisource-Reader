@@ -96,7 +96,6 @@
     <!-- Settings screen. -->
     <string name="settings_header">সেটিংস</string>
     <string name="app_desc">ইবুক ডাউনলোডার</string>
-    <string name="made_by">❤ দিয়ে বানানো Shivam দ্বারা</string>
     <string name="general_settings_header">জেনারেল</string>
     <string name="default_reader_setting">ডিফল্ট রিডার</string>
     <string name="default_reader_dialog_title">এর মাধ্যমে ইবুক খুলুন...</string>
@@ -164,8 +163,12 @@
     <string name="open_source_licenses_header">লাইসেন্স</string>
     <string name="category_collections">সংগ্রহ</string>
     <string name="category_novels">উপন্যাস</string>
-    <string name="category_plays">নাটক করে</string>
+    <string name="category_plays">নাটক</string>
     <string name="category_poetry">কবিতা</string>
     <string name="category_stories">গল্প</string>
     <string name="category_essays">প্রবন্ধ</string>
+    <string name="category_shortstories">ছোট গল্প</string>
+    <string name="category_narration">" বর্ণনা"</string>
+    <string name="category_biography">জীবনী</string>
+    <string name="category_novella">" উপন্যাসিকা"</string>
 </resources>

@@ -16,11 +16,14 @@
 
 package com.cis.wsreader.ui.screens.detail.viewmodels
 
+import android.app.Application
+import android.net.Uri
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.cis.wsreader.MyneApp
 import com.cis.wsreader.api.BookAPI
 import com.cis.wsreader.api.models.Book
 import com.cis.wsreader.api.models.BookSet
@@ -37,6 +40,16 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.launch
+import org.readium.r2.shared.util.AbsoluteUrl
+import org.readium.r2.shared.util.Try
+//import com.cis.wsreader.data.model.Book
+import java.io.File
+import androidx.core.content.FileProvider
+
+
 
 data class BookDetailScreenState(
     val isLoading: Boolean = true,
@@ -46,20 +59,20 @@ data class BookDetailScreenState(
     val error: String? = null
 )
 
-
 @HiltViewModel
 class BookDetailViewModel @Inject constructor(
+    application: Application,
     private val bookAPI: BookAPI,
     val libraryDao: LibraryDao,
     val bookDownloader: BookDownloader,
-    private val preferenceUtil: PreferenceUtil
-) : ViewModel() {
+    private val preferenceUtil: PreferenceUtil,
+) : AndroidViewModel(application) {
+
+    private val app get() =
+        getApplication<com.cis.wsreader.MyneApp>()
+
     var state by mutableStateOf(BookDetailScreenState())
         private set
-
-    fun getInternalReaderSetting() = preferenceUtil.getBoolean(
-        PreferenceUtil.INTERNAL_READER_BOOL, true
-    )
 
     fun getBookDetails(bookId: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -77,13 +90,6 @@ class BookDetailViewModel @Inject constructor(
                 // indicator. This is just for better UX.
                 if (bookSet.isCached) delay(400)
 
-                /*
-                state = if (extraInfo != null) {
-                    state.copy(bookSet = bookSet, extraInfo = extraInfo)
-                } else {
-                    state.copy(bookSet = bookSet)
-                }
-                */
                 state = state.copy(bookSet = bookSet)
 
                 state = state.copy(
@@ -114,12 +120,14 @@ class BookDetailViewModel @Inject constructor(
         bookDownloader.downloadBook(book = book,
             downloadProgressListener = downloadProgressListener,
             onDownloadSuccess = { filePath ->
-                insertIntoDB(book = book, filePath = filePath)
-                state = state.copy(bookLibraryItem = libraryDao.getItemByBookId(book.id))
+                val file = File(filePath)
+                val uri = Uri.fromFile(file)
+                app.bookshelf.importPublicationFromStorage(uri)
+                //state = state.copy(bookLibraryItem = libraryDao.getItemByBookId(book.id))
             }
         )
     }
-
+/*
     private fun insertIntoDB(book: Book, filePath: String) {
         val libraryItem = LibraryItem(
             bookId = book.id,
@@ -130,4 +138,15 @@ class BookDetailViewModel @Inject constructor(
         )
         libraryDao.insert(libraryItem)
     }
+
+    fun addPublicationFromWeb(bookUrl: String) {
+        viewModelScope.launch {
+            val absoluteUrl = AbsoluteUrl(bookUrl)
+            if (absoluteUrl != null){
+                app.bookshelf.addPublicationFromWeb(absoluteUrl)
+            }
+        }
+    }
+
+ */
 }

@@ -11,6 +11,20 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/readium" />
+            <option value="$PROJECT_DIR$/readium/adapters" />
+            <option value="$PROJECT_DIR$/readium/adapters/exoplayer" />
+            <option value="$PROJECT_DIR$/readium/adapters/exoplayer/audio" />
+            <option value="$PROJECT_DIR$/readium/navigator" />
+            <option value="$PROJECT_DIR$/readium/navigators" />
+            <option value="$PROJECT_DIR$/readium/navigators/common" />
+            <option value="$PROJECT_DIR$/readium/navigators/media" />
+            <option value="$PROJECT_DIR$/readium/navigators/media/audio" />
+            <option value="$PROJECT_DIR$/readium/navigators/media/common" />
+            <option value="$PROJECT_DIR$/readium/navigators/media/tts" />
+            <option value="$PROJECT_DIR$/readium/navigators/web" />
+            <option value="$PROJECT_DIR$/readium/shared" />
+            <option value="$PROJECT_DIR$/readium/streamer" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

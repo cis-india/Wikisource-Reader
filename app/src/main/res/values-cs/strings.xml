@@ -139,7 +139,6 @@
 
     <!-- About Screen -->
     <string name="about_header">O aplikaci</string>
-    <string name="about_desc">Bezplatná aplikace pro Android s otevřeným zdrojovým kódem ke stahování elektronických knih z projektu GutenBerg.</string>
     <string name="developed_by">Vyvinul</string>
     <string name="project_contributors">Přispěvatelé projektu</string>
     <string name="project_contributors_desc">Seznamte se s našimi úžasnými přispěvateli.</string>

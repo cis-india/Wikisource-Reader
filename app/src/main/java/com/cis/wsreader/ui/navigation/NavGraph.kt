@@ -31,7 +31,6 @@ import com.cis.wsreader.ui.screens.categories.composables.CategoryDetailScreen
 import com.cis.wsreader.ui.screens.detail.composables.BookDetailScreen
 import com.cis.wsreader.ui.screens.home.composables.HomeScreen
 import com.cis.wsreader.ui.screens.library.composables.LibraryScreen
-import com.cis.wsreader.ui.screens.reader.detail.ReaderDetailScreen
 import com.cis.wsreader.ui.screens.settings.composables.AboutScreen
 import com.cis.wsreader.ui.screens.settings.composables.OSLScreen
 import com.cis.wsreader.ui.screens.settings.composables.SettingsScreen
@@ -147,6 +146,7 @@ fun NavGraph(
         }
 
         /** Reader Detail Screen */
+        /*
         composable(
             route = Screens.ReaderDetailScreen.route,
             arguments = listOf(navArgument(
@@ -163,7 +163,7 @@ fun NavGraph(
             ReaderDetailScreen(
                 libraryItemId = bookId, navController = navController, networkStatus = networkStatus
             )
-        }
+        }*/
 
         /** Settings Screen */
         composable(route = BottomBarScreen.Settings.route,

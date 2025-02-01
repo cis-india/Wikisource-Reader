@@ -4,11 +4,13 @@ buildscript {
         gradle_version = '8.6.1'
         hilt_version = '2.51.1'
         room_version = '2.6.1'
+        readium_version = '3.0.3'
     }
 
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {

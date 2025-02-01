@@ -94,6 +94,7 @@ import com.cis.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel
 import com.cis.wsreader.ui.theme.pacificoFont
 import com.cis.wsreader.ui.theme.poppinsFont
 import kotlinx.coroutines.launch
+import com.cis.wsreader.ui.navigation.BottomBarScreen
 
 
 @Composable
@@ -230,21 +231,24 @@ private fun BookDetailContents(
         var buttonText by remember { mutableStateOf("") }
 
         // Update button text based on download status.
+
         LaunchedEffect(key1 = true) {
             buttonText = if (viewModel.bookDownloader.isBookCurrentlyDownloading(book.id)) {
                 context.getString(R.string.cancel)
             } else {
                 when (state.bookLibraryItem) {
                     null -> context.getString(R.string.download_book_button)
-                    else -> context.getString(R.string.read_book_button)
+                    else -> context.getString(R.string.go_to_library)
                 }
             }
         }
+
 
         var progressState by remember { mutableFloatStateOf(0f) }
         var showProgressBar by remember { mutableStateOf(false) }
 
         // Callable which updates book details screen button.
+
         val updateBtnText: (Int?) -> Unit = { downloadStatus ->
             buttonText = when (downloadStatus) {
                 DownloadManager.STATUS_RUNNING -> {
@@ -254,7 +258,7 @@ private fun BookDetailContents(
 
                 DownloadManager.STATUS_SUCCESSFUL -> {
                     showProgressBar = false
-                    context.getString(R.string.read_book_button)
+                    context.getString(R.string.go_to_library)
                 }
 
                 else -> {
@@ -263,8 +267,10 @@ private fun BookDetailContents(
                 }
             }
         }
+        //buttonText = context.getString(R.string.download_book_button)
 
         // Check if this book is in downloadQueue.
+        /*
         if (viewModel.bookDownloader.isBookCurrentlyDownloading(book.id)) {
             progressState =
                 viewModel.bookDownloader.getRunningDownload(book.id)?.progress?.collectAsState()?.value!!
@@ -272,6 +278,7 @@ private fun BookDetailContents(
                 updateBtnText(viewModel.bookDownloader.getRunningDownload(book.id)?.status)
             })
         }
+        */
 
         MiddleBar(
             bookLang = BookUtils.getLanguagesAsString(book.languages),
@@ -282,6 +289,8 @@ private fun BookDetailContents(
             showProgressBar = showProgressBar
         ) {
             when (buttonText) {
+                /*
+                //Takes to old reader, need to update, meanwhile, using Go To Library button
                 context.getString(R.string.read_book_button) -> {
                     /**
                      *  Library item could be null if we reload the screen
@@ -311,30 +320,47 @@ private fun BookDetailContents(
                         )
                     }
                 }
+                 */
+
+                context.getString(R.string.go_to_library) -> {
+                    view.weakHapticFeedback()
+                    navController.navigate(BottomBarScreen.Library.route) {
+                        launchSingleTop = true
+                    }
+                }
 
                 context.getString(R.string.download_book_button) -> {
                     view.weakHapticFeedback()
+
                     viewModel.downloadBook(
                         book = book,
                         downloadProgressListener = { downloadProgress, downloadStatus ->
                             progressState = downloadProgress
                             updateBtnText(downloadStatus)
                         })
-                    coroutineScope.launch {
-                        snackBarHostState.showSnackbar(
-                            message = context.getString(R.string.download_started),
-                        )
-                    }
+                    //viewModel.downloadBook(book.epubUrl)
+                    /*
+                   val epubUrl = book.epubUrl
+                   if (epubUrl != null) {
+                       viewModel.addPublicationFromWeb(epubUrl)
+                   } else {
+                       //show an error and fallback
+                   }
+                   coroutineScope.launch {
+                       snackBarHostState.showSnackbar(
+                           message = context.getString(R.string.download_started),
+                       )
+                   }*/
                 }
-
                 context.getString(R.string.cancel) -> {
                     viewModel.bookDownloader.cancelDownload(
                         viewModel.bookDownloader.getRunningDownload(book.id)?.downloadId
                     )
                 }
+
             }
         }
-
+        /*
         Text(
             text = stringResource(id = R.string.book_synopsis),
             modifier = Modifier.padding(start = 13.dp, end = 8.dp),
@@ -342,10 +368,11 @@ private fun BookDetailContents(
             fontFamily = poppinsFont,
             fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onBackground,
-        )
+        )*/
 
         val synopsis = state.extraInfo.description.ifEmpty { null }
         if (synopsis != null) {
+            /*
             Text(
                 text = synopsis,
                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp),
@@ -353,8 +380,9 @@ private fun BookDetailContents(
                 fontWeight = FontWeight.Normal,
                 color = MaterialTheme.colorScheme.onBackground,
             )
+            */
         } else {
-            NoSynopsisUI()
+            //NoSynopsisUI()
         }
     }
 }
@@ -573,6 +601,7 @@ private fun BookDetailTopBar(
     }
 }
 
+/*
 @Composable
 private fun NoSynopsisUI() {
     Column(
@@ -610,8 +639,7 @@ private fun NoSynopsisUI() {
         Spacer(modifier = Modifier.weight(1f))
     }
 }
-
-
+*/
 @Composable
 @Preview(showBackground = true)
 fun BookDetailScreenPreview() {

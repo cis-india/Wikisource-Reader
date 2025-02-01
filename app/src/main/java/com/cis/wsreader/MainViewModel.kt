@@ -66,6 +66,10 @@ class MainViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
+            _startDestination.value = BottomBarScreen.Home.route
+            delay(150)
+            _isLoading.value = false
+            /*
             // Check if user has completed onboarding.
             welcomeDataStore.readOnBoardingState().collect { completed ->
                 if (completed) {
@@ -76,7 +80,7 @@ class MainViewModel @Inject constructor(
 
                 delay(150)
                 _isLoading.value = false
-            }
+            }*/
         }
     }
 

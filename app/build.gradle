@@ -6,9 +6,14 @@ plugins {
     id 'com.google.devtools.ksp'
     id 'org.jetbrains.kotlin.plugin.serialization'
     id "com.mikepenz.aboutlibraries.plugin" version "11.1.3"
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
+apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'com.cis.wsreader'
@@ -47,20 +52,23 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     lintOptions {
         abortOnError true
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '1.8'
         freeCompilerArgs = ['-Xjvm-default=all-compatibility']
     }
     composeCompiler {
         enableStrongSkippingMode = true
     }
     buildFeatures {
+        viewBinding = true
+        dataBinding = true
         compose true
         buildConfig = true
     }
@@ -81,9 +89,11 @@ aboutLibraries {
 
 
 dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
     def composeBom = platform('androidx.compose:compose-bom:2024.09.02')
     implementation composeBom
     androidTestImplementation composeBom
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Android core components.
     implementation 'androidx.core:core-ktx:1.13.1'
@@ -91,6 +101,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.9.2'
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6"
     implementation "androidx.navigation:navigation-compose:2.8.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.0"
     // Jetpack compose.
     implementation "androidx.compose.ui:ui"
     implementation "androidx.compose.ui:ui-tooling-preview"
@@ -152,4 +163,46 @@ dependencies {
     // debug components.
     debugImplementation "androidx.compose.ui:ui-tooling"
     debugImplementation "androidx.compose.ui:ui-test-manifest"
+    // Readium
+    implementation "org.readium.kotlin-toolkit:readium-shared:$readium_version"
+    implementation "org.readium.kotlin-toolkit:readium-streamer:$readium_version"
+    implementation "org.readium.kotlin-toolkit:readium-navigator:$readium_version"
+    implementation "org.readium.kotlin-toolkit:readium-navigator-media-audio:$readium_version"
+    implementation "org.readium.kotlin-toolkit:readium-navigator-media-tts:$readium_version"
+    implementation "org.readium.kotlin-toolkit:readium-adapter-exoplayer:$readium_version"
+    implementation "org.readium.kotlin-toolkit:readium-adapter-pdfium:$readium_version"
+
+    implementation "com.jakewharton.timber:timber:5.0.1"
+    implementation "joda-time:joda-time:2.13.0"
+
+    implementation 'androidx.activity:activity-ktx:1.10.0' // Replace with the actual version
+    implementation 'androidx.appcompat:appcompat:1.7.0' // Replace with the actual version
+    implementation 'androidx.browser:browser:1.8.0' // Replace with the actual version
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'androidx.compose.ui:ui:1.7.6' // Replace with the actual versions in the compose bundle
+    implementation 'androidx.compose.material:material:1.7.6'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.7.6'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0' // Replace with the actual version
+    implementation 'androidx.core:core-ktx:1.15.0' // Replace with the actual version
+    implementation 'androidx.datastore:datastore-preferences:1.1.2' // Replace with the actual version
+    implementation 'androidx.fragment:fragment-ktx:1.8.5' // Replace with the actual version
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.8.7' // Replace with the actual version
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.5' // Replace with the actual version
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.5' // Replace with the actual version
+    implementation 'androidx.paging:paging-runtime-ktx:3.3.5' // Replace with the actual version
+    implementation 'androidx.recyclerview:recyclerview:1.4.0' // Replace with the actual version
+    implementation 'androidx.viewpager2:viewpager2:1.1.0' // Replace with the actual version
+    implementation 'androidx.webkit:webkit:1.12.1' // Replace with the actual version
+    implementation 'com.squareup.picasso:picasso:2.8' // Replace with the actual version
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0'
+
+    implementation 'androidx.media3:media3-exoplayer:1.5.1' // Replace with the actual versions in the media3 bundle
+    implementation 'androidx.media3:media3-ui:1.5.1'
+    implementation 'androidx.media3:media3-session:1.5.1'
+
+    implementation 'androidx.room:room-runtime:2.6.1' // Replace with the actual version
+    annotationProcessor 'androidx.room:room-compiler:2.6.1' // For Java projects, replace with the correct version
+    ksp 'androidx.room:room-compiler:2.6.1'
 }

@@ -14,4 +14,41 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Wikisource Reader"
+
+include(":readium:navigator")
+project(":readium:navigator")
+        .name = "readium-navigator"
+
+include(":readium:navigators:common")
+project(":readium:navigators:common")
+        .name = "readium-navigator-common"
+
+include(":readium:navigators:web")
+project(":readium:navigators:web")
+        .name = "readium-navigator-web"
+
+include(":readium:navigators:media:common")
+project(":readium:navigators:media:common")
+        .name = "readium-navigator-media-common"
+
+include(":readium:navigators:media:audio")
+project(":readium:navigators:media:audio")
+        .name = "readium-navigator-media-audio"
+
+include(":readium:navigators:media:tts")
+project(":readium:navigators:media:tts")
+        .name = "readium-navigator-media-tts"
+
+include(":readium:adapters:exoplayer:audio")
+project(":readium:adapters:exoplayer:audio")
+        .name = "readium-adapter-exoplayer-audio"
+
+include(":readium:shared")
+project(":readium:shared")
+        .name = "readium-shared"
+
+include(":readium:streamer")
+project(":readium:streamer")
+        .name = "readium-streamer"
+
 include ':app'

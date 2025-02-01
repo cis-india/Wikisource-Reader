@@ -140,7 +140,6 @@
 
     <!-- About Screen -->
     <string name="about_header">Über</string>
-    <string name="about_desc">Eine freie &amp; Open-Source Android-Anwendung zum Herunterladen von E-Books vom Gutenberg-Projekt.</string>
     <string name="developed_by">Entwickelt von</string>
     <string name="project_contributors">Projektmitwirkende</string>
     <string name="project_contributors_desc">Lernen Sie unsere wunderbaren Mitwirkenden kennen.</string>

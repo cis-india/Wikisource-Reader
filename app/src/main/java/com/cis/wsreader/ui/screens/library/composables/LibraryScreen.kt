@@ -90,6 +90,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.FileProvider
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.psoffritti.taptargetcompose.TapTargetCoordinator
@@ -98,7 +99,7 @@ import com.psoffritti.taptargetcompose.TextDefinition
 import com.cis.wsreader.BuildConfig
 import com.cis.wsreader.MainActivity
 import com.cis.wsreader.R
-import com.cis.wsreader.database.library.LibraryItem
+import com.cis.wsreader.data.model.Book
 import com.cis.wsreader.helpers.Constants
 import com.cis.wsreader.helpers.book.BookUtils
 import com.cis.wsreader.helpers.getActivity
@@ -117,11 +118,16 @@ import kotlinx.coroutines.launch
 import me.saket.swipe.SwipeAction
 import me.saket.swipe.SwipeableActionsBox
 import java.io.File
+import com.cis.wsreader.reader.ReaderActivityContract
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import android.content.Context
+import android.widget.Toast
+import com.cis.wsreader.MyneApp
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LibraryScreen(navController: NavController) {
+fun LibraryScreen(navController: NavController, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current) {
     val view = LocalView.current
     val context = LocalContext.current
     val viewModel: LibraryViewModel = hiltViewModel()
@@ -131,6 +137,13 @@ fun LibraryScreen(navController: NavController) {
     val lazyListState = rememberLazyListState()
 
     val showImportDialog = remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        viewModel.channel.receive(lifecycleOwner) { event ->
+            handleEvent(event, context)
+        }
+    }
+
     val importBookLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) { uris ->
             // If no files are selected, return.
@@ -171,6 +184,7 @@ fun LibraryScreen(navController: NavController) {
         delay(500) // Delay to prevent flickering
         showTapTargets.value = viewModel.showOnboardingTapTargets.value
     }
+
 
     TapTargetCoordinator(
         showTapTargets = showTapTargets.value,
@@ -287,6 +301,21 @@ fun LibraryScreen(navController: NavController) {
     }
 }
 
+private fun handleEvent(event: LibraryViewModel.Event, context: Context) {
+    when (event) {
+        is LibraryViewModel.Event.OpenPublicationError -> {
+            Toast.makeText(context, event.error.message ?: "Error opening publication", Toast.LENGTH_SHORT).show()
+        }
+
+        is LibraryViewModel.Event.LaunchReader -> {
+            val intent = ReaderActivityContract().createIntent(
+                context,
+                event.arguments
+            )
+            context.startActivity(intent)
+        }
+    }
+}
 @Composable
 private fun LibraryContents(
     viewModel: LibraryViewModel,
@@ -300,6 +329,7 @@ private fun LibraryContents(
     val libraryItems = viewModel.allItems.observeAsState(listOf()).value
 
     // Show tooltip for library screen.
+    /*
     LaunchedEffect(key1 = true) {
         if (viewModel.shouldShowLibraryTooltip()) {
             val result = snackBarHostState.showSnackbar(
@@ -317,6 +347,7 @@ private fun LibraryContents(
             }
         }
     }
+     */
 
     Column(
         modifier = Modifier
@@ -335,21 +366,18 @@ private fun LibraryContents(
             ) {
                 items(
                     count = libraryItems.size,
-                    key = { i -> libraryItems[i].id }
+                    key = { i -> libraryItems[i].id ?: throw IllegalArgumentException("ID cannot be null") }
                 ) { i ->
                     val item = libraryItems[i]
-                    if (item.fileExist()) {
-                        LibraryLazyItem(
-                            modifier = Modifier.animateItem(fadeInSpec = null, fadeOutSpec = null),
-                            item = item,
-                            snackBarHostState = snackBarHostState,
-                            navController = navController,
-                            viewModel = viewModel,
-                            settingsVm = settingsVm
-                        )
-                    } else {
-                        viewModel.deleteItemFromDB(item)
-                    }
+                    LibraryLazyItem(
+                        modifier = Modifier.animateItem(fadeInSpec = null, fadeOutSpec = null),
+                        item = item,
+                        snackBarHostState = snackBarHostState,
+                        navController = navController,
+                        viewModel = viewModel,
+                        settingsVm = settingsVm
+                    )
+
                 }
             }
 
@@ -357,10 +385,11 @@ private fun LibraryContents(
     }
 }
 
+
 @Composable
 private fun LibraryLazyItem(
     modifier: Modifier,
-    item: LibraryItem,
+    item: Book,
     snackBarHostState: SnackbarHostState,
     navController: NavController,
     viewModel: LibraryViewModel,
@@ -372,6 +401,7 @@ private fun LibraryLazyItem(
     val openDeleteDialog = remember { mutableStateOf(false) }
 
     // Swipe actions to show book details.
+    /*
     val detailsAction = SwipeAction(icon = painterResource(
         id = if (settingsVm.getCurrentTheme() == ThemeMode.Dark) R.drawable.ic_info else R.drawable.ic_info_white
     ), background = MaterialTheme.colorScheme.primary, onSwipe = {
@@ -388,12 +418,14 @@ private fun LibraryLazyItem(
                     Screens.BookDetailScreen.withBookId(
                         item.bookId.toString()
                     )
-                )
+
             }
         }
     })
+     */
 
     // Swipe actions to share book.
+    /*
     val shareAction = SwipeAction(icon = painterResource(
         id = if (settingsVm.getCurrentTheme() == ThemeMode.Dark) R.drawable.ic_share else R.drawable.ic_share_white
     ), background = MaterialTheme.colorScheme.primary, onSwipe = {
@@ -414,27 +446,27 @@ private fun LibraryLazyItem(
         )
     })
 
+
+
     SwipeableActionsBox(
         modifier = modifier.padding(vertical = 4.dp),
         startActions = listOf(shareAction),
         endActions = listOf(detailsAction),
         swipeThreshold = 85.dp
-    ) {
+    ) { */
+
         LibraryCard(title = item.title,
-            author = item.authors,
-            item.getFileSize(),
+            author = item.author?: "Unknown",
+            //item.getFileSize(),
             item.getDownloadDate(),
-            isExternalBook = item.isExternalBook,
+            //isExternalBook = item.isExternalBook,
             onReadClick = {
-                BookUtils.openBookFile(
-                    context = context,
-                    internalReader = viewModel.getInternalReaderSetting(),
-                    libraryItem = item,
-                    navController = navController
-                )
+                item.id?.let {
+                    viewModel.openPublication(it)
+                }
             },
             onDeleteClick = { openDeleteDialog.value = true })
-    }
+
 
     if (openDeleteDialog.value) {
         AlertDialog(onDismissRequest = {
@@ -448,18 +480,7 @@ private fun LibraryLazyItem(
             FilledTonalButton(
                 onClick = {
                     openDeleteDialog.value = false
-                    val fileDeleted = item.deleteFile()
-                    if (fileDeleted) {
-                        viewModel.deleteItemFromDB(item)
-                    } else {
-                        coroutineScope.launch {
-                            snackBarHostState.showSnackbar(
-                                message = context.getString(R.string.error),
-                                actionLabel = context.getString(R.string.ok),
-                                duration = SnackbarDuration.Short
-                            )
-                        }
-                    }
+                    viewModel.deletePublication(item)
                 },
                 colors = ButtonDefaults.filledTonalButtonColors(
                     contentColor = MaterialTheme.colorScheme.onErrorContainer,
@@ -482,9 +503,9 @@ private fun LibraryLazyItem(
 private fun LibraryCard(
     title: String,
     author: String,
-    fileSize: String,
+    //fileSize: String,
     date: String,
-    isExternalBook: Boolean,
+    //isExternalBook: Boolean,
     onReadClick: () -> Unit,
     onDeleteClick: () -> Unit
 ) {
@@ -508,8 +529,7 @@ private fun LibraryCard(
             ) {
                 Icon(
                     imageVector = ImageVector.vectorResource(
-                        id = if (isExternalBook) R.drawable.ic_library_external_item
-                        else R.drawable.ic_library_item
+                        id = R.drawable.ic_library_item
                     ),
                     contentDescription = stringResource(id = R.string.back_button_desc),
                     tint = MaterialTheme.colorScheme.onPrimary,
@@ -541,8 +561,9 @@ private fun LibraryCard(
                     modifier = Modifier.offset(y = (-8).dp)
                 )
 
+
                 Row(modifier = Modifier.offset(y = (-8).dp)) {
-                    Text(
+                    /*Text(
                         text = fileSize,
                         fontFamily = poppinsFont,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -557,6 +578,7 @@ private fun LibraryCard(
                             .clip(CircleShape),
                         color = MaterialTheme.colorScheme.onSurface
                     )
+                    */
                     Text(
                         text = date,
                         fontFamily = poppinsFont,
@@ -566,6 +588,7 @@ private fun LibraryCard(
                         modifier = Modifier.padding(start = 6.dp)
                     )
                 }
+
 
                 Row(modifier = Modifier.offset(y = (-4).dp)) {
                     LibraryCardButton(text = stringResource(id = R.string.library_read_button),
@@ -627,9 +650,9 @@ private fun LibraryCardButton(
 fun LibraryScreenPreview() {
     LibraryCard(title = "The Idiot",
         author = "Fyodor Dostoevsky",
-        fileSize = "5.9MB",
+        //fileSize = "5.9MB",
         date = "01- Jan -2020",
-        isExternalBook = false,
+        //isExternalBook = false,
         onReadClick = {},
         onDeleteClick = {})
 }

@@ -140,7 +140,6 @@
 
     <!-- About Screen -->
     <string name="about_header">के बारे में</string>
-    <string name="about_desc">Project Gutenberg से ई-बुक डाउनलोड करने के लिए एक मुक्त और ओपन सोर्स एंड्रॉइड एप्लिकेशन।</string>
     <string name="developed_by">द्वारा विकसित</string>
     <string name="dev_name" translatable="false">Starry Shivam</string>
     <string name="project_contributors">प्रोजेक्ट सहयोगी</string>

@@ -23,18 +23,15 @@ sealed class BookLanguage(val name: String, val isoCode: String) {
     data object French : BookLanguage("French", "fr")
 
     @Keep
-    data object German : BookLanguage("German", "de")
-
-    @Keep
-    data object Greek : BookLanguage("Greek", "el")
-
-    @Keep
-    data object Italian : BookLanguage("Italian", "it")
-
-    @Keep
-    data object Russian : BookLanguage("Russian", "ru")
-
-    @Keep
     data object Spanish : BookLanguage("Spanish", "es")
+
+    @Keep
+    data object Marathi : BookLanguage("Marathi", "mr")
+
+    @Keep
+    data object German : BookLanguage("Hindi", "hi")
+
+    @Keep
+    data object Greek : BookLanguage("Telugu", "te")
 
 }

@@ -154,7 +154,7 @@ private fun SettingsCard() {
                 )
 
                 Text(
-                    text = stringResource(id = R.string.made_by),
+                    text = stringResource(id = R.string.about_desc),
                     fontFamily = poppinsFont,
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 10.sp,
@@ -208,17 +208,6 @@ private fun GeneralOptionsUI(
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
 
-    val internalReaderValue = when (viewModel.getInternalReaderValue()) {
-        true -> stringResource(id = reader_option_inbuilt)
-        false -> stringResource(id = R.string.reader_option_external)
-    }
-    val showReaderDialog = remember { mutableStateOf(false) }
-    val radioOptions = listOf(
-        stringResource(id = reader_option_inbuilt),
-        stringResource(id = R.string.reader_option_external)
-    )
-    val (selectedOption, onOptionSelected) = remember { mutableStateOf(internalReaderValue) }
-
     Column(
         modifier = Modifier
             .padding(horizontal = 14.dp)
@@ -231,12 +220,6 @@ private fun GeneralOptionsUI(
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(vertical = 8.dp)
-        )
-        SettingItem(
-            icon = ImageVector.vectorResource(id = R.drawable.ic_settings_reader),
-            mainText = stringResource(id = R.string.default_reader_setting),
-            subText = internalReaderValue,
-            onClick = { showReaderDialog.value = true }
         )
         SettingItem(
             icon = Icons.Filled.Language,
@@ -262,82 +245,8 @@ private fun GeneralOptionsUI(
             }
         )
 
-
     }
 
-    if (showReaderDialog.value) {
-        AlertDialog(onDismissRequest = {
-            showReaderDialog.value = false
-        }, title = {
-            Text(
-                text = stringResource(id = R.string.default_reader_dialog_title),
-                color = MaterialTheme.colorScheme.onSurface,
-            )
-        }, text = {
-            Column(
-                modifier = Modifier.selectableGroup(),
-                verticalArrangement = Arrangement.Center,
-            ) {
-                radioOptions.forEach { text ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(46.dp)
-                            .selectable(
-                                selected = (text == selectedOption),
-                                onClick = { onOptionSelected(text) },
-                                role = Role.RadioButton,
-                            ),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        RadioButton(
-                            selected = (text == selectedOption),
-                            onClick = null,
-                            colors = RadioButtonDefaults.colors(
-                                selectedColor = MaterialTheme.colorScheme.primary,
-                                unselectedColor = MaterialTheme.colorScheme.inversePrimary,
-                                disabledSelectedColor = Color.Black,
-                                disabledUnselectedColor = Color.Black
-                            ),
-                        )
-                        Text(
-                            text = text,
-                            modifier = Modifier.padding(start = 16.dp),
-                            color = MaterialTheme.colorScheme.onSurface,
-                            fontFamily = poppinsFont
-                        )
-                    }
-                }
-            }
-        }, confirmButton = {
-            FilledTonalButton(
-                onClick = {
-                    showReaderDialog.value = false
-
-                    when (selectedOption) {
-                        context.getString(reader_option_inbuilt) -> {
-                            viewModel.setInternalReaderValue(true)
-                        }
-
-                        context.getString(R.string.reader_option_external) -> {
-                            viewModel.setInternalReaderValue(false)
-                        }
-                    }
-                }, colors = ButtonDefaults.filledTonalButtonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary
-                )
-            ) {
-                Text(stringResource(id = R.string.confirm))
-            }
-        }, dismissButton = {
-            TextButton(onClick = {
-                showReaderDialog.value = false
-            }) {
-                Text(stringResource(id = R.string.cancel))
-            }
-        })
-    }
 }
 
 

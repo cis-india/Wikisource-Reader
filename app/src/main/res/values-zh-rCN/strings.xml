@@ -97,7 +97,6 @@
     <!-- Settings screen. 设置页面-->
     <string name="settings_header">设置</string>
     <string name="app_desc">电子书下载器</string>
-    <string name="made_by">Made with ❤ by Shivam</string>
     <string name="general_settings_header">通用</string>
     <string name="default_reader_setting">默认阅读器</string>
     <string name="default_reader_dialog_title">打开方式</string>

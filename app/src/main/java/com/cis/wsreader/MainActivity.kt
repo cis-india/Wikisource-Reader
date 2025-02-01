@@ -36,6 +36,7 @@ import com.cis.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import com.cis.wsreader.ui.theme.AdjustEdgeToEdge
 import com.cis.wsreader.ui.theme.MyneTheme
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.navigation.NavController
 
 
 @AndroidEntryPoint
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var networkObserver: NetworkObserver
     lateinit var settingsViewModel: SettingsViewModel
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
