@@ -1,7 +1,7 @@
 # Wikisource-Reader
 
 ## Overview
-Wikisource Reader is an Android app to read public domain and freely licensed works from the [Wikisource project](https://en.wikipedia.org/wiki/Wikisource). Catalogue of books is fetched from an [API](https://meta.wikimedia.org/wiki/Wikisource_reader_app#The_API) and the app is built upon the [Myne app](https://github.com/Pool-Of-Tears/Myne/) with support from the Centre for Internet and Society.
+Wikisource Reader is an Android app to read public domain and freely licensed works from the [Wikisource project](https://en.wikipedia.org/wiki/Wikisource). Catalogue of books is fetched from an [API](https://meta.wikimedia.org/wiki/Wikisource_reader_app#The_API). The app is built upon the [Myne app](https://github.com/Pool-Of-Tears/Myne/) with the Reader interface from [Readium](https://github.com/readium/kotlin-toolkit). Development is supported by the Centre for Internet and Society.
 
 ## Features
 The following features are currently functional:
