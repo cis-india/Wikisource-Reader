@@ -407,15 +407,7 @@ private fun LibraryLazyItem(
     ), background = MaterialTheme.colorScheme.primary, onSwipe = {
         viewModel.viewModelScope.launch {
             delay(250L)
-            if (item.isExternalBook) {
-                navController.navigate(
-                    Screens.BookDetailScreen.withBookId(
-                        item.bookId.toString()
-                    )
-            } else {
-
-
-            }
+            //Navigate to Screens.BookDetailScreen.withBookId
         }
     })
      */
