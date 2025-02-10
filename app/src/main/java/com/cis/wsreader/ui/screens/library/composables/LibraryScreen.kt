@@ -328,7 +328,7 @@ private fun LibraryContents(
     val settingsVm = (context.getActivity() as MainActivity).settingsViewModel
     val libraryItems = viewModel.allItems.observeAsState(listOf()).value
 
-    // Show tooltip for library screen.
+    // Show tooltip for library screen. Enable in future after fixes
     /*
     LaunchedEffect(key1 = true) {
         if (viewModel.shouldShowLibraryTooltip()) {
@@ -400,7 +400,7 @@ private fun LibraryLazyItem(
     val coroutineScope = rememberCoroutineScope()
     val openDeleteDialog = remember { mutableStateOf(false) }
 
-    // Swipe actions to show book details.
+    // Swipe actions to show book details. Should enable in future after fixes
     /*
     val detailsAction = SwipeAction(icon = painterResource(
         id = if (settingsVm.getCurrentTheme() == ThemeMode.Dark) R.drawable.ic_info else R.drawable.ic_info_white
@@ -408,23 +408,19 @@ private fun LibraryLazyItem(
         viewModel.viewModelScope.launch {
             delay(250L)
             if (item.isExternalBook) {
-                snackBarHostState.showSnackbar(
-                    message = context.getString(R.string.external_book_info_unavailable),
-                    actionLabel = context.getString(R.string.ok),
-                    duration = SnackbarDuration.Short
-                )
-            } else {
                 navController.navigate(
                     Screens.BookDetailScreen.withBookId(
                         item.bookId.toString()
                     )
+            } else {
+
 
             }
         }
     })
      */
 
-    // Swipe actions to share book.
+    // Swipe actions to share book. Should enable in future after fixes
     /*
     val shareAction = SwipeAction(icon = painterResource(
         id = if (settingsVm.getCurrentTheme() == ThemeMode.Dark) R.drawable.ic_share else R.drawable.ic_share_white
@@ -459,7 +455,6 @@ private fun LibraryLazyItem(
             author = item.author?: "Unknown",
             //item.getFileSize(),
             item.getDownloadDate(),
-            //isExternalBook = item.isExternalBook,
             onReadClick = {
                 item.id?.let {
                     viewModel.openPublication(it)
@@ -505,7 +500,6 @@ private fun LibraryCard(
     author: String,
     //fileSize: String,
     date: String,
-    //isExternalBook: Boolean,
     onReadClick: () -> Unit,
     onDeleteClick: () -> Unit
 ) {
@@ -652,7 +646,6 @@ fun LibraryScreenPreview() {
         author = "Fyodor Dostoevsky",
         //fileSize = "5.9MB",
         date = "01- Jan -2020",
-        //isExternalBook = false,
         onReadClick = {},
         onDeleteClick = {})
 }

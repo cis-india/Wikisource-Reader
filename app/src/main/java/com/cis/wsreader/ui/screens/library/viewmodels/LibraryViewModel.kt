@@ -31,15 +31,12 @@ import com.cis.wsreader.database.library.LibraryDao
 import com.cis.wsreader.database.library.LibraryItem
 import com.cis.wsreader.epub.EpubParser
 import com.cis.wsreader.helpers.PreferenceUtil
-import com.cis.wsreader.helpers.book.BookDownloader
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.File
-import java.io.FileInputStream
 import javax.inject.Inject
 import com.cis.wsreader.utils.EventChannel
 import com.cis.wsreader.reader.OpeningError
@@ -55,23 +52,14 @@ class LibraryViewModel @Inject constructor(
 ) : AndroidViewModel(application) {
 
     private val app get() = getApplication<com.cis.wsreader.MyneApp>()
-    //val books = app.bookRepository.books()
     val channel = EventChannel(Channel<Event>(Channel.BUFFERED), viewModelScope)
 
-    //val allItems: LiveData<List<LibraryItem>> = libraryDao.getAllItems()
     val allItems: LiveData<List<Book>> = app.bookRepository.books()
 
     private val _showOnboardingTapTargets: MutableState<Boolean> = mutableStateOf(
         value = preferenceUtil.getBoolean(PreferenceUtil.LIBRARY_ONBOARDING_BOOL, true)
     )
     val showOnboardingTapTargets: State<Boolean> = _showOnboardingTapTargets
-
-    /*
-    fun deleteItemFromDB(item: LibraryItem) {
-        epubParser.removeBookFromCache(item.filePath)
-        viewModelScope.launch(Dispatchers.IO) { libraryDao.delete(item) }
-    }
-     */
 
     fun deletePublication(book: Book) =
         viewModelScope.launch {
@@ -94,20 +82,17 @@ class LibraryViewModel @Inject constructor(
         }
     }
 
-    fun getInternalReaderSetting() = preferenceUtil.getBoolean(
-        PreferenceUtil.INTERNAL_READER_BOOL, true
-    )
-
     /*
+    Should enable in the future after fixes
     fun shouldShowLibraryTooltip(): Boolean {
         return preferenceUtil.getBoolean(PreferenceUtil.LIBRARY_SWIPE_TOOLTIP_BOOL, true)
                 && allItems.value?.isNotEmpty() == true
                 && allItems.value?.any { !it.isExternalBook } == true
-    }*/
+    }
 
     fun libraryTooltipDismissed() = preferenceUtil.putBoolean(
         PreferenceUtil.LIBRARY_SWIPE_TOOLTIP_BOOL, false
-    )
+    )*/
 
     fun onboardingComplete() {
         preferenceUtil.putBoolean(PreferenceUtil.LIBRARY_ONBOARDING_BOOL, false)
@@ -124,31 +109,6 @@ class LibraryViewModel @Inject constructor(
             val result = runCatching {
                 fileUris.forEach { uri ->
                     app.bookshelf.importPublicationFromStorage(uri)
-                    /*
-                    context.contentResolver.openInputStream(uri)?.use { fis ->
-                        if (fis !is FileInputStream) {
-                            throw IllegalArgumentException("File input stream is not valid.")
-                        }
-
-                        val epubBook = epubParser.createEpubBook(fis)
-                        fis.channel.position(0)
-
-                        val filePath = copyBookToInternalStorage(
-                            context, fis,
-                            BookDownloader.createFileName(epubBook.title)
-                        )
-
-                        val libraryItem = LibraryItem(
-                            bookId = 0,
-                            title = epubBook.title,
-                            authors = epubBook.author,
-                            filePath = filePath,
-                            createdAt = System.currentTimeMillis(),
-                            isExternalBook = true
-                        )
-
-                        libraryDao.insert(libraryItem)
-                    }*/
                 }
 
                 // Add delay here so user can see the import progress bar even if
@@ -165,20 +125,6 @@ class LibraryViewModel @Inject constructor(
                 }
             }
         }
-    }
-
-
-    private suspend fun copyBookToInternalStorage(
-        context: Context,
-        fileStream: FileInputStream,
-        filename: String
-    ): String = withContext(Dispatchers.IO) {
-        val booksFolder = File(context.filesDir, BookDownloader.BOOKS_FOLDER)
-        if (!booksFolder.exists()) booksFolder.mkdirs()
-        val bookFile = File(booksFolder, filename)
-        // write the file to the internal storage
-        bookFile.outputStream().use { fileStream.copyTo(it) }
-        bookFile.absolutePath
     }
 
     sealed class Event {
