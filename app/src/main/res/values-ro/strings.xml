@@ -36,7 +36,6 @@
     <string name="categories_header">Categorii</string>
     <string name="no_books_found_for_lang_and_cat">Nu există cărți disponibile în limba %s pentru această categorie.</string>
     <!-- Categories -->
-    <string name="category_animal">Animais</string>
     <string name="category_children">Crianças</string>
     <string name="category_classics">Clássicos</string>
     <string name="category_countries">Países</string>

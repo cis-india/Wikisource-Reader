@@ -37,7 +37,6 @@
     <string name="categories_header">Categorías</string>
     <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>
     <!-- Categories -->
-    <string name="category_animal">Animales</string>
     <string name="category_children">Niños</string>
     <string name="category_classics">Clásicos</string>
     <string name="category_countries">Países</string>

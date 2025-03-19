@@ -36,7 +36,6 @@
     <string name="categories_header">Kategoriler</string>
     <string name="no_books_found_for_lang_and_cat">Bu kategori için %s dilinde kitap bulunamadı.</string>
     <!-- Categories -->
-    <string name="category_animal">Hayvanlar</string>
     <string name="category_children">Çocuklar</string>
     <string name="category_classics">Klasikler</string>
     <string name="category_countries">Ülkeler</string>
@@ -114,7 +113,6 @@
     <string name="amoled_theme_setting">Siyah Tema</string>
     <string name="amoled_theme_setting_disabled_desc">Amoled Siyah Temayı Etkinleştir</string>
     <string name="amoled_theme_setting_enabled_desc">Amoled Siyah Temayı Devre Dışı Bırak</string>
-    <string name="material_you_setting" translatable="false">Material You</string>
     <string name="material_you_setting_disabled_desc">Material You\'yu Etkinleştir</string>
     <string name="material_you_setting_enabled_desc">Material You\'yu Devre Dışı Bırak</string>
     <string name="material_you_error">Bu özellik sadece Android 12 veya üzeri cihazlar için geçerlidir.</string>
@@ -142,7 +140,6 @@
     <string name="about_header">Hakkında</string>
     <string name="about_desc">Project Gutenberg\'den e-kitap indirmek için ücretsiz ve açık kaynaklı bir Android uygulaması.</string>
     <string name="developed_by">Geliştiren</string>
-    <string name="dev_name" translatable="false">Starry Shivam</string>
     <string name="project_contributors">Proje Katkıda Bulunanlar</string>
     <string name="project_contributors_desc">Harika katkıda bulunanlarla tanışın.</string>
     <string name="useful_links">Yararlı Bağlantılar</string>

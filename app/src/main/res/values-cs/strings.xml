@@ -36,7 +36,6 @@
     <string name="categories_header">Kategorie</string>
     <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>
     <!-- Categories -->
-    <string name="category_animal">Zvířata</string>
     <string name="category_children">Děti</string>
     <string name="category_classics">Klasika</string>
     <string name="category_countries">Země</string>

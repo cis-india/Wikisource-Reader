@@ -54,6 +54,7 @@ import com.cis.wsreader.ui.theme.pacificoFont
 import com.cis.wsreader.ui.theme.poppinsFont
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -144,7 +145,7 @@ private fun BookLanguageButton(language: BookLanguage, isSelected: Boolean, onCl
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(
                 modifier = Modifier.padding(2.dp),
-                text = language.name,
+                text = Locale(language.isoCode).getDisplayLanguage(Locale.getDefault()),
                 fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
                 fontFamily = poppinsFont,
                 fontWeight = FontWeight.SemiBold,

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancel">రద్దుచెయ్యు</string>
+    <string name="network_error_retry">మరలా ప్రయత్నించు</string>
+    <string name="navigation_home">హోమ్</string>
+    <string name="navigation_categories">కేటగిరీలు</string>
+    <string name="navigation_library">లైబ్రరీ</string>
+    <string name="navigation_settings">అమరికలు</string>
+    <string name="welcome_screen_button">ప్రారంభించండి</string>
+    <string name="home_header">అన్ని పుస్తకాలు</string>
+    <string name="language_menu_title">భాష ద్వారా బ్రౌజ్ చెయ్యు</string>
+    <string name="categories_header">కేటగిరీలు</string>
+    <string name="library_header">లైబ్రరీ</string>
+    <string name="empty_library">ఏమీ లేవు!</string>
+    <string name="library_read_button">చదువు</string>
+    <string name="library_delete_button">తీసివేయు</string>
+    <string name="app_desc">వికీసోర్సు రీడర్</string>
+    <string name="about_setting">ఆప్ సమాచారం</string>
+    <string name="book_detail_header">పుస్తకం వివరాలు</string>
+    <string name="download_book_button">డౌన్లోడ్</string>
+    <string name="about_header">గురించి</string>
+    <string name="link_website">వెబ్ సైట్</string>
+    <string name="link_privacy_policy">గోప్యతా విధానం</string>
+    <string name="category_collections">సంకలనాలు</string>
+    <string name="category_novels">నవలలు</string>
+    <string name="category_plays">నాటకాలు</string>
+    <string name="category_poetry">కవిత్వం</string>
+    <string name="category_stories">కథలు</string>
+    <string name="category_essays">వ్యాసాలు</string>
+    <string name="category_narration">కథనం</string>
+    <string name="category_biography">జీవితచరిత్ర</string>
+    <string name="category_novella">నవెల్లా</string>
+    <string name="copyright_label">కాపీహక్కు</string>
+    <string name="download_started">డౌన్లోడ్ మొదలయింది</string>
+    <string name="back_button_desc">వెనక్కి వెళ్లు</string>
+    <string name="translate">అనువదించు</string>
+    <string name="copy">కాపీ</string>
+    <string name="home_search_icon_desc">పుస్తకాలు వెతుకు</string>
+    <string name="ok">సరే</string>
+    <string name="got_it">అర్థమైంది</string>
+    <string name="not_applicable">N/A</string>
+    <string name="import_button_text">దిగుమతి</string>
+</resources>

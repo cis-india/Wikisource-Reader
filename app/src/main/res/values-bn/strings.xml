@@ -37,7 +37,6 @@
     <string name="categories_header">ক্যাটাগরি</string>
     <string name="no_books_found_for_lang_and_cat">এই ক্যাটাগরির জন্য %s ভাষায় কোনো বই পাওয়া যায়নি।</string>
     <!-- Categories -->
-    <string name="category_animal">প্রাণী</string>
     <string name="category_children">শিশু</string>
     <string name="category_classics">ক্লাসিক</string>
     <string name="category_countries">দেশ</string>

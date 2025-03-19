@@ -100,6 +100,7 @@ import com.cis.wsreader.ui.screens.main.bottomNavPadding
 import com.cis.wsreader.ui.theme.pacificoFont
 import com.cis.wsreader.ui.theme.poppinsFont
 import kotlinx.coroutines.delay
+import java.util.Locale
 
 
 @Composable
@@ -322,8 +323,7 @@ private fun AllBooksList(
                         language = BookUtils.getLanguagesAsString(item.languages),
                         /* subjects = BookUtils.getSubjectsAsString(
                             item.subjects, 3
-                        ),
-                        */
+                        ),*/
                         coverImageUrl = item.thumbnailUrl
                     ) {
                         navController.navigate(
@@ -428,7 +428,7 @@ private fun HomeTopAppBar(
     ) {
         Text(
             text = if (bookLanguage == BookLanguage.AllBooks)
-                stringResource(id = R.string.home_header) else bookLanguage.name,
+                stringResource(id = R.string.home_header) else Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault()),
             fontSize = 28.sp,
             color = MaterialTheme.colorScheme.onBackground,
             fontFamily = pacificoFont

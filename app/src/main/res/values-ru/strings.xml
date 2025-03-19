@@ -37,7 +37,6 @@
     <string name="categories_header">Категории</string>
     <string name="no_books_found_for_lang_and_cat">Нет доступных книг на %s языке для заданной категории.</string>
     <!-- Categories -->
-    <string name="category_animal">Животные</string>
     <string name="category_children">Дети</string>
     <string name="category_classics">Классика</string>
     <string name="category_countries">Страны</string>

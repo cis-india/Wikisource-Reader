@@ -55,7 +55,7 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
                 "education" -> R.string.category_education
                 "narration" -> R.string.category_narration
                 "novella" -> R.string.category_novella
-                else -> R.string.category_animal
+                else -> R.string.category_biography
             }
         }
     }

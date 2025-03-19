@@ -36,7 +36,6 @@
     <string name="categories_header">श्रेणियाँ</string>
     <string name="no_books_found_for_lang_and_cat">%s भाषा में इस श्रेणी के लिए कोई पुस्तक उपलब्ध नहीं है।</string>
     <!-- Categories -->
-    <string name="category_animal">पशु</string>
     <string name="category_children">बच्चे</string>
     <string name="category_classics">क्लासिक्स</string>
     <string name="category_countries">देश</string>
@@ -141,7 +140,6 @@
     <!-- About Screen -->
     <string name="about_header">के बारे में</string>
     <string name="developed_by">द्वारा विकसित</string>
-    <string name="dev_name" translatable="false">Starry Shivam</string>
     <string name="project_contributors">प्रोजेक्ट सहयोगी</string>
     <string name="project_contributors_desc">हमारे अद्भुत सहयोगियों से मिलें।</string>
     <string name="useful_links">उपयोगी लिंक</string>

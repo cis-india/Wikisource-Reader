@@ -38,7 +38,6 @@
     <string name="categories_header">分类</string>
     <string name="no_books_found_for_lang_and_cat">在这个分类里没有以%s为语言的书籍</string>
     <!-- Categories 分类-->
-    <string name="category_animal">动物</string>
     <string name="category_children">儿童</string>
     <string name="category_classics">经典</string>
     <string name="category_countries">国家</string>
