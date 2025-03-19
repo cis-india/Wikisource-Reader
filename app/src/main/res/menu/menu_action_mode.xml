@@ -23,4 +23,18 @@
         app:showAsAction="ifRoom">
     </item>
 
+    <item
+        android:id="@+id/copy"
+        android:title="@string/copy"
+        android:visible="false"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/web_search"
+        android:title="@string/web_search"
+        android:visible="false"
+        app:showAsAction="ifRoom">
+    </item>
+
 </menu>

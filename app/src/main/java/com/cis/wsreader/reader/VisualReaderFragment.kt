@@ -7,10 +7,15 @@
 package com.cis.wsreader.reader
 
 import android.app.AlertDialog
+import android.app.SearchManager
 import android.content.Context
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.RectF
 import android.os.Bundle
+import android.os.Build
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -27,6 +32,7 @@ import android.widget.LinearLayout
 import android.widget.ListPopupWindow
 import android.widget.PopupWindow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -388,6 +394,8 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 menu.findItem(R.id.highlight).isVisible = true
                 menu.findItem(R.id.underline).isVisible = true
                 menu.findItem(R.id.note).isVisible = true
+                menu.findItem(R.id.copy).isVisible = true
+                menu.findItem(R.id.web_search).isVisible = true
             }
             return true
         }
@@ -397,6 +405,8 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 R.id.highlight -> showHighlightPopupWithStyle(Highlight.Style.HIGHLIGHT)
                 R.id.underline -> showHighlightPopupWithStyle(Highlight.Style.UNDERLINE)
                 R.id.note -> showAnnotationPopup()
+                R.id.copy -> copySelectionToClipboard()
+                R.id.web_search -> searchSelectionOnWeb()
                 else -> return false
             }
 
@@ -567,6 +577,41 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
             }
 
             alert.show()
+        }
+    }
+
+    private fun copySelectionToClipboard() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val navigator = navigator as? SelectableNavigator ?: return@launch
+            val selection = navigator.currentSelection() ?: return@launch
+            val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("selected_text", selection.locator.text.highlight.toString())
+            clipboard.setPrimaryClip(clip)
+            
+            //Only show Toast in Android 12L (API level 32) and lower. Android 13 and higher has standard feedback when content enters the clipboard
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                Toast.makeText(context, R.string.copied, Toast.LENGTH_SHORT).show()
+
+            navigator.clearSelection()
+        }
+    }
+
+    private fun searchSelectionOnWeb() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val navigator = navigator as? SelectableNavigator ?: return@launch
+            val selection = navigator.currentSelection() ?: return@launch
+
+            if (selection.locator.text.toString().isNotEmpty()) {
+                val query = selection.locator.text.highlight.toString()
+                val webSearchIntent = Intent(Intent.ACTION_WEB_SEARCH).apply {
+                    putExtra(SearchManager.QUERY, query)
+                }
+                startActivity(webSearchIntent)
+
+                navigator.clearSelection()
+            } else {
+                Toast.makeText(context, "No text selected for web search", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

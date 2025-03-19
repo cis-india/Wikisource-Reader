@@ -40,4 +40,5 @@
     <string name="got_it">అర్థమైంది</string>
     <string name="not_applicable">N/A</string>
     <string name="import_button_text">దిగుమతి</string>
+    <string name="copied">కాపీ చేయబడింది!</string>
 </resources>
