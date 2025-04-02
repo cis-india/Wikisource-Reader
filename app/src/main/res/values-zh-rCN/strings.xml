@@ -24,7 +24,6 @@
     <string name="library_tooltip">提示：通过在图书条目上左右滑动可实现分享或者查看信息操作</string>
 
     <!-- Welcome Screen 欢迎屏幕-->
-    <string name="welcome_screen_title">感谢安装 Myne！</string>
     <string name="welcome_screen_desc">选择您喜欢的电子书阅读器，开始您的阅读之旅。</string>
     <string name="welcome_screen_button">开始使用</string>
 
@@ -146,7 +145,7 @@
     <string name="useful_links">有用链接</string>
     <string name="link_readme">自述文件</string>
     <string name="link_readme_desc">在Github上查看应用的自述文件。</string>
-    <string name="link_website">网站</string>
+    <string name="shivam">网站</string>
     <string name="link_website_desc">访问我们的网站以获取更多信息。</string>
     <string name="link_privacy_policy">隐私政策</string>
     <string name="link_privacy_policy_desc">阅读我们的最新隐私政策。</string>

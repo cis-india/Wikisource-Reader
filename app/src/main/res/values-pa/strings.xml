@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Wikisource Reader</string>
     <string name="about_setting">ਐਪ ਜਾਣਕਾਰੀ</string>
     <string name="download_book_button">ਡਾਊਨਲੋਡ</string>
     <string name="download_started">ਡਾਊਨਲੋਡ ਸ਼ੁਰੂ ਹੋਇਆ!</string>

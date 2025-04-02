@@ -23,7 +23,6 @@
     <string name="library_tooltip">СОВЕТ! Проведите пальцем по элементам библиотеки влево или вправо, чтобы поделиться или просмотреть подробную информацию о книге.</string>
 
     <!-- Welcome Screen -->
-    <string name="welcome_screen_title">Спасибо за установку Myne!</string>
     <string name="welcome_screen_desc">Выберите способ чтения электронных книг.</string>
     <string name="welcome_screen_button">Приступим</string>
 
@@ -95,7 +94,6 @@
     <!-- Settings screen. -->
     <string name="settings_header">Настройки</string>
     <string name="app_desc">Установщик электронных книг</string>
-    <string name="made_by">"Сделано Shivam, с любовью ❤"</string>
     <string name="general_settings_header">Общие</string>
     <string name="default_reader_setting">Читать в…</string>
     <string name="default_reader_dialog_title">Открыть с помощью…</string>
@@ -146,7 +144,7 @@
     <string name="useful_links">Полезные Ссылки</string>
     <string name="link_readme">README</string>
     <string name="link_readme_desc">Информация о проекте на Github.</string>
-    <string name="link_website">Веб-сайт</string>
+    <string name="shivam">Веб-сайт</string>
     <string name="link_website_desc">Посетите наш веб-сайт для получения дополнительной информации.</string>
     <string name="link_privacy_policy">Политика Конфиденциальности</string>
     <string name="link_privacy_policy_desc">Прочтите нашу последнюю политику конфиденциальности.</string>

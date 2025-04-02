@@ -28,15 +28,12 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Notes
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Web
 import androidx.compose.material3.Card
@@ -67,7 +64,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.cis.wsreader.BuildConfig
 import com.cis.wsreader.R
 import com.cis.wsreader.helpers.Constants
@@ -133,7 +129,7 @@ fun AboutScreen(navController: NavController) {
                         .padding(horizontal = 14.dp)
                 ) {
                     SettingItem(icon = Icons.Filled.Web,
-                        mainText = stringResource(id = R.string.link_website),
+                        mainText = stringResource(id = R.string.shivam),
                         subText = stringResource(id = R.string.link_metapage_desc),
                         onClick = { Utils.openWebLink(context, Constants.META_URL) }
                     )

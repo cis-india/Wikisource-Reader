@@ -19,8 +19,6 @@ package com.cis.wsreader.di
 
 import android.content.Context
 import com.cis.wsreader.api.BookAPI
-import com.cis.wsreader.database.MyneDatabase
-import com.cis.wsreader.epub.EpubParser
 import com.cis.wsreader.helpers.PreferenceUtil
 import com.cis.wsreader.helpers.book.BookDownloader
 import com.cis.wsreader.ui.screens.welcome.viewmodels.WelcomeDataStore
@@ -41,17 +39,6 @@ class MainModule {
 
     @Singleton
     @Provides
-    fun provideMyneDatabase(@ApplicationContext context: Context) =
-        MyneDatabase.getInstance(context)
-
-    @Provides
-    fun provideLibraryDao(myneDatabase: MyneDatabase) = myneDatabase.getLibraryDao()
-
-    @Provides
-    fun provideReaderDao(myneDatabase: MyneDatabase) = myneDatabase.getReaderDao()
-
-    @Singleton
-    @Provides
     fun provideBooksApi(@ApplicationContext context: Context) = BookAPI(context)
 
     @Singleton
@@ -61,10 +48,6 @@ class MainModule {
     @Singleton
     @Provides
     fun providePreferenceUtil(@ApplicationContext context: Context) = PreferenceUtil(context)
-
-    @Singleton
-    @Provides
-    fun provideEpubParser(@ApplicationContext context: Context) = EpubParser(context)
 
     @Provides
     @Singleton

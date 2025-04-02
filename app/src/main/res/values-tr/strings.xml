@@ -22,7 +22,6 @@
     <string name="library_tooltip">İPUCU! Kitap detaylarını görüntülemek veya paylaşmak için kütüphane öğelerini sola veya sağa kaydırın.</string>
 
     <!-- Welcome Screen -->
-    <string name="welcome_screen_title">Myne\'ı yüklediğiniz için teşekkürler!</string>
     <string name="welcome_screen_desc">Okuma yolculuğunuza başlamak için tercih ettiğiniz e-kitap okuyucuyu seçin.</string>
     <string name="welcome_screen_button">Başlayın</string>
 
@@ -94,7 +93,6 @@
     <!-- Settings screen. -->
     <string name="settings_header">Ayarlar</string>
     <string name="app_desc">E-kitap İndirici</string>
-    <string name="made_by">Şivam tarafından ❤ ile yapıldı</string>
     <string name="general_settings_header">Genel</string>
     <string name="default_reader_setting">Varsayılan Okuyucu</string>
     <string name="default_reader_dialog_title">E-kitapları şununla aç…</string>
@@ -145,7 +143,7 @@
     <string name="useful_links">Yararlı Bağlantılar</string>
     <string name="link_readme">README</string>
     <string name="link_readme_desc">Github\'daki uygulamanın README dosyasına göz atın.</string>
-    <string name="link_website">Web Sitesi</string>
+    <string name="shivam">Web Sitesi</string>
     <string name="link_website_desc">Daha fazla bilgi için web sitemizi ziyaret edin.</string>
     <string name="link_privacy_policy">Gizlilik Politikası</string>
     <string name="link_privacy_policy_desc">En son gizlilik politikamızı okuyun.</string>

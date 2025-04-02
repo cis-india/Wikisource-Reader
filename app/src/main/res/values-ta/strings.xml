@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Wikisource Reader</string>
     <string name="book_detail_header">புத்தக விவரங்கள்</string>
     <string name="download_book_button">பதிவிறக்கவும்</string>
     <string name="about_header">பற்றி</string>

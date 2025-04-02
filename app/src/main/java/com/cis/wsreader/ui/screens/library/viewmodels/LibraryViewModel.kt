@@ -27,9 +27,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.cis.wsreader.data.model.Book
-import com.cis.wsreader.database.library.LibraryDao
-import com.cis.wsreader.database.library.LibraryItem
-import com.cis.wsreader.epub.EpubParser
 import com.cis.wsreader.helpers.PreferenceUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -46,8 +43,6 @@ import com.cis.wsreader.reader.ReaderActivityContract
 @HiltViewModel
 class LibraryViewModel @Inject constructor(
     application: Application,
-    private val libraryDao: LibraryDao,
-    private val epubParser: EpubParser,
     private val preferenceUtil: PreferenceUtil
 ) : AndroidViewModel(application) {
 

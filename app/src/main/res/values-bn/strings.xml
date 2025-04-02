@@ -23,7 +23,6 @@
     <string name="library_tooltip">টিপ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে লাইব্রেরি আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
 
     <!-- Welcome Screen -->
-    <string name="welcome_screen_title">উইকিসোর্সে রিডার ইনস্টল করার জন্য ধন্যবাদ!</string>
     <string name="welcome_screen_desc">আপনার পড়ার যাত্রা শুরু করতে আপনার পছন্দের ইবুক রিডার বেছে নিন।</string>
     <string name="welcome_screen_button">শুরু করুন</string>
 
@@ -113,7 +112,6 @@
     <string name="amoled_theme_setting">ব্ল্যাক থিম</string>
     <string name="amoled_theme_setting_disabled_desc">অ্যামোলেড ব্ল্যাক থিম চালু করুন</string>
     <string name="amoled_theme_setting_enabled_desc">অ্যামোলেড ব্ল্যাক থিম বন্ধ করুন</string>
-    <string name="material_you_setting" translatable="false">Material You</string>
     <string name="material_you_setting_disabled_desc">ম্যাটেরিয়াল ইউ চালু করুন</string>
     <string name="material_you_setting_enabled_desc">ম্যাটেরিয়াল ইউ বন্ধ করুন</string>
     <string name="material_you_error">এই ফিচার শুধুমাত্র অ্যান্ড্রয়েড 12 বা তার উপরে চলমান ডিভাইসগুলির জন্য।</string>
@@ -141,13 +139,12 @@
     <string name="about_header">অ্যাপ সম্পর্কে</string>
     <string name="about_desc">একটি ফ্রি &amp; ওপেন সোর্স অ্যান্ড্রয়েড অ্যাপ্লিকেশন যা প্রজেক্ট গুটেনবার্গ থেকে ইবুক ডাউনলোড করে।</string>
     <string name="developed_by">ডেভেলপড বাই</string>
-    <string name="dev_name" translatable="false">Starry Shivam</string>
     <string name="project_contributors">প্রোজেক্টে অবদানকারীরা</string>
     <string name="project_contributors_desc">আমাদের দুর্দান্ত অবদানকারীদের সাথে আলাপ করুন।</string>
     <string name="useful_links">দরকারি লিঙ্কস</string>
     <string name="link_readme">README</string>
     <string name="link_readme_desc">গিটহাবে আমাদের অ্যাপের README পড়ুন।</string>
-    <string name="link_website">ওয়েবসাইট</string>
+    <string name="shivam">ওয়েবসাইট</string>
     <string name="link_website_desc">আরো তথ্যের জন্য আমাদের ওয়েবসাইটে দেখুন।</string>
     <string name="link_privacy_policy">গোপনীয়তা নীতি</string>
     <string name="link_privacy_policy_desc">আমাদের সর্বশেষ গোপনীয়তা নীতি পড়ুন।</string>

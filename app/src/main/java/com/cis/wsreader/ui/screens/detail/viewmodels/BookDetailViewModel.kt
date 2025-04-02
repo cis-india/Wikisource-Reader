@@ -23,39 +23,26 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.cis.wsreader.MyneApp
 import com.cis.wsreader.api.BookAPI
 import com.cis.wsreader.api.models.Book
 import com.cis.wsreader.api.models.BookSet
 import com.cis.wsreader.api.models.ExtraInfo
-import com.cis.wsreader.database.library.LibraryDao
-import com.cis.wsreader.database.library.LibraryItem
+import com.cis.wsreader.data.db.BooksDao
 import com.cis.wsreader.helpers.Constants
 import com.cis.wsreader.helpers.PreferenceUtil
 import com.cis.wsreader.helpers.book.BookDownloader
-import com.cis.wsreader.helpers.book.BookUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.receiveAsFlow
-import kotlinx.coroutines.launch
-import org.readium.r2.shared.util.AbsoluteUrl
-import org.readium.r2.shared.util.Try
-//import com.cis.wsreader.data.model.Book
 import java.io.File
-import androidx.core.content.FileProvider
-
-
 
 data class BookDetailScreenState(
     val isLoading: Boolean = true,
     val bookSet: BookSet = BookSet(0, null, null, emptyList()),
     val extraInfo: ExtraInfo = ExtraInfo(),
-    val bookLibraryItem: LibraryItem? = null,
+    val bookLibraryItem: BooksDao? = null,
     val error: String? = null
 )
 
@@ -63,7 +50,7 @@ data class BookDetailScreenState(
 class BookDetailViewModel @Inject constructor(
     application: Application,
     private val bookAPI: BookAPI,
-    val libraryDao: LibraryDao,
+    //val libraryDao: LibraryDao,
     val bookDownloader: BookDownloader,
     private val preferenceUtil: PreferenceUtil,
 ) : AndroidViewModel(application) {
@@ -93,7 +80,7 @@ class BookDetailViewModel @Inject constructor(
                 state = state.copy(bookSet = bookSet)
 
                 state = state.copy(
-                    bookLibraryItem = libraryDao.getItemByBookId(bookId.toInt()),
+                    bookLibraryItem = null,
                     isLoading = false,
                     error = null
                 )
@@ -106,6 +93,7 @@ class BookDetailViewModel @Inject constructor(
         }
     }
 
+    /*
     fun reFetchLibraryItem(bookId: Int, onComplete: (LibraryItem) -> Unit) {
         viewModelScope.launch(Dispatchers.IO) {
             val libraryItem = libraryDao.getItemByBookId(bookId)
@@ -113,6 +101,7 @@ class BookDetailViewModel @Inject constructor(
             libraryItem?.let { withContext(Dispatchers.Main) { onComplete(libraryItem) } }
         }
     }
+     */
 
     fun downloadBook(
         book: Book, downloadProgressListener: (Float, Int) -> Unit
@@ -127,19 +116,9 @@ class BookDetailViewModel @Inject constructor(
             }
         )
     }
-/*
-    private fun insertIntoDB(book: Book, filePath: String) {
-        val libraryItem = LibraryItem(
-            bookId = book.id,
-            title = book.title,
-            authors = BookUtils.getAuthorsAsStringen(book.authors),
-            filePath = filePath,
-            createdAt = System.currentTimeMillis()
-        )
-        libraryDao.insert(libraryItem)
-    }
-
-    fun addPublicationFromWeb(bookUrl: String) {
+    /*
+    Currently not working since ws-export doent return Content-length. See T384803 on Phabricator
+     fun addPublicationFromWeb(bookUrl: String) {
         viewModelScope.launch {
             val absoluteUrl = AbsoluteUrl(bookUrl)
             if (absoluteUrl != null){
@@ -147,6 +126,5 @@ class BookDetailViewModel @Inject constructor(
             }
         }
     }
-
- */
+    */
 }

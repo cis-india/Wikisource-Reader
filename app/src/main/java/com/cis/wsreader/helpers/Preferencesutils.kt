@@ -34,8 +34,6 @@ class PreferenceUtil(context: Context) {
         const val AMOLED_THEME_BOOL = "amoled_theme"
         const val MATERIAL_YOU_BOOL = "material_you"
         const val INTERNAL_READER_BOOL = "internal_reader"
-        const val READER_FONT_SIZE_INT = "reader_font_size"
-        const val READER_FONT_STYLE_STR = "reader_font_style"
         const val PREFERRED_BOOK_LANG_STR = "preferred_book_language"
 
         // Temporary preference keys

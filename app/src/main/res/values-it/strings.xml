@@ -23,7 +23,6 @@
     <string name="library_tooltip">TIP! Swipe library items left or right to share or view book details.</string>
 
     <!-- Welcome Screen -->
-    <string name="welcome_screen_title">Grazie per aver installato Myne!</string>
     <string name="welcome_screen_desc">Scegli il tuo lettore di ebook preferito per intraprendere il tuo viaggio di lettura.</string>
     <string name="welcome_screen_button">Inizia</string>
 
@@ -95,7 +94,6 @@
     <!-- Settings screen. -->
     <string name="settings_header">Impostazioni</string>
     <string name="app_desc">Ebook Downloader</string>
-    <string name="made_by">Fatto con ❤ da Shivam</string>
     <string name="general_settings_header">Generale</string>
     <string name="default_reader_setting">Reader di default</string>
     <string name="default_reader_dialog_title">Apri ebooks con…</string>
@@ -146,7 +144,7 @@
     <string name="useful_links">Link Utili</string>
     <string name="link_readme">README</string>
     <string name="link_readme_desc">Consulta il README dell\'app su Github.</string>
-    <string name="link_website">Sito web</string>
+    <string name="shivam">Sito web</string>
     <string name="link_website_desc">Visita il nostro sito web per maggiori informazioni.</string>
     <string name="link_privacy_policy">Informativa sulla Privacy</string>
     <string name="link_privacy_policy_desc">Leggi la nostra ultima informativa sulla privacy.</string>

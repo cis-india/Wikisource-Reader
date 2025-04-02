@@ -17,33 +17,23 @@
 
 package com.cis.wsreader
 
-import android.content.Context
-import android.content.Intent
-import android.content.pm.ShortcutInfo
-import android.graphics.drawable.Icon
-import android.net.Uri
+
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cis.wsreader.database.library.LibraryDao
-import com.cis.wsreader.database.progress.ProgressDao
 import com.cis.wsreader.ui.navigation.BottomBarScreen
 import com.cis.wsreader.ui.navigation.Screens
 import com.cis.wsreader.ui.screens.welcome.viewmodels.WelcomeDataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val welcomeDataStore: WelcomeDataStore,
-    private val libraryDao: LibraryDao,
-    private val progressDao: ProgressDao
 ) :
     ViewModel() {
     private val _isLoading: MutableState<Boolean> = mutableStateOf(true)
@@ -70,6 +60,7 @@ class MainViewModel @Inject constructor(
             delay(150)
             _isLoading.value = false
             /*
+            Need to update onboarding flow
             // Check if user has completed onboarding.
             welcomeDataStore.readOnBoardingState().collect { completed ->
                 if (completed) {
@@ -81,44 +72,6 @@ class MainViewModel @Inject constructor(
                 delay(150)
                 _isLoading.value = false
             }*/
-        }
-    }
-
-    fun buildDynamicShortcuts(
-        context: Context,
-        limit: Int,
-        onComplete: (List<ShortcutInfo>) -> Unit
-    ) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val libraryItems = progressDao.getAllReaderItems()
-                .sortedByDescending { it.lastReadTime }
-                .take(limit - 1).mapNotNull {
-                    libraryDao.getItemById(it.libraryItemId)
-                }
-
-            val libraryShortcut = ShortcutInfo.Builder(context, "library").apply {
-                setShortLabel(context.getString(R.string.library_header))
-                setIcon(Icon.createWithResource(context, R.drawable.ic_nav_library))
-                setIntent(Intent().apply {
-                    action = Intent.ACTION_VIEW
-                    data = Uri.parse("$LAUNCHER_SHORTCUT_SCHEME://library")
-                    putExtra(LC_SC_BOOK_LIBRARY, true)
-                })
-            }.build()
-
-            val shortcuts = listOf(libraryShortcut) + libraryItems.map {
-                ShortcutInfo.Builder(context, "library_item_${it.id}").apply {
-                    setShortLabel(it.title)
-                    setIcon(Icon.createWithResource(context, R.drawable.ic_library_external_item))
-                    setIntent(Intent().apply {
-                        action = Intent.ACTION_VIEW
-                        data = Uri.parse("$LAUNCHER_SHORTCUT_SCHEME://library_item/${it.id}")
-                        putExtra(LC_SC_LIBRARY_ITEM_ID, it.id)
-                    })
-                }.build()
-            }
-
-            withContext(Dispatchers.Main) { onComplete(shortcuts) }
         }
     }
 }
