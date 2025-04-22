@@ -43,13 +43,4 @@ sealed class BookLanguage(val name: String, val isoCode: String) {
     @Keep
     data object Indonesia : BookLanguage("Indonesia", "id")
 
-    @Keep
-    data object Sunda : BookLanguage("Sunda", "su")
-
-    @Keep
-    data object Java : BookLanguage("Java", "jv")
-
-    @Keep
-    data object Bali : BookLanguage("Bali", "ban")
-
 }
