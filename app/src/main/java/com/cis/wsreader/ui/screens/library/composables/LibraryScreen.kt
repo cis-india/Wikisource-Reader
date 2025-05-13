@@ -547,9 +547,9 @@ private fun LibraryCard(
                     modifier = Modifier.offset(y = (-8).dp)
                 )
 
-
+                /*
                 Row(modifier = Modifier.offset(y = (-8).dp)) {
-                    /*Text(
+                    Text(
                         text = fileSize,
                         fontFamily = poppinsFont,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -564,7 +564,7 @@ private fun LibraryCard(
                             .clip(CircleShape),
                         color = MaterialTheme.colorScheme.onSurface
                     )
-                    */
+
                     Text(
                         text = date,
                         fontFamily = poppinsFont,
@@ -574,7 +574,7 @@ private fun LibraryCard(
                         modifier = Modifier.padding(start = 6.dp)
                     )
                 }
-
+                */
 
                 Row(modifier = Modifier.offset(y = (-4).dp)) {
                     LibraryCardButton(text = stringResource(id = R.string.library_read_button),

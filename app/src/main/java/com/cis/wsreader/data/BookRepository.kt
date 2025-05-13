@@ -83,13 +83,14 @@ class BookRepository(
         mediaType: MediaType,
         publication: Publication,
         cover: File,
+        wdIdentifier: String? = null
     ): Long {
         val book = Book(
             creation = Date().time,
             title = publication.metadata.title ?: url.filename ?: "Unknown Work",
             author = publication.metadata.authorName,
             href = url.toString(),
-            identifier = publication.metadata.identifier ?: "",
+            identifier = wdIdentifier?: publication.metadata.identifier ?: "",
             mediaType = mediaType,
             progression = "{}",
             cover = cover.path
