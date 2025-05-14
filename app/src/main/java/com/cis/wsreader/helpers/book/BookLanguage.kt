@@ -40,4 +40,7 @@ sealed class BookLanguage(val name: String, val isoCode: String) {
     @Keep
     data object Telugu : BookLanguage("Telugu", "te")
 
+    @Keep
+    data object Indonesia : BookLanguage("Indonesia", "id")
+
 }
