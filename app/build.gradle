@@ -16,11 +16,11 @@ apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 apply plugin: 'kotlin-kapt'
 
 android {
-    namespace 'com.cis.wsreader'
+    namespace 'org.cis_india.wsreader'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.cis.wsreader"
+        applicationId "org.cis_india.wsreader"
         minSdk 26
         targetSdk 35
         versionCode 1
