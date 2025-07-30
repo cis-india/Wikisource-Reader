@@ -28,3 +28,7 @@
     public static *** w(...);
     public static *** e(...);
 }
+
+# Suppress warnings for Joda-Convert classes
+-dontwarn org.joda.convert.FromString
+-dontwarn org.joda.convert.ToString
