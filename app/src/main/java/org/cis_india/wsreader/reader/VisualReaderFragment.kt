@@ -173,8 +173,7 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
         menuHost.addMenuProvider(
             object : MenuProvider {
                 override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                    menu.findItem(R.id.tts).isVisible = false
-                    //menu.findItem(R.id.tts).isVisible = (model.tts != null)
+                    menu.findItem(R.id.tts).isVisible = (model.tts != null)
                 }
 
                 override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
