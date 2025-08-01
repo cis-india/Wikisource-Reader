@@ -14,7 +14,7 @@ sealed class BookLanguage(val name: String, val isoCode: String) {
     data object AllBooks : BookLanguage("All Books", "all")
 
     @Keep
-    data object Bangla : BookLanguage("Assamese", "as")
+    data object Assamese : BookLanguage("Assamese", "as")
 
     @Keep
     data object Bangla : BookLanguage("Bangla", "bn")
