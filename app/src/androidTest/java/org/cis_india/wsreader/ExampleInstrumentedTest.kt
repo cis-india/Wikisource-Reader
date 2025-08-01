@@ -1,4 +1,4 @@
-package org.cis_india.wsreader
+package wikisource_reader
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
