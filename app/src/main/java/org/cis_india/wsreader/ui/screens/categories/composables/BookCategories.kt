@@ -35,9 +35,9 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
             Poems,
             ShortStories,
             Narration,
-            Biography,
-            Novella,
             Essays,
+            Dictionaries,
+            Encyclopedias,
         )
 
         /**
@@ -48,13 +48,13 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
         fun getNameRes(category: String): Int {
             return when (category) {
                 "novel" -> R.string.category_novels
-                "play" -> R.string.category_plays
                 "poem" -> R.string.category_poetry
+                "play" -> R.string.category_plays
                 "short story" -> R.string.category_shortstories
-                "essay" -> R.string.category_essays
-                "education" -> R.string.category_education
                 "narration" -> R.string.category_narration
-                "novella" -> R.string.category_novella
+                "essay" -> R.string.category_essays
+                "dictionary" -> R.string.category_dictionaries
+                "encyclopedia" -> R.string.category_encyclopedias
                 else -> R.string.category_biography
             }
         }
@@ -65,7 +65,7 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
     data object Plays : BookCategories("play", R.string.category_plays)
     data object ShortStories : BookCategories("short story", R.string.category_shortstories)
     data object Narration : BookCategories("narration", R.string.category_narration)
-    data object Biography : BookCategories("biography", R.string.category_biography)
-    data object Novella : BookCategories("novella", R.string.category_novella)
     data object Essays : BookCategories("essays", R.string.category_essays)
+    data object Dictionaries : BookCategories("biography", R.string.category_dictionaries)
+    data object Encyclopedias : BookCategories("novella", R.string.category_encyclopedias)
 }
