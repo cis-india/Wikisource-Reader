@@ -17,5 +17,6 @@ The following features are currently functional:
 - **Localization support**: Use the app in multiple languages.
 
 ## External Links
-- [Meta page](https://meta.wikimedia.org/wiki/Wikisource_reader_app)
+- [Website](https://cis-india.github.io/wikisource-reader-app)
+- [Meta Wiki page](https://meta.wikimedia.org/wiki/Wikisource_reader_app)
 ---
