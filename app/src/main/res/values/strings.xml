@@ -325,7 +325,7 @@
     <string name="error_unexpected">An unexpected error occurred.</string>
     <string name="go_to_library">Go to library</string>
     <string name="org_website" translatable="false">cis-india.org</string>
-    <string name="link_metapage_desc">Visit our page on meta.wikimedia.org</string>
+    <string name="link_metapage_desc">Visit our page</string>
     <string name="link_sourcecode_repo">View GitHub Repo</string>
     <string name="link_sourcecode">GitHub</string>
 </resources>
