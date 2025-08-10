@@ -20,6 +20,9 @@ sealed class BookLanguage(val name: String, val isoCode: String) {
     data object Bangla : BookLanguage("Bangla", "bn")
 
     @Keep
+    data object Catalan : BookLanguage("Catalan", "ca")
+    
+    @Keep
     data object Czech : BookLanguage("Czech", "cs")
 
     @Keep
@@ -57,6 +60,9 @@ sealed class BookLanguage(val name: String, val isoCode: String) {
 
     @Keep
     data object Punjabi : BookLanguage("Punjabi", "pa")
+
+    @Keep
+    data object Sundanese : BookLanguage("Sundanese", "su")
     
     @Keep
     data object Swedish : BookLanguage("Swedish", "sv")
