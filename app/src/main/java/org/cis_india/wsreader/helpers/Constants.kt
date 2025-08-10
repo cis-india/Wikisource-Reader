@@ -27,7 +27,7 @@ object Constants {
     const val UNKNOWN_ERR = "unknown-error"
 
     // URLs
-    const val META_URL = "https://meta.wikimedia.org/wiki/Wikisource_reader_app"
+    const val META_URL = "https://cis-india.github.io/wikisource-reader-app/"
     const val GITHUB_REPO = "https://github.com/cis-india/Wikisource-Reader"
     const val PRIVACY_POLICY = "https://cis-india.github.io/wikisource-reader-app/privacy-policy"
         ""
