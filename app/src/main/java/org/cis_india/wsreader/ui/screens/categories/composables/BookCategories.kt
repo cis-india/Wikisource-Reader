@@ -65,7 +65,7 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
     data object Plays : BookCategories("play", R.string.category_plays)
     data object ShortStories : BookCategories("short story", R.string.category_shortstories)
     data object Narration : BookCategories("narration", R.string.category_narration)
-    data object Essays : BookCategories("essays", R.string.category_essays)
-    data object Dictionaries : BookCategories("dictionaries", R.string.category_dictionaries)
-    data object Encyclopedias : BookCategories("encyclopedias", R.string.category_encyclopedias)
+    data object Essays : BookCategories("essay", R.string.category_essays)
+    data object Dictionaries : BookCategories("dictionary", R.string.category_dictionaries)
+    data object Encyclopedias : BookCategories("encyclopedia", R.string.category_encyclopedias)
 }
