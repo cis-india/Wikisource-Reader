@@ -328,4 +328,6 @@
     <string name="link_metapage_desc">Visit our page</string>
     <string name="link_sourcecode_repo">View GitHub Repo</string>
     <string name="link_sourcecode">GitHub</string>
+    <string name="category_dictionaries">Dictionaries</string>
+    <string name="category_encyclopedias">Encyclopedias</string>
 </resources>
