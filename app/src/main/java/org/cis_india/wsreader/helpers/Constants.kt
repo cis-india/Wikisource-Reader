@@ -30,6 +30,4 @@ object Constants {
     const val META_URL = "https://cis-india.github.io/wikisource-reader-app/"
     const val GITHUB_REPO = "https://github.com/cis-india/Wikisource-Reader"
     const val PRIVACY_POLICY = "https://cis-india.github.io/wikisource-reader-app/privacy-policy"
-        ""
-
 }
