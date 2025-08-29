@@ -72,6 +72,7 @@ fun BookItemCard(
     onClick: () -> Unit
 ) {
     val view = LocalView.current
+
     Card(
         modifier = Modifier
             .height(160.dp)

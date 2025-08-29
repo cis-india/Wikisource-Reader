@@ -26,7 +26,7 @@ data class Book(
     @SerialName("authors")
     val authors: List<Author>,
     @SerialName("view_count")
-    val downloadCount: Int,
+    val viewCount: Int,
     @SerialName("wikidata_qid")
     val wikidataQid: String,
     @SerialName("languages")

@@ -117,6 +117,15 @@ class MyneApp : Application(), ImageLoaderFactory {
             .connectTimeout(60, TimeUnit.SECONDS)
             .writeTimeout(60, TimeUnit.SECONDS)
             .readTimeout(100, TimeUnit.SECONDS)
+            .addInterceptor { chain ->
+                val newRequest = chain.request().newBuilder()
+                    .header(
+                        "User-Agent",
+                        "Wikisource Reader App (https://meta.wikimedia.org/wiki/Wikisource_reader_app; android)"
+                    )
+                    .build()
+                chain.proceed(newRequest)
+            }
             .build()
 
         return ImageLoader(this).newBuilder()

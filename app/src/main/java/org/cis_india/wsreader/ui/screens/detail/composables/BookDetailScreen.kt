@@ -275,7 +275,7 @@ private fun BookDetailContents(
         MiddleBar(
             bookLang = BookUtils.getLanguagesAsString(book.languages),
             pageCount = pageCount,
-            downloadCount = Utils.prettyCount(book.downloadCount),
+            viewCount = Utils.prettyCount(book.viewCount),
             progressValue = progressState,
             buttonText = buttonText,
             showProgressBar = showProgressBar
@@ -383,7 +383,7 @@ private fun BookDetailContents(
 private fun MiddleBar(
     bookLang: String,
     pageCount: String,
-    downloadCount: String,
+    viewCount: String,
     progressValue: Float,
     buttonText: String,
     showProgressBar: Boolean,
@@ -496,13 +496,13 @@ private fun MiddleBar(
                 ) {
                     Row {
                         Icon(
-                            imageVector = ImageVector.vectorResource(id = R.drawable.ic_book_downloads),
+                            imageVector = ImageVector.vectorResource(id = R.drawable.ic_book_views),
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.padding(top = 15.dp, bottom = 13.dp, end = 4.dp)
                         )
                         Text(
-                            text = downloadCount,
+                            text = viewCount,
                             modifier = Modifier.padding(top = 14.dp, bottom = 14.dp, start = 4.dp),
                             fontSize = 16.sp,
                             fontFamily = poppinsFont,
