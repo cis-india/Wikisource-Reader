@@ -56,180 +56,180 @@
     <string name="category_science">ವಿಜ್ಞಾನ</string>
 
     <!-- Library screen. -->
-    <string name="library_header">Library</string>
-    <string name="empty_library">Nothing Here!</string>
-    <string name="import_button_text">Import</string>
-    <string name="import_button_onboarding">Import your own books!</string>
-    <string name="import_button_onboarding_desc">Now you can import your own EPUB books and read them.</string>
-    <string name="import_button_desc">Import epub book</string>
-    <string name="external_book_info_unavailable">Only available for internal books.</string>
-    <string name="epub_importing">Importing… \nPlease wait.</string>
-    <string name="epub_imported">Imported successfully!</string>
-    <string name="epub_import_error">Failed to import!</string>
-    <string name="open_app_chooser">Open with…</string>
-    <string name="share_app_chooser">Share with…</string>
-    <string name="library_read_button">Read</string>
-    <string name="library_delete_button">Delete</string>
-    <string name="library_delete_dialog_title">Are you sure about that?</string>
+    <string name="library_header">ಗ್ರಂಥಾಲಯ</string>
+    <string name="empty_library">ಇಲ್ಲಿ ಏನೂ ಇಲ್ಲ!</string>
+    <string name="import_button_text">ಆಮದು</string>
+    <string name="import_button_onboarding"> ನಿಮ್ಮ ಸ್ವಂತ ಪುಸ್ತಕ ಆಮದು ಮಾಡಿರಿ!</string>
+    <string name="import_button_onboarding_desc"> ಇದೀಗ, ನಿಮ್ಮ ಸ್ವಂತ ಈಪಬ್ ಪುಸ್ತಕ ಆಮದು ಮಾಡಿ, ಓದಿರಿ</string>
+    <string name="import_button_desc">ಈಪಬ್ ಪುಸ್ತಕ ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ</string>
+    <string name="external_book_info_unavailable"> ಒಳಗಿರುವ ಪುಸ್ತಕಗಳಿಗೆ ಮಾತ್ರ ಲಭ್ಯ.</string>
+    <string name="epub_importing"> ಆಮದು ಆಗ್ತಾ ಇದೆ… \n ಸ್ವಲ್ಪ ತಾಳಿ.</string>
+    <string name="epub_imported"> ಆಮದು ಮುಗೀತು!</string>
+    <string name="epub_import_error"> ಆಮದು ಪೂರ್ತಿ ಆಗಲಿಲ್ಲ!</string>
+    <string name="open_app_chooser"> ರೊಂದಿಗೆ ತೆರೆಯಿರಿ…</string>
+    <string name="share_app_chooser"> ರೊಂದಿಗೆ ಹಂಚಿರಿ…</string>
+    <string name="library_read_button">ಓದಿರಿ</string>
+    <string name="library_delete_button">ಅಳಿಸಿಹಾಕಿ</string>
+    <string name="library_delete_dialog_title"> ಗ್ಯಾರಂಟಿ ಅಳಿಸಿಹಾಕೋದಾ ?</string>
 
     <!-- Reader Detail Screen -->
-    <string name="reader_detail_header">Ebook Reader</string>
-    <string name="start_reading_button">Start</string>
-    <string name="continue_reading_button">Resume</string>
-    <string name="reader_chapters_list">Chapters</string>
+    <string name="reader_detail_header"> ಈಬುಕ್ ಓದುಕ</string>
+    <string name="start_reading_button"> ಆರಂಭ</string>
+    <string name="continue_reading_button">ಮತ್ತೆ ಆರಂಭ</string>
+    <string name="reader_chapters_list">ಅಧ್ಯಾಯಗಳು</string>
 
     <!--Reader Screen -->
-    <string name="reader_max_font_size_reached">Sorry, cannot go any higher than that!</string>
-    <string name="reader_min_font_size_reached">Sorry, cannot go any lower than that!</string>
-    <string name="reader_font_style_chooser">Change FontStyle</string>
-    <string name="reader_chapter_list_title">Chapters</string>
+    <string name="reader_max_font_size_reached"> ಕ್ಷಮಿಸಿ, ಇದಕ್ಕಿಂತ ದೊಡ್ಡದು ಮಾಡಲಾಗದು!</string>
+    <string name="reader_min_font_size_reached"> ಷಮಿಸಿ, ಇದಕ್ಕಿಂತ ಚಿಕ್ಕದು ಮಾಡಲಾಗದು!</string>
+    <string name="reader_font_style_chooser"> ಅಕ್ಷರ ಶೈಲಿ ಬದಲಿಸಿ</string>
+    <string name="reader_chapter_list_title"> ಅಧ್ಯಾಯಗಳು</string>
 
     <!-- Text selection -->
-    <string name="copy">Copy</string>
-    <string name="copied">Copied!</string>
-    <string name="web_search">Web Search</string>
-    <string name="share">Share</string>
-    <string name="translate">Translate</string>
-    <string name="dictionary">Meaning</string>
+    <string name="copy"> ಅಚ್ಚು ಮಾಡಿ</string>
+    <string name="copied"> ಅಚ್ಚು ಆಯ್ತು!</string>
+    <string name="web_search"> ಅಂತರ್ಜಾಲದಲ್ಲಿ ಹುಡುಕಿ</string>
+    <string name="share"> ಹಂಚಿಕೊಳ್ಳಿ </string>
+    <string name="translate"> ಅನುವಾದಿಸಿ</string>
+    <string name="dictionary"> ಅರ್ಥ</string>
 
     <!-- Settings screen. -->
-    <string name="settings_header">Settings</string>
-    <string name="app_desc">Wikisource Reader</string>
-    <string name="made_by">Made for Wikisource by CIS A2K</string>
-    <string name="general_settings_header">General</string>
-    <string name="default_reader_setting">Default Reader</string>
-    <string name="default_reader_dialog_title">Open ebooks with…</string>
-    <string name="reader_option_inbuilt">Inbuilt Reader</string>
-    <string name="reader_option_external">External Reader</string>
-    <string name="default_locale_setting">Default Locale</string>
-    <string name="default_locale_setting_desc">Select your preferred locale.</string>
-    <string name="locale_setting_not_found">Sorry! this feature is not yet supported by your OS.</string>
-    <string name="display_setting_header">Display</string>
-    <string name="theme_setting">Default Theme</string>
-    <string name="theme_dialog_title">Change Theme</string>
-    <string name="theme_option_light">Light</string>
-    <string name="theme_option_dark">Dark</string>
-    <string name="theme_option_system">System Default</string>
-    <string name="theme_dialog_apply_button">Apply</string>
-    <string name="amoled_theme_setting">Black Theme</string>
-    <string name="amoled_theme_setting_disabled_desc">Enable Amoled Black Theme</string>
-    <string name="amoled_theme_setting_enabled_desc">Disable Amoled Black Theme</string>
-    <string name="material_you_setting" translatable="false">Material You</string>
-    <string name="material_you_setting_disabled_desc">Enable Material You</string>
-    <string name="material_you_setting_enabled_desc">Disable Material You</string>
-    <string name="material_you_error">This feature is only for devices running Android 12 or above.</string>
-    <string name="miscellaneous_setting_header">Miscellaneous</string>
-    <string name="license_setting">License &amp; Acknowledgements</string>
-    <string name="license_setting_desc">Open source licenses.</string>
-    <string name="about_setting">App Information</string>
-    <string name="about_setting_desc">Show App information &amp; useful links</string>
+    <string name="settings_header">ವ್ಯವಸ್ಥೆ </string>
+    <string name="app_desc"> ವಿಕಿಸೋರ್ಸ್ ಓದುಗ</string>
+    <string name="made_by"> ವಿಕಿಸೋರ್ಸ್ ಗಾಗಿ ಮಾಡಿದ್ದು ಸಿ ಐ ಎಸ್ ರಿಂದ</string>
+    <string name="general_settings_header"> ಸಾಮಾನ್ಯ</string>
+    <string name="default_reader_setting">  ಪೂರ್ವನಿಯೋಜಿತ Reader</string>
+    <string name="default_reader_dialog_title">ಇ-ಬುಕ್ ಗಳನ್ನು ತೆರೆಯಿರಿ ಇದರಿಂದ…</string>
+    <string name="reader_option_inbuilt">  ಪೂರ್ವನಿಯೋಜಿತ ಓದುಗ</string>
+    <string name="reader_option_external"> ಹೊರ ಓದುಗ</string>
+    <string name="default_locale_setting"> ಪೂರ್ವನಿಯೋಜಿತ ಭಾಷಾ ವ್ಯವಸ್ಥೆ</string>
+    <string name="default_locale_setting_desc"> ನಿಮ್ಮ ಇಷ್ಟದ ಭಾಷಾ ವ್ಯವಸ್ಥೆ ಆರಿಸಿಕೊಳ್ಳಿ.</string>
+    <string name="locale_setting_not_found"> ಕ್ಷಮಿಸಿ! ಈ ಭಾಷಾ ವ್ಯವಸ್ಥೆ ನಿಮ್ಮ ಫೋನ್ ನಲ್ಲಿ ಸಾಧ್ಯವಿಲ್ಲ .</string>
+    <string name="display_setting_header">ತೋರಿಕೆ </string>
+    <string name="theme_setting"> ಪೂರ್ವನಿಯೋಜಿತ ಥೀಂ</string>
+    <string name="theme_dialog_title"> ಥೀಂ ಬದಲಿಸಿ</string>
+    <string name="theme_option_light">ತಿಳಿ ಬಣ್ಣ</string>
+    <string name="theme_option_dark"> ಗಾಢ ಬಣ್ಣ</string>
+    <string name="theme_option_system"> ಪೂರ್ವನಿಯೋಜಿತ ಬಣ್ಣ</string>
+    <string name="theme_dialog_apply_button">ಅಪ್ಪಣೆ ಮಾಡಿ</string>
+    <string name="amoled_theme_setting"> ಕಪ್ಪು ಬಣ್ಣ</string>
+    <string name="amoled_theme_setting_disabled_desc"> ಕಪ್ಪು ಅಮೋಲೆಡ್ ಥೀಂ ಅಣಿ ಮಾಡಿ</string>
+    <string name="amoled_theme_setting_enabled_desc">  ಕಪ್ಪು ಅಮೋಲೆಡ್ ಥೀಂ ನಿಷೇಧಿಸಿ</string>
+    <string name="material_you_setting" translatable="false"> ಮೆಟೀರಿಯಲ್ ಯು</string>
+    <string name="material_you_setting_disabled_desc"> ಮೆಟೀರಿಯಲ್ ಯು ಅಣಿ ಮಾಡಿ</string>
+    <string name="material_you_setting_enabled_desc">ಮೆಟೀರಿಯಲ್ ಯು ನಿಷೇಧಿಸಿ</string>
+    <string name="material_you_error"> ಈ ಲಕ್ಷಣ, ಆಂಡ್ರಾಯ್ಡ್ ೧೨ ಮತ್ತು ಮೇಲಿನ ಫೋನ್ ಗಳಲ್ಲಿ ಮಾತ್ರ ಲಭ್ಯ.</string>
+    <string name="miscellaneous_setting_header"> ಇತರೆ</string>
+    <string name="license_setting">ಪರವಾನಗಿ  &amp; ಕೃತಜ್ಞತೆ</string>
+    <string name="license_setting_desc"> ಮುಕ್ತ ತಂತ್ರಾಂಶ ಪರವಾನಗಿ.</string>
+    <string name="about_setting"> ಆಪ್ ಮಾಹಿತಿ</string>
+    <string name="about_setting_desc"> ಆಪ್ ಮಾಹಿತಿ ಪ್ರದರ್ಶನ &amp; ಉಪಯುಕ್ತ ಕೊಂಡಿ</string>
 
     <!-- Books card -->
-    <string name="cover_image_desc">Book cover image</string>
+    <string name="cover_image_desc"> ಪುಸ್ತಕದ ಮುಖಪುಟ</string>
 
     <!-- Book Detail Screen -->
-    <string name="book_detail_header">Book Details</string>
-    <string name="back_button_desc">Go back.</string>
-    <string name="share_button_desc">Share this book.</string>
-    <string name="share_intent_header">Share this using…</string>
-    <string name="read_book_button">Start Reading</string>
-    <string name="download_book_button">Download</string>
-    <string name="download_started">Download Started!</string>
-    <string name="book_synopsis">Synopsis</string>
-    <string name="book_synopsis_not_found">Not available</string>
+    <string name="book_detail_header"> ಪುಸ್ತಕದ ಮಾಹಿತಿ</string>
+    <string name="back_button_desc"> ಹಿಂದಕ್ಕೆ.</string>
+    <string name="share_button_desc"> ಈ ಪುಸ್ತಕ ಹಂಚಿಕೊಳ್ಳಿ.</string>
+    <string name="share_intent_header"> ಇದರೊಡನೆ ಹಂಚಿಕೊಳ್ಳಿ…</string>
+    <string name="read_book_button"> ಓದಲು ಆರಂಭಿಸಿ</string>
+    <string name="download_book_button"> ನಕಲಿಳಿಸು</string>
+    <string name="download_started"> ನಕಲಿಳಿಸುವುದು ಶುರು!</string>
+    <string name="book_synopsis"> ತಿರುಳು</string>
+    <string name="book_synopsis_not_found"> ಅಲಭ್ಯ</string>
 
     <!-- About Screen -->
-    <string name="about_header">About</string>
-    <string name="about_desc">Read freely-licensed texts from Wikisource</string>
-    <string name="developed_by">Developed By</string>
-    <string name="dev_name" translatable="false">Starry Shivam</string>
-    <string name="project_contributors">Project Contributors</string>
-    <string name="project_contributors_desc">Meet our wonderful contributors.</string>
-    <string name="useful_links">Useful Links</string>
-    <string name="link_readme">README</string>
-    <string name="link_readme_desc">Checkout app\'s README on Github.</string>
-    <string name="shivam">Website</string>
-    <string name="link_website_desc">Visit our website for more information.</string>
-    <string name="link_privacy_policy">Privacy Policy</string>
-    <string name="link_privacy_policy_desc">Read our latest privacy policy.</string>
-    <string name="link_gh_issue">Github Issues</string>
-    <string name="link_gh_issue_desc">Create an issue on Github.</string>
-    <string name="link_telegram">Telegram Group</string>
-    <string name="link_telegram_desc">Hang out with us on Telegram!</string>
-    <string name="link_support">Support Development</string>
-    <string name="link_support_desc">Think I deserve cookies? Click here!</string>
+    <string name="about_header"> ಕುರಿತು</string>
+    <string name="about_desc"> ವಿಕಿಸೋರ್ಸ್ ನಿಂದ ಮುಕ್ತ ಪರವಾನಗಿ ಪುಸ್ತಕಗಳನ್ನು ಓದಿರಿ/string>
+    <string name="developed_by"> ರಚನೆ</string>
+    <string name="dev_name" translatable="false"> ಸ್ಟಾರಿ ಶಿವಂ </string>
+    <string name="project_contributors"> ಯೋಜನೆಗೆ ಸಹಕರಿಸಿದವರು</string>
+    <string name="project_contributors_desc"> ನಮ್ಮ ಜೊತೆ ಕೈಜೋಡಿಸಿದವರು.</string>
+    <string name="useful_links"> ಉಪಯುಕ್ತ ಕೊಂಡಿ</string>
+    <string name="link_readme"> ನನ್ನ ಬಗ್ಗೆ</string>
+    <string name="link_readme_desc"> ಆಪ್ ನ\'s ರೀಡ್ ಮೀ ನಲ್ಲಿ ಇದರ ಬಗ್ಗೆ ಓದಿ.</string>
+    <string name="shivam"> ಜಾಲತಾಣ</string>
+    <string name="link_website_desc"> ಹೆಚ್ಚು ಅರಿಯಲು ಜಾಲತಾಣದಲ್ಲಿ ಒದಿ.</string>
+    <string name="link_privacy_policy"> ಗುಪ್ತತೆ ನಿಲುವು</string>
+    <string name="link_privacy_policy_desc"> ಹೊಸ ಗುಪ್ತತೆ ನಿಲುವು ಓದಿ.</string>
+    <string name="link_gh_issue"> ಗಿಟ್ ಹಬ್ ಇಷ್ಯು</string>
+    <string name="link_gh_issue_desc"> ಗಿಟ್ ಹಬ್ ನಲ್ಲಿ ಹೊಸ ಇಷ್ಯು ತೆರೆಯಿರಿ.</string>
+    <string name="link_telegram"> ಟೆಲಿಗ್ರಾಂ ಗುಂಪು</string>
+    <string name="link_telegram_desc"> ಟೆಲಿಗ್ರಾಂನಲ್ಲಿ ನಮ್ಮ ಜೊತೆ ಬೆರೆಯಿರಿ!</string>
+    <string name="link_support"> ರಚನೆಗೆ ನೆರವಾಗಿ</string>
+    <string name="link_support_desc"> ನನಗೆ ಸಹಾಯ ಮಾಡುವಿರಾ, ಇಲ್ಲಿ ಒತ್ತಿ!</string>
 
     <!-- Open source libraries screen -->
-    <string name="open_source_licenses_header">Licenses</string>
-    <string name="category_collections">Collections</string>
-    <string name="category_novels">Novels</string>
-    <string name="category_plays">Plays</string>
-    <string name="category_poetry">Poetry</string>
-    <string name="category_stories">Stories</string>
-    <string name="category_essays">Essays</string>
-    <string name="developed_by_ws">Developed for Wikisource by</string>
-    <string name="based_on">Based on</string>
-    <string name="org_name">CIS A2K</string>
-    <string name="category_shortstories">Short Stories</string>
-    <string name="category_narration">Narration</string>
-    <string name="category_biography">Biography</string>
-    <string name="category_novella">Novella</string>
+    <string name="open_source_licenses_header"> ಪರವಾನಿಗೆಗಳು</string>
+    <string name="category_collections"> ಸಂಗ್ರಹ</string>
+    <string name="category_novels"> ಕಾದಂಬರಿಗಳು</string>
+    <string name="category_plays"> ನಾಟಕ</string>
+    <string name="category_poetry"> ಕವಿತೆ</string>
+    <string name="category_stories"> ಕಥೆ</string>
+    <string name="category_essays"> ಪ್ರಬಂಧ</string>
+    <string name="developed_by_ws"> ವಿಕಿಸೋರ್ಸ್ ಗಾಗಿ ರಚಿಸಿದ್ದು, ಇವರಿಂದ</string>
+    <string name="based_on"> ಇದರ ನೆರವಿನಿಂದ </string>
+    <string name="org_name"> ಸಿ ಐ ಎಸ್ ಎ೨ಕೆ</string>
+    <string name="category_shortstories"> ಸಣ್ನ ಕಥೆ</string>
+    <string name="category_narration"> ನಿರೂಪಣೆ</string>
+    <string name="category_biography"> ಜೀವನ ಚರಿತ್ರೆ</string>
+    <string name="category_novella"> ಬೃಹತ್ ಕಾದಂಬರಿ</string>
 
-    <string name="epubactivity_drm_info">DRM Info</string>
-    <string name="epubactivity_set_bookmark">Add a bookmark</string>
-    <string name="epubactivity_settings">User Settings</string>
-    <string name="epubactivity_book_nav_options">Book navigation menu</string>
-    <string name="epubactivity_read_aloud_start">Read Aloud</string>
-    <string name="epubactivity_search">Search</string>
+    <string name="epubactivity_drm_info"> ಡಿಆರ್ ಎಂ ಮಾಹಿತಿ</string>
+    <string name="epubactivity_set_bookmark"> ಪುಟಗುರುತು ಇಡಿ</string>
+    <string name="epubactivity_settings"> ಓದುಗರ ವ್ಯವಸ್ಥೆ</string>
+    <string name="epubactivity_book_nav_options"> ಪುಸ್ತಕ ಓದುವ ಮೆನು</string>
+    <string name="epubactivity_read_aloud_start"> ಜೋರಾಗಿ ಓದು</string>
+    <string name="epubactivity_search"> ಹುಡುಕಿ</string>
 
-    <string name="title_fragment_drm_management">DRM Management</string>
-    <string name="more_options">More Options</string>
-    <string name="popup_delete_button">DELETE</string>
+    <string name="title_fragment_drm_management"> ಡಿಆರ್ ಎಂ  ನಿರ್ವಹಣೆ</string>
+    <string name="more_options"> ಹೆಚ್ಚಿನ ಆಯ್ಕೆ</string>
+    <string name="popup_delete_button"> ಅಳಿಸಿಹಾಕಿ</string>
 
-    <string name="app_version_header">Version</string>
-    <string name="app_version_label">App Version:</string>
-    <string name="app_version">2.2.0</string>
-    <string name="github_tab_label">GitHub Tag:</string>
-    <string name="github_tag">2.2.0</string>
+    <string name="app_version_header">ಆವೃತ್ತಿ</string>
+    <string name="app_version_label"> ಆಪ್ ಆವೃತ್ತಿ:</string>
+    <string name="app_version"> ೨.೨.೦</string>
+    <string name="github_tab_label"> ಗಿಟ್ ಹಬ್ ಟ್ಯಾಗ್:</string>
+    <string name="github_tag"> ೨.೨.೦</string>
 
-    <string name="copyright_label">Copyright</string>
-    <string name="copyright">\@ 2019 European Digital Reading Lab</string>
-    <string name="bsd_license_label">[BSD-3 license]</string>
-    <string name="bsd_license_label_accessible">[B S D 3 license]</string>
-    <string name="acknowledgements_label">Acknowledgements</string>
-    <string name="acknowledgements_french_state">R2 Reader wouldn\'t have been developed without the financial help of the French state.</string>
-    <string name="catalog_list_more">More</string>
-
-
-    <string name="drm_information_header">INFORMATION</string>
+    <string name="copyright_label">ಹಕ್ಕುಗಳು</string>
+    <string name="copyright">\@ ೦೧೯ ಯುರೋಪಿಯನ್ ರೀಡಿಂಗ್ ಲ್ಯಾಬ್</string>
+    <string name="bsd_license_label">[ಬಿಎಸ್ ಡಿ ಪರವಾನಗಿ-೩]</string>
+    <string name="bsd_license_label_accessible">[ಬಿಎಸ್ ಡಿ ಪರವಾನಗಿ-೩]</string>
+    <string name="acknowledgements_label"> ಕೃತಜ್ಞತೆ</string>
+    <string name="acknowledgements_french_state> ಫ್ರೆಂಚ್ ದೇಶದ ನೆರವಿಲಲ್ಲದೆ, ಆರ್ ೨ ಓದುಗ ತಯಾರಿ ಆಗುತ್ತಿರಲಿಲ್ಲ.</string>
+    <string name="catalog_list_more"> ಇನ್ನೂ ಹೆಚ್ಚು</string>
 
 
-    <string name="zero">00:00</string>
-    <string name="chapter_page">Chapter / Page</string>
-    <string name="progression">Progression</string>
-    <string name="timestamp">Timestamp</string>
+    <string name="drm_information_header"> ಮಾಹಿತಿ</string>
+
+
+    <string name="zero"> ೦೦:೦೦</string>
+    <string name="chapter_page"> ಅಧ್ಯಾಯ / ಪುಟ</string>
+    <string name="progression"> ಓದಿನ ಪ್ರಗತಿ</string>
+    <string name="timestamp"> ಪ್ರಸಕ್ತ ಸಮಯ </string>
 
     <!-- Outlines -->
-    <string name="contents_tab_label">Contents</string>
-    <string name="bookmarks_tab_label">Bookmarks</string>
-    <string name="highlights_tab_label">Highlights</string>
-    <string name="pagelist_tab_label">Page List</string>
-    <string name="landmarks_tab_label">Landmarks</string>
-    <string name="action_mode_menu_highlight">Highlight</string>
-    <string name="action_mode_menu_underline">Underline</string>
-    <string name="action_mode_menu_note">Note</string>
-    <string name="bookmark_added">Bookmark added</string>
-    <string name="bookmark_exists">Bookmark already exists</string>
+    <string name="contents_tab_label"> ಪರಿವಿಡಿ</string>
+    <string name="bookmarks_tab_label"> ಪುಟಗುರುತುಗಳು</string>
+    <string name="highlights_tab_label"> ಮುಖ್ಯಾಂಶ</string>
+    <string name="pagelist_tab_label"> ಪುಟಗಳ ಪಟ್ಟಿ</string>
+    <string name="landmarks_tab_label"> ಹೆಗ್ಗುರುತುಗಳು</string>
+    <string name="action_mode_menu_highlight"> ಗಮನಾರ್ಹವಾದವು</string>
+    <string name="action_mode_menu_underline">ಅಡಿಗೆರೆ</string>
+    <string name="action_mode_menu_note">ಟಿಪ್ಪಣಿ</string>
+    <string name="bookmark_added">ಪುಟಗುರುತು ಹಾಕಿ ಆಯ್ತು</string>
+    <string name="bookmark_exists">ಪುಟಗುರುತು ಈಗಾಗಲೇ ಇದೆ</string>
 
-    <string name="title_catalogs">Catalogs</string>
-    <string name="title_bookshelf">Bookshelf</string>
-    <string name="title_about">About</string>
-    <string name="cover_image">Cover Image</string>
+    <string name="title_catalogs">ಪಟ್ಟಿ</string>
+    <string name="title_bookshelf">ಪುಸ್ತಕ ಕಪಾಟು</string>
+    <string name="title_about">ಕುರಿತು</string>
+    <string name="cover_image">ಮುಖಪುಟ ಚಿತ್ರ</string>
     <string name="repfr">repfr</string>
 
-    <string name="details">Details</string>
-    <string name="close">Close</string>
-    <string name="delete">Delete</string>
+    <string name="details">ಮಾಹಿತಿ</string>
+    <string name="close">ಮುಚ್ಚಿರಿ</string>
+    <string name="delete">ಅಳಿಸಿಹಾಕಿ</string>
     <string name="confirm_delete_book_title">Delete Book?</string>
     <string name="confirm_delete_book_text">Are you sure you want to delete this book?</string>
     <string name="confirm_delete_catalog_title">Delete Catalog?</string>
