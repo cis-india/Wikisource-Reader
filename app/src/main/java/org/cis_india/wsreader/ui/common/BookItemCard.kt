@@ -109,7 +109,7 @@ fun BookItemCard(
                     )
                 } else {
                     AsyncImage(
-                        model = ImageRequest.Builder(LocalContext.current).data(coverImageUrl)
+                        model = ImageRequest.Builder(LocalContext.current).data(coverImageUrl.replace("?", "%3F"))
                             .crossfade(true).build(),
                         placeholder = painterResource(id = R.drawable.placeholder_cat),
                         contentDescription = stringResource(id = R.string.cover_image_desc),
