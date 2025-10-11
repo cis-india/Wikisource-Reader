@@ -251,7 +251,7 @@ fun HomeScreenContents(
                 networkStatus = networkStatus,
                 navController = navController,
                 onRetryClicked = { viewModel.reloadItems() },
-                onLoadNextItems = { viewModel.loadNextItems() }
+                onLoadNextItems = { viewModel.loadNextItems() },
             )
         } else {
             SearchBookList(searchBarState = topBarState, navController = navController)
@@ -310,13 +310,8 @@ private fun AllBooksList(
                         .fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
-                    val firstLanguage = item.languages.firstOrNull() ?: "en"
                     var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors)) }
 
-                    LaunchedEffect(item.authors, firstLanguage) {
-                        val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage)
-                        authors = authorsString // Update the authors state once the data is fetched
-                    }
                     BookItemCard(
                         title = item.titleNativeLanguage ?: item.title,
                         author = authors,
