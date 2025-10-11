@@ -251,7 +251,7 @@ fun HomeScreenContents(
                 networkStatus = networkStatus,
                 navController = navController,
                 onRetryClicked = { viewModel.reloadItems() },
-                onLoadNextItems = { viewModel.loadNextItems() },
+                onLoadNextItems = { viewModel.loadNextItems() }
             )
         } else {
             SearchBookList(searchBarState = topBarState, navController = navController)
