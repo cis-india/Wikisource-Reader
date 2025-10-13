@@ -73,6 +73,7 @@ import org.readium.r2.navigator.input.TapEvent
 import org.readium.r2.navigator.util.BaseActionModeCallback
 import org.readium.r2.navigator.util.DirectionalNavigationAdapter
 import org.readium.r2.shared.ExperimentalReadiumApi
+import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.readium.r2.shared.publication.Locator
 import org.readium.r2.shared.util.Language
 import org.cis_india.wsreader.R
@@ -122,9 +123,20 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
 
         navigatorFragment = navigator as Fragment
 
+        // Get user preference for vertical swipe navigation
+        val preferenceUtil = PreferenceUtil(requireContext())
+        val useVerticalSwipe = preferenceUtil.getBoolean(
+            PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL,
+            false
+        )
+
         (navigator as OverflowableNavigator).apply {
-            // This will automatically turn pages when tapping the screen edges or arrow keys.
-            addInputListener(DirectionalNavigationAdapter(this))
+            // Use VerticalNavigationAdapter if enabled, otherwise use DirectionalNavigationAdapter
+            if (useVerticalSwipe) {
+                addInputListener(VerticalNavigationAdapter(this))
+            } else {
+                addInputListener(DirectionalNavigationAdapter(this))
+            }
         }
 
         (navigator as VisualNavigator).apply {

@@ -46,6 +46,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocalPolice
 import androidx.compose.material.icons.filled.Palette
+import androidx.compose.material.icons.filled.SwipeVertical
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -285,6 +286,14 @@ private fun DisplayOptionsUI(
         stringResource(id = R.string.material_you_setting_disabled_desc)
     }
 
+    // Display settings for the Vertical Swipe Navigation
+    val verticalSwipeSwitch = remember { mutableStateOf(viewModel.getVerticalSwipeNavigation()) }
+    val verticalSwipeDesc = if (verticalSwipeSwitch.value) {
+        stringResource(id = R.string.vertical_swipe_navigation_enabled_desc)
+    } else {
+        stringResource(id = R.string.vertical_swipe_navigation_disabled_desc)
+    }
+
     Column(
         modifier = Modifier
             .padding(horizontal = 14.dp)
@@ -327,6 +336,16 @@ private fun DisplayOptionsUI(
                     materialYouSwitch.value = false
                     coroutineScope.launch { snackBarHostState.showSnackbar(context.getString(R.string.material_you_error)) }
                 }
+            }
+        )
+        SettingItemWIthSwitch(
+            icon = Icons.Filled.SwipeVertical,
+            mainText = stringResource(id = R.string.vertical_swipe_navigation_setting),
+            subText = verticalSwipeDesc,
+            switchState = verticalSwipeSwitch,
+            onCheckChange = {
+                viewModel.setVerticalSwipeNavigation(it)
+                verticalSwipeSwitch.value = it
             }
         )
     }

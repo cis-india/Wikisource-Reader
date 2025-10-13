@@ -69,6 +69,10 @@ class SettingsViewModel @Inject constructor(
         preferenceUtil.putBoolean(PreferenceUtil.INTERNAL_READER_BOOL, newValue)
     }
 
+    fun setVerticalSwipeNavigation(newValue: Boolean) {
+        preferenceUtil.putBoolean(PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL, newValue)
+    }
+
     // Getters ================================================================================
 
     fun getThemeValue() = preferenceUtil.getInt(
@@ -85,6 +89,10 @@ class SettingsViewModel @Inject constructor(
 
     fun getInternalReaderValue() = preferenceUtil.getBoolean(
         PreferenceUtil.INTERNAL_READER_BOOL, true
+    )
+
+    fun getVerticalSwipeNavigation() = preferenceUtil.getBoolean(
+        PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL, false
     )
 
     @Composable

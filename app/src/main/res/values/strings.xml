@@ -105,6 +105,9 @@
     <string name="default_locale_setting_desc">Select your preferred locale.</string>
     <string name="locale_setting_not_found">Sorry! this feature is not yet supported by your OS.</string>
     <string name="display_setting_header">Display</string>
+    <string name="vertical_swipe_navigation_setting">Vertical Swipe Navigation</string>
+    <string name="vertical_swipe_navigation_enabled_desc">Swipe up/down to navigate pages</string>
+    <string name="vertical_swipe_navigation_disabled_desc">Swipe left/right to navigate pages</string>
     <string name="theme_setting">Default Theme</string>
     <string name="theme_dialog_title">Change Theme</string>
     <string name="theme_option_light">Light</string>
