@@ -1,0 +1,333 @@
+<resources>
+    <string name="app_name" translatable="false">Wikisource Reader</string>
+    <!-- Others Strings -->
+    <string name="not_applicable">ಅನ್ವಯ ಆಗದು</string>
+    <string name="woops">"ಅಯ್ಯೋ"</string>
+    <string name="confirm">ಓಕೆ ನಾ</string>
+    <string name="cancel">ರದ್ದು ಮಾಡಿ</string>
+    <string name="ok">ಆಲ್ ರೈಟ್</string>
+    <string name="got_it">ಗೊತ್ತಾಯ್ತ್ತು</string>
+    <string name="no_app_to_handle_epub">ಏಪಬ್ ಕಡತ ತೆಗೆಯೋಖೆ ಯವುದೂ ಆಪ್ ಸಿಗುತ್ತಿಲ್ಲ.</string>
+    <string name="network_error">ಅಯ್ಯೋ ! ಸರ್ವರ್ ಗೆ ಬೆಸುಗೆ ಆಗುತ್ತಿಲ್ಲ.</string>
+    <string name="network_error_retry">ಮರಳಿ ಯತ್ನವ ಮಾಡಿ</string>
+    <string name="error">ಅಯ್ಯೋ. ಏನೋ ತಪ್ಪಾಗಿದೆ</string>
+    <string name="no_app_to_handle_content">ಇದನ್ನು ತೋರಿಸಲು ಯಾವುದೂ ಆಪ್ ಇಲ್ಲವಲ್ಲ.</string>
+
+    <!-- Navigation titles -->
+    <string name="navigation_home">ಮನೆ</string>
+    <string name="navigation_categories">ವರ್ಗಗಳು</string>
+    <string name="navigation_library">ಗ್ರಂಥಾಲಯ</string>
+    <string name="navigation_settings">ಸಂಯೋಜನೆ,</string>
+
+    <!-- ToolTips -->
+    <string name="library_tooltip">ಗುಟ್ಟು!ಪುಸ್ತಕದ ಮಾಹಿತಿ ನೋಡಲು ಎಡಕ್ಕೆ ಅಥವಾ ಬಲಕ್ಕೆ ಬೆರಳು ಆಡಿಸಿ.</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_screen_title">ವಿಕಿಸೋರ್ಸ್ ರೀಡರ್ ಬಳಕೆ ಮಾಡಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು!</string>
+    <string name="welcome_screen_desc">ನಿಮ್ಮ ಇಷ್ಟದ ಈಬುಕ್ ರೀಡರ್ ಬಳಸಿ ಓದಿನ ಪ್ರಯಾಣ ಶುರು ಮಾಡಿ..</string>
+    <string name="welcome_screen_button">ಆಲ್ ರೈಟ್, ಮುಂದಕ್ಕೆ ಹೋಗೋಣ</string>
+
+    <!-- Home screen. -->
+    <string name="home_header">ಎಲ್ಲಾ ಪುಸ್ತಕಗಳು</string>
+    <string name="home_language_icon_desc">ಭಾಷೆ ಪ್ರಕಾರ ವಿಂಗಡಣೆ</string>
+    <string name="home_search_icon_desc">ಪುಸ್ತಕ ಹುಡುಕಿ</string>
+    <string name="language_menu_title">ಭಾಷೆ ಬಳಸಿ ಜಾಲಾಡಿ</string>
+
+    <!-- Categories screen. -->
+    <string name="categories_header">ವರ್ಗಗಳು</string>
+    <string name="no_books_found_for_lang_and_cat">ಈ ವರ್ಗದಲ್ಲಿ,  %s ಭಾಷೆಯ ಯಾವುದೇ ಪುಸ್ತಕ ಇಲ್ಲ.</string>
+    <!-- Categories -->
+    <string name="category_children">ಚಿಣ್ಣರು</string>
+    <string name="category_classics">ಉತ್ಕೃಷ್ಟ</string>
+    <string name="category_countries">ದೇಶಗಳು</string>
+    <string name="category_crime">ಅಪರಾಧ</string>
+    <string name="category_education">ಶಿಕ್ಷಣ</string>
+    <string name="category_fiction">ಕಾದಂಬರಿ</string>
+    <string name="category_geography">Bಊಗೋಳ</string>
+    <string name="category_history">ಇತಿಹಾಸ</string>
+    <string name="category_literature">ಸಾಹಿತ್ಯ</string>
+    <string name="category_law">ಕಾನೂನು</string>
+    <string name="category_music">ಸಂಗೀತ</string>
+    <string name="category_periodicals">ಪತ್ರಿಕೆಗಳೂ</string>
+    <string name="category_psychology">ಮನಶ್ಶಾತ್ರ</string>
+    <string name="category_philosophy">ತತ್ತ್ವಶಾಸ್ತ್ರ</string>
+    <string name="category_religion">ಧರ್ಮ</string>
+    <string name="category_romance">ಪ್ರಣಯ</string>
+    <string name="category_science">ವಿಜ್ಞಾನ</string>
+
+    <!-- Library screen. -->
+    <string name="library_header">ಗ್ರಂಥಾಲಯ</string>
+    <string name="empty_library">ಇಲ್ಲಿ ಏನೂ ಇಲ್ಲ!</string>
+    <string name="import_button_text">ಆಮದು</string>
+    <string name="import_button_onboarding"> ನಿಮ್ಮ ಸ್ವಂತ ಪುಸ್ತಕ ಆಮದು ಮಾಡಿರಿ!</string>
+    <string name="import_button_onboarding_desc"> ಇದೀಗ, ನಿಮ್ಮ ಸ್ವಂತ ಈಪಬ್ ಪುಸ್ತಕ ಆಮದು ಮಾಡಿ, ಓದಿರಿ</string>
+    <string name="import_button_desc">ಈಪಬ್ ಪುಸ್ತಕ ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ</string>
+    <string name="external_book_info_unavailable"> ಒಳಗಿರುವ ಪುಸ್ತಕಗಳಿಗೆ ಮಾತ್ರ ಲಭ್ಯ.</string>
+    <string name="epub_importing"> ಆಮದು ಆಗ್ತಾ ಇದೆ… \n ಸ್ವಲ್ಪ ತಾಳಿ.</string>
+    <string name="epub_imported"> ಆಮದು ಮುಗೀತು!</string>
+    <string name="epub_import_error"> ಆಮದು ಪೂರ್ತಿ ಆಗಲಿಲ್ಲ!</string>
+    <string name="open_app_chooser"> ರೊಂದಿಗೆ ತೆರೆಯಿರಿ…</string>
+    <string name="share_app_chooser"> ರೊಂದಿಗೆ ಹಂಚಿರಿ…</string>
+    <string name="library_read_button">ಓದಿರಿ</string>
+    <string name="library_delete_button">ಅಳಿಸಿಹಾಕಿ</string>
+    <string name="library_delete_dialog_title"> ಗ್ಯಾರಂಟಿ ಅಳಿಸಿಹಾಕೋದಾ ?</string>
+
+    <!-- Reader Detail Screen -->
+    <string name="reader_detail_header"> ಈಬುಕ್ ಓದುಕ</string>
+    <string name="start_reading_button"> ಆರಂಭ</string>
+    <string name="continue_reading_button">ಮತ್ತೆ ಆರಂಭ</string>
+    <string name="reader_chapters_list">ಅಧ್ಯಾಯಗಳು</string>
+
+    <!--Reader Screen -->
+    <string name="reader_max_font_size_reached"> ಕ್ಷಮಿಸಿ, ಇದಕ್ಕಿಂತ ದೊಡ್ಡದು ಮಾಡಲಾಗದು!</string>
+    <string name="reader_min_font_size_reached"> ಷಮಿಸಿ, ಇದಕ್ಕಿಂತ ಚಿಕ್ಕದು ಮಾಡಲಾಗದು!</string>
+    <string name="reader_font_style_chooser"> ಅಕ್ಷರ ಶೈಲಿ ಬದಲಿಸಿ</string>
+    <string name="reader_chapter_list_title"> ಅಧ್ಯಾಯಗಳು</string>
+
+    <!-- Text selection -->
+    <string name="copy"> ಅಚ್ಚು ಮಾಡಿ</string>
+    <string name="copied"> ಅಚ್ಚು ಆಯ್ತು!</string>
+    <string name="web_search"> ಅಂತರ್ಜಾಲದಲ್ಲಿ ಹುಡುಕಿ</string>
+    <string name="share"> ಹಂಚಿಕೊಳ್ಳಿ </string>
+    <string name="translate"> ಅನುವಾದಿಸಿ</string>
+    <string name="dictionary"> ಅರ್ಥ</string>
+
+    <!-- Settings screen. -->
+    <string name="settings_header">ವ್ಯವಸ್ಥೆ </string>
+    <string name="app_desc"> ವಿಕಿಸೋರ್ಸ್ ಓದುಗ</string>
+    <string name="made_by"> ವಿಕಿಸೋರ್ಸ್ ಗಾಗಿ ಮಾಡಿದ್ದು ಸಿ ಐ ಎಸ್ ರಿಂದ</string>
+    <string name="general_settings_header"> ಸಾಮಾನ್ಯ</string>
+    <string name="default_reader_setting">  ಪೂರ್ವನಿಯೋಜಿತ Reader</string>
+    <string name="default_reader_dialog_title">ಇ-ಬುಕ್ ಗಳನ್ನು ತೆರೆಯಿರಿ ಇದರಿಂದ…</string>
+    <string name="reader_option_inbuilt">  ಪೂರ್ವನಿಯೋಜಿತ ಓದುಗ</string>
+    <string name="reader_option_external"> ಹೊರ ಓದುಗ</string>
+    <string name="default_locale_setting"> ಪೂರ್ವನಿಯೋಜಿತ ಭಾಷಾ ವ್ಯವಸ್ಥೆ</string>
+    <string name="default_locale_setting_desc"> ನಿಮ್ಮ ಇಷ್ಟದ ಭಾಷಾ ವ್ಯವಸ್ಥೆ ಆರಿಸಿಕೊಳ್ಳಿ.</string>
+    <string name="locale_setting_not_found"> ಕ್ಷಮಿಸಿ! ಈ ಭಾಷಾ ವ್ಯವಸ್ಥೆ ನಿಮ್ಮ ಫೋನ್ ನಲ್ಲಿ ಸಾಧ್ಯವಿಲ್ಲ .</string>
+    <string name="display_setting_header">ತೋರಿಕೆ </string>
+    <string name="theme_setting"> ಪೂರ್ವನಿಯೋಜಿತ ಥೀಂ</string>
+    <string name="theme_dialog_title"> ಥೀಂ ಬದಲಿಸಿ</string>
+    <string name="theme_option_light">ತಿಳಿ ಬಣ್ಣ</string>
+    <string name="theme_option_dark"> ಗಾಢ ಬಣ್ಣ</string>
+    <string name="theme_option_system"> ಪೂರ್ವನಿಯೋಜಿತ ಬಣ್ಣ</string>
+    <string name="theme_dialog_apply_button">ಅಪ್ಪಣೆ ಮಾಡಿ</string>
+    <string name="amoled_theme_setting"> ಕಪ್ಪು ಬಣ್ಣ</string>
+    <string name="amoled_theme_setting_disabled_desc"> ಕಪ್ಪು ಅಮೋಲೆಡ್ ಥೀಂ ಅಣಿ ಮಾಡಿ</string>
+    <string name="amoled_theme_setting_enabled_desc">  ಕಪ್ಪು ಅಮೋಲೆಡ್ ಥೀಂ ನಿಷೇಧಿಸಿ</string>
+    <string name="material_you_setting" translatable="false"> ಮೆಟೀರಿಯಲ್ ಯು</string>
+    <string name="material_you_setting_disabled_desc"> ಮೆಟೀರಿಯಲ್ ಯು ಅಣಿ ಮಾಡಿ</string>
+    <string name="material_you_setting_enabled_desc">ಮೆಟೀರಿಯಲ್ ಯು ನಿಷೇಧಿಸಿ</string>
+    <string name="material_you_error"> ಈ ಲಕ್ಷಣ, ಆಂಡ್ರಾಯ್ಡ್ ೧೨ ಮತ್ತು ಮೇಲಿನ ಫೋನ್ ಗಳಲ್ಲಿ ಮಾತ್ರ ಲಭ್ಯ.</string>
+    <string name="miscellaneous_setting_header"> ಇತರೆ</string>
+    <string name="license_setting">ಪರವಾನಗಿ  &amp; ಕೃತಜ್ಞತೆ</string>
+    <string name="license_setting_desc"> ಮುಕ್ತ ತಂತ್ರಾಂಶ ಪರವಾನಗಿ.</string>
+    <string name="about_setting"> ಆಪ್ ಮಾಹಿತಿ</string>
+    <string name="about_setting_desc"> ಆಪ್ ಮಾಹಿತಿ ಪ್ರದರ್ಶನ &amp; ಉಪಯುಕ್ತ ಕೊಂಡಿ</string>
+
+    <!-- Books card -->
+    <string name="cover_image_desc"> ಪುಸ್ತಕದ ಮುಖಪುಟ</string>
+
+    <!-- Book Detail Screen -->
+    <string name="book_detail_header"> ಪುಸ್ತಕದ ಮಾಹಿತಿ</string>
+    <string name="back_button_desc"> ಹಿಂದಕ್ಕೆ.</string>
+    <string name="share_button_desc"> ಈ ಪುಸ್ತಕ ಹಂಚಿಕೊಳ್ಳಿ.</string>
+    <string name="share_intent_header"> ಇದರೊಡನೆ ಹಂಚಿಕೊಳ್ಳಿ…</string>
+    <string name="read_book_button"> ಓದಲು ಆರಂಭಿಸಿ</string>
+    <string name="download_book_button"> ನಕಲಿಳಿಸು</string>
+    <string name="download_started"> ನಕಲಿಳಿಸುವುದು ಶುರು!</string>
+    <string name="book_synopsis"> ತಿರುಳು</string>
+    <string name="book_synopsis_not_found"> ಅಲಭ್ಯ</string>
+
+    <!-- About Screen -->
+    <string name="about_header"> ಕುರಿತು</string>
+    <string name="about_desc"> ವಿಕಿಸೋರ್ಸ್ ನಿಂದ ಮುಕ್ತ ಪರವಾನಗಿ ಪುಸ್ತಕಗಳನ್ನು ಓದಿರಿ/string>
+    <string name="developed_by"> ರಚನೆ</string>
+    <string name="dev_name" translatable="false"> ಸ್ಟಾರಿ ಶಿವಂ </string>
+    <string name="project_contributors"> ಯೋಜನೆಗೆ ಸಹಕರಿಸಿದವರು</string>
+    <string name="project_contributors_desc"> ನಮ್ಮ ಜೊತೆ ಕೈಜೋಡಿಸಿದವರು.</string>
+    <string name="useful_links"> ಉಪಯುಕ್ತ ಕೊಂಡಿ</string>
+    <string name="link_readme"> ನನ್ನ ಬಗ್ಗೆ</string>
+    <string name="link_readme_desc"> ಆಪ್ ನ\'s ರೀಡ್ ಮೀ ನಲ್ಲಿ ಇದರ ಬಗ್ಗೆ ಓದಿ.</string>
+    <string name="shivam"> ಜಾಲತಾಣ</string>
+    <string name="link_website_desc"> ಹೆಚ್ಚು ಅರಿಯಲು ಜಾಲತಾಣದಲ್ಲಿ ಒದಿ.</string>
+    <string name="link_privacy_policy"> ಗುಪ್ತತೆ ನಿಲುವು</string>
+    <string name="link_privacy_policy_desc"> ಹೊಸ ಗುಪ್ತತೆ ನಿಲುವು ಓದಿ.</string>
+    <string name="link_gh_issue"> ಗಿಟ್ ಹಬ್ ಇಷ್ಯು</string>
+    <string name="link_gh_issue_desc"> ಗಿಟ್ ಹಬ್ ನಲ್ಲಿ ಹೊಸ ಇಷ್ಯು ತೆರೆಯಿರಿ.</string>
+    <string name="link_telegram"> ಟೆಲಿಗ್ರಾಂ ಗುಂಪು</string>
+    <string name="link_telegram_desc"> ಟೆಲಿಗ್ರಾಂನಲ್ಲಿ ನಮ್ಮ ಜೊತೆ ಬೆರೆಯಿರಿ!</string>
+    <string name="link_support"> ರಚನೆಗೆ ನೆರವಾಗಿ</string>
+    <string name="link_support_desc"> ನನಗೆ ಸಹಾಯ ಮಾಡುವಿರಾ, ಇಲ್ಲಿ ಒತ್ತಿ!</string>
+
+    <!-- Open source libraries screen -->
+    <string name="open_source_licenses_header"> ಪರವಾನಿಗೆಗಳು</string>
+    <string name="category_collections"> ಸಂಗ್ರಹ</string>
+    <string name="category_novels"> ಕಾದಂಬರಿಗಳು</string>
+    <string name="category_plays"> ನಾಟಕ</string>
+    <string name="category_poetry"> ಕವಿತೆ</string>
+    <string name="category_stories"> ಕಥೆ</string>
+    <string name="category_essays"> ಪ್ರಬಂಧ</string>
+    <string name="developed_by_ws"> ವಿಕಿಸೋರ್ಸ್ ಗಾಗಿ ರಚಿಸಿದ್ದು, ಇವರಿಂದ</string>
+    <string name="based_on"> ಇದರ ನೆರವಿನಿಂದ </string>
+    <string name="org_name"> ಸಿ ಐ ಎಸ್ ಎ೨ಕೆ</string>
+    <string name="category_shortstories"> ಸಣ್ನ ಕಥೆ</string>
+    <string name="category_narration"> ನಿರೂಪಣೆ</string>
+    <string name="category_biography"> ಜೀವನ ಚರಿತ್ರೆ</string>
+    <string name="category_novella"> ಬೃಹತ್ ಕಾದಂಬರಿ</string>
+
+    <string name="epubactivity_drm_info"> ಡಿಆರ್ ಎಂ ಮಾಹಿತಿ</string>
+    <string name="epubactivity_set_bookmark"> ಪುಟಗುರುತು ಇಡಿ</string>
+    <string name="epubactivity_settings"> ಓದುಗರ ವ್ಯವಸ್ಥೆ</string>
+    <string name="epubactivity_book_nav_options"> ಪುಸ್ತಕ ಓದುವ ಮೆನು</string>
+    <string name="epubactivity_read_aloud_start"> ಜೋರಾಗಿ ಓದು</string>
+    <string name="epubactivity_search"> ಹುಡುಕಿ</string>
+
+    <string name="title_fragment_drm_management"> ಡಿಆರ್ ಎಂ  ನಿರ್ವಹಣೆ</string>
+    <string name="more_options"> ಹೆಚ್ಚಿನ ಆಯ್ಕೆ</string>
+    <string name="popup_delete_button"> ಅಳಿಸಿಹಾಕಿ</string>
+
+    <string name="app_version_header">ಆವೃತ್ತಿ</string>
+    <string name="app_version_label"> ಆಪ್ ಆವೃತ್ತಿ:</string>
+    <string name="app_version"> ೨.೨.೦</string>
+    <string name="github_tab_label"> ಗಿಟ್ ಹಬ್ ಟ್ಯಾಗ್:</string>
+    <string name="github_tag"> ೨.೨.೦</string>
+
+    <string name="copyright_label">ಹಕ್ಕುಗಳು</string>
+    <string name="copyright">\@ ೦೧೯ ಯುರೋಪಿಯನ್ ರೀಡಿಂಗ್ ಲ್ಯಾಬ್</string>
+    <string name="bsd_license_label">[ಬಿಎಸ್ ಡಿ ಪರವಾನಗಿ-೩]</string>
+    <string name="bsd_license_label_accessible">[ಬಿಎಸ್ ಡಿ ಪರವಾನಗಿ-೩]</string>
+    <string name="acknowledgements_label"> ಕೃತಜ್ಞತೆ</string>
+    <string name="acknowledgements_french_state> ಫ್ರೆಂಚ್ ದೇಶದ ನೆರವಿಲಲ್ಲದೆ, ಆರ್ ೨ ಓದುಗ ತಯಾರಿ ಆಗುತ್ತಿರಲಿಲ್ಲ.</string>
+    <string name="catalog_list_more"> ಇನ್ನೂ ಹೆಚ್ಚು</string>
+
+
+    <string name="drm_information_header"> ಮಾಹಿತಿ</string>
+
+
+    <string name="zero"> ೦೦:೦೦</string>
+    <string name="chapter_page"> ಅಧ್ಯಾಯ / ಪುಟ</string>
+    <string name="progression"> ಓದಿನ ಪ್ರಗತಿ</string>
+    <string name="timestamp"> ಪ್ರಸಕ್ತ ಸಮಯ </string>
+
+    <!-- Outlines -->
+    <string name="contents_tab_label"> ಪರಿವಿಡಿ</string>
+    <string name="bookmarks_tab_label"> ಪುಟಗುರುತುಗಳು</string>
+    <string name="highlights_tab_label"> ಮುಖ್ಯಾಂಶ</string>
+    <string name="pagelist_tab_label"> ಪುಟಗಳ ಪಟ್ಟಿ</string>
+    <string name="landmarks_tab_label"> ಹೆಗ್ಗುರುತುಗಳು</string>
+    <string name="action_mode_menu_highlight"> ಗಮನಾರ್ಹವಾದವು</string>
+    <string name="action_mode_menu_underline">ಅಡಿಗೆರೆ</string>
+    <string name="action_mode_menu_note">ಟಿಪ್ಪಣಿ</string>
+    <string name="bookmark_added">ಪುಟಗುರುತು ಹಾಕಿ ಆಯ್ತು</string>
+    <string name="bookmark_exists">ಪುಟಗುರುತು ಈಗಾಗಲೇ ಇದೆ</string>
+
+    <string name="title_catalogs">ಪಟ್ಟಿ</string>
+    <string name="title_bookshelf">ಪುಸ್ತಕ ಕಪಾಟು</string>
+    <string name="title_about">ಕುರಿತು</string>
+    <string name="cover_image">ಮುಖಪುಟ ಚಿತ್ರ</string>
+    <string name="repfr">repfr</string>
+
+    <string name="details">ಮಾಹಿತಿ</string>
+    <string name="close">ಮುಚ್ಚಿರಿ</string>
+    <string name="delete">ಅಳಿಸಿಹಾಕಿ</string>
+    <string name="confirm_delete_book_title">Delete Book?</string>
+    <string name="confirm_delete_book_text">Are you sure you want to delete this book?</string>
+    <string name="confirm_delete_catalog_title">Delete Catalog?</string>
+    <string name="confirm_delete_catalog_text">Are you sure you want to delete this Catalog feed?</string>
+
+    <string name="add_book">Add a Book</string>
+    <string name="add_catalog">Add an Catalog Feed</string>
+    <string name="save">Save</string>
+    <string name="enter_title">Enter the Title</string>
+    <string name="enter_url">Enter the URL</string>
+    <string name="invalid_title">Please enter a title</string>
+    <string name="invalid_url">Please enter a valid URL</string>
+    <string name="catalog_parse_error">Error parsing Catalog feed. Please check the URL and try again</string>
+
+    <string name="return_publication">This will return the publication</string>
+    <string name="return_button">Return</string>
+
+    <string name="opening_publication_cannot_render">Cannot render publication.</string>
+    <string name="opening_publication_audio_engine_initialization">Could not open publication because audio engine initialization failed.</string>
+
+    <string name="import_publication_unexpected_io_exception">Unable to add publication due to an unexpected error on your device</string>
+    <string name="import_publication_download_failed">Publication download failed.</string>
+    <string name="import_publication_no_acquisition">Acquisition is not possible.</string>
+
+    <string name="import_publication_success">Publication added to your library</string>
+    <string name="import_publication_unable_add_pub_database">Unable to add publication to the database</string>
+    <string name="import_publication_inconsistent_state">Import failed because of exceptional conditions. Please try again.</string>
+
+    <string name="publication_error_unsupported_asset">Asset format is not supported</string>
+    <string name="publication_error_network_forbidden">Server denied access to a resource.</string>
+    <string name="publication_error_network_not_found">A resource has not been found on the server.</string>
+    <string name="publication_error_network_unreachable">Server cannot be reached.</string>
+    <string name="publication_error_network_timeout">Server was too long to respond.</string>
+    <string name="publication_error_network_ssl_handshake">A SSL error occurred.</string>
+    <string name="publication_error_network_unexpected">An unexpected network error occurred.</string>
+    <string name="publication_error_filesystem_not_found">A file has not been found.</string>
+    <string name="publication_error_filesystem_forbidden">You are not allowed to access the file.</string>
+    <string name="publication_error_filesystem_unexpected">An unexpected filesystem error occurred.</string>
+    <string name="publication_error_filesystem_insufficient_space">There is not enough space left on the device.</string>
+    <string name="publication_error_incorrect_credentials">Provided credentials were incorrect</string>
+    <string name="publication_error_out_of_memory">There is not enough memory on this device to open the publication.</string>
+    <string name="publication_error_scheme_not_supported">Publication source is not supported.</string>
+    <string name="publication_error_invalid_publication">Publication looks corrupted.</string>
+    <string name="publication_error_unexpected">An unexpected error occurred.</string>
+
+    <!-- LcpError User Messages -->
+
+    <plurals name="lcp_error_license_status.revoked">
+        <item quantity="one">This license was revoked by its provider on %1$s. It was registered by %2$d device.</item>
+        <item quantity="other">This license was revoked by its provider on %1$s. It was registered by %2$d devices.</item>
+    </plurals>
+
+    <string name="missing_lcp_support">The application was compiled without LCP support.</string>
+    <string name="reader_error">Error</string>
+    <string name="opening_error">Could not open publication</string>
+    <string name="import_error">Import error</string>
+
+    <string name="failed_parsing_catalog">Failed parsing Catalog</string>
+    <string name="no_result">No result</string>
+    <string name="note">Note</string>
+    <string name="add_a_note">Add a note</string>
+    <string name="add_an_annotation">Add an annotation</string>
+    <string name="delete_highlight_or_annotation">Delete highlight or annotation</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
+    <string name="purple">Purple</string>
+    <string name="seek_bar">Seek bar</string>
+    <string name="go_backward_30_seconds">Go backward 30 seconds</string>
+    <string name="play_or_pause">Play or pause</string>
+    <string name="go_forward_30_seconds">Go forward 30 seconds</string>
+
+    <string name="tts_error_initialization">Failed to initialize the TTS engine</string>
+    <string name="tts_error_language_support_incomplete">The language %s requires additional data. Do you want to download it?</string>
+    <string name="tts_error_network">A networking error occurred</string>
+    <string name="tts_error_other">A TTS error occurred</string>
+    <string name="tts_next">Go forward</string>
+    <string name="tts_pause">Pause</string>
+    <string name="tts_play">Play</string>
+    <string name="tts_previous">Go backward</string>
+    <string name="speed_rate">Speed</string>
+    <string name="pitch_rate">Pitch</string>
+    <string name="tts_settings">Speech settings</string>
+    <string name="tts_stop">Stop</string>
+    <string name="tts_voice">Voice</string>
+
+    <string name="search_error_not_searchable">This publication is not searchable</string>
+    <string name="search_error_cancelled">The search was cancelled</string>
+    <string name="search_error_other">An error occurred while searching</string>
+
+
+    <string name="error_unexpected">An unexpected error occurred.</string>
+    <string name="go_to_library">Go to library</string>
+    <string name="org_website" translatable="false">cis-india.org</string>
+    <string name="link_metapage_desc">Visit our page</string>
+    <string name="link_sourcecode_repo">View GitHub Repo</string>
+    <string name="link_sourcecode">GitHub</string>
+    <string name="category_dictionaries">Dictionaries</string>
+    <string name="category_encyclopedias">Encyclopedias</string>
+</resources>
