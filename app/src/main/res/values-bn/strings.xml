@@ -1,170 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* Bodhisattwa
+-->
 <resources>
-    <!-- Others Strings -->
-    <string name="not_applicable">N/A</string>
-    <string name="woops">উপ্স!</string>
-    <string name="confirm">কনফার্ম</string>
-    <string name="cancel">বাদ দিন</string>
-    <string name="ok">ঠিক আছে</string>
-    <string name="got_it">বুঝেছি</string>
-    <string name="no_app_to_handle_epub">epub ফাইল খোলার জন্য কোনো অ্যাপ খুঁজে পাওয়া যাচ্ছে না।</string>
-    <string name="network_error">উপ্স! সার্ভারের সাথে কানেক্ট করা যায়নি৷</string>
-    <string name="network_error_retry">আবার চেষ্টা করুন</string>
-    <string name="error">উফফ! কোন ভুল হয়েছে।</string>
-    <string name="no_app_to_handle_content">এই কন্টেন্ট খোলার জন্য কোনো অ্যাপ খুঁজে পাওয়া যায়নি।</string>
-
-    <!-- Navigation titles -->
-    <string name="navigation_home">হোম</string>
-    <string name="navigation_categories">ক্যাটাগরি</string>
-    <string name="navigation_library">লাইব্রেরি</string>
-    <string name="navigation_settings">সেটিংস</string>
-
-    <!-- ToolTips -->
-    <string name="library_tooltip">টিপ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে লাইব্রেরি আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
-
-    <!-- Welcome Screen -->
-    <string name="welcome_screen_desc">আপনার পড়ার যাত্রা শুরু করতে আপনার পছন্দের ইবুক রিডার বেছে নিন।</string>
-    <string name="welcome_screen_button">শুরু করুন</string>
-
-    <!-- Home screen. -->
-    <string name="home_header">সব বই</string>
-    <string name="home_language_icon_desc">ভাষা অনুযায়ী সাজান</string>
-    <string name="home_search_icon_desc">বই খুজুন</string>
-    <string name="language_menu_title">ভাষা দ্বারা ব্রাউজ</string>
-
-    <!-- Categories screen. -->
-    <string name="categories_header">ক্যাটাগরি</string>
-    <string name="no_books_found_for_lang_and_cat">এই ক্যাটাগরির জন্য %s ভাষায় কোনো বই পাওয়া যায়নি।</string>
-    <!-- Categories -->
-    <string name="category_children">শিশু</string>
-    <string name="category_classics">ক্লাসিক</string>
-    <string name="category_countries">দেশ</string>
-    <string name="category_crime">ক্রাইম</string>
-    <string name="category_education">শিক্ষা</string>
-    <string name="category_fiction">কল্পকাহিনী</string>
-    <string name="category_geography">ভূতত্ত্ব</string>
-    <string name="category_history">ইতিহাস</string>
-    <string name="category_literature">সাহিত্য</string>
-    <string name="category_law">আইন</string>
-    <string name="category_music">সঙ্গীত</string>
-    <string name="category_periodicals">সাময়িকী</string>
-    <string name="category_psychology">মনোবিজ্ঞান</string>
-    <string name="category_philosophy">দর্শন</string>
-    <string name="category_religion">ধর্ম</string>
-    <string name="category_romance">রোমান্স</string>
-    <string name="category_science">বিজ্ঞান</string>
-
-    <!-- Library screen. -->
-    <string name="library_header">লাইব্রেরি</string>
-    <string name="empty_library">এখানে কিছুই নেই!</string>
-    <string name="import_button_text">ইমপোর্ট</string>
-    <string name="import_button_onboarding">আপনার নিজের বই ইমপোর্ট করুন!</string>
-    <string name="import_button_onboarding_desc">এখন আপনি আপনার নিজের EPUB বইগুলি ইমপোর্ট করে সেগুলি Myne-এ পড়তে পারবেন।</string>
-    <string name="import_button_desc">epub ইমপোর্ট</string>
-    <string name="external_book_info_unavailable">শুধুমাত্র অভ্যন্তরীণ বইয়ের জন্য প্রযোজ্য।</string>
-    <string name="epub_importing">ইমপোর্ট করা হচ্ছে... \nঅনুগ্রহ করে অপেক্ষা করুন।</string>
-    <string name="epub_imported">ইমপোর্ট হয়েছে!</string>
-    <string name="epub_import_error">ইমপোর্ট করতে ব্যর্থ৷!</string>
-    <string name="open_app_chooser">এর মাধ্যমে খুলুন…</string>
-    <string name="share_app_chooser">এর মাধ্যমে শেয়ার করুন…</string>
-    <string name="library_read_button">পড়ুন</string>
-    <string name="library_delete_button">ডিলিট</string>
-    <string name="library_delete_dialog_title">আপনি কি নিশ্চিত?</string>
-
-    <!-- Reader Detail Screen -->
-    <string name="reader_detail_header">ইবুক রিডার</string>
-    <string name="start_reading_button">শুরু</string>
-    <string name="continue_reading_button">চালিয়ে যান</string>
-    <string name="reader_chapters_list">অধ্যায়</string>
-
-    <!--Reader Screen -->
-    <string name="reader_max_font_size_reached">দুঃখিত, এর চেয়ে বাড়ানো যাবে না!</string>
-    <string name="reader_min_font_size_reached">দুঃখিত, এর চেয়ে কমানো যাবে না!</string>
-    <string name="reader_font_style_chooser">ফন্ট স্টাইল পরিবর্তন করুন</string>
-    <string name="reader_chapter_list_title">অধ্যায়</string>
-
-    <!-- Text selection -->
-    <string name="copy">কপি</string>
-    <string name="copied">কপি হয়েছে!</string>
-    <string name="web_search">ওয়েব সার্চ</string>
-    <string name="share">শেয়ার</string>
-    <string name="translate">অনুবাদ</string>
-    <string name="dictionary">অর্থ</string>
-
-    <!-- Settings screen. -->
-    <string name="settings_header">সেটিংস</string>
-    <string name="app_desc">ইবুক ডাউনলোডার</string>
-    <string name="general_settings_header">জেনারেল</string>
-    <string name="default_reader_setting">ডিফল্ট রিডার</string>
-    <string name="default_reader_dialog_title">এর মাধ্যমে ইবুক খুলুন...</string>
-    <string name="reader_option_inbuilt">ইনবিল্ট রিডার</string>
-    <string name="reader_option_external">এক্সটারনাল রিডার</string>
-    <string name="default_locale_setting">ডিফল্ট Locale</string>
-    <string name="default_locale_setting_desc">আপনার পছন্দের Locale নির্বাচন করুন।</string>
-    <string name="locale_setting_not_found">দুঃখিত! এই ফিচার এখনও আপনার ওএস এর জন্য আসেনি৷</string>
-    <string name="display_setting_header">ডিসপ্লে</string>
-    <string name="theme_setting">ডিফল্ট থিম</string>
-    <string name="theme_dialog_title">থিম বদলান</string>
-    <string name="theme_option_light">লাইট</string>
-    <string name="theme_option_dark">ডার্ক</string>
-    <string name="theme_option_system">সিস্টেম ডিফল্ট</string>
-    <string name="theme_dialog_apply_button">অ্যাপ্লাই</string>
-    <string name="amoled_theme_setting">ব্ল্যাক থিম</string>
-    <string name="amoled_theme_setting_disabled_desc">অ্যামোলেড ব্ল্যাক থিম চালু করুন</string>
-    <string name="amoled_theme_setting_enabled_desc">অ্যামোলেড ব্ল্যাক থিম বন্ধ করুন</string>
-    <string name="material_you_setting_disabled_desc">ম্যাটেরিয়াল ইউ চালু করুন</string>
-    <string name="material_you_setting_enabled_desc">ম্যাটেরিয়াল ইউ বন্ধ করুন</string>
-    <string name="material_you_error">এই ফিচার শুধুমাত্র অ্যান্ড্রয়েড 12 বা তার উপরে চলমান ডিভাইসগুলির জন্য।</string>
-    <string name="miscellaneous_setting_header">বিবিধ</string>
-    <string name="license_setting">লাইসেন্স &amp; স্বীকৃতি</string>
-    <string name="license_setting_desc">ওপেন সোর্স লাইসেন্স।</string>
-    <string name="about_setting">অ্যাপ সম্পর্কে</string>
-    <string name="about_setting_desc">অ্যাপ সম্পর্কে আরও জানুন &amp; দরকারি লিঙ্ক</string>
-
-    <!-- Books card -->
-    <string name="cover_image_desc">বইয়ের কভার ছবি</string>
-
-    <!-- Book Detail Screen -->
-    <string name="book_detail_header">বইয়ের বিস্তারিত</string>
-    <string name="back_button_desc">ফিরে যান।</string>
-    <string name="share_button_desc">এইটি বই শেয়ার করুন।</string>
-    <string name="share_intent_header">এটি ব্যবহার করে শেয়ার করুন…</string>
-    <string name="read_book_button">পড়া শুরু করুন</string>
-    <string name="download_book_button">ডাউনলোড</string>
-    <string name="download_started">ডাউনলোড শুরু হয়েছে!</string>
-    <string name="book_synopsis">সারমর্ম</string>
-    <string name="book_synopsis_not_found">পাওয়া যায়নি</string>
-
-    <!-- About Screen -->
-    <string name="about_header">অ্যাপ সম্পর্কে</string>
-    <string name="about_desc">একটি ফ্রি &amp; ওপেন সোর্স অ্যান্ড্রয়েড অ্যাপ্লিকেশন যা প্রজেক্ট গুটেনবার্গ থেকে ইবুক ডাউনলোড করে।</string>
-    <string name="developed_by">ডেভেলপড বাই</string>
-    <string name="project_contributors">প্রোজেক্টে অবদানকারীরা</string>
-    <string name="project_contributors_desc">আমাদের দুর্দান্ত অবদানকারীদের সাথে আলাপ করুন।</string>
-    <string name="useful_links">দরকারি লিঙ্কস</string>
-    <string name="link_readme">README</string>
-    <string name="link_readme_desc">গিটহাবে আমাদের অ্যাপের README পড়ুন।</string>
-    <string name="shivam">ওয়েবসাইট</string>
-    <string name="link_website_desc">আরো তথ্যের জন্য আমাদের ওয়েবসাইটে দেখুন।</string>
-    <string name="link_privacy_policy">গোপনীয়তা নীতি</string>
-    <string name="link_privacy_policy_desc">আমাদের সর্বশেষ গোপনীয়তা নীতি পড়ুন।</string>
-    <string name="link_gh_issue">গিটহাব ইস্যু</string>
-    <string name="link_gh_issue_desc">গিটহাবে একটি ইস্যু তৈরি করুন।</string>
-    <string name="link_telegram">টেলিগ্রাম গ্রুপ</string>
-    <string name="link_telegram_desc">টেলিগ্রামে আমাদের সাথে আড্ডা দিন!</string>
-    <string name="link_support">সাপোর্ট ডেভেলপমেন্ট</string>
-    <string name="link_support_desc">ডেভেলপমেন্টকে সাপোর্ট করতে এখানে ক্লিক করুন!</string>
-
-    <!-- Open source libraries screen -->
-    <string name="open_source_licenses_header">লাইসেন্স</string>
-    <string name="category_collections">সংগ্রহ</string>
-    <string name="category_novels">উপন্যাস</string>
-    <string name="category_plays">নাটক</string>
-    <string name="category_poetry">কবিতা</string>
-    <string name="category_stories">গল্প</string>
-    <string name="category_essays">প্রবন্ধ</string>
-    <string name="category_shortstories">ছোট গল্প</string>
-    <string name="category_narration">" বর্ণনা"</string>
-    <string name="category_biography">জীবনী</string>
-    <string name="category_novella">" উপন্যাসিকা"</string>
+  <string name="app_name">উইকিসোর্স রিডার</string>
+  <string name="not_applicable">প্রযোজ্য নয়</string>
+  <string name="woops">যাঃ!</string>
+  <string name="confirm">নিশ্চিত করুন</string>
+  <string name="cancel">বাতিল করুন</string>
+  <string name="ok">ঠিক আছে</string>
+  <string name="got_it">বুঝেছি</string>
+  <string name="no_app_to_handle_epub">ইপাব ফাইল খোলার জন্য কোনো অ্যাপ খুঁজে পাওয়া যাচ্ছে না।</string>
+  <string name="network_error">সার্ভারের সাথে সংযোগ করতে ব্যর্থ।</string>
+  <string name="network_error_retry">আবার চেষ্টা করুন</string>
+  <string name="error">কিছু একটা সমস্যা হয়েছে।</string>
+  <string name="no_app_to_handle_content">এই কন্টেন্ট খোলার জন্য কোনো অ্যাপ খুঁজে পাওয়া যায়নি।</string>
+  <string name="navigation_home">প্রধান পাতা</string>
+  <string name="navigation_categories">বিষয়শ্রেণী</string>
+  <string name="navigation_library">গ্রন্থাগার</string>
+  <string name="navigation_settings">সেটিং</string>
+  <string name="library_tooltip">টিপ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে লাইব্রেরি আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
+  <string name="welcome_screen_title">উইকিসোর্স রিডার ইনস্টল করার জন্য ধন্যবাদ!</string>
+  <string name="welcome_screen_desc">আপনার পড়ার যাত্রা শুরু করতে আপনার পছন্দের ইবুক রিডার বেছে নিন।</string>
+  <string name="welcome_screen_button">শুরু করুন</string>
+  <string name="home_header">সব বই</string>
+  <string name="home_language_icon_desc">ভাষা অনুযায়ী সাজান</string>
+  <string name="home_search_icon_desc">বই খুঁজুন</string>
+  <string name="language_menu_title">ভাষা অনুযায়ী ব্রাউজ করুন</string>
+  <string name="categories_header">বিষয়শ্রেণী</string>
+  <string name="no_books_found_for_lang_and_cat">এই বিভাগে %s ভাষায় কোনও বই নেই।</string>
+  <string name="category_children">ছোটদের জন্য</string>
+  <string name="category_classics">চিরায়ত</string>
+  <string name="category_countries">দেশ</string>
+  <string name="category_crime">অপরাধ</string>
+  <string name="category_education">শিক্ষা</string>
+  <string name="category_fiction">কল্পকাহিনী</string>
+  <string name="category_geography">ভূগোল</string>
+  <string name="category_history">ইতিহাস</string>
+  <string name="category_literature">সাহিত্য</string>
+  <string name="category_law">আইন</string>
+  <string name="category_music">সঙ্গীত</string>
+  <string name="category_periodicals">সাময়িকী</string>
+  <string name="category_psychology">মনোবিজ্ঞান</string>
+  <string name="category_philosophy">দর্শন</string>
+  <string name="category_religion">ধর্ম</string>
+  <string name="category_romance">রোমান্স</string>
+  <string name="category_science">বিজ্ঞান</string>
+  <string name="library_header">গ্রন্থাগার</string>
+  <string name="empty_library">এখানে কিছুই নেই!</string>
+  <string name="import_button_text">আমদানি করুন</string>
+  <string name="import_button_onboarding">আপনার নিজের বই আমদানি করুন!</string>
+  <string name="import_button_onboarding_desc">এখন আপনি নিজের ইপাব বই আমদানি করে পড়তে পারেন।</string>
+  <string name="import_button_desc">ইপাব বই আমদানি করুন</string>
+  <string name="external_book_info_unavailable">শুধুমাত্র অভ্যন্তরীণ বইয়ের জন্য উপলব্ধ।</string>
+  <string name="epub_importing">আমদানি করা হচ্ছে... \nদয়া করে অপেক্ষা করুন।</string>
+  <string name="epub_imported">সফলভাবে আমদানি করা হয়েছে!</string>
+  <string name="epub_import_error">আমদানি করতে ব্যর্থ!</string>
+  <string name="open_app_chooser">এর মাধ্যমে খুলুন…</string>
+  <string name="share_app_chooser">এর সাথে শেয়ার করুন...</string>
+  <string name="library_read_button">পড়ুন</string>
+  <string name="library_delete_button">অপসারণ করুন</string>
+  <string name="library_delete_dialog_title">এ ব্যাপারে আপনি কি নিশ্চিত?</string>
+  <string name="reader_detail_header">ইবুক রিডার</string>
+  <string name="start_reading_button">শুরু করুন</string>
+  <string name="continue_reading_button">পুনরায় শুরু করুন</string>
+  <string name="reader_chapters_list">অধ্যায়</string>
+  <string name="reader_max_font_size_reached">দুঃখিত, এর চেয়ে বাড়ানো যাবে না!</string>
+  <string name="reader_min_font_size_reached">দুঃখিত, এর চেয়ে কমানো যাবে না!</string>
+  <string name="reader_font_style_chooser">ফন্ট স্টাইল পরিবর্তন করুন</string>
+  <string name="reader_chapter_list_title">অধ্যায়</string>
+  <string name="copy">অনুলিপি করুন</string>
+  <string name="copied">অনুলিপি করা হয়েছে!</string>
+  <string name="web_search">ওয়েব অনুসন্ধান</string>
+  <string name="share">শেয়ার করুন</string>
+  <string name="translate">অনুবাদ করুন</string>
+  <string name="dictionary">অর্থ</string>
+  <string name="settings_header">সেটিং</string>
+  <string name="app_desc">উইকিসোর্স রিডার</string>
+  <string name="general_settings_header">সাধারণ</string>
+  <string name="default_reader_setting">ডিফল্ট রিডার</string>
+  <string name="default_reader_dialog_title">এর মাধ্যমে ইবুক খুলুন...</string>
+  <string name="reader_option_inbuilt">ইনবিল্ট রিডার</string>
+  <string name="reader_option_external">এক্সটারনাল রিডার</string>
+  <string name="default_locale_setting">ডিফল্ট Locale</string>
+  <string name="default_locale_setting_desc">আপনার পছন্দের Locale নির্বাচন করুন।</string>
+  <string name="locale_setting_not_found">দুঃখিত! এই ফিচার এখনও আপনার ওএস এর জন্য আসেনি৷</string>
+  <string name="display_setting_header">প্রদর্শন</string>
+  <string name="theme_setting">ডিফল্ট থিম</string>
+  <string name="theme_dialog_title">থিম বদলান</string>
+  <string name="theme_option_light">লাইট</string>
+  <string name="theme_option_dark">ডার্ক</string>
+  <string name="theme_option_system">সিস্টেম ডিফল্ট</string>
+  <string name="theme_dialog_apply_button">প্রয়োগ করুন</string>
+  <string name="amoled_theme_setting">কালো থিম</string>
+  <string name="amoled_theme_setting_disabled_desc">অ্যামোলেড ব্ল্যাক থিম সক্রিয় করুন</string>
+  <string name="amoled_theme_setting_enabled_desc">অ্যামোলেড ব্ল্যাক থিম নিষ্ক্রিয় করুন</string>
+  <string name="material_you_setting">মেটেরিয়াল ইউ</string>
+  <string name="material_you_setting_disabled_desc">ম্যাটেরিয়াল ইউ সক্রিয় করুন</string>
+  <string name="material_you_setting_enabled_desc">ম্যাটেরিয়াল ইউ নিষ্ক্রিয় করুন</string>
+  <string name="material_you_error">এই ফিচার শুধুমাত্র অ্যান্ড্রয়েড 12 বা তার উপরে চলমান ডিভাইসগুলির জন্য।</string>
+  <string name="miscellaneous_setting_header">বিবিধ</string>
+  <string name="license_setting">লাইসেন্স &amp; স্বীকৃতি</string>
+  <string name="license_setting_desc">ওপেন সোর্স লাইসেন্স।</string>
+  <string name="about_setting">অ্যাপের তথ্য</string>
+  <string name="about_setting_desc">অ্যাপের তথ্য এবং দরকারী লিঙ্কগুলি দেখান</string>
+  <string name="cover_image_desc">বইয়ের প্রচ্ছদের ছবি</string>
+  <string name="book_detail_header">বইয়ের বিবরণ</string>
+  <string name="back_button_desc">ফিরে যান।</string>
+  <string name="share_button_desc">এই বইটি শেয়ার করুন।</string>
+  <string name="share_intent_header">এটি ব্যবহার করে শেয়ার করুন…</string>
+  <string name="read_book_button">পড়া শুরু করুন</string>
+  <string name="download_book_button">ডাউনলোড করুন</string>
+  <string name="download_started">ডাউনলোড শুরু হয়েছে!</string>
+  <string name="book_synopsis">সারসংক্ষেপ</string>
+  <string name="book_synopsis_not_found">উপলব্ধ নয়</string>
+  <string name="about_header">সম্পর্কে</string>
+  <string name="about_desc">উইকিসংকলন থেকে মুক্ত-লাইসেন্সের লেখা পড়ুন</string>
+  <string name="developed_by">উন্নয়ন করেছেন</string>
+  <string name="dev_name">স্টারি শিবম</string>
+  <string name="project_contributors">প্রকল্পের অবদানকারী</string>
+  <string name="project_contributors_desc">আমাদের চমৎকার অবদানকারীদের সাথে আলাপ করুন।</string>
+  <string name="useful_links">প্রয়োজনীয় লিঙ্ক</string>
+  <string name="link_readme">README</string>
+  <string name="link_readme_desc">গিটহাবে আমাদের অ্যাপের README পড়ুন।</string>
+  <string name="shivam">ওয়েবসাইট</string>
+  <string name="link_website_desc">আরো তথ্যের জন্য আমাদের ওয়েবসাইটে দেখুন।</string>
+  <string name="link_privacy_policy">গোপনীয়তার নীতি</string>
+  <string name="link_privacy_policy_desc">আমাদের সর্বশেষ গোপনীয়তা নীতি পড়ুন।</string>
+  <string name="link_gh_issue">গিটহাব ইস্যু</string>
+  <string name="link_gh_issue_desc">গিটহাবে একটি ইস্যু তৈরি করুন।</string>
+  <string name="link_telegram">টেলিগ্রাম গ্রুপ</string>
+  <string name="link_telegram_desc">টেলিগ্রামে আমাদের সাথে আড্ডা দিন!</string>
+  <string name="link_support">সাপোর্ট ডেভেলপমেন্ট</string>
+  <string name="link_support_desc">ডেভেলপমেন্টকে সাপোর্ট করতে এখানে ক্লিক করুন!</string>
+  <string name="open_source_licenses_header">লাইসেন্স</string>
+  <string name="category_collections">সংগ্রহ</string>
+  <string name="category_novels">উপন্যাস</string>
+  <string name="category_plays">নাটক</string>
+  <string name="category_poetry">কবিতা</string>
+  <string name="category_stories">গল্প</string>
+  <string name="category_essays">প্রবন্ধ</string>
+  <string name="category_shortstories">ছোট গল্প</string>
+  <string name="category_narration">বর্ণনা</string>
+  <string name="category_biography">জীবনী</string>
+  <string name="category_novella">উপন্যাসিকা</string>
+  <string name="epubactivity_read_aloud_start">জোরে পড়ুন</string>
+  <string name="more_options">আরও বিকল্প</string>
+  <string name="app_version_header">সংস্করণ</string>
+  <string name="app_version_label">অ্যাপ সংস্করণ:</string>
+  <string name="app_version">২.২.০</string>
+  <string name="github_tab_label">গিটহাব ট্যাগ:</string>
+  <string name="github_tag">২.২.০</string>
+  <string name="copyright_label">মেধাস্বত্ব</string>
+  <string name="copyright">\@ ২০১৯ ইউরোপিয়ান ডিজিটাল রিডিং ল্যাব</string>
+  <string name="bsd_license_label">[বিএসডি-৩ লাইসেন্স]</string>
+  <string name="bsd_license_label_accessible">[বিএসডি-৩ লাইসেন্স]</string>
+  <string name="acknowledgements_label">স্বীকৃতি</string>
+  <string name="catalog_list_more">আরও</string>
+  <string name="drm_information_header">তথ্য</string>
+  <string name="zero">০০:০০</string>
+  <string name="chapter_page">অধ্যায় / পৃষ্ঠা</string>
+  <string name="progression">প্রগতি</string>
+  <string name="bookmarks_tab_label">বুকমার্ক</string>
+  <string name="close">বন্ধ করুন</string>
+  <string name="add_book">একটি বই যোগ করুন</string>
+  <string name="save">সংরক্ষণ করুন</string>
+  <string name="reader_error">ত্রুটি</string>
+  <string name="yellow">হলুদ</string>
+  <string name="green">সবুজ</string>
+  <string name="blue">নীল</string>
+  <string name="red">লাল</string>
+  <string name="purple">বেগুনি</string>
+  <string name="org_website">cis-india.org</string>
+  <string name="link_sourcecode">গিটহাব</string>
+  <string name="category_dictionaries">অভিধান</string>
+  <string name="category_encyclopedias">বিশ্বকোষ</string>
 </resources>

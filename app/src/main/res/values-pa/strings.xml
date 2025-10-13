@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="about_setting">ਐਪ ਜਾਣਕਾਰੀ</string>
-    <string name="download_book_button">ਡਾਊਨਲੋਡ</string>
-    <string name="download_started">ਡਾਊਨਲੋਡ ਸ਼ੁਰੂ ਹੋਇਆ!</string>
-    <string name="about_header">ਬਾਰੇ</string>
-    <string name="navigation_settings">ਸੈਟਿੰਗਾਂ</string>
-    <string name="home_header">ਸਾਰੀਆਂ ਕਿਤਾਬਾਂ</string>
-    <string name="home_search_icon_desc">ਕਿਤਾਬਾਂ ਖੋਜੋ</string>
+  <string name="navigation_settings">ਸੈਟਿੰਗਾਂ</string>
+  <string name="home_header">ਸਾਰੀਆਂ ਕਿਤਾਬਾਂ</string>
+  <string name="home_search_icon_desc">ਕਿਤਾਬਾਂ ਖੋਜੋ</string>
+  <string name="about_setting">ਐਪ ਜਾਣਕਾਰੀ</string>
+  <string name="download_book_button">ਡਾਊਨਲੋਡ</string>
+  <string name="download_started">ਡਾਊਨਲੋਡ ਸ਼ੁਰੂ ਹੋਇਆ!</string>
+  <string name="about_header">ਬਾਰੇ</string>
 </resources>

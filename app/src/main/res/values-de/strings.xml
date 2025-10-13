@@ -1,159 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Others Strings -->
-    <string name="not_applicable">n. a.</string>
-    <string name="woops">"Hoppla!"</string>
-    <string name="confirm">Bestätigen</string>
-    <string name="cancel">Abbrechen</string>
-    <string name="ok">OK</string>
-    <string name="got_it">Verstanden</string>
-    <string name="no_app_to_handle_epub">Kann keine App zum Öffnen von Epub-Dateien finden.</string>
-    <string name="network_error">Hoppla! Konnte keine Verbindung zum Server aufbauen.</string>
-    <string name="network_error_retry">Erneut versuchen</string>
-    <string name="error">Hoppla! Etwas ist schiefgelaufen.</string>
-    <string name="no_app_to_handle_content">Keine App gefunden, um diesen Inhalt zu öffnen.</string>
-
-    <!-- Navigation titles -->
-    <string name="navigation_home">Start</string>
-    <string name="navigation_categories">Kategorien</string>
-    <string name="navigation_library">Bibliothek</string>
-    <string name="navigation_settings">Einstellungen</string>
-
-    <!-- ToolTips -->
-    <string name="library_tooltip">TIPP! Wische Bibliothekselemente nach links oder rechts, um sie zu teilen oder Buchdetails anzusehen.</string>
-
-    <!-- Welcome Screen -->
-    <string name="welcome_screen_desc">Wählen Sie Ihren bevorzugten E-Book-Reader, um Ihre Lese-Reise zu beginnen.</string>
-    <string name="welcome_screen_button">Loslegen</string>
-
-    <!-- Home screen. -->
-    <string name="home_header">Alle Bücher</string>
-    <string name="home_language_icon_desc">Nach Sprache sortieren</string>
-    <string name="home_search_icon_desc">Bücher suchen</string>
-    <string name="language_menu_title">Nach Sprache durchsuchen</string>
-
-    <!-- Categories screen. -->
-    <string name="categories_header">Kategorien</string>
-    <string name="no_books_found_for_lang_and_cat">Keine Bücher auf %s in dieser Kategorie verfügbar.</string>
-    <!-- Categories -->
-    <string name="category_children">Kinder</string>
-    <string name="category_classics">Klassiker</string>
-    <string name="category_countries">Länder</string>
-    <string name="category_crime">Kriminalität</string>
-    <string name="category_education">Bildung</string>
-    <string name="category_fiction">Fiktion</string>
-    <string name="category_geography">Geografie</string>
-    <string name="category_history">Geschichte</string>
-    <string name="category_literature">Literatur</string>
-    <string name="category_law">Recht</string>
-    <string name="category_music">Musik</string>
-    <string name="category_periodicals">Zeitschriften</string>
-    <string name="category_psychology">Psychologie</string>
-    <string name="category_philosophy">Philosophie</string>
-    <string name="category_religion">Religion</string>
-    <string name="category_romance">Romantik</string>
-    <string name="category_science">Wissenschaft</string>
-
-    <!-- Library screen. -->
-    <string name="library_header">Bibliothek</string>
-    <string name="empty_library">Nichts vorhanden!</string>
-    <string name="import_button_text">Importieren</string>
-    <string name="import_button_onboarding">Importiere deine eigenen Bücher!</string>
-    <string name="import_button_onboarding_desc">Jetzt kannst du deine eigenen EPUB-Bücher importieren und sie in Myne lesen.</string>
-    <string name="import_button_desc">EPUB-Buch importieren</string>
-    <string name="external_book_info_unavailable">Nur für interne Bücher verfügbar.</string>
-    <string name="epub_importing">Importiere… Bitte warten.</string>
-    <string name="epub_imported">Erfolgreich importiert!</string>
-    <string name="epub_import_error">Import fehlgeschlagen!</string>
-    <string name="open_app_chooser">Öffnen mit …</string>
-    <string name="share_app_chooser">Teilen mit …</string>
-    <string name="library_read_button">Lesen</string>
-    <string name="library_delete_button">Löschen</string>
-    <string name="library_delete_dialog_title">Bist du dir ganz sicher?</string>
-
-    <!-- Reader Detail Screen -->
-    <string name="reader_detail_header">E-Book-Reader</string>
-    <string name="start_reading_button">Beginnen</string>
-    <string name="continue_reading_button">Weiterlesen</string>
-    <string name="reader_chapters_list">Kapitel</string>
-
-    <!--Reader Screen -->
-    <string name="reader_max_font_size_reached">Entschuldige bitte, größer kann es nicht dargestellt werden!</string>
-    <string name="reader_min_font_size_reached">Entschuldige bitte, kleiner kann es nicht dargestellt werden!</string>
-    <string name="reader_font_style_chooser">Schriftart ändern</string>
-    <string name="reader_chapter_list_title">Kapitel</string>
-
-    <!-- Text selection -->
-    <string name="copy">Kopieren</string>
-    <string name="copied">Kopiert!</string>
-    <string name="web_search">Websuche</string>
-    <string name="share">Teilen</string>
-    <string name="translate">Übersetzen</string>
-    <string name="dictionary">Bedeutung</string>
-
-    <!-- Settings screen. -->
-    <string name="settings_header">Einstellungen</string>
-    <string name="app_desc">E-Book-Downloader</string>
-    <string name="general_settings_header">Allgemein</string>
-    <string name="default_reader_setting">Standard-Reader</string>
-    <string name="default_reader_dialog_title">E-Books öffnen mit …</string>
-    <string name="reader_option_inbuilt">Integrierter Reader</string>
-    <string name="reader_option_external">Externer Reader</string>
-    <string name="default_locale_setting">Standard-Sprache</string>
-    <string name="default_locale_setting_desc">Wählen Sie Ihre bevorzugte Sprachumgebung.</string>
-    <string name="locale_setting_not_found">Entschuldigung! Diese Funktion wird von Ihrem Betriebssystem noch nicht unterstützt.</string>
-    <string name="display_setting_header">Darstellung</string>
-    <string name="theme_setting">Standard-Theme</string>
-    <string name="theme_dialog_title">Theme ändern</string>
-    <string name="theme_option_light">Hell</string>
-    <string name="theme_option_dark">Dunkel</string>
-    <string name="theme_option_system">Systemstandard</string>
-    <string name="theme_dialog_apply_button">Anwenden</string>
-    <string name="amoled_theme_setting">Dunkles Thema</string>
-    <string name="amoled_theme_setting_disabled_desc">AMOLED-Dunkel-Thema aktivieren</string>
-    <string name="amoled_theme_setting_enabled_desc">AMOLED-Dunkel-Thema deaktivieren</string>
-    <string name="material_you_setting" translatable="false">Material You</string>
-    <string name="material_you_setting_disabled_desc">Material You aktivieren</string>
-    <string name="material_you_setting_enabled_desc">Material You deaktivieren</string>
-    <string name="material_you_error">Diese Funktion gibt es nur für Geräte, auf denen mindestent Android 12 läuft.</string>
-    <string name="miscellaneous_setting_header">Sonstiges</string>
-    <string name="license_setting">Lizenz &amp; Danksagungen</string>
-    <string name="license_setting_desc">Open-Source-Lizenzen.</string>
-    <string name="about_setting">App-Informationen</string>
-    <string name="about_setting_desc">App-Information &amp; nützliche Links anzeigen</string>
-
-    <!-- Books card -->
-    <string name="cover_image_desc">Buch-Cover-Bild</string>
-
-    <!-- Book Detail Screen -->
-    <string name="book_detail_header">Buchdetails</string>
-    <string name="back_button_desc">Zurückgehen.</string>
-    <string name="share_button_desc">Dieses Buch teilen.</string>
-    <string name="share_intent_header">Teilen mit …</string>
-    <string name="read_book_button">Lesen beginnen</string>
-    <string name="download_book_button">Herunterladen</string>
-    <string name="download_started">Herunterladen begonnen!</string>
-    <string name="book_synopsis">Zusammenfassung</string>
-    <string name="book_synopsis_not_found">Nicht verfügbar</string>
-
-    <!-- About Screen -->
-    <string name="about_header">Über</string>
-    <string name="developed_by">Entwickelt von</string>
-    <string name="project_contributors">Projektmitwirkende</string>
-    <string name="project_contributors_desc">Lernen Sie unsere wunderbaren Mitwirkenden kennen.</string>
-    <string name="useful_links">Nützliche Links</string>
-    <string name="link_readme">README</string>
-    <string name="link_readme_desc">Schauen Sie sich das README der App auf Github an.</string>
-    <string name="shivam">Webseite</string>
-    <string name="link_website_desc">Besuchen Sie unsere Webseite für weitere Informationen.</string>
-    <string name="link_privacy_policy">Datenschutzrichtlinie</string>
-    <string name="link_privacy_policy_desc">Lesen Sie unsere neueste Datenschutzrichtlinie.</string>
-    <string name="link_gh_issue">Github-Probleme</string>
-    <string name="link_gh_issue_desc">Erstellen Sie ein Problem auf Github.</string>
-    <string name="link_telegram">Telegram Gruppe</string>
-    <string name="link_telegram_desc">Hängen Sie bei uns auf Telegram ab!</string>
-    <string name="link_support">Entwicklung unterstützen</string>
-    <string name="link_support_desc">Denken Sie, ich verdiene Kekse? Klicken Sie hier!</string>
-
-    <!-- Open source libraries screen -->
-    <string name="open_source_licenses_header">Lizenzen</string>
+  <string name="not_applicable">n. a.</string>
+  <string name="woops">\"Hoppla!\"</string>
+  <string name="confirm">Bestätigen</string>
+  <string name="cancel">Abbrechen</string>
+  <string name="ok">OK</string>
+  <string name="got_it">Verstanden</string>
+  <string name="no_app_to_handle_epub">Kann keine App zum Öffnen von Epub-Dateien finden.</string>
+  <string name="network_error">Hoppla! Konnte keine Verbindung zum Server aufbauen.</string>
+  <string name="network_error_retry">Erneut versuchen</string>
+  <string name="error">Hoppla! Etwas ist schiefgelaufen.</string>
+  <string name="no_app_to_handle_content">Keine App gefunden, um diesen Inhalt zu öffnen.</string>
+  <string name="navigation_home">Start</string>
+  <string name="navigation_categories">Kategorien</string>
+  <string name="navigation_library">Bibliothek</string>
+  <string name="navigation_settings">Einstellungen</string>
+  <string name="library_tooltip">TIPP! Wische Bibliothekselemente nach links oder rechts, um sie zu teilen oder Buchdetails anzusehen.</string>
+  <string name="welcome_screen_desc">Wählen Sie Ihren bevorzugten E-Book-Reader, um Ihre Lese-Reise zu beginnen.</string>
+  <string name="welcome_screen_button">Loslegen</string>
+  <string name="home_header">Alle Bücher</string>
+  <string name="home_language_icon_desc">Nach Sprache sortieren</string>
+  <string name="home_search_icon_desc">Bücher suchen</string>
+  <string name="language_menu_title">Nach Sprache durchsuchen</string>
+  <string name="categories_header">Kategorien</string>
+  <string name="no_books_found_for_lang_and_cat">Keine Bücher auf %s in dieser Kategorie verfügbar.</string>
+  <string name="category_children">Kinder</string>
+  <string name="category_classics">Klassiker</string>
+  <string name="category_countries">Länder</string>
+  <string name="category_crime">Kriminalität</string>
+  <string name="category_education">Bildung</string>
+  <string name="category_fiction">Fiktion</string>
+  <string name="category_geography">Geografie</string>
+  <string name="category_history">Geschichte</string>
+  <string name="category_literature">Literatur</string>
+  <string name="category_law">Recht</string>
+  <string name="category_music">Musik</string>
+  <string name="category_periodicals">Zeitschriften</string>
+  <string name="category_psychology">Psychologie</string>
+  <string name="category_philosophy">Philosophie</string>
+  <string name="category_religion">Religion</string>
+  <string name="category_romance">Romantik</string>
+  <string name="category_science">Wissenschaft</string>
+  <string name="library_header">Bibliothek</string>
+  <string name="empty_library">Nichts vorhanden!</string>
+  <string name="import_button_text">Importieren</string>
+  <string name="import_button_onboarding">Importiere deine eigenen Bücher!</string>
+  <string name="import_button_onboarding_desc">Jetzt kannst du deine eigenen EPUB-Bücher importieren und sie in Myne lesen.</string>
+  <string name="import_button_desc">EPUB-Buch importieren</string>
+  <string name="external_book_info_unavailable">Nur für interne Bücher verfügbar.</string>
+  <string name="epub_importing">Importiere… Bitte warten.</string>
+  <string name="epub_imported">Erfolgreich importiert!</string>
+  <string name="epub_import_error">Import fehlgeschlagen!</string>
+  <string name="open_app_chooser">Öffnen mit …</string>
+  <string name="share_app_chooser">Teilen mit …</string>
+  <string name="library_read_button">Lesen</string>
+  <string name="library_delete_button">Löschen</string>
+  <string name="library_delete_dialog_title">Bist du dir ganz sicher?</string>
+  <string name="reader_detail_header">E-Book-Reader</string>
+  <string name="start_reading_button">Beginnen</string>
+  <string name="continue_reading_button">Weiterlesen</string>
+  <string name="reader_chapters_list">Kapitel</string>
+  <string name="reader_max_font_size_reached">Entschuldige bitte, größer kann es nicht dargestellt werden!</string>
+  <string name="reader_min_font_size_reached">Entschuldige bitte, kleiner kann es nicht dargestellt werden!</string>
+  <string name="reader_font_style_chooser">Schriftart ändern</string>
+  <string name="reader_chapter_list_title">Kapitel</string>
+  <string name="copy">Kopieren</string>
+  <string name="copied">Kopiert!</string>
+  <string name="web_search">Websuche</string>
+  <string name="share">Teilen</string>
+  <string name="translate">Übersetzen</string>
+  <string name="dictionary">Bedeutung</string>
+  <string name="settings_header">Einstellungen</string>
+  <string name="app_desc">E-Book-Downloader</string>
+  <string name="general_settings_header">Allgemein</string>
+  <string name="default_reader_setting">Standard-Reader</string>
+  <string name="default_reader_dialog_title">E-Books öffnen mit …</string>
+  <string name="reader_option_inbuilt">Integrierter Reader</string>
+  <string name="reader_option_external">Externer Reader</string>
+  <string name="default_locale_setting">Standard-Sprache</string>
+  <string name="default_locale_setting_desc">Wählen Sie Ihre bevorzugte Sprachumgebung.</string>
+  <string name="locale_setting_not_found">Entschuldigung! Diese Funktion wird von Ihrem Betriebssystem noch nicht unterstützt.</string>
+  <string name="display_setting_header">Darstellung</string>
+  <string name="theme_setting">Standard-Theme</string>
+  <string name="theme_dialog_title">Theme ändern</string>
+  <string name="theme_option_light">Hell</string>
+  <string name="theme_option_dark">Dunkel</string>
+  <string name="theme_option_system">Systemstandard</string>
+  <string name="theme_dialog_apply_button">Anwenden</string>
+  <string name="amoled_theme_setting">Dunkles Thema</string>
+  <string name="amoled_theme_setting_disabled_desc">AMOLED-Dunkel-Thema aktivieren</string>
+  <string name="amoled_theme_setting_enabled_desc">AMOLED-Dunkel-Thema deaktivieren</string>
+  <string name="material_you_setting">Material You</string>
+  <string name="material_you_setting_disabled_desc">Material You aktivieren</string>
+  <string name="material_you_setting_enabled_desc">Material You deaktivieren</string>
+  <string name="material_you_error">Diese Funktion gibt es nur für Geräte, auf denen mindestent Android 12 läuft.</string>
+  <string name="miscellaneous_setting_header">Sonstiges</string>
+  <string name="license_setting">Lizenz &amp; Danksagungen</string>
+  <string name="license_setting_desc">Open-Source-Lizenzen.</string>
+  <string name="about_setting">App-Informationen</string>
+  <string name="about_setting_desc">App-Information &amp; nützliche Links anzeigen</string>
+  <string name="cover_image_desc">Buch-Cover-Bild</string>
+  <string name="book_detail_header">Buchdetails</string>
+  <string name="back_button_desc">Zurückgehen.</string>
+  <string name="share_button_desc">Dieses Buch teilen.</string>
+  <string name="share_intent_header">Teilen mit …</string>
+  <string name="read_book_button">Lesen beginnen</string>
+  <string name="download_book_button">Herunterladen</string>
+  <string name="download_started">Herunterladen begonnen!</string>
+  <string name="book_synopsis">Zusammenfassung</string>
+  <string name="book_synopsis_not_found">Nicht verfügbar</string>
+  <string name="about_header">Über</string>
+  <string name="developed_by">Entwickelt von</string>
+  <string name="project_contributors">Projektmitwirkende</string>
+  <string name="project_contributors_desc">Lernen Sie unsere wunderbaren Mitwirkenden kennen.</string>
+  <string name="useful_links">Nützliche Links</string>
+  <string name="link_readme">README</string>
+  <string name="link_readme_desc">Schauen Sie sich das README der App auf Github an.</string>
+  <string name="shivam">Webseite</string>
+  <string name="link_website_desc">Besuchen Sie unsere Webseite für weitere Informationen.</string>
+  <string name="link_privacy_policy">Datenschutzrichtlinie</string>
+  <string name="link_privacy_policy_desc">Lesen Sie unsere neueste Datenschutzrichtlinie.</string>
+  <string name="link_gh_issue">Github-Probleme</string>
+  <string name="link_gh_issue_desc">Erstellen Sie ein Problem auf Github.</string>
+  <string name="link_telegram">Telegram Gruppe</string>
+  <string name="link_telegram_desc">Hängen Sie bei uns auf Telegram ab!</string>
+  <string name="link_support">Entwicklung unterstützen</string>
+  <string name="link_support_desc">Denken Sie, ich verdiene Kekse? Klicken Sie hier!</string>
+  <string name="open_source_licenses_header">Lizenzen</string>
 </resources>

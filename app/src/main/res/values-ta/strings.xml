@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="book_detail_header">புத்தக விவரங்கள்</string>
-    <string name="download_book_button">பதிவிறக்கவும்</string>
-    <string name="about_header">பற்றி</string>
-    <string name="about_desc">விக்கிசோர்ஸிலிருந்து சுதந்திரமாக உரிமம் பெற்ற நூல்களைப் படியுங்கள்.</string>
-    <string name="about_setting">பயன்பாட்டு தகவல்</string>
-    <string name="library_read_button">படிக்கவும்</string>
-    <string name="library_delete_button">நீக்கு</string>
-    <string name="navigation_settings">அமைப்புகள்</string>
+  <string name="navigation_settings">அமைப்புகள்</string>
+  <string name="library_read_button">படிக்கவும்</string>
+  <string name="library_delete_button">நீக்கு</string>
+  <string name="about_setting">பயன்பாட்டு தகவல்</string>
+  <string name="book_detail_header">புத்தக விவரங்கள்</string>
+  <string name="download_book_button">பதிவிறக்கவும்</string>
+  <string name="about_header">பற்றி</string>
+  <string name="about_desc">விக்கிசோர்ஸிலிருந்து சுதந்திரமாக உரிமம் பெற்ற நூல்களைப் படியுங்கள்.</string>
 </resources>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="confirm">Confirmer</string>
-    <string name="cancel">Annuler</string>
-    <string name="navigation_home">Maison</string>
-    <string name="navigation_categories">Catégories</string>
-    <string name="navigation_library">Bibliothèque</string>
-    <string name="navigation_settings">Paramètres</string>
-    <string name="home_header">Tous les livres</string>
-    <string name="home_search_icon_desc">Rechercher des livres</string>
-    <string name="categories_header">Catégories</string>
-    <string name="about_setting">Informations sur l\'application</string>
-    <string name="read_book_button">Commencer à lire</string>
-    <string name="download_book_button">Télécharger</string>
-    <string name="about_header">À propos</string>
+  <string name="confirm">Confirmer</string>
+  <string name="cancel">Annuler</string>
+  <string name="navigation_home">Maison</string>
+  <string name="navigation_categories">Catégories</string>
+  <string name="navigation_library">Bibliothèque</string>
+  <string name="navigation_settings">Paramètres</string>
+  <string name="home_header">Tous les livres</string>
+  <string name="home_search_icon_desc">Rechercher des livres</string>
+  <string name="categories_header">Catégories</string>
+  <string name="about_setting">Informations sur l\'application</string>
+  <string name="read_book_button">Commencer à lire</string>
+  <string name="download_book_button">Télécharger</string>
+  <string name="about_header">À propos</string>
 </resources>

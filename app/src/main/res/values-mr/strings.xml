@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="confirm">पुष्टी करा</string>
-    <string name="cancel">रद्द करा</string>
-    <string name="home_header">सर्व पुस्तके</string>
-    <string name="home_search_icon_desc">पुस्तके शोधा</string>
-    <string name="categories_header">श्रेणी</string>
-    <string name="navigation_settings">सेटिंग्ज</string>
-    <string name="about_header">आमच्याबद्दल</string>
-    <string name="download_book_button">डाउनलोड करा</string>
-    <string name="book_detail_header">पुस्तकाची माहिती</string>
+  <string name="confirm">पुष्टी करा</string>
+  <string name="cancel">रद्द करा</string>
+  <string name="navigation_settings">सेटिंग्ज</string>
+  <string name="home_header">सर्व पुस्तके</string>
+  <string name="home_search_icon_desc">पुस्तके शोधा</string>
+  <string name="categories_header">श्रेणी</string>
+  <string name="book_detail_header">पुस्तकाची माहिती</string>
+  <string name="download_book_button">डाउनलोड करा</string>
+  <string name="about_header">आमच्याबद्दल</string>
 </resources>
