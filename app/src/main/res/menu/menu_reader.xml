@@ -39,15 +39,6 @@
         tools:ignore="AlwaysShowAction"/>
 
     <item
-        android:id="@+id/drm"
-        android:icon="@drawable/ic_baseline_enhanced_encryption_24"
-        android:visible="false"
-        android:title="@string/epubactivity_drm_info"
-        app:showAsAction="always"
-        tools:ignore="AlwaysShowAction"/>
-
-
-    <item
         android:id="@+id/toc"
         android:icon="@drawable/ic_outline_menu_24"
         android:title="@string/epubactivity_book_nav_options"

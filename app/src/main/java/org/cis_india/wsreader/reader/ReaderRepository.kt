@@ -95,18 +95,6 @@ class ReaderRepository(
             )
         }
 
-        /*
-        // The publication is protected with a DRM and not unlocked.
-        if (publication.isRestricted) {
-            return Try.failure(
-                OpeningError.RestrictedPublication(
-                    publication.protectionError
-                        ?: DebugError("Publication is restricted.")
-                )
-            )
-        }
-         */
-
         val initialLocator = book.progression
             ?.let { Locator.fromJSON(JSONObject(it)) }
 

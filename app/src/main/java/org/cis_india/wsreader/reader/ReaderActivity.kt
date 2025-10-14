@@ -135,7 +135,6 @@ open class ReaderActivity : AppCompatActivity() {
 
         title = when (currentFragment) {
             is OutlineFragment -> model.publication.metadata.title
-            /*is DrmManagementFragment -> getString(R.string.title_fragment_drm_management)*/
             else -> null
         }
 
@@ -176,20 +175,6 @@ open class ReaderActivity : AppCompatActivity() {
         supportFragmentManager.popBackStack()
     }
 
-    /*
-    private fun showDrmManagementFragment() {
-        supportFragmentManager.commit {
-            add(
-                R.id.activity_container,
-                DrmManagementFragment::class.java,
-                Bundle(),
-                DRM_FRAGMENT_TAG
-            )
-            hide(readerFragment)
-            addToBackStack(null)
-        }
-    }*/
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
@@ -203,6 +188,5 @@ open class ReaderActivity : AppCompatActivity() {
     companion object {
         const val READER_FRAGMENT_TAG = "reader"
         const val OUTLINE_FRAGMENT_TAG = "outline"
-        const val DRM_FRAGMENT_TAG = "drm"
     }
 }
