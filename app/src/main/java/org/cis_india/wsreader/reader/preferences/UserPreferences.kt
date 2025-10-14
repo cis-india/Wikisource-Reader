@@ -33,6 +33,10 @@ import org.cis_india.wsreader.reader.ReaderViewModel
 import org.cis_india.wsreader.reader.tts.TtsPreferencesEditor
 import org.cis_india.wsreader.shared.views.*
 import org.cis_india.wsreader.utils.compose.DropdownMenuButton
+import org.cis_india.wsreader.helpers.PreferenceUtil
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 
 /**
  * Stateful user settings component paired with a [ReaderViewModel].
@@ -379,6 +383,29 @@ private fun ReflowableUserPreferences(
                 commit = commit
             )
         }
+
+        // Custom vertical swipe navigation toggle (not part of Readium preferences)
+        val context = LocalContext.current
+        val preferenceUtil = remember { PreferenceUtil(context) }
+        val verticalSwipeEnabled = remember {
+            mutableStateOf(preferenceUtil.getBoolean(PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL, false))
+        }
+
+        SwitchItem(
+            title = stringResource(id = R.string.vertical_swipe_navigation_setting),
+            value = verticalSwipeEnabled.value,
+            isActive = true,
+            onCheckedChange = { enabled ->
+                verticalSwipeEnabled.value = enabled
+                preferenceUtil.putBoolean(PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL, enabled)
+            },
+            onToggle = {
+                val newValue = !verticalSwipeEnabled.value
+                verticalSwipeEnabled.value = newValue
+                preferenceUtil.putBoolean(PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL, newValue)
+            },
+            onClear = null
+        )
 
         if (columnCount != null) {
             ButtonGroupItem(
