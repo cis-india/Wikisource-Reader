@@ -99,31 +99,22 @@
     <!-- About Screen -->
     <string name="about_header">About</string>
     <string name="about_desc">Read freely-licensed texts from Wikisource</string>
-    <string name="developed_by">Developed By</string>
     <string name="useful_links">Useful Links</string>
     <string name="shivam">Website</string>
     <string name="link_privacy_policy">Privacy Policy</string>
     <string name="link_privacy_policy_desc">Read our latest privacy policy.</string>
-    <string name="link_telegram">Telegram Group</string>
-    <string name="link_telegram_desc">Hang out with us on Telegram!</string>
-    <string name="link_support">Support Development</string>
-    <string name="link_support_desc">Think I deserve cookies? Click here!</string>
 
     <!-- Open source libraries screen -->
     <string name="open_source_licenses_header">Licenses</string>
-    <string name="category_collections">Collections</string>
     <string name="category_novels">Novels</string>
     <string name="category_plays">Plays</string>
     <string name="category_poetry">Poetry</string>
-    <string name="category_stories">Stories</string>
     <string name="category_essays">Essays</string>
     <string name="developed_by_ws">Developed for Wikisource by</string>
-    <string name="based_on">Based on</string>
     <string name="org_name">CIS A2K</string>
     <string name="category_shortstories">Short Stories</string>
     <string name="category_narration">Narration</string>
     <string name="category_biography">Biography</string>
-    <string name="category_novella">Novella</string>
     <string name="category_dictionaries">Dictionaries</string>
     <string name="category_encyclopedias">Encyclopedias</string>
 
@@ -167,9 +158,6 @@
     <string name="bookmark_added">Bookmark added</string>
     <string name="bookmark_exists">Bookmark already exists</string>
 
-    <string name="title_catalogs">Catalogs</string>
-    <string name="title_bookshelf">Bookshelf</string>
-    <string name="title_about">About</string>
     <string name="cover_image">Cover Image</string>
     <string name="repfr">repfr</string>
 
