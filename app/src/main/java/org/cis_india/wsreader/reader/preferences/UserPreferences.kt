@@ -376,17 +376,41 @@ private fun ReflowableUserPreferences(
     }
 
     if (scroll != null || columnCount != null || pageMargins != null) {
+        val context = LocalContext.current
+        val preferenceUtil = remember { PreferenceUtil(context) }
+
         if (scroll != null) {
             SwitchItem(
                 title = "Scroll",
                 preference = scroll,
                 commit = commit
             )
+
+            // Paginated scroll toggle - only shown when scroll is enabled
+            if (scroll.value == true || scroll.effectiveValue) {
+                val paginatedScrollEnabled = remember {
+                    mutableStateOf(preferenceUtil.getBoolean(PreferenceUtil.PAGINATED_SCROLL_BOOL, false))
+                }
+
+                SwitchItem(
+                    title = stringResource(id = R.string.paginated_scroll_setting),
+                    value = paginatedScrollEnabled.value,
+                    isActive = true,
+                    onCheckedChange = { enabled ->
+                        paginatedScrollEnabled.value = enabled
+                        preferenceUtil.putBoolean(PreferenceUtil.PAGINATED_SCROLL_BOOL, enabled)
+                    },
+                    onToggle = {
+                        val newValue = !paginatedScrollEnabled.value
+                        paginatedScrollEnabled.value = newValue
+                        preferenceUtil.putBoolean(PreferenceUtil.PAGINATED_SCROLL_BOOL, newValue)
+                    },
+                    onClear = null
+                )
+            }
         }
 
         // Custom vertical swipe navigation toggle (not part of Readium preferences)
-        val context = LocalContext.current
-        val preferenceUtil = remember { PreferenceUtil(context) }
         val verticalSwipeEnabled = remember {
             mutableStateOf(preferenceUtil.getBoolean(PreferenceUtil.VERTICAL_SWIPE_NAVIGATION_BOOL, false))
         }

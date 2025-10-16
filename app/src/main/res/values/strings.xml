@@ -108,6 +108,9 @@
     <string name="vertical_swipe_navigation_setting">Vertical Swipe Navigation</string>
     <string name="vertical_swipe_navigation_enabled_desc">Swipe up/down to navigate pages</string>
     <string name="vertical_swipe_navigation_disabled_desc">Swipe left/right to navigate pages</string>
+    <string name="paginated_scroll_setting">Paginated Scroll</string>
+    <string name="paginated_scroll_enabled_desc">Scroll in page-sized chunks</string>
+    <string name="paginated_scroll_disabled_desc">Continuous smooth scrolling</string>
     <string name="theme_setting">Default Theme</string>
     <string name="theme_dialog_title">Change Theme</string>
     <string name="theme_option_light">Light</string>
