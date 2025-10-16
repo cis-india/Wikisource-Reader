@@ -29,4 +29,6 @@ data class Translator(
     val deathYear: Int? = null,
     @SerialName("name")
     val name: String = "N/A",
+    @SerialName("person_wikidata_qid")
+    val pwikidataqid: String = "N/A",
 )

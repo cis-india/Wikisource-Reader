@@ -17,6 +17,8 @@
 package org.cis_india.wsreader.helpers.book
 
 import org.cis_india.wsreader.api.models.Author
+import org.cis_india.wsreader.api.models.Editor
+import org.cis_india.wsreader.api.models.Translator
 import java.util.Locale
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers
@@ -55,6 +57,32 @@ object BookUtils {
             }
             names.joinToString(", ")
         }
+    }
+
+    suspend fun getEditors(editors: List<Editor>, language: String): List<String> {
+        if (editors.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            editors.map { editor ->
+                async {
+                    val name = fetchLabelFromWikidata(editor.pwikidataqid, language)
+                    fixAuthorName(name ?: editor.name)
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
+    suspend fun getTranslators(translators: List<Translator>, language: String): List<String> {
+        if (translators.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            translators.map { translator ->
+                async {
+                    val name = fetchLabelFromWikidata(translator.pwikidataqid, language)
+                    fixAuthorName(name ?: translator.name)
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
     }
 
     /**

@@ -35,6 +35,12 @@ data class Book(
     val title: String,
     @SerialName("translators")
     val translators: List<Translator>,
+    @SerialName("editors")
+    val editors: List<Editor> = emptyList(),
+    @SerialName("genre")
+    val genre: List<String> = emptyList(),
+    @SerialName("subjects")
+    val subjects: List<String> = emptyList(),
     @SerialName("title_native_language")
     val titleNativeLanguage: String? = null,
     @SerialName("epub_url")

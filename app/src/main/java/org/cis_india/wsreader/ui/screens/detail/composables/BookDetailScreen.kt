@@ -189,6 +189,20 @@ private fun BookDetailContents(
             authors = authorsString // Update the authors state once the data is fetched
         }
 
+        var editors by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.editors, firstLanguage) {
+            editors = BookUtils.getEditors(book.editors, firstLanguage)
+        }
+
+        var translators by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.translators, firstLanguage) {
+            translators = BookUtils.getTranslators(book.translators, firstLanguage)
+        }
+
+
+        val genres = book.genre.filter { it.isNotBlank() }
+        val subjects = book.subjects.filter { it.isNotBlank() }
+
         BookDetailTopUI(
             title = book.titleNativeLanguage ?: book.title,
             authors = authors,
@@ -374,7 +388,12 @@ private fun BookDetailContents(
             )
             */
         } else {
-            //NoSynopsisUI()
+            Column {
+                InfoLine("Editors", editors)
+                InfoLine("Translators", translators)
+                InfoLine("Genres", genres)
+                InfoLine("Subjects", subjects)
+            }
         }
     }
 }
@@ -632,6 +651,23 @@ private fun NoSynopsisUI() {
     }
 }
 */
+
+@Composable
+fun InfoLine(label: String, values: List<String>) {
+    val filtered = values.filter { it.isNotBlank() }
+    if (filtered.isNotEmpty()) {
+        // Decide label based on count
+        val labelToShow = if (filtered.size > 1) label else label.removeSuffix("s")
+        Text(
+            text = "$labelToShow: ${filtered.joinToString(", ")}",
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
+            fontFamily = poppinsFont,
+            fontWeight = FontWeight.Normal,
+            color = MaterialTheme.colorScheme.onBackground,
+        )
+    }
+}
+
 @Composable
 @Preview(showBackground = true)
 fun BookDetailScreenPreview() {

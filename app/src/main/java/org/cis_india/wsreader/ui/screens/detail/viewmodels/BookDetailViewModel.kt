@@ -119,6 +119,7 @@ class BookDetailViewModel @Inject constructor(
             }
         )
     }
+
     /*
     Currently not working since ws-export doent return Content-length. See T384803 on Phabricator
      fun addPublicationFromWeb(bookUrl: String) {
