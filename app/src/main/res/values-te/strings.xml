@@ -21,8 +21,6 @@
   <string name="library_delete_button">తీసివేయు</string>
   <string name="copy">కాపీ</string>
   <string name="copied">కాపీ చేయబడింది!</string>
-  <string name="translate">అనువదించు</string>
-  <string name="app_desc">వికీసోర్సు రీడర్</string>
   <string name="about_setting">ఆప్ సమాచారం</string>
   <string name="book_detail_header">పుస్తకం వివరాలు</string>
   <string name="back_button_desc">వెనక్కి వెళ్లు</string>
@@ -31,14 +29,11 @@
   <string name="about_header">గురించి</string>
   <string name="shivam">వెబ్ సైట్</string>
   <string name="link_privacy_policy">గోప్యతా విధానం</string>
-  <string name="category_collections">సంకలనాలు</string>
   <string name="category_novels">నవలలు</string>
   <string name="category_plays">నాటకాలు</string>
   <string name="category_poetry">కవిత్వం</string>
-  <string name="category_stories">కథలు</string>
   <string name="category_essays">వ్యాసాలు</string>
   <string name="category_narration">కథనం</string>
   <string name="category_biography">జీవితచరిత్ర</string>
-  <string name="category_novella">నవెల్లా</string>
   <string name="copyright_label">కాపీహక్కు</string>
 </resources>
