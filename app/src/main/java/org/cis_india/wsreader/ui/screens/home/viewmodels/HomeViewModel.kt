@@ -34,7 +34,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.cis_india.wsreader.helpers.book.BookUtils.getAuthorsAsString
 import javax.inject.Inject
 
 data class AllBooksState(
@@ -103,17 +102,7 @@ class HomeViewModel @Inject constructor(
             if (index != -1) {
                 books.removeAt(index)
             }
-
-            // Update the author for each book with localised name.
-            val updatedBooks = books.map { book ->
-                val localisedAuthorName = getAuthorsAsString(book.authors, language.value.isoCode)
-                val bookAuthorsList = book.authors.map { author ->
-                    author.copy( name = localisedAuthorName)
-                }
-                book.copy(authors = bookAuthorsList)
-            }
-
-            updatedBooks // return the list of updated books
+            books // return the list of books
         }
 
         allBooksState = allBooksState.copy(
