@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SearchView
 import androidx.core.os.BundleCompat
@@ -146,6 +147,17 @@ class EpubReaderFragment : VisualReaderFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val progressBar = view.findViewById<ProgressBar>(R.id.readingProgressBar)
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                navigator.currentLocator.collect { locator ->
+                    val progress = locator?.locations?.totalProgression ?: 0.0
+                    progressBar.progress = (progress * 100).toInt()
+                }
+            }
+        }
 
         @Suppress("Unchecked_cast")
         (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)

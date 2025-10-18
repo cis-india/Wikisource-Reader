@@ -11,9 +11,22 @@
         android:layout_height="match_parent"
         />
 
+    <ProgressBar
+        android:id="@+id/readingProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_gravity="top"
+        android:progress="0"
+        android:max="100"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/reader_progress_drawable"
+        android:background="@android:color/transparent" />
+
     <androidx.compose.ui.platform.ComposeView
         android:id="@+id/overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+
 </FrameLayout>
