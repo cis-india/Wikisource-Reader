@@ -187,62 +187,6 @@ fun LibraryScreen(navController: NavController, lifecycleOwner: LifecycleOwner =
                     headerText = stringResource(id = R.string.library_header),
                     iconRes = R.drawable.ic_nav_library
                 )
-            },
-            floatingActionButton = {
-                val density = LocalDensity.current
-                AnimatedVisibility(
-                    visible = !showImportDialog.value && lazyListState.isScrollingUp(),
-                    enter = slideInVertically {
-                        with(density) { 40.dp.roundToPx() }
-                    } + fadeIn(),
-                    exit = fadeOut(
-                        animationSpec = keyframes {
-                            this.durationMillis = 120
-                        }
-                    )
-                ) {
-                    ExtendedFloatingActionButton(
-                        onClick = {
-                            view.weakHapticFeedback()
-                            importBookLauncher.launch(arrayOf(Constants.EPUB_MIME_TYPE))
-                        },
-                        modifier = Modifier.tapTarget(
-                            precedence = 0,
-                            title = TextDefinition(
-                                text = stringResource(id = R.string.import_button_onboarding),
-                                textStyle = MaterialTheme.typography.titleLarge,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.onSecondaryContainer
-                            ),
-                            description = TextDefinition(
-                                text = stringResource(id = R.string.import_button_onboarding_desc),
-                                textStyle = MaterialTheme.typography.bodyMedium,
-                                fontWeight = FontWeight.Medium,
-                                color = MaterialTheme.colorScheme.onSecondaryContainer,
-                            ),
-                            tapTargetStyle = TapTargetStyle(
-                                backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
-                                tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                                backgroundAlpha = 1f,
-                            ),
-                        ),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Add,
-                            contentDescription = stringResource(id = R.string.import_button_desc),
-                            tint = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = stringResource(id = R.string.import_button_text),
-                            fontWeight = FontWeight.Medium,
-                            fontFamily = poppinsFont,
-                            fontSize = 14.sp,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-
-                    }
-                }
             }
         ) { paddingValues ->
             LibraryContents(
