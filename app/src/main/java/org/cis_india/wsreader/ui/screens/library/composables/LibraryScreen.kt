@@ -645,19 +645,20 @@ fun CircularProgressWithText(
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.size(24.dp)
+        modifier = Modifier.size(28.dp)
     ) {
         CircularProgressIndicator(
             progress = progressFloat,
-            modifier = Modifier.size(24.dp),
-            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.size(28.dp),
+            color = MaterialTheme.colorScheme.onSurface,
             trackColor = MaterialTheme.colorScheme.primaryContainer,
             strokeWidth = 1.dp
         )
 
         Text(
             text = "$progress%",
-            fontSize = 6.sp,
+            fontSize = 10.sp,
+            fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onSurface,
         )
     }
