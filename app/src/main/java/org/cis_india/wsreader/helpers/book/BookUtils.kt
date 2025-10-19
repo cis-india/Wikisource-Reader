@@ -64,12 +64,8 @@ object BookUtils {
         }
         val cacheKey = "authors-$authorIdsKey-$language"
 
-        // check for value in cache first
-        authorStringCache[cacheKey]?.let { cachedResult ->
-            return cachedResult
-        }
-
-        // proceed if value wasnt found in cache
+        // Update value from fetch
+        // This updates author if value has changed.
         val result = if (authors.isEmpty()) {
             "Unknown Author"
         } else {
