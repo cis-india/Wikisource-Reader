@@ -29,22 +29,48 @@ import java.net.URL
 
 object BookUtils {
 
+    // cached authors
+    val authorStringCache = mutableMapOf<String, String>()
+
     /**
      * Converts the list of authors into a single string.
      *
      * @param authors List of authors.
      * @return String representation of the authors.
      */
-    fun getAuthorsAsStringen(authors: List<Author>): String {
+    fun getAuthorsAsStringen(authors: List<Author>, language: String): String {
         return if (authors.isEmpty()) {
             "Unknown Author"
         } else {
+            val authorIdsKey = authors.joinToString("|") {
+                it.pwikidataqid
+            }
+            val cacheKey = "authors-$authorIdsKey-$language"
+
+            // check for value in cache first
+            authorStringCache[cacheKey]?.let { cachedResult ->
+                return cachedResult
+            }
+
             authors.joinToString(", ") { fixAuthorName(it.name) }
         }
     }
 
     suspend fun getAuthorsAsString(authors: List<Author>, language: String): String {
-        return if (authors.isEmpty()) {
+        // Construct a unique cache key
+        // using unique pwikidataqid
+        val authorIdsKey = authors.joinToString("|") {
+            it.pwikidataqid
+        }
+        val cacheKey = "authors-$authorIdsKey-$language"
+
+        // check for value in cache first
+        authorStringCache[cacheKey]?.let { cachedResult ->
+            return cachedResult
+        }
+
+        // proceed if value wasnt found in cache
+        val result = if (authors.isEmpty()) {
             "Unknown Author"
         } else {
             val names = coroutineScope {
@@ -57,6 +83,11 @@ object BookUtils {
             }
             names.joinToString(", ")
         }
+
+        // Add value to cache
+        authorStringCache[cacheKey] = result
+
+        return result
     }
 
     suspend fun getEditors(editors: List<Editor>, language: String): List<String> {
