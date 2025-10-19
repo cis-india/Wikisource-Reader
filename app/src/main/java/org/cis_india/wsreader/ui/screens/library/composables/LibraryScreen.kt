@@ -109,6 +109,7 @@ import org.cis_india.wsreader.reader.ReaderActivityContract
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import android.content.Context
 import android.widget.Toast
+import org.json.JSONObject
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -187,62 +188,6 @@ fun LibraryScreen(navController: NavController, lifecycleOwner: LifecycleOwner =
                     headerText = stringResource(id = R.string.library_header),
                     iconRes = R.drawable.ic_nav_library
                 )
-            },
-            floatingActionButton = {
-                val density = LocalDensity.current
-                AnimatedVisibility(
-                    visible = !showImportDialog.value && lazyListState.isScrollingUp(),
-                    enter = slideInVertically {
-                        with(density) { 40.dp.roundToPx() }
-                    } + fadeIn(),
-                    exit = fadeOut(
-                        animationSpec = keyframes {
-                            this.durationMillis = 120
-                        }
-                    )
-                ) {
-                    ExtendedFloatingActionButton(
-                        onClick = {
-                            view.weakHapticFeedback()
-                            importBookLauncher.launch(arrayOf(Constants.EPUB_MIME_TYPE))
-                        },
-                        modifier = Modifier.tapTarget(
-                            precedence = 0,
-                            title = TextDefinition(
-                                text = stringResource(id = R.string.import_button_onboarding),
-                                textStyle = MaterialTheme.typography.titleLarge,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.onSecondaryContainer
-                            ),
-                            description = TextDefinition(
-                                text = stringResource(id = R.string.import_button_onboarding_desc),
-                                textStyle = MaterialTheme.typography.bodyMedium,
-                                fontWeight = FontWeight.Medium,
-                                color = MaterialTheme.colorScheme.onSecondaryContainer,
-                            ),
-                            tapTargetStyle = TapTargetStyle(
-                                backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
-                                tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                                backgroundAlpha = 1f,
-                            ),
-                        ),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Add,
-                            contentDescription = stringResource(id = R.string.import_button_desc),
-                            tint = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = stringResource(id = R.string.import_button_text),
-                            fontWeight = FontWeight.Medium,
-                            fontFamily = poppinsFont,
-                            fontSize = 14.sp,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-
-                    }
-                }
             }
         ) { paddingValues ->
             LibraryContents(
@@ -386,6 +331,17 @@ private fun LibraryLazyItem(
     val coroutineScope = rememberCoroutineScope()
     val openDeleteDialog = remember { mutableStateOf(false) }
 
+    val totalProgressionPercentage = remember(item.progression) {
+        try {
+            val json = JSONObject(item.progression ?: "{}")
+            val locations = json.optJSONObject("locations")
+            val totalProgression = locations?.optDouble("totalProgression", 0.0) ?: 0.0
+            (totalProgression * 100).toInt()
+        } catch (e: Exception) {
+            0
+        }
+    }
+
     // Swipe actions to show book details. Should enable in future after fixes
     /*
     val detailsAction = SwipeAction(icon = painterResource(
@@ -438,7 +394,9 @@ private fun LibraryLazyItem(
                     viewModel.openPublication(it)
                 }
             },
-            onDeleteClick = { openDeleteDialog.value = true })
+            onDeleteClick = { openDeleteDialog.value = true },
+            progression = totalProgressionPercentage
+        )
 
 
     if (openDeleteDialog.value) {
@@ -479,7 +437,8 @@ private fun LibraryCard(
     //fileSize: String,
     date: String,
     onReadClick: () -> Unit,
-    onDeleteClick: () -> Unit
+    onDeleteClick: () -> Unit,
+    progression: Int
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(
@@ -562,7 +521,7 @@ private fun LibraryCard(
                 }
                 */
 
-                Row(modifier = Modifier.offset(y = (-4).dp)) {
+                Row(modifier = Modifier.offset(y = (-4).dp), verticalAlignment = Alignment.CenterVertically) {
                     LibraryCardButton(text = stringResource(id = R.string.library_read_button),
                         icon = ImageVector.vectorResource(id = R.drawable.ic_library_read),
                         onClick = { onReadClick() })
@@ -572,6 +531,12 @@ private fun LibraryCard(
                     LibraryCardButton(text = stringResource(id = R.string.library_delete_button),
                         icon = Icons.Outlined.Delete,
                         onClick = { onDeleteClick() })
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    CircularProgressWithText(
+                        progress = progression,
+                    )
                 }
                 Spacer(modifier = Modifier.height(2.dp))
             }
@@ -615,6 +580,34 @@ private fun LibraryCardButton(
     }
 }
 
+@Composable
+fun CircularProgressWithText(
+    progress: Int, // The percentage (0-100)
+) {
+
+    val progressFloat = progress / 100f
+
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.size(28.dp)
+    ) {
+        CircularProgressIndicator(
+            progress = progressFloat,
+            modifier = Modifier.size(28.dp),
+            color = MaterialTheme.colorScheme.onSurface,
+            trackColor = MaterialTheme.colorScheme.primaryContainer,
+            strokeWidth = 1.dp
+        )
+
+        Text(
+            text = "$progress%",
+            fontSize = 10.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onSurface,
+        )
+    }
+}
+
 
 @ExperimentalMaterial3Api
 @Composable
@@ -625,5 +618,7 @@ fun LibraryScreenPreview() {
         //fileSize = "5.9MB",
         date = "01- Jan -2020",
         onReadClick = {},
-        onDeleteClick = {})
+        onDeleteClick = {},
+        progression = 80
+    )
 }
