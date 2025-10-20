@@ -127,7 +127,7 @@
   <string name="bookmark_added">Bokmärke tillagt</string>
   <string name="bookmark_exists">Bokmärke finns redan</string>
   <string name="cover_image">Omslagsbild</string>
-  <string name="repfr">repfr</string>
+  <string name="repfr" fuzzy="true">repfr</string>
   <string name="details">Detaljer</string>
   <string name="close">Stäng</string>
   <string name="delete">Radera</string>

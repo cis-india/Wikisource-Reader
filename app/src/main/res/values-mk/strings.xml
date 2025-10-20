@@ -126,7 +126,7 @@
   <string name="bookmark_added">Додаден обележувач</string>
   <string name="bookmark_exists">Обележувачот веќе постои</string>
   <string name="cover_image">Насловна слика</string>
-  <string name="repfr">франреп</string>
+  <string name="repfr" fuzzy="true">франреп</string>
   <string name="details">Подробно</string>
   <string name="close">Затвори</string>
   <string name="delete">Избриши</string>

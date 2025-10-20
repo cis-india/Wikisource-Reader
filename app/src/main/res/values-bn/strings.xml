@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Bodhisattwa
+* আফতাবুজ্জামান
 -->
 <resources>
   <string name="not_applicable">প্রযোজ্য নয়</string>
@@ -15,7 +16,7 @@
   <string name="navigation_categories">বিষয়শ্রেণী</string>
   <string name="navigation_library">গ্রন্থাগার</string>
   <string name="navigation_settings">সেটিং</string>
-  <string name="library_tooltip">টিপ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে লাইব্রেরি আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
+  <string name="library_tooltip">পরামর্শ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে গ্রন্থাগারের আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
   <string name="welcome_screen_title">উইকিসোর্স রিডার ইনস্টল করার জন্য ধন্যবাদ!</string>
   <string name="welcome_screen_desc">আপনার পড়ার যাত্রা শুরু করতে আপনার পছন্দের ইবুক রিডার বেছে নিন।</string>
   <string name="welcome_screen_button">শুরু করুন</string>
@@ -46,14 +47,14 @@
   <string name="default_reader_dialog_title">এর মাধ্যমে ইবুক খুলুন...</string>
   <string name="reader_option_inbuilt">ইনবিল্ট রিডার</string>
   <string name="reader_option_external">এক্সটারনাল রিডার</string>
-  <string name="default_locale_setting">ডিফল্ট Locale</string>
-  <string name="default_locale_setting_desc">আপনার পছন্দের Locale নির্বাচন করুন।</string>
-  <string name="locale_setting_not_found">দুঃখিত! এই ফিচার এখনও আপনার ওএস এর জন্য আসেনি৷</string>
+  <string name="default_locale_setting">ডিফল্ট লোকাল</string>
+  <string name="default_locale_setting_desc">আপনার পছন্দের লোকাল নির্বাচন করুন।</string>
+  <string name="locale_setting_not_found">দুঃখিত! এই ফিচার এখনও আপনার ওএসের জন্য আসেনি।</string>
   <string name="display_setting_header">প্রদর্শন</string>
   <string name="theme_setting">ডিফল্ট থিম</string>
   <string name="theme_dialog_title">থিম বদলান</string>
-  <string name="theme_option_light">লাইট</string>
-  <string name="theme_option_dark">ডার্ক</string>
+  <string name="theme_option_light">উজ্জ্বল</string>
+  <string name="theme_option_dark">আঁধার</string>
   <string name="theme_option_system">সিস্টেম ডিফল্ট</string>
   <string name="theme_dialog_apply_button">প্রয়োগ করুন</string>
   <string name="amoled_theme_setting">কালো থিম</string>
@@ -61,9 +62,9 @@
   <string name="amoled_theme_setting_enabled_desc">অ্যামোলেড ব্ল্যাক থিম নিষ্ক্রিয় করুন</string>
   <string name="material_you_setting_disabled_desc">ম্যাটেরিয়াল ইউ সক্রিয় করুন</string>
   <string name="material_you_setting_enabled_desc">ম্যাটেরিয়াল ইউ নিষ্ক্রিয় করুন</string>
-  <string name="material_you_error">এই ফিচার শুধুমাত্র অ্যান্ড্রয়েড 12 বা তার উপরে চলমান ডিভাইসগুলির জন্য।</string>
+  <string name="material_you_error">এই ফিচার শুধুমাত্র অ্যান্ড্রয়েড ১২ বা তার উপরে চলমান ডিভাইসগুলির জন্য।</string>
   <string name="miscellaneous_setting_header">বিবিধ</string>
-  <string name="license_setting">লাইসেন্স &amp; স্বীকৃতি</string>
+  <string name="license_setting">লাইসেন্স ও স্বীকৃতি</string>
   <string name="license_setting_desc">ওপেন সোর্স লাইসেন্স।</string>
   <string name="about_setting">অ্যাপের তথ্য</string>
   <string name="about_setting_desc">অ্যাপের তথ্য এবং দরকারী লিঙ্কগুলি দেখান</string>
@@ -87,13 +88,20 @@
   <string name="category_plays">নাটক</string>
   <string name="category_poetry">কবিতা</string>
   <string name="category_essays">প্রবন্ধ</string>
+  <string name="developed_by_ws">উইকিসংকলনের জন্য তৈরি করেছেন</string>
+  <string name="org_name">সিআইএস এ২কে</string>
   <string name="category_shortstories">ছোট গল্প</string>
   <string name="category_narration">বর্ণনা</string>
   <string name="category_biography">জীবনী</string>
   <string name="category_dictionaries">অভিধান</string>
   <string name="category_encyclopedias">বিশ্বকোষ</string>
+  <string name="epubactivity_set_bookmark">একটি বুকমার্ক যোগ করুন</string>
+  <string name="epubactivity_settings">ব্যবহারকারীর সেটিং</string>
+  <string name="epubactivity_book_nav_options">বই পরিভ্রমণ মেনু</string>
   <string name="epubactivity_read_aloud_start">জোরে পড়ুন</string>
+  <string name="epubactivity_search">অনুসন্ধান</string>
   <string name="more_options">আরও বিকল্প</string>
+  <string name="popup_delete_button">মুছুন</string>
   <string name="app_version_header">সংস্করণ</string>
   <string name="app_version_label">অ্যাপ সংস্করণ:</string>
   <string name="app_version">২.২.০</string>
@@ -108,13 +116,29 @@
   <string name="zero">০০:০০</string>
   <string name="chapter_page">অধ্যায় / পৃষ্ঠা</string>
   <string name="progression">প্রগতি</string>
+  <string name="contents_tab_label">বিষয়বস্তু</string>
   <string name="bookmarks_tab_label">বুকমার্ক</string>
+  <string name="action_mode_menu_highlight">আলোকপাত করুন</string>
+  <string name="action_mode_menu_underline">নিম্নরেখা</string>
+  <string name="action_mode_menu_note">টীকা</string>
+  <string name="cover_image">প্রচ্ছদ চিত্র</string>
+  <string name="details">বিস্তারিত</string>
   <string name="close">বন্ধ করুন</string>
   <string name="delete">অপসারণ করুন</string>
+  <string name="confirm_delete_book_title">বই মুছে ফেলবেন?</string>
   <string name="add_book">একটি বই যোগ করুন</string>
   <string name="save">সংরক্ষণ করুন</string>
+  <string name="enter_title">শিরোনাম লিখুন</string>
+  <string name="enter_url">ইউআরএল লিখুন</string>
   <string name="invalid_title">দয়া করে একটি শিরোনাম লিখুন।</string>
   <string name="invalid_url">দয়া করে একটি বৈধ ইউআরএল দিন।</string>
+  <string name="return_button">ফিরুন</string>
+  <string name="opening_publication_cannot_render">প্রকাশনা রেন্ডার করা যাচ্ছে না।</string>
+  <string name="opening_publication_audio_engine_initialization">অডিও ইঞ্জিনের আরম্ভকরণ ব্যর্থ হওয়ায় প্রকাশনা খোলা যায়নি।</string>
+  <string name="import_publication_unexpected_io_exception">আপনার ডিভাইসের একটি অপ্রত্যাশিত ত্রুটির কারণে প্রকাশনা যোগ করা যায়নি।</string>
+  <string name="import_publication_download_failed">প্রকাশনা ডাউনলোড করা যায়নি।</string>
+  <string name="import_publication_no_acquisition">অধিগ্রহণ সম্ভব নয়।</string>
+  <string name="import_publication_success">আপনার গ্রন্থাগারে প্রকাশনা যোগ করা হয়েছে</string>
   <string name="reader_error">ত্রুটি</string>
   <string name="import_error">আমদানি ত্রুটি</string>
   <string name="no_result">ফলাফল নেই</string>
@@ -126,6 +150,17 @@
   <string name="blue">নীল</string>
   <string name="red">লাল</string>
   <string name="purple">বেগুনি</string>
+  <string name="go_backward_30_seconds">৩০ সেকেন্ড পিছনে যান</string>
+  <string name="play_or_pause">চালান বা বিরতি দিন</string>
+  <string name="go_forward_30_seconds">৩০ সেকেন্ড সামনে যান</string>
+  <string name="tts_error_other">একটি TTS ত্রুটি ঘটেছে।</string>
+  <string name="tts_next">সামনে যান</string>
+  <string name="tts_pause">বিরতি দিন</string>
+  <string name="tts_play">চালান</string>
+  <string name="tts_previous">পিছনে যান</string>
+  <string name="speed_rate">গতি</string>
+  <string name="pitch_rate">পিচ</string>
+  <string name="tts_stop">থামুন</string>
   <string name="tts_voice">কণ্ঠস্বর</string>
   <string name="go_to_library">গ্রন্থাগারে যান</string>
   <string name="link_sourcecode">গিটহাব</string>
