@@ -102,7 +102,7 @@ class HomeViewModel @Inject constructor(
             if (index != -1) {
                 books.removeAt(index)
             }
-            books // return the list of books
+            books
         }
 
         allBooksState = allBooksState.copy(

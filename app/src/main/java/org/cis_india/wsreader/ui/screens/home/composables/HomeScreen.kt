@@ -311,7 +311,7 @@ private fun AllBooksList(
                     contentAlignment = Alignment.Center
                 ) {
                     val firstLanguage = item.languages.firstOrNull() ?: "en"
-                    var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors)) }
+                    var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }
 
                     LaunchedEffect(item.authors, firstLanguage) {
                         val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage)
@@ -386,7 +386,7 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
                 contentAlignment = Alignment.Center
             ) {
                 val firstLanguage = item.languages.firstOrNull() ?: "en"
-                var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors)) }
+                var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }
                 LaunchedEffect(item.authors, firstLanguage) {
                     val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage)
                     authors = authorsString
