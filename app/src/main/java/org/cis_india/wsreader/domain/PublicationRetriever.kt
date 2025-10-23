@@ -42,6 +42,10 @@ class PublicationRetriever(
     private val bookshelfDir: File,
     private val tempDir: File,
 ) {
+    private companion object {
+        private const val EBOOKS_FOLDER_NAME = "ebooks"
+    }
+
     data class Result(
         val publication: File,
         val format: Format,
@@ -57,22 +61,18 @@ class PublicationRetriever(
     suspend fun retrieveFromStorage(
         uri: Uri,
     ): Try<Result, ImportError> {
-        val localResult = localPublicationRetriever
-            .retrieve(uri)
-            .getOrElse { return Try.failure(it) }
 
-        val finalResult = moveToBookshelfDir(
-            localResult.tempFile,
-            localResult.format,
-            localResult.coverUrl
-        )
+        val file = File(uri.path!!)
+
+        val sourceAsset = assetRetriever.retrieve(file, FormatHints(null))
             .getOrElse {
-                tryOrLog { localResult.tempFile.delete() }
-                return Try.failure(it)
+                return Try.failure(ImportError.Publication(PublicationError(it)))
             }
 
+        val actualFormat = sourceAsset.format
+
         return Try.success(
-            Result(finalResult.publication, finalResult.format, finalResult.coverUrl)
+            Result(file, actualFormat, coverUrl = null)
         )
     }
 
@@ -156,8 +156,11 @@ class PublicationRetriever(
                     return Try.failure(ImportError.Publication(PublicationError(it)))
                 }
 
+        val ebooksDir = File(bookshelfDir, EBOOKS_FOLDER_NAME).apply { if (!exists()) mkdirs() }
+
         val fileName = "${UUID.randomUUID()}.${actualFormat.fileExtension.value}"
-        val bookshelfFile = File(bookshelfDir, fileName)
+
+        val bookshelfFile = File(ebooksDir, fileName)
 
         try {
             tempFile.moveTo(bookshelfFile)

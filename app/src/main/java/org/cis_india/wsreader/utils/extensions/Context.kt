@@ -7,14 +7,20 @@
 package org.cis_india.wsreader.utils.extensions
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import kotlin.coroutines.resume
 import kotlinx.coroutines.suspendCancellableCoroutine
 import org.cis_india.wsreader.R
+import java.io.File
+import java.net.URLDecoder
 
 @ColorInt
 fun Context.color(@ColorRes id: Int): Int {
@@ -44,3 +50,39 @@ suspend fun Context.confirmDialog(
             }
             .show()
     }
+
+/**
+ * Shares an EPUB file to external apps.
+ */
+fun Context.shareEpub(href: String, mediaType: String) {
+    try {
+        val rawPath = href.removePrefix("file://")
+
+        // Decode any URL-encoded characters (like %2B for '+')
+        val decodedPath = URLDecoder.decode(rawPath, "UTF-8")
+
+        val epubFile = File(decodedPath)
+        if (!epubFile.exists()) {
+            Toast.makeText(this, "File not found", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val fileUri: Uri = FileProvider.getUriForFile(
+            this,
+            "$packageName.provider",
+            epubFile
+        )
+
+        val shareIntent = Intent(Intent.ACTION_SEND).apply {
+            type = mediaType
+            putExtra(Intent.EXTRA_STREAM, fileUri)
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        }
+
+        startActivity(Intent.createChooser(shareIntent, "Share book via"))
+
+    } catch (e: Exception) {
+        e.printStackTrace()
+        Toast.makeText(this, "Unable to share this file", Toast.LENGTH_SHORT).show()
+    }
+}

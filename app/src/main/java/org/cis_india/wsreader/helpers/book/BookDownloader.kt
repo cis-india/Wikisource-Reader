@@ -30,6 +30,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.io.File
+import java.util.UUID
 
 
 /**
@@ -60,7 +61,9 @@ class BookDownloader(private val context: Context) {
                 .split(" ")
                 .joinToString(separator = "+") { word ->
                     word.replace(Regex("[^\\p{ASCII}]"), "")
-                }.take(MAX_FILENAME_LENGTH).trim()
+                }.take(MAX_FILENAME_LENGTH)
+                    .trim()
+                    .ifEmpty { UUID.randomUUID().toString() }
             return "$sanitizedTitle.epub"
         }
     }
