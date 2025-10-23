@@ -8,12 +8,14 @@ package org.cis_india.wsreader.reader
 
 import android.app.AlertDialog
 import android.app.SearchManager
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.RectF
+import android.net.Uri
 import android.os.Bundle
 import android.os.Build
 import android.view.ActionMode
@@ -395,6 +397,8 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 menu.findItem(R.id.note).isVisible = true
                 menu.findItem(R.id.copy).isVisible = true
                 menu.findItem(R.id.web_search).isVisible = true
+                menu.findItem(R.id.dictionary).isVisible = true
+                menu.findItem(R.id.translate).isVisible = true
             }
             return true
         }
@@ -406,6 +410,8 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 R.id.note -> showAnnotationPopup()
                 R.id.copy -> copySelectionToClipboard()
                 R.id.web_search -> searchSelectionOnWeb()
+                R.id.dictionary -> openDictionary()
+                R.id.translate -> openTranslate()
                 else -> return false
             }
 
@@ -610,6 +616,77 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 navigator.clearSelection()
             } else {
                 Toast.makeText(context, "No text selected for web search", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun openDictionary() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val navigator = navigator as? SelectableNavigator ?: return@launch
+            val selection = navigator.currentSelection() ?: return@launch
+
+            val selectedText = selection.locator.text.highlight.toString().trim()
+
+            if(selectedText.isNotEmpty()) {
+                val dictionaryIntent = Intent(Intent.ACTION_PROCESS_TEXT).apply {
+                    type = "text/plain"
+                    putExtra(Intent.EXTRA_PROCESS_TEXT, selectedText)
+                    putExtra(Intent.EXTRA_PROCESS_TEXT_READONLY, true)
+                }
+
+                val browserIntent = Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse("https://www.onelook.com/?w=${Uri.encode(selectedText)}")
+                }
+
+                try {
+                    startActivity(Intent.createChooser(dictionaryIntent, null))
+                } catch (e: ActivityNotFoundException) {
+                    try {
+                        startActivity(Intent.createChooser(browserIntent, null))
+                    } catch (e: ActivityNotFoundException) {
+                        Toast.makeText(
+                            context,
+                            getString(R.string.no_app_found_dictionary),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                navigator.clearSelection()
+            } else {
+                Toast.makeText(
+                    context,
+                    getString(R.string.no_text_selected_for_dictionary),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun openTranslate() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val navigator = navigator as? SelectableNavigator ?: return@launch
+            val selection = navigator.currentSelection() ?: return@launch
+
+            val selectedText = selection.locator.text.highlight.toString().trim()
+
+            if (selectedText.isNotEmpty()) {
+                val translateUrl = "https://translate.google.com/?sl=auto&tl=en&text=${Uri.encode(selectedText)}"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(translateUrl))
+
+                try {
+                    startActivity(intent)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.no_app_found_for_translation),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                navigator.clearSelection()
+            } else {
+                Toast.makeText(context, getString(R.string.no_text_selected_for_translation), Toast.LENGTH_SHORT).show()
             }
         }
     }

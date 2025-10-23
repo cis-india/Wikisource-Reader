@@ -37,4 +37,15 @@
         app:showAsAction="ifRoom">
     </item>
 
+    <item
+        android:id="@+id/dictionary"
+        android:title="@string/dictionary"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/translate"
+        android:title="@string/translate"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
 </menu>

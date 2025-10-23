@@ -41,6 +41,8 @@
   <string name="copied">कॉपी किया गया!</string>
   <string name="web_search">वेब खोज</string>
   <string name="share">साझा करें</string>
+  <string name="translate">अनुवाद करें</string>
+  <string name="dictionary">शब्दकोष</string>
   <string name="settings_header">सेटिंग्स</string>
   <string name="general_settings_header">सामान्य</string>
   <string name="default_reader_dialog_title">ईबुक्स को इसके साथ खोलें…</string>
