@@ -628,28 +628,18 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
             val selectedText = selection.locator.text.highlight.toString().trim()
 
             if(selectedText.isNotEmpty()) {
-                val dictionaryIntent = Intent(Intent.ACTION_PROCESS_TEXT).apply {
-                    type = "text/plain"
-                    putExtra(Intent.EXTRA_PROCESS_TEXT, selectedText)
-                    putExtra(Intent.EXTRA_PROCESS_TEXT_READONLY, true)
-                }
-
                 val browserIntent = Intent(Intent.ACTION_VIEW).apply {
                     data = Uri.parse("https://www.onelook.com/?w=${Uri.encode(selectedText)}")
                 }
 
                 try {
-                    startActivity(Intent.createChooser(dictionaryIntent, null))
+                    startActivity(browserIntent)
                 } catch (e: ActivityNotFoundException) {
-                    try {
-                        startActivity(Intent.createChooser(browserIntent, null))
-                    } catch (e: ActivityNotFoundException) {
-                        Toast.makeText(
-                            context,
-                            getString(R.string.no_app_found_dictionary),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    Toast.makeText(
+                        context,
+                        getString(R.string.no_app_found_dictionary),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
                 navigator.clearSelection()
