@@ -27,7 +27,7 @@ class BookUtilsTest {
     @Test
     fun `getAuthorsAsString returns expected string with one author`() = runTest {
         val author = Author(name = "Dostoyevsky, Fyodor", birthYear = 0, deathYear = 0)
-        assertThat(BookUtils.getAuthorsAsStringen(listOf(author))).isEqualTo("Fyodor Dostoyevsky")
+        assertThat(BookUtils.getAuthorsAsStringen(listOf(author),"en"),).isEqualTo("Fyodor Dostoyevsky")
     }
 
     @Test
@@ -39,14 +39,15 @@ class BookUtilsTest {
                 listOf(
                     author1,
                     author2
-                )
+                ),
+                "en"
             )
         ).isEqualTo("Fyodor Dostoyevsky, George Orwell")
     }
 
     @Test
     fun `getAuthorsAsString returns 'Unknown Author' when the list is empty`() = runTest {
-        assertThat(BookUtils.getAuthorsAsStringen(emptyList())).isEqualTo("Unknown Author")
+        assertThat(BookUtils.getAuthorsAsStringen(emptyList(),"en")).isEqualTo("Unknown Author")
     }
 
     @Test
