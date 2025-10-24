@@ -22,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import org.cis_india.wsreader.api.BookAPI
 import org.cis_india.wsreader.api.models.Book
@@ -33,8 +34,12 @@ import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.cis_india.wsreader.helpers.book.BookDownloader
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.cis_india.wsreader.reader.OpeningError
+import org.cis_india.wsreader.reader.ReaderActivityContract
+import org.cis_india.wsreader.utils.EventChannel
 import javax.inject.Inject
 import java.io.File
 
@@ -58,8 +63,28 @@ class BookDetailViewModel @Inject constructor(
     private val app get() =
         getApplication<org.cis_india.wsreader.MyneApp>()
 
+    val channel = EventChannel(Channel<Event>(Channel.BUFFERED), viewModelScope)
+
+    val allItems: LiveData<List<org.cis_india.wsreader.data.model.Book>> = app.bookRepository.books()
+
     var state by mutableStateOf(BookDetailScreenState())
         private set
+
+    fun openPublication(
+        bookId: Long,
+    ) {
+        viewModelScope.launch {
+            app.readerRepository
+                .open(bookId)
+                .onFailure {
+                    channel.send(Event.OpenPublicationError(it))
+                }
+                .onSuccess {
+                    val arguments = ReaderActivityContract.Arguments(bookId)
+                    channel.send(Event.LaunchReader(arguments))
+                }
+        }
+    }
 
     fun getBookDetails(bookId: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -131,4 +156,17 @@ class BookDetailViewModel @Inject constructor(
         }
     }
     */
+
+
+    sealed class Event {
+
+        class OpenPublicationError(
+            val error: OpeningError,
+        ) : Event()
+
+        class LaunchReader(
+            val arguments: ReaderActivityContract.Arguments,
+        ) : Event()
+    }
+
 }
