@@ -31,6 +31,7 @@ import org.cis_india.wsreader.helpers.Constants
 import org.cis_india.wsreader.helpers.Paginator
 import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.cis_india.wsreader.helpers.book.BookLanguage
+import org.cis_india.wsreader.helpers.book.BookSortOption
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -57,6 +58,9 @@ class CategoryViewModel @Inject constructor(
     private val _language: MutableState<BookLanguage> = mutableStateOf(getPreferredLanguage())
     val language: State<BookLanguage> = _language
 
+    private val _sortOption: MutableState<BookSortOption> = mutableStateOf(getPreferredSortOption())
+    val sortOption: State<BookSortOption> = _sortOption
+
     fun loadBookByCategory(category: String) {
         if (!this::pagination.isInitialized) {
             pagination = Paginator(
@@ -71,7 +75,7 @@ class CategoryViewModel @Inject constructor(
                         // which could cause flickering, so we add artificial delay of
                         // 400ms as it doesn't do any harm and improves the overall UX
                         delay(400)
-                        booksApi.getBooksByCategory(category, nextPage, language.value)
+                        booksApi.getBooksByCategory(category, nextPage, language.value, sortOption.value.apiValue)
                     } catch (exc: Exception) {
                         Result.failure(exc)
                     }
@@ -114,6 +118,12 @@ class CategoryViewModel @Inject constructor(
         reloadItems()
     }
 
+    fun changeSortOption(sortOption: BookSortOption) {
+        _sortOption.value = sortOption
+        preferenceUtil.putString(PreferenceUtil.PREFERRED_BOOK_SORT_STR, sortOption.apiValue)
+        reloadItems()
+    }
+
     private fun getPreferredLanguage(): BookLanguage {
         val isoCode = preferenceUtil.getString(
             PreferenceUtil.PREFERRED_BOOK_LANG_STR,
@@ -121,5 +131,14 @@ class CategoryViewModel @Inject constructor(
         )
         return BookLanguage.getAllLanguages().find { it.isoCode == isoCode }
             ?: BookLanguage.AllBooks
+    }
+
+    private fun getPreferredSortOption(): BookSortOption {
+        val apiValue = preferenceUtil.getString(
+            PreferenceUtil.PREFERRED_BOOK_SORT_STR,
+            BookSortOption.PopularityHighToLow.apiValue
+        )
+        return BookSortOption.getAllSortOptions().find { it.apiValue == apiValue }
+            ?: BookSortOption.PopularityHighToLow
     }
 }

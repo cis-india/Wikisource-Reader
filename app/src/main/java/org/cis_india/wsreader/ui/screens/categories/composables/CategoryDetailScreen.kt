@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -51,6 +52,7 @@ import org.cis_india.wsreader.helpers.book.BookUtils
 import org.cis_india.wsreader.ui.common.BookItemCard
 import org.cis_india.wsreader.ui.common.BookItemShimmerLoader
 import org.cis_india.wsreader.ui.common.BookLanguageSheet
+import org.cis_india.wsreader.ui.common.BookSortSheet
 import org.cis_india.wsreader.ui.common.CustomTopAppBar
 import org.cis_india.wsreader.ui.common.NetworkError
 import org.cis_india.wsreader.ui.common.NoBooksAvailable
@@ -73,14 +75,23 @@ fun CategoryDetailScreen(
         onLanguageChange = { viewModel.changeLanguage(it) }
     )
 
+    val showSortSheet = remember { mutableStateOf(false) }
+    BookSortSheet(
+        showSortSheet = showSortSheet,
+        selectedSortOption = viewModel.sortOption.value,
+        onSortOptionChange = { viewModel.changeSortOption(it) }
+    )
+
     val state = viewModel.state
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             CustomTopAppBar(headerText = stringResource(id = BookCategories.getNameRes(category)),
-                actionIcon = Icons.Filled.Translate,
+                actionIcon1 = Icons.Filled.Translate,
+                actionIcon2 = Icons.Filled.Sort,
                 onBackButtonClicked = { navController.navigateUp() },
-                onActionClicked = { showLanguageSheet.value = true }
+                onAction1Clicked = { showLanguageSheet.value = true },
+                onAction2Clicked = { showSortSheet.value = true }
             )
         }, content = {
             LaunchedEffect(key1 = true, block = { viewModel.loadBookByCategory(category) })
