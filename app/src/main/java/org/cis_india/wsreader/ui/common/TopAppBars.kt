@@ -160,6 +160,52 @@ fun CustomTopAppBar(
 }
 
 @Composable
+fun CustomTopAppBar(
+    headerText: String,
+    actionIcon1: ImageVector,
+    actionIcon2: ImageVector,
+    onBackButtonClicked: () -> Unit,
+    onAction1Clicked: () -> Unit,
+    onAction2Clicked: () -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 8.dp)
+            .windowInsetsPadding(WindowInsets.statusBars)
+    ) {
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+            Text(
+                text = headerText,
+                modifier = Modifier.padding(bottom = 16.dp),
+                color = MaterialTheme.colorScheme.onBackground,
+                fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
+                fontFamily = pacificoFont,
+                fontSize = 24.sp
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically
+            ) {
+                TopBarActionItem(
+                    icon = Icons.AutoMirrored.Outlined.ArrowBack, onclick = onBackButtonClicked
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                TopBarActionItem(
+                    icon = actionIcon1, onclick = onAction1Clicked
+                )
+                TopBarActionItem(
+                    icon = actionIcon2, onclick = onAction2Clicked
+                )
+            }
+        }
+        HorizontalDivider(
+            thickness = 2.dp, color = MaterialTheme.colorScheme.surfaceColorAtElevation(4.dp)
+        )
+    }
+
+}
+
+@Composable
 private fun TopBarActionItem(icon: ImageVector, onclick: () -> Unit) {
     val view = LocalView.current
     Box(

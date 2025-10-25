@@ -17,6 +17,7 @@
 package org.cis_india.wsreader.api
 
 import android.content.Context
+import android.util.Log
 import org.cis_india.wsreader.BuildConfig
 import org.cis_india.wsreader.api.models.BookSet
 import org.cis_india.wsreader.helpers.book.BookLanguage
@@ -61,7 +62,7 @@ class BookAPI(context: Context) {
             val logging = HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
             }
-            okHttpBuilder.addInterceptor(logging).build()
+            okHttpBuilder.addInterceptor(logging)
         }
         // Finally build the OkHttpClient.
         okHttpBuilder.build()
@@ -73,16 +74,23 @@ class BookAPI(context: Context) {
      * This function fetches all the books from the API.
      * @param page The page number of the books to fetch.
      * @param bookLanguage The language of the books to fetch.
+     * @param sortBy The sort option for the books (optional).
      * @return A Result object containing the BookSet if the request was successful, or an exception if it failed.
      */
     suspend fun getAllBooks(
         page: Long,
-        bookLanguage: BookLanguage = BookLanguage.AllBooks
+        bookLanguage: BookLanguage = BookLanguage.AllBooks,
+        sortBy: String? = null
     ): Result<BookSet> {
         var url = "${baseApiUrl}?page=$page"
         if (bookLanguage != BookLanguage.AllBooks) {
             url += "&languages=${bookLanguage.isoCode}"
         }
+        if (sortBy != null) {
+            url += "&sort=$sortBy"
+        }
+        Log.d("BookAPI", "Fetching books with URL: $url")
+        Log.d("BookAPI", "Sort parameter: $sortBy")
         val request = Request.Builder().get().url(url).build()
         return makeApiRequest(request)
     }
@@ -116,17 +124,24 @@ class BookAPI(context: Context) {
      * @param category The category of the books to fetch.
      * @param page The page number of the books to fetch.
      * @param bookLanguage The language of the books to fetch.
+     * @param sortBy The sort option for the books (optional).
      * @return A Result object containing the BookSet if the request was successful, or an exception if it failed.
      */
     suspend fun getBooksByCategory(
         category: String,
         page: Long,
-        bookLanguage: BookLanguage = BookLanguage.AllBooks
+        bookLanguage: BookLanguage = BookLanguage.AllBooks,
+        sortBy: String? = null
     ): Result<BookSet> {
         var url = "${baseApiUrl}?page=$page&genres=$category"
         if (bookLanguage != BookLanguage.AllBooks) {
             url += "&languages=${bookLanguage.isoCode}"
         }
+        if (sortBy != null) {
+            url += "&sort=$sortBy"
+        }
+        Log.d("BookAPI", "Fetching category books with URL: $url")
+        Log.d("BookAPI", "Sort parameter: $sortBy")
         val request = Request.Builder().get().url(url).build()
         return makeApiRequest(request)
     }
