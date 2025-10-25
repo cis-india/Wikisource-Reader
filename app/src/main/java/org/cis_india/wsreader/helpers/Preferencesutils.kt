@@ -35,6 +35,8 @@ class PreferenceUtil(context: Context) {
         const val MATERIAL_YOU_BOOL = "material_you"
         const val INTERNAL_READER_BOOL = "internal_reader"
         const val PREFERRED_BOOK_LANG_STR = "preferred_book_language"
+        const val VERTICAL_SWIPE_NAVIGATION_BOOL = "vertical_swipe_navigation"
+        const val PAGINATED_SCROLL_BOOL = "paginated_scroll"
 
         // Temporary preference keys
         const val LIBRARY_ONBOARDING_BOOL = "show_library_onboarding"
