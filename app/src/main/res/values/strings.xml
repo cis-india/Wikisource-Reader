@@ -53,6 +53,14 @@
     <string name="copied">Copied!</string>
     <string name="web_search">Web Search</string>
     <string name="share">Share</string>
+    <string name="translate">Translate</string>
+    <string name="dictionary">Dictionary</string>
+
+    <string name="no_app_found_for_translation">No app found for translation</string>
+    <string name="no_app_found_dictionary">No app found for dictionary lookup</string>
+    <string name="no_text_selected_for_translation">No text selected for translation</string>
+    <string name="no_text_selected_for_dictionary">No text selected for dictionary lookup</string>
+
 
     <!-- Settings screen. -->
     <string name="settings_header">Settings</string>

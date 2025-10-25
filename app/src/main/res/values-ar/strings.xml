@@ -41,6 +41,8 @@
   <string name="copied">تم النسخ!</string>
   <string name="web_search">بحث ويب</string>
   <string name="share">مشاركة</string>
+  <string name="translate">ترجمة</string>
+  <string name="dictionary">قاموس</string>
   <string name="settings_header">الاعدادات</string>
   <string name="general_settings_header">عام</string>
   <string name="default_reader_dialog_title">فتح الكتب الإلكترونية مع …</string>
