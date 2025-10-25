@@ -89,8 +89,6 @@ class BookAPI(context: Context) {
         if (sortBy != null) {
             url += "&sort=$sortBy"
         }
-        Log.d("BookAPI", "Fetching books with URL: $url")
-        Log.d("BookAPI", "Sort parameter: $sortBy")
         val request = Request.Builder().get().url(url).build()
         return makeApiRequest(request)
     }
@@ -140,8 +138,6 @@ class BookAPI(context: Context) {
         if (sortBy != null) {
             url += "&sort=$sortBy"
         }
-        Log.d("BookAPI", "Fetching category books with URL: $url")
-        Log.d("BookAPI", "Sort parameter: $sortBy")
         val request = Request.Builder().get().url(url).build()
         return makeApiRequest(request)
     }
