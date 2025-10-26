@@ -81,3 +81,17 @@ class DummyReaderInitData(
         )
     )
 }
+
+data class PositionInfo(
+    val position: Int?,
+    val StartChapterProgression: Double?,
+    val EndChapterProgression: Double?,
+    val StartChapterLink: Locator,
+    val EndChapterLink: Locator,
+)
+
+data class ChapterNavigation(
+    val previousChapter: PositionInfo? = null,
+    val nextChapter: PositionInfo? = null,
+    val currentChapterHref: PositionInfo? = null
+)

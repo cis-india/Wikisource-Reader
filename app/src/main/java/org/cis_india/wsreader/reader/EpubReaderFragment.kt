@@ -24,6 +24,7 @@ import androidx.fragment.app.commitNow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import org.readium.r2.navigator.DecorableNavigator
 import org.readium.r2.navigator.Decoration
@@ -39,6 +40,10 @@ import org.cis_india.wsreader.LITERATA
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.reader.preferences.UserPreferencesViewModel
 import org.cis_india.wsreader.search.SearchFragment
+import org.readium.r2.navigator.input.InputListener
+import org.readium.r2.navigator.input.DragEvent
+import org.readium.r2.shared.publication.services.positions
+import org.readium.r2.shared.util.Url
 
 @OptIn(ExperimentalReadiumApi::class)
 class EpubReaderFragment : VisualReaderFragment() {
@@ -145,10 +150,128 @@ class EpubReaderFragment : VisualReaderFragment() {
         return view
     }
 
+
+    fun getNextChapterPosition(
+        positionCache: Map<String, PositionInfo>,
+        locator: Locator?
+    ): ChapterNavigation {
+
+        val currentHref = locator?.href ?: return ChapterNavigation()
+        val currentProgression: Double = locator.locations.totalProgression ?: 0.0
+        val chapterHrefsInOrder = positionCache.keys.toList()
+        val currentIndex = chapterHrefsInOrder.indexOf(currentHref.toString())
+        val previousChapterHref: String?
+        val nextChapterHref: String?
+        val currentChapterHref: String?
+
+        if (currentIndex != -1) {
+            previousChapterHref = chapterHrefsInOrder.getOrNull(currentIndex - 1)
+            nextChapterHref = chapterHrefsInOrder.getOrNull(currentIndex + 1)
+            currentChapterHref = chapterHrefsInOrder.getOrNull(currentIndex)
+
+        } else {
+            nextChapterHref = chapterHrefsInOrder
+                .firstOrNull { href ->
+                    positionCache[href]?.StartChapterProgression ?: Double.MAX_VALUE > currentProgression
+                }
+
+            val chapterBelongingToIndex = chapterHrefsInOrder.indexOf(nextChapterHref) - 1
+
+            previousChapterHref = chapterHrefsInOrder.getOrNull(chapterBelongingToIndex - 1)
+            currentChapterHref = chapterHrefsInOrder.getOrNull(chapterBelongingToIndex)
+        }
+
+        val previousChapterData = previousChapterHref?.let { href ->
+            positionCache[href]?.let { info ->
+                PositionInfo(
+                    info.position,
+                    info.StartChapterProgression,
+                    info.EndChapterProgression,
+                    info.StartChapterLink,
+                    info.EndChapterLink
+                )
+            }
+        }
+
+        val nextChapterData = nextChapterHref?.let { href ->
+            positionCache[href]?.let { info ->
+                PositionInfo(
+                    info.position,
+                    info.StartChapterProgression,
+                    info.EndChapterProgression,
+                    info.StartChapterLink,
+                    info.EndChapterLink
+                )
+            }
+        }
+
+        val currentChapterData = currentChapterHref?.let { href ->
+            positionCache[href]?.let { info ->
+                PositionInfo(
+                    info.position,
+                    info.StartChapterProgression,
+                    info.EndChapterProgression,
+                    info.StartChapterLink,
+                    info.EndChapterLink
+                )
+            }
+        }
+
+        return ChapterNavigation(
+            previousChapter = previousChapterData,
+            nextChapter = nextChapterData,
+            currentChapterHref = currentChapterData
+        )
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val progressBar = view.findViewById<ProgressBar>(R.id.readingProgressBar)
+        val positionCache: MutableMap<String, PositionInfo> = mutableMapOf()
+
+        lifecycleScope.launch {
+            val allBookPositions: List<Locator> = publication.positions()
+            val chapterBoundaryLocators = mutableMapOf<Url, Pair<Locator, Locator>>()
+
+            val tocHrefs = publication.manifest.tableOfContents
+                .map { it.url().removeFragment().removeQuery().normalize() }
+                .toSet()
+
+            for (locator in allBookPositions) {
+                val chaptersHref = locator.href.removeFragment().removeQuery().normalize()
+
+                if (tocHrefs.contains(chaptersHref)) {
+                    if (!chapterBoundaryLocators.containsKey(chaptersHref)) {
+                        chapterBoundaryLocators[chaptersHref] = Pair(locator, locator)
+                    } else {
+                        val currentPair = chapterBoundaryLocators.getValue(chaptersHref)
+                        chapterBoundaryLocators[chaptersHref] = currentPair.copy(second = locator)
+                    }
+                }
+            }
+
+            chapterBoundaryLocators.forEach { (_, pair) ->
+                val startLocator = pair.first
+                val endLocator = pair.second
+
+                val startHrefString = startLocator.href.toString()
+                val startPosition = startLocator.locations.position
+                val startTotalProgression = startLocator.locations.totalProgression
+
+                if (startTotalProgression != null) {
+                    val endOfChapter = endLocator.locations.totalProgression ?: 1.0
+                    positionCache[startHrefString] = PositionInfo(
+                        startPosition,
+                        startTotalProgression,
+                        endOfChapter,
+                        startLocator,
+                        endLocator
+                    )
+                }
+            }
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -160,11 +283,28 @@ class EpubReaderFragment : VisualReaderFragment() {
         }
 
         @Suppress("Unchecked_cast")
-        (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)
-            .bind(navigator, viewLifecycleOwner)
+        val userPreferencesViewModel =
+            (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)
+
+        userPreferencesViewModel.bind(navigator, viewLifecycleOwner)
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                val scrollInputListener = createChapterInputListener(positionCache)
+                userPreferencesViewModel.editor
+                    .filterNotNull()
+                    .collect { editor ->
+                        val scrollSettings = editor.preferences.scroll ?: false
+
+                        // add drag if scroll is set to true.
+                        // else remove the drag.
+                        if (scrollSettings) {
+                            navigator.addInputListener(scrollInputListener)
+                        }else {
+                            navigator.removeInputListener(scrollInputListener)
+                        }
+                    }
+
                 // Display page number labels if the book contains a `page-list` navigation document.
                 (navigator as? DecorableNavigator)?.applyPageNumberDecorations()
             }
@@ -199,6 +339,47 @@ class EpubReaderFragment : VisualReaderFragment() {
             },
             viewLifecycleOwner
         )
+    }
+
+    private fun createChapterInputListener(positionCache: Map<String, PositionInfo>): InputListener {
+        return object : InputListener {
+            override fun onDrag(event: DragEvent): Boolean {
+
+                if (event.type != DragEvent.Type.End) {
+                    return false
+                }
+
+                val distanceDragged: Double = event.offset.y.toDouble()
+                val locator = navigator.currentLocator.value
+                val currentTotalProgression = locator?.locations?.totalProgression ?: 0.0
+                val navigation = getNextChapterPosition(positionCache, locator)
+                val nextChapterInfo = navigation.nextChapter
+                val previousChapterInfo = navigation.previousChapter
+                val currentChaperInfo = navigation.currentChapterHref
+
+                // if scrolling down and next chapter is available
+                if (nextChapterInfo != null && distanceDragged < 0) {
+                    val currentChapterEndProgression: Double = currentChaperInfo?.EndChapterProgression ?: 1.0
+                    if (currentChapterEndProgression == currentTotalProgression) {
+                        val nextChapterStartLocator: Locator = nextChapterInfo.StartChapterLink
+                        navigator.go(nextChapterStartLocator)
+                        return true
+                    }
+
+                // if scrolling up and previous chapter is available
+                } else if (previousChapterInfo != null && distanceDragged > 0) {
+                    val currentChapterStartProgression: Double = currentChaperInfo?.StartChapterProgression ?: 0.0
+
+                    if (currentTotalProgression <= currentChapterStartProgression + 0.000001) {
+                        val previousChapterEndLocator: Locator = previousChapterInfo.EndChapterLink
+                        navigator.go(previousChapterEndLocator)
+                        return true
+                    }
+                }
+
+                return false
+            }
+        }
     }
 
     /**
