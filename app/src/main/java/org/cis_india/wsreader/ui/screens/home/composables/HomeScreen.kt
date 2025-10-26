@@ -46,6 +46,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -88,6 +89,7 @@ import org.cis_india.wsreader.helpers.book.BookUtils
 import org.cis_india.wsreader.ui.common.BookItemCard
 import org.cis_india.wsreader.ui.common.BookItemShimmerLoader
 import org.cis_india.wsreader.ui.common.BookLanguageSheet
+import org.cis_india.wsreader.ui.common.BookSortSheet
 import org.cis_india.wsreader.ui.common.NetworkError
 import org.cis_india.wsreader.ui.common.ProgressDots
 import org.cis_india.wsreader.ui.navigation.BottomBarScreen
@@ -147,12 +149,20 @@ fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Stat
         onLanguageChange = { viewModel.onAction(UserAction.LanguageItemClicked(it)) }
     )
 
+    val showSortSheet = remember { mutableStateOf(false) }
+    BookSortSheet(
+        showSortSheet = showSortSheet,
+        selectedSortOption = viewModel.sortOption.value,
+        onSortOptionChange = { viewModel.onAction(UserAction.SortOptionClicked(it)) }
+    )
+
     HomeScreenScaffold(
         viewModel = viewModel,
         networkStatus = networkStatus,
         navController = navController,
         sysBackButtonState = sysBackButtonState,
-        showLanguageSheet = showLanguageSheet
+        showLanguageSheet = showLanguageSheet,
+        showSortSheet = showSortSheet
     )
 
 
@@ -165,7 +175,8 @@ private fun HomeScreenScaffold(
     networkStatus: NetworkObserver.Status,
     navController: NavController,
     sysBackButtonState: MutableState<Boolean>,
-    showLanguageSheet: MutableState<Boolean>
+    showLanguageSheet: MutableState<Boolean>,
+    showSortSheet: MutableState<Boolean>
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -206,6 +217,8 @@ private fun HomeScreenScaffold(
                                 viewModel.onAction(UserAction.SearchIconClicked)
                             }, onLanguageIconClicked = {
                                 showLanguageSheet.value = true
+                            }, onSortIconClicked = {
+                                showSortSheet.value = true
                             })
                         sysBackButtonState.value = false
                     }
@@ -418,6 +431,7 @@ private fun HomeTopAppBar(
     bookLanguage: BookLanguage,
     onSearchIconClicked: () -> Unit,
     onLanguageIconClicked: () -> Unit,
+    onSortIconClicked: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -438,6 +452,14 @@ private fun HomeTopAppBar(
             Icon(
                 imageVector = Icons.Filled.Translate,
                 contentDescription = stringResource(id = R.string.home_language_icon_desc),
+                tint = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.size(30.dp)
+            )
+        }
+        IconButton(onClick = onSortIconClicked) {
+            Icon(
+                imageVector = Icons.Filled.Sort,
+                contentDescription = stringResource(id = R.string.home_sort_icon_desc),
                 tint = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.size(30.dp)
             )
