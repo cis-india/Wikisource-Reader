@@ -213,4 +213,19 @@ class BookDownloader(private val context: Context) {
      */
     fun cancelDownload(downloadId: Long?) = downloadId?.let { downloadManager.remove(it) }
 
+    /**
+     * Cancels all currently running downloads
+     */
+    fun cancelAllRunningDownloads(){
+        if (runningDownloads.isNotEmpty()){
+
+            for (key in runningDownloads.keys){
+
+                val downloadInfo = runningDownloads.get(key)
+                val downloadId = downloadInfo?.downloadId
+                downloadId?.let { downloadManager.remove(it) }
+            }
+        }
+    }
+
 }

@@ -186,60 +186,7 @@ private fun BookDetailContents(
     val coroutineScope = rememberCoroutineScope()
 
     val book = remember { state.bookSet.books.first() }
-    var bookDetailTitle = book.titleNativeLanguage ?: book.title
-    var bookDetailBook: Book? = null
-
-    for (item:Book in bookItems){
-
-        var bookItemTitle: String = item.title
-
-        if (bookItemTitle.contains("Œ") || bookItemTitle.contains("œ") ){
-            bookItemTitle = bookItemTitle.replace(Regex("[Œœ]"), "Oe")
-        }
-
-        if (bookDetailTitle.contains("Æ") || bookDetailTitle.contains("æ") ){
-            bookDetailTitle = bookDetailTitle.replace(Regex("[Ææ]"), "Ae")
-        }
-
-        if (bookDetailTitle.contains(":") || bookDetailTitle.contains(";") ||
-            bookDetailTitle.contains("-") || bookDetailTitle.contains(",") ||
-            bookDetailTitle.contains("‘") || bookDetailTitle.contains("’") ||
-            bookDetailTitle.contains("'")
-        ){
-            bookDetailTitle = bookDetailTitle.replace(Regex("[-:;,‘’']"), "")
-        }
-
-        if (bookItemTitle.contains(":") || bookItemTitle.contains(";") ||
-            bookItemTitle.contains("-") || bookItemTitle.contains(",") ||
-            bookItemTitle.contains("‘") || bookItemTitle.contains("’") ||
-            bookItemTitle.contains("'")
-        ){
-            bookItemTitle = bookItemTitle.replace(Regex("[-:;,‘’']"), "")
-        }
-
-        if (bookItemTitle.contains(" ")){
-            bookItemTitle = bookItemTitle.replace(Regex(" "), "")
-        }
-        if (bookDetailTitle.contains(" ")){
-            bookDetailTitle = bookDetailTitle.replace(Regex(" "), "")
-        }
-
-        bookItemTitle = bookItemTitle.trim().replace("\\s+".toRegex(), "")
-        bookDetailTitle = bookDetailTitle.trim().replace("\\s+".toRegex(), "")
-
-        if (bookItemTitle.equals(bookDetailTitle, ignoreCase = true)){
-            bookDetailBook = item
-            break
-        }
-
-        else if (bookItemTitle.contains(bookDetailTitle, ignoreCase = true) ||
-            bookDetailTitle.contains(bookItemTitle, ignoreCase = true)){
-
-            bookDetailBook = item
-            break
-        }
-
-    }
+    val bookDetailId = book.id
 
     Column(
         Modifier
@@ -397,13 +344,24 @@ private fun BookDetailContents(
 
                 context.getString(R.string.read_book_button) -> {
                     view.weakHapticFeedback()
-                    bookDetailBook?.id?.let {
-                        viewModel.openPublication(it)
+
+                    if (bookItems.isNotEmpty()){
+
+                        val bookItemIdentifier = bookItems[0].identifier
+                        val bookItemId: Long? =  bookItems[0].id
+
+                        if (bookItemIdentifier.isNotEmpty() && bookItemIdentifier.toInt() == bookDetailId){
+                            bookItemId?.let {
+                                viewModel.openPublication(it)
+                            }
+                        }
                     }
                 }
 
                 context.getString(R.string.download_book_button) -> {
                     view.weakHapticFeedback()
+
+                    viewModel.bookDownloader.cancelAllRunningDownloads()
 
                     viewModel.downloadBook(
                         book = book,
