@@ -21,7 +21,9 @@
   <string name="home_header">Tutti i libri</string>
   <string name="home_language_icon_desc">Ordina per lingua</string>
   <string name="home_search_icon_desc">Cerca libri</string>
+  <string name="home_sort_icon_desc">Ordina libri</string>
   <string name="language_menu_title">Sfoglia per lingua</string>
+  <string name="sort_menu_title">Ordina per</string>
   <string name="categories_header">Categorie</string>
   <string name="no_books_found_for_lang_and_cat">Nessun libro disponibile in %s per questa categoria.</string>
   <string name="library_header">Libreria</string>
