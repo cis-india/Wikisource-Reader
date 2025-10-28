@@ -16,13 +16,10 @@
 
 package org.cis_india.wsreader.ui.screens.library.composables
 
+import android.content.Context
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.keyframes
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -44,8 +41,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Delete
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.ButtonDefaults
@@ -53,7 +50,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -75,7 +71,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
@@ -86,29 +81,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
 import com.psoffritti.taptargetcompose.TapTargetCoordinator
-import com.psoffritti.taptargetcompose.TapTargetStyle
-import com.psoffritti.taptargetcompose.TextDefinition
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.cis_india.wsreader.MainActivity
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.data.model.Book
-import org.cis_india.wsreader.helpers.Constants
 import org.cis_india.wsreader.helpers.getActivity
-import org.cis_india.wsreader.helpers.isScrollingUp
-import org.cis_india.wsreader.helpers.weakHapticFeedback
+import org.cis_india.wsreader.reader.ReaderActivityContract
 import org.cis_india.wsreader.ui.common.CustomTopAppBar
 import org.cis_india.wsreader.ui.common.NoBooksAvailable
 import org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel
 import org.cis_india.wsreader.ui.screens.main.bottomNavPadding
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.theme.poppinsFont
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import org.cis_india.wsreader.reader.ReaderActivityContract
-import androidx.lifecycle.compose.LocalLifecycleOwner
-import android.content.Context
-import android.widget.Toast
+import org.cis_india.wsreader.utils.extensions.shareEpub
 import org.json.JSONObject
 
 
@@ -387,7 +376,8 @@ private fun LibraryLazyItem(
 
         LibraryCard(title = item.title,
             author = item.author?: "Unknown",
-            //item.getFileSize(),
+            item.href,
+            item.rawMediaType,
             item.getDownloadDate(),
             onReadClick = {
                 item.id?.let {
@@ -434,7 +424,8 @@ private fun LibraryLazyItem(
 private fun LibraryCard(
     title: String,
     author: String,
-    //fileSize: String,
+    href: String,
+    mediaType: String,
     date: String,
     onReadClick: () -> Unit,
     onDeleteClick: () -> Unit,
@@ -522,6 +513,8 @@ private fun LibraryCard(
                 */
 
                 Row(modifier = Modifier.offset(y = (-4).dp), verticalAlignment = Alignment.CenterVertically) {
+                    val context = LocalContext.current
+
                     LibraryCardButton(text = stringResource(id = R.string.library_read_button),
                         icon = ImageVector.vectorResource(id = R.drawable.ic_library_read),
                         onClick = { onReadClick() })
@@ -531,6 +524,18 @@ private fun LibraryCard(
                     LibraryCardButton(text = stringResource(id = R.string.library_delete_button),
                         icon = Icons.Outlined.Delete,
                         onClick = { onDeleteClick() })
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Icon(
+                        imageVector = Icons.Outlined.Share,
+                        contentDescription = "Share",
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable {
+                                context.shareEpub(href, mediaType)
+                            }
+                    )
 
                     Spacer(modifier = Modifier.width(10.dp))
 
@@ -615,7 +620,8 @@ fun CircularProgressWithText(
 fun LibraryScreenPreview() {
     LibraryCard(title = "The Idiot",
         author = "Fyodor Dostoevsky",
-        //fileSize = "5.9MB",
+        mediaType = "",
+        href = "",
         date = "01- Jan -2020",
         onReadClick = {},
         onDeleteClick = {},

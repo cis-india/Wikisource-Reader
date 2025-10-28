@@ -22,7 +22,9 @@
   <string name="home_header">Alla böcker</string>
   <string name="home_language_icon_desc">Sortera efter språk</string>
   <string name="home_search_icon_desc">Sök böcker</string>
+  <string name="home_sort_icon_desc">Sortera verk</string>
   <string name="language_menu_title">Bläddra efter språk</string>
+  <string name="sort_menu_title">Sortera efter</string>
   <string name="categories_header">Kategorier</string>
   <string name="no_books_found_for_lang_and_cat">Inga böcker tillgängliga på %s i den här kategorin.</string>
   <string name="library_header">Bibliotek</string>
@@ -127,7 +129,7 @@
   <string name="bookmark_added">Bokmärke tillagt</string>
   <string name="bookmark_exists">Bokmärke finns redan</string>
   <string name="cover_image">Omslagsbild</string>
-  <string name="repfr" fuzzy="true">repfr</string>
+  <string name="repfr">Republiken Frankrikes logotyp: En kvinna (Marianne) vänd mot höger; den blå, vita och röda flaggan; orden \"République Française\"; och mottot \"Liberté, Égalité, Fraternité\" (\"Frihet, jämlikhet, broderskap\").</string>
   <string name="details">Detaljer</string>
   <string name="close">Stäng</string>
   <string name="delete">Radera</string>

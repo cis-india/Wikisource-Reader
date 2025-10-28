@@ -30,6 +30,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.io.File
+import java.util.UUID
 
 
 /**
@@ -60,7 +61,9 @@ class BookDownloader(private val context: Context) {
                 .split(" ")
                 .joinToString(separator = "+") { word ->
                     word.replace(Regex("[^\\p{ASCII}]"), "")
-                }.take(MAX_FILENAME_LENGTH).trim()
+                }.take(MAX_FILENAME_LENGTH)
+                    .trim()
+                    .ifEmpty { UUID.randomUUID().toString() }
             return "$sanitizedTitle.epub"
         }
     }
@@ -212,5 +215,20 @@ class BookDownloader(private val context: Context) {
      * @param downloadId id of the download which needs to be cancelled.
      */
     fun cancelDownload(downloadId: Long?) = downloadId?.let { downloadManager.remove(it) }
+
+    /**
+     * Cancels all currently running downloads
+     */
+    fun cancelAllRunningDownloads(){
+        if (runningDownloads.isNotEmpty()){
+
+            for (key in runningDownloads.keys){
+
+                val downloadInfo = runningDownloads.get(key)
+                val downloadId = downloadInfo?.downloadId
+                downloadId?.let { downloadManager.remove(it) }
+            }
+        }
+    }
 
 }

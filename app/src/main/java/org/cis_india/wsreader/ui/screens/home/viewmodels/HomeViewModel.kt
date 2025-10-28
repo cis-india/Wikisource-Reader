@@ -30,6 +30,7 @@ import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.helpers.Paginator
 import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.cis_india.wsreader.helpers.book.BookLanguage
+import org.cis_india.wsreader.helpers.book.BookSortOption
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -61,6 +62,7 @@ sealed class UserAction {
     ) : UserAction()
 
     data class LanguageItemClicked(val language: BookLanguage) : UserAction()
+    data class SortOptionClicked(val sortOption: BookSortOption) : UserAction()
 }
 
 @HiltViewModel
@@ -74,6 +76,9 @@ class HomeViewModel @Inject constructor(
     private val _language: MutableState<BookLanguage> = mutableStateOf(getPreferredLanguage())
     val language: State<BookLanguage> = _language
 
+    private val _sortOption: MutableState<BookSortOption> = mutableStateOf(getPreferredSortOption())
+    val sortOption: State<BookSortOption> = _sortOption
+
     private var searchJob: Job? = null
 
     private val pagination = Paginator(initialPage = allBooksState.page, onLoadUpdated = {
@@ -84,7 +89,7 @@ class HomeViewModel @Inject constructor(
             // and avoid flickering when navigating to home from welcome screen
             // and immediately loading the first page.
             if (nextPage == 1L) delay(400L)
-            bookAPI.getAllBooks(nextPage, language.value)
+            bookAPI.getAllBooks(nextPage, language.value, sortOption.value.apiValue)
         } catch (exc: Exception) {
             Result.failure(exc)
         }
@@ -102,7 +107,7 @@ class HomeViewModel @Inject constructor(
             if (index != -1) {
                 books.removeAt(index)
             }
-            books // return the list of books
+            books
         }
 
         allBooksState = allBooksState.copy(
@@ -151,6 +156,10 @@ class HomeViewModel @Inject constructor(
             is UserAction.LanguageItemClicked -> {
                 changeLanguage(userAction.language)
             }
+
+            is UserAction.SortOptionClicked -> {
+                changeSortOption(userAction.sortOption)
+            }
         }
     }
 
@@ -170,6 +179,12 @@ class HomeViewModel @Inject constructor(
         reloadItems()
     }
 
+    private fun changeSortOption(sortOption: BookSortOption) {
+        _sortOption.value = sortOption
+        preferenceUtil.putString(PreferenceUtil.PREFERRED_BOOK_SORT_STR, sortOption.apiValue)
+        reloadItems()
+    }
+
     private fun getPreferredLanguage(): BookLanguage {
         val isoCode = preferenceUtil.getString(
             PreferenceUtil.PREFERRED_BOOK_LANG_STR,
@@ -177,5 +192,14 @@ class HomeViewModel @Inject constructor(
         )
         return BookLanguage.getAllLanguages().find { it.isoCode == isoCode }
             ?: BookLanguage.AllBooks
+    }
+
+    private fun getPreferredSortOption(): BookSortOption {
+        val apiValue = preferenceUtil.getString(
+            PreferenceUtil.PREFERRED_BOOK_SORT_STR,
+            BookSortOption.PopularityHighToLow.apiValue
+        )
+        return BookSortOption.getAllSortOptions().find { it.apiValue == apiValue }
+            ?: BookSortOption.PopularityHighToLow
     }
 }

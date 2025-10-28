@@ -17,7 +17,9 @@
 package org.cis_india.wsreader.ui.screens.detail.composables
 
 import android.app.DownloadManager
+import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.animateFloatAsState
@@ -54,6 +56,7 @@ import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -72,30 +75,41 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import org.cis_india.wsreader.MainActivity
 import org.cis_india.wsreader.R
+import org.cis_india.wsreader.data.model.Book
 import org.cis_india.wsreader.helpers.Utils
 import org.cis_india.wsreader.helpers.book.BookUtils
 import org.cis_india.wsreader.helpers.getActivity
 import org.cis_india.wsreader.helpers.weakHapticFeedback
+import org.cis_india.wsreader.reader.ReaderActivityContract
 import org.cis_india.wsreader.ui.common.BookDetailTopUI
 import org.cis_india.wsreader.ui.common.NetworkError
 import org.cis_india.wsreader.ui.common.ProgressDots
 import org.cis_india.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel
+import org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel
 import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
-import org.cis_india.wsreader.ui.navigation.BottomBarScreen
 
 
 @Composable
 fun BookDetailScreen(
-    bookId: String, navController: NavController
+    bookId: String, navController: NavController, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
 ) {
     val context = LocalContext.current
     val viewModel: BookDetailViewModel = hiltViewModel()
+    val libraryViewModel: LibraryViewModel = hiltViewModel()
     val state = viewModel.state
+
+    LaunchedEffect(Unit) {
+        viewModel.channel.receive(lifecycleOwner) { event ->
+            handleEvent(event, context)
+        }
+    }
 
     val snackBarHostState = remember { SnackbarHostState() }
     Scaffold(
@@ -149,7 +163,8 @@ fun BookDetailScreen(
                             BookDetailContents(
                                 viewModel = viewModel,
                                 navController = navController,
-                                snackBarHostState = snackBarHostState
+                                snackBarHostState = snackBarHostState,
+                                libraryViewModel = libraryViewModel
                             )
                         }
                     }
@@ -162,6 +177,7 @@ fun BookDetailScreen(
 @Composable
 private fun BookDetailContents(
     viewModel: BookDetailViewModel,
+    libraryViewModel: LibraryViewModel,
     navController: NavController,
     snackBarHostState: SnackbarHostState
 ) {
@@ -169,10 +185,18 @@ private fun BookDetailContents(
     val context = LocalContext.current
     val settingsVM = (context.getActivity() as MainActivity).settingsViewModel
 
+    val bookItems = viewModel.allItems.observeAsState(listOf()).value
+    val libraryItems = libraryViewModel.allItems.observeAsState(listOf()).value
     val state = viewModel.state
     val coroutineScope = rememberCoroutineScope()
 
     val book = remember { state.bookSet.books.first() }
+    val bookDetailId = book.id
+
+    // Check if the current book is in the library
+    val foundBookInLibrary by remember(libraryItems) {
+        mutableStateOf(libraryItems.firstOrNull { it.identifier.toIntOrNull() == bookDetailId })
+    }
 
     Column(
         Modifier
@@ -238,13 +262,15 @@ private fun BookDetailContents(
 
         // Update button text based on download status.
 
-        LaunchedEffect(key1 = true) {
-            buttonText = if (viewModel.bookDownloader.isBookCurrentlyDownloading(book.id)) {
+        LaunchedEffect(foundBookInLibrary) {
+            buttonText = if (foundBookInLibrary != null) {
+                context.getString(R.string.read_book_button)
+            } else if (viewModel.bookDownloader.isBookCurrentlyDownloading(book.id)) {
                 context.getString(R.string.cancel)
             } else {
                 when (state.bookLibraryItem) {
                     null -> context.getString(R.string.download_book_button)
-                    else -> context.getString(R.string.go_to_library)
+                    else -> context.getString(R.string.read_book_button)
                 }
             }
         }
@@ -264,7 +290,7 @@ private fun BookDetailContents(
 
                 DownloadManager.STATUS_SUCCESSFUL -> {
                     showProgressBar = false
-                    context.getString(R.string.go_to_library)
+                    context.getString(R.string.read_book_button)
                 }
 
                 else -> {
@@ -328,15 +354,25 @@ private fun BookDetailContents(
                 }
                  */
 
-                context.getString(R.string.go_to_library) -> {
+                context.getString(R.string.read_book_button) -> {
                     view.weakHapticFeedback()
-                    navController.navigate(BottomBarScreen.Library.route) {
-                        launchSingleTop = true
+
+                    // Find the corresponding LibraryItem using the bookDetailId
+                    val currentBook = foundBookInLibrary ?: libraryItems.firstOrNull { it.identifier.toIntOrNull() == bookDetailId }
+
+                    if (currentBook != null) {
+                        val bookItemId: Long? = currentBook.id
+
+                        if (bookItemId != null) {
+                            viewModel.openPublication(bookItemId)
+                        }
                     }
                 }
 
                 context.getString(R.string.download_book_button) -> {
                     view.weakHapticFeedback()
+
+                    viewModel.bookDownloader.cancelAllRunningDownloads()
 
                     viewModel.downloadBook(
                         book = book,
@@ -665,6 +701,22 @@ fun InfoLine(label: String, values: List<String>) {
             fontWeight = FontWeight.Normal,
             color = MaterialTheme.colorScheme.onBackground,
         )
+    }
+}
+
+private fun handleEvent(event: BookDetailViewModel.Event, context: Context) {
+    when (event) {
+        is BookDetailViewModel.Event.OpenPublicationError -> {
+            Toast.makeText(context, event.error.message ?: "Error opening publication", Toast.LENGTH_SHORT).show()
+        }
+
+        is BookDetailViewModel.Event.LaunchReader -> {
+            val intent = ReaderActivityContract().createIntent(
+                context,
+                event.arguments
+            )
+            context.startActivity(intent)
+        }
     }
 }
 

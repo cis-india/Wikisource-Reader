@@ -129,7 +129,7 @@
   <string name="bookmark_added">已新增書籤</string>
   <string name="bookmark_exists">書籤已存在</string>
   <string name="cover_image">封面圖片</string>
-  <string name="repfr">法蘭西共和國</string>
+  <string name="repfr" fuzzy="true">法蘭西共和國</string>
   <string name="details">詳細資訊</string>
   <string name="close">關閉</string>
   <string name="delete">刪除</string>

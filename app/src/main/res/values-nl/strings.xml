@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* McDutchie
 * Romaine
 -->
 <resources>
@@ -46,6 +47,8 @@
   <string name="default_reader_dialog_title">Open e-books met…</string>
   <string name="reader_option_inbuilt">Ingebouwde lezer</string>
   <string name="reader_option_external">Externe lezer</string>
+  <string name="default_locale_setting">Standaard-landinstellingen</string>
+  <string name="default_locale_setting_desc">Kies de landinstellingen van uw voorkeur.</string>
   <string name="locale_setting_not_found">Helaas! Deze functie wordt nog niet ondersteund door je besturingssysteem.</string>
   <string name="display_setting_header">Weergave</string>
   <string name="theme_setting">Standaardthema</string>
@@ -115,7 +118,10 @@
   <string name="timestamp">Tijdsaanduiding</string>
   <string name="contents_tab_label">Inhoud</string>
   <string name="bookmarks_tab_label">Bladwijzers</string>
+  <string name="highlights_tab_label">Hoogtepunten</string>
   <string name="pagelist_tab_label">Paginalijst</string>
+  <string name="landmarks_tab_label">Oriëntatiepunten</string>
+  <string name="action_mode_menu_highlight">Hoogtepunt</string>
   <string name="action_mode_menu_underline">Onderstrepen</string>
   <string name="action_mode_menu_note">Opmerking</string>
   <string name="bookmark_added">Bladwijzer toegevoegd</string>
@@ -137,6 +143,8 @@
   <string name="invalid_title">Geef een titel in</string>
   <string name="invalid_url">Geef een geldige URL op</string>
   <string name="catalog_parse_error">Fout bij het parsen van de catalogusfeed. Controleer de URL en probeer het opnieuw.</string>
+  <string name="return_publication">Hiermee wordt de publicatie geretourneerd</string>
+  <string name="return_button">Retourneren</string>
   <string name="opening_publication_cannot_render">Publicatie kan niet worden weergegeven.</string>
   <string name="opening_publication_audio_engine_initialization">De publicatie kon niet worden geopend omdat de initialisatie van de audio-engine is mislukt.</string>
   <string name="import_publication_unexpected_io_exception">Kan geen publicatie toevoegen vanwege een onverwachte fout op je apparaat</string>
@@ -145,6 +153,7 @@
   <string name="import_publication_success">Publicatie toegevoegd aan je bibliotheek</string>
   <string name="import_publication_unable_add_pub_database">Kan publicatie niet toevoegen aan de database</string>
   <string name="import_publication_inconsistent_state">Importeren mislukt vanwege uitzonderlijke omstandigheden. Probeer het opnieuw.</string>
+  <string name="publication_error_unsupported_asset">Bestandsindeling wordt niet ondersteund</string>
   <string name="publication_error_network_forbidden">Server heeft toegang tot een bron geweigerd.</string>
   <string name="publication_error_network_not_found">Een bron is niet gevonden op de server.</string>
   <string name="publication_error_network_unreachable">De server is niet bereikbaar.</string>

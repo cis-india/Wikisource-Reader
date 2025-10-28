@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* Xqt
+-->
 <resources>
   <string name="not_applicable">n. a.</string>
   <string name="confirm">Bestätigen</string>
@@ -18,6 +21,7 @@
   <string name="home_header">Alle Bücher</string>
   <string name="home_language_icon_desc">Nach Sprache sortieren</string>
   <string name="home_search_icon_desc">Bücher suchen</string>
+  <string name="home_sort_icon_desc">Bücher sortieren</string>
   <string name="language_menu_title">Nach Sprache durchsuchen</string>
   <string name="categories_header">Kategorien</string>
   <string name="no_books_found_for_lang_and_cat">Keine Bücher auf %s in dieser Kategorie verfügbar.</string>
