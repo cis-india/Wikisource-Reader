@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:name=".MyneApp"
@@ -103,85 +104,8 @@
                 <data android:mimeType="application/webpub+json" />
             </intent-filter>
 
-            <!-- VIEW (Open with) action -->
-
-            <!-- Works when an app knows the media type of a file, e.g. Gmail or Chrome. -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="app" />
-                <data android:scheme="content" />
-                <data android:scheme="file" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
-
-                <!-- Audiobook (Readium) -->
-                <data android:mimeType="application/audiobook+zip" />
-                <data android:mimeType="application/audiobook+json" />
-                <!-- CBZ -->
-                <data android:mimeType="application/vnd.comicbook+zip" />
-                <data android:mimeType="application/x-cbz" />
-                <data android:mimeType="application/x-cbr" />
-                <!-- DiViNa -->
-                <data android:mimeType="application/divina+zip" />
-                <data android:mimeType="application/divina+json" />
-                <!-- EPUB -->
-                <data android:mimeType="application/epub+zip" />
-                <!-- LCP -->
-                <data android:mimeType="application/audiobook+lcp" />
-                <data android:mimeType="application/pdf+lcp" />
-                <data android:mimeType="application/vnd.readium.lcp.license.v1.0+json" />
-                <!-- LPF -->
-                <data android:mimeType="application/lpf+zip" />
-                <!-- PDF -->
-                <data android:mimeType="application/pdf" />
-                <!-- WebPub (Readium) -->
-                <data android:mimeType="application/webpub+zip" />
-                <data android:mimeType="application/webpub+json" />
-            </intent-filter>
-
-            <!-- Works when an app doesn't know the media type, e.g. Dropbox -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:host="*" />
-
-                <data android:scheme="app" />
-                <data android:scheme="content" />
-                <data android:scheme="file" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
-
-                <!-- This media type is necessary, otherwise it won't match on the file extension -->
-                <data android:mimeType="*/*" />
-
-                <data android:pathPattern=".*\\.audiobook" />
-                <data android:pathPattern=".*\\.AUDIOBOOK" />
-                <data android:pathPattern=".*\\.cbz" />
-                <data android:pathPattern=".*\\.CBZ" />
-                <data android:pathPattern=".*\\.divina" />
-                <data android:pathPattern=".*\\.DIVINA" />
-                <data android:pathPattern=".*\\.epub" />
-                <data android:pathPattern=".*\\.EPUB" />
-                <data android:pathPattern=".*\\.lcpa" />
-                <data android:pathPattern=".*\\.LCPA" />
-                <data android:pathPattern=".*\\.lcpdf" />
-                <data android:pathPattern=".*\\.LCPDF" />
-                <data android:pathPattern=".*\\.lcpl" />
-                <data android:pathPattern=".*\\.LCPL" />
-                <data android:pathPattern=".*\\.lpf" />
-                <data android:pathPattern=".*\\.LPF" />
-                <data android:pathPattern=".*\\.pdf" />
-                <data android:pathPattern=".*\\.PDF" />
-                <data android:pathPattern=".*\\.webpub" />
-                <data android:pathPattern=".*\\.WEBPUB" />
-                <data android:pathPattern=".*\\.zab" />
-                <data android:pathPattern=".*\\.ZAB" />
-            </intent-filter>
+            <!-- VIEW (Open with) action - DISABLED to prevent external file opening -->
+            <!-- Kept SEND action above for sharing files to the app -->
 
         </activity>
 
