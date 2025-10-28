@@ -91,6 +91,7 @@ import org.cis_india.wsreader.ui.common.BookDetailTopUI
 import org.cis_india.wsreader.ui.common.NetworkError
 import org.cis_india.wsreader.ui.common.ProgressDots
 import org.cis_india.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel
+import org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel
 import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
 
@@ -101,6 +102,7 @@ fun BookDetailScreen(
 ) {
     val context = LocalContext.current
     val viewModel: BookDetailViewModel = hiltViewModel()
+    val libraryViewModel: LibraryViewModel = hiltViewModel()
     val state = viewModel.state
 
     LaunchedEffect(Unit) {
@@ -161,7 +163,8 @@ fun BookDetailScreen(
                             BookDetailContents(
                                 viewModel = viewModel,
                                 navController = navController,
-                                snackBarHostState = snackBarHostState
+                                snackBarHostState = snackBarHostState,
+                                libraryViewModel = libraryViewModel
                             )
                         }
                     }
@@ -174,6 +177,7 @@ fun BookDetailScreen(
 @Composable
 private fun BookDetailContents(
     viewModel: BookDetailViewModel,
+    libraryViewModel: LibraryViewModel,
     navController: NavController,
     snackBarHostState: SnackbarHostState
 ) {
@@ -182,11 +186,17 @@ private fun BookDetailContents(
     val settingsVM = (context.getActivity() as MainActivity).settingsViewModel
 
     val bookItems = viewModel.allItems.observeAsState(listOf()).value
+    val libraryItems = libraryViewModel.allItems.observeAsState(listOf()).value
     val state = viewModel.state
     val coroutineScope = rememberCoroutineScope()
 
     val book = remember { state.bookSet.books.first() }
     val bookDetailId = book.id
+
+    // Check if the current book is in the library
+    val foundBookInLibrary by remember(libraryItems) {
+        mutableStateOf(libraryItems.firstOrNull { it.identifier.toIntOrNull() == bookDetailId })
+    }
 
     Column(
         Modifier
@@ -252,8 +262,10 @@ private fun BookDetailContents(
 
         // Update button text based on download status.
 
-        LaunchedEffect(key1 = true) {
-            buttonText = if (viewModel.bookDownloader.isBookCurrentlyDownloading(book.id)) {
+        LaunchedEffect(foundBookInLibrary) {
+            buttonText = if (foundBookInLibrary != null) {
+                context.getString(R.string.read_book_button)
+            } else if (viewModel.bookDownloader.isBookCurrentlyDownloading(book.id)) {
                 context.getString(R.string.cancel)
             } else {
                 when (state.bookLibraryItem) {
@@ -345,15 +357,14 @@ private fun BookDetailContents(
                 context.getString(R.string.read_book_button) -> {
                     view.weakHapticFeedback()
 
-                    if (bookItems.isNotEmpty()){
+                    // Find the corresponding LibraryItem using the bookDetailId
+                    val currentBook = foundBookInLibrary ?: libraryItems.firstOrNull { it.identifier.toIntOrNull() == bookDetailId }
 
-                        val bookItemIdentifier = bookItems[0].identifier
-                        val bookItemId: Long? =  bookItems[0].id
+                    if (currentBook != null) {
+                        val bookItemId: Long? = currentBook.id
 
-                        if (bookItemIdentifier.isNotEmpty() && bookItemIdentifier.toInt() == bookDetailId){
-                            bookItemId?.let {
-                                viewModel.openPublication(it)
-                            }
+                        if (bookItemId != null) {
+                            viewModel.openPublication(bookItemId)
                         }
                     }
                 }
