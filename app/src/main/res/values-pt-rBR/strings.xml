@@ -1,160 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* Leosls
+-->
 <resources>
-    <!-- Others Strings -->
-    <string name="not_applicable">N/D</string>
-    <string name="woops">Ops!!</string>
-    <string name="confirm">Confirmar</string>
-    <string name="cancel">Cancelar</string>
-    <string name="ok">OK</string>
-    <string name="got_it">Entendi</string>
-    <string name="no_app_to_handle_epub">Não foi encontrado nenhum aplicativo para abrir o arquivo epub.</string>
-    <string name="network_error">Ops! Falha ao conectar com o servidor.</string>
-    <string name="network_error_retry">Tente Novamente</string>
-    <string name="error">Ops! Algo deu errado.</string>
-    <string name="no_app_to_handle_content">Não foi possível encontrar nenhum aplicativo para abrir este conteúdo.</string>
-
-    <!-- Navigation titles -->
-    <string name="navigation_home">Home</string>
-    <string name="navigation_categories">Categorias</string>
-    <string name="navigation_library">Biblioteca</string>
-    <string name="navigation_settings">Configurações</string>
-
-    <!-- ToolTips -->
-    <string name="library_tooltip">DICA! Deslize os itens da biblioteca para a esquerda ou direita para compartilhar ou visualizar detalhes do livro.</string>
-
-    <!-- Welcome Screen -->
-    <string name="welcome_screen_desc">Escolha o seu leitor de ebooks preferido para embarcar em sua jornada de leitura.</string>
-    <string name="welcome_screen_button">Começar</string>
-
-    <!-- Home screen. -->
-    <string name="home_header">Todos os livros</string>
-    <string name="home_language_icon_desc">Classificar por idioma</string>
-    <string name="home_search_icon_desc">Pesquisar livros</string>
-    <string name="language_menu_title">Navegue por idioma</string>
-
-    <!-- Categories screen. -->
-    <string name="categories_header">Categorias</string>
-    <string name="no_books_found_for_lang_and_cat">Nenhum livro disponível em %s para essa categoria.</string>
-    <!-- Categories -->
-    <string name="category_children">Crianças</string>
-    <string name="category_classics">Clássicos</string>
-    <string name="category_countries">Países</string>
-    <string name="category_crime">Crime</string>
-    <string name="category_education">Educação</string>
-    <string name="category_fiction">Ficção</string>
-    <string name="category_geography">Geografia</string>
-    <string name="category_history">História</string>
-    <string name="category_literature">Literatura</string>
-    <string name="category_law">Lei</string>
-    <string name="category_music">Música</string>
-    <string name="category_periodicals">Periódicos</string>
-    <string name="category_psychology">Psicologia</string>
-    <string name="category_philosophy">Filosofia</string>
-    <string name="category_religion">Religião</string>
-    <string name="category_romance">Romance</string>
-    <string name="category_science">Ciência</string>
-
-    <!-- Library screen. -->
-    <string name="library_header">Biblioteca</string>
-    <string name="empty_library">Nada por aqui!</string>
-    <string name="import_button_text">Importar</string>
-    <string name="import_button_onboarding">Importe seus próprios livros!</string>
-    <string name="import_button_onboarding_desc">Agora você pode importar seus próprios livros em formato EPUB e lê-los no Myne.</string>
-    <string name="import_button_desc">Importar livro EPUB</string>
-    <string name="external_book_info_unavailable">Disponível apenas para livros internos.</string>
-    <string name="epub_importing">Importando… Por favor, aguarde.</string>
-    <string name="epub_imported">Importado com sucesso!</string>
-    <string name="epub_import_error">Falha ao importar!</string>
-    <string name="open_app_chooser">Abrir com…</string>
-    <string name="share_app_chooser">Compartilhar com…</string>
-    <string name="library_read_button">Ler</string>
-    <string name="library_delete_button">Excluir</string>
-    <string name="library_delete_dialog_title">Tem certeza?</string>
-
-    <!-- Reader Detail Screen -->
-    <string name="reader_detail_header">Leitor Ebook</string>
-    <string name="start_reading_button">Começar</string>
-    <string name="continue_reading_button">Retomar</string>
-    <string name="reader_chapters_list">Capítulos</string>
-
-    <!--Reader Screen -->
-    <string name="reader_max_font_size_reached">Foi mal, não vai mais alto que isso!</string>
-    <string name="reader_min_font_size_reached">Foi mal, não vai mais baixo que isso!</string>
-    <string name="reader_font_style_chooser">Mudar estilo da fonte</string>
-    <string name="reader_chapter_list_title">Capítulos</string>
-
-    <!-- Text selection -->
-    <string name="copy">Copiar</string>
-    <string name="copied">Copiado!</string>
-    <string name="web_search">Pesquisa na web</string>
-    <string name="share">Compartilhar</string>
-    <string name="translate">Traduzir</string>
-    <string name="dictionary">Significado</string>
-
-    <!-- Settings screen. -->
-    <string name="settings_header">Configurações</string>
-    <string name="app_desc">Downloader Ebook</string>
-    <string name="general_settings_header">Geral</string>
-    <string name="default_reader_setting">Leitor Padrão</string>
-    <string name="default_reader_dialog_title">Abrir ebooks com…</string>
-    <string name="reader_option_inbuilt">Leitor Embutido</string>
-    <string name="reader_option_external">Leitor Externo</string>
-    <string name="default_locale_setting">Configuração de idioma padrão</string>
-    <string name="default_locale_setting_desc">Selecione o seu idioma preferido.</string>
-    <string name="locale_setting_not_found">Desculpe! Esta função ainda não é suportada pelo seu sistema operacional.</string>
-    <string name="display_setting_header">Display</string>
-    <string name="theme_setting">Tema Padrão</string>
-    <string name="theme_dialog_title">Mudar Tema</string>
-    <string name="theme_option_light">Claro</string>
-    <string name="theme_option_dark">Escuro</string>
-    <string name="theme_option_system">Padrão do sistema</string>
-    <string name="theme_dialog_apply_button">Aplicar</string>
-    <string name="amoled_theme_setting">Tema escuro</string>
-    <string name="amoled_theme_setting_disabled_desc">Ativar tema escuro AMOLED</string>
-    <string name="amoled_theme_setting_enabled_desc">Desativar tema escuro AMOLED</string>
-    <string name="material_you_setting_disabled_desc">Ativar Material You</string>
-    <string name="material_you_setting_enabled_desc">Desativar Material You</string>
-    <string name="material_you_error">Este recurso é apenas para dispositivos com Android 12 ou superior.</string>
-    <string name="miscellaneous_setting_header">Diversos</string>
-    <string name="license_setting">Licença &amp; Agradecimentos</string>
-    <string name="license_setting_desc">Licenças de código aberto.</string>
-    <string name="about_setting">Informações do aplicativo</string>
-    <string name="about_setting_desc">Mostrar informações do aplicativo &amp; links úteis</string>
-
-    <!-- Books card -->
-    <string name="cover_image_desc">Imagem da capa do livro</string>
-
-    <!-- Book Detail Screen -->
-    <string name="book_detail_header">Detalhes do livro</string>
-    <string name="back_button_desc">Voltar.</string>
-    <string name="share_button_desc">Compartilhar esse livro.</string>
-    <string name="share_intent_header">Compartilhar usando…</string>
-    <string name="read_book_button">Começar Ler</string>
-    <string name="download_book_button">Baixar</string>
-    <string name="download_started">Download iniciado!</string>
-    <string name="book_synopsis">Sinopse</string>
-    <string name="book_synopsis_not_found">Não disponível</string>
-
-    <!-- About Screen -->
-    <string name="about_header">Sobre</string>
-    <string name="about_desc">Um aplicativo Android gratuito &amp; de código aberto para baixar e-books do Projeto GutenBerg.</string>
-    <string name="developed_by">Desenvolvido por</string>
-    <string name="project_contributors">Contributori al Progetto</string>
-    <string name="project_contributors_desc">Incontra i nostri meravigliosi contributori.</string>
-    <string name="useful_links">Link Utili</string>
-    <string name="link_readme">README</string>
-    <string name="link_readme_desc">Consulta il README dell\'app su Github.</string>
-    <string name="shivam">Site</string>
-    <string name="link_website_desc">Visite nosso site para mais informações.</string>
-    <string name="link_privacy_policy">Informativa sulla Privacy</string>
-    <string name="link_privacy_policy_desc">Leggi la nostra última informativa sulla privacy.</string>
-    <string name="link_gh_issue">Problemi Github</string>
-    <string name="link_gh_issue_desc">Crea un problema su Github.</string>
-    <string name="link_telegram">Gruppo Telegram</string>
-    <string name="link_telegram_desc">Chiacchiera con noi su Telegram!</string>
-    <string name="link_support">Supporta lo Sviluppo</string>
-    <string name="link_support_desc">Pensi che meriti dei biscotti? Clicca qui!</string>
-
-    <!-- Open source libraries screen -->
-    <string name="open_source_licenses_header">Licenças</string>
+  <string name="not_applicable">N/D</string>
+  <string name="confirm">Confirmar</string>
+  <string name="cancel">Cancelar</string>
+  <string name="ok">Aceitar</string>
+  <string name="got_it">Entendi</string>
+  <string name="network_error">Ops! Falha ao conectar com o servidor.</string>
+  <string name="network_error_retry">Tente novamente</string>
+  <string name="error">Ops! Algo deu errado.</string>
+  <string name="navigation_home">Início</string>
+  <string name="navigation_categories">Categorias</string>
+  <string name="navigation_library">Biblioteca</string>
+  <string name="navigation_settings">Configurações</string>
+  <string name="library_tooltip">DICA! Deslize os itens da biblioteca para a esquerda ou para a direita para compartilhar ou ver os detalhes do livro.</string>
+  <string name="welcome_screen_title">Obrigado por instalar o Wikisource Reader!</string>
+  <string name="welcome_screen_desc">Escolha o seu leitor de ebooks preferido para começar a sua jornada de leitura.</string>
+  <string name="welcome_screen_button">Começar</string>
+  <string name="home_header">Todos os livros</string>
+  <string name="home_language_icon_desc">Classificar por idioma</string>
+  <string name="home_search_icon_desc">Pesquisar livros</string>
+  <string name="home_sort_icon_desc">Classificar livros</string>
+  <string name="language_menu_title">Navegar por idioma</string>
+  <string name="sort_menu_title">Ordenar por</string>
+  <string name="categories_header">Categorias</string>
+  <string name="no_books_found_for_lang_and_cat">Não há livros disponíveis neste %s idioma para esta categoria.</string>
+  <string name="library_header">Biblioteca</string>
+  <string name="empty_library">Nada aqui!</string>
+  <string name="import_button_text">Importar</string>
+  <string name="import_button_onboarding">Importe seus próprios livros!</string>
+  <string name="import_button_onboarding_desc">Agora você pode importar seus próprios livros em formato EPUB e lê-los.</string>
+  <string name="import_button_desc">Importar livro EPUB</string>
+  <string name="epub_importing">Importando...\nPor favor, aguarde.</string>
+  <string name="epub_imported">Importado com sucesso!</string>
+  <string name="share_app_chooser">Compartilhe com…</string>
+  <string name="library_read_button">Ler</string>
+  <string name="library_delete_button">Excluir</string>
+  <string name="library_delete_dialog_title">Você tem certeza disso?</string>
+  <string name="copy">Copiar</string>
+  <string name="copied">Copiado!</string>
+  <string name="web_search">Pesquisa na Web</string>
+  <string name="share">Compartilhar</string>
+  <string name="settings_header">Configurações</string>
+  <string name="general_settings_header">Geral</string>
+  <string name="default_reader_dialog_title">Abra e-books com…</string>
+  <string name="reader_option_inbuilt">Leitor embutido</string>
+  <string name="reader_option_external">Leitor externo</string>
+  <string name="default_locale_setting">Localidade padrão</string>
+  <string name="default_locale_setting_desc">Selecione seu local preferido.</string>
+  <string name="locale_setting_not_found">Desculpe! Este recurso ainda não é compatível com o seu sistema operacional.</string>
+  <string name="display_setting_header">Exibição</string>
+  <string name="theme_setting">Tema padrão</string>
+  <string name="theme_dialog_title">Alterar Tema</string>
+  <string name="theme_option_light">Claro</string>
+  <string name="theme_option_dark">Escuro</string>
+  <string name="theme_option_system">Padrão do sistema</string>
+  <string name="theme_dialog_apply_button">Aplicar</string>
+  <string name="amoled_theme_setting">Tema Escuro</string>
+  <string name="amoled_theme_setting_disabled_desc">Habilitar tema preto Amoled</string>
+  <string name="amoled_theme_setting_enabled_desc">Desativar tema preto Amoled</string>
+  <string name="material_you_setting_disabled_desc">Habilitar Material You</string>
+  <string name="material_you_setting_enabled_desc">Desabilitar Material You</string>
+  <string name="material_you_error">Este recurso está disponível apenas para dispositivos com Android 12 ou superior.</string>
+  <string name="miscellaneous_setting_header">Diversos</string>
+  <string name="license_setting">Licença &amp; Reconhecimentos</string>
+  <string name="license_setting_desc">Licenças de código aberto.</string>
+  <string name="about_setting">Informações do Aplicativo</string>
+  <string name="about_setting_desc">Mostrar informações do Aplicativo e links úteis</string>
+  <string name="cover_image_desc">Imagem da capa do livro</string>
+  <string name="book_detail_header">Detalhes do Livro</string>
+  <string name="back_button_desc">Voltar.</string>
+  <string name="share_intent_header">Compartilhe isso usando…</string>
+  <string name="read_book_button">Comece a Ler</string>
+  <string name="download_book_button">Baixar</string>
+  <string name="download_started">Download iniciado!</string>
+  <string name="book_synopsis">Sinopse</string>
+  <string name="book_synopsis_not_found">Não disponível</string>
+  <string name="about_header">Sobre</string>
+  <string name="about_desc">Leia textos com licença de uso livre do Wikisource.</string>
+  <string name="useful_links">Links úteis</string>
+  <string name="shivam">Site</string>
+  <string name="link_privacy_policy">Politica de Privacidade</string>
+  <string name="link_privacy_policy_desc">Leia nossa política de privacidade mais recente.</string>
+  <string name="open_source_licenses_header">Licenças</string>
+  <string name="category_novels">Romances</string>
+  <string name="category_plays">Peças</string>
+  <string name="category_poetry">Poesia</string>
+  <string name="category_essays">Ensaios</string>
+  <string name="developed_by_ws">Desenvolvido para Wikisource por</string>
+  <string name="category_shortstories">Contos</string>
+  <string name="category_narration">Narração</string>
+  <string name="category_biography">Biografia</string>
+  <string name="category_dictionaries">Dicionários</string>
+  <string name="category_encyclopedias">Enciclopédias</string>
+  <string name="epubactivity_set_bookmark">Adicionar um marcador</string>
+  <string name="epubactivity_settings">Configurações do Usuário</string>
+  <string name="epubactivity_book_nav_options">Menu de navegação do livro</string>
+  <string name="epubactivity_read_aloud_start">Ler em voz alta</string>
+  <string name="epubactivity_search">Pesquisar</string>
+  <string name="more_options">Mais opções</string>
+  <string name="popup_delete_button">APAGAR</string>
+  <string name="app_version_header">Versão</string>
+  <string name="app_version_label">Versão do Aplicativo:</string>
+  <string name="app_version">2.2.0</string>
+  <string name="github_tab_label">Etiqueta do GitHub:</string>
+  <string name="github_tag">2.2.0</string>
+  <string name="copyright_label">Direitos autorais</string>
+  <string name="copyright">\@ 2019 European Digital Reading Lab</string>
+  <string name="bsd_license_label">[Licença BSD-3]</string>
+  <string name="bsd_license_label_accessible">[Licença B S D 3]</string>
+  <string name="acknowledgements_label">Agradecimentos</string>
+  <string name="acknowledgements_french_state">O R2 Reader não teria sido desenvolvido sem o apoio financeiro do Estado francês.</string>
+  <string name="catalog_list_more">Mais</string>
+  <string name="chapter_page">Capítulo / Página</string>
+  <string name="progression">Progressão</string>
+  <string name="timestamp">Data e hora</string>
+  <string name="contents_tab_label">Conteúdo</string>
+  <string name="bookmarks_tab_label">Marcadores</string>
+  <string name="highlights_tab_label">Destaques</string>
+  <string name="pagelist_tab_label">Lista de páginas</string>
+  <string name="landmarks_tab_label">Pontos de referência</string>
+  <string name="action_mode_menu_highlight">Destaque</string>
+  <string name="action_mode_menu_underline">Sublinhado</string>
+  <string name="action_mode_menu_note">Nota</string>
+  <string name="bookmark_added">Marcador adicionado</string>
+  <string name="bookmark_exists">O marcador já existe</string>
+  <string name="cover_image">Imagem da capa</string>
+  <string name="repfr">O logotipo da República Francesa: Uma mulher (Marianne) voltada para a direita; a bandeira azul, branca e vermelha; as palavras \"République Française\"; e o lema \"Liberté, Égalité, Fraternité\" (\"Liberdade, Igualdade, Fraternidade\").</string>
+  <string name="details">Detalhes</string>
+  <string name="close">Fechar</string>
+  <string name="delete">Excluir</string>
+  <string name="confirm_delete_book_title">Excluir livro?</string>
+  <string name="confirm_delete_book_text">Tem certeza de que deseja excluir este livro?</string>
+  <string name="confirm_delete_catalog_title">Excluir catálogo?</string>
+  <string name="confirm_delete_catalog_text">Tem certeza de que deseja excluir este feed do catálogo?</string>
+  <string name="add_book">Adicionar um Livro</string>
+  <string name="add_catalog">Adicionar um feed de catálogo</string>
+  <string name="save">Salvar</string>
+  <string name="enter_title">Digite o título</string>
+  <string name="enter_url">Digite o URL</string>
+  <string name="invalid_title">Por favor insira um título</string>
+  <string name="invalid_url">Por favor, insira um URL válido</string>
+  <string name="catalog_parse_error">Erro ao analisar o feed do catálogo. Verifique o URL e tente novamente.</string>
+  <string name="return_publication">Isso retornará a publicação</string>
+  <string name="return_button">Retornar</string>
+  <string name="opening_publication_cannot_render">Não é possível renderizar a publicação.</string>
+  <string name="opening_publication_audio_engine_initialization">Não foi possível abrir a publicação porque a inicialização do mecanismo de áudio falhou.</string>
+  <string name="import_publication_unexpected_io_exception">Não foi possível adicionar a publicação devido a um erro inesperado no seu dispositivo.</string>
+  <string name="import_publication_download_failed">O download da publicação falhou.</string>
+  <string name="import_publication_no_acquisition">A aquisição não é possível.</string>
+  <string name="import_publication_success">Publicação adicionada à sua biblioteca</string>
+  <string name="import_publication_unable_add_pub_database">Não foi possível adicionar a publicação ao banco de dados.</string>
+  <string name="import_publication_inconsistent_state">A importação falhou devido a condições excepcionais. Por favor, tente novamente.</string>
+  <string name="publication_error_unsupported_asset">O formato do ativo não é suportado</string>
+  <string name="publication_error_network_forbidden">O servidor negou o acesso a um recurso.</string>
+  <string name="publication_error_network_not_found">O recurso solicitado não foi encontrado no servidor.</string>
+  <string name="publication_error_network_unreachable">O servidor não pode ser alcançado.</string>
+  <string name="publication_error_network_timeout">O servidor demorou muito para responder.</string>
+  <string name="publication_error_network_ssl_handshake">Ocorreu um erro de SSL.</string>
+  <string name="publication_error_network_unexpected">Ocorreu um erro inesperado na rede.</string>
+  <string name="publication_error_filesystem_not_found">O arquivo não foi encontrado.</string>
+  <string name="publication_error_filesystem_forbidden">Você não tem permissão para acessar este arquivo.</string>
+  <string name="publication_error_filesystem_unexpected">Ocorreu um erro inesperado no sistema de arquivos.</string>
+  <string name="publication_error_filesystem_insufficient_space">Não há espaço suficiente disponível no dispositivo.</string>
+  <string name="publication_error_incorrect_credentials">As credenciais fornecidas estavam incorretas</string>
+  <string name="publication_error_out_of_memory">Não há memória suficiente neste dispositivo para abrir a publicação.</string>
+  <string name="publication_error_scheme_not_supported">A fonte de publicação não é suportada.</string>
+  <string name="publication_error_invalid_publication">A publicação parece corrompida.</string>
+  <string name="publication_error_unexpected">Ocorreu um erro inesperado.</string>
+  <plurals name="lcp_error_license_status.revoked">
+    <item quantity="one">Esta licença foi revogada pelo seu fornecedor em %1$s. Ela foi registrada por %2$d dispositivo.</item>
+    <item quantity="other">Esta licença foi revogada pelo seu fornecedor em %1$s. Ela foi registrada por %2$d dispositivos.</item>
+  </plurals>
+  <string name="missing_lcp_support">O aplicativo foi compilado sem suporte a LCP.</string>
+  <string name="reader_error">Erro</string>
+  <string name="opening_error">Não foi possível abrir a publicação</string>
+  <string name="import_error">Erro de importação</string>
+  <string name="failed_parsing_catalog">Falha na análise do catálogo</string>
+  <string name="no_result">Nenhum resultado</string>
+  <string name="note">Nota</string>
+  <string name="add_a_note">Adicionar uma nota</string>
+  <string name="add_an_annotation">Adicionar uma anotação</string>
+  <string name="delete_highlight_or_annotation">Excluir destaque ou anotação</string>
+  <string name="yellow">Amarelo</string>
+  <string name="green">Verde</string>
+  <string name="blue">Azul</string>
+  <string name="red">Vermelho</string>
+  <string name="purple">Roxo</string>
+  <string name="seek_bar">Barra de busca</string>
+  <string name="go_backward_30_seconds">Voltar 30 segundos</string>
+  <string name="play_or_pause">Reproduzir ou pausar</string>
+  <string name="go_forward_30_seconds">Avançar 30 segundos</string>
+  <string name="tts_error_initialization">Falha ao inicializar o mecanismo de conversão de texto em fala.</string>
+  <string name="tts_error_language_support_incomplete">O idioma %s requer dados adicionais. Deseja baixá-los?</string>
+  <string name="tts_error_network">Ocorreu um erro de rede</string>
+  <string name="tts_error_other">Ocorreu um erro TTS</string>
+  <string name="tts_next">Avançar</string>
+  <string name="tts_pause">Pausar</string>
+  <string name="tts_play">Reproduzir</string>
+  <string name="tts_previous">Voltar</string>
+  <string name="speed_rate">Velocidade</string>
+  <string name="pitch_rate">Tom</string>
+  <string name="tts_settings">Configurações de fala</string>
+  <string name="tts_stop">Parar</string>
+  <string name="tts_voice">Voz</string>
+  <string name="search_error_not_searchable">Esta publicação não é pesquisável</string>
+  <string name="search_error_cancelled">A busca foi cancelada</string>
+  <string name="search_error_other">Ocorreu um erro durante a pesquisa</string>
+  <string name="error_unexpected">Ocorreu um erro inesperado.</string>
+  <string name="go_to_library">Ir para a biblioteca</string>
+  <string name="link_metapage_desc">Visite nossa página</string>
+  <string name="link_sourcecode_repo">Ver repositório do GitHub</string>
+  <string name="link_sourcecode">GitHub</string>
 </resources>

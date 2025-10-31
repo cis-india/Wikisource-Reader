@@ -18,10 +18,19 @@ package org.cis_india.wsreader.helpers.book
 
 import android.annotation.SuppressLint
 import android.app.DownloadManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
+import android.os.Build
 import android.util.Log
+import androidx.core.app.NotificationCompat
+import org.cis_india.wsreader.MainActivity
+import org.cis_india.wsreader.MainViewModel
+import org.cis_india.wsreader.R
 import org.cis_india.wsreader.api.models.Book
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -44,6 +53,8 @@ class BookDownloader(private val context: Context) {
         const val BOOKS_FOLDER = "ebooks"
         const val TEMP_FOLDER = "temp_books"
         private const val MAX_FILENAME_LENGTH = 200
+        private const val NOTIFICATION_CHANNEL_ID = "book_download_channel"
+        private const val NOTIFICATION_CHANNEL_NAME = "Book Downloads"
 
         /**
          * Sanitizes book title by replacing forbidden chars which are not allowed
@@ -71,6 +82,27 @@ class BookDownloader(private val context: Context) {
     private val downloadJob = Job()
     private val downloadScope = CoroutineScope(Dispatchers.IO + downloadJob)
     private val downloadManager by lazy { context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager }
+    private val notificationManager by lazy { context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager }
+
+    init {
+        createNotificationChannel()
+    }
+
+    /**
+     * Creates notification channel for book download notifications (required for Android O+)
+     */
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                NOTIFICATION_CHANNEL_ID,
+                NOTIFICATION_CHANNEL_NAME,
+                NotificationManager.IMPORTANCE_DEFAULT
+            ).apply {
+                description = "Notifications for book download completion"
+            }
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
 
     /**
      * Data class to store download info for a book.
@@ -118,7 +150,9 @@ class BookDownloader(private val context: Context) {
             .setDestinationUri(Uri.fromFile(tempFile))
             .setAllowedOverRoaming(true)
             .setAllowedOverMetered(true)
-            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+            // Show download progress notification but hide completion notification
+            // (we'll show our own custom notification with Library intent)
+            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE)
 
         Log.d(TAG, "downloadBook: Starting download for book: ${book.title}")
         val downloadId = downloadManager.enqueue(request)
@@ -156,6 +190,8 @@ class BookDownloader(private val context: Context) {
                             val bookFile = File(booksFolder, filename)
                             tempFile.copyTo(bookFile, true)
                             tempFile.delete()
+                            // Show custom notification with Library intent
+                            showDownloadCompleteNotification(book.title, book.id)
                             onDownloadSuccess(bookFile.absolutePath)
                         }
 
@@ -229,6 +265,36 @@ class BookDownloader(private val context: Context) {
                 downloadId?.let { downloadManager.remove(it) }
             }
         }
+    }
+
+    /**
+     * Shows a custom notification when download completes that opens the Library screen when tapped
+     */
+    private fun showDownloadCompleteNotification(bookTitle: String, bookId: Int) {
+        // Create intent to open Library screen when notification is tapped
+        val intent = Intent(context, MainActivity::class.java).apply {
+            data = Uri.parse("${MainViewModel.LAUNCHER_SHORTCUT_SCHEME}://library")
+            putExtra(MainViewModel.LC_SC_BOOK_LIBRARY, true)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        }
+        val pendingIntent = PendingIntent.getActivity(
+            context,
+            bookId, // Use bookId as request code to make each notification unique
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
+        // Build and show notification
+        val notification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
+            .setContentTitle(context.getString(R.string.download_complete))
+            .setContentText(bookTitle)
+            .setSmallIcon(android.R.drawable.stat_sys_download_done)
+            .setAutoCancel(true)
+            .setContentIntent(pendingIntent)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .build()
+
+        notificationManager.notify(bookId, notification)
     }
 
 }

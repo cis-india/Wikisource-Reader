@@ -22,7 +22,9 @@
   <string name="home_header">Сите книги</string>
   <string name="home_language_icon_desc">Подреди по јазик</string>
   <string name="home_search_icon_desc">Пребарај книги</string>
+  <string name="home_sort_icon_desc">Подреди книги</string>
   <string name="language_menu_title">Прелистај по јазик</string>
+  <string name="sort_menu_title">Подреди по</string>
   <string name="categories_header">Категории</string>
   <string name="no_books_found_for_lang_and_cat">Нема книги на %s за оваа категорија.</string>
   <string name="library_header">Библиотека</string>
@@ -126,7 +128,7 @@
   <string name="bookmark_added">Додаден обележувач</string>
   <string name="bookmark_exists">Обележувачот веќе постои</string>
   <string name="cover_image">Насловна слика</string>
-  <string name="repfr" fuzzy="true">франреп</string>
+  <string name="repfr">Логото на Француската Република: Жена (Маријана) свртена надесно; тробојката (сино, бело и цврвено); зборовите „République Française“; и геслото „Liberté, Égalité, Fraternité“ („Слобода, Еднаквост, Братство“).</string>
   <string name="details">Подробно</string>
   <string name="close">Затвори</string>
   <string name="delete">Избриши</string>
