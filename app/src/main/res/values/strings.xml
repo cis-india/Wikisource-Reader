@@ -49,7 +49,10 @@
     <string name="library_read_button">Read</string>
     <string name="library_delete_button">Delete</string>
     <string name="library_delete_dialog_title">Are you sure about that?</string>
+    <string name="downloading_book">Downloading book</string>
+    <string name="downloading">Downloading…</string>
     <string name="download_complete">Download complete</string>
+    <string name="tap_to_view_library">Tap to view in Library</string>
 
     <!-- Text selection -->
     <string name="copy">Copy</string>
