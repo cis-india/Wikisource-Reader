@@ -123,4 +123,9 @@ interface BooksDao {
         "UPDATE " + Book.TABLE_NAME + " SET " + Book.PROGRESSION + " = :locator WHERE " + Book.ID + "= :id"
     )
     suspend fun saveProgression(locator: String, id: Long)
+
+    @Query(
+        "UPDATE ${Book.TABLE_NAME} SET ${Book.CONTINUOUS_CHAPTERS} = :continuousChapters WHERE ${Book.ID} = :bookId"
+    )
+    suspend fun updateContinuousChapters(bookId: Long, continuousChapters: Boolean)
 }
