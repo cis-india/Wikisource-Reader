@@ -24,6 +24,7 @@ import org.readium.r2.shared.util.DebugError
 import org.readium.r2.shared.util.Try
 import org.readium.r2.shared.util.getOrElse
 import org.cis_india.wsreader.Readium
+import org.cis_india.wsreader.api.BookAPI
 import org.cis_india.wsreader.data.BookRepository
 import org.cis_india.wsreader.domain.PublicationError
 import org.cis_india.wsreader.reader.preferences.AndroidTtsPreferencesManagerFactory
@@ -46,6 +47,7 @@ class ReaderRepository(
     private val readium: Readium,
     private val bookRepository: BookRepository,
     private val preferencesDataStore: DataStore<JetpackPreferences>,
+    private val bookApi: BookAPI
 ) {
 
     private val coroutineQueue: CoroutineQueue =
@@ -72,6 +74,9 @@ class ReaderRepository(
         }
 
         val book = checkNotNull(bookRepository.get(bookId)) { "Cannot find book in database." }
+
+        //Update book language if not set in books entity in room db
+        updateBookLanguageIfAuto(bookId, book.identifier, book.languageCode)
 
         val asset = readium.assetRetriever.retrieve(
             book.url,
@@ -121,6 +126,19 @@ class ReaderRepository(
             if (it is MediaReaderInitData) {
                 mediaServiceFacade.openSession(bookId, it.mediaNavigator)
             }
+        }
+    }
+
+    private suspend fun updateBookLanguageIfAuto(bookId: Long, identifier: String, currentLang: String) {
+        if(currentLang != "auto") return
+
+        try {
+            val bookSet = bookApi.getBookById(identifier).getOrNull()!!
+            val language = bookSet.books.firstOrNull()?.languages?.firstOrNull()?:"en"
+
+            bookRepository.updateBookLanguage(bookId, language)
+        } catch (e: Exception) {
+
         }
     }
 

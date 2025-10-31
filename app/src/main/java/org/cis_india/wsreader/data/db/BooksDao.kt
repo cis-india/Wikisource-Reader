@@ -123,4 +123,10 @@ interface BooksDao {
         "UPDATE " + Book.TABLE_NAME + " SET " + Book.PROGRESSION + " = :locator WHERE " + Book.ID + "= :id"
     )
     suspend fun saveProgression(locator: String, id: Long)
+
+    @Query("UPDATE " + Book.TABLE_NAME + " SET language_code = :languageCode WHERE " + Book.ID + " = :bookId")
+    suspend fun updateBookLanguage(bookId: Long, languageCode: String)
+
+    @Query("SELECT language_code FROM books WHERE id = :bookId LIMIT 1")
+    fun getBookLanguage(bookId: Long): Flow<String?>
 }

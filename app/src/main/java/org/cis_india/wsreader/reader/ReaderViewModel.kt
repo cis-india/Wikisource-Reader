@@ -125,6 +125,11 @@ class ReaderViewModel(
         bookRepository.deleteBookmark(id)
     }
 
+
+    val bookLanguage: Flow<String> = bookRepository
+        .getBookLanguage(bookId)
+        .map { it ?: "en" }
+
     // Highlights
 
     val highlights: Flow<List<Highlight>> by lazy {
