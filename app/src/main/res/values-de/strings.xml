@@ -41,6 +41,8 @@
   <string name="copied">Kopiert!</string>
   <string name="web_search">Websuche</string>
   <string name="share">Teilen</string>
+  <string name="translate">Übersetzen</string>
+  <string name="dictionary">Wörterbuch</string>
   <string name="settings_header">Einstellungen</string>
   <string name="general_settings_header">Allgemein</string>
   <string name="default_reader_dialog_title">E-Books öffnen mit …</string>

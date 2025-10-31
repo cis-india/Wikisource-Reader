@@ -33,6 +33,7 @@ import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import okhttp3.OkHttpClient
+import org.cis_india.wsreader.api.BookAPI
 import java.io.File
 import java.util.concurrent.TimeUnit
 
@@ -58,6 +59,9 @@ class MyneApp : Application(), ImageLoaderFactory {
     lateinit var bookRepository: BookRepository
         private set
 
+    lateinit var bookApi: BookAPI
+        private set
+
     lateinit var bookshelf: Bookshelf
         private set
 
@@ -80,6 +84,8 @@ class MyneApp : Application(), ImageLoaderFactory {
         val database = AppDatabase.getDatabase(this)
 
         bookRepository = BookRepository(database.booksDao())
+
+        bookApi = BookAPI(this)
 
         val downloadsDir = File(cacheDir, "downloads")
 
@@ -108,7 +114,8 @@ class MyneApp : Application(), ImageLoaderFactory {
             this@MyneApp,
             readium,
             bookRepository,
-            navigatorPreferences
+            navigatorPreferences,
+            bookApi
         )
     }
 
