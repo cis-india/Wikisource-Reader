@@ -24,6 +24,7 @@ import androidx.fragment.app.commitNow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import org.readium.r2.navigator.DecorableNavigator
@@ -291,16 +292,20 @@ class EpubReaderFragment : VisualReaderFragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 val scrollInputListener = createChapterInputListener(positionCache)
-                userPreferencesViewModel.editor
-                    .filterNotNull()
-                    .collect { editor ->
+
+                model.continuousChapters
+                    .combine(userPreferencesViewModel.editor.filterNotNull()) { chapterScrolling, editor ->
+                        Pair(chapterScrolling, editor)
+                    }
+                    .collect { (chapterScrolling, editor) ->
+
                         val scrollSettings = editor.preferences.scroll ?: false
 
                         // add drag if scroll is set to true.
                         // else remove the drag.
-                        if (scrollSettings) {
+                        if (scrollSettings && chapterScrolling) {
                             navigator.addInputListener(scrollInputListener)
-                        }else {
+                        } else {
                             navigator.removeInputListener(scrollInputListener)
                         }
                     }

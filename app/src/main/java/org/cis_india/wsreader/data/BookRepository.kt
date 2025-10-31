@@ -100,4 +100,7 @@ class BookRepository(
 
     suspend fun deleteBook(id: Long) =
         booksDao.deleteBook(id)
+
+    suspend fun saveContinuousChapters(bookId: Long, continuousChapters: Boolean) =
+        booksDao.updateContinuousChapters(bookId, continuousChapters)
 }
