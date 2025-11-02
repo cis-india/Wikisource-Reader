@@ -148,8 +148,9 @@ class BookDownloader(private val context: Context) {
         val downloadUri = Uri.parse(book.epubUrl)
         val request = DownloadManager.Request(downloadUri)
 
-        // Use title if available, otherwise use a generic message
-        val notificationTitle = book.title.ifBlank { context.getString(R.string.downloading_book) }
+        // Use native language title if available, otherwise use English title, otherwise use a generic message
+        val notificationTitle = book.titleNativeLanguage?.ifBlank { null }
+            ?: book.title.ifBlank { context.getString(R.string.downloading_book) }
 
         request.setTitle(notificationTitle)
             .setDescription(context.getString(R.string.downloading))
@@ -197,7 +198,9 @@ class BookDownloader(private val context: Context) {
                             tempFile.copyTo(bookFile, true)
                             tempFile.delete()
                             // Show custom notification with Library intent
-                            showDownloadCompleteNotification(book.title, book.id)
+                            // Prefer native language title, fallback to English title
+                            val title = book.titleNativeLanguage?.ifBlank { null } ?: book.title
+                            showDownloadCompleteNotification(title, book.id)
                             onDownloadSuccess(bookFile.absolutePath)
                         }
 
