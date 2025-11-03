@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Bodhisattwa
+* আজিজ
 * আফতাবুজ্জামান
 -->
 <resources>
@@ -38,6 +39,7 @@
   <string name="library_read_button">পড়ুন</string>
   <string name="library_delete_button">অপসারণ করুন</string>
   <string name="library_delete_dialog_title">এ ব্যাপারে আপনি কি নিশ্চিত?</string>
+  <string name="download_complete">ডাউনলোড সম্পূর্ণ হয়েছে</string>
   <string name="copy">অনুলিপি করুন</string>
   <string name="copied">অনুলিপি করা হয়েছে!</string>
   <string name="web_search">ওয়েব অনুসন্ধান</string>

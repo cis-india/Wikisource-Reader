@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Haxpett
+* Lokal Profil
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -39,6 +40,7 @@
   <string name="library_read_button">Läs</string>
   <string name="library_delete_button">Radera</string>
   <string name="library_delete_dialog_title">Är du säker på det?</string>
+  <string name="download_complete">Nedladdning slutförd</string>
   <string name="copy">Kopiera</string>
   <string name="copied">Kopierat!</string>
   <string name="web_search">Webbsökning</string>

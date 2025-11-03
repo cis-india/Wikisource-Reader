@@ -39,6 +39,7 @@
   <string name="library_read_button">Читај</string>
   <string name="library_delete_button">Избриши</string>
   <string name="library_delete_dialog_title">Дали сте сигурни?</string>
+  <string name="download_complete">Преземањето е завршено</string>
   <string name="copy">Копирај</string>
   <string name="copied">Ископирано!</string>
   <string name="web_search">Семрежно пребарување</string>

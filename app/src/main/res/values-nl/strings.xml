@@ -2,6 +2,8 @@
 <!-- Authors:
 * McDutchie
 * Romaine
+* Siebrand
+* Spinster
 -->
 <resources>
   <string name="not_applicable">N.v.t.</string>
@@ -17,13 +19,15 @@
   <string name="navigation_library">Bibliotheek</string>
   <string name="navigation_settings">Instellingen</string>
   <string name="library_tooltip">TIP! Veeg bibliotheekitems naar links of rechts om boekdetails te delen of te bekijken.</string>
-  <string name="welcome_screen_title">Bedankt voor het installeren van Wikisource Reader!</string>
+  <string name="welcome_screen_title">Bedankt voor het installeren van de Wikisource Reader!</string>
   <string name="welcome_screen_desc">Kies je favoriete e-booklezer en begin je leesavontuur.</string>
   <string name="welcome_screen_button">Aan de slag</string>
   <string name="home_header">Alle boeken</string>
   <string name="home_language_icon_desc">Sorteer op taal</string>
   <string name="home_search_icon_desc">Zoeken naar boeken</string>
+  <string name="home_sort_icon_desc">Boeken sorteren</string>
   <string name="language_menu_title">Bladeren op taal</string>
+  <string name="sort_menu_title">Sorteren op</string>
   <string name="categories_header">Categorieën</string>
   <string name="no_books_found_for_lang_and_cat">Er zijn geen boeken beschikbaar in de taal %s voor deze categorie.</string>
   <string name="library_header">Bibliotheek</string>
@@ -37,7 +41,8 @@
   <string name="share_app_chooser">Delen met…</string>
   <string name="library_read_button">Lezen</string>
   <string name="library_delete_button">Verwijderen</string>
-  <string name="library_delete_dialog_title">Weet je dat zeker?</string>
+  <string name="library_delete_dialog_title">Weet u het zeker?</string>
+  <string name="download_complete">Download voltooid</string>
   <string name="copy">Kopiëren</string>
   <string name="copied">Gekopieerd!</string>
   <string name="web_search">Zoeken op het web</string>
@@ -182,6 +187,7 @@
   <string name="note">Opmerking</string>
   <string name="add_a_note">Opmerking toevoegen</string>
   <string name="add_an_annotation">Voeg een aantekening toe</string>
+  <string name="delete_highlight_or_annotation">Markering of aantekening verwijderen</string>
   <string name="yellow">Geel</string>
   <string name="green">Groen</string>
   <string name="blue">Blauw</string>
@@ -200,6 +206,7 @@
   <string name="tts_play">Afspelen</string>
   <string name="tts_previous">Ga achteruit</string>
   <string name="speed_rate">Snelheid</string>
+  <string name="pitch_rate">Toonhoogte</string>
   <string name="tts_settings">Spraakinstellingen</string>
   <string name="tts_stop">Stoppen</string>
   <string name="tts_voice">Stem</string>
