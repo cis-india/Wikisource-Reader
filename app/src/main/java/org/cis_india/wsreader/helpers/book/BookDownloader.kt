@@ -55,6 +55,8 @@ class BookDownloader(private val context: Context) {
         private const val MAX_FILENAME_LENGTH = 200
         private const val NOTIFICATION_CHANNEL_ID = "book_download_channel"
         private const val NOTIFICATION_CHANNEL_NAME = "Book Downloads"
+        private const val NOTIFICATION_GROUP_KEY = "book_downloads_group"
+        private const val SUMMARY_NOTIFICATION_ID = 0
 
         /**
          * Sanitizes book title by replacing forbidden chars which are not allowed
@@ -145,8 +147,13 @@ class BookDownloader(private val context: Context) {
         // Start download...
         val downloadUri = Uri.parse(book.epubUrl)
         val request = DownloadManager.Request(downloadUri)
-        request.setTitle(book.title)
-            //.setDescription(BookUtils.getAuthorsAsString(book.authors))
+
+        // Use native language title if available, otherwise use English title, otherwise use a generic message
+        val notificationTitle = book.titleNativeLanguage?.ifBlank { null }
+            ?: book.title.ifBlank { context.getString(R.string.downloading_book) }
+
+        request.setTitle(notificationTitle)
+            .setDescription(context.getString(R.string.downloading))
             .setDestinationUri(Uri.fromFile(tempFile))
             .setAllowedOverRoaming(true)
             .setAllowedOverMetered(true)
@@ -191,7 +198,9 @@ class BookDownloader(private val context: Context) {
                             tempFile.copyTo(bookFile, true)
                             tempFile.delete()
                             // Show custom notification with Library intent
-                            showDownloadCompleteNotification(book.title, book.id)
+                            // Prefer native language title, fallback to English title
+                            val title = book.titleNativeLanguage?.ifBlank { null } ?: book.title
+                            showDownloadCompleteNotification(title, book.id)
                             onDownloadSuccess(bookFile.absolutePath)
                         }
 
@@ -284,17 +293,54 @@ class BookDownloader(private val context: Context) {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
+        // Use book title if available, otherwise use a generic message
+        val displayTitle = bookTitle.ifBlank { context.getString(R.string.download_complete) }
+        val displayText = if (bookTitle.isBlank()) "" else context.getString(R.string.download_complete)
+
         // Build and show notification
         val notification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-            .setContentTitle(context.getString(R.string.download_complete))
-            .setContentText(bookTitle)
+            .setContentTitle(displayTitle)
+            .setContentText(displayText)
             .setSmallIcon(android.R.drawable.stat_sys_download_done)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setGroup(NOTIFICATION_GROUP_KEY) // Group notifications together
             .build()
 
         notificationManager.notify(bookId, notification)
+
+        // Show a summary notification for grouped downloads
+        showSummaryNotification()
+    }
+
+    /**
+     * Shows a summary notification when multiple downloads are grouped
+     */
+    private fun showSummaryNotification() {
+        val intent = Intent(context, MainActivity::class.java).apply {
+            data = Uri.parse("${MainViewModel.LAUNCHER_SHORTCUT_SCHEME}://library")
+            putExtra(MainViewModel.LC_SC_BOOK_LIBRARY, true)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        }
+        val pendingIntent = PendingIntent.getActivity(
+            context,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
+        val summaryNotification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
+            .setContentTitle(context.getString(R.string.download_complete))
+            .setContentText(context.getString(R.string.tap_to_view_library))
+            .setSmallIcon(android.R.drawable.stat_sys_download_done)
+            .setAutoCancel(true)
+            .setContentIntent(pendingIntent)
+            .setGroup(NOTIFICATION_GROUP_KEY)
+            .setGroupSummary(true)
+            .build()
+
+        notificationManager.notify(SUMMARY_NOTIFICATION_ID, summaryNotification)
     }
 
 }
