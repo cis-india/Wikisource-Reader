@@ -35,6 +35,8 @@ data class Book(
     val rawMediaType: String,
     @ColumnInfo(name = COVER)
     val cover: String,
+    @ColumnInfo(name = CONTINUOUS_CHAPTERS, defaultValue = "0")
+    var continuousChapters: Boolean = false
 ) {
 
     constructor(
@@ -81,5 +83,7 @@ data class Book(
         const val PROGRESSION = "progression"
         const val MEDIA_TYPE = "media_type"
         const val COVER = "cover"
+
+        const val CONTINUOUS_CHAPTERS = "continuous_chapters"
     }
 }

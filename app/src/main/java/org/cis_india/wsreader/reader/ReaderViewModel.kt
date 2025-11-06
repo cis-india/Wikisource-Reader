@@ -65,6 +65,30 @@ class ReaderViewModel(
     ImageNavigatorFragment.Listener,
     PdfNavigatorFragment.Listener {
 
+    private val _continuousChapters = MutableStateFlow(false)
+    val continuousChapters: StateFlow<Boolean> = _continuousChapters
+
+    init {
+        viewModelScope.launch {
+            val loadedBook = bookRepository.get(bookId)
+            _continuousChapters.value = checkNotNull(loadedBook?.continuousChapters) { "Cannot find book in database." }
+        }
+    }
+
+    fun toggleContinuousChapters() {
+        viewModelScope.launch {
+            val currentBookContinuousChapter = _continuousChapters.value ?: return@launch
+
+            bookRepository.saveContinuousChapters(
+                bookId,
+                !currentBookContinuousChapter
+            )
+
+            val loadedBook = bookRepository.get(bookId)
+            _continuousChapters.value = checkNotNull(loadedBook?.continuousChapters) { "Cannot find book in database." }
+        }
+    }
+
     val readerInitData =
         try {
             checkNotNull(readerRepository[bookId])
