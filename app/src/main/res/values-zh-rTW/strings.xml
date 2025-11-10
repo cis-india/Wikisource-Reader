@@ -39,6 +39,10 @@
   <string name="library_read_button">閱讀</string>
   <string name="library_delete_button">刪除</string>
   <string name="library_delete_dialog_title">您確定嗎？</string>
+  <string name="downloading_book">正在下載書籍</string>
+  <string name="downloading">下載中…</string>
+  <string name="download_complete">下載完成</string>
+  <string name="tap_to_view_library">輕觸即可在圖書館查看</string>
   <string name="copy">複製</string>
   <string name="copied">已複製！</string>
   <string name="web_search">網頁搜尋</string>

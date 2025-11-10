@@ -39,7 +39,10 @@
   <string name="library_read_button">اقرأ</string>
   <string name="library_delete_button">امسح</string>
   <string name="library_delete_dialog_title">هل انت متأكد ؟</string>
+  <string name="downloading_book">تحميل الكتاب</string>
+  <string name="downloading">جاري التحميل…</string>
   <string name="download_complete">تم التحميل بالكامل</string>
+  <string name="tap_to_view_library">انقر لعرض في المكتبة</string>
   <string name="copy">نسخ</string>
   <string name="copied">تم النسخ!</string>
   <string name="web_search">بحث ويب</string>

@@ -38,6 +38,9 @@
   <string name="library_read_button">Leggi</string>
   <string name="library_delete_button">Elimina</string>
   <string name="library_delete_dialog_title">Sei sicuro?</string>
+  <string name="downloading_book">Download in corso del libro</string>
+  <string name="downloading">Download in corso…</string>
+  <string name="tap_to_view_library">Tocca per visualizzare nella Libreria</string>
   <string name="copy">Copia</string>
   <string name="copied">Copiato!</string>
   <string name="web_search">Ricerca web</string>

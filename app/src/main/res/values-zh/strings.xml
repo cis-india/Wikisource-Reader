@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* GuoPC
 * TFX202X
 -->
 <resources>
@@ -39,7 +40,10 @@
   <string name="library_read_button">阅读</string>
   <string name="library_delete_button">删除</string>
   <string name="library_delete_dialog_title">你确定吗？</string>
+  <string name="downloading_book">正在下载书籍</string>
+  <string name="downloading">下载中…</string>
   <string name="download_complete">下载完成</string>
+  <string name="tap_to_view_library">轻触即可在图书馆查看</string>
   <string name="copy">复制</string>
   <string name="copied">已复制！</string>
   <string name="web_search">网络搜索</string>

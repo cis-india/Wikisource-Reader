@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Darafsh
+* Jeeputer
 -->
 <resources>
   <string name="not_applicable">ن/م</string>
@@ -36,6 +37,7 @@
   <string name="library_read_button">خواندن</string>
   <string name="library_delete_button">حذف</string>
   <string name="library_delete_dialog_title">از این بابت مطمئنی؟</string>
+  <string name="download_complete">بارگیری کامل شد</string>
   <string name="copy">کپى</string>
   <string name="copied">کپی شد!</string>
   <string name="web_search">جستجوی وب</string>

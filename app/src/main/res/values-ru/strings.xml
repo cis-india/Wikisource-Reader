@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* EneshTranslates
+-->
 <resources>
   <string name="not_applicable">Неизвестно</string>
   <string name="confirm">Подтвердить</string>
@@ -33,6 +36,9 @@
   <string name="library_read_button">Читать</string>
   <string name="library_delete_button">Удалить</string>
   <string name="library_delete_dialog_title">Вы в этом уверены?</string>
+  <string name="downloading_book">Скачивание книги</string>
+  <string name="downloading">Downloading…</string>
+  <string name="tap_to_view_library">Нажмите, чтобы посмотреть в Библиотеке</string>
   <string name="copy">Копировать</string>
   <string name="copied">Скопировано!</string>
   <string name="web_search">Веб-поиск</string>

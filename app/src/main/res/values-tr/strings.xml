@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* Sakblue
+-->
 <resources>
   <string name="not_applicable">Geçersiz</string>
   <string name="confirm">Onayla</string>
@@ -18,7 +21,9 @@
   <string name="home_header">Tüm Kitaplar</string>
   <string name="home_language_icon_desc">Dile göre sırala</string>
   <string name="home_search_icon_desc">Kitapları ara</string>
+  <string name="home_sort_icon_desc">Kitapları sırala</string>
   <string name="language_menu_title">Dile göre gözat</string>
+  <string name="sort_menu_title">Şuna göre sırala:</string>
   <string name="categories_header">Kategoriler</string>
   <string name="no_books_found_for_lang_and_cat">Bu kategori için %s dilinde kitap bulunamadı.</string>
   <string name="library_header">Kütüphane</string>
@@ -33,6 +38,10 @@
   <string name="library_read_button">Oku</string>
   <string name="library_delete_button">Sil</string>
   <string name="library_delete_dialog_title">Bundan emin misiniz?</string>
+  <string name="downloading_book">Kitap indiriliyor</string>
+  <string name="downloading">İndiriliyor</string>
+  <string name="download_complete">Yükleme tamamlandı</string>
+  <string name="tap_to_view_library">Kütüphanede görüntülemek için dokunun</string>
   <string name="copy">Kopyala</string>
   <string name="copied">Kopyalandı!</string>
   <string name="web_search">Web Araması</string>
