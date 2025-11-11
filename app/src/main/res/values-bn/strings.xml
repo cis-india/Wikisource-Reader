@@ -44,6 +44,8 @@
   <string name="copied">অনুলিপি করা হয়েছে!</string>
   <string name="web_search">ওয়েব অনুসন্ধান</string>
   <string name="share">শেয়ার করুন</string>
+  <string name="translate">অনুবাদ</string>
+  <string name="dictionary">অভিধান</string>
   <string name="settings_header">সেটিং</string>
   <string name="general_settings_header">সাধারণ</string>
   <string name="default_reader_dialog_title">এর মাধ্যমে ইবুক খুলুন...</string>

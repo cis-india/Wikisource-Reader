@@ -131,6 +131,8 @@ class BookDetailViewModel @Inject constructor(
     fun downloadBook(
         book: Book, downloadProgressListener: (Float, Int) -> Unit
     ) {
+        val languageCode = book.languages.firstOrNull()?.lowercase() ?: "en"
+
         bookDownloader.downloadBook(book = book,
             downloadProgressListener = downloadProgressListener,
             onDownloadSuccess = { filePath ->
@@ -138,7 +140,8 @@ class BookDetailViewModel @Inject constructor(
                 val uri = Uri.fromFile(file)
                 app.bookshelf.importPublicationFromStorage(
                     uri = uri,
-                    wdIdentifier = book.id.toString()
+                    wdIdentifier = book.id.toString(),
+                    languageCode
                 )
                 //state = state.copy(bookLibraryItem = libraryDao.getItemByBookId(book.id))
             }
