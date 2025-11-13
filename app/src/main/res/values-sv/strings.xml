@@ -40,7 +40,10 @@
   <string name="library_read_button">Läs</string>
   <string name="library_delete_button">Radera</string>
   <string name="library_delete_dialog_title">Är du säker på det?</string>
+  <string name="downloading_book">Laddar ned bok</string>
+  <string name="downloading">Laddar ned...</string>
   <string name="download_complete">Nedladdning slutförd</string>
+  <string name="tap_to_view_library">Tryck för att visa i biblioteket</string>
   <string name="copy">Kopiera</string>
   <string name="copied">Kopierat!</string>
   <string name="web_search">Webbsökning</string>

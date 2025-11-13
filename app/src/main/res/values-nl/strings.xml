@@ -42,7 +42,10 @@
   <string name="library_read_button">Lezen</string>
   <string name="library_delete_button">Verwijderen</string>
   <string name="library_delete_dialog_title">Weet u het zeker?</string>
+  <string name="downloading_book">Boek aan het downloaden</string>
+  <string name="downloading">Aan het downloaden…</string>
   <string name="download_complete">Download voltooid</string>
+  <string name="tap_to_view_library">Tik om te bekijken in de bibliotheek</string>
   <string name="copy">Kopiëren</string>
   <string name="copied">Gekopieerd!</string>
   <string name="web_search">Zoeken op het web</string>
