@@ -71,6 +71,11 @@ class BookDownloader(private val context: Context) {
                 .replace("\"", "")
                 .replace("/", "-")
                 .replace("\\", "-")
+                .replace("?", "-")
+                .replace("*", "-")
+                .replace("<", "-")
+                .replace(">", "-")
+                .replace("|", "-")
                 .split(" ")
                 .joinToString(separator = "+") { word ->
                     word.replace(Regex("[^\\p{ASCII}]"), "")
