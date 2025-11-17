@@ -19,7 +19,7 @@ import org.cis_india.wsreader.data.model.Highlight
 
 @Database(
     entities = [Book::class, Bookmark::class, Highlight::class, Catalog::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(
@@ -45,7 +45,9 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "database"
-                ).build()
+                )
+                .addMigrations(MIGRATION_1_2)
+                .build()
                 INSTANCE = instance
                 return instance
             }

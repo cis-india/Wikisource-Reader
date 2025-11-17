@@ -47,6 +47,8 @@
   <string name="copied">已複製！</string>
   <string name="web_search">網頁搜尋</string>
   <string name="share">分享</string>
+  <string name="translate">翻譯</string>
+  <string name="dictionary">字典</string>
   <string name="settings_header">設定</string>
   <string name="general_settings_header">一般</string>
   <string name="default_reader_dialog_title">開啟電子書以…</string>
