@@ -23,7 +23,9 @@
   <string name="home_header">Όλα τα Βιβλία</string>
   <string name="home_language_icon_desc">Ταξινόμηση κατά γλώσσα</string>
   <string name="home_search_icon_desc">Αναζήτηση βιβλίων</string>
+  <string name="home_sort_icon_desc">Ταξινόμηση βιβλίων</string>
   <string name="language_menu_title">Περιήγηση ανά γλώσσα</string>
+  <string name="sort_menu_title">Ταξινόμηση κατά</string>
   <string name="categories_header">Κατηγορίες</string>
   <string name="no_books_found_for_lang_and_cat">Δεν υπάρχουν διαθέσιμα βιβλία στη γλώσσα %s για αυτήν την κατηγορία.</string>
   <string name="library_header">Βιβλιοθήκη</string>
@@ -38,6 +40,10 @@
   <string name="library_read_button">Ανάγνωση</string>
   <string name="library_delete_button">Διαγραφή</string>
   <string name="library_delete_dialog_title">Είσαι σίγουροι γι\' αυτό;</string>
+  <string name="downloading_book">Λήψη βιβλίου</string>
+  <string name="downloading">Γίνεται λήψη…</string>
+  <string name="download_complete">Λήψη ολοκληρώθηκε</string>
+  <string name="tap_to_view_library">Πατήστε για προβολή στη Βιβλιοθήκη</string>
   <string name="copy">Αντιγραφή</string>
   <string name="copied">Αντιγράφηκε!</string>
   <string name="web_search">Αναζήτηση Ιστού</string>
