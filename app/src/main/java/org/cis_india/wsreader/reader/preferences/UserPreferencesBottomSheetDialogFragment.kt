@@ -20,6 +20,7 @@ abstract class UserPreferencesBottomSheetDialogFragment(
     isScrollable = true
 ) {
     abstract val preferencesModel: UserPreferencesViewModel<*, *>
+    val model: ReaderViewModel by activityViewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
         (super.onCreateDialog(savedInstanceState) as BottomSheetDialog).apply {
@@ -34,7 +35,7 @@ abstract class UserPreferencesBottomSheetDialogFragment(
 
     @Composable
     override fun Content() {
-        UserPreferences(preferencesModel, title)
+        UserPreferences(preferencesModel, title, model)
     }
 }
 

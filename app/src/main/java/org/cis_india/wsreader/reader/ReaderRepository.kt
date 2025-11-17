@@ -97,16 +97,19 @@ class ReaderRepository(
 
         val initialLocator = book.progression
             ?.let { Locator.fromJSON(JSONObject(it)) }
+        val sessionConfig = SessionReaderConfig(
+            continuousChapters = book.continuousChapters
+        )
 
         val readerInitData = when {
             publication.conformsTo(Publication.Profile.AUDIOBOOK) ->
                 openAudio(bookId, publication, initialLocator)
             publication.conformsTo(Publication.Profile.EPUB) || publication.readingOrder.allAreHtml ->
-                openEpub(bookId, publication, initialLocator)
+                openEpub(bookId, publication, initialLocator, sessionConfig = sessionConfig)
             publication.conformsTo(Publication.Profile.PDF) ->
-                openPdf(bookId, publication, initialLocator)
+                openPdf(bookId, publication, initialLocator, sessionConfig = sessionConfig)
             publication.conformsTo(Publication.Profile.DIVINA) ->
-                openImage(bookId, publication, initialLocator)
+                openImage(bookId, publication, initialLocator, sessionConfig = sessionConfig)
             else ->
                 Try.failure(
                     OpeningError.CannotRender(
@@ -170,6 +173,7 @@ class ReaderRepository(
         bookId: Long,
         publication: Publication,
         initialLocator: Locator?,
+        sessionConfig: SessionReaderConfig,
     ): Try<EpubReaderInitData, OpeningError> {
         val preferencesManager = EpubPreferencesManagerFactory(preferencesDataStore)
             .createPreferenceManager(bookId)
@@ -182,7 +186,8 @@ class ReaderRepository(
             initialLocator,
             preferencesManager,
             navigatorFactory,
-            ttsInitData
+            ttsInitData,
+            sessionConfig = sessionConfig
         )
         return Try.success(initData)
     }
@@ -191,6 +196,7 @@ class ReaderRepository(
         bookId: Long,
         publication: Publication,
         initialLocator: Locator?,
+        sessionConfig: SessionReaderConfig,
     ): Try<PdfReaderInitData, OpeningError> {
         val preferencesManager = PdfiumPreferencesManagerFactory(preferencesDataStore)
             .createPreferenceManager(bookId)
@@ -204,7 +210,8 @@ class ReaderRepository(
             initialLocator,
             preferencesManager,
             navigatorFactory,
-            ttsInitData
+            ttsInitData,
+            sessionConfig
         )
         return Try.success(initData)
     }
@@ -213,12 +220,14 @@ class ReaderRepository(
         bookId: Long,
         publication: Publication,
         initialLocator: Locator?,
+        sessionConfig: SessionReaderConfig,
     ): Try<ImageReaderInitData, OpeningError> {
         val initData = ImageReaderInitData(
             bookId = bookId,
             publication = publication,
             initialLocation = initialLocator,
-            ttsInitData = getTtsInitData(bookId, publication)
+            ttsInitData = getTtsInitData(bookId, publication),
+            sessionConfig
         )
         return Try.success(initData)
     }
