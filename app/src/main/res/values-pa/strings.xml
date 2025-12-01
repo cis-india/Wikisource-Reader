@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* Cabal
 * Kuldeepburjbhalaike
 -->
 <resources>
@@ -118,10 +119,10 @@
   <string name="timestamp">ਵਕਤ ਦੀ ਮੋਹਰ</string>
   <string name="contents_tab_label">ਸਮੱਗਰੀ</string>
   <string name="bookmarks_tab_label">ਬੁੱਕਮਾਰਕ</string>
-  <string name="highlights_tab_label">ਹਾਈਲਾਈਟਸ</string>
+  <string name="highlights_tab_label">ਉਜਾਗਰ ਕੀਤਾ</string>
   <string name="pagelist_tab_label">ਪੰਨਾ ਸੂਚੀ</string>
   <string name="landmarks_tab_label">ਨਿਸ਼ਾਨੀਆਂ</string>
-  <string name="action_mode_menu_highlight">ਹਾਈਲਾਈਟਸ</string>
+  <string name="action_mode_menu_highlight">ਉਜਾਗਰ ਕੀਤਾ</string>
   <string name="action_mode_menu_underline">ਹੇਠਾਂ ਲਕੀਰ ਲਾਉ</string>
   <string name="action_mode_menu_note">ਟਿੱਪਣੀ</string>
   <string name="bookmark_added">ਬੁੱਕਮਾਰਕ ਜੋੜਿਆ ਗਿਆ</string>
