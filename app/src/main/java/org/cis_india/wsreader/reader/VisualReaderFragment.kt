@@ -8,14 +8,17 @@ package org.cis_india.wsreader.reader
 
 import android.app.AlertDialog
 import android.app.SearchManager
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.RectF
+import android.net.Uri
 import android.os.Bundle
 import android.os.Build
+import android.util.Log
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -51,6 +54,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -84,6 +88,7 @@ import org.cis_india.wsreader.reader.tts.TtsViewModel
 import org.cis_india.wsreader.utils.clearPadding
 import org.cis_india.wsreader.utils.extensions.confirmDialog
 import org.cis_india.wsreader.utils.extensions.throttleLatest
+import org.cis_india.wsreader.utils.getDictionaryUrl
 import org.cis_india.wsreader.utils.hideSystemUi
 import org.cis_india.wsreader.utils.observeWhenStarted
 import org.cis_india.wsreader.utils.padSystemUi
@@ -101,7 +106,11 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
 
     protected var binding: FragmentReaderBinding by viewLifecycle()
 
+    private val viewModel: ReaderViewModel by activityViewModels()
+
     private lateinit var navigatorFragment: Fragment
+
+    private var bookLanguage: String = "en"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -119,6 +128,14 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.bookLanguage.collect { language ->
+                    bookLanguage = language
+                }
+            }
+        }
 
         navigatorFragment = navigator as Fragment
 
@@ -395,6 +412,8 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 menu.findItem(R.id.note).isVisible = true
                 menu.findItem(R.id.copy).isVisible = true
                 menu.findItem(R.id.web_search).isVisible = true
+                menu.findItem(R.id.dictionary).isVisible = true
+                menu.findItem(R.id.translate).isVisible = true
             }
             return true
         }
@@ -406,6 +425,8 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 R.id.note -> showAnnotationPopup()
                 R.id.copy -> copySelectionToClipboard()
                 R.id.web_search -> searchSelectionOnWeb()
+                R.id.dictionary -> openDictionary()
+                R.id.translate -> openTranslate()
                 else -> return false
             }
 
@@ -586,7 +607,7 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
             val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("selected_text", selection.locator.text.highlight.toString())
             clipboard.setPrimaryClip(clip)
-            
+
             //Only show Toast in Android 12L (API level 32) and lower. Android 13 and higher has standard feedback when content enters the clipboard
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
                 Toast.makeText(context, R.string.copied, Toast.LENGTH_SHORT).show()
@@ -610,6 +631,77 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
                 navigator.clearSelection()
             } else {
                 Toast.makeText(context, "No text selected for web search", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun openDictionary() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val navigator = navigator as? SelectableNavigator ?: return@launch
+            val selection = navigator.currentSelection() ?: return@launch
+
+            val selectedText = selection.locator.text.highlight.toString().trim()
+
+            if(selectedText.isNotEmpty()) {
+                val lang = bookLanguage.lowercase()
+
+                val dictionaryUrl = getDictionaryUrl(lang, selectedText)
+
+                val intent = if (dictionaryUrl != null) {
+                    Intent(Intent.ACTION_VIEW).apply {
+                        data = Uri.parse(dictionaryUrl)
+                    }
+                } else {
+                    Intent(Intent.ACTION_WEB_SEARCH).apply {
+                        putExtra(SearchManager.QUERY, selectedText)
+                    }
+                }
+
+                try {
+                    startActivity(intent)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(
+                        context,
+                        getString(R.string.no_app_found_dictionary),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                navigator.clearSelection()
+            } else {
+                Toast.makeText(
+                    context,
+                    getString(R.string.no_text_selected_for_dictionary),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun openTranslate() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val navigator = navigator as? SelectableNavigator ?: return@launch
+            val selection = navigator.currentSelection() ?: return@launch
+
+            val selectedText = selection.locator.text.highlight.toString().trim()
+
+            if (selectedText.isNotEmpty()) {
+                val translateUrl = "https://translate.google.com/?sl=$bookLanguage&tl=en&text=${Uri.encode(selectedText)}"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(translateUrl))
+
+                try {
+                    startActivity(intent)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.no_app_found_for_translation),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                navigator.clearSelection()
+            } else {
+                Toast.makeText(context, getString(R.string.no_text_selected_for_translation), Toast.LENGTH_SHORT).show()
             }
         }
     }

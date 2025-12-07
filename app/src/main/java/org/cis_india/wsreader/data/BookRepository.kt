@@ -83,7 +83,8 @@ class BookRepository(
         mediaType: MediaType,
         publication: Publication,
         cover: File,
-        wdIdentifier: String? = null
+        wdIdentifier: String? = null,
+        bookLanguageCode: String? = null
     ): Long {
         val book = Book(
             creation = Date().time,
@@ -93,9 +94,17 @@ class BookRepository(
             identifier = wdIdentifier?: publication.metadata.identifier ?: "",
             mediaType = mediaType,
             progression = "{}",
-            cover = cover.path
+            cover = cover.path,
+            languageCode = bookLanguageCode ?: "en"
         )
         return booksDao.insertBook(book)
+    }
+
+    suspend fun updateBookLanguage(bookId: Long, languageCode: String) =
+        booksDao.updateBookLanguage(bookId, languageCode)
+
+    fun getBookLanguage(bookId: Long): Flow<String?> {
+        return booksDao.getBookLanguage(bookId)
     }
 
     suspend fun deleteBook(id: Long) =

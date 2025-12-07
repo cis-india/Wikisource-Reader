@@ -37,6 +37,8 @@
   <string name="copied">Zkopírováno!</string>
   <string name="web_search">Webový vyhledávač</string>
   <string name="share">Sdílet</string>
+  <string name="translate">Přeložit</string>
+  <string name="dictionary">Slovník</string>
   <string name="settings_header">Nastavení</string>
   <string name="general_settings_header">Obecné</string>
   <string name="default_reader_dialog_title">Otevírat e-knihy pomocí…</string>

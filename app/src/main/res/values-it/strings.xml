@@ -45,6 +45,8 @@
   <string name="copied">Copiato!</string>
   <string name="web_search">Ricerca web</string>
   <string name="share">Condividi</string>
+  <string name="translate">Traduci</string>
+  <string name="dictionary">Dizionario</string>
   <string name="settings_header">Impostazioni</string>
   <string name="general_settings_header">Generale</string>
   <string name="default_reader_dialog_title">Apri ebooks con…</string>
