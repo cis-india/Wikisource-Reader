@@ -7,7 +7,7 @@
 package org.cis_india.wsreader.reader
 
 import androidx.datastore.core.DataStore
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import androidx.datastore.preferences.core.Preferences as JetpackPreferences
 import org.json.JSONObject
 import org.readium.adapter.exoplayer.audio.ExoPlayerEngineProvider
@@ -42,7 +42,7 @@ import timber.log.Timber
  */
 @OptIn(ExperimentalReadiumApi::class)
 class ReaderRepository(
-    private val application: MyneApp,
+    private val application: WikisourceReader,
     private val readium: Readium,
     private val bookRepository: BookRepository,
     private val preferencesDataStore: DataStore<JetpackPreferences>,

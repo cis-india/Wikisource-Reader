@@ -19,7 +19,7 @@ import androidx.core.app.ServiceCompat
 import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.readium.navigator.media.common.Media3Adapter
@@ -47,8 +47,8 @@ class MediaService : MediaSessionService() {
      */
     inner class Binder : android.os.Binder() {
 
-        private val app: org.cis_india.wsreader.MyneApp
-            get() = application as org.cis_india.wsreader.MyneApp
+        private val app: org.cis_india.wsreader.WikisourceReader
+            get() = application as org.cis_india.wsreader.WikisourceReader
 
         private val sessionMutable: MutableStateFlow<Session?> =
             MutableStateFlow(null)
@@ -142,7 +142,7 @@ class MediaService : MediaSessionService() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
-        val readerRepository = (application as org.cis_india.wsreader.MyneApp).readerRepository
+        val readerRepository = (application as org.cis_india.wsreader.WikisourceReader).readerRepository
 
         // App and service can be started again from a stale notification using
         // PendingIntent.getForegroundService, so we need to call startForeground and then stop
@@ -193,12 +193,12 @@ class MediaService : MediaSessionService() {
 
         const val SERVICE_INTERFACE = "org.cis_india.wsreader.reader.MediaService"
 
-        fun start(application: MyneApp) {
+        fun start(application: WikisourceReader) {
             val intent = intent(application)
             application.startService(intent)
         }
 
-        fun stop(application: MyneApp) {
+        fun stop(application: WikisourceReader) {
             val intent = intent(application)
             application.stopService(intent)
         }

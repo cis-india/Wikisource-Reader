@@ -6,7 +6,7 @@
 
 package org.cis_india.wsreader.reader
 
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.readium.navigator.media.common.Media3Adapter
@@ -18,7 +18,7 @@ import org.cis_india.wsreader.utils.CoroutineQueue
  */
 @OptIn(ExperimentalReadiumApi::class)
 class MediaServiceFacade(
-    private val application: MyneApp,
+    private val application: WikisourceReader,
 ) {
     private val coroutineScope: CoroutineScope =
         MainScope()

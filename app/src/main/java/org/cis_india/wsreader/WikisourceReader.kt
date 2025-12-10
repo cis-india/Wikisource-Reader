@@ -48,7 +48,7 @@ import org.cis_india.wsreader.utils.tryOrLog
 
 
 @HiltAndroidApp
-class MyneApp : Application(), ImageLoaderFactory {
+class WikisourceReader : Application(), ImageLoaderFactory {
 
     lateinit var readium: Readium
         private set
@@ -105,7 +105,7 @@ class MyneApp : Application(), ImageLoaderFactory {
             )
 
         readerRepository = ReaderRepository(
-            this@MyneApp,
+            this@WikisourceReader,
             readium,
             bookRepository,
             navigatorPreferences
