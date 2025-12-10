@@ -22,7 +22,7 @@ import org.cis_india.wsreader.utils.EventChannel
 class BookshelfViewModel(application: Application) : AndroidViewModel(application) {
 
     private val app get() =
-        getApplication<org.cis_india.wsreader.MyneApp>()
+        getApplication<org.cis_india.wsreader.WikisourceReader>()
 
     val channel = EventChannel(Channel<Event>(Channel.BUFFERED), viewModelScope)
     val books = app.bookRepository.books()

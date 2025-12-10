@@ -41,7 +41,7 @@ import org.readium.r2.shared.util.AbsoluteUrl
 import org.readium.r2.shared.util.Try
 import org.readium.r2.shared.util.Url
 import org.readium.r2.shared.util.data.ReadError
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.data.BookRepository
 import org.cis_india.wsreader.data.model.Highlight
@@ -340,7 +340,7 @@ class ReaderViewModel(
     }
 
     companion object {
-        fun createFactory(application: MyneApp, arguments: ReaderActivityContract.Arguments) =
+        fun createFactory(application: WikisourceReader, arguments: ReaderActivityContract.Arguments) =
             createViewModelFactory {
                 ReaderViewModel(
                     arguments.bookId,

@@ -18,7 +18,7 @@ package org.cis_india.wsreader.helpers
 
 object Constants {
     /** Name of database file. */
-    const val DATABASE_NAME = "myne.db"
+    const val DATABASE_NAME = "wsReader.db"
 
     /** Epub Mime Type. */
     const val EPUB_MIME_TYPE = "application/epub+zip"

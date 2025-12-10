@@ -21,7 +21,7 @@ import androidx.fragment.app.activityViewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.readium.r2.shared.DelicateReadiumApi
 import org.readium.r2.shared.util.AbsoluteUrl
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.data.model.Book
 import org.cis_india.wsreader.databinding.FragmentBookshelfBinding
@@ -48,8 +48,8 @@ class BookshelfFragment : Fragment() {
     private var binding: FragmentBookshelfBinding by viewLifecycle()
     private var onViewAttachedListener: OnViewAttachedListener = OnViewAttachedListener()
 
-    private val app: MyneApp
-        get() = requireContext().applicationContext as MyneApp
+    private val app: WikisourceReader
+        get() = requireContext().applicationContext as WikisourceReader
 
     override fun onCreateView(
         inflater: LayoutInflater,

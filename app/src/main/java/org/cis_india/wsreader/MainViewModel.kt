@@ -45,7 +45,7 @@ class MainViewModel @Inject constructor(
 
     companion object {
         // Must be same as the one in AndroidManifest.xml
-        const val LAUNCHER_SHORTCUT_SCHEME = "myne_lc_shortcut"
+        const val LAUNCHER_SHORTCUT_SCHEME = "wikisourcereader_lc_shortcut"
 
         // Key to get goalId from intent.
         const val LC_SC_LIBRARY_ITEM_ID = "lc_shortcut_library_item_id"

@@ -27,7 +27,7 @@ import android.content.SharedPreferences
 class PreferenceUtil(context: Context) {
 
     companion object {
-        private const val PREFS_NAME = "myne_settings"
+        private const val PREFS_NAME = "wikisource_settings"
 
         // Preference keys
         const val APP_THEME_INT = "theme_settings"

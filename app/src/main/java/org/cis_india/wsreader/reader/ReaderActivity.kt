@@ -19,7 +19,7 @@ import androidx.fragment.app.commitNow
 import androidx.lifecycle.ViewModelProvider
 import org.readium.r2.shared.publication.Locator
 import org.readium.r2.shared.util.toUri
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.databinding.ActivityReaderBinding
 import org.cis_india.wsreader.outline.OutlineContract
@@ -37,7 +37,7 @@ open class ReaderActivity : AppCompatActivity() {
 
     override val defaultViewModelProviderFactory: ViewModelProvider.Factory
         get() = ReaderViewModel.createFactory(
-            application as MyneApp,
+            application as WikisourceReader,
             ReaderActivityContract.parseIntent(this)
         )
 

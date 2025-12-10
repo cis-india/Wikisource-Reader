@@ -32,7 +32,7 @@ import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.ui.screens.main.MainScreen
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.theme.AdjustEdgeToEdge
-import org.cis_india.wsreader.ui.theme.MyneTheme
+import org.cis_india.wsreader.ui.theme.WikisourceReaderTheme
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.NavController
 
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge() // enable edge to edge for the activity.
 
         setContent {
-            MyneTheme(settingsViewModel = settingsViewModel) {
+            WikisourceReaderTheme(settingsViewModel = settingsViewModel) {
                 AdjustEdgeToEdge(
                     activity = this,
                     themeState = settingsViewModel.getCurrentTheme()

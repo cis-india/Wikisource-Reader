@@ -61,7 +61,7 @@ class BookDetailViewModel @Inject constructor(
 ) : AndroidViewModel(application) {
 
     private val app get() =
-        getApplication<org.cis_india.wsreader.MyneApp>()
+        getApplication<org.cis_india.wsreader.WikisourceReader>()
 
     val channel = EventChannel(Channel<Event>(Channel.BUFFERED), viewModelScope)
 
