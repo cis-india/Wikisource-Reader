@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* Chaduvari
 * Gangaasoonu
 -->
 <resources>
@@ -8,7 +9,7 @@
   <string name="cancel">రద్దుచెయ్యు</string>
   <string name="ok">సరే</string>
   <string name="got_it">అర్థమైంది</string>
-  <string name="network_error">అయ్యో! సర్వర్‌తో కనెక్ట్ అవ్వడంలో విఫలమైంది.</string>
+  <string name="network_error">అయ్యో! సర్వరుతో కనెక్టవడం విఫలమైంది.</string>
   <string name="network_error_retry">మరలా ప్రయత్నించు</string>
   <string name="navigation_home">హోమ్</string>
   <string name="navigation_categories">కేటగిరీలు</string>
