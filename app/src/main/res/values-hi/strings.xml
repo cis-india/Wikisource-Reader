@@ -29,7 +29,7 @@
   <string name="empty_library">यहाँ कुछ भी नहीं है!</string>
   <string name="import_button_text">आयात करें</string>
   <string name="import_button_onboarding">अपनी खुद की पुस्तकें आयात करें!</string>
-  <string name="import_button_onboarding_desc">अब आप अपने EPUB पुस्तकों को आयात कर सकते हैं और उन्हें WikisourceReader में पढ़ सकते हैं।</string>
+  <string name="import_button_onboarding_desc">अब आप अपने EPUB पुस्तकों को आयात कर सकते हैं और उन्हें Myne में पढ़ सकते हैं।</string>
   <string name="import_button_desc">EPUB पुस्तक आयात करें</string>
   <string name="epub_importing">आयात हो रहा है…\nकृपया प्रतीक्षा करें।</string>
   <string name="epub_imported">सफलतापूर्वक आयात किया गया!</string>

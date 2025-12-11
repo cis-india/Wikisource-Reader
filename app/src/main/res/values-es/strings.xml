@@ -25,7 +25,7 @@
   <string name="empty_library">¡Nada por aquí!</string>
   <string name="import_button_text">Importar</string>
   <string name="import_button_onboarding">¡Importa tus propios libros!</string>
-  <string name="import_button_onboarding_desc">Ahora puedes importar tus propios libros en formato EPUB y leerlos en WikisourceReader.</string>
+  <string name="import_button_onboarding_desc">Ahora puedes importar tus propios libros en formato EPUB y leerlos en Myne.</string>
   <string name="import_button_desc">Importar libro EPUB</string>
   <string name="epub_importing">Importando… Por favor, espere.</string>
   <string name="epub_imported">¡Importado con éxito!</string>

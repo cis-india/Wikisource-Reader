@@ -30,7 +30,7 @@
   <string name="empty_library">Burada bir şey yok!</string>
   <string name="import_button_text">İçe Aktar</string>
   <string name="import_button_onboarding">Kendi kitaplarınızı içe aktarın!</string>
-  <string name="import_button_onboarding_desc">Artık kendi EPUB kitaplarınızı içe aktarabilir ve WikisourceReader\'de okuyabilirsiniz.</string>
+  <string name="import_button_onboarding_desc">Artık kendi EPUB kitaplarınızı içe aktarabilir ve Myne\'de okuyabilirsiniz.</string>
   <string name="import_button_desc">Epub kitabını içe aktar</string>
   <string name="epub_importing">İçe aktarılıyor…\nLütfen bekleyin.</string>
   <string name="epub_imported">Başarıyla içe aktarıldı!</string>

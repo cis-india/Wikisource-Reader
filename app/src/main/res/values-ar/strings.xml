@@ -16,7 +16,7 @@
   <string name="navigation_library">المكتبة</string>
   <string name="navigation_settings">الاعدادات</string>
   <string name="library_tooltip">نصيحة! مرر عناصر المكتبة يمينًا أو يسارًا لمشاركة الكتاب أو عرض تفاصيله.</string>
-  <string name="welcome_screen_title">شكرًا لتثبيت WikisourceReader!</string>
+  <string name="welcome_screen_title">شكرًا لتثبيت Myne!</string>
   <string name="welcome_screen_desc">اختر قارئ الكتب الإلكترونية المفضل لديك للانطلاق في رحلتك في القراءة.</string>
   <string name="welcome_screen_button">البدء</string>
   <string name="home_header">كل الكتب</string>
@@ -31,7 +31,7 @@
   <string name="empty_library">لا يوجد شئ هنا</string>
   <string name="import_button_text">استيراد</string>
   <string name="import_button_onboarding">استيراد كتبك الخاصة!</string>
-  <string name="import_button_onboarding_desc">الآن يمكنك استيراد كتب EPUB الخاصة بك وقراءتها في WikisourceReader.</string>
+  <string name="import_button_onboarding_desc">الآن يمكنك استيراد كتب EPUB الخاصة بك وقراءتها في Myne.</string>
   <string name="import_button_desc">استيراد كتاب EPUB</string>
   <string name="epub_importing">جاري الاستيراد… يرجى الانتظار.</string>
   <string name="epub_imported">تم الاستيراد بنجاح!</string>
