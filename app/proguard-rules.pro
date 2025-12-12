@@ -32,3 +32,6 @@
 # Suppress warnings for Joda-Convert classes
 -dontwarn org.joda.convert.FromString
 -dontwarn org.joda.convert.ToString
+
+# Ensure that all classes and subpackages  are preserved (not stripped ) during the release build process.
+-keep class org.cis_india.wsreader.reader.tts.** { *; }
