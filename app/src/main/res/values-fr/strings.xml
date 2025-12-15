@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Cquoi
+* Lenchanteur
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -189,7 +190,7 @@
   <string name="green">Vert</string>
   <string name="blue">Bleu</string>
   <string name="red">Rouge</string>
-  <string name="purple">Pourpre</string>
+  <string name="purple">Violet</string>
   <string name="seek_bar">Barre de recherche</string>
   <string name="go_backward_30_seconds">Revenez en arrière de 30 secondes</string>
   <string name="play_or_pause">Lecture ou pause</string>
@@ -213,6 +214,6 @@
   <string name="error_unexpected">Une erreur inattendue s\'est produite.</string>
   <string name="go_to_library">Allez à la bibliothèque</string>
   <string name="link_metapage_desc">Visitez notre page</string>
-  <string name="link_sourcecode_repo">Voyez le dépôt GitHub</string>
+  <string name="link_sourcecode_repo">Voir le dépôt GitHub</string>
   <string name="link_sourcecode">GitHub</string>
 </resources>
