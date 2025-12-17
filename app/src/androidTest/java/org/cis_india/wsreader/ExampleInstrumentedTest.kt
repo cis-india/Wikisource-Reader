@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.starry.WikisourceReader", appContext.packageName)
+        assertEquals("org.cis_india.wsreader", appContext.packageName)
     }
 }
