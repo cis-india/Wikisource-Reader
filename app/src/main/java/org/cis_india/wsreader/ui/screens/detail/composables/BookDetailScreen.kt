@@ -523,7 +523,7 @@ private fun MiddleBar(
                 ) {
                     Row {
                         Icon(
-                            imageVector = ImageVector.vectorResource(id = R.drawable.ic_book_pages),
+                            imageVector = ImageVector.vectorResource(id = R.drawable.ic_published_year),
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.padding(top = 13.dp, bottom = 15.dp, end = 4.dp)
