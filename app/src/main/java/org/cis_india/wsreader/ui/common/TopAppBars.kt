@@ -171,23 +171,23 @@ fun CustomTopAppBar(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 8.dp)
+            .padding(start = 10.dp, end = 10.dp, top = 16.dp, bottom = 8.dp)
             .windowInsetsPadding(WindowInsets.statusBars)
     ) {
-        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-            Text(
-                text = headerText,
-                modifier = Modifier.padding(bottom = 16.dp),
-                color = MaterialTheme.colorScheme.onBackground,
-                fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
-                fontFamily = pacificoFont,
-                fontSize = 24.sp
-            )
+        Box(modifier = Modifier.fillMaxWidth()) {
             Row(
                 modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically
             ) {
                 TopBarActionItem(
                     icon = Icons.AutoMirrored.Outlined.ArrowBack, onclick = onBackButtonClicked
+                )
+                Text(
+                    text = headerText,
+                    modifier = Modifier.padding(bottom = 18.dp),
+                    color = MaterialTheme.colorScheme.onBackground,
+                    fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
+                    fontFamily = pacificoFont,
+                    fontSize = 24.sp
                 )
                 Spacer(modifier = Modifier.weight(1f))
                 TopBarActionItem(
