@@ -23,5 +23,5 @@ sealed class BookSortOption(val displayName: String, val apiValue: String) {
     data object TitleZToA : BookSortOption("Title: Z to A", "-title")
 
     @Keep
-    data object Random : BookSortOption("Randomised Sort", "random")
+    data object Random : BookSortOption("Random", "random")
 }
