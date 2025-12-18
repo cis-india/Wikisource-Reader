@@ -24,6 +24,11 @@
   <string name="home_sort_icon_desc">Ordina libri</string>
   <string name="language_menu_title">Sfoglia per lingua</string>
   <string name="sort_menu_title">Ordina per</string>
+  <string name="high_to_low">Popolarità (decrescente)</string>
+  <string name="low_to_high">Popolarità (crescente)</string>
+  <string name="a_to_z">Titolo (A - Z)</string>
+  <string name="z_to_a">Titolo (Z - A)</string>
+  <string name="random">Casuale</string>
   <string name="categories_header">Categorie</string>
   <string name="no_books_found_for_lang_and_cat">Nessun libro disponibile in %s per questa categoria.</string>
   <string name="library_header">Libreria</string>

@@ -28,6 +28,11 @@
   <string name="home_sort_icon_desc">Boeken sorteren</string>
   <string name="language_menu_title">Bladeren op taal</string>
   <string name="sort_menu_title">Sorteren op</string>
+  <string name="high_to_low">Populariteit (hoog naar laag)</string>
+  <string name="low_to_high">Populariteit (laag naar hoog)</string>
+  <string name="a_to_z">Titel (A tot Z)</string>
+  <string name="z_to_a">Titel (Z tot A)</string>
+  <string name="random">Willekeurig</string>
   <string name="categories_header">Categorieën</string>
   <string name="no_books_found_for_lang_and_cat">Er zijn geen boeken beschikbaar in de taal %s voor deze categorie.</string>
   <string name="library_header">Bibliotheek</string>

@@ -26,6 +26,11 @@
   <string name="home_sort_icon_desc">ਕਿਤਾਬਾਂ ਕ੍ਰਮਬੱਧ ਕਰੋ</string>
   <string name="language_menu_title">ਭਾਸ਼ਾ ਅਨੁਸਾਰ ਖੋਜੋ</string>
   <string name="sort_menu_title">ਇਸ ਮੁਤਾਬਕ ਛਾਂਟੋ</string>
+  <string name="high_to_low">ਪ੍ਰਸਿੱਧੀ (ਵੱਧ ਤੋਂ ਘੱਟ)</string>
+  <string name="low_to_high">ਪ੍ਰਸਿੱਧੀ (ਘੱਟ ਤੋਂ ਵੱਧ)</string>
+  <string name="a_to_z">ਸਿਰਲੇਖ (A ਤੋਂ Z)</string>
+  <string name="z_to_a">ਸਿਰਲੇਖ (Z ਤੋਂ A)</string>
+  <string name="random">ਬੇਤਰਤੀਬ</string>
   <string name="categories_header">ਸ਼੍ਰੇਣੀਆਂ</string>
   <string name="no_books_found_for_lang_and_cat">ਇਸ ਸ਼੍ਰੇਣੀ ਵਿੱਚ %s ਭਾਸ਼ਾ ਦੀਆਂ ਕੋਈ ਕਿਤਾਬਾਂ ਉਪਲਬਧ ਨਹੀਂ ਹਨ।</string>
   <string name="library_header">ਲਾਇਬ੍ਰੇਰੀ</string>
