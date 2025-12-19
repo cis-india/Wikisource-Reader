@@ -17,7 +17,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.core.content.IntentCompat
 import org.readium.r2.shared.util.toAbsoluteUrl
-import org.cis_india.wsreader.MyneApp
+import org.cis_india.wsreader.WikisourceReader
 import org.cis_india.wsreader.MainActivity
 import timber.log.Timber
 
@@ -43,7 +43,7 @@ class ImportActivity : Activity() {
                 return
             }
 
-        val app = application as MyneApp
+        val app = application as WikisourceReader
         when {
             uri.scheme == ContentResolver.SCHEME_CONTENT -> {
                 app.bookshelf.importPublicationFromStorage(uri)

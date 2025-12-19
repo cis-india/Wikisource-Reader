@@ -176,13 +176,13 @@ fun AdjustEdgeToEdge(activity: AppCompatActivity, themeState: ThemeMode) {
 
 
 /**
- * MyneTheme composable function to apply the theme to the app.
+ * WikisourceReaderTheme composable function to apply the theme to the app.
  * @param darkTheme: Boolean to check if the theme is dark.
  * @param settingsViewModel: SettingsViewModel to observe the theme settings.
  * @param content: @Composable function to apply the theme to the content.
  */
 @Composable
-fun MyneTheme(
+fun WikisourceReaderTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     settingsViewModel: SettingsViewModel,
     content: @Composable () -> Unit
