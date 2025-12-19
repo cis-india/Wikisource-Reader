@@ -8,11 +8,9 @@
     <string name="cancel">取消</string>
     <string name="ok">OK</string>
     <string name="got_it">好的</string>
-    <string name="no_app_to_handle_epub">没能找到用于打开epub文件的软件</string>
     <string name="network_error">噢！服务器没连上</string>
     <string name="network_error_retry">重试</string>
     <string name="error">啊！出错了</string>
-    <string name="no_app_to_handle_content">找不到可以打开此内容的应用程序。</string>
 
     <!-- Navigation titles 导航栏-->
     <string name="navigation_home">主页</string>
@@ -36,24 +34,7 @@
     <!-- Categories screen. 分类页面-->
     <string name="categories_header">分类</string>
     <string name="no_books_found_for_lang_and_cat">在这个分类里没有以%s为语言的书籍</string>
-    <!-- Categories 分类-->
-    <string name="category_children">儿童</string>
-    <string name="category_classics">经典</string>
-    <string name="category_countries">国家</string>
-    <string name="category_crime">犯罪</string>
-    <string name="category_education">教育</string>
-    <string name="category_fiction">虚构</string>
-    <string name="category_geography">地理</string>
-    <string name="category_history">历史</string>
-    <string name="category_literature">文学</string>
-    <string name="category_law">法律</string>
-    <string name="category_music">音乐</string>
-    <string name="category_periodicals">期刊</string>
-    <string name="category_psychology">心理学</string>
-    <string name="category_philosophy">哲学</string>
-    <string name="category_religion">宗教</string>
-    <string name="category_romance">浪漫</string>
-    <string name="category_science">科学</string>
+
 
     <!-- Library screen. 书架/书库页面-->
     <string name="library_header">书库</string>
@@ -62,41 +43,22 @@
     <string name="import_button_onboarding">导入您自己的书籍！</string>
     <string name="import_button_onboarding_desc">现在您可以导入您自己的 EPUB 书籍并在 Myne 中阅读它们。</string>
     <string name="import_button_desc">导入 EPUB 书籍</string>
-    <string name="external_book_info_unavailable">仅适用于内部书籍。</string>
     <string name="epub_importing">正在导入… 请稍候。</string>
     <string name="epub_imported">成功导入！</string>
-    <string name="epub_import_error">导入失败！</string>
-    <string name="open_app_chooser">打开方式</string>
     <string name="share_app_chooser">分享</string>
     <string name="library_read_button">阅读</string>
     <string name="library_delete_button">删除</string>
     <string name="library_delete_dialog_title">确认？</string>
-
-    <!-- Reader Detail Screen 阅读器详情页面-->
-    <string name="reader_detail_header">电子书阅读器</string>
-    <string name="start_reading_button">开始</string>
-    <string name="continue_reading_button">继续</string>
-    <string name="reader_chapters_list">章节</string>
-
-    <!--Reader Screen 阅读界面-->
-    <string name="reader_max_font_size_reached">抱歉，不能再大了</string>
-    <string name="reader_min_font_size_reached">抱歉，不能再小了</string>
-    <string name="reader_font_style_chooser">改变字体风格</string>
-    <string name="reader_chapter_list_title">章节</string>
 
     <!-- Text selection 文本选择-->
     <string name="copy">复制</string>
     <string name="copied">已复制！</string>
     <string name="web_search">网页搜索</string>
     <string name="share">分享</string>
-    <string name="translate">翻译</string>
-    <string name="dictionary">意义</string>
 
     <!-- Settings screen. 设置页面-->
     <string name="settings_header">设置</string>
-    <string name="app_desc">电子书下载器</string>
     <string name="general_settings_header">通用</string>
-    <string name="default_reader_setting">默认阅读器</string>
     <string name="default_reader_dialog_title">打开方式</string>
     <string name="reader_option_inbuilt">自带阅读器</string>
     <string name="reader_option_external">外部阅读器</string>
@@ -128,7 +90,6 @@
     <!-- Book Detail Screen 书籍详情-->
     <string name="book_detail_header">书籍信息</string>
     <string name="back_button_desc">返回</string>
-    <string name="share_button_desc">分享</string>
     <string name="share_intent_header">分享至…</string>
     <string name="read_book_button">开始阅读</string>
     <string name="download_book_button">下载</string>
@@ -139,22 +100,10 @@
     <!-- About Screen 关于屏幕-->
     <string name="about_header">关于</string>
     <string name="about_desc">一个从Project GutenBerg下载电子书的自由开源安卓APP</string>
-    <string name="developed_by">开发者</string>
-    <string name="project_contributors">项目贡献者</string>
-    <string name="project_contributors_desc">结识我们出色的贡献者。</string>
     <string name="useful_links">有用链接</string>
-    <string name="link_readme">自述文件</string>
-    <string name="link_readme_desc">在Github上查看应用的自述文件。</string>
     <string name="shivam">网站</string>
-    <string name="link_website_desc">访问我们的网站以获取更多信息。</string>
     <string name="link_privacy_policy">隐私政策</string>
     <string name="link_privacy_policy_desc">阅读我们的最新隐私政策。</string>
-    <string name="link_gh_issue">Github问题</string>
-    <string name="link_gh_issue_desc">在Github上创建一个问题。</string>
-    <string name="link_telegram">Telegram群组</string>
-    <string name="link_telegram_desc">在Telegram上与我们一起交流！</string>
-    <string name="link_support">支持开发</string>
-    <string name="link_support_desc">认为我应该得到饼干吗？点击这里！</string>
 
     <!-- Open source libraries screen 开放源代码库界面-->
     <string name="open_source_licenses_header">许可证</string>

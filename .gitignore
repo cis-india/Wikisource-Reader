@@ -12,9 +12,12 @@
 /.idea/deploymentTargetDropDown.xml
 /.idea/deploymentTargetSelector.xml
 .DS_Store
-/build
+**/build/
 /captures
 .externalNativeBuild
 .cxx
 local.properties
 .vscode/
+*.apk
+*.aab
+output-metadata.json
