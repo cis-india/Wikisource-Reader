@@ -25,11 +25,11 @@
   <string name="home_sort_icon_desc">Classificar livros</string>
   <string name="language_menu_title">Navegar por idioma</string>
   <string name="sort_menu_title">Ordenar por</string>
-  <string name="high_to_low">Popularidade (maior primeiro)</string>
-  <string name="low_to_high">Popularidade (menor primeiro)</string>
-  <string name="a_to_z">Título de A a Z</string>
-  <string name="z_to_a">Título de Z a A</string>
-  <string name="random">Aleatório</string>
+  <string name="sort_high_to_low">Popularidade (maior primeiro)</string>
+  <string name="sort_low_to_high">Popularidade (menor primeiro)</string>
+  <string name="sort_a_to_z">Título de A a Z</string>
+  <string name="sort_z_to_a">Título de Z a A</string>
+  <string name="sort_random">Aleatório</string>
   <string name="categories_header">Categorias</string>
   <string name="no_books_found_for_lang_and_cat">Não há livros disponíveis neste %s idioma para esta categoria.</string>
   <string name="library_header">Biblioteca</string>

@@ -24,11 +24,11 @@
   <string name="home_sort_icon_desc">Sắp xếp sách</string>
   <string name="language_menu_title">Duyệt theo ngôn ngữ</string>
   <string name="sort_menu_title">Sắp xếp theo</string>
-  <string name="high_to_low">Phổ biến (cao đến thấp)</string>
-  <string name="low_to_high">Phổ biến (thấp đến cao)</string>
-  <string name="a_to_z">Tiêu đề (A đến Z)</string>
-  <string name="z_to_a">Tiêu đề (Z đến A)</string>
-  <string name="random">Ngẫu nhiên</string>
+  <string name="sort_high_to_low">Phổ biến (cao đến thấp)</string>
+  <string name="sort_low_to_high">Phổ biến (thấp đến cao)</string>
+  <string name="sort_a_to_z">Tiêu đề (A đến Z)</string>
+  <string name="sort_z_to_a">Tiêu đề (Z đến A)</string>
+  <string name="sort_random">Ngẫu nhiên</string>
   <string name="categories_header">Thể loại</string>
   <string name="no_books_found_for_lang_and_cat">Không có sách nào trong %s cho thể loại này.</string>
   <string name="library_header">Thư viện</string>

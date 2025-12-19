@@ -26,11 +26,11 @@
   <string name="home_sort_icon_desc">Sortera verk</string>
   <string name="language_menu_title">Bläddra efter språk</string>
   <string name="sort_menu_title">Sortera efter</string>
-  <string name="high_to_low">Popularitet (hög till låg)</string>
-  <string name="low_to_high">Popularitet (låg till hög)</string>
-  <string name="a_to_z">Titel (A till Ö)</string>
-  <string name="z_to_a">Titel (Ö till A)</string>
-  <string name="random">Slumpmässigt</string>
+  <string name="sort_high_to_low">Popularitet (hög till låg)</string>
+  <string name="sort_low_to_high">Popularitet (låg till hög)</string>
+  <string name="sort_a_to_z">Titel (A till Ö)</string>
+  <string name="sort_z_to_a">Titel (Ö till A)</string>
+  <string name="sort_random">Slumpmässigt</string>
   <string name="categories_header">Kategorier</string>
   <string name="no_books_found_for_lang_and_cat">Inga böcker tillgängliga på %s i den här kategorin.</string>
   <string name="library_header">Bibliotek</string>

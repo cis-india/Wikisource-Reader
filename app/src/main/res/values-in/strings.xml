@@ -25,11 +25,11 @@
   <string name="home_sort_icon_desc">Urutkan buku</string>
   <string name="language_menu_title">Jelajahi berdasarkan bahasa</string>
   <string name="sort_menu_title">Urut berdasarkan</string>
-  <string name="high_to_low">Popularitas tertinggi ke terendah</string>
-  <string name="low_to_high">Popularitas terendah ke tertinggi</string>
-  <string name="a_to_z">Judul A ke Z</string>
-  <string name="z_to_a">Judul Z ke A</string>
-  <string name="random">Acak</string>
+  <string name="sort_high_to_low">Popularitas tertinggi ke terendah</string>
+  <string name="sort_low_to_high">Popularitas terendah ke tertinggi</string>
+  <string name="sort_a_to_z">Judul A ke Z</string>
+  <string name="sort_z_to_a">Judul Z ke A</string>
+  <string name="sort_random">Acak</string>
   <string name="categories_header">Kategori</string>
   <string name="no_books_found_for_lang_and_cat">Tiada buku yang tersedia dalam bahasa %s untuk kategori ini.</string>
   <string name="library_header">Perpustakaan</string>

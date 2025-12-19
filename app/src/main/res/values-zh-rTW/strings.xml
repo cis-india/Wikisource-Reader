@@ -25,11 +25,11 @@
   <string name="home_sort_icon_desc">排序書籍</string>
   <string name="language_menu_title">按語言瀏覽</string>
   <string name="sort_menu_title">排序依照</string>
-  <string name="high_to_low">熱度從高到低</string>
-  <string name="low_to_high">熱度從低到高</string>
-  <string name="a_to_z">標題 A 到 Z</string>
-  <string name="z_to_a">標題 Z 到 A</string>
-  <string name="random">隨機</string>
+  <string name="sort_high_to_low">熱度從高到低</string>
+  <string name="sort_low_to_high">熱度從低到高</string>
+  <string name="sort_a_to_z">標題 A 到 Z</string>
+  <string name="sort_z_to_a">標題 Z 到 A</string>
+  <string name="sort_random">隨機</string>
   <string name="categories_header">分類</string>
   <string name="no_books_found_for_lang_and_cat">此分類中沒有%s語言的書籍。</string>
   <string name="library_header">圖書館</string>

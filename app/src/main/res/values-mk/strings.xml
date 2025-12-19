@@ -25,11 +25,11 @@
   <string name="home_sort_icon_desc">Подреди книги</string>
   <string name="language_menu_title">Прелистај по јазик</string>
   <string name="sort_menu_title">Подреди по</string>
-  <string name="high_to_low">Популярност (низходящ ред)</string>
-  <string name="low_to_high">Популярност (възходящ ред)</string>
-  <string name="a_to_z">Заглавие (А-Я)</string>
-  <string name="z_to_a">Заглавие (Я-А)</string>
-  <string name="random">Произволно</string>
+  <string name="sort_high_to_low">Популярност (низходящ ред)</string>
+  <string name="sort_low_to_high">Популярност (възходящ ред)</string>
+  <string name="sort_a_to_z">Заглавие (А-Я)</string>
+  <string name="sort_z_to_a">Заглавие (Я-А)</string>
+  <string name="sort_random">Произволно</string>
   <string name="categories_header">Категории</string>
   <string name="no_books_found_for_lang_and_cat">Нема книги на %s за оваа категорија.</string>
   <string name="library_header">Библиотека</string>
