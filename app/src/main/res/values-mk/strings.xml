@@ -25,13 +25,13 @@
   <string name="home_sort_icon_desc">Подреди книги</string>
   <string name="language_menu_title">Прелистај по јазик</string>
   <string name="sort_menu_title">Подреди по</string>
+  <string name="categories_header">Категории</string>
+  <string name="no_books_found_for_lang_and_cat">Нема книги на %s за оваа категорија.</string>
   <string name="sort_high_to_low">Популярност (низходящ ред)</string>
   <string name="sort_low_to_high">Популярност (възходящ ред)</string>
   <string name="sort_a_to_z">Заглавие (А-Я)</string>
   <string name="sort_z_to_a">Заглавие (Я-А)</string>
   <string name="sort_random">Произволно</string>
-  <string name="categories_header">Категории</string>
-  <string name="no_books_found_for_lang_and_cat">Нема книги на %s за оваа категорија.</string>
   <string name="library_header">Библиотека</string>
   <string name="empty_library">Тука нема ништо!</string>
   <string name="import_button_text">Увези</string>
@@ -223,4 +223,5 @@
   <string name="link_metapage_desc">Посетете ја нашата страница</string>
   <string name="link_sourcecode_repo">Погл. складиште на GitHub</string>
   <string name="link_sourcecode">GitHub</string>
+  <string name="woops">„Упс!!“</string>
 </resources>

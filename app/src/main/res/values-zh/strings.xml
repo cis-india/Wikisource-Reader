@@ -219,4 +219,5 @@
   <string name="link_metapage_desc">访问我们的页面</string>
   <string name="link_sourcecode_repo">查看GitHub仓库</string>
   <string name="link_sourcecode">GitHub</string>
+  <string name="woops">糟糕！</string>
 </resources>

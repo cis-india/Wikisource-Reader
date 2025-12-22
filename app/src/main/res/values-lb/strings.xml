@@ -17,12 +17,12 @@
   <string name="home_sort_icon_desc">Bicher sortéieren</string>
   <string name="language_menu_title">No Sprooch duerchsichen</string>
   <string name="sort_menu_title">Sortéieren no</string>
+  <string name="categories_header">Kategorien</string>
   <string name="sort_high_to_low">Popularitéit (vun héich op niddereg)</string>
   <string name="sort_low_to_high">Popularitéit (vun niddereg op héich)</string>
   <string name="sort_a_to_z">Titel vun A bis Z</string>
   <string name="sort_z_to_a">Titel vun Z bis A</string>
   <string name="sort_random">Zoufälleg</string>
-  <string name="categories_header">Kategorien</string>
   <string name="empty_library">Näischt hei!</string>
   <string name="import_button_text">Importéieren</string>
   <string name="import_button_onboarding">Importéiert Är eege Bicher!</string>

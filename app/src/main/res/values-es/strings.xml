@@ -79,4 +79,5 @@
   <string name="link_privacy_policy">Datenschutzrichtlinie</string>
   <string name="link_privacy_policy_desc">Lesen Sie unsere neueste Datenschutzrichtlinie.</string>
   <string name="open_source_licenses_header">Licencias</string>
+  <string name="woops">\"¡Ups!\"</string>
 </resources>

@@ -82,4 +82,5 @@
   <string name="link_privacy_policy">गोपनीयता नीति</string>
   <string name="link_privacy_policy_desc">हमारी नवीनतम गोपनीयता नीति पढ़ें।</string>
   <string name="open_source_licenses_header">लाइसेंस</string>
+  <string name="woops">\"उफ़!!\"</string>
 </resources>

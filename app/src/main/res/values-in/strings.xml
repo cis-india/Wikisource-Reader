@@ -25,13 +25,13 @@
   <string name="home_sort_icon_desc">Urutkan buku</string>
   <string name="language_menu_title">Jelajahi berdasarkan bahasa</string>
   <string name="sort_menu_title">Urut berdasarkan</string>
+  <string name="categories_header">Kategori</string>
+  <string name="no_books_found_for_lang_and_cat">Tiada buku yang tersedia dalam bahasa %s untuk kategori ini.</string>
   <string name="sort_high_to_low">Popularitas tertinggi ke terendah</string>
   <string name="sort_low_to_high">Popularitas terendah ke tertinggi</string>
   <string name="sort_a_to_z">Judul A ke Z</string>
   <string name="sort_z_to_a">Judul Z ke A</string>
   <string name="sort_random">Acak</string>
-  <string name="categories_header">Kategori</string>
-  <string name="no_books_found_for_lang_and_cat">Tiada buku yang tersedia dalam bahasa %s untuk kategori ini.</string>
   <string name="library_header">Perpustakaan</string>
   <string name="empty_library">Tiada apa-apa di sini!</string>
   <string name="import_button_text">Impor</string>
@@ -222,4 +222,5 @@
   <string name="link_metapage_desc">Kunjungi halaman kami</string>
   <string name="link_sourcecode_repo">Lihat Repositori GitHub</string>
   <string name="link_sourcecode">GitHub</string>
+  <string name="woops">Waduh!</string>
 </resources>

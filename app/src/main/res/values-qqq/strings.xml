@@ -18,9 +18,10 @@
   <string name="material_you_setting_enabled_desc">A preference. \"Material You\" is a name of user interface design technology.</string>
   <string name="developed_by_ws">Appears in the About screen above the \"CIS A2K\" logo.</string>
   <string name="org_name">{{optional}}\n\nDeveloper organization name in the about screen. Don\'t translate this unless there\'s a specific translation into your language.</string>
-  <string name="app_version">{{doc-important|Do not translate this messages.}}\nApp version.</string>
+  <string name="app_version">{{notranslate}}\nApp version.</string>
   <string name="github_tag">{{notranslate}}</string>
   <string name="zero">{{optional}}\n\nInitial time on the audiobook player.</string>
   <string name="repfr">Alternative text that describes the logo of the French Republic, shown in the About screen.\n[[File:Logo - République française.svg|thumb|200px]]</string>
   <string name="org_website">{{notranslate}}\n\nApp developer website URL.</string>
+  <string name="woops">Seems to be unused.</string>
 </resources>

@@ -78,4 +78,5 @@
   <string name="link_privacy_policy">Zásady ochrany osobních údajů</string>
   <string name="link_privacy_policy_desc">Přečtěte si naše nejnovější zásady ochrany osobních údajů.</string>
   <string name="open_source_licenses_header">Licence</string>
+  <string name="woops">\"Jejda!\"</string>
 </resources>

@@ -25,13 +25,13 @@
   <string name="home_sort_icon_desc">排序書籍</string>
   <string name="language_menu_title">按語言瀏覽</string>
   <string name="sort_menu_title">排序依照</string>
+  <string name="categories_header">分類</string>
+  <string name="no_books_found_for_lang_and_cat">此分類中沒有%s語言的書籍。</string>
   <string name="sort_high_to_low">熱度從高到低</string>
   <string name="sort_low_to_high">熱度從低到高</string>
   <string name="sort_a_to_z">標題 A 到 Z</string>
   <string name="sort_z_to_a">標題 Z 到 A</string>
   <string name="sort_random">隨機</string>
-  <string name="categories_header">分類</string>
-  <string name="no_books_found_for_lang_and_cat">此分類中沒有%s語言的書籍。</string>
   <string name="library_header">圖書館</string>
   <string name="empty_library">這裡什麼都沒有！</string>
   <string name="import_button_text">匯入</string>
@@ -224,4 +224,5 @@
   <string name="link_metapage_desc">參訪我們的頁面</string>
   <string name="link_sourcecode_repo">查看在 GitHub 上的程式碼倉儲</string>
   <string name="link_sourcecode">GitHub</string>
+  <string name="woops">\"哎呀！！\"</string>
 </resources>

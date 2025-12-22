@@ -85,4 +85,5 @@
   <string name="link_privacy_policy">Политика Конфиденциальности</string>
   <string name="link_privacy_policy_desc">Прочтите нашу последнюю политику конфиденциальности.</string>
   <string name="open_source_licenses_header">Лицензии</string>
+  <string name="woops">Упс!!</string>
 </resources>

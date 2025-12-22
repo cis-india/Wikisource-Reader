@@ -88,4 +88,5 @@
   <string name="link_privacy_policy">Gizlilik Politikası</string>
   <string name="link_privacy_policy_desc">En son gizlilik politikamızı okuyun.</string>
   <string name="open_source_licenses_header">Lisanslar</string>
+  <string name="woops">\"Hay aksi!!\"</string>
 </resources>
