@@ -27,6 +27,11 @@
   <string name="home_sort_icon_desc">বই সাজান</string>
   <string name="language_menu_title">ভাষা অনুযায়ী ব্রাউজ করুন</string>
   <string name="sort_menu_title">সাজান</string>
+  <string name="sort_high_to_low">জনপ্রিয়তা (বেশি থেকে কম)</string>
+  <string name="sort_low_to_high">জনপ্রিয়তা (কম থেকে বেশি)</string>
+  <string name="sort_a_to_z">শিরোনাম (A থেকে Z)</string>
+  <string name="sort_z_to_a">শিরোনাম (Z থেকে A)</string>
+  <string name="sort_random">এলোমেলো</string>
   <string name="categories_header">বিষয়শ্রেণী</string>
   <string name="no_books_found_for_lang_and_cat">এই বিভাগে %s ভাষায় কোনও বই নেই।</string>
   <string name="library_header">গ্রন্থাগার</string>

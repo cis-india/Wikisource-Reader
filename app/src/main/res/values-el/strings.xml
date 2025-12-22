@@ -26,6 +26,11 @@
   <string name="home_sort_icon_desc">Ταξινόμηση βιβλίων</string>
   <string name="language_menu_title">Περιήγηση ανά γλώσσα</string>
   <string name="sort_menu_title">Ταξινόμηση κατά</string>
+  <string name="sort_high_to_low">Δημοτικότητα (φθίνουσα σειρά)</string>
+  <string name="sort_low_to_high">Δημοτικότητα (αύξουσα σειρά)</string>
+  <string name="sort_a_to_z">Τίτλος (Α - Ω)</string>
+  <string name="sort_z_to_a">Τίτλος (Ω - Α)</string>
+  <string name="sort_random">Τυχαία</string>
   <string name="categories_header">Κατηγορίες</string>
   <string name="no_books_found_for_lang_and_cat">Δεν υπάρχουν διαθέσιμα βιβλία στη γλώσσα %s για αυτήν την κατηγορία.</string>
   <string name="library_header">Βιβλιοθήκη</string>

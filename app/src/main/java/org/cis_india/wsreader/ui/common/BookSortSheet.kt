@@ -144,7 +144,7 @@ private fun SortOptionItem(
             )
         )
         Text(
-            text = sortOption.displayName,
+            text = stringResource(sortOption.displayName),
             modifier = Modifier.padding(start = 16.dp),
             fontFamily = poppinsFont,
             fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
