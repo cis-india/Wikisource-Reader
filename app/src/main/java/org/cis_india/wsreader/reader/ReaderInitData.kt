@@ -31,6 +31,7 @@ sealed class VisualReaderInitData(
     override val publication: Publication,
     val initialLocation: Locator?,
     val ttsInitData: TtsInitData?,
+    val sessionConfig: SessionReaderConfig?
 ) : ReaderInitData()
 
 class ImageReaderInitData(
@@ -38,7 +39,8 @@ class ImageReaderInitData(
     publication: Publication,
     initialLocation: Locator?,
     ttsInitData: TtsInitData?,
-) : VisualReaderInitData(bookId, publication, initialLocation, ttsInitData)
+    sessionConfig: SessionReaderConfig
+) : VisualReaderInitData(bookId, publication, initialLocation, ttsInitData, sessionConfig)
 
 class EpubReaderInitData(
     bookId: Long,
@@ -47,7 +49,8 @@ class EpubReaderInitData(
     val preferencesManager: PreferencesManager<EpubPreferences>,
     val navigatorFactory: EpubNavigatorFactory,
     ttsInitData: TtsInitData?,
-) : VisualReaderInitData(bookId, publication, initialLocation, ttsInitData)
+    sessionConfig: SessionReaderConfig
+) : VisualReaderInitData(bookId, publication, initialLocation, ttsInitData, sessionConfig)
 
 class PdfReaderInitData(
     bookId: Long,
@@ -56,7 +59,8 @@ class PdfReaderInitData(
     val preferencesManager: PreferencesManager<PdfiumPreferences>,
     val navigatorFactory: PdfiumNavigatorFactory,
     ttsInitData: TtsInitData?,
-) : VisualReaderInitData(bookId, publication, initialLocation, ttsInitData)
+    sessionConfig: SessionReaderConfig
+) : VisualReaderInitData(bookId, publication, initialLocation, ttsInitData, sessionConfig)
 
 class TtsInitData(
     val mediaServiceFacade: MediaServiceFacade,
@@ -81,3 +85,21 @@ class DummyReaderInitData(
         )
     )
 }
+
+data class PositionInfo(
+    val position: Int?,
+    val StartChapterProgression: Double?,
+    val EndChapterProgression: Double?,
+    val StartChapterLink: Locator,
+    val EndChapterLink: Locator,
+)
+
+data class ChapterNavigation(
+    val previousChapter: PositionInfo? = null,
+    val nextChapter: PositionInfo? = null,
+    val currentChapterHref: PositionInfo? = null
+)
+
+data class SessionReaderConfig(
+    val continuousChapters: Boolean = false
+)

@@ -41,13 +41,18 @@ import org.cis_india.wsreader.utils.compose.DropdownMenuButton
 fun UserPreferences(
     model: UserPreferencesViewModel<*, *>,
     title: String,
-) {
+    readerViewModel: ReaderViewModel,
+    ) {
     val editor by model.editor.collectAsState()
+
+    val isContinuousChapters by readerViewModel.continuousChapters.collectAsState()
 
     UserPreferences(
         editor = editor,
         commit = model::commit,
-        title = title
+        title = title,
+        isContinuousChapters = isContinuousChapters,
+        onContinuousChaptersToggle = readerViewModel::toggleContinuousChapters
     )
 }
 
@@ -56,6 +61,8 @@ private fun <P : Configurable.Preferences<P>, E : PreferencesEditor<P>> UserPref
     editor: E,
     commit: () -> Unit,
     title: String,
+    isContinuousChapters: Boolean,
+    onContinuousChaptersToggle: () -> Unit,
 ) {
     Column(
         modifier = Modifier.padding(vertical = 24.dp)
@@ -127,7 +134,9 @@ private fun <P : Configurable.Preferences<P>, E : PreferencesEditor<P>> UserPref
                             theme = editor.theme,
                             typeScale = editor.typeScale,
                             verticalText = editor.verticalText,
-                            wordSpacing = editor.wordSpacing
+                            wordSpacing = editor.wordSpacing,
+                            continousChapters = isContinuousChapters,
+                            onContinuousChaptersToggle = onContinuousChaptersToggle,
                         )
                     EpubLayout.FIXED ->
                         FixedLayoutUserPreferences(
@@ -342,6 +351,8 @@ private fun ReflowableUserPreferences(
     typeScale: RangePreference<Double>? = null,
     verticalText: Preference<Boolean>? = null,
     wordSpacing: RangePreference<Double>? = null,
+    continousChapters: Boolean? = null,
+    onContinuousChaptersToggle: () -> Unit,
 ) {
     if (language != null || readingProgression != null || verticalText != null) {
         if (language != null) {
@@ -378,6 +389,32 @@ private fun ReflowableUserPreferences(
                 preference = scroll,
                 commit = commit
             )
+        }
+
+        if (scroll?.value == true) { // Only show if scroll is enabled
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 48.dp)
+                    .padding(horizontal = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Continuous Chapters",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.weight(1f)
+                )
+
+                Spacer(Modifier.width(16.dp))
+
+                if(continousChapters != null){
+                    Switch(
+                        checked = continousChapters,
+                        onCheckedChange = { onContinuousChaptersToggle() }
+                    )
+                }
+
+            }
         }
 
         if (columnCount != null) {
