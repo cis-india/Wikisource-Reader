@@ -133,6 +133,15 @@ private fun BookLanguageButton(language: BookLanguage, isSelected: Boolean, onCl
         textColor = MaterialTheme.colorScheme.onSecondaryContainer
     }
 
+    fun getLocalisedLanguageName(isoCode: String): String {
+        val localizedName = Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+        return if (localizedName.equals(isoCode, ignoreCase = true)) {
+            Locale(isoCode).getDisplayLanguage(Locale.ENGLISH)
+        } else {
+            localizedName
+        }
+    }
+
     Card(
         modifier = Modifier
             .height(60.dp)
@@ -145,7 +154,7 @@ private fun BookLanguageButton(language: BookLanguage, isSelected: Boolean, onCl
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(
                 modifier = Modifier.padding(2.dp),
-                text = Locale(language.isoCode).getDisplayLanguage(Locale.getDefault()),
+                text = getLocalisedLanguageName(language.isoCode),
                 fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
                 fontFamily = poppinsFont,
                 fontWeight = FontWeight.SemiBold,
