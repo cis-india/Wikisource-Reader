@@ -94,6 +94,7 @@ import org.cis_india.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel
 import org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel
 import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
+import java.util.Locale
 
 
 @Composable
@@ -204,13 +205,20 @@ private fun BookDetailContents(
             .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
     ) {
-        val firstLanguage = book.languages.firstOrNull() ?: "en"
+        val firstLanguage = Locale.getDefault().language ?: "en"
         //val authors = remember { BookUtils.getAuthorsAsString(book.authors, firstLanguage) }
         var authors by remember { mutableStateOf("Loading...") }
+        var publishers by remember { mutableStateOf("Loading...") }
+        var placesOfPublication by remember { mutableStateOf("Loading...") }
 
         LaunchedEffect(book.authors, firstLanguage) {
             val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage)
+            val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage)
+            val placesOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.places_of_publication, firstLanguage)
+
             authors = authorsString // Update the authors state once the data is fetched
+            publishers = publisherString
+            placesOfPublication = placesOfPublicationString
         }
 
         var editors by remember { mutableStateOf<List<String>>(emptyList()) }
@@ -429,6 +437,8 @@ private fun BookDetailContents(
                 InfoLine("Translators", translators)
                 InfoLine("Genres", genres)
                 InfoLine("Subjects", subjects)
+                InfoStringContent("Publisher", publishers)
+                InfoStringContent("Places Of Publication",placesOfPublication)
             }
         }
     }
@@ -702,6 +712,18 @@ fun InfoLine(label: String, values: List<String>) {
             color = MaterialTheme.colorScheme.onBackground,
         )
     }
+}
+
+@Composable
+fun InfoStringContent(label: String, value: String? ) {
+    // Decide label based on count
+    Text(
+        text = "$label: $value",
+        modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
+        fontFamily = poppinsFont,
+        fontWeight = FontWeight.Normal,
+        color = MaterialTheme.colorScheme.onBackground,
+    )
 }
 
 private fun handleEvent(event: BookDetailViewModel.Event, context: Context) {
