@@ -112,7 +112,9 @@
     <string name="genres_info">Genres</string>
     <string name="subjects_info">Subjects</string>
     <string name="publishers_info">Publisher</string>
+    <string name="unknown_publishers_info">Unknown Publisher</string>
     <string name="places_of_publication_info">Places Of Publication</string>
+    <string name="unknown_places_of_publication_info">Unknown places Of Publication</string>
 
     <!-- About Screen -->
     <string name="about_header">About</string>

@@ -210,11 +210,13 @@ private fun BookDetailContents(
         var authors by remember { mutableStateOf("Loading...") }
         var publishers by remember { mutableStateOf("Loading...") }
         var placesOfPublication by remember { mutableStateOf("Loading...") }
+        val unknownPlacesOfPublicationString = stringResource(id = R.string.unknown_places_of_publication_info)
+        val unknownPublisherString = stringResource(id = R.string.unknown_publishers_info)
 
         LaunchedEffect(book.authors, firstLanguage) {
             val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage)
-            val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage)
-            val placesOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.places_of_publication, firstLanguage)
+            val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage, unknownPublisherString)
+            val placesOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.places_of_publication, firstLanguage, unknownPlacesOfPublicationString)
 
             authors = authorsString // Update the authors state once the data is fetched
             publishers = publisherString

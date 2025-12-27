@@ -89,18 +89,18 @@ object BookUtils {
     }
 
 
-    suspend fun getPublishersAsString(publishers: List<Publisher>, language: String): String {
+    suspend fun getPublishersAsString(publishers: List<Publisher>, language: String, unknownOfPublisher: String): String {
 
         // Update value from fetch
         // This updates Publisher if value has changed.
         val result = if (publishers.isEmpty()) {
-            "Unknown Publisher"
+            unknownOfPublisher
         } else {
             val names = coroutineScope {
                 publishers.map { publisher ->
                     async {
                         val name = fetchLabelFromWikidata(publisher.pwikidataqid, language)
-                        fixAuthorName(name ?: publisher.name ?: "Unknown Publisher")
+                        fixAuthorName(name ?: publisher.name ?: unknownOfPublisher)
                     }
                 }.awaitAll() // This will collect the results
             }
@@ -110,18 +110,18 @@ object BookUtils {
         return result
     }
 
-    suspend fun getPlacesOfPublicationAsString(placesOfPublication: List<PlacesOfPublication>, language: String): String {
+    suspend fun getPlacesOfPublicationAsString(placesOfPublication: List<PlacesOfPublication>, language: String, unknownPlacesOfPublication: String): String {
 
         // Update value from fetch
         // This updates Places of publication if value has changed.
         val result = if (placesOfPublication.isEmpty()) {
-            "Unknown places Of Publication"
+            unknownPlacesOfPublication
         } else {
             val names = coroutineScope {
                 placesOfPublication.map { placeOfPublication ->
                     async {
                         val name = fetchLabelFromWikidata(placeOfPublication.pwikidataqid, language)
-                        fixAuthorName(name ?: placeOfPublication.name ?: "Unknown places Of Publication")
+                        fixAuthorName(name ?: placeOfPublication.name ?: unknownPlacesOfPublication)
                     }
                 }.awaitAll() // This will collect the results
             }
