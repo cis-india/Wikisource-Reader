@@ -107,6 +107,7 @@
     <string name="download_started">Download Started!</string>
     <string name="book_synopsis">Synopsis</string>
     <string name="book_synopsis_not_found">Not available</string>
+    <string name="unknown_author_info">Unknown Author</string>
 
     <!-- About Screen -->
     <string name="about_header">About</string>

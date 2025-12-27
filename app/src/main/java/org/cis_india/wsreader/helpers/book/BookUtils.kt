@@ -56,7 +56,7 @@ object BookUtils {
         }
     }
 
-    suspend fun getAuthorsAsString(authors: List<Author>, language: String): String {
+    suspend fun getAuthorsAsString(authors: List<Author>, language: String, unknownAuthorString: String): String {
         // Construct a unique cache key
         // using unique pwikidataqid
         val authorIdsKey = authors.joinToString("|") {
@@ -67,7 +67,7 @@ object BookUtils {
         // Update value from fetch
         // This updates author if value has changed.
         val result = if (authors.isEmpty()) {
-            "Unknown Author"
+            unknownAuthorString
         } else {
             val names = coroutineScope {
                 authors.map { author ->
