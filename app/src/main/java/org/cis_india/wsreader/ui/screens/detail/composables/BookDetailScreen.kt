@@ -94,6 +94,7 @@ import org.cis_india.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel
 import org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel
 import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
+import java.util.Locale
 
 
 @Composable
@@ -204,12 +205,13 @@ private fun BookDetailContents(
             .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
     ) {
-        val firstLanguage = book.languages.firstOrNull() ?: "en"
+        val unknownAuthorString = stringResource(R.string.unknown_author_info)
+        val firstLanguage = Locale.getDefault().language ?: "en"
         //val authors = remember { BookUtils.getAuthorsAsString(book.authors, firstLanguage) }
         var authors by remember { mutableStateOf("Loading...") }
 
         LaunchedEffect(book.authors, firstLanguage) {
-            val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage)
+            val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage, unknownAuthorString)
             authors = authorsString // Update the authors state once the data is fetched
         }
 
