@@ -20,7 +20,7 @@ import org.cis_india.wsreader.data.model.Highlight
 @Database(
     entities = [Book::class, Bookmark::class, Highlight::class, Catalog::class],
     version = 1,
-    exportSchema = true
+    exportSchema = false
 )
 @TypeConverters(
     HighlightConverters::class
