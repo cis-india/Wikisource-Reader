@@ -51,6 +51,10 @@ data class Book(
     val thumbnailUrl: String? = null,
     @SerialName("date_of_publication")
     val dateOfPublication: String? = null,
+    @SerialName("publishers")
+    val publishers: List<Publisher>,
+    @SerialName("places_of_publication")
+    val places_of_publication: List<PlacesOfPublication>,
 ) {
     val id: Int
         get() = wikidataQid.removePrefix("Q").toInt()
