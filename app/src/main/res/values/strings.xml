@@ -41,6 +41,36 @@
     <string name="sort_z_to_a">Title Z to A</string>
     <string name="sort_random">Random</string>
 
+    <!-- Books Language Screen Labels -->
+    <string name="language_name_all_books">All Books</string>
+    <string name="language_name_arabic">Arabic</string>
+    <string name="language_name_assamese">Assamese</string>
+    <string name="language_name_bangla">Bangla</string>
+    <string name="language_name_catalan">Catalan</string>
+    <string name="language_name_czech">Czech</string>
+    <string name="language_name_danish">Danish</string>
+    <string name="language_name_english">English</string>
+    <string name="language_name_spanish">Spanish</string>
+    <string name="language_name_french">French</string>
+    <string name="language_name_gujarati">Gujarati</string>
+    <string name="language_name_hindi">Hindi</string>
+    <string name="language_name_indonesian">Indonesian</string>
+    <string name="language_name_italian">Italian</string>
+    <string name="language_name_javanese">Javanese</string>
+    <string name="language_name_kannada">Kannada</string>
+    <string name="language_name_malayalam">Malayalam</string>
+    <string name="language_name_marathi">Marathi</string>
+    <string name="language_name_malay">Malay</string>
+    <string name="language_name_polish">Polish</string>
+    <string name="language_name_punjabi">Punjabi</string>
+    <string name="language_name_sundanese">Sundanese</string>
+    <string name="language_name_swedish">Swedish</string>
+    <string name="language_name_tamil">Tamil</string>
+    <string name="language_name_telugu">Telugu</string>
+    <string name="language_name_tulu">Tulu</string>
+    <string name="language_name_ukrainian">Ukrainian</string>
+    <string name="language_name_vietnamese">Vietnamese</string>
+
 
     <!-- Library screen. -->
     <string name="library_header">Library</string>
