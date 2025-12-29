@@ -1,3 +1,0 @@
-- Prevent screen from turning off in ebook reader.
-- Make developer email address clickable in about screen.
-- Updated dependencies & some other minor improvements.
