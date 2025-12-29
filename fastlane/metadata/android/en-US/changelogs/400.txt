@@ -1,4 +1,0 @@
-- Bumped target SDK to v35 (Android 15).
-- Added handling for OPF prefix in the manifest tags in the EPUB parser.
-- Added Hindi translations.
-- Some documentation updates and other minor fixes.

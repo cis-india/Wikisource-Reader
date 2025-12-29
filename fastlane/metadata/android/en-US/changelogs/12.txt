@@ -1,3 +1,0 @@
-- Added ability to filter/browse books by multiple languages.
-- Improved some animations, app should feel bit more snappier than before.
-- Fixed bug when downloading book which contains quotes in it's filename.
