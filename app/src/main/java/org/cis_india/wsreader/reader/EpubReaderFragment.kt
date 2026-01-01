@@ -12,7 +12,6 @@ import android.os.Bundle
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SearchView
 import androidx.core.os.BundleCompat
@@ -39,6 +38,8 @@ import org.cis_india.wsreader.LITERATA
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.reader.preferences.UserPreferencesViewModel
 import org.cis_india.wsreader.search.SearchFragment
+import android.widget.SeekBar
+import org.readium.r2.shared.publication.services.positions
 
 @OptIn(ExperimentalReadiumApi::class)
 class EpubReaderFragment : VisualReaderFragment() {
@@ -145,12 +146,62 @@ class EpubReaderFragment : VisualReaderFragment() {
         return view
     }
 
+    // Save seekbar snap points from book positions start locator
+    private var booksPositionsStartProgression: List<Int> = emptyList()
+    // save all book positions
+    // to help navigate to these positions
+    private var allBookPositions: List<Locator> = emptyList()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val progressBar = view.findViewById<ProgressBar>(R.id.readingProgressBar)
+        val progressBar = view.findViewById<SeekBar>(R.id.readingProgressBar)
+
+        progressBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, thumbSwiped: Boolean) {
+                // Handle progress changes
+                if (thumbSwiped && seekBar != null && booksPositionsStartProgression.isNotEmpty()) {
+
+                    val closestPoint = booksPositionsStartProgression.minByOrNull { Math.abs(it - progress) } ?: progress
+
+                    if (progress != closestPoint) {
+                        seekBar.progress = closestPoint
+                    }
+                }
+
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                // handle start
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                // Navigate to selected progress
+                // When you release your thumb.
+
+                val progressOnThumbRelease = seekBar?.progress ?: return
+
+                val targetPositionLocator = allBookPositions.minByOrNull {
+                    val point = ((it.locations.totalProgression ?: 0.0) * 100).toInt()
+                    Math.abs(point - progressOnThumbRelease)
+                }
+
+                targetPositionLocator?.let {
+                    navigator.go(it)
+                }
+            }
+        })
 
         viewLifecycleOwner.lifecycleScope.launch {
+            // update book positions
+            allBookPositions = publication.positions()
+
+            // update seekbar snap points from book positions
+            booksPositionsStartProgression = allBookPositions.map {
+                ((it.locations.totalProgression ?: 0.0) * 100).toInt()
+            }.distinct().sorted()
+
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 navigator.currentLocator.collect { locator ->
                     val progress = locator?.locations?.totalProgression ?: 0.0
