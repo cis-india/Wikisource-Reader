@@ -202,6 +202,13 @@ class EpubReaderFragment : VisualReaderFragment() {
                 ((it.locations.totalProgression ?: 0.0) * 100).toInt()
             }.distinct().sorted()
 
+            // add seekbar max as the last position total progression
+            // This enables seekbar to show accurate complete status
+            // As progression does not get to 100 percent fully
+            if (booksPositionsStartProgression.isNotEmpty()) {
+                progressBar.max = booksPositionsStartProgression.last()
+            }
+
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 navigator.currentLocator.collect { locator ->
                     val progress = locator?.locations?.totalProgression ?: 0.0
