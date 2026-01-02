@@ -40,6 +40,10 @@ import org.cis_india.wsreader.reader.preferences.UserPreferencesViewModel
 import org.cis_india.wsreader.search.SearchFragment
 import android.widget.SeekBar
 import org.readium.r2.shared.publication.services.positions
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
+import android.widget.FrameLayout
 
 @OptIn(ExperimentalReadiumApi::class)
 class EpubReaderFragment : VisualReaderFragment() {
@@ -156,6 +160,18 @@ class EpubReaderFragment : VisualReaderFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val progressBar = view.findViewById<SeekBar>(R.id.readingProgressBar)
+
+        val marginInPx = (12 * resources.displayMetrics.density).toInt()
+
+        ViewCompat.setOnApplyWindowInsetsListener(progressBar) { v, windowInsets ->
+            val systemBars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            v.updateLayoutParams<FrameLayout.LayoutParams> {
+                bottomMargin = systemBars.bottom + marginInPx
+            }
+
+            windowInsets
+        }
 
         progressBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, thumbSwiped: Boolean) {
