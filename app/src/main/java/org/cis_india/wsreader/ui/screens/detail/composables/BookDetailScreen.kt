@@ -209,10 +209,20 @@ private fun BookDetailContents(
         val firstLanguage = Locale.getDefault().language ?: "en"
         //val authors = remember { BookUtils.getAuthorsAsString(book.authors, firstLanguage) }
         var authors by remember { mutableStateOf("Loading...") }
+        var publishers by remember { mutableStateOf("Loading...") }
+        var placeOfPublication by remember { mutableStateOf("Loading...") }
+        val unknownPlaceOfPublicationString = stringResource(id = R.string.unknown_place_of_publication_info)
+        val unknownPublisherString = stringResource(id = R.string.unknown_publishers_info)
+
 
         LaunchedEffect(book.authors, firstLanguage) {
             val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage, unknownAuthorString)
+            val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage, unknownPublisherString)
+            val placesOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.places_of_publication, firstLanguage, unknownPlaceOfPublicationString)
+
             authors = authorsString // Update the authors state once the data is fetched
+            publishers = publisherString
+            placeOfPublication = placesOfPublicationString
         }
 
         var editors by remember { mutableStateOf<List<String>>(emptyList()) }
@@ -427,10 +437,12 @@ private fun BookDetailContents(
             */
         } else {
             Column {
-                InfoLine("Editors", editors)
-                InfoLine("Translators", translators)
-                InfoLine("Genres", genres)
-                InfoLine("Subjects", subjects)
+                InfoLine(stringResource(id = R.string.editors_info), editors)
+                InfoLine(stringResource(R.string.translators_info), translators)
+                InfoLine(stringResource(R.string.genres_info), genres)
+                InfoLine(stringResource(R.string.subjects_info), subjects)
+                InfoStringContent(stringResource(R.string.publishers_info), publishers)
+                InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication)
             }
         }
     }
@@ -704,6 +716,17 @@ fun InfoLine(label: String, values: List<String>) {
             color = MaterialTheme.colorScheme.onBackground,
         )
     }
+}
+@Composable
+fun InfoStringContent(label: String, value: String? ) {
+    // Decide label based on count
+    Text(
+        text = "$label: $value",
+        modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
+        fontFamily = poppinsFont,
+        fontWeight = FontWeight.Normal,
+        color = MaterialTheme.colorScheme.onBackground,
+    )
 }
 
 private fun handleEvent(event: BookDetailViewModel.Event, context: Context) {
