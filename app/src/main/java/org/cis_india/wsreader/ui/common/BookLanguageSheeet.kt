@@ -145,7 +145,7 @@ private fun BookLanguageButton(language: BookLanguage, isSelected: Boolean, onCl
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(
                 modifier = Modifier.padding(2.dp),
-                text = Locale(language.isoCode).getDisplayLanguage(Locale.getDefault()),
+                text = stringResource(language.name),
                 fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
                 fontFamily = poppinsFont,
                 fontWeight = FontWeight.SemiBold,

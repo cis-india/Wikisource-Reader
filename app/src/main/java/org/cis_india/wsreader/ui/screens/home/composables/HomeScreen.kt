@@ -323,11 +323,12 @@ private fun AllBooksList(
                         .fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
-                    val firstLanguage = item.languages.firstOrNull() ?: "en"
+                    val unknownAuthorString = stringResource(R.string.unknown_author_info)
+                    val firstLanguage = Locale.getDefault().language ?: "en"
                     var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }
 
                     LaunchedEffect(item.authors, firstLanguage) {
-                        val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage)
+                        val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)
                         authors = authorsString // Update the authors state once the data is fetched
                     }
                     BookItemCard(
@@ -398,10 +399,11 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
                     .fillMaxWidth(),
                 contentAlignment = Alignment.Center
             ) {
-                val firstLanguage = item.languages.firstOrNull() ?: "en"
+                val unknownAuthorString = stringResource(R.string.unknown_author_info)
+                val firstLanguage = Locale.getDefault().language ?: "en"
                 var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }
                 LaunchedEffect(item.authors, firstLanguage) {
-                    val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage)
+                    val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)
                     authors = authorsString
                 }
                 BookItemCard(

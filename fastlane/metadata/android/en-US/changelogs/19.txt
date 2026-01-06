@@ -1,3 +1,0 @@
-- Fixed crash when opening epub books from shared storage.
-- Improved mapping of extra information for books.
-- Some other minor fixes 7 improvements.

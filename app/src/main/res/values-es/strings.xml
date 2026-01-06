@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* Avengium
+-->
 <resources>
   <string name="not_applicable">N/A</string>
   <string name="confirm">Confirmar</string>
@@ -21,6 +24,11 @@
   <string name="language_menu_title">Browse by language</string>
   <string name="categories_header">Categorías</string>
   <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>
+  <string name="sort_high_to_low">De alta a baja popularidad</string>
+  <string name="sort_low_to_high">De baja a alta popularidad</string>
+  <string name="sort_a_to_z">Título A a la Z</string>
+  <string name="sort_z_to_a">Título Z a A</string>
+  <string name="sort_random">Aleatorio</string>
   <string name="library_header">Biblioteca</string>
   <string name="empty_library">¡Nada por aquí!</string>
   <string name="import_button_text">Importar</string>

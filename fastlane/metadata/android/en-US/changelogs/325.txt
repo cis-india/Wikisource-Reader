@@ -1,3 +1,0 @@
-- Fixed reader button showing 'resume' instead of 'start' for unread books in ebook reader.
-- Fixed books getting deleted from the library after reboot on some devices, particularly Xiaomi.
-- Some other minor Ui/UX improvements.

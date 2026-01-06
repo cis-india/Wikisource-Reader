@@ -7,7 +7,10 @@
   <string name="cancel">Ofbriechen</string>
   <string name="ok">OK</string>
   <string name="got_it">Verstanen</string>
+  <string name="network_error">Ups! Et konnt keng Verbindung mam Server opgebaut ginn.</string>
   <string name="network_error_retry">Nach eng Kéier probéieren</string>
+  <string name="error">Ups! Et ass eppes schif gaangen.</string>
+  <string name="navigation_home">Haaptsäit</string>
   <string name="navigation_categories">Kategorien</string>
   <string name="navigation_settings">Astellungen</string>
   <string name="welcome_screen_button">Ufänken</string>
@@ -18,6 +21,7 @@
   <string name="language_menu_title">No Sprooch duerchsichen</string>
   <string name="sort_menu_title">Sortéieren no</string>
   <string name="categories_header">Kategorien</string>
+  <string name="no_books_found_for_lang_and_cat">An dëser Kategorie si keng Bicher op %s disponibel.</string>
   <string name="sort_high_to_low">Popularitéit (vun héich op niddereg)</string>
   <string name="sort_low_to_high">Popularitéit (vun niddereg op héich)</string>
   <string name="sort_a_to_z">Titel vun A bis Z</string>
@@ -32,7 +36,9 @@
   <string name="share_app_chooser">Deele mat…</string>
   <string name="library_read_button">Liesen</string>
   <string name="library_delete_button">Läschen</string>
+  <string name="downloading_book">Buch eroflueden</string>
   <string name="downloading">Eroflueden…</string>
+  <string name="download_complete">Fäerdeg erofgelueden</string>
   <string name="copy">Kopéieren</string>
   <string name="copied">Kopéiert!</string>
   <string name="web_search">Websich</string>
@@ -41,16 +47,29 @@
   <string name="general_settings_header">Allgemeng</string>
   <string name="default_reader_dialog_title">E-Books opmaache mat…</string>
   <string name="reader_option_external">Externe Reader</string>
+  <string name="default_locale_setting">Standardsprooch</string>
+  <string name="locale_setting_not_found">Entschëllegt! Dës Funktioun gëtt op Ärem Betribssystem nach net ënnerstëtzt.</string>
+  <string name="theme_setting">Standardfaarfscheema</string>
+  <string name="theme_dialog_title">Faarfscheema änneren</string>
+  <string name="theme_option_light">Hell</string>
+  <string name="theme_option_dark">Däischter</string>
   <string name="theme_option_system">Systemstandard</string>
+  <string name="theme_dialog_apply_button">Uwenden</string>
+  <string name="material_you_error">Dës Funktioun gëtt et just fir Apparater, op deenen Android 12 oder méi héich leeft.</string>
+  <string name="license_setting_desc">Open-Source-Lizenzen.</string>
   <string name="about_setting">App-Informatiounen</string>
   <string name="about_setting_desc">App-Informatiounen &amp; nëtzlech Linke weisen</string>
+  <string name="cover_image_desc">Bild vum Buchdeckel</string>
+  <string name="book_detail_header">Buchdetailer</string>
   <string name="back_button_desc">Zeréckgoen.</string>
   <string name="download_book_button">Eroflueden</string>
+  <string name="book_synopsis">Zesummefaassung</string>
   <string name="book_synopsis_not_found">Net disponibel</string>
   <string name="about_header">Iwwer</string>
   <string name="useful_links">Nëtzlech Linken</string>
   <string name="shivam">Websäit</string>
   <string name="open_source_licenses_header">Lizenzen</string>
+  <string name="category_novels">Romanen</string>
   <string name="category_plays">Theaterstécker</string>
   <string name="category_poetry">Poesie</string>
   <string name="category_essays">Essayen</string>
@@ -68,6 +87,7 @@
   <string name="app_version_header">Versioun</string>
   <string name="app_version_label">App-Versioun:</string>
   <string name="app_version">2.2.0</string>
+  <string name="github_tab_label">GitHub-Tag:</string>
   <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Copyright</string>
   <string name="catalog_list_more">Méi</string>
@@ -79,8 +99,11 @@
   <string name="close">Zoumaachen</string>
   <string name="delete">Läschen</string>
   <string name="confirm_delete_book_title">Buch läschen?</string>
+  <string name="confirm_delete_book_text">Sidd Dir sécher, datt Dir dëst Buch läsche wëllt?</string>
   <string name="confirm_delete_catalog_title">Katalog läschen?</string>
-  <string name="add_book">E Bich derbäisetzen</string>
+  <string name="confirm_delete_catalog_text">Sidd Dir sécher, datt Dir dëse Katalog-Feed läsche wëllt?</string>
+  <string name="add_book">E Buch derbäisetzen</string>
+  <string name="add_catalog">E Katalog-Feed derbäisetzen</string>
   <string name="save">Späicheren</string>
   <string name="enter_title">Gitt den Titel an</string>
   <string name="enter_url">Gitt d\'URL an</string>
@@ -106,4 +129,5 @@
   <string name="search_error_cancelled">D\'Sich gouf ofgebrach</string>
   <string name="error_unexpected">Et ass en onerwaarte Feeler geschitt.</string>
   <string name="link_sourcecode">GitHub</string>
+  <string name="woops">Ups!</string>
 </resources>

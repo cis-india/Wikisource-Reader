@@ -60,6 +60,7 @@ import org.cis_india.wsreader.ui.common.ProgressDots
 import org.cis_india.wsreader.ui.navigation.Screens
 import org.cis_india.wsreader.ui.screens.categories.viewmodels.CategoryViewModel
 import java.util.Locale
+import androidx.compose.ui.res.stringResource
 
 
 @Composable
@@ -123,7 +124,7 @@ fun CategoryDetailScreen(
                 ) {
                     NoBooksAvailable(
                         text = stringResource(id = R.string.no_books_found_for_lang_and_cat)
-                            .format(viewModel.language.value.name.lowercase(Locale.getDefault()))
+                            .format(stringResource(viewModel.language.value.name).lowercase(Locale.getDefault()))
                     )
                 }
                 AnimatedVisibility(
@@ -149,12 +150,13 @@ fun CategoryDetailScreen(
                                     .fillMaxWidth(),
                                 contentAlignment = Alignment.Center
                             ) {
-                                val firstLanguage = item.languages.firstOrNull() ?: "en"
+                                val unknownAuthorString = stringResource(R.string.unknown_author_info)
+                                val firstLanguage = Locale.getDefault().language ?: "en"
                                 //val authors = remember { BookUtils.getAuthorsAsString(book.authors, firstLanguage) }
                                 var authors by remember { mutableStateOf("Loading...") }
 
                                 LaunchedEffect(item.authors, firstLanguage) {
-                                    val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage)
+                                    val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)
                                     authors = authorsString // Update the authors state once the data is fetched
                                 }
                                 BookItemCard(
