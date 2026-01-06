@@ -60,6 +60,7 @@ import org.cis_india.wsreader.ui.common.ProgressDots
 import org.cis_india.wsreader.ui.navigation.Screens
 import org.cis_india.wsreader.ui.screens.categories.viewmodels.CategoryViewModel
 import java.util.Locale
+import androidx.compose.ui.res.stringResource
 
 
 @Composable
@@ -123,7 +124,7 @@ fun CategoryDetailScreen(
                 ) {
                     NoBooksAvailable(
                         text = stringResource(id = R.string.no_books_found_for_lang_and_cat)
-                            .format(viewModel.language.value.name.lowercase(Locale.getDefault()))
+                            .format(stringResource(viewModel.language.value.name).lowercase(Locale.getDefault()))
                     )
                 }
                 AnimatedVisibility(
