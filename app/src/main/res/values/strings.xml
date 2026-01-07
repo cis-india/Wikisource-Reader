@@ -144,7 +144,7 @@
     <string name="subjects_info">Subjects</string>
     <string name="publishers_info">Publisher</string>
     <string name="unknown_publishers_info">Unknown Publisher</string>
-    <string name="place_of_publication_info">Places Of Publication</string>
+    <string name="place_of_publication_info">Place Of Publication</string>
     <string name="unknown_place_of_publication_info">Unknown place Of Publication</string>
 
     <!-- About Screen -->
