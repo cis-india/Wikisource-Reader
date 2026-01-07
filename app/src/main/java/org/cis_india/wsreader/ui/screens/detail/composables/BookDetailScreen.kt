@@ -239,6 +239,10 @@ private fun BookDetailContents(
         val genres = book.genre.filter { it.isNotBlank() }
         val subjects = book.subjects.filter { it.isNotBlank() }
 
+        // Checks if there are values of publisher or places of publication
+        val isPublishersBlank = book.publishers.all { it.name?.isBlank() ?: true }
+        val isPlaceOfPublicationBlank = book.place_of_publication.all { it.name?.isBlank() ?: true }
+
         BookDetailTopUI(
             title = book.titleNativeLanguage ?: book.title,
             authors = authors,
@@ -441,8 +445,8 @@ private fun BookDetailContents(
                 InfoLine(stringResource(R.string.translators_info), translators)
                 InfoLine(stringResource(R.string.genres_info), genres)
                 InfoLine(stringResource(R.string.subjects_info), subjects)
-                InfoStringContent(stringResource(R.string.publishers_info), publishers)
-                InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication)
+                InfoStringContent(stringResource(R.string.publishers_info), publishers, isPublishersBlank)
+                InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)
             }
         }
     }
@@ -718,15 +722,16 @@ fun InfoLine(label: String, values: List<String>) {
     }
 }
 @Composable
-fun InfoStringContent(label: String, value: String? ) {
-    // Decide label based on count
-    Text(
-        text = "$label: $value",
-        modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
-        fontFamily = poppinsFont,
-        fontWeight = FontWeight.Normal,
-        color = MaterialTheme.colorScheme.onBackground,
-    )
+fun InfoStringContent(label: String, value: String?, isValueBlank: Boolean ) {
+    if (!isValueBlank)  {
+        Text(
+            text = "$label: $value",
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
+            fontFamily = poppinsFont,
+            fontWeight = FontWeight.Normal,
+            color = MaterialTheme.colorScheme.onBackground,
+        )
+    }
 }
 
 private fun handleEvent(event: BookDetailViewModel.Event, context: Context) {
