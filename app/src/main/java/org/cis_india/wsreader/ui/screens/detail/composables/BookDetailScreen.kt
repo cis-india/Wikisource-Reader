@@ -218,11 +218,11 @@ private fun BookDetailContents(
         LaunchedEffect(book.authors, firstLanguage) {
             val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage, unknownAuthorString)
             val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage, unknownPublisherString)
-            val placesOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.places_of_publication, firstLanguage, unknownPlaceOfPublicationString)
+            val placeOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.place_of_publication, firstLanguage, unknownPlaceOfPublicationString)
 
             authors = authorsString // Update the authors state once the data is fetched
             publishers = publisherString
-            placeOfPublication = placesOfPublicationString
+            placeOfPublication = placeOfPublicationString
         }
 
         var editors by remember { mutableStateOf<List<String>>(emptyList()) }

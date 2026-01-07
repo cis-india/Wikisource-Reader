@@ -54,7 +54,7 @@ data class Book(
     @SerialName("publishers")
     val publishers: List<Publisher>,
     @SerialName("places_of_publication")
-    val places_of_publication: List<PlacesOfPublication>,
+    val place_of_publication: List<PlacesOfPublication>,
 ) {
     val id: Int
         get() = wikidataQid.removePrefix("Q").toInt()
