@@ -119,13 +119,13 @@
   <string name="acknowledgements_label">ਪ੍ਰਵਾਨਗੀਆਂ</string>
   <string name="acknowledgements_french_state">ਫਰਾਂਸੀਸੀ ਰਾਜ ਦੀ ਵਿੱਤੀ ਮਦਦ ਤੋਂ ਬਿਨਾਂ R2 ਰੀਡਰ ਵਿਕਸਤ ਨਹੀਂ ਹੋ ਸਕਦਾ ਸੀ।</string>
   <string name="catalog_list_more">ਹੋਰ</string>
-  <string name="chapter_page">ਅਧਿਆਇ / ਪੰਨਾ</string>
+  <string name="chapter_page">ਅਧਿਆਇ / ਵਰਕਾ</string>
   <string name="progression">ਪ੍ਰਗਤੀ</string>
   <string name="timestamp">ਵਕਤ ਦੀ ਮੋਹਰ</string>
   <string name="contents_tab_label">ਸਮੱਗਰੀ</string>
   <string name="bookmarks_tab_label">ਬੁੱਕਮਾਰਕ</string>
   <string name="highlights_tab_label">ਉਜਾਗਰ ਕੀਤਾ</string>
-  <string name="pagelist_tab_label">ਪੰਨਾ ਸੂਚੀ</string>
+  <string name="pagelist_tab_label">ਵਰਕਾ ਦੀ ਸੂਚੀ</string>
   <string name="landmarks_tab_label">ਨਿਸ਼ਾਨੀਆਂ</string>
   <string name="action_mode_menu_highlight">ਉਜਾਗਰ ਕੀਤਾ</string>
   <string name="action_mode_menu_underline">ਹੇਠਾਂ ਲਕੀਰ ਲਾਉ</string>

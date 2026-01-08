@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Aspere
+* Ykhwong
 -->
 <resources>
   <string name="not_applicable">해당 없음</string>
@@ -32,6 +33,34 @@
   <string name="sort_a_to_z">제목 A부터 Z까지</string>
   <string name="sort_z_to_a">제목 Z부터 A까지</string>
   <string name="sort_random">임의로</string>
+  <string name="all_books_language_lebel">모든 책</string>
+  <string name="arabic_language_label">아랍어</string>
+  <string name="assamese_language_label">아삼어</string>
+  <string name="bangla_language_label">뱅골어</string>
+  <string name="catalan_language_label">카탈루냐어</string>
+  <string name="czech_language_label">체코어</string>
+  <string name="danish_language_lebel">덴마크어</string>
+  <string name="english_language_label">영어</string>
+  <string name="spanish_language_label">스페인어</string>
+  <string name="french_language_label">프랑스어</string>
+  <string name="gujarati_language_label">구자라트어</string>
+  <string name="hindi_language_label">힌디어</string>
+  <string name="indonesian_language_label">인도네시아어</string>
+  <string name="italian_language_label">이탈리아어</string>
+  <string name="javanese_language_label">자바어</string>
+  <string name="kannada_language_label">칸나다어</string>
+  <string name="malayalam_language_label">말라얄람어</string>
+  <string name="marathi_language_label">마라티어</string>
+  <string name="malay_language_label">말레이어</string>
+  <string name="polish_language_label">폴란드어</string>
+  <string name="punjabi_language_label">편자브어</string>
+  <string name="sundanese_language_label">순다어</string>
+  <string name="swedish_language_label">스웨덴어</string>
+  <string name="tamil_language_label">타밀어</string>
+  <string name="telugu_language_label">텔루구어</string>
+  <string name="tulu_language_label">툴루어</string>
+  <string name="ukrainian_language_label">우크라이나어</string>
+  <string name="vietnamese_language_label">베트남어</string>
   <string name="library_header">라이브러리</string>
   <string name="empty_library">아무 것도 없습니다!</string>
   <string name="import_button_text">가져오기</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* Abijeet Patro
 * Bodhisattwa
 * Saurmandal
 -->
@@ -25,6 +26,8 @@
   <string name="language_menu_title">भाषा के अनुसार अन्वेषण करें</string>
   <string name="categories_header">श्रेणियाँ</string>
   <string name="no_books_found_for_lang_and_cat">%s भाषा में इस श्रेणी के लिए कोई पुस्तक उपलब्ध नहीं है।</string>
+  <string name="all_books_language_lebel">सभी पुस्तकें</string>
+  <string name="hindi_language_label">हिन्दी</string>
   <string name="library_header">पुस्तकालय</string>
   <string name="empty_library">यहाँ कुछ भी नहीं है!</string>
   <string name="import_button_text">आयात करें</string>
