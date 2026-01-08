@@ -23,6 +23,8 @@ import java.util.Locale
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.cis_india.wsreader.api.models.PlacesOfPublication
+import org.cis_india.wsreader.api.models.Publisher
 import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
@@ -82,6 +84,49 @@ object BookUtils {
 
         // Add value to cache
         authorStringCache[cacheKey] = result
+
+        return result
+    }
+
+
+    suspend fun getPublishersAsString(publishers: List<Publisher>, language: String, unknownOfPublisher: String): String {
+
+        // Update value from fetch
+        // This updates Publisher if value has changed.
+        val result = if (publishers.isEmpty()) {
+            unknownOfPublisher
+        } else {
+            val names = coroutineScope {
+                publishers.map { publisher ->
+                    async {
+                        val name = fetchLabelFromWikidata(publisher.pwikidataqid, language)
+                        fixAuthorName(name ?: publisher.name ?: unknownOfPublisher)
+                    }
+                }.awaitAll() // This will collect the results
+            }
+            names.joinToString(", ")
+        }
+
+        return result
+    }
+
+    suspend fun getPlacesOfPublicationAsString(placesOfPublication: List<PlacesOfPublication>, language: String, unknownPlacesOfPublication: String): String {
+
+        // Update value from fetch
+        // This updates Places of publication if value has changed.
+        val result = if (placesOfPublication.isEmpty()) {
+            unknownPlacesOfPublication
+        } else {
+            val names = coroutineScope {
+                placesOfPublication.map { placeOfPublication ->
+                    async {
+                        val name = fetchLabelFromWikidata(placeOfPublication.pwikidataqid, language)
+                        fixAuthorName(name ?: placeOfPublication.name ?: unknownPlacesOfPublication)
+                    }
+                }.awaitAll() // This will collect the results
+            }
+            names.joinToString(", ")
+        }
 
         return result
     }
