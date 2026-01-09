@@ -118,6 +118,22 @@ class BookDetailViewModel @Inject constructor(
         }
     }
 
+    suspend fun fetchBookDetails(bookId: String) {
+        state = state.copy(isLoading = true)
+        try {
+            val bookSet = bookAPI.getBookById(bookId).getOrNull()!!
+
+            if (bookSet.isCached) delay(400)
+
+            state = state.copy(bookSet = bookSet, isLoading = false)
+        } catch (exc: Exception) {
+            state = state.copy(
+                error = exc.localizedMessage ?: Constants.UNKNOWN_ERR,
+                isLoading = false
+            )
+        }
+    }
+
     /*
     fun reFetchLibraryItem(bookId: Int, onComplete: (LibraryItem) -> Unit) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -144,6 +160,8 @@ class BookDetailViewModel @Inject constructor(
             }
         )
     }
+
+
 
     /*
     Currently not working since ws-export doent return Content-length. See T384803 on Phabricator

@@ -16,6 +16,7 @@
 
 package org.cis_india.wsreader.ui.screens.library.composables
 
+import android.app.DownloadManager
 import android.content.Context
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -43,6 +44,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Share
+import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.ButtonDefaults
@@ -93,6 +95,7 @@ import org.cis_india.wsreader.helpers.getActivity
 import org.cis_india.wsreader.reader.ReaderActivityContract
 import org.cis_india.wsreader.ui.common.CustomTopAppBar
 import org.cis_india.wsreader.ui.common.NoBooksAvailable
+import org.cis_india.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel
 import org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel
 import org.cis_india.wsreader.ui.screens.main.bottomNavPadding
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
@@ -107,6 +110,7 @@ fun LibraryScreen(navController: NavController, lifecycleOwner: LifecycleOwner =
     val view = LocalView.current
     val context = LocalContext.current
     val viewModel: LibraryViewModel = hiltViewModel()
+    val bookDetailsviewModel: BookDetailViewModel = hiltViewModel()
 
     val snackBarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
@@ -181,6 +185,7 @@ fun LibraryScreen(navController: NavController, lifecycleOwner: LifecycleOwner =
         ) { paddingValues ->
             LibraryContents(
                 viewModel = viewModel,
+                bookDetailsviewModel = bookDetailsviewModel,
                 lazyListState = lazyListState,
                 snackBarHostState = snackBarHostState,
                 navController = navController,
@@ -239,6 +244,7 @@ private fun handleEvent(event: LibraryViewModel.Event, context: Context) {
 @Composable
 private fun LibraryContents(
     viewModel: LibraryViewModel,
+    bookDetailsviewModel: BookDetailViewModel,
     lazyListState: LazyListState,
     snackBarHostState: SnackbarHostState,
     navController: NavController,
@@ -295,6 +301,7 @@ private fun LibraryContents(
                         snackBarHostState = snackBarHostState,
                         navController = navController,
                         viewModel = viewModel,
+                        bookDetailsviewModel = bookDetailsviewModel,
                         settingsVm = settingsVm
                     )
 
@@ -313,13 +320,14 @@ private fun LibraryLazyItem(
     snackBarHostState: SnackbarHostState,
     navController: NavController,
     viewModel: LibraryViewModel,
+    bookDetailsviewModel: BookDetailViewModel,
     settingsVm: SettingsViewModel
 ) {
     val context = LocalContext.current
 
     val coroutineScope = rememberCoroutineScope()
     val openDeleteDialog = remember { mutableStateOf(false) }
-
+    val openRefreshDialog = remember { mutableStateOf(false) }
     val totalProgressionPercentage = remember(item.progression) {
         try {
             val json = JSONObject(item.progression ?: "{}")
@@ -385,6 +393,7 @@ private fun LibraryLazyItem(
                 }
             },
             onDeleteClick = { openDeleteDialog.value = true },
+            onRefreshClick = { openRefreshDialog.value = true },
             progression = totalProgressionPercentage
         )
 
@@ -418,6 +427,61 @@ private fun LibraryLazyItem(
             }
         })
     }
+
+    if (openRefreshDialog.value) {
+        AlertDialog(onDismissRequest = {
+            openRefreshDialog.value = false
+        },
+        title = {
+            Text(text = "Refresh Publication?")
+        },
+        text = {
+            Text("Warning: Refreshing this book will replace the current version. Any existing notes, highlights, and reading progress might be lost.")
+        }, confirmButton = {
+            FilledTonalButton(
+                onClick = {
+                    coroutineScope.launch {
+                        // Fetch The Book From The API, This adds it to model state
+                        bookDetailsviewModel.fetchBookDetails(item.identifier)
+                        val state = bookDetailsviewModel.state
+
+                        val refreshedBook = state.bookSet?.books?.firstOrNull()
+                        if (refreshedBook != null) {
+
+                            // Delete current book in library
+                            viewModel.deletePublication(item)
+
+                            // Start the new download
+                            bookDetailsviewModel.downloadBook(
+                                refreshedBook,
+                                downloadProgressListener = { downloadProgress, downloadStatus ->
+                                    when (downloadStatus){
+                                        DownloadManager.STATUS_SUCCESSFUL -> {
+                                            openRefreshDialog.value = false
+                                        }
+                                    }
+                                }
+                            )
+                        } else {
+                            openRefreshDialog.value = false
+                        }
+                    }
+                },
+                colors = ButtonDefaults.filledTonalButtonColors(
+                    contentColor = MaterialTheme.colorScheme.onErrorContainer,
+                    containerColor = MaterialTheme.colorScheme.errorContainer
+                )
+            ) {
+                Text(stringResource(id = R.string.confirm))
+            }
+        }, dismissButton = {
+            TextButton(onClick = {
+                openRefreshDialog.value = false
+            }) {
+                Text(stringResource(id = R.string.cancel))
+            }
+        })
+    }
 }
 
 @Composable
@@ -429,6 +493,7 @@ private fun LibraryCard(
     date: String,
     onReadClick: () -> Unit,
     onDeleteClick: () -> Unit,
+    onRefreshClick: () -> Unit,
     progression: Int
 ) {
     Card(
@@ -542,6 +607,18 @@ private fun LibraryCard(
                     CircularProgressWithText(
                         progress = progression,
                     )
+
+                    Spacer(modifier = Modifier.weight(1f))
+
+                    Icon(
+                        imageVector = Icons.Outlined.Refresh,
+                        contentDescription = "Refresh",
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable {
+                                onRefreshClick()
+                            }
+                    )
                 }
                 Spacer(modifier = Modifier.height(2.dp))
             }
@@ -625,6 +702,7 @@ fun LibraryScreenPreview() {
         date = "01- Jan -2020",
         onReadClick = {},
         onDeleteClick = {},
+        onRefreshClick = {},
         progression = 80
     )
 }
