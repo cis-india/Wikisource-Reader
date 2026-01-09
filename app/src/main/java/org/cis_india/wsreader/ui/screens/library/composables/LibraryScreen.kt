@@ -586,9 +586,15 @@ private fun LibraryCard(
 
                     Spacer(modifier = Modifier.width(10.dp))
 
-                    LibraryCardButton(text = stringResource(id = R.string.library_delete_button),
-                        icon = Icons.Outlined.Delete,
-                        onClick = { onDeleteClick() })
+                    Icon(
+                        imageVector = Icons.Outlined.Delete,
+                        contentDescription = "Delete",
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable {
+                                onDeleteClick()
+                            }
+                    )
 
                     Spacer(modifier = Modifier.width(10.dp))
 
