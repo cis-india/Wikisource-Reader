@@ -19,4 +19,5 @@ The following features are currently functional:
 ## External Links
 - [Website](https://cis-india.github.io/wikisource-reader-app)
 - [Meta Wiki page](https://meta.wikimedia.org/wiki/Wikisource_reader_app)
+- [Phabricator issue tracker](https://phabricator.wikimedia.org/project/board/8233/query/all/)
 ---
