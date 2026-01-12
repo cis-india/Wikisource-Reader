@@ -116,6 +116,14 @@
   <string name="book_synopsis">概要</string>
   <string name="book_synopsis_not_found">不可用</string>
   <string name="unknown_author_info">未知作者</string>
+  <string name="editors_info">編者</string>
+  <string name="translators_info">譯者</string>
+  <string name="genres_info">類型</string>
+  <string name="subjects_info">主旨</string>
+  <string name="publishers_info">出版者</string>
+  <string name="unknown_publishers_info">未知出版者</string>
+  <string name="place_of_publication_info">出版地</string>
+  <string name="unknown_place_of_publication_info">出版地不詳</string>
   <string name="about_header">關於</string>
   <string name="about_desc">閱讀來自維基文庫的自由授權文本</string>
   <string name="useful_links">有用連結</string>
