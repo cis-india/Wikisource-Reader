@@ -22,6 +22,7 @@ import android.net.Uri
 import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.AndroidViewModel
@@ -39,6 +40,10 @@ import org.cis_india.wsreader.utils.EventChannel
 import org.cis_india.wsreader.reader.OpeningError
 import org.cis_india.wsreader.reader.ReaderActivityContract
 
+data class RefreshStatus(
+    val progress: Float,
+    val title: String
+)
 
 @HiltViewModel
 class LibraryViewModel @Inject constructor(
@@ -55,6 +60,22 @@ class LibraryViewModel @Inject constructor(
         value = preferenceUtil.getBoolean(PreferenceUtil.LIBRARY_ONBOARDING_BOOL, true)
     )
     val showOnboardingTapTargets: State<Boolean> = _showOnboardingTapTargets
+
+    // Track refreshing identifiers (book ID)
+    val refreshingBookIds = mutableStateMapOf<String, RefreshStatus>()
+
+    fun markAsRefreshing(id: String, title: String) {
+        // Initialize with 0% progress and the book title
+        refreshingBookIds[id] = RefreshStatus(progress = 0f, title = title)
+    }
+
+    fun updateProgress(id: String, progress: Float, title: String) {
+        refreshingBookIds[id] = RefreshStatus(progress, title)
+    }
+
+    fun clearRefreshing(id: String) {
+        refreshingBookIds.remove(id)
+    }
 
     fun deletePublication(book: Book) =
         viewModelScope.launch {

@@ -21,6 +21,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -54,6 +55,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
@@ -77,6 +79,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -281,7 +284,7 @@ private fun LibraryContents(
             .background(MaterialTheme.colorScheme.background)
             .padding(paddingValues)
     ) {
-        if (libraryItems.isEmpty()) {
+        if (libraryItems.isEmpty() && viewModel.refreshingBookIds.isEmpty()) {
             NoBooksAvailable(text = stringResource(id = R.string.empty_library))
         } else {
             LazyColumn(
@@ -290,9 +293,68 @@ private fun LibraryContents(
                     .background(MaterialTheme.colorScheme.background),
                 state = lazyListState
             ) {
+
+                val databaseIds = libraryItems.map { it.identifier }.toSet()
+                val pendingRefreshes = viewModel.refreshingBookIds.keys.filter { it !in databaseIds }
+                // Show loading screen when a book is re-downloading
+                items(
+                    count = pendingRefreshes.size,
+                    key = { i -> pendingRefreshes[i] }
+                ) { i ->
+                    val identifier = pendingRefreshes[i]
+                    val status = viewModel.refreshingBookIds[identifier]
+                    val progressValue = status?.progress ?: 0f
+
+                    Column(modifier = Modifier.padding(14.dp)) {
+                        AnimatedVisibility(
+                            visible = true,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(top = 10.dp, bottom = 4.dp)
+                            ) {
+                                Text(
+                                    text = "Re-Downloading: ${status?.title ?: ""}",
+                                    textAlign = TextAlign.Center,
+                                    fontFamily = poppinsFont,
+                                    fontWeight = FontWeight.Medium,
+                                    fontSize = 13.sp,
+                                    color = MaterialTheme.colorScheme.secondary,
+                                    modifier = Modifier.fillMaxWidth().padding(horizontal = 18.dp)
+                                )
+
+                                if (progressValue > 0f) {
+                                    // Determinate progress bar
+                                    LinearProgressIndicator(
+                                        progress = { progressValue },
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(16.dp)
+                                            .padding(start = 14.dp, end = 14.dp, top = 6.dp)
+                                            .clip(RoundedCornerShape(40.dp)),
+                                        color = MaterialTheme.colorScheme.secondary,
+                                    )
+                                } else {
+                                    // Indeterminate progress bar (Starting up)
+                                    LinearProgressIndicator(
+                                        color = MaterialTheme.colorScheme.secondary,
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(16.dp)
+                                            .padding(start = 14.dp, end = 14.dp, top = 6.dp)
+                                            .clip(RoundedCornerShape(40.dp))
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
                 items(
                     count = libraryItems.size,
-                    key = { i -> libraryItems[i].id ?: throw IllegalArgumentException("ID cannot be null") }
+                    key = { i -> libraryItems[i].id ?: i }
                 ) { i ->
                     val item = libraryItems[i]
                     LibraryLazyItem(
@@ -441,6 +503,8 @@ private fun LibraryLazyItem(
             FilledTonalButton(
                 onClick = {
                     coroutineScope.launch {
+                        viewModel.markAsRefreshing(item.identifier, item.title)
+                        openRefreshDialog.value = false
                         // Fetch The Book From The API, This adds it to model state
                         bookDetailsviewModel.fetchBookDetails(item.identifier)
                         val state = bookDetailsviewModel.state
@@ -455,15 +519,25 @@ private fun LibraryLazyItem(
                             bookDetailsviewModel.downloadBook(
                                 refreshedBook,
                                 downloadProgressListener = { downloadProgress, downloadStatus ->
+                                    viewModel.updateProgress(item.identifier, downloadProgress, item.title)
                                     when (downloadStatus){
+                                        DownloadManager.STATUS_RUNNING -> {
+                                        }
+
                                         DownloadManager.STATUS_SUCCESSFUL -> {
                                             openRefreshDialog.value = false
+                                            viewModel.clearRefreshing(item.identifier)
+                                        }
+
+                                        else -> {
+                                            viewModel.clearRefreshing(item.identifier)
                                         }
                                     }
                                 }
                             )
                         } else {
                             openRefreshDialog.value = false
+                            viewModel.clearRefreshing(item.identifier)
                         }
                     }
                 },
