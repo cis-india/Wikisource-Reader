@@ -27,7 +27,12 @@
   <string name="categories_header">श्रेणियाँ</string>
   <string name="no_books_found_for_lang_and_cat">%s भाषा में इस श्रेणी के लिए कोई पुस्तक उपलब्ध नहीं है।</string>
   <string name="all_books_language_lebel">सभी पुस्तकें</string>
+  <string name="english_language_label">अंग्रेज़ी</string>
+  <string name="gujarati_language_label">गुजराती</string>
   <string name="hindi_language_label">हिन्दी</string>
+  <string name="kannada_language_label">कन्नड़</string>
+  <string name="punjabi_language_label">पंजाबी</string>
+  <string name="telugu_language_label">तेलूगू</string>
   <string name="library_header">पुस्तकालय</string>
   <string name="empty_library">यहाँ कुछ भी नहीं है!</string>
   <string name="import_button_text">आयात करें</string>
@@ -85,5 +90,8 @@
   <string name="link_privacy_policy">गोपनीयता नीति</string>
   <string name="link_privacy_policy_desc">हमारी नवीनतम गोपनीयता नीति पढ़ें।</string>
   <string name="open_source_licenses_header">लाइसेंस</string>
+  <string name="category_novels">उपन्यास</string>
+  <string name="category_plays">नाटक</string>
+  <string name="category_poetry">कविता</string>
   <string name="woops">\"उफ़!!\"</string>
 </resources>

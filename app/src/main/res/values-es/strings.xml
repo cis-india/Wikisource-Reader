@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Avengium
+* Bodhisattwa
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -80,6 +81,7 @@
   <string name="download_started">¡Descarga iniciada!</string>
   <string name="book_synopsis">Sinopsis</string>
   <string name="book_synopsis_not_found">No disponible</string>
+  <string name="editors_info">Editores</string>
   <string name="about_header">A cerca de</string>
   <string name="about_desc">Una aplicación Android gratuita y de código abierto para descargar libros electrónicos del Proyecto GutenBerg.</string>
   <string name="useful_links">Nützliche Links</string>
@@ -87,5 +89,8 @@
   <string name="link_privacy_policy">Datenschutzrichtlinie</string>
   <string name="link_privacy_policy_desc">Lesen Sie unsere neueste Datenschutzrichtlinie.</string>
   <string name="open_source_licenses_header">Licencias</string>
+  <string name="category_biography">Biografía</string>
+  <string name="category_dictionaries">Diccionarios</string>
+  <string name="category_encyclopedias">Enciclopedias</string>
   <string name="woops">\"¡Ups!\"</string>
 </resources>
