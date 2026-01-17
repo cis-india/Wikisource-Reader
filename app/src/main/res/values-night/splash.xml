@@ -3,7 +3,7 @@
 
     <style name="Theme.WikisourceReader.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">?attr/backgroundColor</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/wikisource_logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/wikisource_logo_min</item>
         <item name="postSplashScreenTheme">@style/Theme.WikisourceReader</item>
     </style>
 </resources>
