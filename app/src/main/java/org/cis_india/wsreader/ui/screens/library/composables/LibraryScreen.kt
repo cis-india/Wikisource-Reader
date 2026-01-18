@@ -22,6 +22,7 @@ import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -74,8 +75,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
@@ -88,6 +91,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.psoffritti.taptargetcompose.TapTargetCoordinator
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -447,6 +452,7 @@ private fun LibraryLazyItem(
         LibraryCard(title = item.title,
             author = item.author?: "Unknown",
             item.href,
+            item.thumbnailUrl,
             item.rawMediaType,
             item.getDownloadDate(),
             onReadClick = {
@@ -563,6 +569,7 @@ private fun LibraryCard(
     title: String,
     author: String,
     href: String,
+    cover: String?,
     mediaType: String,
     date: String,
     onReadClick: () -> Unit,
@@ -584,18 +591,27 @@ private fun LibraryCard(
                     .height(90.dp)
                     .width(90.dp)
                     .padding(10.dp)
-                    .clip(CircleShape)
+                    .clip(RoundedCornerShape(6.dp))
                     .background(MaterialTheme.colorScheme.primary),
                 contentAlignment = Alignment.Center
             ) {
-                Icon(
-                    imageVector = ImageVector.vectorResource(
-                        id = R.drawable.ic_library_item
-                    ),
-                    contentDescription = stringResource(id = R.string.back_button_desc),
-                    tint = MaterialTheme.colorScheme.onPrimary,
-                    modifier = Modifier.size(32.dp)
-                )
+                if (cover.isNullOrEmpty()) {
+                    Image(
+                        painter = painterResource(id = R.drawable.placeholder_cat),
+                        contentDescription = stringResource(id = R.string.cover_image_desc),
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                } else {
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current).data(cover)
+                            .crossfade(true).build(),
+                        placeholder = painterResource(id = R.drawable.placeholder_cat),
+                        contentDescription = stringResource(id = R.string.cover_image_desc),
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
             }
 
             Column(modifier = Modifier.padding(8.dp)) {
@@ -779,6 +795,7 @@ fun LibraryScreenPreview() {
         author = "Fyodor Dostoevsky",
         mediaType = "",
         href = "",
+        cover = "",
         date = "01- Jan -2020",
         onReadClick = {},
         onDeleteClick = {},
