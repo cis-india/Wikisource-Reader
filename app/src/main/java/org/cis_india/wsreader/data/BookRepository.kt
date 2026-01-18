@@ -83,7 +83,8 @@ class BookRepository(
         mediaType: MediaType,
         publication: Publication,
         cover: File,
-        wdIdentifier: String? = null
+        wdIdentifier: String? = null,
+        thumbnailUrl: String? = null
     ): Long {
         val book = Book(
             creation = Date().time,
@@ -93,7 +94,8 @@ class BookRepository(
             identifier = wdIdentifier?: publication.metadata.identifier ?: "",
             mediaType = mediaType,
             progression = "{}",
-            cover = cover.path
+            cover = cover.path,
+            thumbnailUrl = thumbnailUrl
         )
         return booksDao.insertBook(book)
     }

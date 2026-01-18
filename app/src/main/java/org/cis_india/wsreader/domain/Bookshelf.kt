@@ -52,10 +52,11 @@ class Bookshelf(
 
     fun importPublicationFromStorage(
         uri: Uri,
-        wdIdentifier: String? = null
+        wdIdentifier: String? = null,
+        thumbnailUrl: String? = null,
     ) {
         coroutineScope.launch {
-            addBookFeedback(publicationRetriever.retrieveFromStorage(uri),wdIdentifier)
+            addBookFeedback(publicationRetriever.retrieveFromStorage(uri),wdIdentifier, thumbnailUrl)
         }
     }
 
@@ -93,10 +94,11 @@ class Bookshelf(
 
     private suspend fun addBookFeedback(
         retrieverResult: Try<PublicationRetriever.Result, ImportError>,
-        wdIdentifier: String? = null
+        wdIdentifier: String? = null,
+        thumbnailUrl: String? = null,
     ) {
         retrieverResult
-            .map { addBook(it.publication.toUrl(), it.format, it.coverUrl, wdIdentifier) }
+            .map { addBook(it.publication.toUrl(), it.format, it.coverUrl, wdIdentifier, thumbnailUrl) }
             .onSuccess { channel.send(Event.ImportPublicationSuccess) }
             .onFailure { channel.send(Event.ImportPublicationError(it)) }
     }
@@ -116,7 +118,8 @@ class Bookshelf(
         url: AbsoluteUrl,
         format: Format? = null,
         coverUrl: AbsoluteUrl? = null,
-        wdIdentifier: String? = null
+        wdIdentifier: String? = null,
+        thumbnailUrl: String? = null,
     ): Try<Unit, ImportError> {
         val asset =
             if (format == null) {
@@ -128,6 +131,7 @@ class Bookshelf(
                     ImportError.Publication(PublicationError(it))
                 )
             }
+
 
         publicationOpener.open(
             asset,
@@ -148,7 +152,8 @@ class Bookshelf(
                 asset.format.mediaType,
                 publication,
                 coverFile,
-                wdIdentifier
+                wdIdentifier,
+                thumbnailUrl
             )
             if (id == -1L) {
                 coverFile.delete()
