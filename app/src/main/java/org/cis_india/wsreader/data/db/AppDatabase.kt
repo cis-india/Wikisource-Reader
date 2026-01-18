@@ -7,6 +7,7 @@
 package org.cis_india.wsreader.data.db
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -19,8 +20,11 @@ import org.cis_india.wsreader.data.model.Highlight
 
 @Database(
     entities = [Book::class, Bookmark::class, Highlight::class, Catalog::class],
-    version = 1,
-    exportSchema = false
+    version = 2,
+    exportSchema = true,
+    autoMigrations = [
+        AutoMigration(from = 1, to = 2)
+    ]
 )
 @TypeConverters(
     HighlightConverters::class
