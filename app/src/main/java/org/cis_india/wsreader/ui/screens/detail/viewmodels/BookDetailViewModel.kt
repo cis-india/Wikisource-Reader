@@ -156,6 +156,9 @@ class BookDetailViewModel @Inject constructor(
                     uri = uri,
                     wdIdentifier = book.id.toString()
                 )
+                viewModelScope.launch {
+                    bookAPI.postDownloadedBookDetails(book.wikidataQid, book.title)
+                }
                 //state = state.copy(bookLibraryItem = libraryDao.getItemByBookId(book.id))
             }
         )
