@@ -588,7 +588,7 @@ private fun LibraryCard(
         ) {
             Box(
                 modifier = Modifier
-                    .height(90.dp)
+                    .height(120.dp)
                     .width(90.dp)
                     .padding(10.dp)
                     .clip(RoundedCornerShape(6.dp))
