@@ -27,10 +27,13 @@ import kotlinx.serialization.json.Json
 import okhttp3.Cache
 import okhttp3.Call
 import okhttp3.Callback
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
+import org.json.JSONObject
 import java.io.File
 import java.io.IOException
 import java.net.URLEncoder
@@ -47,6 +50,7 @@ import kotlin.coroutines.suspendCoroutine
 class BookAPI(context: Context) {
 
     private val baseApiUrl = "https://wsindex.toolforge.org/books"
+    private val downloadAnalyticsUrl = "https://wsindex.toolforge.org/downloaded-books/"
 
     private val okHttpClient by lazy {
         // Create an OkHttpClient with a cache and a network interceptor.
@@ -90,6 +94,30 @@ class BookAPI(context: Context) {
             url += "&sort=$sortBy"
         }
         val request = Request.Builder().get().url(url).build()
+        return makeApiRequest(request)
+    }
+
+    /**
+     * This function posts book after download to the API.
+     */
+    suspend fun postDownloadedBookDetails(
+        wikidata_qid: String,
+        book_title: String,
+    ): Result<BookSet> {
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+
+        val jsonBody = JSONObject().apply {
+            put("wikidata_qid", wikidata_qid)
+            put("book_title", book_title)
+        }.toString()
+
+        val requestBody = jsonBody.toRequestBody(mediaType)
+
+        val request = Request.Builder()
+            .url(downloadAnalyticsUrl)
+            .post(requestBody)
+            .build()
+
         return makeApiRequest(request)
     }
 
