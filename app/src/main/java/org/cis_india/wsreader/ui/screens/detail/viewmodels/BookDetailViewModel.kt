@@ -154,7 +154,8 @@ class BookDetailViewModel @Inject constructor(
                 val uri = Uri.fromFile(file)
                 app.bookshelf.importPublicationFromStorage(
                     uri = uri,
-                    wdIdentifier = book.id.toString()
+                    wdIdentifier = book.id.toString(),
+                    thumbnailUrl = book.thumbnailUrl.toString()
                 )
                 viewModelScope.launch {
                     bookAPI.postDownloadedBookDetails(book.wikidataQid, book.title)
