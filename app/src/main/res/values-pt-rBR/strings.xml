@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* Bodhisattwa
 * Leosls
 -->
 <resources>
@@ -32,6 +33,9 @@
   <string name="sort_a_to_z">Título de A a Z</string>
   <string name="sort_z_to_a">Título de Z a A</string>
   <string name="sort_random">Aleatório</string>
+  <string name="english_language_label">Inglês</string>
+  <string name="spanish_language_label">Espanhol</string>
+  <string name="hindi_language_label">Hindi</string>
   <string name="library_header">Biblioteca</string>
   <string name="empty_library">Nada aqui!</string>
   <string name="import_button_text">Importar</string>
