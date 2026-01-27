@@ -23,8 +23,8 @@ android {
         applicationId "org.cis_india.wsreader"
         minSdk 26
         targetSdk 35
-        versionCode 141
-        versionName "1.4.1"
+        versionCode 142
+        versionName "1.4.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -35,6 +35,13 @@ android {
             arg('room.schemaLocation', "$projectDir/schemas")
         }
 
+    }
+
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+//        includeInBundle = false
     }
 
     buildTypes {
