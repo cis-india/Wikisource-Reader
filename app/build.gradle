@@ -73,10 +73,11 @@ android {
         freeCompilerArgs = ['-Xjvm-default=all-compatibility']
     }
     buildFeatures {
-        viewBinding = true
-        dataBinding = true
+        viewBinding true
+        dataBinding true
         compose true
-        buildConfig = true
+        buildConfig true
+        baselineProfiles false
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.14"
