@@ -32,6 +32,17 @@
     <string name="language_menu_title">Browse by language</string>
     <string name="sort_menu_title">Sort by</string>
 
+    <!--    onboarding guides-->
+    <string name="language_guide_title">Switch Language</string>
+    <string name="language_guide_description">Filter Books By Language</string>
+    <string name="sorting_guide_title">Sort Books</string>
+    <string name="sorting_guide_description">Tap to sort Books</string>
+    <string name="search_guide_title">Search function</string>
+    <string name="search_guide_description">Tap to search a book</string>
+
+    <string name="tap_target_screen_title">%1$s screen</string>
+    <string name="tap_target_screen_description">Navigate to %1$s screen</string>
+
     <!-- Categories screen. -->
     <string name="categories_header">Categories</string>
     <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>

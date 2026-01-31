@@ -74,6 +74,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -82,6 +83,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.psoffritti.taptargetcompose.TapTargetCoordinator
+import com.psoffritti.taptargetcompose.TapTargetScope
+import com.psoffritti.taptargetcompose.TapTargetStyle
+import com.psoffritti.taptargetcompose.TextDefinition
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.helpers.book.BookLanguage
@@ -106,7 +111,7 @@ import java.util.Locale
 
 
 @Composable
-fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Status) {
+fun TapTargetScope.HomeScreen(navController: NavController, networkStatus: NetworkObserver.Status) {
 
     val viewModel: HomeViewModel = hiltViewModel()
 
@@ -170,7 +175,7 @@ fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Stat
 
 
 @Composable
-private fun HomeScreenScaffold(
+private fun TapTargetScope.HomeScreenScaffold(
     viewModel: HomeViewModel,
     networkStatus: NetworkObserver.Status,
     navController: NavController,
@@ -429,53 +434,121 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
 }
 
 @Composable
-private fun HomeTopAppBar(
+private fun TapTargetScope.HomeTopAppBar(
     bookLanguage: BookLanguage,
     onSearchIconClicked: () -> Unit,
     onLanguageIconClicked: () -> Unit,
     onSortIconClicked: () -> Unit
 ) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .windowInsetsPadding(WindowInsets.statusBars),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            text = if (bookLanguage == BookLanguage.AllBooks)
-                stringResource(id = R.string.home_header) else Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault()),
-            fontSize = 28.sp,
-            color = MaterialTheme.colorScheme.onBackground,
-            fontFamily = pacificoFont
-        )
-        Spacer(modifier = Modifier.weight(1f))
-        IconButton(onClick = onLanguageIconClicked) {
-            Icon(
-                imageVector = Icons.Filled.Translate,
-                contentDescription = stringResource(id = R.string.home_language_icon_desc),
-                tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .windowInsetsPadding(WindowInsets.statusBars),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = if (bookLanguage == BookLanguage.AllBooks)
+                    stringResource(id = R.string.home_header) else Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault()),
+                fontSize = 28.sp,
+                color = MaterialTheme.colorScheme.onBackground,
+                fontFamily = pacificoFont
             )
-        }
-        IconButton(onClick = onSortIconClicked) {
-            Icon(
-                imageVector = Icons.Filled.Sort,
-                contentDescription = stringResource(id = R.string.home_sort_icon_desc),
-                tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
-            )
-        }
-        IconButton(onClick = onSearchIconClicked) {
-            Icon(
-                imageVector = ImageVector.vectorResource(id = R.drawable.ic_search),
-                contentDescription = stringResource(id = R.string.home_search_icon_desc),
-                tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
-            )
+            Spacer(modifier = Modifier.weight(1f))
+            IconButton(
+                onClick = onLanguageIconClicked,
+                modifier = Modifier.tapTarget(
+                        precedence = 0,
+                title = TextDefinition(
+                    text = stringResource(R.string.language_guide_title),
+                    textStyle = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                ),
+                description = TextDefinition(
+                    text = stringResource(R.string.language_guide_description),
+                    textStyle = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                ),
+                tapTargetStyle = TapTargetStyle(
+                    backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                    tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                    backgroundAlpha = 1f,
+                ),
+            ),
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Translate,
+                    contentDescription = stringResource(id = R.string.home_language_icon_desc),
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
+
+
+            IconButton(
+                onClick = onSortIconClicked,
+                modifier = Modifier.tapTarget(
+                    precedence = 1,
+                    title = TextDefinition(
+                        text = stringResource(R.string.sorting_guide_title),
+                        textStyle = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    description = TextDefinition(
+                        text = stringResource(R.string.sorting_guide_description),
+                        textStyle = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    tapTargetStyle = TapTargetStyle(
+                        backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                        tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                        backgroundAlpha = 1f,
+                    ),
+                ),
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Sort,
+                    contentDescription = stringResource(id = R.string.home_sort_icon_desc),
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
+
+
+            IconButton(
+                onClick = onSearchIconClicked,
+                modifier = Modifier.tapTarget(
+                    precedence = 2,
+                    title = TextDefinition(
+                        text = stringResource(R.string.search_guide_title),
+                        textStyle = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    description = TextDefinition(
+                        text = stringResource(R.string.search_guide_description),
+                        textStyle = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    tapTargetStyle = TapTargetStyle(
+                        backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                        tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                        backgroundAlpha = 1f,
+                    ),
+                ),
+            ) {
+                Icon(
+                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_search),
+                    contentDescription = stringResource(id = R.string.home_search_icon_desc),
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
         }
     }
-}
 
 
 @Composable
@@ -552,5 +625,7 @@ private fun SearchAppBar(
 @Composable
 @Preview(showBackground = true)
 fun HomeScreenPreview() {
-    HomeScreen(navController = rememberNavController(), NetworkObserver.Status.Unavailable)
+    TapTargetCoordinator(showTapTargets = true, onComplete = {}) {
+        HomeScreen(navController = rememberNavController(), NetworkObserver.Status.Unavailable)
+    }
 }

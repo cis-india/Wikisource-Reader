@@ -19,6 +19,9 @@ package org.cis_india.wsreader.ui.screens.settings.viewmodels
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -42,6 +45,12 @@ class SettingsViewModel @Inject constructor(
     val theme: LiveData<ThemeMode> = _theme
     val amoledTheme: LiveData<Boolean> = _amoledTheme
     val materialYou: LiveData<Boolean> = _materialYou
+
+    private val _showOnboardingTapTargets: MutableState<Boolean> = mutableStateOf(
+        value = preferenceUtil.getBoolean(PreferenceUtil.ONBOARDING_BOOL, true)
+    )
+
+    val showOnboardingTapTargets: State<Boolean> = _showOnboardingTapTargets
 
     init {
         _theme.value = ThemeMode.entries.toTypedArray()[getThemeValue()]
@@ -86,6 +95,11 @@ class SettingsViewModel @Inject constructor(
     fun getInternalReaderValue() = preferenceUtil.getBoolean(
         PreferenceUtil.INTERNAL_READER_BOOL, true
     )
+
+    fun onboardingComplete() {
+        preferenceUtil.putBoolean(PreferenceUtil.ONBOARDING_BOOL, false)
+        _showOnboardingTapTargets.value = false
+    }
 
     @Composable
     fun getCurrentTheme(): ThemeMode {
