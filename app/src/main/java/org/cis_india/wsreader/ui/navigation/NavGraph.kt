@@ -25,6 +25,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.psoffritti.taptargetcompose.TapTargetScope
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.ui.screens.categories.composables.CategoriesScreen
 import org.cis_india.wsreader.ui.screens.categories.composables.CategoryDetailScreen
@@ -38,7 +39,7 @@ import org.cis_india.wsreader.ui.screens.welcome.composables.WelcomeScreen
 
 
 @Composable
-fun NavGraph(
+fun TapTargetScope.NavGraph(
     startDestination: String,
     navController: NavHostController,
     networkStatus: NetworkObserver.Status,
