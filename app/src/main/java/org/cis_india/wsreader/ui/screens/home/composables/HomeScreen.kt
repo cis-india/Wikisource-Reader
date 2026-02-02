@@ -107,11 +107,12 @@ import org.cis_india.wsreader.ui.screens.main.bottomNavPadding
 import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
 import kotlinx.coroutines.delay
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import java.util.Locale
 
 
 @Composable
-fun TapTargetScope.HomeScreen(navController: NavController, networkStatus: NetworkObserver.Status) {
+fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Status, settingsViewModel: SettingsViewModel = hiltViewModel()) {
 
     val viewModel: HomeViewModel = hiltViewModel()
 
@@ -147,6 +148,18 @@ fun TapTargetScope.HomeScreen(navController: NavController, networkStatus: Netwo
         }
     }
 
+    val showHomeTapTargets = remember { mutableStateOf(false) }
+
+
+    LaunchedEffect(settingsViewModel.showHomeOnboardingTapTargets.value) {
+        delay(500) // Delay to prevent flickering
+        if(settingsViewModel.showHomeOnboardingTapTargets.value) {
+            showHomeTapTargets.value = true
+        }else{
+            showHomeTapTargets.value = false
+        }
+    }
+
     val showLanguageSheet = remember { mutableStateOf(false) }
     BookLanguageSheet(
         showBookLanguage = showLanguageSheet,
@@ -161,14 +174,20 @@ fun TapTargetScope.HomeScreen(navController: NavController, networkStatus: Netwo
         onSortOptionChange = { viewModel.onAction(UserAction.SortOptionClicked(it)) }
     )
 
-    HomeScreenScaffold(
-        viewModel = viewModel,
-        networkStatus = networkStatus,
-        navController = navController,
-        sysBackButtonState = sysBackButtonState,
-        showLanguageSheet = showLanguageSheet,
-        showSortSheet = showSortSheet
-    )
+    TapTargetCoordinator(
+        showTapTargets = showHomeTapTargets.value,
+        onComplete = { settingsViewModel.homeOnboardingComplete() }
+    ) {
+
+        HomeScreenScaffold(
+            viewModel = viewModel,
+            networkStatus = networkStatus,
+            navController = navController,
+            sysBackButtonState = sysBackButtonState,
+            showLanguageSheet = showLanguageSheet,
+            showSortSheet = showSortSheet
+        )
+    }
 
 
 }

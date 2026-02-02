@@ -52,11 +52,13 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.psoffritti.taptargetcompose.TapTargetCoordinator
 import com.psoffritti.taptargetcompose.TapTargetScope
 import com.psoffritti.taptargetcompose.TapTargetStyle
 import com.psoffritti.taptargetcompose.TextDefinition
@@ -66,6 +68,7 @@ import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.ui.navigation.BottomBarScreen
 import org.cis_india.wsreader.ui.navigation.NavGraph
 import org.cis_india.wsreader.ui.navigation.Screens
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.theme.poppinsFont
 
 /**
@@ -75,21 +78,42 @@ val bottomNavPadding = 70.dp
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun  TapTargetScope.MainScreen(
+fun  MainScreen(
     intent: Intent,
     startDestination: String,
     networkStatus: NetworkObserver.Status,
 ) {
+    val settingsViewModel: SettingsViewModel = hiltViewModel()
+
     val navController = rememberNavController()
+
+
+    val showNavTapTargets = remember { mutableStateOf(false) }
+
+
+    LaunchedEffect(settingsViewModel.showNavOnboardingTapTargets.value) {
+        if(settingsViewModel.showNavOnboardingTapTargets.value) {
+            showNavTapTargets.value = true
+        }else{
+            showNavTapTargets.value = false
+        }
+    }
+
     Scaffold(
         bottomBar = {
-            BottomBar(navController = navController)
+            TapTargetCoordinator(
+                showTapTargets = showNavTapTargets.value,
+                onComplete = {settingsViewModel.navOnboardingComplete()}
+            ) {
+                BottomBar(navController = navController)
+            }
         }, containerColor = MaterialTheme.colorScheme.background
     ) {
         NavGraph(
             startDestination = startDestination,
             navController = navController,
-            networkStatus = networkStatus
+            networkStatus = networkStatus,
+            settingsViewModel= settingsViewModel
         )
 
         val shouldHandleShortCut = remember { mutableStateOf(false) }
@@ -134,7 +158,7 @@ private fun  TapTargetScope.BottomBar(navController: NavHostController) {
                         CustomBottomNavigationItem(
                             screen = screen,
                             isSelected = screen.route == currentDestination?.route,
-                            index = index+3 // used in tab target order.
+                            index = index // used in tab target order.
                         ) {
                             navController.navigate(screen.route) {
                                 popUpTo(navController.graph.findStartDestination().id)

@@ -46,11 +46,18 @@ class SettingsViewModel @Inject constructor(
     val amoledTheme: LiveData<Boolean> = _amoledTheme
     val materialYou: LiveData<Boolean> = _materialYou
 
-    private val _showOnboardingTapTargets: MutableState<Boolean> = mutableStateOf(
-        value = preferenceUtil.getBoolean(PreferenceUtil.ONBOARDING_BOOL, true)
+    private val _showHomeOnboardingTapTargets: MutableState<Boolean> = mutableStateOf(
+        value = preferenceUtil.getBoolean(PreferenceUtil.HOME_ONBOARDING_BOOL, true)
     )
 
-    val showOnboardingTapTargets: State<Boolean> = _showOnboardingTapTargets
+    val showHomeOnboardingTapTargets: State<Boolean> = _showHomeOnboardingTapTargets
+
+    private val _showNavOnboardingTapTargets: MutableState<Boolean> = mutableStateOf(
+        value = preferenceUtil.getBoolean(PreferenceUtil.NAV_ONBOARDING_BOOL, false)
+    )
+
+    val showNavOnboardingTapTargets: State<Boolean> = _showNavOnboardingTapTargets
+
 
     init {
         _theme.value = ThemeMode.entries.toTypedArray()[getThemeValue()]
@@ -96,9 +103,19 @@ class SettingsViewModel @Inject constructor(
         PreferenceUtil.INTERNAL_READER_BOOL, true
     )
 
-    fun onboardingComplete() {
-        preferenceUtil.putBoolean(PreferenceUtil.ONBOARDING_BOOL, false)
-        _showOnboardingTapTargets.value = false
+    fun homeOnboardingComplete() {
+        preferenceUtil.putBoolean(PreferenceUtil.HOME_ONBOARDING_BOOL, false)
+        preferenceUtil.putBoolean(PreferenceUtil.NAV_ONBOARDING_BOOL, true)
+
+        _showHomeOnboardingTapTargets.value = false
+        _showNavOnboardingTapTargets.value = true
+
+    }
+
+
+    fun navOnboardingComplete() {
+        preferenceUtil.putBoolean(PreferenceUtil.NAV_ONBOARDING_BOOL, false)
+        _showNavOnboardingTapTargets.value = false
     }
 
     @Composable

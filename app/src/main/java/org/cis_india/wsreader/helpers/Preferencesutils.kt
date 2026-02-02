@@ -39,7 +39,8 @@ class PreferenceUtil(context: Context) {
 
         // Temporary preference keys
         const val LIBRARY_ONBOARDING_BOOL = "show_library_onboarding"
-        const val ONBOARDING_BOOL = "show_onboarding"
+        const val HOME_ONBOARDING_BOOL = "show_home_onboarding"
+        const val NAV_ONBOARDING_BOOL = "show_nav_onboarding"
 
         const val LIBRARY_SWIPE_TOOLTIP_BOOL = "show_library_tooltip"
     }

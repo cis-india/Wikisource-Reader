@@ -25,7 +25,6 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.psoffritti.taptargetcompose.TapTargetScope
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.ui.screens.categories.composables.CategoriesScreen
 import org.cis_india.wsreader.ui.screens.categories.composables.CategoryDetailScreen
@@ -35,14 +34,16 @@ import org.cis_india.wsreader.ui.screens.library.composables.LibraryScreen
 import org.cis_india.wsreader.ui.screens.settings.composables.AboutScreen
 import org.cis_india.wsreader.ui.screens.settings.composables.OSLScreen
 import org.cis_india.wsreader.ui.screens.settings.composables.SettingsScreen
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.screens.welcome.composables.WelcomeScreen
 
 
 @Composable
-fun TapTargetScope.NavGraph(
+fun NavGraph(
     startDestination: String,
     navController: NavHostController,
     networkStatus: NetworkObserver.Status,
+    settingsViewModel: SettingsViewModel
 ) {
     NavHost(
         navController = navController,
@@ -73,7 +74,7 @@ fun TapTargetScope.NavGraph(
                 } else bottomNavPopEnter()
             },
             popExitTransition = { bottomNavPopExit() }) {
-            HomeScreen(navController, networkStatus)
+            HomeScreen(navController, networkStatus, settingsViewModel)
         }
 
         /** Book Detail Screen */

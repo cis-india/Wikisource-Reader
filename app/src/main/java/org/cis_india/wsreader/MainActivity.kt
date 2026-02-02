@@ -23,11 +23,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
@@ -38,8 +35,6 @@ import org.cis_india.wsreader.ui.theme.AdjustEdgeToEdge
 import org.cis_india.wsreader.ui.theme.WikisourceReaderTheme
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.NavController
-import com.psoffritti.taptargetcompose.TapTargetCoordinator
-import kotlinx.coroutines.delay
 
 
 @AndroidEntryPoint
@@ -76,28 +71,15 @@ class MainActivity : AppCompatActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val startDestination by mainViewModel.startDestination
-                    val showTapTargets = remember { mutableStateOf(false) }
-
                     val status by networkObserver.observe().collectAsState(
                         initial = NetworkObserver.Status.Unavailable
                     )
-
-                    LaunchedEffect(key1 = settingsViewModel.showOnboardingTapTargets.value) {
-                        delay(500) // Delay to prevent flickering
-                        showTapTargets.value = settingsViewModel.showOnboardingTapTargets.value
-                    }
-
-                    TapTargetCoordinator(
-                        showTapTargets = showTapTargets.value,
-                        onComplete = {settingsViewModel.onboardingComplete()}
-                    ) {
 
                         MainScreen(
                             intent = intent,
                             startDestination = startDestination,
                             networkStatus = status
                         )
-                    }
                 }
             }
         }
