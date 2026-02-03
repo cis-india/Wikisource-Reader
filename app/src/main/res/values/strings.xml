@@ -135,6 +135,9 @@
     <string name="license_setting_desc">Open source licenses.</string>
     <string name="about_setting">App Information</string>
     <string name="about_setting_desc">Show App information &amp; useful links</string>
+    <string name="onboarding_guide_active">Show Onboarding Guide</string>
+    <string name="onboarding_guide_inactive">Hide Onboarding Guide</string>
+    <string name="toggle_guide_title">Toggle Onboarding Guide</string>
 
     <!-- Books card -->
     <string name="cover_image_desc">Book cover image</string>

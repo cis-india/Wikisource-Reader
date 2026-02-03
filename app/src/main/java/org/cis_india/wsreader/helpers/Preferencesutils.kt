@@ -42,6 +42,8 @@ class PreferenceUtil(context: Context) {
         const val HOME_ONBOARDING_BOOL = "show_home_onboarding"
         const val NAV_ONBOARDING_BOOL = "show_nav_onboarding"
 
+        const val FIRST_ONBOARDING_BOOL = "first_onboarding"
+
         const val LIBRARY_SWIPE_TOOLTIP_BOOL = "show_library_tooltip"
     }
 

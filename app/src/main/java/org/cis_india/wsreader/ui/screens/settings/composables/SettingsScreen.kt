@@ -42,6 +42,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BrightnessMedium
 import androidx.compose.material.icons.filled.Contrast
+import androidx.compose.material.icons.filled.Help
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocalPolice
@@ -204,6 +205,13 @@ private fun GeneralOptionsUI(
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
 
+    val guideSwitch = remember { mutableStateOf(viewModel.getOnboardingGuideValue()) }
+    val guideDesc = if (guideSwitch.value) {
+        stringResource(id = R.string.onboarding_guide_inactive)
+    } else {
+        stringResource(id = R.string.onboarding_guide_active)
+    }
+
     Column(
         modifier = Modifier
             .padding(horizontal = 14.dp)
@@ -240,6 +248,16 @@ private fun GeneralOptionsUI(
                 }
             }
         )
+
+        SettingItemWIthSwitch(
+            icon = Icons.Filled.Help,
+            mainText = stringResource(id = R.string.toggle_guide_title),
+            subText = guideDesc,
+            switchState = guideSwitch,
+            onCheckChange = {
+                viewModel.setOnboardingGuide(it)
+                guideSwitch.value = it
+            })
 
     }
 
