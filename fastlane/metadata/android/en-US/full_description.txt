@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Wikisource Reader App</title>
-    </head>
-    <body>
+<p><strong>Wikisource Reader</strong> is an Android app to read public domain and freely licensed works from the Wikisource project. The catalogue of books is fetched from an API. The app is built upon the Myne app with the Reader interface from Readium. Development is supported by the Centre for Internet and Society.</p>
 
-        <p><strong>Wikisource Reader</strong> is an Android app to read public domain and freely licensed works from the Wikisource project. Catalogue of books is fetched from an API. The app is built upon the Myne app with the Reader interface from Readium. Development is supported by the Centre for Internet and Society.</p>
+<h3>Features</h3>
+<p>The following features are currently functional:</p>
+<ul>
+    <li><strong>Explore works:</strong> Browse through a list of works which are completely proofread or validated.</li>
+    <li><strong>Filtering works:</strong> Filter based on the language or genre of your choice.</li>
+    <li><strong>Search:</strong> Search for books by title or author.</li>
+    <li><strong>Downloading books:</strong> Download books to your local device for offline access.</li>
+    <li><strong>Share links:</strong> Share links to the Wikisource page of each book.</li>
+    <li><strong>Manage local library:</strong> Read, delete, and track completion percentage of books in your local library.</li>
+    <li><strong>Customization options:</strong> Change font size, look up words, and access a dictionary.</li>
+    <li><strong>Dark and Light mode:</strong> Switch between dark and light themes for comfortable reading.</li>
+    <li><strong>Localization support:</strong> Use the app in multiple languages.</li>
+</ul>
 
-        <h2>Features</h2>
-        <p>The following features are currently functional:</p>
-        <ul>
-            <li><strong>Explore works:</strong> Browse through a list of works which are completely proofread or validated.</li>
-            <li><strong>Filtering works:</strong> Filter based on the language or genre of your choice.</li>
-            <li><strong>Search:</strong> Search for books by title or author.</li>
-            <li><strong>Downloading books:</strong> Download books to your local device for offline access.</li>
-            <li><strong>Share links:</strong> Share links to the Wikisource page of each book.</li>
-            <li><strong>Manage local library:</strong> Read, delete, and track completion percentage of books in your local library.</li>
-            <li><strong>Customization options:</strong> Change font size, look up words, and access a dictionary.</li>
-            <li><strong>Dark and Light mode:</strong> Switch between dark and light themes for comfortable reading.</li>
-            <li><strong>Localization support:</strong> Use the app in multiple languages.</li>
-        </ul>
-
-        <h2>External Links</h2>
-        <ul>
-            <li><strong>Website:</strong> <a href="https://cis-india.github.io/wikisource-reader-app">https://cis-india.github.io/wikisource-reader-app</a></li>
-            <li><strong>Meta Wiki page:</strong> <a href="https://meta.wikimedia.org/wiki/Wikisource_reader_app">https://meta.wikimedia.org/wiki/Wikisource_reader_app</a></li>
-            <li><strong>Phabricator issue tracker:</strong> <a href="https://phabricator.wikimedia.org/project/board/8233/query/all/">https://phabricator.wikimedia.org/project/board/8233/query/all/</a></li>
-        </ul>
-
-    </body>
-</html>
+<h3>External Links</h3>
+<ul>
+    <li><strong>Website:</strong> <a href="https://cis-india.github.io/wikisource-reader-app">https://cis-india.github.io/wikisource-reader-app</a></li>
+    <li><strong>Meta Wiki page:</strong> <a href="https://meta.wikimedia.org/wiki/Wikisource_reader_app">https://meta.wikimedia.org/wiki/Wikisource_reader_app</a></li>
+    <li><strong>Phabricator issue tracker:</strong> <a href="https://phabricator.wikimedia.org/project/board/8233/query/all/">https://phabricator.wikimedia.org/project/board/8233/query/all/</a></li>
+</ul>
