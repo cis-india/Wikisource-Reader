@@ -192,13 +192,13 @@ private fun TapTargetScope.CustomBottomNavigationItem(
             modifier = Modifier.tapTarget(
                 precedence = index,
                 title = TextDefinition(
-                    text = stringResource(id = R.string.tap_target_screen_title, stringResource(id = screen.title)),
+                    text = stringResource(screen.tap_target_coodinator_title),
                     textStyle = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSecondaryContainer
                 ),
                 description = TextDefinition(
-                    text = stringResource(id = R.string.tap_target_screen_description, stringResource(id = screen.title)),
+                    text = stringResource(screen.tap_target_coodinator_description),
                     textStyle = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSecondaryContainer
                 ),
