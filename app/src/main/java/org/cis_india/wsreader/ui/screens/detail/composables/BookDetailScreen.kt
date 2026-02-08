@@ -83,7 +83,9 @@ import org.cis_india.wsreader.MainActivity
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.data.model.Book
 import org.cis_india.wsreader.helpers.Utils
+import org.cis_india.wsreader.helpers.book.BookLanguage
 import org.cis_india.wsreader.helpers.book.BookUtils
+import org.cis_india.wsreader.helpers.book.LanguageStringItem
 import org.cis_india.wsreader.helpers.getActivity
 import org.cis_india.wsreader.helpers.weakHapticFeedback
 import org.cis_india.wsreader.reader.ReaderActivityContract
@@ -182,6 +184,7 @@ private fun BookDetailContents(
     navController: NavController,
     snackBarHostState: SnackbarHostState
 ) {
+    val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
     val view = LocalView.current
     val context = LocalContext.current
     val settingsVM = (context.getActivity() as MainActivity).settingsViewModel
@@ -193,6 +196,25 @@ private fun BookDetailContents(
 
     val book = remember { state.bookSet.books.first() }
     val bookDetailId = book.id
+    val systemLanguage = Locale.getDefault().language
+
+    val localizedLanguageList: List<LanguageStringItem> = book.languages.map { isoCode ->
+        val bookLanguage = languageMap[isoCode]
+        val stringFromApp = if (bookLanguage != null) {
+            val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+            val appLocalisedString = stringResource(id = bookLanguage.name)
+
+            if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+            }else{
+                appLocalisedString
+            }
+        } else {
+            Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+        }
+
+        LanguageStringItem(code = isoCode, label = stringFromApp)
+    }
 
     // Check if the current book is in the library
     val foundBookInLibrary by remember(libraryItems) {
@@ -329,7 +351,7 @@ private fun BookDetailContents(
         */
 
         MiddleBar(
-            bookLang = BookUtils.getLanguagesAsString(book.languages),
+            bookLang = BookUtils.getLanguagesAsString(localizedLanguageList),
             pageCount = pageCount,
             viewCount = Utils.prettyCount(book.viewCount),
             progressValue = progressState,
