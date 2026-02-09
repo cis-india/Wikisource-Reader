@@ -49,18 +49,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.psoffritti.taptargetcompose.TapTargetCoordinator
+import com.psoffritti.taptargetcompose.TapTargetScope
+import com.psoffritti.taptargetcompose.TapTargetStyle
+import com.psoffritti.taptargetcompose.TextDefinition
 import org.cis_india.wsreader.MainViewModel
+import org.cis_india.wsreader.R
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.ui.navigation.BottomBarScreen
 import org.cis_india.wsreader.ui.navigation.NavGraph
 import org.cis_india.wsreader.ui.navigation.Screens
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.theme.poppinsFont
 
 /**
@@ -70,21 +78,42 @@ val bottomNavPadding = 70.dp
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainScreen(
+fun  MainScreen(
     intent: Intent,
     startDestination: String,
     networkStatus: NetworkObserver.Status,
 ) {
+    val settingsViewModel: SettingsViewModel = hiltViewModel()
+
     val navController = rememberNavController()
+
+
+    val showNavTapTargets = remember { mutableStateOf(false) }
+
+
+    LaunchedEffect(settingsViewModel.showNavOnboardingTapTargets.value) {
+        if(settingsViewModel.showNavOnboardingTapTargets.value) {
+            showNavTapTargets.value = true
+        }else{
+            showNavTapTargets.value = false
+        }
+    }
+
     Scaffold(
         bottomBar = {
-            BottomBar(navController = navController)
+            TapTargetCoordinator(
+                showTapTargets = showNavTapTargets.value,
+                onComplete = {settingsViewModel.navOnboardingComplete()}
+            ) {
+                BottomBar(navController = navController)
+            }
         }, containerColor = MaterialTheme.colorScheme.background
     ) {
         NavGraph(
             startDestination = startDestination,
             navController = navController,
-            networkStatus = networkStatus
+            networkStatus = networkStatus,
+            settingsViewModel= settingsViewModel
         )
 
         val shouldHandleShortCut = remember { mutableStateOf(false) }
@@ -98,7 +127,7 @@ fun MainScreen(
 }
 
 @Composable
-private fun BottomBar(navController: NavHostController) {
+private fun  TapTargetScope.BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.Home,
         BottomBarScreen.Categories,
@@ -115,33 +144,37 @@ private fun BottomBar(navController: NavHostController) {
         enter = slideInVertically(initialOffsetY = { it }),
         exit = slideOutVertically(targetOffsetY = { it }),
         content = {
-            Row(
-                modifier = Modifier
-                    .background(MaterialTheme.colorScheme.surfaceColorAtElevation(3.dp))
-                    .padding(12.dp)
-                    .fillMaxWidth()
-                    .windowInsetsPadding(WindowInsets.navigationBars),
-                horizontalArrangement = Arrangement.SpaceAround,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                screens.forEach { screen ->
-                    CustomBottomNavigationItem(
-                        screen = screen, isSelected = screen.route == currentDestination?.route
-                    ) {
-                        navController.navigate(screen.route) {
-                            popUpTo(navController.graph.findStartDestination().id)
-                            launchSingleTop = true
+
+                Row(
+                    modifier = Modifier
+                        .background(MaterialTheme.colorScheme.surfaceColorAtElevation(3.dp))
+                        .padding(12.dp)
+                        .fillMaxWidth()
+                        .windowInsetsPadding(WindowInsets.navigationBars),
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    screens.forEachIndexed { index, screen ->
+                        CustomBottomNavigationItem(
+                            screen = screen,
+                            isSelected = screen.route == currentDestination?.route,
+                            index = index // used in tab target order.
+                        ) {
+                            navController.navigate(screen.route) {
+                                popUpTo(navController.graph.findStartDestination().id)
+                                launchSingleTop = true
+                            }
                         }
                     }
                 }
-            }
         })
 }
 
 @Composable
-private fun CustomBottomNavigationItem(
+private fun TapTargetScope.CustomBottomNavigationItem(
     screen: BottomBarScreen,
     isSelected: Boolean,
+    index: Int,
     onClick: () -> Unit,
 ) {
     val background =
@@ -156,7 +189,25 @@ private fun CustomBottomNavigationItem(
             .clickable(onClick = onClick)
     ) {
         Row(
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier.tapTarget(
+                precedence = index,
+                title = TextDefinition(
+                    text = stringResource(screen.tap_target_coodinator_title),
+                    textStyle = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                ),
+                description = TextDefinition(
+                    text = stringResource(screen.tap_target_coodinator_description),
+                    textStyle = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                ),
+                tapTargetStyle = TapTargetStyle(
+                    backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                    tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                    backgroundAlpha = 1f,
+                ),
+            ).padding(12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(4.dp)
         ) {
@@ -179,6 +230,7 @@ private fun CustomBottomNavigationItem(
         }
     }
 }
+
 
 @Composable
 private fun HandleShortcutIntent(intent: Intent, navController: NavController) {

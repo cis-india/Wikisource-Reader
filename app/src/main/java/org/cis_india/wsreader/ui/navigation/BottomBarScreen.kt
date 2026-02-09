@@ -21,29 +21,39 @@ import org.cis_india.wsreader.R
 sealed class BottomBarScreen(
     val route: String,
     val title: Int,
-    val icon: Int
+    val icon: Int,
+    val tap_target_coodinator_title: Int,
+    val tap_target_coodinator_description: Int,
 ) {
     data object Home : BottomBarScreen(
         route = "home",
         title = R.string.navigation_home,
-        icon = R.drawable.ic_nav_home
+        icon = R.drawable.ic_nav_home,
+        tap_target_coodinator_title = R.string.home_tap_target_coodinator_title,
+        tap_target_coodinator_description =  R.string.home_tap_target_coodinator_description
     )
 
     data object Categories : BottomBarScreen(
         route = "categories",
         title = R.string.navigation_categories,
-        icon = R.drawable.ic_nav_categories
+        icon = R.drawable.ic_nav_categories,
+        tap_target_coodinator_title = R.string.category_tap_target_coodinator_title,
+        tap_target_coodinator_description =  R.string.category_tap_target_coodinator_description
     )
 
     data object Library : BottomBarScreen(
         route = "library",
         title = R.string.navigation_library,
-        icon = R.drawable.ic_nav_library
+        icon = R.drawable.ic_nav_library,
+        tap_target_coodinator_title = R.string.library_tap_target_coodinator_title,
+        tap_target_coodinator_description =  R.string.library_tap_target_coodinator_description
     )
 
     data object Settings : BottomBarScreen(
         route = "settings",
         title = R.string.navigation_settings,
-        icon = R.drawable.ic_nav_settings
+        icon = R.drawable.ic_nav_settings,
+        tap_target_coodinator_title = R.string.settings_tap_target_coodinator_title,
+        tap_target_coodinator_description =  R.string.settings_tap_target_coodinator_description
     )
 }
