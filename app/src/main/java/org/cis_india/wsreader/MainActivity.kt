@@ -75,11 +75,11 @@ class MainActivity : AppCompatActivity() {
                         initial = NetworkObserver.Status.Unavailable
                     )
 
-                        MainScreen(
-                            intent = intent,
-                            startDestination = startDestination,
-                            networkStatus = status
-                        )
+                    MainScreen(
+                        intent = intent,
+                        startDestination = startDestination,
+                        networkStatus = status
+                    )
                 }
             }
         }
