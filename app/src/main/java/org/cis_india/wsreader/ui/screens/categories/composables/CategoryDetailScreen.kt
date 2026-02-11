@@ -61,6 +61,8 @@ import org.cis_india.wsreader.ui.navigation.Screens
 import org.cis_india.wsreader.ui.screens.categories.viewmodels.CategoryViewModel
 import java.util.Locale
 import androidx.compose.ui.res.stringResource
+import org.cis_india.wsreader.helpers.book.BookLanguage
+import org.cis_india.wsreader.helpers.book.LanguageStringItem
 
 
 @Composable
@@ -69,6 +71,7 @@ fun CategoryDetailScreen(
 ) {
     val viewModel: CategoryViewModel = hiltViewModel()
     val showLanguageSheet = remember { mutableStateOf(false) }
+    val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
 
     BookLanguageSheet(
         showBookLanguage = showLanguageSheet,
@@ -141,6 +144,25 @@ fun CategoryDetailScreen(
                     ) {
                         items(state.items.size) { i ->
                             val item = state.items[i]
+                            val systemLanguage = Locale.getDefault().language
+
+                            val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
+                                val bookLanguage = languageMap[isoCode]
+                                val stringFromApp = if (bookLanguage != null) {
+                                    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+                                    val appLocalisedString = stringResource(id = bookLanguage.name)
+
+                                    if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                                        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+                                    }else{
+                                        appLocalisedString
+                                    }
+                                } else {
+                                    Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+                                }
+
+                                LanguageStringItem(code = isoCode, label = stringFromApp)
+                            }
                             if (networkStatus == NetworkObserver.Status.Available && i >= state.items.size - 1 && !state.endReached && !state.isLoading) {
                                 viewModel.loadNextItems()
                             }
@@ -162,7 +184,7 @@ fun CategoryDetailScreen(
                                 BookItemCard(
                                     title = item.titleNativeLanguage?: item.title,
                                     author = authors,
-                                    language = BookUtils.getLanguagesAsString(item.languages),
+                                    language = BookUtils.getLanguagesAsString(localizedLanguageList),
                                     /*subjects = BookUtils.getSubjectsAsString(item.subjects, 3),*/
                                     coverImageUrl = item.thumbnailUrl
                                 ) {
