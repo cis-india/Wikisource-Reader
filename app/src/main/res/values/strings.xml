@@ -337,5 +337,5 @@
     <string name="tutorial_menu_toggle_desc">Tap at the center of the screen to open or close menu</string>
 
     <string name="tutorial_select_text_title">Select Text</string>
-    <string name="tutorial_select_text_desc">Long-press on any word to see the selection menu and tools!</string>
+    <string name="tutorial_select_text_desc">Long-press on any word to see the selection menu and tools i.e underline, highlight and add notes!</string>
 </resources>
