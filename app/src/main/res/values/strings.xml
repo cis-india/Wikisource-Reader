@@ -314,4 +314,28 @@
     <string name="link_sourcecode_repo">View GitHub Repo</string>
     <string name="link_sourcecode">GitHub</string>
     <string name="woops">Oops!</string>
+
+
+    // Reader tutorial guides
+
+    <string name="tutorial_search_title">Search</string>
+    <string name="tutorial_search_desc">Search through the book</string>
+
+    <string name="tutorial_tts_title">TTS</string>
+    <string name="tutorial_tts_desc">Text to speech, This helps read aloud the books</string>
+
+    <string name="tutorial_bookmark_title">Bookmark</string>
+    <string name="tutorial_bookmark_desc">Click to bookmark current position of the book for easier retrieval</string>
+
+    <string name="tutorial_settings_title">Settings</string>
+    <string name="tutorial_settings_desc">Configure preferences i.e language, fonts, scrolling and vertical text</string>
+
+    <string name="tutorial_toc_title">Book Navigation</string>
+    <string name="tutorial_toc_desc">This contains chapters and saved bookmarks</string>\
+
+    <string name="tutorial_menu_toggle_title">Open or Close Menu</string>
+    <string name="tutorial_menu_toggle_desc">Tap at the center of the screen to open or close menu</string>
+
+    <string name="tutorial_select_text_title">Select Text</string>
+    <string name="tutorial_select_text_desc">Long-press on any word to see the selection menu and tools i.e underline, highlight and add notes!</string>
 </resources>

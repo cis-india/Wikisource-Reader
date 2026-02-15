@@ -44,6 +44,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import android.widget.FrameLayout
+import com.getkeepsafe.taptargetview.TapTarget
+import com.getkeepsafe.taptargetview.TapTargetSequence
+import com.getkeepsafe.taptargetview.TapTargetView
+import org.cis_india.wsreader.reader.preferences.MainPreferencesBottomSheetDialogFragment
 
 @OptIn(ExperimentalReadiumApi::class)
 class EpubReaderFragment : VisualReaderFragment() {
@@ -77,6 +81,7 @@ class EpubReaderFragment : VisualReaderFragment() {
                 listener = model,
                 configuration = EpubNavigatorFragment.Configuration {
                     // To customize the text selection menu.
+                    // text selection
                     selectionActionModeCallback = customSelectionActionModeCallback
 
                     // App assets which will be accessible from the EPUB resources.
@@ -254,6 +259,12 @@ class EpubReaderFragment : VisualReaderFragment() {
                         menuSearchView = actionView as SearchView
                     }
 
+                    if (!isTutorialStarted.value) {
+                        view.post {
+                            startMenuTutorial()
+                        }
+                    }
+
                     connectSearch()
                     if (!isSearchViewIconified) menuSearch.expandActionView()
                 }
@@ -272,6 +283,118 @@ class EpubReaderFragment : VisualReaderFragment() {
                 }
             },
             viewLifecycleOwner
+        )
+    }
+
+    // start menu tap target
+    // show onboarding guide for reader menu
+    private fun startMenuTutorial() {
+        val activity = requireActivity()
+        val targets = mutableListOf<TapTarget>()
+
+        activity.findViewById<View>(R.id.search)?.let {
+            targets.add(TapTarget.forView(it, getString(R.string.tutorial_search_title), getString(R.string.tutorial_search_desc)))
+        }
+
+        activity.findViewById<View>(R.id.tts)?.let {
+            targets.add(TapTarget.forView(it, getString(R.string.tutorial_tts_title), getString(R.string.tutorial_tts_desc)))
+        }
+
+        activity.findViewById<View>(R.id.bookmark)?.let {
+            targets.add(TapTarget.forView(it, getString(R.string.tutorial_bookmark_title), getString(R.string.tutorial_bookmark_desc)))
+        }
+
+        activity.findViewById<View>(R.id.settings)?.let {
+            targets.add(TapTarget.forView(it, getString(R.string.tutorial_settings_title), getString(R.string.tutorial_settings_desc)))
+        }
+
+        activity.findViewById<View>(R.id.toc)?.let {
+            targets.add(TapTarget.forView(it, getString(R.string.tutorial_toc_title), getString(R.string.tutorial_toc_desc)))
+        }
+
+        if (targets.isNotEmpty()) {
+            TapTargetSequence(activity)
+                .targets(targets)
+                .listener(object : TapTargetSequence.Listener {
+                    override fun onSequenceFinish() {
+                        onMenuTutorialComplete()
+                    }
+
+                    override fun onSequenceStep(lastTarget: TapTarget?, targetClicked: Boolean) {
+                        // Optional: Runs after every single step
+                        if (targetClicked && lastTarget?.id() == R.id.settings) {
+                            // open settings form more guides
+//                            openSettings()
+                        }
+                    }
+
+                    override fun onSequenceCanceled(lastTarget: TapTarget?) {
+                        onReaderMenuboardingComplete()
+                    }
+                })
+                .start()
+        }
+    }
+
+
+    // show tap target for navigation i.e
+    // navigate next page, navigate previous page and toggle the menu.
+    private fun startTapTutorial() {
+        val activity = requireActivity()
+        val targets = mutableListOf<TapTarget>()
+
+        activity.findViewById<View>(R.id.touch_center)?.let {
+            targets.add(TapTarget.forView(it, getString(R.string.tutorial_menu_toggle_title), getString(R.string.tutorial_menu_toggle_desc)))
+        }
+
+        if (targets.isNotEmpty()) {
+            TapTargetSequence(activity)
+                .targets(targets)
+                .listener(object : TapTargetSequence.Listener {
+                    override fun onSequenceFinish() {
+                        onTapTutorialComplete()
+                    }
+
+                    override fun onSequenceStep(lastTarget: TapTarget?, targetClicked: Boolean) {
+                        // Optional: Runs after every single step
+                    }
+
+                    override fun onSequenceCanceled(lastTarget: TapTarget?) {
+                        onReaderMenuboardingComplete()
+                    }
+                })
+                .start()
+        }
+    }
+
+//    private fun openSettings() {
+//        MainPreferencesBottomSheetDialogFragment()
+//            .show(childFragmentManager, "Settings")
+//    }
+
+    private fun onMenuTutorialComplete() {
+        updateSystemUiVisibility()
+        startTapTutorial()
+    }
+
+    private fun onTapTutorialComplete() {
+        onReaderMenuboardingComplete()
+        startSelectionPromptTutorial()
+    }
+
+    private fun startSelectionPromptTutorial() {
+        val activity = requireActivity()
+        val centerView = activity.findViewById<View>(R.id.touch_center) ?: view
+
+        TapTargetView.showFor(activity,
+            TapTarget.forView(centerView, getString(R.string.tutorial_select_text_title), getString(R.string.tutorial_select_text_desc))
+                .cancelable(true)
+                .transparentTarget(true),
+            object : TapTargetView.Listener() {
+                override fun onTargetClick(view: TapTargetView?) {
+                    super.onTargetClick(view)
+                }
+            }
         )
     }
 

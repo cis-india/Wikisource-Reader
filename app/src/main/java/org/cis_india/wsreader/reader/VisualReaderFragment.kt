@@ -42,6 +42,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -78,6 +80,7 @@ import org.readium.r2.shared.util.Language
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.data.model.Highlight
 import org.cis_india.wsreader.databinding.FragmentReaderBinding
+import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.cis_india.wsreader.reader.tts.TtsControls
 import org.cis_india.wsreader.reader.tts.TtsPreferencesBottomSheetDialogFragment
 import org.cis_india.wsreader.reader.tts.TtsViewModel
@@ -101,6 +104,19 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
 
     protected var binding: FragmentReaderBinding by viewLifecycle()
 
+
+
+    private val prefs by lazy { PreferenceUtil(requireContext()) }
+
+
+    private val _showMenuOnboardingTapTargets: MutableState<Boolean> by lazy {
+        mutableStateOf(
+            value = prefs.getBoolean(PreferenceUtil.READER_ONBOARDING_BOOL, false)
+        )
+    }
+
+    val isTutorialStarted: State<Boolean> get() = _showMenuOnboardingTapTargets
+
     private lateinit var navigatorFragment: Fragment
 
     override fun onCreateView(
@@ -116,6 +132,11 @@ abstract class VisualReaderFragment : BaseReaderFragment() {
      * When true, the user won't be able to interact with the navigator.
      */
     private var disableTouches by mutableStateOf(false)
+
+    fun onReaderMenuboardingComplete() {
+        prefs.putBoolean(PreferenceUtil.READER_ONBOARDING_BOOL, true)
+        _showMenuOnboardingTapTargets.value = true
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

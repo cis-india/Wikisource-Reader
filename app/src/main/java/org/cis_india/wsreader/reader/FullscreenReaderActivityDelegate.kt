@@ -51,7 +51,9 @@ class FullscreenReaderActivityDelegate(
         if (readerFragment.isHidden) {
             activity.showSystemUi()
         } else {
-            readerFragment.updateSystemUiVisibility()
+            if(readerFragment.isTutorialStarted.value){
+                readerFragment.updateSystemUiVisibility()
+            }
         }
 
         // Seems to be required to adjust padding when transitioning from the outlines to the screen reader

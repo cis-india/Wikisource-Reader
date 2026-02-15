@@ -216,5 +216,7 @@ dependencies {
     annotationProcessor 'androidx.room:room-compiler:2.6.1' // For Java projects, replace with the correct version
     ksp 'androidx.room:room-compiler:2.6.1'
 
+    implementation("com.getkeepsafe.taptargetview:taptargetview:1.13.3")
+
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:2.1.21"))
 }
