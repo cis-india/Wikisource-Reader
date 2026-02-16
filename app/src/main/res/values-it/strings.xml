@@ -7,7 +7,7 @@
   <string name="confirm">Conferma</string>
   <string name="cancel">Annulla</string>
   <string name="ok">OK</string>
-  <string name="got_it">Got it</string>
+  <string name="got_it">Capito</string>
   <string name="network_error">Ops! Connessione al server fallita.</string>
   <string name="network_error_retry">Riprova</string>
   <string name="error">Ops! Qualcosa è andato storto.</string>
