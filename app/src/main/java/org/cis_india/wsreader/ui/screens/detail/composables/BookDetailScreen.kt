@@ -258,8 +258,8 @@ private fun BookDetailContents(
         }
 
 
-        val genres = book.genre.filter { it.isNotBlank() }
-        val subjects = book.subjects.filter { it.isNotBlank() }
+        val genres = book.genre.map { it.name }.filter { it.isNotBlank() }
+        val subjects = book.subjects.map { it.name }.filter { it.isNotBlank() }
 
         // Checks if there are values of publisher or places of publication
         val isPublishersBlank = book.publishers.all { it.name?.isBlank() ?: true }
