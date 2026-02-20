@@ -258,8 +258,15 @@ private fun BookDetailContents(
         }
 
 
-        val genres = book.genre.map { it.name }.filter { it.isNotBlank() }
-        val subjects = book.subjects.map { it.name }.filter { it.isNotBlank() }
+        var genres by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.genre, firstLanguage) {
+            genres = BookUtils.getGenres(book.genre, firstLanguage)
+        }
+
+        var subjects by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.subjects, firstLanguage) {
+            subjects = BookUtils.getSubjects(book.subjects, firstLanguage)
+        }
 
         // Checks if there are values of publisher or places of publication
         val isPublishersBlank = book.publishers.all { it.name?.isBlank() ?: true }

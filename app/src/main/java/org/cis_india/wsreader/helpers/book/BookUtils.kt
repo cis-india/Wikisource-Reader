@@ -24,6 +24,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.cis_india.wsreader.api.models.PlacesOfPublication
 import org.cis_india.wsreader.api.models.Publisher
+import org.cis_india.wsreader.api.models.Genre
+import org.cis_india.wsreader.api.models.Subject
 import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
@@ -156,6 +158,40 @@ object BookUtils {
                 async {
                     val name = fetchLabelFromWikidata(translator.pwikidataqid, language)
                     fixAuthorName(name ?: translator.name)
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
+    suspend fun getGenres(genres: List<Genre>, language: String): List<String> {
+        if (genres.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            genres.map { genre ->
+                async {
+                    if (genre.genrewikidataqid != "N/A" && genre.genrewikidataqid.isNotBlank()) {
+                        val name = fetchLabelFromWikidata(genre.genrewikidataqid, language)
+                        name ?: genre.name
+                    } else {
+                        genre.name
+                    }
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
+    suspend fun getSubjects(subjects: List<Subject>, language: String): List<String> {
+        if (subjects.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            subjects.map { subject ->
+                async {
+                    if (subject.subjectwikidataqid != "N/A" && subject.subjectwikidataqid.isNotBlank()) {
+                        val name = fetchLabelFromWikidata(subject.subjectwikidataqid, language)
+                        name ?: subject.name
+                    } else {
+                        subject.name
+                    }
                 }
             }.awaitAll()
         }.filter { it.isNotBlank() }
