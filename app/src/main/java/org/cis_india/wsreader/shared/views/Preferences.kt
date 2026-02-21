@@ -71,6 +71,29 @@ fun <T> ButtonGroupItem(
 }
 
 /**
+ * Component for a raw state, displayed as a group of mutually exclusive buttons.
+ */
+@Composable
+fun <T> ButtonGroupItem(
+    title: String,
+    options: List<T>,
+    activeOption: T,
+    formatValue: (T) -> String,
+    onSelectedOptionChanged: (T) -> Unit,
+) {
+    ButtonGroupItem(
+        title = title,
+        options = options,
+        isActive = true,
+        activeOption = activeOption,
+        selectedOption = activeOption,
+        formatValue = formatValue,
+        onClear = null,
+        onSelectedOptionChanged = onSelectedOptionChanged
+    )
+}
+
+/**
  * Group of mutually exclusive buttons.
  */
 @Composable

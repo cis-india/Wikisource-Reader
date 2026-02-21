@@ -13,7 +13,11 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -23,6 +27,7 @@ import org.readium.adapter.pdfium.navigator.PdfiumPreferencesEditor
 import org.readium.navigator.media.tts.android.AndroidTtsEngine
 import org.readium.r2.navigator.epub.EpubPreferencesEditor
 import org.readium.r2.navigator.preferences.*
+import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.readium.r2.navigator.preferences.TextAlign as ReadiumTextAlign
 import org.readium.r2.shared.ExperimentalReadiumApi
 import org.readium.r2.shared.publication.epub.EpubLayout
@@ -378,6 +383,28 @@ private fun ReflowableUserPreferences(
                 preference = scroll,
                 commit = commit
             )
+
+            val isScrollEnabled = scroll.value ?: scroll.effectiveValue
+            if (isScrollEnabled) {
+                val context = LocalContext.current
+                val prefUtil = remember { PreferenceUtil(context) }
+                val prefKey = "chapter_scroll_pref"
+                var chapterNavOptions by remember {
+                    mutableStateOf(prefUtil.getString(prefKey, "Left/Right") ?: "Left/Right")
+                }
+
+                ButtonGroupItem(
+                    title = "Chapters",
+                    options = listOf("Up/Down", "Left/Right"),
+                    activeOption = chapterNavOptions,
+                    formatValue = { it },
+                    onSelectedOptionChanged = { newValue ->
+                        chapterNavOptions = newValue
+                        prefUtil.putString(prefKey, newValue)
+                        commit()
+                    }
+                )
+            }
         }
 
         if (columnCount != null) {

@@ -44,6 +44,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import android.widget.FrameLayout
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filterNotNull
+import org.cis_india.wsreader.helpers.PreferenceUtil
+import org.readium.r2.navigator.input.InputListener
+import org.readium.r2.navigator.input.DragEvent
+import org.readium.r2.shared.util.Url
 
 @OptIn(ExperimentalReadiumApi::class)
 class EpubReaderFragment : VisualReaderFragment() {
@@ -156,10 +162,126 @@ class EpubReaderFragment : VisualReaderFragment() {
     // to help navigate to these positions
     private var allBookPositions: List<Locator> = emptyList()
 
+    fun getNextChapterPosition(
+        positionCache: Map<String, PositionInfo>,
+        locator: Locator?
+    ): ChapterNavigation {
+
+        val currentHref = locator?.href ?: return ChapterNavigation()
+        val currentProgression: Double = locator.locations.totalProgression ?: 0.0
+        val chapterHrefsInOrder = positionCache.keys.toList()
+        val currentIndex = chapterHrefsInOrder.indexOf(currentHref.toString())
+        val previousChapterHref: String?
+        val nextChapterHref: String?
+        val currentChapterHref: String?
+
+        if (currentIndex != -1) {
+            previousChapterHref = chapterHrefsInOrder.getOrNull(currentIndex - 1)
+            nextChapterHref = chapterHrefsInOrder.getOrNull(currentIndex + 1)
+            currentChapterHref = chapterHrefsInOrder.getOrNull(currentIndex)
+
+        } else {
+            nextChapterHref = chapterHrefsInOrder
+                .firstOrNull { href ->
+                    positionCache[href]?.StartChapterProgression ?: Double.MAX_VALUE > currentProgression
+                }
+
+            val chapterBelongingToIndex = chapterHrefsInOrder.indexOf(nextChapterHref) - 1
+
+            previousChapterHref = chapterHrefsInOrder.getOrNull(chapterBelongingToIndex - 1)
+            currentChapterHref = chapterHrefsInOrder.getOrNull(chapterBelongingToIndex)
+        }
+
+        val previousChapterData = previousChapterHref?.let { href ->
+            positionCache[href]?.let { info ->
+                PositionInfo(
+                    info.position,
+                    info.StartChapterProgression,
+                    info.EndChapterProgression,
+                    info.StartChapterLink,
+                    info.EndChapterLink
+                )
+            }
+        }
+
+        val nextChapterData = nextChapterHref?.let { href ->
+            positionCache[href]?.let { info ->
+                PositionInfo(
+                    info.position,
+                    info.StartChapterProgression,
+                    info.EndChapterProgression,
+                    info.StartChapterLink,
+                    info.EndChapterLink
+                )
+            }
+        }
+
+        val currentChapterData = currentChapterHref?.let { href ->
+            positionCache[href]?.let { info ->
+                PositionInfo(
+                    info.position,
+                    info.StartChapterProgression,
+                    info.EndChapterProgression,
+                    info.StartChapterLink,
+                    info.EndChapterLink
+                )
+            }
+        }
+
+        return ChapterNavigation(
+            previousChapter = previousChapterData,
+            nextChapter = nextChapterData,
+            currentChapterHref = currentChapterData
+        )
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val progressBar = view.findViewById<SeekBar>(R.id.readingProgressBar)
+        val positionCache: MutableMap<String, PositionInfo> = mutableMapOf()
+
+        lifecycleScope.launch {
+            val allBookPositions: List<Locator> = publication.positions()
+            val chapterBoundaryLocators = mutableMapOf<Url, Pair<Locator, Locator>>()
+
+            val tocHrefs = publication.manifest.tableOfContents
+                .map { it.url().removeFragment().removeQuery().normalize() }
+                .toSet()
+
+            for (locator in allBookPositions) {
+                val chaptersHref = locator.href.removeFragment().removeQuery().normalize()
+
+                if (tocHrefs.contains(chaptersHref)) {
+                    if (!chapterBoundaryLocators.containsKey(chaptersHref)) {
+                        chapterBoundaryLocators[chaptersHref] = Pair(locator, locator)
+                    } else {
+                        val currentPair = chapterBoundaryLocators.getValue(chaptersHref)
+                        chapterBoundaryLocators[chaptersHref] = currentPair.copy(second = locator)
+                    }
+                }
+            }
+
+            chapterBoundaryLocators.forEach { (_, pair) ->
+                val startLocator = pair.first
+                val endLocator = pair.second
+
+                val startHrefString = startLocator.href.toString()
+                val startPosition = startLocator.locations.position
+                val startTotalProgression = startLocator.locations.totalProgression
+
+                if (startTotalProgression != null) {
+                    val endOfChapter = endLocator.locations.totalProgression ?: 1.0
+                    positionCache[startHrefString] = PositionInfo(
+                        startPosition,
+                        startTotalProgression,
+                        endOfChapter,
+                        startLocator,
+                        endLocator
+                    )
+                }
+            }
+        }
 
         val marginInPx = (12 * resources.displayMetrics.density).toInt()
 
@@ -234,8 +356,46 @@ class EpubReaderFragment : VisualReaderFragment() {
         }
 
         @Suppress("Unchecked_cast")
-        (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)
-            .bind(navigator, viewLifecycleOwner)
+        val userPreferencesViewModel = (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)
+        
+        userPreferencesViewModel.bind(navigator, viewLifecycleOwner)
+
+        val prefUtil = PreferenceUtil(requireContext())
+        val continuousChaptersFlow = kotlinx.coroutines.flow.MutableStateFlow(prefUtil.getString("chapter_scroll_pref", "Left/Right") == "Up/Down")
+        
+        val prefs = requireContext().getSharedPreferences("wikisource_settings", Context.MODE_PRIVATE)
+        val listener = android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+            if (key == "chapter_scroll_pref") {
+                continuousChaptersFlow.value = prefUtil.getString("chapter_scroll_pref", "Left/Right") == "Up/Down"
+            }
+        }
+        prefs.registerOnSharedPreferenceChangeListener(listener)
+        
+        viewLifecycleOwner.lifecycle.addObserver(object : androidx.lifecycle.DefaultLifecycleObserver {
+            override fun onDestroy(owner: androidx.lifecycle.LifecycleOwner) {
+                prefs.unregisterOnSharedPreferenceChangeListener(listener)
+            }
+        })
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                val scrollInputListener = createChapterInputListener(positionCache)
+
+                continuousChaptersFlow
+                    .combine(userPreferencesViewModel.editor.filterNotNull()) { chapterScrolling, editor ->
+                        Pair(chapterScrolling, editor)
+                    }
+                    .collect { (chapterScrolling, editor) ->
+                        val scrollSettings = editor.preferences.scroll ?: false
+
+                        if (scrollSettings && chapterScrolling) {
+                            navigator.addInputListener(scrollInputListener)
+                        } else {
+                            navigator.removeInputListener(scrollInputListener)
+                        }
+                    }
+            }
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -273,6 +433,71 @@ class EpubReaderFragment : VisualReaderFragment() {
             },
             viewLifecycleOwner
         )
+    }
+
+    private fun getActiveWebView(): android.webkit.WebView? {
+        var activeWebView: android.webkit.WebView? = null
+        val root = navigator.view ?: return null
+        fun traverse(view: View) {
+            if (view is android.webkit.WebView) {
+                val rect = android.graphics.Rect()
+                // A WebView is genuinely active if it's visible and occupying screen space
+                if (view.getGlobalVisibleRect(rect) && rect.width() > 100 && rect.height() > 100) {
+                    activeWebView = view
+                }
+                return
+            }
+            if (view is ViewGroup) {
+                for (i in 0 until view.childCount) traverse(view.getChildAt(i))
+            }
+        }
+        traverse(root)
+        return activeWebView
+    }
+
+    private fun createChapterInputListener(positionCache: Map<String, PositionInfo>): InputListener {
+        return object : InputListener {
+            override fun onDrag(event: DragEvent): Boolean {
+
+                if (event.type != DragEvent.Type.End) {
+                    return false
+                }
+
+                val distanceDragged: Double = event.offset.y.toDouble()
+                val locator = navigator.currentLocator.value
+                val currentTotalProgression = locator?.locations?.totalProgression ?: 0.0
+                val navigation = getNextChapterPosition(positionCache, locator)
+                val nextChapterInfo = navigation.nextChapter
+                val previousChapterInfo = navigation.previousChapter
+                val currentChaperInfo = navigation.currentChapterHref
+
+                val webView = getActiveWebView()
+                val isAtBottom = webView?.canScrollVertically(1) == false
+                val isAtTop = webView?.canScrollVertically(-1) == false
+
+                // if scrolling down and next chapter is available
+                if (nextChapterInfo != null && distanceDragged < 0) {
+                    val currentChapterEndProgression: Double = currentChaperInfo?.EndChapterProgression ?: 1.0
+                    if (isAtBottom || Math.abs(currentChapterEndProgression - currentTotalProgression) < 0.0001) {
+                        val nextChapterStartLocator: Locator = nextChapterInfo.StartChapterLink
+                        navigator.go(nextChapterStartLocator)
+                        return true
+                    }
+
+                // if scrolling up and previous chapter is available
+                } else if (previousChapterInfo != null && distanceDragged > 0) {
+                    val currentChapterStartProgression: Double = currentChaperInfo?.StartChapterProgression ?: 0.0
+
+                    if (isAtTop || currentTotalProgression <= currentChapterStartProgression + 0.000001) {
+                        val previousChapterEndLocator: Locator = previousChapterInfo.EndChapterLink
+                        navigator.go(previousChapterEndLocator)
+                        return true
+                    }
+                }
+
+                return false
+            }
+        }
     }
 
     /**
@@ -442,3 +667,17 @@ private fun pageNumberTemplate(): HtmlDecorationTemplate {
             """
     )
 }
+
+data class PositionInfo(
+    val position: Int?,
+    val StartChapterProgression: Double?,
+    val EndChapterProgression: Double?,
+    val StartChapterLink: Locator,
+    val EndChapterLink: Locator,
+)
+
+data class ChapterNavigation(
+    val previousChapter: PositionInfo? = null,
+    val nextChapter: PositionInfo? = null,
+    val currentChapterHref: PositionInfo? = null
+)
