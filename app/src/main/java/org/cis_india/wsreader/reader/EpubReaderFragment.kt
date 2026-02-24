@@ -377,6 +377,8 @@ class EpubReaderFragment : VisualReaderFragment() {
             }
         })
 
+        val horizontalSwipeDisableLayout = view.findViewById<HorizontalSwipeDisableLayout>(R.id.horizontal_swipe_disable_layout)
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 val scrollInputListener = createChapterInputListener(positionCache)
@@ -390,8 +392,10 @@ class EpubReaderFragment : VisualReaderFragment() {
 
                         if (scrollSettings && chapterScrolling) {
                             navigator.addInputListener(scrollInputListener)
+                            horizontalSwipeDisableLayout?.disableHorizontalSwipe = true
                         } else {
                             navigator.removeInputListener(scrollInputListener)
+                            horizontalSwipeDisableLayout?.disableHorizontalSwipe = false
                         }
                     }
             }
