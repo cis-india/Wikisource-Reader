@@ -108,6 +108,7 @@ import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
 import kotlinx.coroutines.delay
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
+import org.cis_india.wsreader.helpers.book.LanguageStringItem
 import java.util.Locale
 
 
@@ -304,6 +305,8 @@ private fun AllBooksList(
     onRetryClicked: () -> Unit,
     onLoadNextItems: () -> Unit
 ) {
+    val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
+
     AnimatedVisibility(
         visible = allBooksState.page == 1L && allBooksState.isLoading,
         enter = fadeIn(),
@@ -334,6 +337,26 @@ private fun AllBooksList(
         ) {
             items(allBooksState.items.size) { i ->
                 val item = allBooksState.items[i]
+                val systemLanguage = Locale.getDefault().language
+
+                val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
+                    val bookLanguage = languageMap[isoCode]
+                    val stringFromApp = if (bookLanguage != null) {
+                        val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+                        val appLocalisedString = stringResource(id = bookLanguage.name)
+
+                        if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                            Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+                        }else{
+                            appLocalisedString
+                        }
+                    } else {
+                        Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+                    }
+
+                    LanguageStringItem(code = isoCode, label = stringFromApp)
+                }
+
                 if (networkStatus == NetworkObserver.Status.Available
                     && i >= allBooksState.items.size - 1
                     && !allBooksState.endReached
@@ -358,7 +381,7 @@ private fun AllBooksList(
                     BookItemCard(
                         title = item.titleNativeLanguage ?: item.title,
                         author = authors,
-                        language = BookUtils.getLanguagesAsString(item.languages),
+                        language = BookUtils.getLanguagesAsString(localizedLanguageList),
                         /* subjects = BookUtils.getSubjectsAsString(
                             item.subjects, 3
                         ),*/
@@ -395,6 +418,8 @@ private fun AllBooksList(
 
 @Composable
 private fun SearchBookList(searchBarState: SearchBarState, navController: NavController) {
+    val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
+
     LazyVerticalGrid(
         modifier = Modifier
             .fillMaxSize()
@@ -417,6 +442,25 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
 
         items(searchBarState.searchResults.size) { i ->
             val item = searchBarState.searchResults[i]
+            val systemLanguage = Locale.getDefault().language
+
+            val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
+                val bookLanguage = languageMap[isoCode]
+                val stringFromApp = if (bookLanguage != null) {
+                    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+                    val appLocalisedString = stringResource(id = bookLanguage.name)
+
+                    if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+                    }else{
+                        appLocalisedString
+                    }
+                } else {
+                    Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+                }
+
+                LanguageStringItem(code = isoCode, label = stringFromApp)
+            }
             Box(
                 modifier = Modifier
                     .padding(4.dp)
@@ -433,7 +477,7 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
                 BookItemCard(
                     title = item.titleNativeLanguage ?: item.title,
                     author = authors,
-                    language = BookUtils.getLanguagesAsString(item.languages),
+                    language = BookUtils.getLanguagesAsString(localizedLanguageList),
                     /*
                     subjects = BookUtils.getSubjectsAsString(
                         item.subjects, 3
@@ -473,6 +517,53 @@ private fun TapTargetScope.HomeTopAppBar(
                 fontSize = 28.sp,
                 color = MaterialTheme.colorScheme.onBackground,
                 fontFamily = pacificoFont
+    val localisedLanguage = stringResource(id = bookLanguage.name)
+
+    val systemLanguage = Locale.getDefault().language
+    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+
+    val headerText = if (systemLanguage != "en" && localisedLanguage == languageInEnglish) {
+        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+    } else {
+        localisedLanguage
+    }
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .windowInsetsPadding(WindowInsets.statusBars),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(
+            text = headerText,
+            fontSize = 28.sp,
+            color = MaterialTheme.colorScheme.onBackground,
+            fontFamily = pacificoFont
+        )
+        Spacer(modifier = Modifier.weight(1f))
+        IconButton(onClick = onLanguageIconClicked) {
+            Icon(
+                imageVector = Icons.Filled.Translate,
+                contentDescription = stringResource(id = R.string.home_language_icon_desc),
+                tint = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.size(30.dp)
+            )
+        }
+        IconButton(onClick = onSortIconClicked) {
+            Icon(
+                imageVector = Icons.Filled.Sort,
+                contentDescription = stringResource(id = R.string.home_sort_icon_desc),
+                tint = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.size(30.dp)
+            )
+        }
+        IconButton(onClick = onSearchIconClicked) {
+            Icon(
+                imageVector = ImageVector.vectorResource(id = R.drawable.ic_search),
+                contentDescription = stringResource(id = R.string.home_search_icon_desc),
+                tint = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.size(30.dp)
             )
             Spacer(modifier = Modifier.weight(1f))
             IconButton(

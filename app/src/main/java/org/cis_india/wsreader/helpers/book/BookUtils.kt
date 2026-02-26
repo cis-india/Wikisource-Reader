@@ -19,7 +19,6 @@ package org.cis_india.wsreader.helpers.book
 import org.cis_india.wsreader.api.models.Author
 import org.cis_india.wsreader.api.models.Editor
 import org.cis_india.wsreader.api.models.Translator
-import java.util.Locale
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -28,6 +27,11 @@ import org.cis_india.wsreader.api.models.Publisher
 import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
+
+data class LanguageStringItem(
+    val code: String,
+    val label: String
+)
 
 object BookUtils {
 
@@ -209,8 +213,8 @@ object BookUtils {
      * @param languages List of languages.
      * @return String representation of the languages.
      */
-    fun getLanguagesAsString(languages: List<String>): String {
-        return languages.joinToString(", ") { Locale(it).displayLanguage }
+    fun getLanguagesAsString(languages: List<LanguageStringItem>): String {
+        return languages.joinToString(", ") { it.label }
     }
 
     /**

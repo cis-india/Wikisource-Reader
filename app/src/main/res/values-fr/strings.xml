@@ -2,6 +2,7 @@
 <!-- Authors:
 * Cquoi
 * Lenchanteur
+* VIGNERON
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -12,7 +13,7 @@
   <string name="network_error">Oups ! Impossible de se connecter au serveur.</string>
   <string name="network_error_retry">Réessayez</string>
   <string name="error">Oups ! Une erreur s\'est produite.</string>
-  <string name="navigation_home">Maison</string>
+  <string name="navigation_home">Accueil</string>
   <string name="navigation_categories">Catégories</string>
   <string name="navigation_library">Bibliothèque</string>
   <string name="navigation_settings">Paramètres</string>
@@ -33,6 +34,34 @@
   <string name="sort_a_to_z">Titre de A à Z</string>
   <string name="sort_z_to_a">Titre de Z à A</string>
   <string name="sort_random">Aléatoire</string>
+  <string name="all_books_language_lebel">Tous les livres</string>
+  <string name="arabic_language_label">arabe</string>
+  <string name="assamese_language_label">assamais</string>
+  <string name="bangla_language_label">bangla</string>
+  <string name="catalan_language_label">catalan</string>
+  <string name="czech_language_label">tchèque</string>
+  <string name="danish_language_lebel">danois</string>
+  <string name="english_language_label">anglais</string>
+  <string name="spanish_language_label">espagnol</string>
+  <string name="french_language_label">français</string>
+  <string name="gujarati_language_label">gujarati</string>
+  <string name="hindi_language_label">hindi</string>
+  <string name="indonesian_language_label">indonésien</string>
+  <string name="italian_language_label">italien</string>
+  <string name="javanese_language_label">javanais</string>
+  <string name="kannada_language_label">kannada</string>
+  <string name="malayalam_language_label">malayalam</string>
+  <string name="marathi_language_label">marathi</string>
+  <string name="malay_language_label">malais</string>
+  <string name="polish_language_label">polonais</string>
+  <string name="punjabi_language_label">pendjabi</string>
+  <string name="sundanese_language_label">soundanais</string>
+  <string name="swedish_language_label">suédois</string>
+  <string name="tamil_language_label">tamoul</string>
+  <string name="telugu_language_label">télougou</string>
+  <string name="tulu_language_label">toulou</string>
+  <string name="ukrainian_language_label">ukrainien</string>
+  <string name="vietnamese_language_label">vietnamien</string>
   <string name="library_header">Bibliothèque</string>
   <string name="empty_library">Rien ici !</string>
   <string name="import_button_text">Importez</string>
@@ -71,6 +100,8 @@
   <string name="amoled_theme_setting">Thème noir</string>
   <string name="amoled_theme_setting_disabled_desc">Activer le thème noir AMOLED</string>
   <string name="amoled_theme_setting_enabled_desc">Désactiver le thème noir AMOLED</string>
+  <string name="material_you_setting_disabled_desc">activer Material You</string>
+  <string name="material_you_setting_enabled_desc">désactiver Material You</string>
   <string name="material_you_error">Cette fonctionnalité est uniquement disponible pour les appareils fonctionnant sous Android 12 ou version ultérieure.</string>
   <string name="miscellaneous_setting_header">Divers</string>
   <string name="license_setting">Licence et remerciements</string>
@@ -86,6 +117,15 @@
   <string name="download_started">Téléchargement démarré !</string>
   <string name="book_synopsis">Synopsis</string>
   <string name="book_synopsis_not_found">Non disponible</string>
+  <string name="unknown_author_info">auteur inconnu</string>
+  <string name="editors_info">contributeurs</string>
+  <string name="translators_info">traducteurs</string>
+  <string name="genres_info">genres</string>
+  <string name="subjects_info">sujets</string>
+  <string name="publishers_info">éditeur</string>
+  <string name="unknown_publishers_info">éditeur inconnu</string>
+  <string name="place_of_publication_info">lieu de publication</string>
+  <string name="unknown_place_of_publication_info">lieu de publication inconnu</string>
   <string name="about_header">À propos</string>
   <string name="about_desc">Lisez des textes sous licence libre provenant de Wikisource</string>
   <string name="useful_links">Liens utiles</string>
@@ -131,6 +171,7 @@
   <string name="pagelist_tab_label">Liste des pages</string>
   <string name="landmarks_tab_label">Points de repère</string>
   <string name="action_mode_menu_highlight">Mettez en évidence</string>
+  <string name="action_mode_menu_underline">souligné</string>
   <string name="action_mode_menu_note">Note</string>
   <string name="bookmark_added">Marque-page ajouté</string>
   <string name="bookmark_exists">Ce marque-page existe déjà.</string>
@@ -221,4 +262,5 @@
   <string name="link_metapage_desc">Visitez notre page</string>
   <string name="link_sourcecode_repo">Voir le dépôt GitHub</string>
   <string name="link_sourcecode">GitHub</string>
+  <string name="woops">Oups !</string>
 </resources>

@@ -14,7 +14,7 @@
   <string name="error">ਓਹ! ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ।</string>
   <string name="navigation_home">ਘਰ</string>
   <string name="navigation_categories">ਸ਼੍ਰੇਣੀਆਂ</string>
-  <string name="navigation_library">ਲਾਇਬ੍ਰੇਰੀ</string>
+  <string name="navigation_library">ਕਿਤਾਬਘਰ</string>
   <string name="navigation_settings">ਸੈਟਿੰਗਾਂ</string>
   <string name="library_tooltip">ਸੁਝਾਅ! ਕਿਤਾਬ ਦੇ ਵੇਰਵੇ ਸਾਂਝੇ ਕਰਨ ਜਾਂ ਦੇਖਣ ਲਈ ਲਾਇਬ੍ਰੇਰੀ ਆਈਟਮਾਂ ਨੂੰ ਖੱਬੇ ਜਾਂ ਸੱਜੇ ਸਵਾਈਪ ਕਰੋ।</string>
   <string name="welcome_screen_title">ਵਿਕੀਸਰੋਤ ਰੀਡਰ ਸਥਾਪਤ ਕਰਨ ਲਈ ਧੰਨਵਾਦ!</string>
@@ -61,7 +61,7 @@
   <string name="tulu_language_label">ਤੁਲੂ</string>
   <string name="ukrainian_language_label">ਯੂਕਰੇਨੀ</string>
   <string name="vietnamese_language_label">ਵੀਅਤਨਾਮੀ</string>
-  <string name="library_header">ਲਾਇਬ੍ਰੇਰੀ</string>
+  <string name="library_header">ਕਿਤਾਬਘਰ</string>
   <string name="empty_library">ਇੱਥੇ ਕੁਝ ਵੀ ਨਹੀਂ!</string>
   <string name="import_button_text">ਆਯਾਤ ਕਰੋ</string>
   <string name="import_button_onboarding">ਆਪਣੀਆਂ ਕਿਤਾਬਾਂ ਆਯਾਤ ਕਰੋ!</string>
@@ -73,6 +73,10 @@
   <string name="library_read_button">ਪੜ੍ਹੋ</string>
   <string name="library_delete_button">ਮਿਟਾਉ</string>
   <string name="library_delete_dialog_title">ਕੀ ਤੁਸੀਂ ਇਸ ਬਾਰੇ ਯਕੀਨੀ ਹੋ?</string>
+  <string name="downloading_book">ਕਿਤਾਬ ਦਾ ਉਤਾਰਾ ਹੋ ਰਿਹਾ ਏ</string>
+  <string name="downloading">ਉਤਾਰਾ ਹੋ ਰਿਹਾ ਏ...</string>
+  <string name="download_complete">ਉਤਾਰਾ ਪੂਰਾ ਹੋਇਆ</string>
+  <string name="tap_to_view_library">ਕਿਤਾਬਘਰ ਵਿੱਚ ਵੇਖਣ ਲਈ ਥਪੇੜੋ</string>
   <string name="copy">ਉਤਾਰਾ ਕਰੋ</string>
   <string name="copied">ਉਤਾਰਾ ਕੀਤਾ!</string>
   <string name="web_search">ਵੈੱਬ ਖੋਜ</string>
@@ -178,6 +182,10 @@
   <string name="enter_url">URL ਦਰਜ ਕਰੋ</string>
   <string name="invalid_title">ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਸਿਰਲੇਖ ਦਰਜ ਕਰੋ</string>
   <string name="invalid_url">ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੈਧ ਸਰੋਤ ਯੂਆਰਐੱਲ ਦਾਖ਼ਲ ਕਰੋ</string>
+  <string name="return_button">ਵਾਪਸ-ਜਾਓ</string>
+  <string name="reader_error">ਗਲਤੀ</string>
+  <string name="import_error">ਦਰਾਮਦ ਗਲਤੀ</string>
+  <string name="no_result">ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ</string>
   <string name="yellow">ਪੀਲਾ</string>
   <string name="green">ਹਰਾ</string>
   <string name="blue">ਨੀਲਾ</string>
@@ -200,4 +208,5 @@
   <string name="link_metapage_desc">ਸਾਡੇ ਪੰਨੇ \'ਤੇ ਜਾਓ</string>
   <string name="link_sourcecode_repo">ਗਿਟਹੱਬ ਰੈਪੋ ਵੇਖੋ</string>
   <string name="link_sourcecode">ਗਿਟਹੱਬ</string>
+  <string name="woops">ਓਹ-ਹੋ !</string>
 </resources>
