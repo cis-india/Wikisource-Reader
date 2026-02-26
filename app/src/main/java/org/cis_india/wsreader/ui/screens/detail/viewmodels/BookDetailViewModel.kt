@@ -158,7 +158,7 @@ class BookDetailViewModel @Inject constructor(
                     thumbnailUrl = book.thumbnailUrl.toString()
                 )
                 viewModelScope.launch {
-                    bookAPI.postDownloadedBookDetails(book.wikidataQid, book.title)
+                    bookAPI.postDownloadedBookDetails(book.wikidataQid, book.titleNativeLanguage ?: book.title)
                 }
                 //state = state.copy(bookLibraryItem = libraryDao.getItemByBookId(book.id))
             }
