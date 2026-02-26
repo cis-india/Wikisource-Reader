@@ -517,53 +517,6 @@ private fun TapTargetScope.HomeTopAppBar(
                 fontSize = 28.sp,
                 color = MaterialTheme.colorScheme.onBackground,
                 fontFamily = pacificoFont
-    val localisedLanguage = stringResource(id = bookLanguage.name)
-
-    val systemLanguage = Locale.getDefault().language
-    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
-
-    val headerText = if (systemLanguage != "en" && localisedLanguage == languageInEnglish) {
-        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
-    } else {
-        localisedLanguage
-    }
-
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .windowInsetsPadding(WindowInsets.statusBars),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            text = headerText,
-            fontSize = 28.sp,
-            color = MaterialTheme.colorScheme.onBackground,
-            fontFamily = pacificoFont
-        )
-        Spacer(modifier = Modifier.weight(1f))
-        IconButton(onClick = onLanguageIconClicked) {
-            Icon(
-                imageVector = Icons.Filled.Translate,
-                contentDescription = stringResource(id = R.string.home_language_icon_desc),
-                tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
-            )
-        }
-        IconButton(onClick = onSortIconClicked) {
-            Icon(
-                imageVector = Icons.Filled.Sort,
-                contentDescription = stringResource(id = R.string.home_sort_icon_desc),
-                tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
-            )
-        }
-        IconButton(onClick = onSearchIconClicked) {
-            Icon(
-                imageVector = ImageVector.vectorResource(id = R.drawable.ic_search),
-                contentDescription = stringResource(id = R.string.home_search_icon_desc),
-                tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
             )
             Spacer(modifier = Modifier.weight(1f))
             IconButton(
