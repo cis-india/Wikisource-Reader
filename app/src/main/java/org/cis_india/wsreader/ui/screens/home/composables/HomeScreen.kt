@@ -74,6 +74,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -82,6 +83,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.psoffritti.taptargetcompose.TapTargetCoordinator
+import com.psoffritti.taptargetcompose.TapTargetScope
+import com.psoffritti.taptargetcompose.TapTargetStyle
+import com.psoffritti.taptargetcompose.TextDefinition
 import org.cis_india.wsreader.R
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.helpers.book.BookLanguage
@@ -102,11 +107,13 @@ import org.cis_india.wsreader.ui.screens.main.bottomNavPadding
 import org.cis_india.wsreader.ui.theme.pacificoFont
 import org.cis_india.wsreader.ui.theme.poppinsFont
 import kotlinx.coroutines.delay
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
+import org.cis_india.wsreader.helpers.book.LanguageStringItem
 import java.util.Locale
 
 
 @Composable
-fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Status) {
+fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Status, settingsViewModel: SettingsViewModel = hiltViewModel()) {
 
     val viewModel: HomeViewModel = hiltViewModel()
 
@@ -142,6 +149,18 @@ fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Stat
         }
     }
 
+    val showHomeTapTargets = remember { mutableStateOf(false) }
+
+
+    LaunchedEffect(settingsViewModel.showHomeOnboardingTapTargets.value) {
+        delay(500) // Delay to prevent flickering
+        if(settingsViewModel.showHomeOnboardingTapTargets.value) {
+            showHomeTapTargets.value = true
+        }else{
+            showHomeTapTargets.value = false
+        }
+    }
+
     val showLanguageSheet = remember { mutableStateOf(false) }
     BookLanguageSheet(
         showBookLanguage = showLanguageSheet,
@@ -156,21 +175,27 @@ fun HomeScreen(navController: NavController, networkStatus: NetworkObserver.Stat
         onSortOptionChange = { viewModel.onAction(UserAction.SortOptionClicked(it)) }
     )
 
-    HomeScreenScaffold(
-        viewModel = viewModel,
-        networkStatus = networkStatus,
-        navController = navController,
-        sysBackButtonState = sysBackButtonState,
-        showLanguageSheet = showLanguageSheet,
-        showSortSheet = showSortSheet
-    )
+    TapTargetCoordinator(
+        showTapTargets = showHomeTapTargets.value,
+        onComplete = { settingsViewModel.homeOnboardingComplete() }
+    ) {
+
+        HomeScreenScaffold(
+            viewModel = viewModel,
+            networkStatus = networkStatus,
+            navController = navController,
+            sysBackButtonState = sysBackButtonState,
+            showLanguageSheet = showLanguageSheet,
+            showSortSheet = showSortSheet
+        )
+    }
 
 
 }
 
 
 @Composable
-private fun HomeScreenScaffold(
+private fun TapTargetScope.HomeScreenScaffold(
     viewModel: HomeViewModel,
     networkStatus: NetworkObserver.Status,
     navController: NavController,
@@ -280,6 +305,8 @@ private fun AllBooksList(
     onRetryClicked: () -> Unit,
     onLoadNextItems: () -> Unit
 ) {
+    val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
+
     AnimatedVisibility(
         visible = allBooksState.page == 1L && allBooksState.isLoading,
         enter = fadeIn(),
@@ -310,6 +337,26 @@ private fun AllBooksList(
         ) {
             items(allBooksState.items.size) { i ->
                 val item = allBooksState.items[i]
+                val systemLanguage = Locale.getDefault().language
+
+                val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
+                    val bookLanguage = languageMap[isoCode]
+                    val stringFromApp = if (bookLanguage != null) {
+                        val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+                        val appLocalisedString = stringResource(id = bookLanguage.name)
+
+                        if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                            Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+                        }else{
+                            appLocalisedString
+                        }
+                    } else {
+                        Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+                    }
+
+                    LanguageStringItem(code = isoCode, label = stringFromApp)
+                }
+
                 if (networkStatus == NetworkObserver.Status.Available
                     && i >= allBooksState.items.size - 1
                     && !allBooksState.endReached
@@ -334,7 +381,7 @@ private fun AllBooksList(
                     BookItemCard(
                         title = item.titleNativeLanguage ?: item.title,
                         author = authors,
-                        language = BookUtils.getLanguagesAsString(item.languages),
+                        language = BookUtils.getLanguagesAsString(localizedLanguageList),
                         /* subjects = BookUtils.getSubjectsAsString(
                             item.subjects, 3
                         ),*/
@@ -371,6 +418,8 @@ private fun AllBooksList(
 
 @Composable
 private fun SearchBookList(searchBarState: SearchBarState, navController: NavController) {
+    val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
+
     LazyVerticalGrid(
         modifier = Modifier
             .fillMaxSize()
@@ -393,6 +442,25 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
 
         items(searchBarState.searchResults.size) { i ->
             val item = searchBarState.searchResults[i]
+            val systemLanguage = Locale.getDefault().language
+
+            val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
+                val bookLanguage = languageMap[isoCode]
+                val stringFromApp = if (bookLanguage != null) {
+                    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+                    val appLocalisedString = stringResource(id = bookLanguage.name)
+
+                    if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+                    }else{
+                        appLocalisedString
+                    }
+                } else {
+                    Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+                }
+
+                LanguageStringItem(code = isoCode, label = stringFromApp)
+            }
             Box(
                 modifier = Modifier
                     .padding(4.dp)
@@ -409,7 +477,7 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
                 BookItemCard(
                     title = item.titleNativeLanguage ?: item.title,
                     author = authors,
-                    language = BookUtils.getLanguagesAsString(item.languages),
+                    language = BookUtils.getLanguagesAsString(localizedLanguageList),
                     /*
                     subjects = BookUtils.getSubjectsAsString(
                         item.subjects, 3
@@ -429,12 +497,37 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
 }
 
 @Composable
-private fun HomeTopAppBar(
+private fun TapTargetScope.HomeTopAppBar(
     bookLanguage: BookLanguage,
     onSearchIconClicked: () -> Unit,
     onLanguageIconClicked: () -> Unit,
     onSortIconClicked: () -> Unit
 ) {
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .windowInsetsPadding(WindowInsets.statusBars),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = if (bookLanguage == BookLanguage.AllBooks)
+                    stringResource(id = R.string.home_header) else Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault()),
+                fontSize = 28.sp,
+                color = MaterialTheme.colorScheme.onBackground,
+                fontFamily = pacificoFont
+    val localisedLanguage = stringResource(id = bookLanguage.name)
+
+    val systemLanguage = Locale.getDefault().language
+    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+
+    val headerText = if (systemLanguage != "en" && localisedLanguage == languageInEnglish) {
+        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+    } else {
+        localisedLanguage
+    }
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -443,8 +536,7 @@ private fun HomeTopAppBar(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = if (bookLanguage == BookLanguage.AllBooks)
-                stringResource(id = R.string.home_header) else Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault()),
+            text = headerText,
             fontSize = 28.sp,
             color = MaterialTheme.colorScheme.onBackground,
             fontFamily = pacificoFont
@@ -473,9 +565,100 @@ private fun HomeTopAppBar(
                 tint = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.size(30.dp)
             )
+            Spacer(modifier = Modifier.weight(1f))
+            IconButton(
+                onClick = onLanguageIconClicked,
+                modifier = Modifier.tapTarget(
+                        precedence = 0,
+                title = TextDefinition(
+                    text = stringResource(R.string.language_guide_title),
+                    textStyle = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                ),
+                description = TextDefinition(
+                    text = stringResource(R.string.language_guide_description),
+                    textStyle = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                ),
+                tapTargetStyle = TapTargetStyle(
+                    backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                    tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                    backgroundAlpha = 1f,
+                ),
+            ),
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Translate,
+                    contentDescription = stringResource(id = R.string.home_language_icon_desc),
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
+
+
+            IconButton(
+                onClick = onSortIconClicked,
+                modifier = Modifier.tapTarget(
+                    precedence = 1,
+                    title = TextDefinition(
+                        text = stringResource(R.string.sorting_guide_title),
+                        textStyle = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    description = TextDefinition(
+                        text = stringResource(R.string.sorting_guide_description),
+                        textStyle = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    tapTargetStyle = TapTargetStyle(
+                        backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                        tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                        backgroundAlpha = 1f,
+                    ),
+                ),
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Sort,
+                    contentDescription = stringResource(id = R.string.home_sort_icon_desc),
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
+
+
+            IconButton(
+                onClick = onSearchIconClicked,
+                modifier = Modifier.tapTarget(
+                    precedence = 2,
+                    title = TextDefinition(
+                        text = stringResource(R.string.search_guide_title),
+                        textStyle = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    description = TextDefinition(
+                        text = stringResource(R.string.search_guide_description),
+                        textStyle = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    ),
+                    tapTargetStyle = TapTargetStyle(
+                        backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                        tapTargetHighlightColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                        backgroundAlpha = 1f,
+                    ),
+                ),
+            ) {
+                Icon(
+                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_search),
+                    contentDescription = stringResource(id = R.string.home_search_icon_desc),
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
         }
     }
-}
 
 
 @Composable
@@ -552,5 +735,7 @@ private fun SearchAppBar(
 @Composable
 @Preview(showBackground = true)
 fun HomeScreenPreview() {
-    HomeScreen(navController = rememberNavController(), NetworkObserver.Status.Unavailable)
+    TapTargetCoordinator(showTapTargets = true, onComplete = {}) {
+        HomeScreen(navController = rememberNavController(), NetworkObserver.Status.Unavailable)
+    }
 }

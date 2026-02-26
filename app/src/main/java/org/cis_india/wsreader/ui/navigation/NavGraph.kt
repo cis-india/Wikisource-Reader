@@ -34,6 +34,7 @@ import org.cis_india.wsreader.ui.screens.library.composables.LibraryScreen
 import org.cis_india.wsreader.ui.screens.settings.composables.AboutScreen
 import org.cis_india.wsreader.ui.screens.settings.composables.OSLScreen
 import org.cis_india.wsreader.ui.screens.settings.composables.SettingsScreen
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.screens.welcome.composables.WelcomeScreen
 
 
@@ -42,6 +43,7 @@ fun NavGraph(
     startDestination: String,
     navController: NavHostController,
     networkStatus: NetworkObserver.Status,
+    settingsViewModel: SettingsViewModel
 ) {
     NavHost(
         navController = navController,
@@ -72,7 +74,7 @@ fun NavGraph(
                 } else bottomNavPopEnter()
             },
             popExitTransition = { bottomNavPopExit() }) {
-            HomeScreen(navController, networkStatus)
+            HomeScreen(navController, networkStatus, settingsViewModel)
         }
 
         /** Book Detail Screen */
