@@ -11,6 +11,21 @@
         android:layout_height="match_parent"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <View
+            android:id="@+id/touch_center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground" />
+
+    </LinearLayout>
+
     <SeekBar
         android:id="@+id/readingProgressBar"
         android:layout_width="match_parent"

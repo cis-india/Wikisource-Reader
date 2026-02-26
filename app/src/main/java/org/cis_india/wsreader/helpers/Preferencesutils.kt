@@ -45,6 +45,8 @@ class PreferenceUtil(context: Context) {
         const val FIRST_ONBOARDING_BOOL = "first_onboarding"
 
         const val LIBRARY_SWIPE_TOOLTIP_BOOL = "show_library_tooltip"
+
+        const val READER_ONBOARDING_BOOL = "reader_onboarding_guide"
     }
 
     //
