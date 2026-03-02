@@ -15,6 +15,7 @@
   <string name="navigation_categories">Категории</string>
   <string name="navigation_library">Библиотека</string>
   <string name="navigation_settings">Нагодувања</string>
+  <string name="home_tap_target_coodinator_title">Почетен екран</string>
   <string name="library_tooltip">СОВЕТ! Повлечете ги ставките во библиотеката налево или надесно за да споделите или погледате поединости за книгата.</string>
   <string name="welcome_screen_title">Ви благодариме што го воспоставивте Читачот на Викиизвор!</string>
   <string name="welcome_screen_desc">Изберете го вашиот претпочитан читач на е-книги и впуштете се во читателска авантура.</string>

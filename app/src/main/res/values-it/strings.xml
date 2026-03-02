@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Beta16
+* Neonsn0w
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -15,6 +16,7 @@
   <string name="navigation_categories">Categorie</string>
   <string name="navigation_library">Libreria</string>
   <string name="navigation_settings">Impostazioni</string>
+  <string name="settings_tap_target_coodinator_title">Impostazioni dell\'applicazione</string>
   <string name="library_tooltip">TIP! Swipe library items left or right to share or view book details.</string>
   <string name="welcome_screen_desc">Scegli il tuo lettore di ebook preferito per intraprendere il tuo viaggio di lettura.</string>
   <string name="welcome_screen_button">Inizia</string>
@@ -24,6 +26,10 @@
   <string name="home_sort_icon_desc">Ordina libri</string>
   <string name="language_menu_title">Sfoglia per lingua</string>
   <string name="sort_menu_title">Ordina per</string>
+  <string name="language_guide_title">Cambia lingua</string>
+  <string name="sorting_guide_title">Ordina libri</string>
+  <string name="search_guide_description">Tocca per cercare un libro</string>
+  <string name="tap_target_screen_description">Vai alla schermata %1$s</string>
   <string name="categories_header">Categorie</string>
   <string name="no_books_found_for_lang_and_cat">Nessun libro disponibile in %s per questa categoria.</string>
   <string name="sort_high_to_low">Popolarità (decrescente)</string>
@@ -144,4 +150,9 @@
   <string name="red">Rosso</string>
   <string name="tts_voice">Voce</string>
   <string name="woops">Ops!</string>
+  <string name="tutorial_search_desc">Cerca nel libro</string>
+  <string name="tutorial_bookmark_title">Segnalibro</string>
+  <string name="tutorial_settings_title">Impostazioni</string>
+  <string name="tutorial_select_text_title">Seleziona testo</string>
+  <string name="tutorial_select_text_desc">Tieni premuto su una parola qualsiasi per visualizzare io menu di selezione e gli strumenti, ad esempio sottolinea, evidenza e aggiungi note!</string>
 </resources>

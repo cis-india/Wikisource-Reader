@@ -115,4 +115,7 @@
   <string name="category_plays">नाटक</string>
   <string name="category_poetry">कविता</string>
   <string name="woops">अरे नहीं!</string>
+  <string name="tutorial_search_title">खोजें</string>
+  <string name="tutorial_bookmark_title">बुकमार्क</string>
+  <string name="tutorial_settings_title">सेटिंग्स</string>
 </resources>

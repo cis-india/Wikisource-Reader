@@ -13,6 +13,7 @@
   <string name="navigation_home">Haaptsäit</string>
   <string name="navigation_categories">Kategorien</string>
   <string name="navigation_settings">Astellungen</string>
+  <string name="settings_tap_target_coodinator_title">App-Astellungen</string>
   <string name="welcome_screen_button">Ufänken</string>
   <string name="home_header">All Bicher</string>
   <string name="home_language_icon_desc">No Sprooch sortéieren</string>
@@ -20,6 +21,9 @@
   <string name="home_sort_icon_desc">Bicher sortéieren</string>
   <string name="language_menu_title">No Sprooch duerchsichen</string>
   <string name="sort_menu_title">Sortéieren no</string>
+  <string name="language_guide_title">Sprooch wiesselen</string>
+  <string name="language_guide_description">Bicher no Sprooch filteren</string>
+  <string name="search_guide_title">Sichfunktioun</string>
   <string name="categories_header">Kategorien</string>
   <string name="no_books_found_for_lang_and_cat">An dëser Kategorie si keng Bicher op %s disponibel.</string>
   <string name="sort_high_to_low">Popularitéit (vun héich op niddereg)</string>
@@ -160,4 +164,5 @@
   <string name="link_metapage_desc">Besicht eis Säit</string>
   <string name="link_sourcecode">GitHub</string>
   <string name="woops">Ups!</string>
+  <string name="tutorial_settings_title">Astellungen</string>
 </resources>
