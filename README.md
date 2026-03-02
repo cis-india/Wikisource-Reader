@@ -104,6 +104,31 @@ By default, Android prevents apps from connecting to servers via unencrypted HTT
    </application>
    ```
 
+#### Technical Overview: Book Data Model & API
+
+The application relies on a structured **Book Data Model** heavily driven by `Kotlinx Serialization` mapped precisely against JSON payloads received from the **Book API** hosted on Toolforge.
+
+##### 1. Book Data Model
+The central model handling books is mapped into the `org.cis_india.wsreader.api.models.Book` data class. Essential fields include:
+- **`wikidataQid`**: The unique identifier from Wikidata (e.g., "Q12345"), acting as the primary key.
+- **`title` & `titleNativeLanguage`**: The normalized and native book titles.
+- **`authors`, `translators`, `editors`**: Collections tracking the contributors mapped to the book.
+- **`languages`, `genre`, `subjects`**: Arrays handling linguistic attributes and thematic metadata for filtering.
+- **`epubUrl`, `wsUrl`**: Direct links to download the EPUB file parsing locally and viewing the source work directly on Wikisource.
+- **`thumbnailUrl`**: URL directing to the mapped cover image.
+- **`dateOfPublication`, `publishers`, `place_of_publication`**: Historical and chronological data mappings.
+
+##### 2. Book API (`BookAPI`)
+Network operations are managed via the `BookAPI` client located at `org.cis_india.wsreader.api.BookAPI`. It utilizes **OkHttp** integrated seamlessly with **Kotlin Coroutines** and a robust custom built **Cache Interceptor** (`CacheInterceptor`) minimizing repeat payload requests over active sessions.
+
+**Important Endpoints:**
+- **`getAllBooks`**: Queries default paginated feeds of proofread texts. (`?page={page}&languages={lang}&sort={sort}`)
+- **`getBookById`**: Targets individual volumes globally identified by their Wikidata QID payload. (`?ids=Q{id}`)
+- **`searchBooks`**: Pings URL-encoded user texts aggressively across the remote backend. (`?search={query}`)
+- **`getBooksByCategory`**: Targets texts assigned distinct genres or topical tags inside the directory. (`?genres={category}&page={page}`)
+- **`postDownloadedBookDetails`**: Fires analytic POST requests internally upon physical local book downloads to record engagement metrics mapping `wikidata_qid` and `book_title`.
+
+
 ## External Links
 - [Website](https://cis-india.github.io/wikisource-reader-app)
 - [Meta Wiki page](https://meta.wikimedia.org/wiki/Wikisource_reader_app)
