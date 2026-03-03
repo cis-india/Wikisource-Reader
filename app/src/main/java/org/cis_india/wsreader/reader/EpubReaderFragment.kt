@@ -101,7 +101,8 @@ class EpubReaderFragment : VisualReaderFragment() {
                     )
 
                     // Register the HTML templates for our custom decoration styles.
-                    decorationTemplates[DecorationStyleAnnotationMark::class] = annotationMarkTemplate()
+                    decorationTemplates[DecorationStyleAnnotationMark::class] =
+                        annotationMarkTemplate()
                     decorationTemplates[DecorationStylePageNumber::class] = pageNumberTemplate()
 
                     // Declare a custom font family for reflowable EPUBs.
@@ -156,13 +157,15 @@ class EpubReaderFragment : VisualReaderFragment() {
                 )
             }
         }
-        navigator = childFragmentManager.findFragmentByTag(NAVIGATOR_FRAGMENT_TAG) as EpubNavigatorFragment
+        navigator =
+            childFragmentManager.findFragmentByTag(NAVIGATOR_FRAGMENT_TAG) as EpubNavigatorFragment
 
         return view
     }
 
     // Save seekbar snap points from book positions start locator
     private var booksPositionsStartProgression: List<Int> = emptyList()
+
     // save all book positions
     // to help navigate to these positions
     private var allBookPositions: List<Locator> = emptyList()
@@ -305,7 +308,9 @@ class EpubReaderFragment : VisualReaderFragment() {
                 // Handle progress changes
                 if (thumbSwiped && seekBar != null && booksPositionsStartProgression.isNotEmpty()) {
 
-                    val closestPoint = booksPositionsStartProgression.minByOrNull { Math.abs(it - progress) } ?: progress
+                    val closestPoint =
+                        booksPositionsStartProgression.minByOrNull { Math.abs(it - progress) }
+                            ?: progress
 
                     if (progress != closestPoint) {
                         seekBar.progress = closestPoint
@@ -361,28 +366,39 @@ class EpubReaderFragment : VisualReaderFragment() {
         }
 
         @Suppress("Unchecked_cast")
-        val userPreferencesViewModel = (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)
-        
+        val userPreferencesViewModel =
+            (model.settings as UserPreferencesViewModel<EpubSettings, EpubPreferences>)
+
         userPreferencesViewModel.bind(navigator, viewLifecycleOwner)
 
         val prefUtil = PreferenceUtil(requireContext())
-        val continuousChaptersFlow = kotlinx.coroutines.flow.MutableStateFlow(prefUtil.getString("chapter_scroll_pref", "Left/Right") == "Up/Down")
-        
-        val prefs = requireContext().getSharedPreferences("wikisource_settings", Context.MODE_PRIVATE)
-        val listener = android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-            if (key == "chapter_scroll_pref") {
-                continuousChaptersFlow.value = prefUtil.getString("chapter_scroll_pref", "Left/Right") == "Up/Down"
+        val continuousChaptersFlow = kotlinx.coroutines.flow.MutableStateFlow(
+            prefUtil.getString(
+                "chapter_scroll_pref",
+                "Left/Right"
+            ) == "Up/Down"
+        )
+
+        val prefs =
+            requireContext().getSharedPreferences("wikisource_settings", Context.MODE_PRIVATE)
+        val listener =
+            android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+                if (key == "chapter_scroll_pref") {
+                    continuousChaptersFlow.value =
+                        prefUtil.getString("chapter_scroll_pref", "Left/Right") == "Up/Down"
+                }
             }
-        }
         prefs.registerOnSharedPreferenceChangeListener(listener)
-        
-        viewLifecycleOwner.lifecycle.addObserver(object : androidx.lifecycle.DefaultLifecycleObserver {
+
+        viewLifecycleOwner.lifecycle.addObserver(object :
+            androidx.lifecycle.DefaultLifecycleObserver {
             override fun onDestroy(owner: androidx.lifecycle.LifecycleOwner) {
                 prefs.unregisterOnSharedPreferenceChangeListener(listener)
             }
         })
 
-        val horizontalSwipeDisableLayout = view.findViewById<HorizontalSwipeDisableLayout>(R.id.horizontal_swipe_disable_layout)
+        val horizontalSwipeDisableLayout =
+            view.findViewById<HorizontalSwipeDisableLayout>(R.id.horizontal_swipe_disable_layout)
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -438,6 +454,7 @@ class EpubReaderFragment : VisualReaderFragment() {
                         R.id.search -> {
                             return true
                         }
+
                         android.R.id.home -> {
                             menuSearch.collapseActionView()
                             return true
@@ -492,16 +509,18 @@ class EpubReaderFragment : VisualReaderFragment() {
 
                 // if scrolling down and next chapter is available
                 if (nextChapterInfo != null && distanceDragged < 0) {
-                    val currentChapterEndProgression: Double = currentChaperInfo?.EndChapterProgression ?: 1.0
+                    val currentChapterEndProgression: Double =
+                        currentChaperInfo?.EndChapterProgression ?: 1.0
                     if (isAtBottom || Math.abs(currentChapterEndProgression - currentTotalProgression) < 0.0001) {
                         val nextChapterStartLocator: Locator = nextChapterInfo.StartChapterLink
                         navigator.go(nextChapterStartLocator)
                         return true
                     }
 
-                // if scrolling up and previous chapter is available
+                    // if scrolling up and previous chapter is available
                 } else if (previousChapterInfo != null && distanceDragged > 0) {
-                    val currentChapterStartProgression: Double = currentChaperInfo?.StartChapterProgression ?: 0.0
+                    val currentChapterStartProgression: Double =
+                        currentChaperInfo?.StartChapterProgression ?: 0.0
 
                     if (isAtTop || currentTotalProgression <= currentChapterStartProgression + 0.000001) {
                         val previousChapterEndLocator: Locator = previousChapterInfo.EndChapterLink
@@ -513,6 +532,8 @@ class EpubReaderFragment : VisualReaderFragment() {
                 return false
             }
         }
+    }
+
     // start menu tap target
     // show onboarding guide for reader menu
     private fun startMenuTutorial() {
@@ -520,23 +541,53 @@ class EpubReaderFragment : VisualReaderFragment() {
         val targets = mutableListOf<TapTarget>()
 
         activity.findViewById<View>(R.id.search)?.let {
-            targets.add(TapTarget.forView(it, getString(R.string.tutorial_search_title), getString(R.string.tutorial_search_desc)))
+            targets.add(
+                TapTarget.forView(
+                    it,
+                    getString(R.string.tutorial_search_title),
+                    getString(R.string.tutorial_search_desc)
+                )
+            )
         }
 
         activity.findViewById<View>(R.id.tts)?.let {
-            targets.add(TapTarget.forView(it, getString(R.string.tutorial_tts_title), getString(R.string.tutorial_tts_desc)))
+            targets.add(
+                TapTarget.forView(
+                    it,
+                    getString(R.string.tutorial_tts_title),
+                    getString(R.string.tutorial_tts_desc)
+                )
+            )
         }
 
         activity.findViewById<View>(R.id.bookmark)?.let {
-            targets.add(TapTarget.forView(it, getString(R.string.tutorial_bookmark_title), getString(R.string.tutorial_bookmark_desc)))
+            targets.add(
+                TapTarget.forView(
+                    it,
+                    getString(R.string.tutorial_bookmark_title),
+                    getString(R.string.tutorial_bookmark_desc)
+                )
+            )
         }
 
         activity.findViewById<View>(R.id.settings)?.let {
-            targets.add(TapTarget.forView(it, getString(R.string.tutorial_settings_title), getString(R.string.tutorial_settings_desc)))
+            targets.add(
+                TapTarget.forView(
+                    it,
+                    getString(R.string.tutorial_settings_title),
+                    getString(R.string.tutorial_settings_desc)
+                )
+            )
         }
 
         activity.findViewById<View>(R.id.toc)?.let {
-            targets.add(TapTarget.forView(it, getString(R.string.tutorial_toc_title), getString(R.string.tutorial_toc_desc)))
+            targets.add(
+                TapTarget.forView(
+                    it,
+                    getString(R.string.tutorial_toc_title),
+                    getString(R.string.tutorial_toc_desc)
+                )
+            )
         }
 
         if (targets.isNotEmpty()) {
@@ -571,7 +622,13 @@ class EpubReaderFragment : VisualReaderFragment() {
         val targets = mutableListOf<TapTarget>()
 
         activity.findViewById<View>(R.id.touch_center)?.let {
-            targets.add(TapTarget.forView(it, getString(R.string.tutorial_menu_toggle_title), getString(R.string.tutorial_menu_toggle_desc)))
+            targets.add(
+                TapTarget.forView(
+                    it,
+                    getString(R.string.tutorial_menu_toggle_title),
+                    getString(R.string.tutorial_menu_toggle_desc)
+                )
+            )
         }
 
         if (targets.isNotEmpty()) {
@@ -614,7 +671,11 @@ class EpubReaderFragment : VisualReaderFragment() {
         val centerView = activity.findViewById<View>(R.id.touch_center) ?: view
 
         TapTargetView.showFor(activity,
-            TapTarget.forView(centerView, getString(R.string.tutorial_select_text_title), getString(R.string.tutorial_select_text_desc))
+            TapTarget.forView(
+                centerView,
+                getString(R.string.tutorial_select_text_title),
+                getString(R.string.tutorial_select_text_desc)
+            )
                 .cancelable(true)
                 .transparentTarget(true),
             object : TapTargetView.Listener() {
@@ -687,16 +748,17 @@ class EpubReaderFragment : VisualReaderFragment() {
             }
         })
 
-        menuSearchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn).setOnClickListener {
-            menuSearchView.requestFocus()
-            model.cancelSearch()
-            menuSearchView.setQuery("", false)
+        menuSearchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
+            .setOnClickListener {
+                menuSearchView.requestFocus()
+                model.cancelSearch()
+                menuSearchView.setQuery("", false)
 
-            (activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.showSoftInput(
-                this.view,
-                0
-            )
-        }
+                (activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.showSoftInput(
+                    this.view,
+                    0
+                )
+            }
     }
 
     private fun showSearchFragment() {
@@ -718,32 +780,30 @@ class EpubReaderFragment : VisualReaderFragment() {
         private const val NAVIGATOR_FRAGMENT_TAG = "navigator"
         private const val IS_SEARCH_VIEW_ICONIFIED = "isSearchViewIconified"
     }
-}
-
 // Examples of HTML templates for custom Decoration Styles.
 
-/**
- * This Decorator Style will display a tinted "pen" icon in the page margin to show that a highlight
- * has an associated note.
- *
- * Note that the icon is served from the app assets folder.
- */
-private fun annotationMarkTemplate(@ColorInt defaultTint: Int = Color.YELLOW): HtmlDecorationTemplate {
-    val className = "testapp-annotation-mark"
-    val iconUrl = checkNotNull(EpubNavigatorFragment.assetUrl("annotation-icon.svg"))
-    return HtmlDecorationTemplate(
-        layout = HtmlDecorationTemplate.Layout.BOUNDS,
-        width = HtmlDecorationTemplate.Width.PAGE,
-        element = { decoration ->
-            val style = decoration.style as? DecorationStyleAnnotationMark
-            val tint = style?.tint ?: defaultTint
-            // Using `data-activable=1` prevents the whole decoration container from being
-            // clickable. Only the icon will respond to activation events.
-            """
+    /**
+     * This Decorator Style will display a tinted "pen" icon in the page margin to show that a highlight
+     * has an associated note.
+     *
+     * Note that the icon is served from the app assets folder.
+     */
+    private fun annotationMarkTemplate(@ColorInt defaultTint: Int = Color.YELLOW): HtmlDecorationTemplate {
+        val className = "testapp-annotation-mark"
+        val iconUrl = checkNotNull(EpubNavigatorFragment.assetUrl("annotation-icon.svg"))
+        return HtmlDecorationTemplate(
+            layout = HtmlDecorationTemplate.Layout.BOUNDS,
+            width = HtmlDecorationTemplate.Width.PAGE,
+            element = { decoration ->
+                val style = decoration.style as? DecorationStyleAnnotationMark
+                val tint = style?.tint ?: defaultTint
+                // Using `data-activable=1` prevents the whole decoration container from being
+                // clickable. Only the icon will respond to activation events.
+                """
             <div><div data-activable="1" class="$className" style="background-color: ${tint.toCss()} !important"/></div>"
             """
-        },
-        stylesheet = """
+            },
+            stylesheet = """
             .$className {
                 float: left;
                 margin-left: 8px;
@@ -755,31 +815,31 @@ private fun annotationMarkTemplate(@ColorInt defaultTint: Int = Color.YELLOW): H
                 opacity: 0.8;
             }
             """
-    )
-}
+        )
+    }
 
-/**
- * This Decoration Style is used to display the page number labels in the margins, when a book
- * provides a `page-list`. The label is stored in the [DecorationStylePageNumber] itself.
- *
- * See http://kb.daisy.org/publishing/docs/navigation/pagelist.html
- */
-private fun pageNumberTemplate(): HtmlDecorationTemplate {
-    val className = "testapp-page-number"
-    return HtmlDecorationTemplate(
-        layout = HtmlDecorationTemplate.Layout.BOUNDS,
-        width = HtmlDecorationTemplate.Width.PAGE,
-        element = { decoration ->
-            val style = decoration.style as? DecorationStylePageNumber
+    /**
+     * This Decoration Style is used to display the page number labels in the margins, when a book
+     * provides a `page-list`. The label is stored in the [DecorationStylePageNumber] itself.
+     *
+     * See http://kb.daisy.org/publishing/docs/navigation/pagelist.html
+     */
+    private fun pageNumberTemplate(): HtmlDecorationTemplate {
+        val className = "testapp-page-number"
+        return HtmlDecorationTemplate(
+            layout = HtmlDecorationTemplate.Layout.BOUNDS,
+            width = HtmlDecorationTemplate.Width.PAGE,
+            element = { decoration ->
+                val style = decoration.style as? DecorationStylePageNumber
 
-            // Using `var(--RS__backgroundColor)` is a trick to use the same background color as
-            // the Readium theme. If we don't set it directly inline in the HTML, it might be
-            // forced transparent by Readium CSS.
-            """
+                // Using `var(--RS__backgroundColor)` is a trick to use the same background color as
+                // the Readium theme. If we don't set it directly inline in the HTML, it might be
+                // forced transparent by Readium CSS.
+                """
             <div><span class="$className" style="background-color: var(--RS__backgroundColor) !important">${style?.label}</span></div>"
             """
-        },
-        stylesheet = """
+            },
+            stylesheet = """
             .$className {
                 float: left;
                 margin-left: 8px;
@@ -790,7 +850,8 @@ private fun pageNumberTemplate(): HtmlDecorationTemplate {
                 opacity: 0.8;
             }
             """
-    )
+        )
+    }
 }
 
 data class PositionInfo(
