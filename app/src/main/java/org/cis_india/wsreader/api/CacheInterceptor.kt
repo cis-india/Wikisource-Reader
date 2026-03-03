@@ -38,11 +38,18 @@ class CacheInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val response: Response = chain.proceed(chain.request())
-        val cacheControl = CacheControl.Builder()
-            .maxAge(CACHE_MAX_AGE, TimeUnit.DAYS)
-            .build()
-        return response.newBuilder()
-            .header("Cache-Control", cacheControl.toString())
-            .build()
+        val requestUrl = chain.request().url
+        
+        // Only cache metadata for specific book IDs
+        if (requestUrl.queryParameter("ids") != null) {
+            val cacheControl = CacheControl.Builder()
+                .maxAge(CACHE_MAX_AGE, TimeUnit.DAYS)
+                .build()
+            return response.newBuilder()
+                .header("Cache-Control", cacheControl.toString())
+                .build()
+        }
+        
+        return response
     }
 }
