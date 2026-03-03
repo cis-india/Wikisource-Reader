@@ -5,11 +5,17 @@
     android:layout_height="match_parent"
     >
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_reader_container"
+    <org.cis_india.wsreader.reader.HorizontalSwipeDisableLayout
+        android:id="@+id/horizontal_swipe_disable_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_reader_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </org.cis_india.wsreader.reader.HorizontalSwipeDisableLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
