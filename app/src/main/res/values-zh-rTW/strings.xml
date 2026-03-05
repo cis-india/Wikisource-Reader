@@ -15,6 +15,14 @@
   <string name="navigation_categories">分類</string>
   <string name="navigation_library">圖書館</string>
   <string name="navigation_settings">設定</string>
+  <string name="home_tap_target_coodinator_title">主螢幕</string>
+  <string name="home_tap_target_coodinator_description">在維基文庫圖書館中發現數千本由社群精心挑選的自由取用書籍與歷史文獻。</string>
+  <string name="category_tap_target_coodinator_title">分類章節</string>
+  <string name="category_tap_target_coodinator_description">透過瀏覽戲劇、小說和詩歌等分類，來找出您想要的內容。</string>
+  <string name="library_tap_target_coodinator_title">您的圖書館</string>
+  <string name="library_tap_target_coodinator_description">在這裡找到您所有的書籍。您可以管理您的藏書，追蹤閱讀進度，或是與朋友分享您最喜歡的書籍。</string>
+  <string name="settings_tap_target_coodinator_title">應用程式設定</string>
+  <string name="settings_tap_target_coodinator_description">自訂您的閱讀體驗，並調整語言偏好。</string>
   <string name="library_tooltip">提示！向左或向右滑動圖書館項目即可分享或查看書籍詳情。</string>
   <string name="welcome_screen_title">感謝您安裝維基文庫閱讀器！</string>
   <string name="welcome_screen_desc">挑選您喜愛的電子書閱讀器，來開始您的閱讀之旅。</string>
@@ -25,6 +33,14 @@
   <string name="home_sort_icon_desc">排序書籍</string>
   <string name="language_menu_title">按語言瀏覽</string>
   <string name="sort_menu_title">排序依照</string>
+  <string name="language_guide_title">切換語言</string>
+  <string name="language_guide_description">按語言篩選書籍</string>
+  <string name="sorting_guide_title">排序書籍</string>
+  <string name="sorting_guide_description">輕觸來排序書籍</string>
+  <string name="search_guide_title">搜尋功能</string>
+  <string name="search_guide_description">輕觸來搜尋書籍</string>
+  <string name="tap_target_screen_title">%1$s螢幕</string>
+  <string name="tap_target_screen_description">導向至%1$s螢幕</string>
   <string name="categories_header">分類</string>
   <string name="no_books_found_for_lang_and_cat">此分類中沒有%s語言的書籍。</string>
   <string name="sort_high_to_low">熱度從高到低</string>
@@ -36,6 +52,7 @@
   <string name="arabic_language_label">阿拉伯文</string>
   <string name="assamese_language_label">阿薩姆文</string>
   <string name="bangla_language_label">孟加拉文</string>
+  <string name="breton_language_label">布列塔尼文</string>
   <string name="catalan_language_label">加泰隆尼亞文</string>
   <string name="czech_language_label">捷克文</string>
   <string name="danish_language_lebel">丹麥文</string>
@@ -106,6 +123,9 @@
   <string name="license_setting_desc">開放原始碼授權。</string>
   <string name="about_setting">應用程式資訊</string>
   <string name="about_setting_desc">顯示應用程式資訊和有用的連結</string>
+  <string name="onboarding_guide_active">顯示入門指南</string>
+  <string name="onboarding_guide_inactive">隱藏入門指南</string>
+  <string name="toggle_guide_title">切換入門指南</string>
   <string name="cover_image_desc">書籍封面圖片</string>
   <string name="book_detail_header">書籍詳情</string>
   <string name="back_button_desc">返回。</string>
@@ -262,4 +282,18 @@
   <string name="link_sourcecode_repo">查看在 GitHub 上的程式碼倉儲</string>
   <string name="link_sourcecode">GitHub</string>
   <string name="woops">\"哎呀！！\"</string>
+  <string name="tutorial_search_title">搜尋</string>
+  <string name="tutorial_search_desc">翻閱書籍內容</string>
+  <string name="tutorial_tts_title">文字轉語音</string>
+  <string name="tutorial_tts_desc">文字轉語音，這有助於朗讀書籍。</string>
+  <string name="tutorial_bookmark_title">書籤</string>
+  <string name="tutorial_bookmark_desc">點擊即可將本書目前閱讀位置加入到書籤，以便日後方便查找。</string>
+  <string name="tutorial_settings_title">設定</string>
+  <string name="tutorial_settings_desc">配置偏好設置，例如語言、字體、滾動方式和垂直文字</string>
+  <string name="tutorial_toc_title">書籍導覽</string>
+  <string name="tutorial_toc_desc">這裡包含章節和已儲存的書籤。</string>
+  <string name="tutorial_menu_toggle_title">開啟或關閉選單</string>
+  <string name="tutorial_menu_toggle_desc">點擊螢幕中央即可開啟或關閉選單</string>
+  <string name="tutorial_select_text_title">選擇文字</string>
+  <string name="tutorial_select_text_desc">長按任意單字即可查看選擇選單和工具，例如底線、醒目顯示、和新增註解！</string>
 </resources>
