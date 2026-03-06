@@ -475,13 +475,13 @@ private fun BookDetailContents(
             */
         } else {
             Column {
-                InfoLine(stringResource(id = R.string.editors_info), editors)
                 InfoLine(stringResource(R.string.translators_info), translators)
-                InfoLine(stringResource(R.string.genres_info), literanyGenres)
-                InfoLine(stringResource(R.string.subjects_info), mainSubjects)
-                InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
+                InfoLine(stringResource(id = R.string.editors_info), editors)
                 InfoStringContent(stringResource(R.string.publishers_info), publishers, isPublishersBlank)
                 InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)
+                InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
+                InfoLine(stringResource(R.string.genres_info), literanyGenres)
+                InfoLine(stringResource(R.string.subjects_info), mainSubjects)
             }
         }
     }
