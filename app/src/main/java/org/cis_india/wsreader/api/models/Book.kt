@@ -55,8 +55,8 @@ data class Book(
     val publishers: List<Publisher>,
     @SerialName("places_of_publication")
     val place_of_publication: List<PlacesOfPublication>,
-    @SerialName("literany_genres")
-    val literanyGenres: List<Genre> = emptyList(),
+    @SerialName("literary_genres")
+    val literaryGenres: List<Genre> = emptyList(),
     @SerialName("main_subjects")
     val mainSubjects: List<Subject> = emptyList(),
     @SerialName("form_of_work")

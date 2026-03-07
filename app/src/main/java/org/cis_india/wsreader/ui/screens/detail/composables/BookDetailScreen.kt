@@ -258,9 +258,9 @@ private fun BookDetailContents(
         }
 
 
-        var literanyGenres by remember { mutableStateOf<List<String>>(emptyList()) }
-        LaunchedEffect(book.literanyGenres, firstLanguage) {
-            literanyGenres = BookUtils.getLiteraryGenres(book.literanyGenres, firstLanguage)
+        var literaryGenres by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.literaryGenres, firstLanguage) {
+            literaryGenres = BookUtils.getLiteraryGenres(book.literaryGenres, firstLanguage)
         }
 
         var mainSubjects by remember { mutableStateOf<List<String>>(emptyList()) }
@@ -480,7 +480,7 @@ private fun BookDetailContents(
                 InfoStringContent(stringResource(R.string.publishers_info), publishers, isPublishersBlank)
                 InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)
                 InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
-                InfoLine(stringResource(R.string.genres_info), literanyGenres)
+                InfoLine(stringResource(R.string.genres_info), literaryGenres)
                 InfoLine(stringResource(R.string.subjects_info), mainSubjects)
             }
         }
