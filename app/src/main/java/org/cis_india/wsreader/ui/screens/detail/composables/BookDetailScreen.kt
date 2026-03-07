@@ -258,8 +258,20 @@ private fun BookDetailContents(
         }
 
 
-        val genres = book.genre.filter { it.isNotBlank() }
-        val subjects = book.subjects.filter { it.isNotBlank() }
+        var literaryGenres by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.literaryGenres, firstLanguage) {
+            literaryGenres = BookUtils.getLiteraryGenres(book.literaryGenres, firstLanguage)
+        }
+
+        var mainSubjects by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.mainSubjects, firstLanguage) {
+            mainSubjects = BookUtils.getMainSubjects(book.mainSubjects, firstLanguage)
+        }
+
+        var formOfWork by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.formOfWork, firstLanguage) {
+            formOfWork = BookUtils.getFormOfWork(book.formOfWork, firstLanguage)
+        }
 
         // Checks if there are values of publisher or places of publication
         val isPublishersBlank = book.publishers.all { it.name?.isBlank() ?: true }
@@ -463,12 +475,13 @@ private fun BookDetailContents(
             */
         } else {
             Column {
-                InfoLine(stringResource(id = R.string.editors_info), editors)
                 InfoLine(stringResource(R.string.translators_info), translators)
-                InfoLine(stringResource(R.string.genres_info), genres)
-                InfoLine(stringResource(R.string.subjects_info), subjects)
+                InfoLine(stringResource(id = R.string.editors_info), editors)
                 InfoStringContent(stringResource(R.string.publishers_info), publishers, isPublishersBlank)
                 InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)
+                InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
+                InfoLine(stringResource(R.string.genres_info), literaryGenres)
+                InfoLine(stringResource(R.string.subjects_info), mainSubjects)
             }
         }
     }

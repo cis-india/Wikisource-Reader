@@ -55,6 +55,12 @@ data class Book(
     val publishers: List<Publisher>,
     @SerialName("places_of_publication")
     val place_of_publication: List<PlacesOfPublication>,
+    @SerialName("literary_genres")
+    val literaryGenres: List<Genre> = emptyList(),
+    @SerialName("main_subjects")
+    val mainSubjects: List<Subject> = emptyList(),
+    @SerialName("form_of_work")
+    val formOfWork: List<FormOfWork> = emptyList(),
 ) {
     val id: Int
         get() = wikidataQid.removePrefix("Q").toInt()
