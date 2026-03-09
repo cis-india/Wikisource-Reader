@@ -17,6 +17,7 @@
   <string name="navigation_categories">বিষয়শ্রেণী</string>
   <string name="navigation_library">গ্রন্থাগার</string>
   <string name="navigation_settings">সেটিং</string>
+  <string name="library_tap_target_coodinator_title">আপনার পাঠাগার</string>
   <string name="library_tooltip">পরামর্শ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে গ্রন্থাগারের আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
   <string name="welcome_screen_title">উইকিসোর্স রিডার ইনস্টল করার জন্য ধন্যবাদ!</string>
   <string name="welcome_screen_desc">আপনার পড়ার যাত্রা শুরু করতে আপনার পছন্দের ইবুক রিডার বেছে নিন।</string>
@@ -27,6 +28,7 @@
   <string name="home_sort_icon_desc">বই সাজান</string>
   <string name="language_menu_title">ভাষা অনুযায়ী ব্রাউজ করুন</string>
   <string name="sort_menu_title">সাজান</string>
+  <string name="language_guide_title">ভাষা পরিবর্তন করুন</string>
   <string name="categories_header">বিষয়শ্রেণী</string>
   <string name="no_books_found_for_lang_and_cat">এই বিভাগে %s ভাষায় কোনও বই নেই।</string>
   <string name="sort_high_to_low">জনপ্রিয়তা (বেশি থেকে কম)</string>
@@ -38,6 +40,7 @@
   <string name="arabic_language_label">আরবি</string>
   <string name="assamese_language_label">অসমীয়া</string>
   <string name="bangla_language_label">বাংলা</string>
+  <string name="breton_language_label">ব্রেটন</string>
   <string name="catalan_language_label">কাতালান</string>
   <string name="czech_language_label">চেক</string>
   <string name="danish_language_lebel">ডেনীয়</string>
