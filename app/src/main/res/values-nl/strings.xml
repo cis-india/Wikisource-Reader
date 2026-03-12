@@ -18,6 +18,14 @@
   <string name="navigation_categories">Categorieën</string>
   <string name="navigation_library">Bibliotheek</string>
   <string name="navigation_settings">Instellingen</string>
+  <string name="home_tap_target_coodinator_title">Startscherm</string>
+  <string name="home_tap_target_coodinator_description">Ontdek duizenden gratis, door de community samengestelde boeken en historische teksten in de Wikisource-bibliotheek.</string>
+  <string name="category_tap_target_coodinator_title">Categorieënsectie</string>
+  <string name="category_tap_target_coodinator_description">Vind precies wat u zoekt door te bladeren door categorieën zoals toneelstukken, romans en poëzie.</string>
+  <string name="library_tap_target_coodinator_title">Uw bibliotheek</string>
+  <string name="library_tap_target_coodinator_description">Vind al u boeken hier. U kunt uw verzameling beheren, uw leesvoortgang bijhouden of uw favorieten delen met vrienden.</string>
+  <string name="settings_tap_target_coodinator_title">App-instellingen</string>
+  <string name="settings_tap_target_coodinator_description">Personaliseer uw leeservaring en pas uw taalvoorkeuren aan.</string>
   <string name="library_tooltip">TIP! Veeg bibliotheekitems naar links of rechts om boekdetails te delen of te bekijken.</string>
   <string name="welcome_screen_title">Bedankt voor het installeren van de Wikisource Reader!</string>
   <string name="welcome_screen_desc">Kies je favoriete e-booklezer en begin je leesavontuur.</string>
@@ -28,6 +36,14 @@
   <string name="home_sort_icon_desc">Boeken sorteren</string>
   <string name="language_menu_title">Bladeren op taal</string>
   <string name="sort_menu_title">Sorteren op</string>
+  <string name="language_guide_title">Taal wijzigen</string>
+  <string name="language_guide_description">Boeken filteren op taal</string>
+  <string name="sorting_guide_title">Boeken sorteren</string>
+  <string name="sorting_guide_description">Tik om boeken te sorteren</string>
+  <string name="search_guide_title">Functie zoeken</string>
+  <string name="search_guide_description">Tik om een boek te zoeken</string>
+  <string name="tap_target_screen_title">%1$s scherm</string>
+  <string name="tap_target_screen_description">Naar %1$s-scherm navigeren</string>
   <string name="categories_header">Categorieën</string>
   <string name="no_books_found_for_lang_and_cat">Er zijn geen boeken beschikbaar in de taal %s voor deze categorie.</string>
   <string name="sort_high_to_low">Populariteit (hoog naar laag)</string>
@@ -39,6 +55,7 @@
   <string name="arabic_language_label">Arabisch</string>
   <string name="assamese_language_label">Assamees</string>
   <string name="bangla_language_label">Bengaals</string>
+  <string name="breton_language_label">Bretons</string>
   <string name="catalan_language_label">Catalaans</string>
   <string name="czech_language_label">Tsjechisch</string>
   <string name="danish_language_lebel">Deens</string>
@@ -109,6 +126,9 @@
   <string name="license_setting_desc">Open source-licenties.</string>
   <string name="about_setting">App-informatie</string>
   <string name="about_setting_desc">Toon app-informatie en nuttige links</string>
+  <string name="onboarding_guide_active">Onboardinggids weergeven</string>
+  <string name="onboarding_guide_inactive">Onboardinggids verbergen</string>
+  <string name="toggle_guide_title">Onboardinggids weergeven/verbergen</string>
   <string name="cover_image_desc">Afbeelding van de boekomslag</string>
   <string name="book_detail_header">Boekdetails</string>
   <string name="back_button_desc">Ga terug.</string>
@@ -264,4 +284,18 @@
   <string name="link_sourcecode_repo">Bekijk GitHub Repo</string>
   <string name="link_sourcecode">GitHub</string>
   <string name="woops">Oeps!</string>
+  <string name="tutorial_search_title">Zoeken</string>
+  <string name="tutorial_search_desc">Boek doorzoeken</string>
+  <string name="tutorial_tts_title">TTS</string>
+  <string name="tutorial_tts_desc">Tekst-naar-spraak: dit helpt bij het hardop voorlezen van boeken</string>
+  <string name="tutorial_bookmark_title">Bladwijzer</string>
+  <string name="tutorial_bookmark_desc">Klik om de huidige positie in het boek te markeren, zodat u deze later gemakkelijker kunt terugvinden</string>
+  <string name="tutorial_settings_title">Instellingen</string>
+  <string name="tutorial_settings_desc">Voorkeuren instellen zoals taal, lettertypen, scrollen en verticale tekst</string>
+  <string name="tutorial_toc_title">Boeknavigatie</string>
+  <string name="tutorial_toc_desc">Dit bevat hoofdstukken en opgeslagen bladwijzers</string>
+  <string name="tutorial_menu_toggle_title">Menu openen of sluiten</string>
+  <string name="tutorial_menu_toggle_desc">Tik in het midden van het scherm om het menu te openen of te sluiten</string>
+  <string name="tutorial_select_text_title">Tekst selecteren</string>
+  <string name="tutorial_select_text_desc">Houd een woord ingedrukt om het selectiemenu en de hulpmiddelen te openen, zoals onderstrepen, markeren en notities toevoegen!</string>
 </resources>
