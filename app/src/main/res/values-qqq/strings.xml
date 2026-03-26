@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Amire80
+* Bodhisattwa
 * Nvdtn19
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="all">
@@ -13,6 +14,21 @@
   <string name="network_error">Error message.</string>
   <string name="network_error_retry">Error message. Appears together with {{msg-wm|Wikisource-reader-network error}}</string>
   <string name="error">Seems to be unused.</string>
+  <string name="bangla_language_label">https://en.wikipedia.org/wiki/Bengali_language</string>
+  <string name="breton_language_label">https://en.wikipedia.org/wiki/Breton_language</string>
+  <string name="hindi_language_label">https://en.wikipedia.org/wiki/Hindi</string>
+  <string name="italian_language_label">https://en.wikipedia.org/wiki/Italian_language</string>
+  <string name="javanese_language_label">https://en.wikipedia.org/wiki/Javanese_language</string>
+  <string name="malayalam_language_label">https://en.wikipedia.org/wiki/Malayalam</string>
+  <string name="marathi_language_label">https://en.wikipedia.org/wiki/Marathi_language</string>
+  <string name="malay_language_label">https://en.wikipedia.org/wiki/Malay_language</string>
+  <string name="polish_language_label">https://en.wikipedia.org/wiki/Polish_language</string>
+  <string name="swedish_language_label">https://en.wikipedia.org/wiki/Swedish_language</string>
+  <string name="tamil_language_label">https://en.wikipedia.org/wiki/Tamil_language</string>
+  <string name="telugu_language_label">https://en.wikipedia.org/wiki/Telugu_language</string>
+  <string name="tulu_language_label">https://en.wikipedia.org/wiki/Tulu_language</string>
+  <string name="ukrainian_language_label">https://en.wikipedia.org/wiki/Ukrainian_language</string>
+  <string name="vietnamese_language_label">https://en.wikipedia.org/wiki/Vietnamese_language</string>
   <string name="material_you_setting">{{notranslate}}\n\nName of user interface design technology.</string>
   <string name="material_you_setting_disabled_desc">A preference. \"Material You\" is a name of user interface design technology.</string>
   <string name="material_you_setting_enabled_desc">A preference. \"Material You\" is a name of user interface design technology.</string>
