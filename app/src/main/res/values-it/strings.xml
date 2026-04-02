@@ -2,6 +2,7 @@
 <!-- Authors:
 * Beta16
 * Neonsn0w
+* OrbiliusMagister
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -16,8 +17,16 @@
   <string name="navigation_categories">Categorie</string>
   <string name="navigation_library">Libreria</string>
   <string name="navigation_settings">Impostazioni</string>
+  <string name="home_tap_target_coodinator_title">Schermata iniziale</string>
+  <string name="home_tap_target_coodinator_description">Scopri migliaia di libri e testi storici nella biblioteca di Wikisource, selezionati dalla comunità.</string>
+  <string name="category_tap_target_coodinator_title">Sezione Categorie</string>
+  <string name="category_tap_target_coodinator_description">Trova esattamente ciò che cerchi sfogliando categorie come \"drammi\", \"romanzi\" e \"poesie\".</string>
+  <string name="library_tap_target_coodinator_title">La tua biblioteca</string>
+  <string name="library_tap_target_coodinator_description">Trova tutti i tuoi libri qui. Puoi gestire la tua collezione, tenere traccia dei tuoi progressi o condividere i tuoi preferiti con gli amici.</string>
   <string name="settings_tap_target_coodinator_title">Impostazioni dell\'applicazione</string>
+  <string name="settings_tap_target_coodinator_description">Personalizza la tua esperienza di lettura e regola le preferenze linguistiche.</string>
   <string name="library_tooltip">TIP! Swipe library items left or right to share or view book details.</string>
+  <string name="welcome_screen_title">Grazie di aver installato Wikisource Reader!</string>
   <string name="welcome_screen_desc">Scegli il tuo lettore di ebook preferito per intraprendere il tuo viaggio di lettura.</string>
   <string name="welcome_screen_button">Inizia</string>
   <string name="home_header">Tutti i libri</string>
@@ -27,8 +36,12 @@
   <string name="language_menu_title">Sfoglia per lingua</string>
   <string name="sort_menu_title">Ordina per</string>
   <string name="language_guide_title">Cambia lingua</string>
+  <string name="language_guide_description">Seleziona i libri per lingua</string>
   <string name="sorting_guide_title">Ordina libri</string>
+  <string name="sorting_guide_description">Tocca per ordinare i libri</string>
+  <string name="search_guide_title">Funzione di ricerca</string>
   <string name="search_guide_description">Tocca per cercare un libro</string>
+  <string name="tap_target_screen_title">schermo %1$s</string>
   <string name="tap_target_screen_description">Vai alla schermata %1$s</string>
   <string name="categories_header">Categorie</string>
   <string name="no_books_found_for_lang_and_cat">Nessun libro disponibile in %s per questa categoria.</string>
@@ -80,6 +93,7 @@
   <string name="library_delete_dialog_title">Sei sicuro?</string>
   <string name="downloading_book">Download in corso del libro</string>
   <string name="downloading">Download in corso…</string>
+  <string name="download_complete">Download completato</string>
   <string name="tap_to_view_library">Tocca per visualizzare nella Libreria</string>
   <string name="copy">Copia</string>
   <string name="copied">Copiato!</string>
@@ -136,13 +150,66 @@
   <string name="link_privacy_policy">Informativa sulla Privacy</string>
   <string name="link_privacy_policy_desc">Leggi la nostra ultima informativa sulla privacy.</string>
   <string name="open_source_licenses_header">Licenze</string>
+  <string name="category_novels">Romanzi</string>
+  <string name="category_poetry">Poesia</string>
+  <string name="category_essays">Saggi</string>
+  <string name="developed_by_ws">Sviluppato per Wikisource da</string>
+  <string name="category_shortstories">Racconti brevi</string>
+  <string name="category_narration">Narrativa</string>
+  <string name="category_biography">Biografia</string>
+  <string name="category_dictionaries">Dizionari</string>
+  <string name="category_encyclopedias">Enciclopedie</string>
+  <string name="epubactivity_set_bookmark">Aggiungi un segnalibro</string>
   <string name="epubactivity_settings">Impostazioni utente</string>
+  <string name="epubactivity_book_nav_options">Menu di navigazione del libro</string>
   <string name="epubactivity_read_aloud_start">Leggi a voce alta</string>
+  <string name="epubactivity_search">Cerca</string>
+  <string name="more_options">Altre opzioni</string>
+  <string name="popup_delete_button">CANCELLA</string>
+  <string name="app_version_header">Versione</string>
   <string name="app_version_label">Versione dell\'app:</string>
+  <string name="github_tab_label">Tag GitHub:</string>
+  <string name="copyright_label">Copyright</string>
+  <string name="copyright">\@ European Digital Reading Lab 2019</string>
+  <string name="bsd_license_label">[Licenza BSD-3]</string>
+  <string name="bsd_license_label_accessible">[Licenza BSD 3]</string>
+  <string name="acknowledgements_label">Riconoscimenti</string>
+  <string name="acknowledgements_french_state">R2 Reader non sarebbe stato sviluppato senza l\'aiuto finanziario dello Stato francese.</string>
   <string name="catalog_list_more">Altro</string>
+  <string name="chapter_page">Capitolo / Pagina</string>
+  <string name="progression">Avanzamento</string>
+  <string name="timestamp">Data e ora</string>
+  <string name="contents_tab_label">Indice</string>
+  <string name="bookmarks_tab_label">Segnalibri</string>
+  <string name="highlights_tab_label">Evidenziazioni</string>
   <string name="pagelist_tab_label">Elenco delle pagine</string>
+  <string name="landmarks_tab_label">Punti di riferimento</string>
+  <string name="action_mode_menu_highlight">Evidenziazioni</string>
+  <string name="action_mode_menu_underline">Sottolinea</string>
+  <string name="action_mode_menu_note">Nota</string>
+  <string name="bookmark_added">Segnalibro aggiunto</string>
+  <string name="bookmark_exists">Il segnalibro esiste già</string>
+  <string name="cover_image">Immagine di copertina</string>
+  <string name="repfr">Il logo della Repubblica francese: una donna (Marianne) rivolta a destra; la bandiera blu, bianca e rossa; le parole \"République Française\"; e il motto \"Liberté, Égalité, Fraternité\" (\"Libertà, uguaglianza, fraternità\").</string>
+  <string name="details">Dettagli</string>
   <string name="close">Chiudi</string>
+  <string name="delete">Cancella</string>
+  <string name="confirm_delete_book_title">Eliminare il libro?</string>
+  <string name="confirm_delete_book_text">Sei sicuro di voler cancellare questo libro?</string>
+  <string name="confirm_delete_catalog_title">Cancellare il catalogo?</string>
+  <string name="confirm_delete_catalog_text">Sei sicuro di voler eliminare questo feed del catalogo?</string>
+  <string name="add_book">Aggiungi un libro</string>
+  <string name="add_catalog">Aggiungi un feed del catalogo</string>
+  <string name="save">Salva</string>
+  <string name="enter_title">Inserisci il titolo</string>
   <string name="enter_url">Inserisci l\'URL</string>
+  <string name="invalid_title">Inserisci un titolo.</string>
+  <string name="invalid_url">Inserisci un URL valido</string>
+  <string name="catalog_parse_error">Errore durante l\'analisi del feed del catalogo. Si prega di verificare l\'URL e riprovare.</string>
+  <string name="return_publication">Questo restituirà la pubblicazione</string>
+  <string name="return_button">Ritorna</string>
+  <string name="opening_publication_cannot_render">Impossibile visualizzare la pubblicazione.</string>
+  <string name="opening_publication_audio_engine_initialization">Impossibile aprire la pubblicazione a causa di un errore durante l\'inizializzazione del motore audio.</string>
   <string name="import_publication_inconsistent_state">Importazione non riuscita a causa di condizioni eccezionali. Riprova.</string>
   <string name="publication_error_network_ssl_handshake">Si è verificato un errore SSL.</string>
   <string name="import_error">Errore importazione</string>
