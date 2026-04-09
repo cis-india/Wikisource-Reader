@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* Bayahiu
 * Penyuwangi
 -->
 <resources>
@@ -15,6 +16,9 @@
   <string name="navigation_categories">Kategori</string>
   <string name="navigation_library">Perpustakaan</string>
   <string name="navigation_settings">Pengaturan</string>
+  <string name="home_tap_target_coodinator_title">Layar Beranda</string>
+  <string name="home_tap_target_coodinator_description">Temukan ribuan buku dan teks sejarah gratis yang dikurasi komunitas dari perpustakaan Wikisumber.</string>
+  <string name="category_tap_target_coodinator_title">Bagian Kategori</string>
   <string name="library_tooltip">TIP! Geser butir perpustakaan ke kiri atau kanan untuk berbagi atau melihat rincian buku.</string>
   <string name="welcome_screen_title">Terima kasih telah memasang Wikisource Reader (Pembaca Wikisumber)!</string>
   <string name="welcome_screen_desc">Pilih pembaca buku elektronik pilihan Anda untuk memulai perjalanan membaca Anda.</string>
