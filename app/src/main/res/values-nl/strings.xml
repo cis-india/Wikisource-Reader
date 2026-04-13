@@ -125,7 +125,7 @@
   <string name="license_setting">Licentie en Dankbetuigingen</string>
   <string name="license_setting_desc">Open source-licenties.</string>
   <string name="about_setting">App-informatie</string>
-  <string name="about_setting_desc">Toon app-informatie en nuttige links</string>
+  <string name="about_setting_desc">App-informatie en nuttige koppelingen weergeven</string>
   <string name="onboarding_guide_active">Onboardinggids weergeven</string>
   <string name="onboarding_guide_inactive">Onboardinggids verbergen</string>
   <string name="toggle_guide_title">Onboardinggids weergeven/verbergen</string>
