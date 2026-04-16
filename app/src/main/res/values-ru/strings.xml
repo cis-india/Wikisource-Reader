@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * EneshTranslates
+* Okras
 -->
 <resources>
   <string name="not_applicable">Неизвестно</string>
@@ -15,6 +16,7 @@
   <string name="navigation_categories">Категории</string>
   <string name="navigation_library">Библиотека</string>
   <string name="navigation_settings">Настройки</string>
+  <string name="settings_tap_target_coodinator_title">Настройки приложения</string>
   <string name="library_tooltip">СОВЕТ! Проведите пальцем по элементам библиотеки влево или вправо, чтобы поделиться или просмотреть подробную информацию о книге.</string>
   <string name="welcome_screen_desc">Выберите способ чтения электронных книг.</string>
   <string name="welcome_screen_button">Приступим</string>
@@ -24,6 +26,35 @@
   <string name="language_menu_title">Отобразить по языку</string>
   <string name="categories_header">Категории</string>
   <string name="no_books_found_for_lang_and_cat">Нет доступных книг на %s языке для заданной категории.</string>
+  <string name="all_books_language_lebel">Все книги</string>
+  <string name="arabic_language_label">Арабский</string>
+  <string name="assamese_language_label">Ассамский</string>
+  <string name="bangla_language_label">Бенгальский</string>
+  <string name="breton_language_label">Бретонский</string>
+  <string name="catalan_language_label">Каталонский</string>
+  <string name="czech_language_label">Чешский</string>
+  <string name="danish_language_lebel">Датский</string>
+  <string name="english_language_label">Английский</string>
+  <string name="spanish_language_label">Испанский</string>
+  <string name="french_language_label">Французский</string>
+  <string name="gujarati_language_label">Гуджарати</string>
+  <string name="hindi_language_label">Хинди</string>
+  <string name="indonesian_language_label">Индонезийский</string>
+  <string name="italian_language_label">Итальянский</string>
+  <string name="javanese_language_label">Яванский</string>
+  <string name="kannada_language_label">Каннада</string>
+  <string name="malayalam_language_label">Малаялам</string>
+  <string name="marathi_language_label">Маратхи</string>
+  <string name="malay_language_label">Малайский</string>
+  <string name="polish_language_label">Польский</string>
+  <string name="punjabi_language_label">Панджаби</string>
+  <string name="sundanese_language_label">Сунданезский</string>
+  <string name="swedish_language_label">Шведский</string>
+  <string name="tamil_language_label">Тамильский</string>
+  <string name="telugu_language_label">Телугу</string>
+  <string name="tulu_language_label">Тулу</string>
+  <string name="ukrainian_language_label">Украинский</string>
+  <string name="vietnamese_language_label">Вьетнамский</string>
   <string name="library_header">Библиотека</string>
   <string name="empty_library">Здесь пусто!</string>
   <string name="import_button_text">Импорт</string>
@@ -38,6 +69,7 @@
   <string name="library_delete_dialog_title">Вы в этом уверены?</string>
   <string name="downloading_book">Скачивание книги</string>
   <string name="downloading">Downloading…</string>
+  <string name="download_complete">Загрузка завершена</string>
   <string name="tap_to_view_library">Нажмите, чтобы посмотреть в Библиотеке</string>
   <string name="copy">Копировать</string>
   <string name="copied">Скопировано!</string>
@@ -78,6 +110,9 @@
   <string name="download_started">Загрузка началась!</string>
   <string name="book_synopsis">Краткий обзор</string>
   <string name="book_synopsis_not_found">Недоступно</string>
+  <string name="editors_info">Редакторы</string>
+  <string name="translators_info">Переводчики</string>
+  <string name="genres_info">Жанры</string>
   <string name="about_header">Описание</string>
   <string name="about_desc">Бесплатное приложение с открытым исходным кодом для загрузки электронных книг из проекта GutenBerg.</string>
   <string name="useful_links">Полезные Ссылки</string>
@@ -85,5 +120,21 @@
   <string name="link_privacy_policy">Политика Конфиденциальности</string>
   <string name="link_privacy_policy_desc">Прочтите нашу последнюю политику конфиденциальности.</string>
   <string name="open_source_licenses_header">Лицензии</string>
+  <string name="app_version_header">Версия</string>
+  <string name="app_version_label">Версия приложения:</string>
+  <string name="bookmarks_tab_label">Закладки</string>
+  <string name="close">Закрыть</string>
+  <string name="delete">Удалить</string>
+  <string name="confirm_delete_book_title">Удалить книгу?</string>
+  <string name="confirm_delete_catalog_title">Удалить каталог?</string>
+  <string name="add_book">Добавить книгу</string>
+  <string name="save">Сохранить</string>
+  <string name="yellow">Жёлтый</string>
+  <string name="green">Зелёный</string>
+  <string name="blue">Синий</string>
+  <string name="red">Красный</string>
+  <string name="purple">Фиолетовый</string>
+  <string name="link_sourcecode">GitHub</string>
   <string name="woops">Упс!!</string>
+  <string name="tutorial_menu_toggle_title">Открыть или закрыть меню</string>
 </resources>

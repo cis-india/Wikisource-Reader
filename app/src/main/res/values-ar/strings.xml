@@ -15,6 +15,14 @@
   <string name="navigation_categories">الفئات</string>
   <string name="navigation_library">المكتبة</string>
   <string name="navigation_settings">الاعدادات</string>
+  <string name="home_tap_target_coodinator_title">الشاشة الرئيسية</string>
+  <string name="home_tap_target_coodinator_description">اكتشف آلاف الكتب والنصوص التاريخية المجانية التي أشرف عليها المجتمع من مكتبة ويكي مصدر.</string>
+  <string name="category_tap_target_coodinator_title">قسم الفئات</string>
+  <string name="category_tap_target_coodinator_description">اعثر على ما تبحث عنه بالضبط من خلال تصفح فئات مثل المسرحيات والروايات والشعر.</string>
+  <string name="library_tap_target_coodinator_title">مكتبتك</string>
+  <string name="library_tap_target_coodinator_description">اعثر على جميع كتبك هنا. يمكنك إدارة مجموعتك، وتتبع تقدمك، أو مشاركة كتبك المفضلة مع الأصدقاء.</string>
+  <string name="settings_tap_target_coodinator_title">إعدادات التطبيق</string>
+  <string name="settings_tap_target_coodinator_description">قم بتخصيص تجربة القراءة الخاصة بك، واضبط تفضيلات اللغة.</string>
   <string name="library_tooltip">نصيحة! مرر عناصر المكتبة يمينًا أو يسارًا لمشاركة الكتاب أو عرض تفاصيله.</string>
   <string name="welcome_screen_title">شكرًا لتثبيت Myne!</string>
   <string name="welcome_screen_desc">اختر قارئ الكتب الإلكترونية المفضل لديك للانطلاق في رحلتك في القراءة.</string>
@@ -25,6 +33,14 @@
   <string name="home_sort_icon_desc">ترتيب الأعمال</string>
   <string name="language_menu_title">تصفح حسب اللغة</string>
   <string name="sort_menu_title">الترتيب حسب</string>
+  <string name="language_guide_title">تبديل اللغة</string>
+  <string name="language_guide_description">تصفية الكتب حسب اللغة</string>
+  <string name="sorting_guide_title">فرز الكتب</string>
+  <string name="sorting_guide_description">انقر لفرز الكتب</string>
+  <string name="search_guide_title">وظيفة البحث</string>
+  <string name="search_guide_description">انقر للبحث عن كتاب</string>
+  <string name="tap_target_screen_title">شاشة %1$s</string>
+  <string name="tap_target_screen_description">انتقل إلى شاشة %1$s</string>
   <string name="categories_header">الفئات</string>
   <string name="no_books_found_for_lang_and_cat">لا توجد كتب متاحة باللغة %s لهذه الفئة.</string>
   <string name="sort_high_to_low">الأكثر شعبية</string>
@@ -36,6 +52,7 @@
   <string name="arabic_language_label">عربي</string>
   <string name="assamese_language_label">اللغة الأسامية</string>
   <string name="bangla_language_label">البنغالية</string>
+  <string name="breton_language_label">بريتون</string>
   <string name="catalan_language_label">الكاتالونية</string>
   <string name="czech_language_label">التشيك</string>
   <string name="danish_language_lebel">دانماركي</string>
@@ -106,6 +123,9 @@
   <string name="license_setting_desc">التراخيص مفتوحة المصدر</string>
   <string name="about_setting">معلومات التطبيق</string>
   <string name="about_setting_desc">عرض معلومات التطبيق والروابط المفيدة</string>
+  <string name="onboarding_guide_active">دليل الإعداد</string>
+  <string name="onboarding_guide_inactive">إخفاء دليل الإعداد</string>
+  <string name="toggle_guide_title">دليل الإعداد</string>
   <string name="cover_image_desc">صورة الغلاف</string>
   <string name="book_detail_header">تفاصيل الكتاب</string>
   <string name="back_button_desc">ارجع للخلف</string>
@@ -265,4 +285,18 @@
   <string name="link_sourcecode_repo">عرض مستودع GitHub</string>
   <string name="link_sourcecode">جيت هب</string>
   <string name="woops">اووبس!!</string>
+  <string name="tutorial_search_title">يبحث</string>
+  <string name="tutorial_search_desc">ابحث في الكتاب</string>
+  <string name="tutorial_tts_title">تحويل النص إلى كلام</string>
+  <string name="tutorial_tts_desc">تحويل النص إلى كلام، وهذا يساعد على قراءة الكتب بصوت عالٍ</string>
+  <string name="tutorial_bookmark_title">إضافة إلى المفضلة</string>
+  <string name="tutorial_bookmark_desc">انقر لوضع إشارة مرجعية على الموضع الحالي للكتاب ليسهل الوصول إليه لاحقًا</string>
+  <string name="tutorial_settings_title">إعدادات</string>
+  <string name="tutorial_settings_desc">قم بضبط الإعدادات المفضلة، مثل اللغة والخطوط والتمرير والنص العمودي.</string>
+  <string name="tutorial_toc_title">تصفح الكتب</string>
+  <string name="tutorial_toc_desc">يحتوي هذا على فصول وإشارات مرجعية محفوظة</string>
+  <string name="tutorial_menu_toggle_title">فتح أو إغلاق القائمة</string>
+  <string name="tutorial_menu_toggle_desc">انقر في منتصف الشاشة لفتح القائمة أو إغلاقها</string>
+  <string name="tutorial_select_text_title">حدد النص</string>
+  <string name="tutorial_select_text_desc">اضغط مطولاً على أي كلمة لعرض قائمة التحديد والأدوات، مثل التسطير والتمييز وإضافة الملاحظات!</string>
 </resources>
