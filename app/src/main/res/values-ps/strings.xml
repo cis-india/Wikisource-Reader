@@ -16,6 +16,7 @@
   <string name="navigation_library">کتابتون</string>
   <string name="navigation_settings">اوڼنې</string>
   <string name="home_tap_target_coodinator_title">کور سکرين</string>
+  <string name="home_tap_target_coodinator_description">ويکي‌سرچينې کتابتون کې په زرگونو وړيا، د ټولنې له خوا ترتيب شوي کتابونه او پېښليک ليکونه ومومئ.</string>
   <string name="category_tap_target_coodinator_title">وېشنيزو برخه</string>
   <string name="library_tap_target_coodinator_title">ستاسو کتابتون</string>
   <string name="settings_tap_target_coodinator_title">کاريال اوڼنې</string>
@@ -233,9 +234,15 @@
   <string name="tutorial_search_title">پلټل</string>
   <string name="tutorial_search_desc">د کتاب له مخې پلټل</string>
   <string name="tutorial_tts_title">ټي‌ټي‌اېس</string>
-  <string name="tutorial_bookmark_title">کتاب‌‌نښې</string>
+  <string name="tutorial_tts_desc">ليک په وينا اړول، دا د کتابونو په لوړ غږ لوستلو کې مرسته کوي</string>
+  <string name="tutorial_bookmark_title">کتاب‌‌نښه</string>
+  <string name="tutorial_bookmark_desc">د اسانه ترلاسنې لپاره د کتاب اوسني ځای نښه کولو لپاره په کتاب‌نښه وټوکئ</string>
   <string name="tutorial_settings_title">اوڼنې</string>
+  <string name="tutorial_settings_desc">غوره‌توبونه ترتيب کړئ لکه ژبه، ليکبڼې، کښته‌پورته‌کول او ولاړ ليک</string>
   <string name="tutorial_toc_title">کتاب چلند</string>
+  <string name="tutorial_toc_desc">دا څپرکي او خوندي شوي کتاب‌نښې لري</string>
   <string name="tutorial_menu_toggle_title">غوره‌نۍ پرانېستل يا تړل</string>
+  <string name="tutorial_menu_toggle_desc">د غوره‌نۍ د پرانېستلو يا تړلو لپاره د ښيښې په منځ باندې وټوکئ</string>
   <string name="tutorial_select_text_title">ليک غوره‌کول</string>
+  <string name="tutorial_select_text_desc">د ټاکنې غوره‌نۍ او اوزارو د ليدلو لپاره هر ويي ته اوږد زور ورکړئ لکه کرښ‌لاندې، روښانه‌کول او يادښتونه ورگډول!</string>
 </resources>
