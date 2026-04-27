@@ -20,6 +20,7 @@
   <string name="category_tap_target_coodinator_title">وېشنيزو برخه</string>
   <string name="library_tap_target_coodinator_title">ستاسو کتابتون</string>
   <string name="settings_tap_target_coodinator_title">کاريال اوڼنې</string>
+  <string name="welcome_screen_title">د ويکي‌سرچينې لوستونکي د ځای‌پرځای‌کولو څخه مو مننه!</string>
   <string name="welcome_screen_button">پيلول</string>
   <string name="home_header">ټول کتابونه</string>
   <string name="home_language_icon_desc">د ژبې له مخې اوډل</string>
@@ -185,6 +186,8 @@
   <string name="action_mode_menu_underline">کرښ‌لاندې</string>
   <string name="action_mode_menu_note">يادښت</string>
   <string name="bookmark_added">کتاب نښه ورگډه شوه</string>
+  <string name="bookmark_exists">کتاب‌نښه لادمخه شتون لري</string>
+  <string name="cover_image">پښتۍ انځور</string>
   <string name="details">سپيناوي</string>
   <string name="close">تړل</string>
   <string name="delete">ړنگول</string>
@@ -195,6 +198,12 @@
   <string name="enter_title">سرليک دننه کړئ</string>
   <string name="enter_url">وېبتړ دننه کړئ</string>
   <string name="invalid_title">مهرباني وکړئ سرليک دننه کړئ</string>
+  <string name="publication_error_network_unreachable">پالنگر ته لاسرسی نشي کېدی.</string>
+  <string name="publication_error_network_timeout">پالنگر ځواب ورکولو کې ډېر ځنډ وکړ.</string>
+  <string name="publication_error_incorrect_credentials">ورکړل شوي لاسوندونه ناسم وو.</string>
+  <string name="publication_error_scheme_not_supported">خپرونې سرچينه نه ملاتړ کېږي.</string>
+  <string name="publication_error_invalid_publication">خپرونه چټله ښکاري.</string>
+  <string name="publication_error_unexpected">يوه ناڅاپي تېروتنه رامنځته شوه.</string>
   <string name="reader_error">تېروتنه</string>
   <string name="opening_error">خپراوی نشي پرانېستلای</string>
   <string name="import_error">رالېږدولو تېروتنه</string>
@@ -212,6 +221,7 @@
   <string name="go_backward_30_seconds">۳۰ ثانيې شاته ولاړ شه</string>
   <string name="play_or_pause">غږول يا ودرول</string>
   <string name="go_forward_30_seconds">۳۰ ثانيې مخ ته ولاړ شه</string>
+  <string name="tts_error_language_support_incomplete">د %s ژبې لپاره زياتي مالومات اړين دي. ايا تاسو غواړئ دا راکښته کړئ؟</string>
   <string name="tts_error_network">د شبکې تېروتنه رامنځته شوه</string>
   <string name="tts_error_other">ټي‌ټي‌اېس تېروتنه رامنځته شوه</string>
   <string name="tts_next">مخکې تلل</string>
@@ -229,6 +239,7 @@
   <string name="error_unexpected">يوه ناڅاپي تېروتنه رامنځته شوه.</string>
   <string name="go_to_library">کتابتون ته ورشه</string>
   <string name="link_metapage_desc">زموږ له پاڼې ليدنه وکړئ</string>
+  <string name="link_sourcecode_repo">گيټ‌هاب زېرمتون کتل</string>
   <string name="link_sourcecode">گيټ‌هاب</string>
   <string name="woops">اووو!</string>
   <string name="tutorial_search_title">پلټل</string>
