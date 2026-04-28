@@ -9,6 +9,6 @@ import kotlinx.serialization.Serializable
 data class Genre(
     @SerialName("name")
     val name: String? = null,
-    @SerialName("genre_wikidata_qid")
+    @SerialName("wikidata_qid")
     val genreWikidataQid: String? = null,
 )

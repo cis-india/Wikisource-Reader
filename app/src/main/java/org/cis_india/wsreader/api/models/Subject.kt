@@ -9,6 +9,6 @@ import kotlinx.serialization.Serializable
 data class Subject(
     @SerialName("name")
     val name: String? = null,
-    @SerialName("subject_wikidata_qid")
+    @SerialName("wikidata_qid")
     val subjectWikidataQid: String? = null,
 )
