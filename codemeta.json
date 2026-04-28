@@ -25,6 +25,18 @@
         {
             "type": "Role",
             "schema:author": "_:author_2",
+            "roleName": "Lead Developer"
+        }
+        {
+            "id": "_:author_3",
+            "type": "Person",
+            "email": "levymuguro@gmail.com",
+            "familyName": "Muguro",
+            "givenName": "Levy"
+        },
+        {
+            "type": "Role",
+            "schema:author": "_:author_3",
             "roleName": "Developer"
         }
     ],
