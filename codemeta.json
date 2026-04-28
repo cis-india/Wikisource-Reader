@@ -1,0 +1,57 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Book",
+    "author": [
+        {
+            "id": "_:author_1",
+            "type": "Person",
+            "email": "bodhisattwa.rgkmc@gmail.com",
+            "familyName": "Mandal",
+            "givenName": "Bodhisattwa"
+        },
+        {
+            "type": "Role",
+            "schema:author": "_:author_1",
+            "roleName": "Ideation"
+        },
+        {
+            "id": "_:author_2",
+            "type": "Person",
+            "email": "saioverhere@gmail.com",
+            "familyName": "Phanindra",
+            "givenName": "Sai"
+        },
+        {
+            "type": "Role",
+            "schema:author": "_:author_2",
+            "roleName": "Developer"
+        }
+    ],
+    "codeRepository": "git+https://github.com/cis-india/Wikisource-Reader.git",
+    "dateModified": "2026-02-03",
+    "datePublished": "2025-08-18",
+    "description": "Wikisource reader app is a free e-book reader for Android users which fetches readily available books from the free and open digital library of Wikisource.",
+    "downloadUrl": "https://github.com/cis-india/Wikisource-Reader/archive/refs/tags/v1.4.5.tar.gz",
+    "keywords": [
+        "wikisource",
+        "ebook"
+    ],
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "name": "Wikisource Reader",
+    "operatingSystem": "Android",
+    "programmingLanguage": "Kotlin",
+    "relatedLink": [
+        "https://play.google.com/store/apps/details?id=org.cis_india.wsreader",
+        "https://f-droid.org/packages/org.cis_india.wsreader/",
+        "https://cis-india.github.io/wikisource-reader-app/",
+        "https://meta.wikimedia.org/wiki/Wikisource_reader_app"
+    ],
+    "releaseNotes": "F-Droid metadata updates",
+    "version": "1.4.5",
+    "codemeta:contIntegration": {
+        "id": "https://github.com/cis-india/Wikisource-Reader"
+    },
+    "continuousIntegration": "https://github.com/cis-india/Wikisource-Reader",
+    "issueTracker": "https://phabricator.wikimedia.org/project/board/8233/query/all/"
+}
