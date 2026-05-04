@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">Scáileán Baile</string>
   <string name="home_tap_target_coodinator_description">Faigh amach na mílte leabhar agus téacsanna stairiúla saor in aisce, arna gcoimeád ag an bpobal, ó leabharlann Wikisource.</string>
   <string name="category_tap_target_coodinator_title">Roinn na gCatagóirí</string>
-  <string name="category_tap_target_coodinator_description">Aimsigh go díreach atá uait trí bhrabhsáil trí chatagóirí cosúil le drámaí, úrscéalta agus filíocht.</string>
+  <string name="category_tap_target_coodinator_description" fuzzy="true">Aimsigh go díreach atá uait trí bhrabhsáil trí chatagóirí cosúil le drámaí, úrscéalta agus filíocht.</string>
   <string name="library_tap_target_coodinator_title">Do Leabharlann</string>
   <string name="library_tap_target_coodinator_description">Aimsigh do chuid leabhar go léir anseo. Is féidir leat do bhailiúchán a bhainistiú, do dhul chun cinn a rianú, nó do rogha féin a roinnt le cairde.</string>
   <string name="settings_tap_target_coodinator_title">Socruithe Aipe</string>
@@ -287,11 +287,11 @@
   <string name="tutorial_search_title">Cuardaigh</string>
   <string name="tutorial_search_desc">Cuardaigh tríd an leabhar</string>
   <string name="tutorial_tts_title">TTS</string>
-  <string name="tutorial_tts_desc">Téacs go cainte, Cuidíonn sé seo leis na leabhair a léamh os ard</string>
+  <string name="tutorial_tts_desc" fuzzy="true">Téacs go cainte, Cuidíonn sé seo leis na leabhair a léamh os ard</string>
   <string name="tutorial_bookmark_title">Leabharmharc</string>
   <string name="tutorial_bookmark_desc">Cliceáil chun suíomh reatha an leabhair a chur i leabharmharcanna le go mbeidh sé níos fusa é a fháil</string>
   <string name="tutorial_settings_title">Socruithe</string>
-  <string name="tutorial_settings_desc">Cumraigh roghanna i.e. teanga, clónna, scrollú agus téacs ingearach</string>
+  <string name="tutorial_settings_desc" fuzzy="true">Cumraigh roghanna i.e. teanga, clónna, scrollú agus téacs ingearach</string>
   <string name="tutorial_toc_title">Nascleanúint Leabhar</string>
   <string name="tutorial_toc_desc">Tá caibidlí agus leabharmharcanna sábháilte anseo</string>
   <string name="tutorial_menu_toggle_title">Oscail nó Dún an Roghchlár</string>

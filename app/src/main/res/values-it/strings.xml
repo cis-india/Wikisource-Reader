@@ -20,7 +20,7 @@
   <string name="home_tap_target_coodinator_title">Schermata iniziale</string>
   <string name="home_tap_target_coodinator_description">Scopri migliaia di libri e testi storici nella biblioteca di Wikisource, selezionati dalla comunità.</string>
   <string name="category_tap_target_coodinator_title">Sezione Categorie</string>
-  <string name="category_tap_target_coodinator_description">Trova esattamente ciò che cerchi sfogliando categorie come \"drammi\", \"romanzi\" e \"poesie\".</string>
+  <string name="category_tap_target_coodinator_description" fuzzy="true">Trova esattamente ciò che cerchi sfogliando categorie come \"drammi\", \"romanzi\" e \"poesie\".</string>
   <string name="library_tap_target_coodinator_title">La tua biblioteca</string>
   <string name="library_tap_target_coodinator_description">Trova tutti i tuoi libri qui. Puoi gestire la tua collezione, tenere traccia dei tuoi progressi o condividere i tuoi preferiti con gli amici.</string>
   <string name="settings_tap_target_coodinator_title">Impostazioni dell\'applicazione</string>

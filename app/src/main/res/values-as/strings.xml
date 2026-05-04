@@ -19,7 +19,7 @@
   <string name="home_tap_target_coodinator_title">বেটুপাত</string>
   <string name="home_tap_target_coodinator_description">ৱিকিউৎস পুথিভঁৰালৰ পৰা ৱিকি সমাজৰ দ্বাৰা পৰিচালিত হাজাৰ হাজাৰ বিনামূলীয়া কিতাপ আৰু ঐতিহাসিক পাঠ্য আৱিষ্কাৰ কৰক।</string>
   <string name="category_tap_target_coodinator_title">শ্ৰেণীসমূহ শাখা</string>
-  <string name="category_tap_target_coodinator_description">নাটক, উপন্যাস, আৰু কবিতাৰ দৰে শ্ৰেণীসমূহ বিচৰণ কৰি আপুনি বিচৰা বস্তুটো সঠিককৈ উলিয়াওক।</string>
+  <string name="category_tap_target_coodinator_description" fuzzy="true">নাটক, উপন্যাস, আৰু কবিতাৰ দৰে শ্ৰেণীসমূহ বিচৰণ কৰি আপুনি বিচৰা বস্তুটো সঠিককৈ উলিয়াওক।</string>
   <string name="library_tap_target_coodinator_title">আপোনাৰ পুথিভঁৰাল</string>
   <string name="library_tap_target_coodinator_description">আপোনাৰ সকলো কিতাপ ইয়াত বিচাৰি পাব। আপুনি আপোনাৰ সংগ্ৰহৰ ব্যৱস্থাপনা কৰিব পাৰে, আপোনাৰ অগ্ৰগতি অনুসৰণ কৰিব পাৰে, বা প্ৰিয় পাঠ্যসমূহ বন্ধুৰ সৈতে ভাগ-বতৰা কৰিব পাৰে।</string>
   <string name="settings_tap_target_coodinator_title">এপ্‌ ছেটিং</string>
@@ -285,11 +285,11 @@
   <string name="tutorial_search_title">সন্ধান কৰক</string>
   <string name="tutorial_search_desc">কিতাপখনৰ মাজত সন্ধান কৰক</string>
   <string name="tutorial_tts_title">টিটিএছ</string>
-  <string name="tutorial_tts_desc">টেক্সট টু স্পীচ, ই কিতাপবোৰ উচ্চস্বৰে পঢ়িবলৈ সহায় কৰে</string>
+  <string name="tutorial_tts_desc" fuzzy="true">টেক্সট টু স্পীচ, ই কিতাপবোৰ উচ্চস্বৰে পঢ়িবলৈ সহায় কৰে</string>
   <string name="tutorial_bookmark_title">বুকমাৰ্ক</string>
   <string name="tutorial_bookmark_desc">সহজ উদ্ধাৰৰ বাবে কিতাপখনৰ বৰ্তমানৰ অৱস্থান বুকমাৰ্ক কৰিবলৈ ক্লিক কৰক</string>
   <string name="tutorial_settings_title">ছেটিংছ</string>
-  <string name="tutorial_settings_desc">পছন্দসমূহ সংৰূপণ কৰক অৰ্থাৎ ভাষা, ফ\'ণ্ট, স্ক্ৰলিং আৰু উলম্ব পাঠ্য</string>
+  <string name="tutorial_settings_desc" fuzzy="true">পছন্দসমূহ সংৰূপণ কৰক অৰ্থাৎ ভাষা, ফ\'ণ্ট, স্ক্ৰলিং আৰু উলম্ব পাঠ্য</string>
   <string name="tutorial_toc_title">কিতাপৰ নেভিগেচন</string>
   <string name="tutorial_toc_desc">ইয়াত অধ্যায় আৰু সংৰক্ষিত বুকমাৰ্কসমূহ আছে</string>
   <string name="tutorial_menu_toggle_title">মেনু খোলক বা বন্ধ কৰক</string>
