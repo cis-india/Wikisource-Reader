@@ -20,7 +20,7 @@
     <string name="home_tap_target_coodinator_description">Discover thousands of free, community-curated books and historical texts from the Wikisource library.</string>
 
     <string name="category_tap_target_coodinator_title">Categories Section</string>
-    <string name="category_tap_target_coodinator_description">Find exactly what you’re looking for by browsing through categories like plays, novels, and poetry.</string>
+    <string name="category_tap_target_coodinator_description">Find exactly what you’re looking for by browsing through categories like plays, novels, poetry etc.</string>
 
     <string name="library_tap_target_coodinator_title">Your Library</string>
     <string name="library_tap_target_coodinator_description">Find all your books here. You can manage your collection, track your progress, or share favorites with friends.</string>
@@ -46,9 +46,9 @@
 
     <!--    onboarding guides-->
     <string name="language_guide_title">Switch Language</string>
-    <string name="language_guide_description">Filter Books By Language</string>
+    <string name="language_guide_description">Filter books by language</string>
     <string name="sorting_guide_title">Sort Books</string>
-    <string name="sorting_guide_description">Tap to sort Books</string>
+    <string name="sorting_guide_description">Tap to sort books</string>
     <string name="search_guide_title">Search function</string>
     <string name="search_guide_description">Tap to search a book</string>
 
@@ -169,11 +169,11 @@
     <string name="translators_info">Translators</string>
     <string name="genres_info">Genres</string>
     <string name="subjects_info">Subjects</string>
-    <string name="form_of_work_info">Forms of Work</string>
+    <string name="form_of_work_info">Literary form</string>
     <string name="publishers_info">Publisher</string>
-    <string name="unknown_publishers_info">Unknown Publisher</string>
-    <string name="place_of_publication_info">Place Of Publication</string>
-    <string name="unknown_place_of_publication_info">Unknown place Of Publication</string>
+    <string name="unknown_publishers_info">Unknown publisher</string>
+    <string name="place_of_publication_info">Place of publication</string>
+    <string name="unknown_place_of_publication_info">Unknown place of publication</string>
 
     <!-- About Screen -->
     <string name="about_header">About</string>
@@ -350,7 +350,7 @@
     <string name="tutorial_search_desc">Search through the book</string>
 
     <string name="tutorial_tts_title">TTS</string>
-    <string name="tutorial_tts_desc">Text to speech, This helps read aloud the books</string>
+    <string name="tutorial_tts_desc">Text to speech helps read aloud the books</string>
 
     <string name="tutorial_bookmark_title">Bookmark</string>
     <string name="tutorial_bookmark_desc">Click to bookmark current position of the book for easier retrieval</string>
