@@ -197,7 +197,7 @@ object BookUtils {
             formsOfWork.map { form ->
                 async {
                     val name = fetchLabelFromWikidata(form.typeOfWorkWikidataQid, language)
-                    name ?: form.typeOfWork ?: ""
+                    name ?: form.name ?: ""
                 }
             }.awaitAll()
         }.filter { it.isNotBlank() }
