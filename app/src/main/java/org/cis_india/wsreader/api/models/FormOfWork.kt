@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 @Keep
 @Serializable
 data class FormOfWork(
-    @SerialName("type_of_work")
+    @SerialName("name")
     val typeOfWork: String? = null,
     @SerialName("wikidata_qid")
     val typeOfWorkWikidataQid: String? = null,
