@@ -18,6 +18,9 @@ package org.cis_india.wsreader.helpers.book
 
 import org.cis_india.wsreader.api.models.Author
 import org.cis_india.wsreader.api.models.Editor
+import org.cis_india.wsreader.api.models.FormOfWork
+import org.cis_india.wsreader.api.models.Genre
+import org.cis_india.wsreader.api.models.Subject
 import org.cis_india.wsreader.api.models.Translator
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers
@@ -156,6 +159,45 @@ object BookUtils {
                 async {
                     val name = fetchLabelFromWikidata(translator.pwikidataqid, language)
                     fixAuthorName(name ?: translator.name)
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
+    suspend fun getLiteraryGenres(genres: List<Genre>, language: String): List<String> {
+        if (genres.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            genres.map { genre ->
+                async {
+                    val name = fetchLabelFromWikidata(genre.genreWikidataQid, language)
+                    name ?: genre.name ?: ""
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
+    suspend fun getMainSubjects(subjects: List<Subject>, language: String): List<String> {
+        if (subjects.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            subjects.map { subject ->
+                async {
+                    val name = fetchLabelFromWikidata(subject.subjectWikidataQid, language)
+                    name ?: subject.name ?: ""
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
+    suspend fun getFormOfWork(formsOfWork: List<FormOfWork>, language: String): List<String> {
+        if (formsOfWork.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            formsOfWork.map { form ->
+                async {
+                    val name = fetchLabelFromWikidata(form.typeOfWorkWikidataQid, language)
+                    name ?: form.typeOfWork ?: ""
                 }
             }.awaitAll()
         }.filter { it.isNotBlank() }
