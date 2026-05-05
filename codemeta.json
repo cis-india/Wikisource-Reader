@@ -38,7 +38,7 @@
         }
     ],
     "codeRepository": "git+https://github.com/cis-india/Wikisource-Reader.git",
-    "dateModified": "2026-02-03",
+    "dateModified": "2026-05-04",
     "datePublished": "2025-08-18",
     "description": "Wikisource reader app is a free e-book reader for Android users which fetches readily available books from the free and open digital library of Wikisource.",
     "downloadUrl": "https://github.com/cis-india/Wikisource-Reader/archive/refs/tags/v1.4.5.tar.gz",
@@ -57,7 +57,7 @@
         "https://meta.wikimedia.org/wiki/Wikisource_reader_app"
     ],
     "releaseNotes": "F-Droid metadata updates",
-    "version": "1.4.5",
+    "version": "1.5.0",
     "codemeta:contIntegration": {
         "id": "https://github.com/cis-india/Wikisource-Reader"
     },
