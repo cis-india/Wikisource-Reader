@@ -35,6 +35,9 @@ sealed class BookLanguage(@StringRes val name: Int, val isoCode: String) {
 
     @Keep
     data object Danish : BookLanguage(R.string.danish_language_lebel, "da")
+
+    @Keep
+    data object German : BookLanguage(R.string.german_language_lebel, "de")
     
     @Keep
     data object English : BookLanguage(R.string.english_language_label, "en")
@@ -71,12 +74,18 @@ sealed class BookLanguage(@StringRes val name: Int, val isoCode: String) {
 
     @Keep
     data object Malay : BookLanguage(R.string.malay_language_label, "ms")
+    
+    @Keep
+    data object Norwegian : BookLanguage(R.string.norwegian_language_lebel, "no")
 
     @Keep
     data object Polish : BookLanguage(R.string.polish_language_label, "pl")
 
     @Keep
     data object Punjabi : BookLanguage(R.string.punjabi_language_label, "pa")
+
+    @Keep
+    data object Russian : BookLanguage(R.string.russian_language_lebel, "ru")
 
     @Keep
     data object Sundanese : BookLanguage(R.string.sundanese_language_label, "su")
