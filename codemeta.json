@@ -6,7 +6,6 @@
         {
             "id": "_:author_1",
             "type": "Person",
-            "email": "bodhisattwa.rgkmc@gmail.com",
             "familyName": "Mandal",
             "givenName": "Bodhisattwa"
         },
@@ -18,7 +17,6 @@
         {
             "id": "_:author_2",
             "type": "Person",
-            "email": "saioverhere@gmail.com",
             "familyName": "Phanindra",
             "givenName": "Sai"
         },
@@ -30,7 +28,6 @@
         {
             "id": "_:author_3",
             "type": "Person",
-            "email": "levymuguro@gmail.com",
             "familyName": "Muguro",
             "givenName": "Levy"
         },
