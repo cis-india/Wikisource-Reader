@@ -29,6 +29,10 @@
   <string name="language_menu_title">ভাষা অনুযায়ী ব্রাউজ করুন</string>
   <string name="sort_menu_title">সাজান</string>
   <string name="language_guide_title">ভাষা পরিবর্তন করুন</string>
+  <string name="language_guide_description">ভাষা অনুযায়ী বই বাছুন</string>
+  <string name="sorting_guide_title">বই সাজান</string>
+  <string name="sorting_guide_description">বইগুলি সাজাতে ট্যাপ করুন</string>
+  <string name="search_guide_description">বই খুঁজতে ট্যাপ করুন</string>
   <string name="categories_header">বিষয়শ্রেণী</string>
   <string name="no_books_found_for_lang_and_cat">এই বিভাগে %s ভাষায় কোনও বই নেই।</string>
   <string name="sort_high_to_low">জনপ্রিয়তা (বেশি থেকে কম)</string>
@@ -124,6 +128,7 @@
   <string name="translators_info">অনুবাদক</string>
   <string name="genres_info">ধরন</string>
   <string name="subjects_info">বিষয়</string>
+  <string name="form_of_work_info">সাহিত্যরূপ</string>
   <string name="publishers_info">প্রকাশক</string>
   <string name="unknown_publishers_info">অজানা প্রকাশক</string>
   <string name="place_of_publication_info">প্রকাশস্থান</string>

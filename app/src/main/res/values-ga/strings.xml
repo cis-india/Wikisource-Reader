@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">Scáileán Baile</string>
   <string name="home_tap_target_coodinator_description">Faigh amach na mílte leabhar agus téacsanna stairiúla saor in aisce, arna gcoimeád ag an bpobal, ó leabharlann Wikisource.</string>
   <string name="category_tap_target_coodinator_title">Roinn na gCatagóirí</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">Aimsigh go díreach atá uait trí bhrabhsáil trí chatagóirí cosúil le drámaí, úrscéalta agus filíocht.</string>
+  <string name="category_tap_target_coodinator_description">Aimsigh go díreach atá uait trí bhrabhsáil trí chatagóirí cosúil le drámaí, úrscéalta, filíocht srl.</string>
   <string name="library_tap_target_coodinator_title">Do Leabharlann</string>
   <string name="library_tap_target_coodinator_description">Aimsigh do chuid leabhar go léir anseo. Is féidir leat do bhailiúchán a bhainistiú, do dhul chun cinn a rianú, nó do rogha féin a roinnt le cairde.</string>
   <string name="settings_tap_target_coodinator_title">Socruithe Aipe</string>
@@ -56,6 +56,7 @@
   <string name="catalan_language_label">Catalóinis</string>
   <string name="czech_language_label">Seiceach</string>
   <string name="danish_language_lebel">Danmhairgis</string>
+  <string name="german_language_lebel">Gearmáinis</string>
   <string name="english_language_label">Béarla</string>
   <string name="spanish_language_label">Spáinnis</string>
   <string name="french_language_label">Fraincis</string>
@@ -68,8 +69,10 @@
   <string name="malayalam_language_label">Mailéalaimis</string>
   <string name="marathi_language_label">Maratí</string>
   <string name="malay_language_label">Malaeis</string>
+  <string name="norwegian_language_lebel">Ioruais</string>
   <string name="polish_language_label">Polainnis</string>
   <string name="punjabi_language_label">Punjabi</string>
+  <string name="russian_language_lebel">Rúisis</string>
   <string name="sundanese_language_label">Sundáinis</string>
   <string name="swedish_language_label">Sualainnis</string>
   <string name="tamil_language_label">Tamailis</string>
@@ -140,6 +143,7 @@
   <string name="translators_info">Aistritheoirí</string>
   <string name="genres_info">Seánraí</string>
   <string name="subjects_info">Ábhair</string>
+  <string name="form_of_work_info">Foirm liteartha</string>
   <string name="publishers_info">Foilsitheoir</string>
   <string name="unknown_publishers_info">Foilsitheoir Anaithnid</string>
   <string name="place_of_publication_info">Áit Foilseacháin</string>
@@ -287,11 +291,11 @@
   <string name="tutorial_search_title">Cuardaigh</string>
   <string name="tutorial_search_desc">Cuardaigh tríd an leabhar</string>
   <string name="tutorial_tts_title">TTS</string>
-  <string name="tutorial_tts_desc" fuzzy="true">Téacs go cainte, Cuidíonn sé seo leis na leabhair a léamh os ard</string>
+  <string name="tutorial_tts_desc">Cuidíonn téacs go cainte le leabhair a léamh os ard</string>
   <string name="tutorial_bookmark_title">Leabharmharc</string>
   <string name="tutorial_bookmark_desc">Cliceáil chun suíomh reatha an leabhair a chur i leabharmharcanna le go mbeidh sé níos fusa é a fháil</string>
   <string name="tutorial_settings_title">Socruithe</string>
-  <string name="tutorial_settings_desc" fuzzy="true">Cumraigh roghanna i.e. teanga, clónna, scrollú agus téacs ingearach</string>
+  <string name="tutorial_settings_desc">Cumraigh roghanna i.e. teangacha, clónna, téamaí, scrollú etc.</string>
   <string name="tutorial_toc_title">Nascleanúint Leabhar</string>
   <string name="tutorial_toc_desc">Tá caibidlí agus leabharmharcanna sábháilte anseo</string>
   <string name="tutorial_menu_toggle_title">Oscail nó Dún an Roghchlár</string>

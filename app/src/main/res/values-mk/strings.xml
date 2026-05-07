@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">Почетен екран</string>
   <string name="home_tap_target_coodinator_description">Откријте илјадници слободни книги и историски текстови избрани од заедницата од библиотеката на Викиизвор.</string>
   <string name="category_tap_target_coodinator_title">Оддел за категории</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">Пронајдете го точно она што го барате прелистувајќи низ категории како драми, романи и поезија.</string>
+  <string name="category_tap_target_coodinator_description">Пронајдете го точно она што го барате прелистувајќи низ категории како драми, романи поезија и тн.</string>
   <string name="library_tap_target_coodinator_title">Ваша библиотека</string>
   <string name="library_tap_target_coodinator_description">Тука ќе ги најдете сите ваши книги. Можете да управувате со вашата збирка, за го следите вашиот напредок или да ги споделувате омилените се пријатели.</string>
   <string name="settings_tap_target_coodinator_title">Нагодувања за прилогот</string>
@@ -56,6 +56,7 @@
   <string name="catalan_language_label">каталонски</string>
   <string name="czech_language_label">чешки</string>
   <string name="danish_language_lebel">дански</string>
+  <string name="german_language_lebel">германски</string>
   <string name="english_language_label">англиски</string>
   <string name="spanish_language_label">шпански</string>
   <string name="french_language_label">француски</string>
@@ -68,8 +69,10 @@
   <string name="malayalam_language_label">малајалски</string>
   <string name="marathi_language_label">маратски</string>
   <string name="malay_language_label">малајски</string>
+  <string name="norwegian_language_lebel">норвешки</string>
   <string name="polish_language_label">полски</string>
   <string name="punjabi_language_label">пенџапски</string>
+  <string name="russian_language_lebel">руски</string>
   <string name="sundanese_language_label">сундански</string>
   <string name="swedish_language_label">шведски</string>
   <string name="tamil_language_label">тамилски</string>
@@ -140,6 +143,7 @@
   <string name="translators_info">Преведувачи</string>
   <string name="genres_info">Жанрови</string>
   <string name="subjects_info">Теми</string>
+  <string name="form_of_work_info">Книжевен облик</string>
   <string name="publishers_info">Издавач</string>
   <string name="unknown_publishers_info">Непознат издавач</string>
   <string name="place_of_publication_info">Место на издавање</string>
@@ -284,11 +288,11 @@
   <string name="tutorial_search_title">Пребарај</string>
   <string name="tutorial_search_desc">Пребарај низ книгата</string>
   <string name="tutorial_tts_title">Гласовен читач</string>
-  <string name="tutorial_tts_desc" fuzzy="true">Гласовен читач — ова ви ги чита книгите на глас</string>
+  <string name="tutorial_tts_desc">Гласовен читач — ова ви ги чита книгите на глас</string>
   <string name="tutorial_bookmark_title">Обележувач</string>
   <string name="tutorial_bookmark_desc">Стиснете за да ја обележите тековната положба на книгата за полесно да ја најдете</string>
   <string name="tutorial_settings_title">Нагодувања</string>
-  <string name="tutorial_settings_desc" fuzzy="true">Поставете нагодувања како јазик, фонтови, лизгање и вертикален текст</string>
+  <string name="tutorial_settings_desc">Поставете нагодувања како јазик, фонтови, изглед, лизгање и тн.</string>
   <string name="tutorial_toc_title">Преглед на книгата</string>
   <string name="tutorial_toc_desc">Ова содржи глави и зачувани обележувачи</string>
   <string name="tutorial_menu_toggle_title">Отвори или затвори мени</string>

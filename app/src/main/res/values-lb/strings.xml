@@ -43,6 +43,7 @@
   <string name="catalan_language_label">Katalounesch</string>
   <string name="czech_language_label">Tschechesch</string>
   <string name="danish_language_lebel">Dänesch</string>
+  <string name="german_language_lebel">Däitsch</string>
   <string name="english_language_label">Englesch</string>
   <string name="spanish_language_label">Spuenesch</string>
   <string name="french_language_label">Franséisch</string>
@@ -54,8 +55,10 @@
   <string name="kannada_language_label">Kannada</string>
   <string name="malayalam_language_label">Malayalam</string>
   <string name="marathi_language_label">Marathi</string>
+  <string name="norwegian_language_lebel">Norwegesch</string>
   <string name="polish_language_label">Polnesch</string>
   <string name="punjabi_language_label">Punjabi</string>
+  <string name="russian_language_lebel">Russesch</string>
   <string name="sundanese_language_label">Sundaneesesch</string>
   <string name="swedish_language_label">Schweedesch</string>
   <string name="tamil_language_label">Tamil</string>
