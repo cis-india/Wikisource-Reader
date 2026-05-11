@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* AnupamM
 * Xqt
 -->
 <resources>
@@ -25,6 +26,9 @@
   <string name="language_menu_title">Nach Sprache durchsuchen</string>
   <string name="categories_header">Kategorien</string>
   <string name="no_books_found_for_lang_and_cat">Keine Bücher auf %s in dieser Kategorie verfügbar.</string>
+  <string name="german_language_lebel">Deutsch</string>
+  <string name="norwegian_language_lebel">Norwegisch</string>
+  <string name="russian_language_lebel">Russisch</string>
   <string name="library_header">Bibliothek</string>
   <string name="empty_library">Nichts vorhanden!</string>
   <string name="import_button_text">Importieren</string>

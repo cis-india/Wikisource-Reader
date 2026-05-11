@@ -98,7 +98,7 @@
   <string name="web_search">وېب لټون</string>
   <string name="share">وېشل</string>
   <string name="settings_header">اوڼنې</string>
-  <string name="general_settings_header">ټولگړی</string>
+  <string name="general_settings_header">ټولواله</string>
   <string name="default_reader_dialog_title">د...سره کتابونه پرانېستل</string>
   <string name="reader_option_inbuilt">جوړشوی لوستونکی</string>
   <string name="reader_option_external">باندنی لوستونکی</string>

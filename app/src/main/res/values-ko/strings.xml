@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Aspere
+* Bisang
 * Tensama0415
 * Ykhwong
 -->
@@ -27,6 +28,7 @@
   <string name="home_sort_icon_desc">책 정렬</string>
   <string name="language_menu_title">언어별로 찾아보기</string>
   <string name="sort_menu_title">정렬 기준</string>
+  <string name="language_guide_description">언어별 책 필터</string>
   <string name="categories_header">분류</string>
   <string name="no_books_found_for_lang_and_cat">이 분류에서는 %s 언어로 읽을 수 있는 책이 없습니다.</string>
   <string name="sort_high_to_low">인기도가 높은 순서부터 낮은 순서까지</string>
@@ -41,6 +43,7 @@
   <string name="catalan_language_label">카탈루냐어</string>
   <string name="czech_language_label">체코어</string>
   <string name="danish_language_lebel">덴마크어</string>
+  <string name="german_language_lebel">독일어</string>
   <string name="english_language_label">영어</string>
   <string name="spanish_language_label">스페인어</string>
   <string name="french_language_label">프랑스어</string>
@@ -53,8 +56,10 @@
   <string name="malayalam_language_label">말라얄람어</string>
   <string name="marathi_language_label">마라티어</string>
   <string name="malay_language_label">말레이어</string>
+  <string name="norwegian_language_lebel">노르웨이어</string>
   <string name="polish_language_label">폴란드어</string>
   <string name="punjabi_language_label">편자브어</string>
+  <string name="russian_language_lebel">러시아어</string>
   <string name="sundanese_language_label">순다어</string>
   <string name="swedish_language_label">스웨덴어</string>
   <string name="tamil_language_label">타밀어</string>
@@ -123,6 +128,7 @@
   <string name="subjects_info">주제</string>
   <string name="publishers_info">출판사</string>
   <string name="unknown_publishers_info">알 수 없는 출판사</string>
+  <string name="place_of_publication_info">출판 장소</string>
   <string name="about_header">정보</string>
   <string name="about_desc">위키문헌의 자유 라이선스 텍스트를 읽어보세요</string>
   <string name="useful_links">유용한 링크</string>
