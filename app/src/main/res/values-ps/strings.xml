@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">کور سکرين</string>
   <string name="home_tap_target_coodinator_description">ويکي‌سرچينې کتابتون کې په زرگونو وړيا، د ټولنې له خوا ترتيب شوي کتابونه او پېښليک ليکونه ومومئ.</string>
   <string name="category_tap_target_coodinator_title">وېشنيزو برخه</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">د لوبو، ناولونو او شعر په څېر وېشنيزو کې د پلټلو له لارې کټ مټ هغه څه ومومئ چې تاسو يې په لټه کې ياست.</string>
+  <string name="category_tap_target_coodinator_description">د لوبو، ناولونو، شعر او نورو په څېر وېشنيزو کې د پلټلو له لارې کټ مټ هغه څه ومومئ چې تاسو يې په لټه کې ياست.</string>
   <string name="library_tap_target_coodinator_title">ستاسو کتابتون</string>
   <string name="library_tap_target_coodinator_description">خپل ټول کتابونه دلته ومومئ. تاسو کولی شئ خپله ټولگه اداره کړئ، خپل پرمختگ وڅارئ، يا د ملگرو سره خپل خواپورې کتابونه شريک کړئ.</string>
   <string name="settings_tap_target_coodinator_title">کاريال اوڼنې</string>
@@ -34,7 +34,7 @@
   <string name="language_menu_title">د ژبې له مخې سپړل</string>
   <string name="sort_menu_title">اوډون ډول</string>
   <string name="language_guide_title">ژبه بدلول</string>
-  <string name="language_guide_description">د ژبې له مخې کتابتونه چاڼول</string>
+  <string name="language_guide_description">د ژبې له مخې کتابونه چاڼول</string>
   <string name="sorting_guide_title">کتابونه اوډل</string>
   <string name="sorting_guide_description">د کتابونو اوډولو لپاره وټوکئ</string>
   <string name="search_guide_title">لټون کړنچار</string>
@@ -56,6 +56,7 @@
   <string name="catalan_language_label">کتالونيايي</string>
   <string name="czech_language_label">چېکي</string>
   <string name="danish_language_lebel">ډېنمارکي</string>
+  <string name="german_language_lebel">جرمني</string>
   <string name="english_language_label">انگليسي</string>
   <string name="spanish_language_label">سپانيايي</string>
   <string name="french_language_label">فرانسوي</string>
@@ -68,8 +69,10 @@
   <string name="malayalam_language_label">مليالم</string>
   <string name="marathi_language_label">مراټي</string>
   <string name="malay_language_label">مالايي</string>
+  <string name="norwegian_language_lebel">ناروېژي</string>
   <string name="polish_language_label">پولينډي</string>
   <string name="punjabi_language_label">پنجابي</string>
+  <string name="russian_language_lebel">روسي</string>
   <string name="sundanese_language_label">سونداني</string>
   <string name="swedish_language_label">سوېډني</string>
   <string name="tamil_language_label">تاميلي</string>
@@ -140,6 +143,7 @@
   <string name="translators_info">ژباړونکي</string>
   <string name="genres_info">ځېل</string>
   <string name="subjects_info">سکالوگانې</string>
+  <string name="form_of_work_info">ادبي بڼه</string>
   <string name="publishers_info">خپروونکی</string>
   <string name="unknown_publishers_info">نامالوم خپروونکی</string>
   <string name="place_of_publication_info">خپرېدو ځای</string>
@@ -284,11 +288,11 @@
   <string name="tutorial_search_title">پلټل</string>
   <string name="tutorial_search_desc">د کتاب له مخې پلټل</string>
   <string name="tutorial_tts_title">ټي‌ټي‌اېس</string>
-  <string name="tutorial_tts_desc" fuzzy="true">ليک په وينا اړول، دا د کتابونو په لوړ غږ لوستلو کې مرسته کوي</string>
+  <string name="tutorial_tts_desc">ليک په وينا اړول، د کتابونو په لوړ غږ لوستلو کې مرسته کوي</string>
   <string name="tutorial_bookmark_title">کتاب‌‌نښه</string>
   <string name="tutorial_bookmark_desc">د اسانه ترلاسنې لپاره د کتاب اوسني ځای نښه کولو لپاره په کتاب‌نښه وټوکئ</string>
   <string name="tutorial_settings_title">اوڼنې</string>
-  <string name="tutorial_settings_desc" fuzzy="true">غوره‌توبونه ترتيب کړئ لکه ژبه، ليکبڼې، کښته‌پورته‌کول او ولاړ ليک</string>
+  <string name="tutorial_settings_desc">غوره‌توبونه ترتيب کړئ لکه ژبې، ليکبڼې، شاليدونه، کښته‌پورته‌کول او نور.</string>
   <string name="tutorial_toc_title">کتاب چلند</string>
   <string name="tutorial_toc_desc">دا څپرکي او خوندي شوي کتاب‌نښې لري</string>
   <string name="tutorial_menu_toggle_title">غوره‌نۍ پرانېستل يا تړل</string>
