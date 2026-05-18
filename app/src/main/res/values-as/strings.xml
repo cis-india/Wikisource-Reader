@@ -2,6 +2,7 @@
 <!-- Authors:
 * Bodhisattwa
 * Gitartha.bordoloi
+* Simbu123
 -->
 <resources>
   <string name="not_applicable">প্ৰযোজ্য নহয়</string>
@@ -19,7 +20,7 @@
   <string name="home_tap_target_coodinator_title">বেটুপাত</string>
   <string name="home_tap_target_coodinator_description">ৱিকিউৎস পুথিভঁৰালৰ পৰা ৱিকি সমাজৰ দ্বাৰা পৰিচালিত হাজাৰ হাজাৰ বিনামূলীয়া কিতাপ আৰু ঐতিহাসিক পাঠ্য আৱিষ্কাৰ কৰক।</string>
   <string name="category_tap_target_coodinator_title">শ্ৰেণীসমূহ শাখা</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">নাটক, উপন্যাস, আৰু কবিতাৰ দৰে শ্ৰেণীসমূহ বিচৰণ কৰি আপুনি বিচৰা বস্তুটো সঠিককৈ উলিয়াওক।</string>
+  <string name="category_tap_target_coodinator_description">নাটক, উপন্যাস, কবিতা ইত্যাদিৰ দৰে শ্ৰেণীসমূহ বিচৰণ কৰি আপুনি বিচৰা বস্তুটো সঠিককৈ উলিয়াওক।</string>
   <string name="library_tap_target_coodinator_title">আপোনাৰ পুথিভঁৰাল</string>
   <string name="library_tap_target_coodinator_description">আপোনাৰ সকলো কিতাপ ইয়াত বিচাৰি পাব। আপুনি আপোনাৰ সংগ্ৰহৰ ব্যৱস্থাপনা কৰিব পাৰে, আপোনাৰ অগ্ৰগতি অনুসৰণ কৰিব পাৰে, বা প্ৰিয় পাঠ্যসমূহ বন্ধুৰ সৈতে ভাগ-বতৰা কৰিব পাৰে।</string>
   <string name="settings_tap_target_coodinator_title">এপ্‌ ছেটিং</string>
@@ -57,6 +58,7 @@
   <string name="catalan_language_label">কাটালান</string>
   <string name="czech_language_label">চেক</string>
   <string name="danish_language_lebel">ডেনীয়</string>
+  <string name="german_language_lebel">জাৰ্মান</string>
   <string name="english_language_label">ইংৰাজী</string>
   <string name="spanish_language_label">স্পেনীয়</string>
   <string name="french_language_label">ফৰাচী</string>
@@ -69,8 +71,10 @@
   <string name="malayalam_language_label">মালয়ালম</string>
   <string name="marathi_language_label">মাৰাঠী</string>
   <string name="malay_language_label">মালয়</string>
+  <string name="norwegian_language_lebel">নৰৱেজিয়ান</string>
   <string name="polish_language_label">প\'লিশ্ব</string>
   <string name="punjabi_language_label">পাঞ্জাবী</string>
+  <string name="russian_language_lebel">ৰুছ</string>
   <string name="sundanese_language_label">চুণ্ডানীজ</string>
   <string name="swedish_language_label">ছুইডিছ</string>
   <string name="tamil_language_label">তামিল</string>
@@ -141,6 +145,7 @@
   <string name="translators_info">অনুবাদক</string>
   <string name="genres_info">ধাৰা</string>
   <string name="subjects_info">বিষয়</string>
+  <string name="form_of_work_info">সাহিত্যৰূপ</string>
   <string name="publishers_info">প্ৰকাশক</string>
   <string name="unknown_publishers_info">অজ্ঞাত প্ৰকাশক</string>
   <string name="place_of_publication_info">প্ৰকাশৰ স্থান</string>
@@ -285,11 +290,11 @@
   <string name="tutorial_search_title">সন্ধান কৰক</string>
   <string name="tutorial_search_desc">কিতাপখনৰ মাজত সন্ধান কৰক</string>
   <string name="tutorial_tts_title">টিটিএছ</string>
-  <string name="tutorial_tts_desc" fuzzy="true">টেক্সট টু স্পীচ, ই কিতাপবোৰ উচ্চস্বৰে পঢ়িবলৈ সহায় কৰে</string>
+  <string name="tutorial_tts_desc">টেক্সট টু স্পীচ, ই কিতাপবোৰ উচ্চস্বৰে পঢ়িবলৈ সহায় কৰে</string>
   <string name="tutorial_bookmark_title">বুকমাৰ্ক</string>
   <string name="tutorial_bookmark_desc">সহজ উদ্ধাৰৰ বাবে কিতাপখনৰ বৰ্তমানৰ অৱস্থান বুকমাৰ্ক কৰিবলৈ ক্লিক কৰক</string>
   <string name="tutorial_settings_title">ছেটিংছ</string>
-  <string name="tutorial_settings_desc" fuzzy="true">পছন্দসমূহ সংৰূপণ কৰক অৰ্থাৎ ভাষা, ফ\'ণ্ট, স্ক্ৰলিং আৰু উলম্ব পাঠ্য</string>
+  <string name="tutorial_settings_desc">পছন্দসমূহ সংৰূপণ কৰক যেনে ভাষা, ফ\'ণ্ট, স্ক্ৰলিং, উলম্ব পাঠ্য আদি</string>
   <string name="tutorial_toc_title">কিতাপৰ নেভিগেচন</string>
   <string name="tutorial_toc_desc">ইয়াত অধ্যায় আৰু সংৰক্ষিত বুকমাৰ্কসমূহ আছে</string>
   <string name="tutorial_menu_toggle_title">মেনু খোলক বা বন্ধ কৰক</string>
