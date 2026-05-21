@@ -247,7 +247,7 @@
     <item quantity="one">Deze licentie is ingetrokken door de provider op %1$s. Deze is geregistreerd door apparaat %2$d.</item>
     <item quantity="other">Deze licentie is ingetrokken door de provider op %1$s. Deze is geregistreerd door de apparaten %2$d.</item>
   </plurals>
-  <string name="missing_lcp_support">De applicatie is gecompileerd zonder LCP-ondersteuning.</string>
+  <string name="missing_lcp_support">De toepassing is gecompileerd zonder LCP-ondersteuning.</string>
   <string name="reader_error">Fout</string>
   <string name="opening_error">Publicatie kon niet worden geopend</string>
   <string name="import_error">Importfout</string>
