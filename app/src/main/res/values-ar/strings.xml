@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">الشاشة الرئيسية</string>
   <string name="home_tap_target_coodinator_description">اكتشف آلاف الكتب والنصوص التاريخية المجانية التي أشرف عليها المجتمع من مكتبة ويكي مصدر.</string>
   <string name="category_tap_target_coodinator_title">قسم الفئات</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">اعثر على ما تبحث عنه بالضبط من خلال تصفح فئات مثل المسرحيات والروايات والشعر.</string>
+  <string name="category_tap_target_coodinator_description">ابحث عن ما تبحث عنه عن طريق التصفح في فئات مثل المسرحيات والروايات والشعر وما إلى ذلك</string>
   <string name="library_tap_target_coodinator_title">مكتبتك</string>
   <string name="library_tap_target_coodinator_description">اعثر على جميع كتبك هنا. يمكنك إدارة مجموعتك، وتتبع تقدمك، أو مشاركة كتبك المفضلة مع الأصدقاء.</string>
   <string name="settings_tap_target_coodinator_title">إعدادات التطبيق</string>
@@ -56,6 +56,7 @@
   <string name="catalan_language_label">الكاتالونية</string>
   <string name="czech_language_label">التشيك</string>
   <string name="danish_language_lebel">دانماركي</string>
+  <string name="german_language_lebel">الألمانية</string>
   <string name="english_language_label">إنجليزي</string>
   <string name="spanish_language_label">الأسبانية</string>
   <string name="french_language_label">فرنسي</string>
@@ -68,8 +69,10 @@
   <string name="malayalam_language_label">المالايالامية</string>
   <string name="marathi_language_label">الماراثية</string>
   <string name="malay_language_label">الملايو</string>
+  <string name="norwegian_language_lebel">النرويجية</string>
   <string name="polish_language_label">بولندي</string>
   <string name="punjabi_language_label">البنجابية</string>
+  <string name="russian_language_lebel">الروسية</string>
   <string name="sundanese_language_label">السوندية</string>
   <string name="swedish_language_label">السويدية</string>
   <string name="tamil_language_label">التاميل</string>
@@ -140,6 +143,7 @@
   <string name="translators_info">المترجمون</string>
   <string name="genres_info">الأنواع</string>
   <string name="subjects_info">المواضيع</string>
+  <string name="form_of_work_info">الشكل الأدبي</string>
   <string name="publishers_info">الناشر</string>
   <string name="unknown_publishers_info">ناشر غير معروف</string>
   <string name="place_of_publication_info">مكان النشر</string>
@@ -288,11 +292,11 @@
   <string name="tutorial_search_title">يبحث</string>
   <string name="tutorial_search_desc">ابحث في الكتاب</string>
   <string name="tutorial_tts_title">تحويل النص إلى كلام</string>
-  <string name="tutorial_tts_desc" fuzzy="true">تحويل النص إلى كلام، وهذا يساعد على قراءة الكتب بصوت عالٍ</string>
+  <string name="tutorial_tts_desc">النص إلى الكلام يساعد على قراءة الكتب بصوت عال</string>
   <string name="tutorial_bookmark_title">إضافة إلى المفضلة</string>
   <string name="tutorial_bookmark_desc">انقر لوضع إشارة مرجعية على الموضع الحالي للكتاب ليسهل الوصول إليه لاحقًا</string>
   <string name="tutorial_settings_title">إعدادات</string>
-  <string name="tutorial_settings_desc" fuzzy="true">قم بضبط الإعدادات المفضلة، مثل اللغة والخطوط والتمرير والنص العمودي.</string>
+  <string name="tutorial_settings_desc">قم بضبط الإعدادات المفضلة مثل اللغات والخطوط والسمات والتمرير وما إلى ذلك.</string>
   <string name="tutorial_toc_title">تصفح الكتب</string>
   <string name="tutorial_toc_desc">يحتوي هذا على فصول وإشارات مرجعية محفوظة</string>
   <string name="tutorial_menu_toggle_title">فتح أو إغلاق القائمة</string>

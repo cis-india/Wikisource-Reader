@@ -147,9 +147,11 @@
   <string name="translators_info">옮긴이</string>
   <string name="genres_info">장르</string>
   <string name="subjects_info">주제</string>
+  <string name="form_of_work_info">문학 형식</string>
   <string name="publishers_info">출판사</string>
   <string name="unknown_publishers_info">알 수 없는 출판사</string>
   <string name="place_of_publication_info">출판 장소</string>
+  <string name="unknown_place_of_publication_info">알 수 없는 출판 장소</string>
   <string name="about_header">정보</string>
   <string name="about_desc">위키문헌의 자유 라이선스 텍스트를 읽어보세요</string>
   <string name="useful_links">유용한 링크</string>
@@ -176,7 +178,9 @@
   <string name="popup_delete_button">삭제</string>
   <string name="app_version_header">버전</string>
   <string name="app_version_label">앱 버전:</string>
+  <string name="app_version">2.2.0</string>
   <string name="github_tab_label">GitHub 태그:</string>
+  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">저작권</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
   <string name="bsd_license_label">[BSD-3 license]</string>
@@ -289,6 +293,7 @@
   <string name="tutorial_tts_title">TTS</string>
   <string name="tutorial_tts_desc">텍스트 음성 변환 기능은 책을 소리 내어 읽어주는 데 도움이 됩니다</string>
   <string name="tutorial_bookmark_title">북마크</string>
+  <string name="tutorial_bookmark_desc">클릭해서 책의 현재 위치를 북마크에 추가하세요. 나중에 쉽게 찾을 수 있습니다</string>
   <string name="tutorial_settings_title">설정</string>
   <string name="tutorial_settings_desc">환경 설정을 (언어, 글꼴, 테마, 스크롤링 등)</string>
   <string name="tutorial_toc_title">책 탐색</string>
