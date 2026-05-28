@@ -131,6 +131,6 @@ Network operations are managed via the `BookAPI` client located at `org.cis_indi
 
 ## External Links
 - [Website](https://cis-india.github.io/wikisource-reader-app)
-- [Meta Wiki page](https://meta.wikimedia.org/wiki/Wikisource_reader_app)
+- [Meta Wiki page](https://meta.wikimedia.org/wiki/Wikisource_Reader_app_(Android))
 - [Phabricator issue tracker](https://phabricator.wikimedia.org/project/board/8233/query/all/)
 ---
