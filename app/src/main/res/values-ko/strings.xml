@@ -245,7 +245,7 @@
   <string name="publication_error_invalid_publication">출판물이 손상된 것으로 보입니다.</string>
   <string name="publication_error_unexpected">예기치 않은 오류가 발생했습니다.</string>
   <plurals name="lcp_error_license_status.revoked">
-    <item quantity="other">이 라이선스는 %1$s에 제공업체에 의해 취소되었습니다. %2$d 기기를 통해 등록되었습니다.</item>
+    <item quantity="other">이 라이선스는 %1$s에 제공자에 의해 취소되었습니다. %2$d 기기를 통해 등록되었습니다.</item>
   </plurals>
   <string name="missing_lcp_support">해당 애플리케이션은 LCP 지원 없이 컴파일되었습니다.</string>
   <string name="reader_error">오류</string>
