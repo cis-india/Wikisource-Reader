@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">主螢幕</string>
   <string name="home_tap_target_coodinator_description">在維基文庫圖書館中發現數千本由社群精心挑選的自由取用書籍與歷史文獻。</string>
   <string name="category_tap_target_coodinator_title">分類章節</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">透過瀏覽戲劇、小說和詩歌等分類，來找出您想要的內容。</string>
+  <string name="category_tap_target_coodinator_description">透過瀏覽戲劇、小說、詩歌等分類，來找出您想要的內容。</string>
   <string name="library_tap_target_coodinator_title">您的圖書館</string>
   <string name="library_tap_target_coodinator_description">在這裡找到您所有的書籍。您可以管理您的藏書，追蹤閱讀進度，或是與朋友分享您最喜歡的書籍。</string>
   <string name="settings_tap_target_coodinator_title">應用程式設定</string>
@@ -56,6 +56,7 @@
   <string name="catalan_language_label">加泰隆尼亞文</string>
   <string name="czech_language_label">捷克文</string>
   <string name="danish_language_lebel">丹麥文</string>
+  <string name="german_language_lebel">德文</string>
   <string name="english_language_label">英文</string>
   <string name="spanish_language_label">西班牙文</string>
   <string name="french_language_label">法文</string>
@@ -68,8 +69,10 @@
   <string name="malayalam_language_label">馬拉雅拉姆文</string>
   <string name="marathi_language_label">馬拉提文</string>
   <string name="malay_language_label">馬來文</string>
+  <string name="norwegian_language_lebel">挪威文</string>
   <string name="polish_language_label">波蘭文</string>
   <string name="punjabi_language_label">旁遮普文</string>
+  <string name="russian_language_lebel">俄文</string>
   <string name="sundanese_language_label">巽他文</string>
   <string name="swedish_language_label">瑞典文</string>
   <string name="tamil_language_label">坦米爾文</string>
@@ -140,6 +143,7 @@
   <string name="translators_info">譯者</string>
   <string name="genres_info">類型</string>
   <string name="subjects_info">主旨</string>
+  <string name="form_of_work_info">文學形式</string>
   <string name="publishers_info">出版者</string>
   <string name="unknown_publishers_info">未知出版者</string>
   <string name="place_of_publication_info">出版地</string>
@@ -285,11 +289,11 @@
   <string name="tutorial_search_title">搜尋</string>
   <string name="tutorial_search_desc">翻閱書籍內容</string>
   <string name="tutorial_tts_title">文字轉語音</string>
-  <string name="tutorial_tts_desc" fuzzy="true">文字轉語音，這有助於朗讀書籍。</string>
+  <string name="tutorial_tts_desc">文字轉語音有助於朗讀書籍。</string>
   <string name="tutorial_bookmark_title">書籤</string>
   <string name="tutorial_bookmark_desc">點擊即可將本書目前閱讀位置加入到書籤，以便日後方便查找。</string>
   <string name="tutorial_settings_title">設定</string>
-  <string name="tutorial_settings_desc" fuzzy="true">配置偏好設置，例如語言、字體、滾動方式和垂直文字</string>
+  <string name="tutorial_settings_desc">配置偏好設置，例如語言、字體、主題、滾動方式等</string>
   <string name="tutorial_toc_title">書籍導覽</string>
   <string name="tutorial_toc_desc">這裡包含章節和已儲存的書籤。</string>
   <string name="tutorial_menu_toggle_title">開啟或關閉選單</string>
