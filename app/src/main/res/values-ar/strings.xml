@@ -176,7 +176,6 @@
   <string name="app_version_label">إصدار التطبيق:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">علامة جيثب:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">حقوق الطبع والنشر</string>
   <string name="copyright">\@ 2019 مختبر القراءة الرقمية الأوروبي</string>
   <string name="bsd_license_label">[رخصة BSD-3]</string>

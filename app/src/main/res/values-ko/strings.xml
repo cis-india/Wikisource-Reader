@@ -180,7 +180,6 @@
   <string name="app_version_label">앱 버전:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">GitHub 태그:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">저작권</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
   <string name="bsd_license_label">[BSD-3 license]</string>

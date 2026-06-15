@@ -153,7 +153,6 @@
   <string name="app_version_label">Έκδοση Εφαρμογής:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">GitHub Tag:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Πνευματικά δικαιώματα</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
   <string name="bsd_license_label">[Άδεια BSD-3]</string>

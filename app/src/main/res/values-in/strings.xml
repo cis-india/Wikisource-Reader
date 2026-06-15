@@ -119,7 +119,6 @@
   <string name="app_version_label">Versi Aplikasi:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">Tanda GitHub:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Hak Cipta</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
   <string name="bsd_license_label">[Lisensi BSD-3]</string>

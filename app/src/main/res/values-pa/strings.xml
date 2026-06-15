@@ -148,7 +148,6 @@
   <string name="app_version_label">ਐਪ ਵਰਜਨ:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">ਗਿਟਹੱਬ ਟੈਗ:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">ਕਾਪੀਰਾਈਟ</string>
   <string name="copyright">\@ 2019 ਯੂਰਪੀਅਨ ਡਿਜੀਟਲ ਰੀਡਿੰਗ ਲੈਬ</string>
   <string name="bsd_license_label">[BSD-3 ਲਸੰਸ]</string>

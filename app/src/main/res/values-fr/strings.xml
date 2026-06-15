@@ -154,7 +154,6 @@
   <string name="app_version_label">Version de l\'application :</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">Étiquette GitHub :</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Droits d\'auteur</string>
   <string name="copyright">© 2019 Laboratoire européen de lecture numérique</string>
   <string name="bsd_license_label">[Licence BSD-3]</string>

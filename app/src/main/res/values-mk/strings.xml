@@ -176,7 +176,6 @@
   <string name="app_version_label">Верзија на прилогот:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">Ознака на GitHub:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Авторски права</string>
   <string name="copyright">\@ 2019 Европска лабораторија за дигитално читање</string>
   <string name="bsd_license_label">[Лиценца BSD-3]</string>

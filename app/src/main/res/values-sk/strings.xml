@@ -177,7 +177,6 @@
   <string name="app_version_label">Verzia aplikácie:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">Značka GitHub:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Autorské práva</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
   <string name="bsd_license_label">[licencia BSD-3]</string>

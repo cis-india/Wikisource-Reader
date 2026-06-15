@@ -172,7 +172,6 @@
   <string name="app_version_label">Version del App:</string>
   <string name="app_version">2.2.0</string>
   <string name="github_tab_label">Etiqueta de GitHub:</string>
-  <string name="github_tag">2.2.0</string>
   <string name="copyright_label">Copyright</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
   <string name="bsd_license_label">[Licencia BSD-3]</string>
