@@ -18,6 +18,7 @@
   <string name="navigation_library">গ্রন্থাগার</string>
   <string name="navigation_settings">সেটিং</string>
   <string name="library_tap_target_coodinator_title">আপনার পাঠাগার</string>
+  <string name="settings_tap_target_coodinator_title">অ্যাপ সেটিংস</string>
   <string name="library_tooltip">পরামর্শ! বইয়ের বিস্তারিত শেয়ার করতে বা দেখতে গ্রন্থাগারের আইটেমগুলিকে বাম বা ডানে সোয়াইপ করুন।</string>
   <string name="welcome_screen_title">উইকিসোর্স রিডার ইনস্টল করার জন্য ধন্যবাদ!</string>
   <string name="welcome_screen_desc">আপনার পড়ার যাত্রা শুরু করতে আপনার পছন্দের ইবুক রিডার বেছে নিন।</string>
@@ -48,6 +49,7 @@
   <string name="catalan_language_label">কাতালান</string>
   <string name="czech_language_label">চেক</string>
   <string name="danish_language_lebel">ডেনীয়</string>
+  <string name="german_language_lebel">জার্মান</string>
   <string name="english_language_label">ইংরেজি</string>
   <string name="spanish_language_label">স্পেনীয়</string>
   <string name="french_language_label">ফরাসি</string>
@@ -60,8 +62,10 @@
   <string name="malayalam_language_label">মালয়ালম</string>
   <string name="marathi_language_label">মারাঠি</string>
   <string name="malay_language_label">মালয়</string>
+  <string name="norwegian_language_lebel">নরওয়েজীয়</string>
   <string name="polish_language_label">পোলিশ</string>
   <string name="punjabi_language_label">পাঞ্জাবি</string>
+  <string name="russian_language_lebel">রুশ</string>
   <string name="sundanese_language_label">সুন্দানি</string>
   <string name="swedish_language_label">সুইডিশ</string>
   <string name="tamil_language_label">তামিল</string>
