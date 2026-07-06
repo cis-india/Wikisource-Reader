@@ -18,7 +18,7 @@
   <string name="home_tap_target_coodinator_title">Home Screen</string>
   <string name="home_tap_target_coodinator_description">Discubri miles de libre  libro y texto historico que el comunidad ya selecciona na biblioteca de Wikisource.</string>
   <string name="category_tap_target_coodinator_title">Seccion del Maga Categoria</string>
-  <string name="category_tap_target_coodinator_description" fuzzy="true">Busca con el cosa gayod tu quiere por medio de man browse na maga categoria como maga obra de teatro, novela y poesia.</string>
+  <string name="category_tap_target_coodinator_description">Busca con el cosa gayod tu quiere busca na navegada con maga categoria como teatro, novela, poesia, y mucho pa.</string>
   <string name="library_tap_target_coodinator_title">Biblioteca De Tuyo</string>
   <string name="library_tap_target_coodinator_description">Busca todo libros aqui. Puede tu administra con el de tuyo coleccion, medi de tuyo progreso, o comparti de tuyo favorito na maga amigo.</string>
   <string name="settings_tap_target_coodinator_title">Configuracion del App</string>
@@ -162,7 +162,7 @@
   <string name="category_dictionaries">DIccionario</string>
   <string name="category_encyclopedias">Enciclopedia</string>
   <string name="epubactivity_set_bookmark">Aumenta un bookmark</string>
-  <string name="epubactivity_settings">Configuracion del Usuario</string>
+  <string name="epubactivity_settings">Configuraciones de Usador</string>
   <string name="epubactivity_book_nav_options">Menu de navegacion del libro</string>
   <string name="epubactivity_read_aloud_start">Lee de TTS</string>
   <string name="epubactivity_search">Busca</string>
@@ -203,7 +203,7 @@
   <string name="confirm_delete_catalog_text">Quiere ba gayod tu borra con este feed de Catologo?</string>
   <string name="add_book">Aumenta Libro</string>
   <string name="add_catalog">Aumenta Feed de Catalogo</string>
-  <string name="save">Man save</string>
+  <string name="save">Salva</string>
   <string name="enter_title">Pone Titulo</string>
   <string name="enter_url">Pone URL</string>
   <string name="invalid_title">Favor pone titulo</string>
