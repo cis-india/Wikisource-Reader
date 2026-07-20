@@ -2,6 +2,7 @@
 <!-- Authors:
 * Avengium
 * Bodhisattwa
+* SaraiSan-WMF
 -->
 <resources>
   <string name="not_applicable">N/A</string>
@@ -20,16 +21,21 @@
   <string name="welcome_screen_desc">Elige tu lector de libros electrónicos preferido para embarcarte en tu viaje de lectura.</string>
   <string name="welcome_screen_button">Get Started</string>
   <string name="home_header">Todos los libros</string>
-  <string name="home_language_icon_desc">Sort by language</string>
+  <string name="home_language_icon_desc">Ordenar por idioma</string>
   <string name="home_search_icon_desc">Buscar libros</string>
-  <string name="language_menu_title">Browse by language</string>
+  <string name="language_menu_title">Buscar por idioma</string>
   <string name="categories_header">Categorías</string>
-  <string name="no_books_found_for_lang_and_cat">No books available in %s language for this category.</string>
+  <string name="no_books_found_for_lang_and_cat">No hay libros disponibles en el idioma %s para esta categoría.</string>
   <string name="sort_high_to_low">De alta a baja popularidad</string>
   <string name="sort_low_to_high">De baja a alta popularidad</string>
   <string name="sort_a_to_z">Título A a la Z</string>
   <string name="sort_z_to_a">Título Z a A</string>
   <string name="sort_random">Aleatorio</string>
+  <string name="all_books_language_lebel">Todos los libros</string>
+  <string name="german_language_lebel">Alemán</string>
+  <string name="english_language_label">Inglés</string>
+  <string name="spanish_language_label">Español</string>
+  <string name="italian_language_label">Italiano</string>
   <string name="library_header">Biblioteca</string>
   <string name="empty_library">¡Nada por aquí!</string>
   <string name="import_button_text">Importar</string>

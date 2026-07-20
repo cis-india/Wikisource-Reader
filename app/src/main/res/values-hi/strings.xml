@@ -34,6 +34,7 @@
   <string name="catalan_language_label">कातालान</string>
   <string name="czech_language_label">चेक</string>
   <string name="danish_language_lebel">डेनिश</string>
+  <string name="german_language_lebel">जर्मन</string>
   <string name="english_language_label">अंग्रेज़ी</string>
   <string name="spanish_language_label">स्पेनी</string>
   <string name="french_language_label">फ़्रांसीसी</string>
@@ -48,6 +49,7 @@
   <string name="malay_language_label">मलय</string>
   <string name="polish_language_label">पोलिश</string>
   <string name="punjabi_language_label">पंजाबी</string>
+  <string name="russian_language_lebel">रूसी</string>
   <string name="sundanese_language_label">सुंदा</string>
   <string name="swedish_language_label">स्वीडिश</string>
   <string name="tamil_language_label">तमिल</string>
@@ -106,6 +108,10 @@
   <string name="download_started">डाउनलोड शुरू हुआ!</string>
   <string name="book_synopsis">सारांश</string>
   <string name="book_synopsis_not_found">उपलब्ध नहीं</string>
+  <string name="editors_info">सम्पादक</string>
+  <string name="translators_info">अनुवादक</string>
+  <string name="publishers_info">प्रकाशक</string>
+  <string name="unknown_publishers_info">अज्ञात प्रकाशक</string>
   <string name="about_header">के बारे में</string>
   <string name="useful_links">उपयोगी कड़ियाँ</string>
   <string name="shivam">वेबसाइट</string>

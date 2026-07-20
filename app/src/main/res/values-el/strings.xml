@@ -16,6 +16,10 @@
   <string name="navigation_categories">Κατηγορίες</string>
   <string name="navigation_library">Βιβλιοθήκη</string>
   <string name="navigation_settings">Ρυθμίσεις</string>
+  <string name="home_tap_target_coodinator_title">Αρχική οθόνη</string>
+  <string name="category_tap_target_coodinator_title">Ενότητα κατηγοριών</string>
+  <string name="library_tap_target_coodinator_title">Η βιβλιοθήκη σας</string>
+  <string name="settings_tap_target_coodinator_title">Ρυθμίσεις εφαρμογής</string>
   <string name="library_tooltip">ΣΥΜΒΟΥΛΗ! Σύρετε τα στοιχεία της βιβλιοθήκης αριστερά ή δεξιά για να μοιραστείτε ή να δείτε λεπτομέρειες βιβλίου.</string>
   <string name="welcome_screen_title">Ευχαριστούμε που εγκαταστήσατε το Wikisource Reader!</string>
   <string name="welcome_screen_desc">Επιλέξτε τον αγαπημένο σας αναγνώστη ηλεκτρονικών βιβλίων για να ξεκινήσετε το ταξίδι σας στην ανάγνωση.</string>
@@ -26,6 +30,14 @@
   <string name="home_sort_icon_desc">Ταξινόμηση βιβλίων</string>
   <string name="language_menu_title">Περιήγηση ανά γλώσσα</string>
   <string name="sort_menu_title">Ταξινόμηση κατά</string>
+  <string name="language_guide_title">Αλλαγή γλώσσας</string>
+  <string name="language_guide_description">Φιλτράρισμα βιβλίων κατά γλώσσα</string>
+  <string name="sorting_guide_title">Ταξινόμηση βιβλίων</string>
+  <string name="sorting_guide_description">Πατήστε για να ταξινομήσετε τα βιβλία</string>
+  <string name="search_guide_title">Λειτουργία αναζήτησης</string>
+  <string name="search_guide_description">Πατήστε για να αναζητήσετε ένα βιβλίο</string>
+  <string name="tap_target_screen_title">Οθόνη %1$s</string>
+  <string name="tap_target_screen_description">Πλοήγηση στην οθόνη %1$s</string>
   <string name="categories_header">Κατηγορίες</string>
   <string name="no_books_found_for_lang_and_cat">Δεν υπάρχουν διαθέσιμα βιβλία στη γλώσσα %s για αυτήν την κατηγορία.</string>
   <string name="sort_high_to_low">Δημοτικότητα (φθίνουσα σειρά)</string>
@@ -37,9 +49,11 @@
   <string name="arabic_language_label">Αραβικά</string>
   <string name="assamese_language_label">Ασσαμέζικα</string>
   <string name="bangla_language_label">Μπάνγκλα</string>
+  <string name="breton_language_label">Βρετονικά</string>
   <string name="catalan_language_label">Καταλανικά</string>
   <string name="czech_language_label">Τσέχικα</string>
   <string name="danish_language_lebel">Δανικά</string>
+  <string name="german_language_lebel">Γερμανικά</string>
   <string name="english_language_label">Αγγλικά</string>
   <string name="spanish_language_label">Ισπανικά</string>
   <string name="french_language_label">Γαλλικά</string>
@@ -52,8 +66,10 @@
   <string name="malayalam_language_label">Μαλαγιάλαμ</string>
   <string name="marathi_language_label">Μαράτι</string>
   <string name="malay_language_label">Μαλαϊκά</string>
+  <string name="norwegian_language_lebel">Νορβηγικά</string>
   <string name="polish_language_label">Πολωνικά</string>
   <string name="punjabi_language_label">Παντζάμπι</string>
+  <string name="russian_language_lebel">Ρωσικά</string>
   <string name="sundanese_language_label">Σουνδανικά</string>
   <string name="swedish_language_label">Σουηδικά</string>
   <string name="tamil_language_label">Ταμίλ</string>
@@ -261,4 +277,14 @@
   <string name="link_sourcecode_repo">Προβολή αποθετηρίου GitHub</string>
   <string name="link_sourcecode">GitHub</string>
   <string name="woops">Ωχ!</string>
+  <string name="tutorial_search_title">Αναζήτηση</string>
+  <string name="tutorial_search_desc">Αναζητήστε μέσα στο βιβλίο</string>
+  <string name="tutorial_tts_title">TTS</string>
+  <string name="tutorial_tts_desc">Το κείμενο σε ομιλία (TTS) βοηθά στην ανάγνωση των βιβλίων δυνατά</string>
+  <string name="tutorial_bookmark_title">Σελιδοδείκτης</string>
+  <string name="tutorial_settings_title">Ρυθμίσεις</string>
+  <string name="tutorial_toc_title">Πλοήγηση βιβλίου</string>
+  <string name="tutorial_toc_desc">Αυτό περιέχει κεφάλαια και αποθηκευμένους σελιδοδείκτες</string>
+  <string name="tutorial_menu_toggle_title">Άνοιγμα ή κλείσιμο μενού</string>
+  <string name="tutorial_select_text_title">Επιλογή κειμένου</string>
 </resources>
