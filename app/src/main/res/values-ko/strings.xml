@@ -47,11 +47,11 @@
   <string name="tap_target_screen_description">%1$s 화면으로 이동</string>
   <string name="categories_header">분류</string>
   <string name="no_books_found_for_lang_and_cat">이 분류에서는 %s 언어로 읽을 수 있는 책이 없습니다.</string>
-  <string name="sort_high_to_low">인기도가 높은 순서부터 낮은 순서까지</string>
-  <string name="sort_low_to_high">인기도가 낮은 순서부터 높은 순서까지</string>
-  <string name="sort_a_to_z">제목 A부터 Z까지</string>
-  <string name="sort_z_to_a">제목 Z부터 A까지</string>
-  <string name="sort_random">임의로</string>
+  <string name="sort_high_to_low">인기도 (높은 순)</string>
+  <string name="sort_low_to_high">인기도 (낮은 순)</string>
+  <string name="sort_a_to_z">제목 (가나다순)</string>
+  <string name="sort_z_to_a">제목 (가나다 역순)</string>
+  <string name="sort_random">무작위</string>
   <string name="all_books_language_lebel">모든 책</string>
   <string name="arabic_language_label">아랍어</string>
   <string name="assamese_language_label">아삼어</string>
@@ -109,8 +109,8 @@
   <string name="default_reader_dialog_title">전자책을 여는 방법...</string>
   <string name="reader_option_inbuilt">내장 리더</string>
   <string name="reader_option_external">외부 리더</string>
-  <string name="default_locale_setting">기본 로케일</string>
-  <string name="default_locale_setting_desc">선호하는 로케일을 선택하세요.</string>
+  <string name="default_locale_setting">기본 언어</string>
+  <string name="default_locale_setting_desc">원하는 언어를 선택하세요.</string>
   <string name="locale_setting_not_found">죄송합니다! 해당 기능은 현재 사용하는 OS에서 지원되지 않습니다.</string>
   <string name="display_setting_header">표시</string>
   <string name="theme_setting">기본 테마</string>
