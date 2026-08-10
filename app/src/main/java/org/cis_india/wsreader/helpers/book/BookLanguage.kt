@@ -43,6 +43,9 @@ sealed class BookLanguage(@StringRes val name: Int, val isoCode: String) {
     data object English : BookLanguage(R.string.english_language_label, "en")
 
     @Keep
+    data object Esperanto : BookLanguage(R.string.esperanto_language_label, "eo")
+
+    @Keep
     data object Spanish : BookLanguage(R.string.spanish_language_label, "es")
     
     @Keep
