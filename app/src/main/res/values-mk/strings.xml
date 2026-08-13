@@ -58,6 +58,7 @@
   <string name="danish_language_lebel">дански</string>
   <string name="german_language_lebel">германски</string>
   <string name="english_language_label">англиски</string>
+  <string name="esperanto_language_label">есперанто</string>
   <string name="spanish_language_label">шпански</string>
   <string name="french_language_label">француски</string>
   <string name="gujarati_language_label">гуџаратски</string>
@@ -71,6 +72,7 @@
   <string name="malay_language_label">малајски</string>
   <string name="norwegian_language_lebel">норвешки</string>
   <string name="polish_language_label">полски</string>
+  <string name="portuguese_language_label">португалски</string>
   <string name="punjabi_language_label">пенџапски</string>
   <string name="russian_language_lebel">руски</string>
   <string name="sundanese_language_label">сундански</string>

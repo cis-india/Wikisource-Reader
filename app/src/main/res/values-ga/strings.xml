@@ -58,6 +58,7 @@
   <string name="danish_language_lebel">Danmhairgis</string>
   <string name="german_language_lebel">Gearmáinis</string>
   <string name="english_language_label">Béarla</string>
+  <string name="esperanto_language_label">Esperanto</string>
   <string name="spanish_language_label">Spáinnis</string>
   <string name="french_language_label">Fraincis</string>
   <string name="gujarati_language_label">Gúisearáitis</string>
@@ -71,6 +72,7 @@
   <string name="malay_language_label">Malaeis</string>
   <string name="norwegian_language_lebel">Ioruais</string>
   <string name="polish_language_label">Polainnis</string>
+  <string name="portuguese_language_label">Portaingéilis</string>
   <string name="punjabi_language_label">Punjabi</string>
   <string name="russian_language_lebel">Rúisis</string>
   <string name="sundanese_language_label">Sundáinis</string>

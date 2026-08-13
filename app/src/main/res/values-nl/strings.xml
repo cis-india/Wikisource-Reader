@@ -61,6 +61,7 @@
   <string name="danish_language_lebel">Deens</string>
   <string name="german_language_lebel">Duits</string>
   <string name="english_language_label">Engels</string>
+  <string name="esperanto_language_label">Esperanto</string>
   <string name="spanish_language_label">Spaans</string>
   <string name="french_language_label">Frans</string>
   <string name="gujarati_language_label">Gujarati</string>
@@ -74,6 +75,7 @@
   <string name="malay_language_label">Maleisisch</string>
   <string name="norwegian_language_lebel">Noors</string>
   <string name="polish_language_label">Pools</string>
+  <string name="portuguese_language_label">Portugees</string>
   <string name="punjabi_language_label">Punjabi</string>
   <string name="russian_language_lebel">Russisch</string>
   <string name="sundanese_language_label">Sundanees</string>

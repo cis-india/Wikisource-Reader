@@ -59,6 +59,7 @@
   <string name="danish_language_lebel">丹麦文</string>
   <string name="german_language_lebel">德文</string>
   <string name="english_language_label">英文</string>
+  <string name="esperanto_language_label">世界文</string>
   <string name="spanish_language_label">西班牙文</string>
   <string name="french_language_label">法文</string>
   <string name="gujarati_language_label">古吉拉特文</string>
@@ -72,6 +73,7 @@
   <string name="malay_language_label">马来文</string>
   <string name="norwegian_language_lebel">挪威文</string>
   <string name="polish_language_label">波兰文</string>
+  <string name="portuguese_language_label">葡萄牙文</string>
   <string name="punjabi_language_label">旁遮普文</string>
   <string name="russian_language_lebel">俄文</string>
   <string name="sundanese_language_label">巽他文</string>

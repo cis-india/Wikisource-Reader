@@ -58,6 +58,7 @@
   <string name="danish_language_lebel">dánčina</string>
   <string name="german_language_lebel">nemčina</string>
   <string name="english_language_label">angličtina</string>
+  <string name="esperanto_language_label">esperanto</string>
   <string name="spanish_language_label">španielčina</string>
   <string name="french_language_label">francúzština</string>
   <string name="gujarati_language_label">gudžarátčina</string>
@@ -71,6 +72,7 @@
   <string name="malay_language_label">malajčina</string>
   <string name="norwegian_language_lebel">nórčina</string>
   <string name="polish_language_label">poľština</string>
+  <string name="portuguese_language_label">portugalčina</string>
   <string name="punjabi_language_label">pandžábčina</string>
   <string name="russian_language_lebel">ruština</string>
   <string name="sundanese_language_label">sundčina</string>
