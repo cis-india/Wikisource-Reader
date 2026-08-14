@@ -232,4 +232,5 @@
   <string name="link_sourcecode_repo">গিটহাব রেপো দেখুন</string>
   <string name="link_sourcecode">গিটহাব</string>
   <string name="woops">যাঃ!</string>
+    <string name="results_count">%1$s ফলাফল</string>
 </resources>

@@ -40,6 +40,7 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -110,6 +111,7 @@ import kotlinx.coroutines.delay
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.helpers.book.LanguageStringItem
 import java.util.Locale
+import java.text.NumberFormat
 
 
 @Composable
@@ -306,6 +308,7 @@ private fun AllBooksList(
     onLoadNextItems: () -> Unit
 ) {
     val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
+    val resultsCount = NumberFormat.getNumberInstance().format(allBooksState.count)
 
     AnimatedVisibility(
         visible = allBooksState.page == 1L && allBooksState.isLoading,
@@ -335,6 +338,26 @@ private fun AllBooksList(
                 .padding(start = 8.dp, end = 8.dp),
             columns = GridCells.Adaptive(295.dp)
         ) {
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                Text(
+                    text = stringResource(
+                        R.string.results_count,
+                        resultsCount
+                    ),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            start = 8.dp,
+                            top = 4.dp,
+                            bottom = 8.dp
+                        ),
+                    fontSize = 13.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontFamily = poppinsFont,
+                    fontWeight = FontWeight.Medium
+                )
+            }
+
             items(allBooksState.items.size) { i ->
                 val item = allBooksState.items[i]
                 val systemLanguage = Locale.getDefault().language

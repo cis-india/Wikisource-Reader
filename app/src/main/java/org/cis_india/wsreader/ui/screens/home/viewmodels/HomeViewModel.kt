@@ -39,6 +39,7 @@ import javax.inject.Inject
 
 data class AllBooksState(
     val isLoading: Boolean = false,
+    val count: Int = 0,
     val items: List<Book> = emptyList(),
     val error: String? = null,
     val endReached: Boolean = false,
@@ -112,6 +113,7 @@ class HomeViewModel @Inject constructor(
 
         allBooksState = allBooksState.copy(
             items = (allBooksState.items + books),
+            count = bookSet.count,
             page = newPage,
             endReached = books.isEmpty()
         )

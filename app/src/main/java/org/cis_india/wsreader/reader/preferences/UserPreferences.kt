@@ -30,7 +30,7 @@ import org.readium.r2.navigator.preferences.*
 import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.readium.r2.navigator.preferences.TextAlign as ReadiumTextAlign
 import org.readium.r2.shared.ExperimentalReadiumApi
-import org.readium.r2.shared.publication.epub.EpubLayout
+import org.readium.r2.shared.publication.Layout
 import org.readium.r2.shared.util.Language
 import org.cis_india.wsreader.LITERATA
 import org.cis_india.wsreader.R
@@ -99,6 +99,7 @@ private fun <P : Configurable.Preferences<P>, E : PreferencesEditor<P>> UserPref
                 FixedLayoutUserPreferences(
                     commit = commit,
                     readingProgression = editor.readingProgression,
+                    //scroll = editor.scroll,
                     scrollAxis = editor.scrollAxis,
                     fit = editor.fit,
                     pageSpacing = editor.pageSpacing
@@ -106,7 +107,7 @@ private fun <P : Configurable.Preferences<P>, E : PreferencesEditor<P>> UserPref
 
             is EpubPreferencesEditor ->
                 when (editor.layout) {
-                    EpubLayout.REFLOWABLE ->
+                    Layout.REFLOWABLE, Layout.SCROLLED ->
                         ReflowableUserPreferences(
                             commit = commit,
                             backgroundColor = editor.backgroundColor,
@@ -134,7 +135,7 @@ private fun <P : Configurable.Preferences<P>, E : PreferencesEditor<P>> UserPref
                             verticalText = editor.verticalText,
                             wordSpacing = editor.wordSpacing
                         )
-                    EpubLayout.FIXED ->
+                    Layout.FIXED ->
                         FixedLayoutUserPreferences(
                             commit = commit,
                             backgroundColor = editor.backgroundColor,
@@ -160,6 +161,7 @@ private fun <P : Configurable.Preferences<P>, E : PreferencesEditor<P>> UserPref
         }
     }
 }
+
 
 @Composable
 private fun MediaUserPreferences(
@@ -673,8 +675,8 @@ val <P : Configurable.Preferences<P>> PreferencesEditor<P>.presets: List<Preset>
     when (this) {
         is EpubPreferencesEditor ->
             when (layout) {
-                EpubLayout.FIXED -> emptyList()
-                EpubLayout.REFLOWABLE -> listOf(
+                Layout.FIXED -> emptyList()
+                Layout.REFLOWABLE, Layout.SCROLLED -> listOf(
                     Preset("Increase legibility") {
                         wordSpacing.set(0.6)
                         fontSize.set(1.4)

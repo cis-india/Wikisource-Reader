@@ -98,7 +98,7 @@ class Bookshelf(
         thumbnailUrl: String? = null,
     ) {
         retrieverResult
-            .map { addBook(it.publication.toUrl(), it.format, it.coverUrl, wdIdentifier, thumbnailUrl) }
+            .map { addBook(it.publication.toUrl(isDirectory = false), it.format, it.coverUrl, wdIdentifier, thumbnailUrl) }
             .onSuccess { channel.send(Event.ImportPublicationSuccess) }
             .onFailure { channel.send(Event.ImportPublicationError(it)) }
     }

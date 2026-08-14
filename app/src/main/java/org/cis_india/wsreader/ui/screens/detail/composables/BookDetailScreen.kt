@@ -542,7 +542,7 @@ private fun MiddleBar(
                 Box(
                     modifier = Modifier
                         .fillMaxHeight()
-                        .weight(1f),
+                        .weight(1.4f),
                     contentAlignment = Alignment.Center
                 ) {
                     Row {
@@ -571,7 +571,7 @@ private fun MiddleBar(
                 Box(
                     modifier = Modifier
                         .fillMaxHeight()
-                        .weight(1f),
+                        .weight(0.8f),
                     contentAlignment = Alignment.Center
                 ) {
                     Row {
@@ -599,7 +599,7 @@ private fun MiddleBar(
                 Box(
                     modifier = Modifier
                         .fillMaxHeight()
-                        .weight(1f),
+                        .weight(0.8f),
                     contentAlignment = Alignment.Center
                 ) {
                     Row {

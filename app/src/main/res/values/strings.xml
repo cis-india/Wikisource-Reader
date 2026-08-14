@@ -371,4 +371,6 @@
 
     <string name="tutorial_select_text_title">Select Text</string>
     <string name="tutorial_select_text_desc">Long-press on any word to see the selection menu and tools i.e underline, highlight and add notes!</string>
+    <string name="persian_language_label">Persian</string>
+    <string name="results_count">%1$s Results</string>
 </resources>
