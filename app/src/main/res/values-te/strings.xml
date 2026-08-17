@@ -5,7 +5,6 @@
 * SaiPhani02
 -->
 <resources>
-
   <string name="not_applicable">N/A</string>
   <string name="confirm">నిర్ధారించండి</string>
   <string name="cancel">రద్దుచెయ్యు</string>
@@ -76,6 +75,10 @@
   <string name="share">పంచుకో</string>
   <string name="settings_header">అమరికలు</string>
   <string name="general_settings_header">జనరల్</string>
+  <string name="default_locale_setting">అప్ భాష</string>
+  <string name="theme_setting">థీమ్</string>
+  <string name="theme_option_light">లైట్</string>
+  <string name="theme_option_dark">డార్క్</string>
   <string name="theme_option_system">డిఫాల్ట్</string>
   <string name="theme_dialog_apply_button">వర్తింపజేయి</string>
   <string name="material_you_error">ఈ ఫీచర్ ఆండ్రాయిడ్ 12 లేదా అంతకంటే పైబడిఉన్న డివైస్లకు మాత్రమే అందుబాటులో ఉంటుంది.</string>
@@ -89,6 +92,10 @@
   <string name="download_started">డౌన్లోడ్ మొదలయింది</string>
   <string name="book_synopsis_not_found">అందుబాటులో లేదు</string>
   <string name="unknown_author_info">తెలియని రచయిత</string>
+  <string name="translators_info">అనువాదకులు</string>
+  <string name="publishers_info">ప్రచురణకర్త</string>
+  <string name="unknown_publishers_info">తెలియని ప్రచురణకర్త</string>
+  <string name="place_of_publication_info">ప్రచురణ స్థలం</string>
   <string name="unknown_place_of_publication_info">తెలియని ప్రచురణ స్థలం</string>
   <string name="about_header">గురించి</string>
   <string name="useful_links">ఉపయోగకరమైన లింకులు</string>
@@ -103,15 +110,7 @@
   <string name="category_shortstories">చిన్న కథలు</string>
   <string name="category_narration">కథనం</string>
   <string name="category_biography">జీవితచరిత్ర</string>
-  <string name="copyright_label">కాపీహక్కు</string>
-    <string name="results_count">%1$s ఫలితాలు</string>
   <string name="epubactivity_search">వెతుకు</string>
-  <string name="publishers_info">ప్రచురణకర్త</string>
-  <string name="unknown_publishers_info">తెలియని ప్రచురణకర్త</string>
-  <string name="place_of_publication_info">ప్రచురణ స్థలం</string>
-  <string name="translators_info">అనువాదకులు</string>
-  <string name="default_locale_setting">అప్ భాష</string>
-  <string name="theme_setting">థీమ్</string>
-  <string name="theme_option_light">లైట్</string>
-  <string name="theme_option_dark">డార్క్</string>
+  <string name="copyright_label">కాపీహక్కు</string>
+  <string name="results_count">%1$s ఫలితాలు</string>
 </resources>

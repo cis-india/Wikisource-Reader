@@ -303,4 +303,6 @@
   <string name="tutorial_menu_toggle_desc">Tik in het midden van het scherm om het menu te openen of te sluiten</string>
   <string name="tutorial_select_text_title">Tekst selecteren</string>
   <string name="tutorial_select_text_desc">Houd een woord ingedrukt om het selectiemenu en de hulpmiddelen te openen, zoals onderstrepen, markeren en notities toevoegen!</string>
+  <string name="persian_language_label">Farsi</string>
+  <string name="results_count">%1$s resultaten</string>
 </resources>

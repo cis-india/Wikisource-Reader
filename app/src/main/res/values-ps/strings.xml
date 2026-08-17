@@ -43,7 +43,7 @@
   <string name="tap_target_screen_description">%1$s سکرين ته گرځېدل</string>
   <string name="categories_header">وېشنيزې</string>
   <string name="no_books_found_for_lang_and_cat">په %s ژبه کې د دې وېشنيزې کيتابونه نشته.</string>
-  <string name="sort_high_to_low">له لوړې نه کښته ته نومياليتوب</string>
+  <string name="sort_high_to_low">له پورته نه کښته ته نومياليتوب</string>
   <string name="sort_low_to_high">له کښته نه پورته ته نومياليتوب</string>
   <string name="sort_a_to_z">له ا تر ي سرليک</string>
   <string name="sort_z_to_a">له ي تر ا سرليک</string>
@@ -58,6 +58,7 @@
   <string name="danish_language_lebel">ډېنمارکي</string>
   <string name="german_language_lebel">جرمني</string>
   <string name="english_language_label">انگليسي</string>
+  <string name="esperanto_language_label">اېسپرانټو</string>
   <string name="spanish_language_label">سپانيايي</string>
   <string name="french_language_label">فرانسوي</string>
   <string name="gujarati_language_label">گوجراتي</string>
@@ -71,6 +72,7 @@
   <string name="malay_language_label">مالايي</string>
   <string name="norwegian_language_lebel">ناروېژي</string>
   <string name="polish_language_label">پولينډي</string>
+  <string name="portuguese_language_label">پورتگالي</string>
   <string name="punjabi_language_label">پنجابي</string>
   <string name="russian_language_lebel">روسي</string>
   <string name="sundanese_language_label">سونداني</string>
@@ -298,4 +300,6 @@
   <string name="tutorial_menu_toggle_desc">د غوره‌نۍ د پرانېستلو يا تړلو لپاره د ښيښې په منځ باندې وټوکئ</string>
   <string name="tutorial_select_text_title">ليک غوره‌کول</string>
   <string name="tutorial_select_text_desc">د ټاکنې غوره‌نۍ او اوزارو د ليدلو لپاره هر ويي ته اوږد زور ورکړئ لکه کرښ‌لاندې، روښانه‌کول او يادښتونه ورگډول!</string>
+  <string name="persian_language_label">پارسي</string>
+  <string name="results_count">%1$s پايلې</string>
 </resources>

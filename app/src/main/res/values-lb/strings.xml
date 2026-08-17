@@ -265,4 +265,6 @@
   <string name="tutorial_menu_toggle_desc">Tippt an d\'Mëtt vum Schierm, fir de Menü op- oder zouzemaachen</string>
   <string name="tutorial_select_text_title">Text auswielen</string>
   <string name="tutorial_select_text_desc">Haalt e belibegt Wuert laang gedréckt, fir en Auswielmenü mat Tools opzemaachen, z. B. fir z\'ënnersträichen, ze markéieren oder Notizen derbäizesetzen!</string>
+  <string name="persian_language_label">Persesch</string>
+  <string name="results_count">%1$s Resultater</string>
 </resources>

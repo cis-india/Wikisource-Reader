@@ -300,4 +300,6 @@
   <string name="tutorial_menu_toggle_desc">Допрете на средината на екранот за да отворите или затворите мени</string>
   <string name="tutorial_select_text_title">Избери текст</string>
   <string name="tutorial_select_text_desc">Подолго притиснете некој збор за да го видите менито со избор и алатки како потцртување, истакнување и да ставите белешки!</string>
+  <string name="persian_language_label">персиски</string>
+  <string name="results_count">%1$s ставки</string>
 </resources>

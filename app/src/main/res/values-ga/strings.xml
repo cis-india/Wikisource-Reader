@@ -303,4 +303,6 @@
   <string name="tutorial_menu_toggle_desc">Tapáil i lár an scáileáin chun an roghchlár a oscailt nó a dhúnadh</string>
   <string name="tutorial_select_text_title">Roghnaigh Téacs</string>
   <string name="tutorial_select_text_desc">Brúigh go fada ar aon fhocal chun an roghchlár roghnúcháin agus na huirlisí a fheiceáil i.e. cuir líne faoi, aibhsigh agus cuir nótaí leis!</string>
+  <string name="persian_language_label">Peirsis</string>
+  <string name="results_count">%1$s Torthaí</string>
 </resources>

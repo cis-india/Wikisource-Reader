@@ -301,4 +301,6 @@
   <string name="tutorial_menu_toggle_desc">点击屏幕中央即可打开或关闭菜单</string>
   <string name="tutorial_select_text_title">选择文本</string>
   <string name="tutorial_select_text_desc">长按任意文字即可查看选择菜单和工具，例如下划线、高亮文字和添加注释！</string>
+  <string name="persian_language_label">波斯文</string>
+  <string name="results_count">%1$s个结果</string>
 </resources>
