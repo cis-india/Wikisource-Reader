@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* सुबोध कुलकर्णी
+-->
 <resources>
+  <string name="not_applicable">लागू नाही</string>
   <string name="confirm">पुष्टी करा</string>
   <string name="cancel">रद्द करा</string>
+  <string name="ok">ठीक आहे</string>
+  <string name="got_it">समजले</string>
+  <string name="network_error">अरेरे! सर्व्हरशी संपर्क साधण्यात अयशस्वी.</string>
+  <string name="network_error_retry">पुन्हा प्रयत्न करा</string>
+  <string name="error">अरेरे! काहीतरी गडबड झाली.</string>
+  <string name="navigation_home">मुख्य</string>
+  <string name="navigation_categories">वर्ग</string>
+  <string name="navigation_library">ग्रंथालय</string>
   <string name="navigation_settings">सेटिंग्ज</string>
+  <string name="home_tap_target_coodinator_title">होम स्क्रीन</string>
+  <string name="home_tap_target_coodinator_description">विकिस्रोत या मुक्त ग्रंथालयातील समुदायाने संपादित केलेली हजारो विनामूल्य पुस्तके आणि ऐतिहासिक संदर्भ ग्रंथ पहा.</string>
+  <string name="category_tap_target_coodinator_title">वर्ग विभाग</string>
   <string name="home_header">सर्व पुस्तके</string>
   <string name="home_search_icon_desc">पुस्तके शोधा</string>
   <string name="categories_header">श्रेणी</string>

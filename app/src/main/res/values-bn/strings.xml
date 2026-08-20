@@ -51,6 +51,7 @@
   <string name="danish_language_lebel">ডেনীয়</string>
   <string name="german_language_lebel">জার্মান</string>
   <string name="english_language_label">ইংরেজি</string>
+  <string name="esperanto_language_label">এস্পেরান্তো</string>
   <string name="spanish_language_label">স্পেনীয়</string>
   <string name="french_language_label">ফরাসি</string>
   <string name="gujarati_language_label">গুজরাটি</string>
@@ -64,6 +65,7 @@
   <string name="malay_language_label">মালয়</string>
   <string name="norwegian_language_lebel">নরওয়েজীয়</string>
   <string name="polish_language_label">পোলিশ</string>
+  <string name="portuguese_language_label">পর্তুগিজ</string>
   <string name="punjabi_language_label">পাঞ্জাবি</string>
   <string name="russian_language_lebel">রুশ</string>
   <string name="sundanese_language_label">সুন্দানি</string>
@@ -232,5 +234,6 @@
   <string name="link_sourcecode_repo">গিটহাব রেপো দেখুন</string>
   <string name="link_sourcecode">গিটহাব</string>
   <string name="woops">যাঃ!</string>
+  <string name="persian_language_label">ফার্সি</string>
   <string name="results_count">%1$s ফলাফল</string>
 </resources>

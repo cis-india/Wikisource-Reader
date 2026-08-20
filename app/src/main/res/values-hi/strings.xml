@@ -36,6 +36,7 @@
   <string name="danish_language_lebel">डेनिश</string>
   <string name="german_language_lebel">जर्मन</string>
   <string name="english_language_label">अंग्रेज़ी</string>
+  <string name="esperanto_language_label">एस्पेरांतो</string>
   <string name="spanish_language_label">स्पेनी</string>
   <string name="french_language_label">फ़्रांसीसी</string>
   <string name="gujarati_language_label">गुजराती</string>
@@ -48,6 +49,7 @@
   <string name="marathi_language_label">मराठी</string>
   <string name="malay_language_label">मलय</string>
   <string name="polish_language_label">पोलिश</string>
+  <string name="portuguese_language_label">पुर्तगाली</string>
   <string name="punjabi_language_label">पंजाबी</string>
   <string name="russian_language_lebel">रूसी</string>
   <string name="sundanese_language_label">सुंदा</string>
@@ -121,6 +123,10 @@
   <string name="category_novels">उपन्यास</string>
   <string name="category_plays">नाटक</string>
   <string name="category_poetry">कविता</string>
+  <string name="yellow">पीला</string>
+  <string name="green">हरा</string>
+  <string name="blue">नीला</string>
+  <string name="red">लाल</string>
   <string name="woops">अरे नहीं!</string>
   <string name="tutorial_search_title">खोजें</string>
   <string name="tutorial_bookmark_title">बुकमार्क</string>

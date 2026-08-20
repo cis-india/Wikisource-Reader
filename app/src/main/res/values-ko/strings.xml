@@ -62,6 +62,7 @@
   <string name="danish_language_lebel">덴마크어</string>
   <string name="german_language_lebel">독일어</string>
   <string name="english_language_label">영어</string>
+  <string name="esperanto_language_label">에스페란토어</string>
   <string name="spanish_language_label">스페인어</string>
   <string name="french_language_label">프랑스어</string>
   <string name="gujarati_language_label">구자라트어</string>
@@ -75,6 +76,7 @@
   <string name="malay_language_label">말레이어</string>
   <string name="norwegian_language_lebel">노르웨이어</string>
   <string name="polish_language_label">폴란드어</string>
+  <string name="portuguese_language_label">포르투갈어</string>
   <string name="punjabi_language_label">편자브어</string>
   <string name="russian_language_lebel">러시아어</string>
   <string name="sundanese_language_label">순다어</string>
@@ -301,4 +303,6 @@
   <string name="tutorial_menu_toggle_desc">화면 중앙을 탭하여 메뉴를 열거나 닫기</string>
   <string name="tutorial_select_text_title">텍스트 선택</string>
   <string name="tutorial_select_text_desc">단어를 길게 누르면 선택 메뉴와 도구(밑줄, 강조 표시, 메모 추가 등)가 나타납니다!</string>
+  <string name="persian_language_label">페르시아어</string>
+  <string name="results_count">결과 %1$s개</string>
 </resources>

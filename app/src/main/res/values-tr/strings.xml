@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * HakanIST
+* Hedda
 * Sakblue
 -->
 <resources>
@@ -59,6 +60,7 @@
   <string name="danish_language_lebel">Danca</string>
   <string name="german_language_lebel">Almanca</string>
   <string name="english_language_label">İngilizce</string>
+  <string name="esperanto_language_label">Esperanto</string>
   <string name="spanish_language_label">İspanyolca</string>
   <string name="french_language_label">Fransızca</string>
   <string name="gujarati_language_label">Güceratça</string>
@@ -72,6 +74,7 @@
   <string name="malay_language_label">Malayca</string>
   <string name="norwegian_language_lebel">Norveççe</string>
   <string name="polish_language_label">Lehçe</string>
+  <string name="portuguese_language_label">Portekizce</string>
   <string name="punjabi_language_label">Pencapça</string>
   <string name="russian_language_lebel">Rusça</string>
   <string name="sundanese_language_label">Sunda dili</string>
@@ -301,4 +304,6 @@
   <string name="tutorial_menu_toggle_desc">Menüyü açmak veya kapatmak için ekranın ortasına dokunun</string>
   <string name="tutorial_select_text_title">Metin Seç</string>
   <string name="tutorial_select_text_desc">Seçim menüsünü ve araçları görmek için herhangi bir kelimeye uzun basın. Altını çizin, vurgulayın ve not ekleyin!</string>
+  <string name="persian_language_label">Farsça</string>
+  <string name="results_count">%1$s Sonuçları</string>
 </resources>

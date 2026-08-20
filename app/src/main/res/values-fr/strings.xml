@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* Bodhisattwa
 * Cquoi
 * Lenchanteur
 * NClara
@@ -62,6 +63,7 @@
   <string name="danish_language_lebel">danois</string>
   <string name="german_language_lebel">Allemand</string>
   <string name="english_language_label">anglais</string>
+  <string name="esperanto_language_label">Espéranto</string>
   <string name="spanish_language_label">espagnol</string>
   <string name="french_language_label">français</string>
   <string name="gujarati_language_label">gujarati</string>
