@@ -304,4 +304,6 @@
   <string name="tutorial_menu_toggle_desc">Klepnutím do stredu obrazovky otvoríš alebo zavrieš ponuku</string>
   <string name="tutorial_select_text_title">Vybrať text</string>
   <string name="tutorial_select_text_desc">Dlhým stlačením ľubovoľného slova zobrazíš ponuku výberu a nástroje, t. j. podčiarknutie, zvýraznenie a pridávanie poznámok!</string>
+  <string name="persian_language_label">perzština</string>
+  <string name="results_count">Počet výsledkov: %1$s</string>
 </resources>

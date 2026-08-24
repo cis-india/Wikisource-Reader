@@ -58,6 +58,7 @@
   <string name="danish_language_lebel">دانماركي</string>
   <string name="german_language_lebel">الألمانية</string>
   <string name="english_language_label">إنجليزي</string>
+  <string name="esperanto_language_label">الإسبرانتو</string>
   <string name="spanish_language_label">الأسبانية</string>
   <string name="french_language_label">فرنسي</string>
   <string name="gujarati_language_label">الغوجاراتية</string>
@@ -71,6 +72,7 @@
   <string name="malay_language_label">الملايو</string>
   <string name="norwegian_language_lebel">النرويجية</string>
   <string name="polish_language_label">بولندي</string>
+  <string name="portuguese_language_label">البرتغالية</string>
   <string name="punjabi_language_label">البنجابية</string>
   <string name="russian_language_lebel">الروسية</string>
   <string name="sundanese_language_label">السوندية</string>
@@ -302,4 +304,6 @@
   <string name="tutorial_menu_toggle_desc">انقر في منتصف الشاشة لفتح القائمة أو إغلاقها</string>
   <string name="tutorial_select_text_title">حدد النص</string>
   <string name="tutorial_select_text_desc">اضغط مطولاً على أي كلمة لعرض قائمة التحديد والأدوات، مثل التسطير والتمييز وإضافة الملاحظات!</string>
+  <string name="persian_language_label">الفارسية</string>
+  <string name="results_count">نتائج %1$s</string>
 </resources>
