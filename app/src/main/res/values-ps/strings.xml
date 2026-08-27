@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
+* باران
 * شاه زمان پټان
 -->
 <resources>
@@ -131,7 +132,7 @@
   <string name="onboarding_guide_active">گډون لارښود ښودل</string>
   <string name="onboarding_guide_inactive">گډون لارښود پټول</string>
   <string name="toggle_guide_title">گډون لارښود بدلول</string>
-  <string name="cover_image_desc">کتاب پښتۍ انخور</string>
+  <string name="cover_image_desc">کتاب پښتۍ انځور</string>
   <string name="book_detail_header">کتاب سپيناوی</string>
   <string name="back_button_desc">پر شا تلل.</string>
   <string name="share_intent_header">د...کارولو سره دا وېشل</string>
@@ -163,7 +164,7 @@
   <string name="category_essays">تکلونه</string>
   <string name="developed_by_ws">ويکي‌سرچينې لپاره رامنځته شوی، رامنځته کوونکی</string>
   <string name="category_shortstories">لنډې کيسې</string>
-  <string name="category_narration">نکل</string>
+  <string name="category_narration">نکلونه</string>
   <string name="category_biography">ژوندليک</string>
   <string name="category_dictionaries">قاموسونه</string>
   <string name="category_encyclopedias">پوهنغونډونه</string>
