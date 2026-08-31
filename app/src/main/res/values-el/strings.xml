@@ -55,6 +55,7 @@
   <string name="danish_language_lebel">Δανικά</string>
   <string name="german_language_lebel">Γερμανικά</string>
   <string name="english_language_label">Αγγλικά</string>
+  <string name="esperanto_language_label">Εσπεράντο</string>
   <string name="spanish_language_label">Ισπανικά</string>
   <string name="french_language_label">Γαλλικά</string>
   <string name="gujarati_language_label">Γκουτζαράτι</string>
@@ -68,6 +69,7 @@
   <string name="malay_language_label">Μαλαϊκά</string>
   <string name="norwegian_language_lebel">Νορβηγικά</string>
   <string name="polish_language_label">Πολωνικά</string>
+  <string name="portuguese_language_label">Πορτογαλικά</string>
   <string name="punjabi_language_label">Παντζάμπι</string>
   <string name="russian_language_lebel">Ρωσικά</string>
   <string name="sundanese_language_label">Σουνδανικά</string>
@@ -287,4 +289,6 @@
   <string name="tutorial_toc_desc">Αυτό περιέχει κεφάλαια και αποθηκευμένους σελιδοδείκτες</string>
   <string name="tutorial_menu_toggle_title">Άνοιγμα ή κλείσιμο μενού</string>
   <string name="tutorial_select_text_title">Επιλογή κειμένου</string>
+  <string name="persian_language_label">Περσικά</string>
+  <string name="results_count">%1$s αποτελέσματα</string>
 </resources>
