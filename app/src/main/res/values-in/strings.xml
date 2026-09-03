@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Bayahiu
+* Bennylin
 * Penyuwangi
 -->
 <resources>
@@ -8,7 +9,7 @@
   <string name="confirm">Konfirmasikan</string>
   <string name="cancel">Batal</string>
   <string name="ok">Baik</string>
-  <string name="got_it">Paham</string>
+  <string name="got_it">Mengerti</string>
   <string name="network_error">Duh! Gagal tersambung dengan peladen.</string>
   <string name="network_error_retry">Coba Lagi</string>
   <string name="error">Duh! Terjadi kesalahan.</string>
