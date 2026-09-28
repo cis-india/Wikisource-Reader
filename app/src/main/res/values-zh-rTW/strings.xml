@@ -58,6 +58,7 @@
   <string name="danish_language_lebel">丹麥文</string>
   <string name="german_language_lebel">德文</string>
   <string name="english_language_label">英文</string>
+  <string name="esperanto_language_label">世界文</string>
   <string name="spanish_language_label">西班牙文</string>
   <string name="french_language_label">法文</string>
   <string name="gujarati_language_label">古吉拉特文</string>
@@ -71,6 +72,7 @@
   <string name="malay_language_label">馬來文</string>
   <string name="norwegian_language_lebel">挪威文</string>
   <string name="polish_language_label">波蘭文</string>
+  <string name="portuguese_language_label">葡萄牙文</string>
   <string name="punjabi_language_label">旁遮普文</string>
   <string name="russian_language_lebel">俄文</string>
   <string name="sundanese_language_label">巽他文</string>
@@ -299,4 +301,6 @@
   <string name="tutorial_menu_toggle_desc">點擊螢幕中央即可開啟或關閉選單</string>
   <string name="tutorial_select_text_title">選擇文字</string>
   <string name="tutorial_select_text_desc">長按任意單字即可查看選擇選單和工具，例如底線、醒目顯示、和新增註解！</string>
+  <string name="persian_language_label">波斯文</string>
+  <string name="results_count">%1$s 個結果</string>
 </resources>
