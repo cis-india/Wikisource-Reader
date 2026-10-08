@@ -9,7 +9,7 @@
   <string name="ok">موافق</string>
   <string name="got_it">فهمتها</string>
   <string name="network_error">أُووبس! فشل الاتصال بالخادم.</string>
-  <string name="network_error_retry">حاول ثانية</string>
+  <string name="network_error_retry">حاول مرة أخرى</string>
   <string name="error">حدث خطأ ما</string>
   <string name="navigation_home">الرئيسية</string>
   <string name="navigation_categories">الفئات</string>

@@ -17,9 +17,13 @@
   <string name="navigation_library">Βιβλιοθήκη</string>
   <string name="navigation_settings">Ρυθμίσεις</string>
   <string name="home_tap_target_coodinator_title">Αρχική οθόνη</string>
+  <string name="home_tap_target_coodinator_description">Ανακαλύψτε χιλιάδες δωρεάν βιβλία και ιστορικά κείμενα, επιμελημένα από την κοινότητα, από τη βιβλιοθήκη Wikisource.</string>
   <string name="category_tap_target_coodinator_title">Ενότητα κατηγοριών</string>
+  <string name="category_tap_target_coodinator_description">Βρείτε ακριβώς αυτό που ψάχνετε περιηγούμενοι σε κατηγορίες όπως θεατρικά έργα, μυθιστορήματα, ποίηση κ.λπ.</string>
   <string name="library_tap_target_coodinator_title">Η βιβλιοθήκη σας</string>
+  <string name="library_tap_target_coodinator_description">Βρείτε όλα τα βιβλία σας εδώ. Μπορείτε να διαχειριστείτε τη συλλογή σας, να παρακολουθήσετε την πρόοδό σας ή να μοιραστείτε τα αγαπημένα σας με φίλους.</string>
   <string name="settings_tap_target_coodinator_title">Ρυθμίσεις εφαρμογής</string>
+  <string name="settings_tap_target_coodinator_description">Προσαρμόστε την εμπειρία ανάγνωσης και προσαρμόστε τις προτιμήσεις γλώσσας.</string>
   <string name="library_tooltip">ΣΥΜΒΟΥΛΗ! Σύρετε τα στοιχεία της βιβλιοθήκης αριστερά ή δεξιά για να μοιραστείτε ή να δείτε λεπτομέρειες βιβλίου.</string>
   <string name="welcome_screen_title">Ευχαριστούμε που εγκαταστήσατε το Wikisource Reader!</string>
   <string name="welcome_screen_desc">Επιλέξτε τον αγαπημένο σας αναγνώστη ηλεκτρονικών βιβλίων για να ξεκινήσετε το ταξίδι σας στην ανάγνωση.</string>
@@ -125,6 +129,9 @@
   <string name="license_setting_desc">Άδειες ανοικτού κώδικα</string>
   <string name="about_setting">Πληροφορίες Εφαρμογής</string>
   <string name="about_setting_desc">Εμφάνιση πληροφοριών για την Εφαρμογή και χρήσιμων συνδέσμων</string>
+  <string name="onboarding_guide_active">Εμφάνιση Οδηγού Εξοικείωσης</string>
+  <string name="onboarding_guide_inactive">Απόκρυψη Οδηγού Εξοικείωσης</string>
+  <string name="toggle_guide_title">Εναλλαγή Οδηγού Εξοικείωσης</string>
   <string name="cover_image_desc">Εικόνα εξώφυλλου βιβλίου</string>
   <string name="book_detail_header">Λεπτομέρειες βιβλίου</string>
   <string name="back_button_desc">Επιστροφή</string>
@@ -139,6 +146,7 @@
   <string name="translators_info">Μεταφραστές</string>
   <string name="genres_info">Είδη</string>
   <string name="subjects_info">Θέματα</string>
+  <string name="form_of_work_info">Λογοτεχνική μορφή</string>
   <string name="publishers_info">Εκδότης</string>
   <string name="unknown_publishers_info">Άγνωστος εκδότης</string>
   <string name="place_of_publication_info">Τόπος δημοσίευσης</string>
@@ -284,11 +292,15 @@
   <string name="tutorial_tts_title">TTS</string>
   <string name="tutorial_tts_desc">Το κείμενο σε ομιλία (TTS) βοηθά στην ανάγνωση των βιβλίων δυνατά</string>
   <string name="tutorial_bookmark_title">Σελιδοδείκτης</string>
+  <string name="tutorial_bookmark_desc">Κάντε κλικ για να προσθέσετε σελιδοδείκτη στην τρέχουσα θέση του βιβλίου για ευκολότερη ανάκτηση</string>
   <string name="tutorial_settings_title">Ρυθμίσεις</string>
+  <string name="tutorial_settings_desc">Διαμορφώστε τις προτιμήσεις, δηλαδή γλώσσες, γραμματοσειρές, θέματα, κύλιση κ.λπ.</string>
   <string name="tutorial_toc_title">Πλοήγηση βιβλίου</string>
   <string name="tutorial_toc_desc">Αυτό περιέχει κεφάλαια και αποθηκευμένους σελιδοδείκτες</string>
   <string name="tutorial_menu_toggle_title">Άνοιγμα ή κλείσιμο μενού</string>
+  <string name="tutorial_menu_toggle_desc">Πατήστε στο κέντρο της οθόνης για να ανοίξετε ή να κλείσετε το μενού</string>
   <string name="tutorial_select_text_title">Επιλογή κειμένου</string>
+  <string name="tutorial_select_text_desc">Πατήστε παρατεταμένα σε οποιαδήποτε λέξη για να δείτε το μενού επιλογής και τα εργαλεία, π.χ. υπογράμμιση, επισήμανση και προσθήκη σημειώσεων!</string>
   <string name="persian_language_label">Περσικά</string>
   <string name="results_count">%1$s αποτελέσματα</string>
 </resources>
