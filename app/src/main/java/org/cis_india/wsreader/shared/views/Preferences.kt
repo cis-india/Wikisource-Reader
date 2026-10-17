@@ -461,9 +461,7 @@ private fun Item(
                     modifier = Modifier.fillMaxWidth(),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ){
-                    Group(enabled = isActive) {
-                        Text(title)
-                    }
+                  titleContent()
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
