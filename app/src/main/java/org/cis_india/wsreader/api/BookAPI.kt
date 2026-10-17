@@ -17,6 +17,8 @@
 package org.cis_india.wsreader.api
 
 import android.content.Context
+import android.util.Log
+import org.cis_india.wsreader.BuildConfig
 import org.cis_india.wsreader.api.models.BookSet
 import org.cis_india.wsreader.helpers.book.BookLanguage
 import kotlinx.coroutines.Dispatchers
@@ -124,11 +126,11 @@ class BookAPI(context: Context) {
      * @param query The query to search for.
      * @return A Result object containing the BookSet if the request was successful, or an exception if it failed.
      */
-    suspend fun searchBooks(query: String, page: Long = 1L): Result<BookSet> {
+    suspend fun searchBooks(query: String): Result<BookSet> {
         val encodedString = withContext(Dispatchers.IO) {
             URLEncoder.encode(query, "UTF-8")
         }
-        val request = Request.Builder().get().url("${baseApiUrl}?search=$encodedString&page=$page").build()
+        val request = Request.Builder().get().url("${baseApiUrl}?search=$encodedString").build()
         return makeApiRequest(request)
     }
 
