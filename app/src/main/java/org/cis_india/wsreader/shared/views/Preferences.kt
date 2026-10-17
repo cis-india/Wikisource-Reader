@@ -468,12 +468,8 @@ private fun Item(
                         horizontalArrangement = Arrangement.End)
                     {
                         content()
-                        IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
-                            Icon(
-                                Icons.AutoMirrored.Filled.Backspace,
-                                contentDescription = "Clear"
-                            )
-                        }
+
+                        clearButton()
                     }
                 }
             }
@@ -486,13 +482,7 @@ private fun Item(
             trailingContent = {
                 Row{
                     content()
-
-                    IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
-                        Icon(
-                            Icons.AutoMirrored.Filled.Backspace,
-                            contentDescription = "Clear"
-                        )
-                    }
+                    clearButton()
                 }
             })
     }
