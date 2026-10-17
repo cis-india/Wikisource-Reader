@@ -443,6 +443,15 @@ private fun Item(
             Text(title)
         }
     }
+
+    val clearButton: @Composable () -> Unit = {
+        IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
+            Icon(
+                Icons.AutoMirrored.Filled.Backspace,
+                contentDescription = "Clear"
+            )
+        }
+    }
     // ===    display th title above the controls when more horizontal space is needed
     if(titleAboveContent){
         ListItem(
