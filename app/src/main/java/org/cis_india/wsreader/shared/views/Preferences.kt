@@ -475,28 +475,27 @@ private fun Item(
     }
 
     // ===    display th title above the controls when more horizontal space is needed
-    if(titleAboveContent){
-        ListItem(
-            modifier = itemModifier,
-            headlineContent = {
+    ListItem(
+        modifier = itemModifier,
+        headlineContent = {
+            if (titleAboveContent){
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ){
-                  titleContent()
+                    titleContent()
                     controlsContent()
                 }
+            } else {
+                titleContent()
             }
-        )
-    } else {
-        ListItem(modifier = itemModifier,
-            headlineContent = {
-              titleContent()
-            },
-            trailingContent = {
-                controlsContent()
-            })
-    }
+        },
+        trailingContent =  if (titleAboveContent){
+            null
+        } else {
+            {controlsContent()}
+        }
+    )
 }
 
 @Composable
