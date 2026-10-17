@@ -445,13 +445,35 @@ private fun Item(
     }
 
     val clearButton: @Composable () -> Unit = {
-        IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
+        IconButton(
+            onClick = onClear ?: {},
+            enabled = onClear != null
+        ) {
             Icon(
                 Icons.AutoMirrored.Filled.Backspace,
                 contentDescription = "Clear"
             )
         }
     }
+
+    val controlsContent: @Composable () -> Unit = {
+        if (titleAboveContent) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.End
+            ) {
+                content()
+                clearButton()
+            }
+        } else {
+            Row {
+                content()
+                clearButton()
+            }
+        }
+    }
+
     // ===    display th title above the controls when more horizontal space is needed
     if(titleAboveContent){
         ListItem(
@@ -462,15 +484,7 @@ private fun Item(
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ){
                   titleContent()
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.End)
-                    {
-                        content()
-
-                        clearButton()
-                    }
+                    controlsContent()
                 }
             }
         )
@@ -480,10 +494,7 @@ private fun Item(
               titleContent()
             },
             trailingContent = {
-                Row{
-                    content()
-                    clearButton()
-                }
+                controlsContent()
             })
     }
 }
