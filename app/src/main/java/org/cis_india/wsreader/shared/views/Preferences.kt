@@ -481,9 +481,7 @@ private fun Item(
     } else {
         ListItem(modifier = itemModifier,
             headlineContent = {
-                Group(enabled = isActive) {
-                    Text(title)
-                }
+              titleContent()
             },
             trailingContent = {
                 Row{
