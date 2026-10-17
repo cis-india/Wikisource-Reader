@@ -12,6 +12,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Backspace
@@ -45,6 +46,7 @@ fun <T> ButtonGroupItem(
     title: String,
     preference: EnumPreference<T>,
     commit: () -> Unit,
+    titleAboveButtons: Boolean = false,
     formatValue: (T) -> String,
 ) {
     ButtonGroupItem(
@@ -54,6 +56,7 @@ fun <T> ButtonGroupItem(
         activeOption = preference.effectiveValue,
         selectedOption = preference.value,
         formatValue = formatValue,
+        titleAboveButtons = titleAboveButtons,
         onClear = {
             preference.clear()
             commit()
@@ -106,8 +109,9 @@ private fun <T> ButtonGroupItem(
     formatValue: (T) -> String,
     onClear: (() -> Unit)?,
     onSelectedOptionChanged: (T) -> Unit,
+    titleAboveButtons: Boolean = false
 ) {
-    Item(title, isActive = isActive, onClear = onClear) {
+    Item(title, isActive = isActive, onClear = onClear, titleAboveContent = titleAboveButtons) {
         ToggleButtonGroup(
             options = options,
             activeOption = activeOption,
@@ -425,33 +429,87 @@ private fun Item(
     isActive: Boolean = true,
     onClick: (() -> Unit)? = null,
     onClear: (() -> Unit)? = null,
+    titleAboveContent: Boolean = false,
     content: @Composable () -> Unit,
 ) {
-    ListItem(
-        modifier =
-        if (onClick != null) {
-            Modifier.clickable(onClick = onClick)
-        } else {
-            Modifier
-        },
-        headlineContent = {
-            Group(enabled = isActive) {
-                Text(title)
-            }
-        },
-        trailingContent = {
-            Row {
-                content()
-
-                IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
-                    Icon(
-                        Icons.AutoMirrored.Filled.Backspace,
-                        contentDescription = "Clear"
-                    )
+    val itemModifier = if (onClick != null) {
+        Modifier.clickable(onClick = onClick)
+    } else {
+        Modifier
+    }
+    // ===    display th title above the controls when more horizontal space is needed
+    if(titleAboveContent){
+        ListItem(
+            modifier = itemModifier,
+            headlineContent = {
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ){
+                    Group(enabled = isActive) {
+                        Text(title)
+                    }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.End)
+                    {
+                        content()
+                        IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
+                            Icon(
+                                Icons.AutoMirrored.Filled.Backspace,
+                                contentDescription = "Clear"
+                            )
+                        }
+                    }
                 }
             }
-        }
-    )
+        )
+    } else {
+        ListItem(modifier = itemModifier,
+            headlineContent = {
+                Group(enabled = isActive) {
+                    Text(title)
+                }
+            },
+            trailingContent = {
+                Row{
+                    content()
+
+                    IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
+                        Icon(
+                            Icons.AutoMirrored.Filled.Backspace,
+                            contentDescription = "Clear"
+                        )
+                    }
+                }
+            })
+    }
+//    ListItem(
+//        modifier =
+//        if (onClick != null) {
+//            Modifier.clickable(onClick = onClick)
+//        } else {
+//            Modifier
+//        },
+//        headlineContent = {
+//            Group(enabled = isActive) {
+//                Text(title)
+//            }
+//        },
+//        trailingContent = {
+//            Row {
+//                content()
+//
+//                IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
+//                    Icon(
+//                        Icons.AutoMirrored.Filled.Backspace,
+//                        contentDescription = "Clear"
+//                    )
+//                }
+//            }
+//        }
+//    )
 }
 
 @Composable

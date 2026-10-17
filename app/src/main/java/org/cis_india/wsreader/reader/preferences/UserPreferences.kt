@@ -544,7 +544,8 @@ private fun ReflowableUserPreferences(
                 ButtonGroupItem(
                     title = "Alignment",
                     preference = textAlign,
-                    commit = commit
+                    commit = commit,
+                    titleAboveButtons = true,
                 ) { value ->
                     when (value) {
                         ReadiumTextAlign.CENTER -> "Center"
