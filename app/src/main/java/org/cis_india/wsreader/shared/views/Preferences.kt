@@ -437,6 +437,12 @@ private fun Item(
     } else {
         Modifier
     }
+
+    val titleContent: @Composable () -> Unit = {
+        Group(enabled = isActive){
+            Text(title)
+        }
+    }
     // ===    display th title above the controls when more horizontal space is needed
     if(titleAboveContent){
         ListItem(
