@@ -485,31 +485,6 @@ private fun Item(
                 }
             })
     }
-//    ListItem(
-//        modifier =
-//        if (onClick != null) {
-//            Modifier.clickable(onClick = onClick)
-//        } else {
-//            Modifier
-//        },
-//        headlineContent = {
-//            Group(enabled = isActive) {
-//                Text(title)
-//            }
-//        },
-//        trailingContent = {
-//            Row {
-//                content()
-//
-//                IconButton(onClick = onClear ?: {}, enabled = onClear != null) {
-//                    Icon(
-//                        Icons.AutoMirrored.Filled.Backspace,
-//                        contentDescription = "Clear"
-//                    )
-//                }
-//            }
-//        }
-//    )
 }
 
 @Composable
