@@ -136,9 +136,9 @@ class CategoryViewModel @Inject constructor(
     private fun getPreferredSortOption(): BookSortOption {
         val apiValue = preferenceUtil.getString(
             PreferenceUtil.PREFERRED_BOOK_SORT_STR,
-            BookSortOption.PopularityHighToLow.apiValue
+            BookSortOption.Random.apiValue
         )
         return BookSortOption.getAllSortOptions().find { it.apiValue == apiValue }
-            ?: BookSortOption.PopularityHighToLow
+            ?: BookSortOption.Random
     }
 }
