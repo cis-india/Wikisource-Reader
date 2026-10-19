@@ -32,6 +32,7 @@ import org.cis_india.wsreader.helpers.PreferenceUtil
 import org.cis_india.wsreader.helpers.book.BookLanguage
 import org.cis_india.wsreader.helpers.book.BookSortOption
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -50,8 +51,7 @@ data class SearchBarState(
     val searchText: String = "",
     val isSearchBarVisible: Boolean = false,
     val isSortMenuVisible: Boolean = false,
-    val isSearching: Boolean = false,
-    val searchResults: List<Book> = emptyList()
+    val isSearching: Boolean = false
 )
 
 sealed class UserAction {
@@ -81,6 +81,13 @@ class HomeViewModel @Inject constructor(
     val sortOption: State<BookSortOption> = _sortOption
 
     private var searchJob: Job? = null
+    private val searchPagination = SearchPagination { query, page -> bookAPI.searchBooks(query, page) }
+    internal val searchResultsState: SearchResultsState get() = searchPagination.state
+
+    fun loadNextSearchItems() {
+        if (searchBarState.isSearching) return
+        searchJob = viewModelScope.launch { searchPagination.loadNextPage() }
+    }
 
     private val pagination = Paginator(initialPage = allBooksState.page, onLoadUpdated = {
         allBooksState = allBooksState.copy(isLoading = it)
@@ -142,15 +149,20 @@ class HomeViewModel @Inject constructor(
             }
 
             is UserAction.TextFieldInput -> {
-                searchBarState = searchBarState.copy(searchText = userAction.text)
-                if (userAction.networkStatus == NetworkObserver.Status.Available) {
-                    searchJob?.cancel()
+                searchJob?.cancel()
+                searchPagination.reset(userAction.text)
+                val canSearch = userAction.text.isNotBlank() &&
+                    userAction.networkStatus == NetworkObserver.Status.Available
+                searchBarState = searchBarState.copy(
+                    searchText = userAction.text,
+                    isSearching = canSearch
+                )
+                if (canSearch) {
                     searchJob = viewModelScope.launch {
-                        if (userAction.text.isNotBlank()) {
-                            searchBarState = searchBarState.copy(isSearching = true)
-                        }
                         delay(500L)
-                        searchBooks(userAction.text)
+                        searchPagination.loadNextPage()
+                        coroutineContext.ensureActive()
+                        searchBarState = searchBarState.copy(isSearching = false)
                     }
                 }
             }
@@ -163,16 +175,6 @@ class HomeViewModel @Inject constructor(
                 changeSortOption(userAction.sortOption)
             }
         }
-    }
-
-    private suspend fun searchBooks(query: String) {
-        if (query.isBlank()) return // no need to search for empty query
-        val bookSet = bookAPI.searchBooks(query)
-        val books = bookSet.getOrNull()?.books?.filter { it.epubUrl != null }
-        searchBarState = searchBarState.copy(
-            searchResults = books ?: emptyList(),
-            isSearching = false
-        )
     }
 
     private fun changeLanguage(language: BookLanguage) {
