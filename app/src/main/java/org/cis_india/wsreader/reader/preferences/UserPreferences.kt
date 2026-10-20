@@ -533,13 +533,27 @@ private fun ReflowableUserPreferences(
     }
 
     if (publisherStyles != null) {
+        // Readium's publisher styles are the inverse of user-defined custom styles.
+        val customStylesEnabled = !(publisherStyles.value ?: true)
         SwitchItem(
-            title = "Publisher styles",
-            preference = publisherStyles,
-            commit = commit
+            title = "Custom Styles",
+            value = customStylesEnabled,
+            isActive = publisherStyles.isEffective,
+            onCheckedChange = {
+                publisherStyles.set(!it)
+                commit()
+            },
+            onToggle = {
+                publisherStyles.set(customStylesEnabled)
+                commit()
+            },
+            onClear = {
+                publisherStyles.clear()
+                commit()
+            }.takeIf { publisherStyles.value != null }
         )
 
-        if (!(publisherStyles.value ?: publisherStyles.effectiveValue)) {
+        if (customStylesEnabled) {
             if (textAlign != null) {
                 ButtonGroupItem(
                     title = "Alignment",
