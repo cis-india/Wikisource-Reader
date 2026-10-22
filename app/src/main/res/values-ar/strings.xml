@@ -279,7 +279,7 @@
   <string name="speed_rate">سرعة</string>
   <string name="pitch_rate">خندق</string>
   <string name="tts_settings">إعدادات الكلام</string>
-  <string name="tts_stop">قف</string>
+  <string name="tts_stop">إيقاف</string>
   <string name="tts_voice">صوت</string>
   <string name="search_error_not_searchable">هذا المنشور غير قابل للبحث</string>
   <string name="search_error_cancelled">تم إلغاء البحث</string>

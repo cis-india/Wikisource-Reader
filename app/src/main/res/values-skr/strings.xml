@@ -177,6 +177,7 @@
   <string name="popup_delete_button">مٹاؤ</string>
   <string name="app_version_header">ورژن</string>
   <string name="app_version_label">ایپ ورژن:</string>
+  <string name="app_version">2.2.0</string>
   <string name="github_tab_label">گٹ ہب ٹیگ:</string>
   <string name="copyright_label">نقل حقوق</string>
   <string name="copyright">\@ 2019 European Digital Reading Lab</string>
