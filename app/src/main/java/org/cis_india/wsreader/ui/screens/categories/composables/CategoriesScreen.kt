@@ -16,12 +16,15 @@
 
 package org.cis_india.wsreader.ui.screens.categories.composables
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -37,6 +40,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -81,6 +85,7 @@ fun CategoriesScreen(navController: NavController) {
                             val category = BookCategories.ALL[idx]
                             CategoriesItem(
                                 category = stringResource(id = category.nameRes),
+                                iconRes = category.iconRes,
                                 onClick = {
                                     navController.navigate(
                                         Screens.CategoryDetailScreen.withCategory(category.category)
@@ -97,7 +102,11 @@ fun CategoriesScreen(navController: NavController) {
 
 
 @Composable
-private fun CategoriesItem(category: String, onClick: () -> Unit) {
+private fun CategoriesItem(
+    category: String,
+    iconRes: Int,
+    onClick: () -> Unit
+){
     val view = LocalView.current
     Card(
         modifier = Modifier
@@ -114,17 +123,27 @@ private fun CategoriesItem(category: String, onClick: () -> Unit) {
         }
     ) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Text(
-                modifier = Modifier.padding(2.dp),
-                text = category,
-                fontSize = 17.sp,
-                fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
-                fontFamily = poppinsFont,
-                fontWeight = FontWeight.SemiBold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = MaterialTheme.colorScheme.onSurface,
-            )
+            Column() {
+                Image(
+                    painter = painterResource(id = iconRes),
+                    contentDescription = null,
+                    modifier = Modifier.size(28.dp)
+                )
+
+                Spacer(modifier = Modifier.height(6.dp))
+
+                Text(
+                    modifier = Modifier.padding(2.dp),
+                    text = category,
+                    fontSize = 17.sp,
+                    fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
+                    fontFamily = poppinsFont,
+                    fontWeight = FontWeight.SemiBold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = MaterialTheme.colorScheme.onSurface,
+                )
+            }
         }
     }
 }
