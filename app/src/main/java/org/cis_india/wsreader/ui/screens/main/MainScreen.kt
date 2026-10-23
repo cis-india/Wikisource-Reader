@@ -27,6 +27,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
@@ -100,6 +103,9 @@ fun  MainScreen(
     }
 
     Scaffold(
+        modifier = Modifier.windowInsetsPadding(
+            WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal)
+        ),
         bottomBar = {
             TapTargetCoordinator(
                 showTapTargets = showNavTapTargets.value,

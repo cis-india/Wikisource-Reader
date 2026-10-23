@@ -18,8 +18,6 @@ package org.cis_india.wsreader.ui.theme
 
 import android.content.Context
 import android.os.Build
-import androidx.activity.SystemBarStyle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
@@ -29,10 +27,11 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.view.WindowCompat
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.ThemeMode
 
@@ -150,26 +149,22 @@ private fun getColorScheme(
 }
 
 /**
- * Helper composable function to fix the status bar icons on dark theme
- * when using edge-to-edge mode.
- * @param activity: MainActivity to enable edge-to-edge status bar.
+ * Keep system bar icons readable against the selected app theme, including Auto mode.
+ * @param activity: Activity hosting the edge-to-edge content.
  * @param themeState: ThemeMode to check the current theme.
  */
 @Composable
 fun AdjustEdgeToEdge(activity: AppCompatActivity, themeState: ThemeMode) {
-    LaunchedEffect(themeState) {
-        if (themeState == ThemeMode.Dark) {
-            activity.enableEdgeToEdge(
-                statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
-                navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT)
-            )
-        } else {
-            activity.enableEdgeToEdge(
-                navigationBarStyle = SystemBarStyle.light(
-                    android.graphics.Color.TRANSPARENT,
-                    android.graphics.Color.TRANSPARENT
-                )
-            )
+    val systemDarkTheme = isSystemInDarkTheme()
+    val darkTheme = when (themeState) {
+        ThemeMode.Light -> false
+        ThemeMode.Dark -> true
+        ThemeMode.Auto -> systemDarkTheme
+    }
+    SideEffect {
+        WindowCompat.getInsetsController(activity.window, activity.window.decorView).apply {
+            isAppearanceLightStatusBars = !darkTheme
+            isAppearanceLightNavigationBars = !darkTheme
         }
     }
 }
