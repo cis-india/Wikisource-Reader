@@ -56,6 +56,7 @@ import org.cis_india.wsreader.ui.common.CustomTopAppBar
 import org.cis_india.wsreader.ui.navigation.Screens
 import org.cis_india.wsreader.ui.screens.main.bottomNavPadding
 import org.cis_india.wsreader.ui.theme.poppinsFont
+import androidx.compose.ui.graphics.ColorFilter
 
 
 @Composable
@@ -131,7 +132,8 @@ private fun CategoriesItem(
                 Image(
                     painter = painterResource(id = iconRes),
                     contentDescription = null,
-                    modifier = Modifier.size(28.dp)
+                    modifier = Modifier.size(28.dp),
+                    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurface)
                 )
 
                 Spacer(modifier = Modifier.height(6.dp))
