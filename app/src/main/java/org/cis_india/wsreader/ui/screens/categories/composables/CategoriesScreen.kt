@@ -18,6 +18,7 @@ package org.cis_india.wsreader.ui.screens.categories.composables
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -123,7 +124,10 @@ private fun CategoriesItem(
         }
     ) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Column() {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
                 Image(
                     painter = painterResource(id = iconRes),
                     contentDescription = null,
