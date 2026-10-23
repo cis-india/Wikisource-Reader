@@ -23,7 +23,7 @@ import org.cis_india.wsreader.R
  * @param category: Category name
  * @param nameRes: Resource ID for the category name
  */
-sealed class BookCategories(val category: String, val nameRes: Int) {
+sealed class BookCategories(val category: String, val nameRes: Int,   val iconRes: Int) {
 
     companion object {
         /**
@@ -60,12 +60,12 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
         }
     }
 
-    data object Novels : BookCategories("novel", R.string.category_novels)
-    data object Poems : BookCategories("poem", R.string.category_poetry)
-    data object Plays : BookCategories("play", R.string.category_plays)
-    data object ShortStories : BookCategories("short story", R.string.category_shortstories)
-    data object Narration : BookCategories("narration", R.string.category_narration)
-    data object Essays : BookCategories("essay", R.string.category_essays)
-    data object Dictionaries : BookCategories("dictionary", R.string.category_dictionaries)
-    data object Encyclopedias : BookCategories("encyclopedia", R.string.category_encyclopedias)
+    data object Novels : BookCategories("novel", R.string.category_novels, R.drawable.openbook)
+    data object Poems : BookCategories("poem", R.string.category_poetry, R.drawable.quote)
+    data object Plays : BookCategories("play", R.string.category_plays, R.drawable.theatr)
+    data object ShortStories : BookCategories("short story", R.string.category_shortstories, R.drawable.file)
+    data object Narration : BookCategories("narration", R.string.category_narration,  R.drawable.note)
+    data object Essays : BookCategories("essay", R.string.category_essays, R.drawable.dictionary)
+    data object Dictionaries : BookCategories("dictionary", R.string.category_dictionaries, R.drawable.world)
+    data object Encyclopedias : BookCategories("encyclopedia", R.string.category_encyclopedias, R.drawable.leftalign)
 }
