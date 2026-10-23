@@ -16,6 +16,16 @@
 
 package org.cis_india.wsreader.ui.screens.categories.composables
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoStories
+import androidx.compose.material.icons.filled.Book
+import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.LibraryBooks
+import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.MusicNote
+import androidx.compose.material.icons.filled.TheaterComedy
+import androidx.compose.material.icons.filled.Translate
+import androidx.compose.ui.graphics.vector.ImageVector
 import org.cis_india.wsreader.R
 
 /**
@@ -23,7 +33,7 @@ import org.cis_india.wsreader.R
  * @param category: Category name
  * @param nameRes: Resource ID for the category name
  */
-sealed class BookCategories(val category: String, val nameRes: Int) {
+sealed class BookCategories(val category: String, val nameRes: Int, val iconRes: ImageVector) {
 
     companion object {
         /**
@@ -60,12 +70,12 @@ sealed class BookCategories(val category: String, val nameRes: Int) {
         }
     }
 
-    data object Novels : BookCategories("novel", R.string.category_novels)
-    data object Poems : BookCategories("poem", R.string.category_poetry)
-    data object Plays : BookCategories("play", R.string.category_plays)
-    data object ShortStories : BookCategories("short story", R.string.category_shortstories)
-    data object Narration : BookCategories("narration", R.string.category_narration)
-    data object Essays : BookCategories("essay", R.string.category_essays)
-    data object Dictionaries : BookCategories("dictionary", R.string.category_dictionaries)
-    data object Encyclopedias : BookCategories("encyclopedia", R.string.category_encyclopedias)
+    data object Novels : BookCategories("novel", R.string.category_novels, Icons.Filled.Book)
+    data object Poems : BookCategories("poem", R.string.category_poetry, Icons.Filled.MusicNote)
+    data object Plays : BookCategories("play", R.string.category_plays, Icons.Filled.TheaterComedy)
+    data object ShortStories : BookCategories("short story", R.string.category_shortstories, Icons.Filled.AutoStories)
+    data object Narration : BookCategories("narration", R.string.category_narration,  Icons.Filled.MenuBook)
+    data object Essays : BookCategories("essay", R.string.category_essays, Icons.Filled.Description)
+    data object Dictionaries : BookCategories("dictionary", R.string.category_dictionaries, Icons.Filled.Translate)
+    data object Encyclopedias : BookCategories("encyclopedia", R.string.category_encyclopedias, Icons.Filled.LibraryBooks)
 }
