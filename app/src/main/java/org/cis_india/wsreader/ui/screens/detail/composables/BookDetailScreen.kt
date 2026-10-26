@@ -475,13 +475,13 @@ private fun BookDetailContents(
             */
         } else {
             Column {
-                InfoLine(stringResource(R.string.translator_info), stringResource(R.string.translators_info), translators)
-                InfoLine(stringResource(R.string.editor_info), stringResource(R.string.editors_info), editors)
-                InfoLine(stringResource(R.string.publishers_info), stringResource(R.string.publishers_plural_info), publishers)
-                InfoLine(stringResource(R.string.place_of_publication_info), stringResource(R.string.places_of_publication_info), placeOfPublication)
-                InfoLine(stringResource(R.string.form_of_work_info), stringResource(R.string.form_of_works_info), formOfWork)
-                InfoLine(stringResource(R.string.genre_info), stringResource(R.string.genres_info), literaryGenres)
-                InfoLine(stringResource(R.string.subject_info), stringResource(R.string.subjects_info), mainSubjects)
+                InfoLine(R.string.translators_info, translators)
+                InfoLine(R.string.editors_info, editors)
+                InfoLine(R.string.publishers_info, publishers)
+                InfoLine(R.string.place_of_publication_info, placeOfPublication)
+                InfoLine(R.string.form_of_work_info, formOfWork)
+                InfoLine(R.string.genre_info, literaryGenres)
+                InfoLine(R.string.subject_info, mainSubjects)
             }
         }
     }
@@ -742,10 +742,11 @@ private fun NoSynopsisUI() {
 */
 
 @Composable
-fun InfoLine(singularLabel: String, pluralLabel: String, values: List<String>) {
+fun InfoLine(labelRes: Int, values: List<String>) {
     val filtered = values.filter { it.isNotBlank() }
     if (filtered.isNotEmpty()) {
-        val labelToShow = if (filtered.size > 1) pluralLabel else singularLabel
+        val resources = LocalContext.current.resources
+        val labelToShow = resources.getQuantityString(labelRes, filtered.size)
         Text(
             text = "$labelToShow: ${filtered.joinToString(", ")}",
             modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
