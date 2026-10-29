@@ -2,13 +2,13 @@ name: CI
 
 on:
   pull_request:
-    branches: [main, develop]
+    branches: [main]
   push:
-    branches: [main, develop]
+    branches: [main]
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
@@ -24,7 +24,6 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v4
-      - run: chmod +x gradlew
       - name: Build debug APK and run unit tests
         run: ./gradlew :app:assembleDebug :app:testDebugUnitTest --stacktrace
       - uses: actions/upload-artifact@v4
@@ -36,3 +35,4 @@ jobs:
         with:
           name: debug-apk
           path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
