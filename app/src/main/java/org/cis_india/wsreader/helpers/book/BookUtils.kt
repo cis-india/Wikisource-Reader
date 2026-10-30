@@ -117,6 +117,19 @@ object BookUtils {
         return result
     }
 
+    suspend fun getPublishers(publishers: List<Publisher>, language: String): List<String> {
+        if (publishers.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            publishers.map { publisher ->
+                async {
+                    val name = fetchLabelFromWikidata(publisher.pwikidataqid, language)
+                    fixAuthorName(name ?: publisher.name ?: "")
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
+    }
+
     suspend fun getPlacesOfPublicationAsString(placesOfPublication: List<PlacesOfPublication>, language: String, unknownPlacesOfPublication: String): String {
 
         // Update value from fetch
@@ -136,6 +149,19 @@ object BookUtils {
         }
 
         return result
+    }
+
+    suspend fun getPlacesOfPublication(placesOfPublication: List<PlacesOfPublication>, language: String): List<String> {
+        if (placesOfPublication.isEmpty()) return emptyList()
+
+        return coroutineScope {
+            placesOfPublication.map { place ->
+                async {
+                    val name = fetchLabelFromWikidata(place.pwikidataqid, language)
+                    fixAuthorName(name ?: place.name ?: "")
+                }
+            }.awaitAll()
+        }.filter { it.isNotBlank() }
     }
 
     suspend fun getEditors(editors: List<Editor>, language: String): List<String> {
