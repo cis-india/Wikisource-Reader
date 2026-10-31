@@ -79,12 +79,14 @@ class BookAPI(context: Context) {
      * @param page The page number of the books to fetch.
      * @param bookLanguage The language of the books to fetch.
      * @param sortBy The sort option for the books (optional).
+     * @param seed Seed for the random sort, so all pages come from the same shuffle (optional).
      * @return A Result object containing the BookSet if the request was successful, or an exception if it failed.
      */
     suspend fun getAllBooks(
         page: Long,
         bookLanguage: BookLanguage = BookLanguage.AllBooks,
-        sortBy: String? = null
+        sortBy: String? = null,
+        seed: Int? = null
     ): Result<BookSet> {
         var url = "${baseApiUrl}?page=$page"
         if (bookLanguage != BookLanguage.AllBooks) {
@@ -92,6 +94,9 @@ class BookAPI(context: Context) {
         }
         if (sortBy != null) {
             url += "&sort=$sortBy"
+        }
+        if (seed != null) {
+            url += "&seed=$seed"
         }
         val request = Request.Builder().get().url(url).build()
         return makeApiRequest(request)
@@ -151,13 +156,15 @@ class BookAPI(context: Context) {
      * @param page The page number of the books to fetch.
      * @param bookLanguage The language of the books to fetch.
      * @param sortBy The sort option for the books (optional).
+     * @param seed Seed for the random sort, so all pages come from the same shuffle (optional).
      * @return A Result object containing the BookSet if the request was successful, or an exception if it failed.
      */
     suspend fun getBooksByCategory(
         category: String,
         page: Long,
         bookLanguage: BookLanguage = BookLanguage.AllBooks,
-        sortBy: String? = null
+        sortBy: String? = null,
+        seed: Int? = null
     ): Result<BookSet> {
         var url = "${baseApiUrl}?page=$page&genres=$category"
         if (bookLanguage != BookLanguage.AllBooks) {
@@ -165,6 +172,9 @@ class BookAPI(context: Context) {
         }
         if (sortBy != null) {
             url += "&sort=$sortBy"
+        }
+        if (seed != null) {
+            url += "&seed=$seed"
         }
         val request = Request.Builder().get().url(url).build()
         return makeApiRequest(request)
