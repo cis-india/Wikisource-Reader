@@ -36,6 +36,20 @@ Please use the provided Pull Request templates according to your needs. Currentl
 
 Fork this project, import and compile it with the latest version of [Android Studio](https://developer.android.com/studio/). 
 
+## Continuous integration
+
+CI runs separate build-and-test, lint, and JSON validation jobs. Run the lint checks locally with:
+
+```shell
+./gradlew ktlintCheck detekt :app:lintDebug
+```
+
+Use `./gradlew ktlintFormat` to fix formatting, or regenerate baselines with:
+
+```shell
+./gradlew detektBaseline ktlintGenerateBaseline
+```
+
 [issues]: https://github.com/Pool-Of-Tears/Myne/issues/new/choose
 [feature-req]: https://github.com/Pool-Of-Tears/Myne/issues/new?assignees=&labels=enhancement&projects=&template=--feature-request.yml&title=%5BFeature+Request%5D
 [conv-commits]:https://kapeli.com/cheat_sheets/Conventional_Commits.docset/Contents/Resources/Documents/index
