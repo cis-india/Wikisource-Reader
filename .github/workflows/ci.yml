@@ -36,3 +36,34 @@ jobs:
           name: debug-apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Run ktlint, detekt and Android Lint
+        run: ./gradlew ktlintCheck detekt :app:lintDebug --continue --stacktrace
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lint-reports
+          path: app/build/reports/
+
+  validate-json:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check that all tracked JSON files are well-formed
+        run: |
+          status=0
+          while IFS= read -r -d '' f; do
+            jq empty "$f" || { echo "::error file=$f::Invalid JSON"; status=1; }
+          done < <(git ls-files -z '*.json')
+          exit $status
