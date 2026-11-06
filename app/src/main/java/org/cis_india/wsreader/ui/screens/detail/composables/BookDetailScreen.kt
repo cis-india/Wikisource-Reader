@@ -462,28 +462,38 @@ private fun BookDetailContents(
             color = MaterialTheme.colorScheme.onBackground,
         )*/
 
-        val synopsis = state.extraInfo.description.ifEmpty { null }
-        if (synopsis != null) {
-            /*
+        val description = book.languages.firstNotNullOfOrNull { language ->
+            book.description[language]?.takeIf { it.isNotBlank() }
+        } ?: book.description["en"]?.takeIf { it.isNotBlank() }
+
+
+        if (description != null) {
             Text(
-                text = synopsis,
+                text = description,
                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp),
                 fontFamily = poppinsFont,
                 fontWeight = FontWeight.Normal,
                 color = MaterialTheme.colorScheme.onBackground,
             )
-            */
-        } else {
-            Column {
-                InfoLine(stringResource(R.string.translators_info), translators)
-                InfoLine(stringResource(id = R.string.editors_info), editors)
-                InfoStringContent(stringResource(R.string.publishers_info), publishers, isPublishersBlank)
-                InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)
-                InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
-                InfoLine(stringResource(R.string.genres_info), literaryGenres)
-                InfoLine(stringResource(R.string.subjects_info), mainSubjects)
-            }
         }
+        Column {
+            InfoLine(stringResource(R.string.translators_info), translators)
+            InfoLine(stringResource(R.string.editors_info), editors)
+            InfoStringContent(
+                stringResource(R.string.publishers_info),
+                publishers,
+                isPublishersBlank
+            )
+            InfoStringContent(
+                stringResource(R.string.place_of_publication_info),
+                placeOfPublication,
+                isPlaceOfPublicationBlank
+            )
+            InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
+            InfoLine(stringResource(R.string.genres_info), literaryGenres)
+            InfoLine(stringResource(R.string.subjects_info), mainSubjects)
+        }
+
     }
 }
 
