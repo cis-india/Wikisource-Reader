@@ -5,23 +5,23 @@
     </file>
     <file name="src/main/java/org/cis_india/wsreader/MainActivity.kt">
         <error line="19" column="1" source="standard:import-ordering" />
-        <error line="49" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="109" column="31" source="standard:curly-spacing" />
-        <error line="109" column="31" source="standard:function-start-of-body-spacing" />
-        <error line="109" column="31" source="standard:function-signature" />
-        <error line="113" column="17" source="standard:chain-wrapping" />
-        <error line="113" column="20" source="standard:condition-wrapping" />
-        <error line="113" column="76" source="standard:wrapping" />
-        <error line="114" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="122" column="79" source="standard:wrapping" />
-        <error line="122" column="80" source="standard:argument-list-wrapping" />
-        <error line="127" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="130" column="6" source="standard:curly-spacing" />
-        <error line="130" column="14" source="standard:parameter-list-spacing" />
-        <error line="130" column="15" source="standard:colon-spacing" />
-        <error line="133" column="77" source="standard:no-semi" />
-        <error line="137" column="1" source="standard:no-blank-line-before-rbrace" />
-        <error line="169" column="1" source="standard:final-newline" />
+        <error line="51" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="112" column="31" source="standard:curly-spacing" />
+        <error line="112" column="31" source="standard:function-start-of-body-spacing" />
+        <error line="112" column="31" source="standard:function-signature" />
+        <error line="116" column="17" source="standard:chain-wrapping" />
+        <error line="116" column="20" source="standard:condition-wrapping" />
+        <error line="116" column="76" source="standard:wrapping" />
+        <error line="117" column="1" source="standard:no-empty-first-line-in-method-block" />
+        <error line="125" column="79" source="standard:wrapping" />
+        <error line="125" column="80" source="standard:argument-list-wrapping" />
+        <error line="130" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="133" column="6" source="standard:curly-spacing" />
+        <error line="133" column="14" source="standard:parameter-list-spacing" />
+        <error line="133" column="15" source="standard:colon-spacing" />
+        <error line="136" column="77" source="standard:no-semi" />
+        <error line="140" column="1" source="standard:no-blank-line-before-rbrace" />
+        <error line="172" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/MainViewModel.kt">
         <error line="17" column="1" source="standard:no-consecutive-blank-lines" />
@@ -964,26 +964,27 @@
         <error line="53" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/common/TopAppBars.kt">
-        <error line="84" column="31" source="standard:argument-list-wrapping" />
-        <error line="107" column="53" source="standard:argument-list-wrapping" />
-        <error line="110" column="67" source="standard:argument-list-wrapping" />
-        <error line="116" column="31" source="standard:argument-list-wrapping" />
-        <error line="144" column="53" source="standard:argument-list-wrapping" />
-        <error line="147" column="67" source="standard:argument-list-wrapping" />
-        <error line="151" column="40" source="standard:argument-list-wrapping" />
-        <error line="156" column="31" source="standard:argument-list-wrapping" />
-        <error line="159" column="1" source="standard:no-blank-line-before-rbrace" />
-        <error line="179" column="53" source="standard:argument-list-wrapping" />
-        <error line="182" column="67" source="standard:argument-list-wrapping" />
-        <error line="194" column="41" source="standard:argument-list-wrapping" />
-        <error line="197" column="41" source="standard:argument-list-wrapping" />
-        <error line="202" column="31" source="standard:argument-list-wrapping" />
-        <error line="205" column="1" source="standard:no-blank-line-before-rbrace" />
-        <error line="236" column="25" source="standard:wrapping" />
-        <error line="236" column="25" source="standard:argument-list-wrapping" />
-        <error line="239" column="32" source="standard:wrapping" />
-        <error line="239" column="33" source="standard:argument-list-wrapping" />
-        <error line="241" column="1" source="standard:final-newline" />
+        <error line="19" column="1" source="standard:import-ordering" />
+        <error line="86" column="31" source="standard:argument-list-wrapping" />
+        <error line="109" column="53" source="standard:argument-list-wrapping" />
+        <error line="112" column="67" source="standard:argument-list-wrapping" />
+        <error line="118" column="31" source="standard:argument-list-wrapping" />
+        <error line="146" column="53" source="standard:argument-list-wrapping" />
+        <error line="149" column="67" source="standard:argument-list-wrapping" />
+        <error line="153" column="40" source="standard:argument-list-wrapping" />
+        <error line="158" column="31" source="standard:argument-list-wrapping" />
+        <error line="161" column="1" source="standard:no-blank-line-before-rbrace" />
+        <error line="181" column="53" source="standard:argument-list-wrapping" />
+        <error line="184" column="67" source="standard:argument-list-wrapping" />
+        <error line="196" column="41" source="standard:argument-list-wrapping" />
+        <error line="199" column="41" source="standard:argument-list-wrapping" />
+        <error line="204" column="31" source="standard:argument-list-wrapping" />
+        <error line="207" column="1" source="standard:no-blank-line-before-rbrace" />
+        <error line="238" column="25" source="standard:wrapping" />
+        <error line="238" column="25" source="standard:argument-list-wrapping" />
+        <error line="241" column="32" source="standard:wrapping" />
+        <error line="241" column="33" source="standard:argument-list-wrapping" />
+        <error line="243" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/common/VerticalScrollbar.kt">
         <error line="17" column="1" source="standard:no-consecutive-blank-lines" />
@@ -1105,17 +1106,36 @@
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/categories/composables/BookCategories.kt">
         <error line="40" column="26" source="standard:trailing-comma-on-call-site" />
         <error line="48" column="47" source="standard:function-expression-body" />
+        <error line="68" column="76" source="standard:no-multi-spaces" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/categories/composables/CategoriesScreen.kt">
-        <error line="55" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="67" column="12" source="standard:argument-list-wrapping" />
-        <error line="91" column="22" source="standard:trailing-comma-on-call-site" />
-        <error line="94" column="9" source="standard:wrapping" />
-        <error line="94" column="10" source="standard:argument-list-wrapping" />
-        <error line="95" column="1" source="standard:no-blank-line-before-rbrace" />
-        <error line="98" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="126" column="60" source="standard:trailing-comma-on-call-site" />
-        <error line="137" column="1" source="standard:final-newline" />
+        <error line="19" column="1" source="standard:import-ordering" />
+        <error line="72" column="12" source="standard:argument-list-wrapping" />
+        <error line="97" column="22" source="standard:trailing-comma-on-call-site" />
+        <error line="100" column="9" source="standard:wrapping" />
+        <error line="100" column="10" source="standard:argument-list-wrapping" />
+        <error line="101" column="1" source="standard:no-blank-line-before-rbrace" />
+        <error line="104" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="127" column="1" source="standard:indent" />
+        <error line="128" column="1" source="standard:indent" />
+        <error line="129" column="1" source="standard:indent" />
+        <error line="130" column="1" source="standard:indent" />
+        <error line="131" column="1" source="standard:indent" />
+        <error line="132" column="1" source="standard:indent" />
+        <error line="133" column="1" source="standard:indent" />
+        <error line="134" column="1" source="standard:indent" />
+        <error line="135" column="1" source="standard:indent" />
+        <error line="136" column="1" source="standard:indent" />
+        <error line="137" column="1" source="standard:indent" />
+        <error line="138" column="1" source="standard:indent" />
+        <error line="139" column="1" source="standard:indent" />
+        <error line="140" column="1" source="standard:indent" />
+        <error line="141" column="1" source="standard:indent" />
+        <error line="142" column="1" source="standard:indent" />
+        <error line="143" column="1" source="standard:indent" />
+        <error line="143" column="60" source="standard:trailing-comma-on-call-site" />
+        <error line="144" column="1" source="standard:indent" />
+        <error line="155" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/categories/composables/CategoryDetailScreen.kt">
         <error line="19" column="1" source="standard:import-ordering" />
@@ -1274,69 +1294,67 @@
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/home/composables/HomeScreen.kt">
         <error line="19" column="1" source="standard:import-ordering" />
-        <error line="116" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="118" column="16" source="standard:parameter-list-wrapping" />
-        <error line="118" column="16" source="standard:function-signature" />
-        <error line="118" column="46" source="standard:parameter-list-wrapping" />
-        <error line="118" column="46" source="standard:function-signature" />
-        <error line="118" column="85" source="standard:parameter-list-wrapping" />
-        <error line="118" column="85" source="standard:function-signature" />
-        <error line="118" column="121" source="standard:max-line-length" />
-        <error line="118" column="139" source="standard:parameter-list-wrapping" />
-        <error line="118" column="139" source="standard:function-signature" />
-        <error line="119" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="156" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="159" column="11" source="standard:keyword-spacing" />
-        <error line="161" column="10" source="standard:curly-spacing" />
-        <error line="161" column="14" source="standard:curly-spacing" />
-        <error line="161" column="14" source="standard:keyword-spacing" />
-        <error line="184" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="194" column="1" source="standard:no-blank-line-before-rbrace" />
-        <error line="195" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="198" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="227" column="66" source="standard:argument-list-wrapping" />
-        <error line="242" column="39" source="standard:wrapping" />
-        <error line="242" column="39" source="standard:argument-list-wrapping" />
-        <error line="245" column="32" source="standard:argument-list-wrapping" />
+        <error line="118" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="120" column="16" source="standard:parameter-list-wrapping" />
+        <error line="120" column="16" source="standard:function-signature" />
+        <error line="120" column="46" source="standard:parameter-list-wrapping" />
+        <error line="120" column="46" source="standard:function-signature" />
+        <error line="120" column="85" source="standard:parameter-list-wrapping" />
+        <error line="120" column="85" source="standard:function-signature" />
+        <error line="120" column="121" source="standard:max-line-length" />
+        <error line="120" column="139" source="standard:parameter-list-wrapping" />
+        <error line="120" column="139" source="standard:function-signature" />
+        <error line="121" column="1" source="standard:no-empty-first-line-in-method-block" />
+        <error line="158" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="161" column="11" source="standard:keyword-spacing" />
+        <error line="163" column="10" source="standard:curly-spacing" />
+        <error line="163" column="14" source="standard:curly-spacing" />
+        <error line="163" column="14" source="standard:keyword-spacing" />
+        <error line="186" column="1" source="standard:no-empty-first-line-in-method-block" />
+        <error line="196" column="1" source="standard:no-blank-line-before-rbrace" />
+        <error line="197" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="200" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="229" column="66" source="standard:argument-list-wrapping" />
+        <error line="244" column="39" source="standard:wrapping" />
+        <error line="244" column="39" source="standard:argument-list-wrapping" />
         <error line="247" column="32" source="standard:argument-list-wrapping" />
-        <error line="249" column="29" source="standard:wrapping" />
-        <error line="249" column="30" source="standard:argument-list-wrapping" />
-        <error line="258" column="10" source="standard:trailing-comma-on-call-site" />
-        <error line="279" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="286" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="371" column="27" source="standard:keyword-spacing" />
-        <error line="371" column="94" source="standard:curly-spacing" />
-        <error line="373" column="26" source="standard:curly-spacing" />
-        <error line="373" column="30" source="standard:curly-spacing" />
-        <error line="373" column="30" source="standard:keyword-spacing" />
-        <error line="384" column="21" source="standard:chain-wrapping" />
-        <error line="384" column="24" source="standard:condition-wrapping" />
-        <error line="385" column="21" source="standard:chain-wrapping" />
-        <error line="385" column="24" source="standard:condition-wrapping" />
+        <error line="249" column="32" source="standard:argument-list-wrapping" />
+        <error line="251" column="29" source="standard:wrapping" />
+        <error line="251" column="30" source="standard:argument-list-wrapping" />
+        <error line="260" column="10" source="standard:trailing-comma-on-call-site" />
+        <error line="281" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="288" column="1" source="standard:no-empty-first-line-in-method-block" />
+        <error line="373" column="27" source="standard:keyword-spacing" />
+        <error line="373" column="94" source="standard:curly-spacing" />
+        <error line="375" column="26" source="standard:curly-spacing" />
+        <error line="375" column="30" source="standard:curly-spacing" />
+        <error line="375" column="30" source="standard:keyword-spacing" />
         <error line="386" column="21" source="standard:chain-wrapping" />
         <error line="386" column="24" source="standard:condition-wrapping" />
-        <error line="398" column="45" source="standard:function-literal" />
-        <error line="398" column="62" source="standard:argument-list-wrapping" />
-        <error line="398" column="93" source="standard:argument-list-wrapping" />
-        <error line="398" column="107" source="standard:argument-list-wrapping" />
-        <error line="398" column="120" source="standard:argument-list-wrapping" />
-        <error line="398" column="121" source="standard:argument-list-wrapping" />
-        <error line="398" column="121" source="standard:max-line-length" />
-        <error line="398" column="123" source="standard:function-literal" />
-        <error line="401" column="74" source="standard:argument-list-wrapping" />
-        <error line="401" column="88" source="standard:argument-list-wrapping" />
-        <error line="401" column="103" source="standard:argument-list-wrapping" />
-        <error line="401" column="121" source="standard:max-line-length" />
-        <error line="401" column="122" source="standard:argument-list-wrapping" />
-        <error line="476" column="23" source="standard:keyword-spacing" />
-        <error line="476" column="90" source="standard:curly-spacing" />
-        <error line="478" column="22" source="standard:curly-spacing" />
-        <error line="478" column="26" source="standard:curly-spacing" />
-        <error line="478" column="26" source="standard:keyword-spacing" />
-        <error line="508" column="22" source="standard:block-comment-initial-star-alignment" />
-        <error line="529" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="530" column="1" source="standard:indent" />
-        <error line="531" column="1" source="standard:indent" />
+        <error line="387" column="21" source="standard:chain-wrapping" />
+        <error line="387" column="24" source="standard:condition-wrapping" />
+        <error line="388" column="21" source="standard:chain-wrapping" />
+        <error line="388" column="24" source="standard:condition-wrapping" />
+        <error line="400" column="45" source="standard:function-literal" />
+        <error line="400" column="62" source="standard:argument-list-wrapping" />
+        <error line="400" column="93" source="standard:argument-list-wrapping" />
+        <error line="400" column="107" source="standard:argument-list-wrapping" />
+        <error line="400" column="120" source="standard:argument-list-wrapping" />
+        <error line="400" column="121" source="standard:argument-list-wrapping" />
+        <error line="400" column="121" source="standard:max-line-length" />
+        <error line="400" column="123" source="standard:function-literal" />
+        <error line="403" column="74" source="standard:argument-list-wrapping" />
+        <error line="403" column="88" source="standard:argument-list-wrapping" />
+        <error line="403" column="103" source="standard:argument-list-wrapping" />
+        <error line="403" column="121" source="standard:max-line-length" />
+        <error line="403" column="122" source="standard:argument-list-wrapping" />
+        <error line="478" column="23" source="standard:keyword-spacing" />
+        <error line="478" column="90" source="standard:curly-spacing" />
+        <error line="480" column="22" source="standard:curly-spacing" />
+        <error line="480" column="26" source="standard:curly-spacing" />
+        <error line="480" column="26" source="standard:keyword-spacing" />
+        <error line="510" column="22" source="standard:block-comment-initial-star-alignment" />
+        <error line="531" column="1" source="standard:no-empty-first-line-in-method-block" />
         <error line="532" column="1" source="standard:indent" />
         <error line="533" column="1" source="standard:indent" />
         <error line="534" column="1" source="standard:indent" />
@@ -1345,17 +1363,17 @@
         <error line="537" column="1" source="standard:indent" />
         <error line="538" column="1" source="standard:indent" />
         <error line="539" column="1" source="standard:indent" />
-        <error line="539" column="21" source="standard:multiline-if-else" />
-        <error line="539" column="36" source="standard:argument-list-wrapping" />
-        <error line="539" column="61" source="standard:argument-list-wrapping" />
-        <error line="539" column="68" source="standard:multiline-if-else" />
-        <error line="539" column="75" source="standard:argument-list-wrapping" />
-        <error line="539" column="95" source="standard:argument-list-wrapping" />
-        <error line="539" column="116" source="standard:argument-list-wrapping" />
-        <error line="539" column="121" source="standard:max-line-length" />
-        <error line="539" column="135" source="standard:argument-list-wrapping" />
         <error line="540" column="1" source="standard:indent" />
         <error line="541" column="1" source="standard:indent" />
+        <error line="541" column="21" source="standard:multiline-if-else" />
+        <error line="541" column="36" source="standard:argument-list-wrapping" />
+        <error line="541" column="61" source="standard:argument-list-wrapping" />
+        <error line="541" column="68" source="standard:multiline-if-else" />
+        <error line="541" column="75" source="standard:argument-list-wrapping" />
+        <error line="541" column="95" source="standard:argument-list-wrapping" />
+        <error line="541" column="116" source="standard:argument-list-wrapping" />
+        <error line="541" column="121" source="standard:max-line-length" />
+        <error line="541" column="135" source="standard:argument-list-wrapping" />
         <error line="542" column="1" source="standard:indent" />
         <error line="543" column="1" source="standard:indent" />
         <error line="544" column="1" source="standard:indent" />
@@ -1363,20 +1381,20 @@
         <error line="546" column="1" source="standard:indent" />
         <error line="547" column="1" source="standard:indent" />
         <error line="548" column="1" source="standard:indent" />
-        <error line="563" column="41" source="standard:trailing-comma-on-call-site" />
-        <error line="564" column="18" source="standard:trailing-comma-on-call-site" />
-        <error line="565" column="14" source="standard:trailing-comma-on-call-site" />
-        <error line="566" column="1" source="standard:indent" />
-        <error line="567" column="1" source="standard:indent" />
+        <error line="549" column="1" source="standard:indent" />
+        <error line="550" column="1" source="standard:indent" />
+        <error line="565" column="41" source="standard:trailing-comma-on-call-site" />
+        <error line="566" column="18" source="standard:trailing-comma-on-call-site" />
+        <error line="567" column="14" source="standard:trailing-comma-on-call-site" />
         <error line="568" column="1" source="standard:indent" />
         <error line="569" column="1" source="standard:indent" />
         <error line="570" column="1" source="standard:indent" />
         <error line="571" column="1" source="standard:indent" />
         <error line="572" column="1" source="standard:indent" />
         <error line="573" column="1" source="standard:indent" />
-        <error line="575" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="576" column="1" source="standard:indent" />
-        <error line="577" column="1" source="standard:indent" />
+        <error line="574" column="1" source="standard:indent" />
+        <error line="575" column="1" source="standard:indent" />
+        <error line="577" column="1" source="standard:no-consecutive-blank-lines" />
         <error line="578" column="1" source="standard:indent" />
         <error line="579" column="1" source="standard:indent" />
         <error line="580" column="1" source="standard:indent" />
@@ -1394,22 +1412,22 @@
         <error line="592" column="1" source="standard:indent" />
         <error line="593" column="1" source="standard:indent" />
         <error line="594" column="1" source="standard:indent" />
-        <error line="594" column="45" source="standard:trailing-comma-on-call-site" />
         <error line="595" column="1" source="standard:indent" />
-        <error line="595" column="22" source="standard:trailing-comma-on-call-site" />
         <error line="596" column="1" source="standard:indent" />
-        <error line="596" column="18" source="standard:trailing-comma-on-call-site" />
+        <error line="596" column="45" source="standard:trailing-comma-on-call-site" />
         <error line="597" column="1" source="standard:indent" />
+        <error line="597" column="22" source="standard:trailing-comma-on-call-site" />
         <error line="598" column="1" source="standard:indent" />
+        <error line="598" column="18" source="standard:trailing-comma-on-call-site" />
         <error line="599" column="1" source="standard:indent" />
         <error line="600" column="1" source="standard:indent" />
         <error line="601" column="1" source="standard:indent" />
         <error line="602" column="1" source="standard:indent" />
         <error line="603" column="1" source="standard:indent" />
         <error line="604" column="1" source="standard:indent" />
-        <error line="606" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="607" column="1" source="standard:indent" />
-        <error line="608" column="1" source="standard:indent" />
+        <error line="605" column="1" source="standard:indent" />
+        <error line="606" column="1" source="standard:indent" />
+        <error line="608" column="1" source="standard:no-consecutive-blank-lines" />
         <error line="609" column="1" source="standard:indent" />
         <error line="610" column="1" source="standard:indent" />
         <error line="611" column="1" source="standard:indent" />
@@ -1427,13 +1445,13 @@
         <error line="623" column="1" source="standard:indent" />
         <error line="624" column="1" source="standard:indent" />
         <error line="625" column="1" source="standard:indent" />
-        <error line="625" column="45" source="standard:trailing-comma-on-call-site" />
         <error line="626" column="1" source="standard:indent" />
-        <error line="626" column="22" source="standard:trailing-comma-on-call-site" />
         <error line="627" column="1" source="standard:indent" />
-        <error line="627" column="18" source="standard:trailing-comma-on-call-site" />
+        <error line="627" column="45" source="standard:trailing-comma-on-call-site" />
         <error line="628" column="1" source="standard:indent" />
+        <error line="628" column="22" source="standard:trailing-comma-on-call-site" />
         <error line="629" column="1" source="standard:indent" />
+        <error line="629" column="18" source="standard:trailing-comma-on-call-site" />
         <error line="630" column="1" source="standard:indent" />
         <error line="631" column="1" source="standard:indent" />
         <error line="632" column="1" source="standard:indent" />
@@ -1442,10 +1460,12 @@
         <error line="635" column="1" source="standard:indent" />
         <error line="636" column="1" source="standard:indent" />
         <error line="637" column="1" source="standard:indent" />
-        <error line="639" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="707" column="1" source="standard:no-blank-line-before-rbrace" />
-        <error line="710" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="717" column="1" source="standard:final-newline" />
+        <error line="638" column="1" source="standard:indent" />
+        <error line="639" column="1" source="standard:indent" />
+        <error line="641" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="709" column="1" source="standard:no-blank-line-before-rbrace" />
+        <error line="712" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="719" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/home/viewmodels/HomeViewModel.kt">
         <error line="19" column="1" source="standard:import-ordering" />
@@ -1607,45 +1627,40 @@
         <error line="156" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/main/MainScreen.kt">
-        <error line="66" column="1" source="standard:no-unused-imports" />
-        <error line="81" column="4" source="standard:fun-keyword-spacing" />
-        <error line="81" column="5" source="standard:no-multi-spaces" />
-        <error line="82" column="5" source="standard:function-signature" />
-        <error line="83" column="5" source="standard:function-signature" />
-        <error line="84" column="5" source="standard:function-signature" />
-        <error line="84" column="42" source="standard:trailing-comma-on-declaration-site" />
-        <error line="84" column="43" source="standard:function-signature" />
-        <error line="90" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="19" column="1" source="standard:import-ordering" />
+        <error line="69" column="1" source="standard:no-unused-imports" />
+        <error line="84" column="4" source="standard:fun-keyword-spacing" />
+        <error line="84" column="5" source="standard:no-multi-spaces" />
+        <error line="85" column="5" source="standard:function-signature" />
+        <error line="86" column="5" source="standard:function-signature" />
+        <error line="87" column="5" source="standard:function-signature" />
+        <error line="87" column="42" source="standard:trailing-comma-on-declaration-site" />
+        <error line="87" column="43" source="standard:function-signature" />
         <error line="93" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="95" column="11" source="standard:keyword-spacing" />
-        <error line="97" column="10" source="standard:curly-spacing" />
-        <error line="97" column="14" source="standard:curly-spacing" />
-        <error line="97" column="14" source="standard:keyword-spacing" />
-        <error line="106" column="31" source="standard:curly-spacing" />
-        <error line="106" column="72" source="standard:curly-spacing" />
-        <error line="110" column="12" source="standard:argument-list-wrapping" />
-        <error line="116" column="30" source="standard:op-spacing" />
-        <error line="130" column="12" source="standard:fun-keyword-spacing" />
-        <error line="130" column="13" source="standard:no-multi-spaces" />
-        <error line="135" column="33" source="standard:trailing-comma-on-call-site" />
-        <error line="142" column="24" source="standard:wrapping" />
-        <error line="142" column="24" source="standard:argument-list-wrapping" />
-        <error line="147" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="148" column="1" source="standard:indent" />
-        <error line="149" column="1" source="standard:indent" />
-        <error line="150" column="1" source="standard:indent" />
-        <error line="151" column="1" source="standard:indent" />
-        <error line="152" column="1" source="standard:indent" />
-        <error line="153" column="1" source="standard:indent" />
+        <error line="96" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="98" column="11" source="standard:keyword-spacing" />
+        <error line="100" column="10" source="standard:curly-spacing" />
+        <error line="100" column="14" source="standard:curly-spacing" />
+        <error line="100" column="14" source="standard:keyword-spacing" />
+        <error line="112" column="31" source="standard:curly-spacing" />
+        <error line="112" column="72" source="standard:curly-spacing" />
+        <error line="116" column="12" source="standard:argument-list-wrapping" />
+        <error line="122" column="30" source="standard:op-spacing" />
+        <error line="136" column="12" source="standard:fun-keyword-spacing" />
+        <error line="136" column="13" source="standard:no-multi-spaces" />
+        <error line="141" column="33" source="standard:trailing-comma-on-call-site" />
+        <error line="148" column="24" source="standard:wrapping" />
+        <error line="148" column="24" source="standard:argument-list-wrapping" />
+        <error line="153" column="1" source="standard:no-empty-first-line-in-method-block" />
         <error line="154" column="1" source="standard:indent" />
         <error line="155" column="1" source="standard:indent" />
-        <error line="155" column="67" source="standard:trailing-comma-on-call-site" />
         <error line="156" column="1" source="standard:indent" />
         <error line="157" column="1" source="standard:indent" />
         <error line="158" column="1" source="standard:indent" />
         <error line="159" column="1" source="standard:indent" />
         <error line="160" column="1" source="standard:indent" />
         <error line="161" column="1" source="standard:indent" />
+        <error line="161" column="67" source="standard:trailing-comma-on-call-site" />
         <error line="162" column="1" source="standard:indent" />
         <error line="163" column="1" source="standard:indent" />
         <error line="164" column="1" source="standard:indent" />
@@ -1654,14 +1669,20 @@
         <error line="167" column="1" source="standard:indent" />
         <error line="168" column="1" source="standard:indent" />
         <error line="169" column="1" source="standard:indent" />
-        <error line="170" column="9" source="standard:wrapping" />
-        <error line="170" column="10" source="standard:argument-list-wrapping" />
-        <error line="178" column="24" source="standard:trailing-comma-on-declaration-site" />
-        <error line="208" column="41" source="standard:trailing-comma-on-call-site" />
-        <error line="209" column="18" source="standard:trailing-comma-on-call-site" />
-        <error line="214" column="1" source="standard:no-empty-first-line-in-method-block" />
-        <error line="234" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="251" column="1" source="standard:final-newline" />
+        <error line="170" column="1" source="standard:indent" />
+        <error line="171" column="1" source="standard:indent" />
+        <error line="172" column="1" source="standard:indent" />
+        <error line="173" column="1" source="standard:indent" />
+        <error line="174" column="1" source="standard:indent" />
+        <error line="175" column="1" source="standard:indent" />
+        <error line="176" column="9" source="standard:wrapping" />
+        <error line="176" column="10" source="standard:argument-list-wrapping" />
+        <error line="184" column="24" source="standard:trailing-comma-on-declaration-site" />
+        <error line="214" column="41" source="standard:trailing-comma-on-call-site" />
+        <error line="215" column="18" source="standard:trailing-comma-on-call-site" />
+        <error line="220" column="1" source="standard:no-empty-first-line-in-method-block" />
+        <error line="240" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="257" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/screens/settings/composables/AboutScreen.kt">
         <error line="74" column="1" source="standard:no-consecutive-blank-lines" />
@@ -1815,12 +1836,12 @@
         <error line="93" column="51" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/theme/Theme.kt">
-        <error line="74" column="59" source="standard:trailing-comma-on-call-site" />
-        <error line="112" column="58" source="standard:trailing-comma-on-call-site" />
-        <error line="143" column="31" source="standard:condition-wrapping" />
-        <error line="177" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="197" column="1" source="standard:no-consecutive-blank-lines" />
-        <error line="211" column="1" source="standard:final-newline" />
+        <error line="73" column="59" source="standard:trailing-comma-on-call-site" />
+        <error line="111" column="58" source="standard:trailing-comma-on-call-site" />
+        <error line="142" column="31" source="standard:condition-wrapping" />
+        <error line="172" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="192" column="1" source="standard:no-consecutive-blank-lines" />
+        <error line="206" column="1" source="standard:final-newline" />
     </file>
     <file name="src/main/java/org/cis_india/wsreader/ui/theme/Type.kt">
         <error line="30" column="1" source="standard:no-consecutive-blank-lines" />
