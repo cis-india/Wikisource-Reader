@@ -19,7 +19,6 @@ package org.cis_india.wsreader
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -28,12 +27,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.ui.screens.main.MainScreen
 import org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel
+import org.cis_india.wsreader.ui.screens.settings.viewmodels.ThemeMode
 import org.cis_india.wsreader.ui.theme.AdjustEdgeToEdge
 import org.cis_india.wsreader.ui.theme.WikisourceReaderTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
         networkObserver = NetworkObserver(applicationContext)
@@ -69,11 +72,11 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         // Install splash screen before setting content.
-        installSplashScreen().setKeepOnScreenCondition {
+        splashScreen.setKeepOnScreenCondition {
             mainViewModel.isLoading.value
         }
 
-        enableEdgeToEdge() // enable edge to edge for the activity.
+        WindowCompat.enableEdgeToEdge(window)
 
         appUpdateManager = AppUpdateManagerFactory.create(this)
 
@@ -84,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             WikisourceReaderTheme(settingsViewModel = settingsViewModel) {
                 AdjustEdgeToEdge(
                     activity = this,
-                    themeState = settingsViewModel.getCurrentTheme()
+                    themeState = settingsViewModel.theme.observeAsState(ThemeMode.Auto).value
                 )
 
                 Surface(
