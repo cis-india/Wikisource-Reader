@@ -1,0 +1,10 @@
+naming:
+  FunctionNaming:
+    ignoreAnnotated:
+      - 'Composable'
+  PackageNaming:
+    active: false
+style:
+  MagicNumber:
+    ignoreAnnotated:
+      - 'Composable'

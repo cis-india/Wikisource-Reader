@@ -1,0 +1,363 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>ComplexCondition:CategoryDetailScreen.kt$networkStatus == NetworkObserver.Status.Available &amp;&amp; i &gt;= state.items.size - 1 &amp;&amp; !state.endReached &amp;&amp; !state.isLoading</ID>
+    <ID>ComplexCondition:HomeScreen.kt$networkStatus == NetworkObserver.Status.Available &amp;&amp; i &gt;= allBooksState.items.size - 1 &amp;&amp; !allBooksState.endReached &amp;&amp; !allBooksState.isLoading</ID>
+    <ID>ComplexCondition:SectionDecoration.kt$SectionDecoration$pos != NO_POSITION &amp;&amp; listener.sectionTitle(pos) != "" &amp;&amp; (listener.isStartOfSection(pos) || isTopChild(child, children))</ID>
+    <ID>ComplexCondition:Theme.kt$amoledTheme &amp;&amp; // Check if AMOLED theme is enabled (themeState == ThemeMode.Dark || themeState == ThemeMode.Auto &amp;&amp; darkTheme)</ID>
+    <ID>ConstructorParameterNaming:Book.kt$Book$@SerialName("places_of_publication") val place_of_publication: List&lt;PlacesOfPublication&gt;</ID>
+    <ID>ConstructorParameterNaming:BottomBarScreen.kt$BottomBarScreen$val tap_target_coodinator_description: Int</ID>
+    <ID>ConstructorParameterNaming:BottomBarScreen.kt$BottomBarScreen$val tap_target_coodinator_title: Int</ID>
+    <ID>ConstructorParameterNaming:EpubReaderFragment.kt$PositionInfo$val EndChapterLink: Locator</ID>
+    <ID>ConstructorParameterNaming:EpubReaderFragment.kt$PositionInfo$val EndChapterProgression: Double?</ID>
+    <ID>ConstructorParameterNaming:EpubReaderFragment.kt$PositionInfo$val StartChapterLink: Locator</ID>
+    <ID>ConstructorParameterNaming:EpubReaderFragment.kt$PositionInfo$val StartChapterProgression: Double?</ID>
+    <ID>CyclomaticComplexMethod:BookDetailScreen.kt$@Composable private fun BookDetailContents( viewModel: BookDetailViewModel, libraryViewModel: LibraryViewModel, navController: NavController, snackBarHostState: SnackbarHostState )</ID>
+    <ID>CyclomaticComplexMethod:CategoryDetailScreen.kt$@Composable fun CategoryDetailScreen( category: String, navController: NavController, networkStatus: NetworkObserver.Status )</ID>
+    <ID>CyclomaticComplexMethod:Theme.kt$private fun getColorScheme( themeState: ThemeMode, materialYouState: Boolean, amoledTheme: Boolean, darkTheme: Boolean, context: Context ): ColorScheme</ID>
+    <ID>CyclomaticComplexMethod:UserPreferences.kt$@Composable private fun FixedLayoutUserPreferences( commit: () -&gt; Unit, language: Preference&lt;Language?&gt;? = null, readingProgression: EnumPreference&lt;ReadingProgression&gt;? = null, backgroundColor: Preference&lt;Color&gt;? = null, scroll: Preference&lt;Boolean&gt;? = null, scrollAxis: EnumPreference&lt;Axis&gt;? = null, fit: EnumPreference&lt;Fit&gt;? = null, spread: EnumPreference&lt;Spread&gt;? = null, offsetFirstPage: Preference&lt;Boolean&gt;? = null, pageSpacing: RangePreference&lt;Double&gt;? = null, )</ID>
+    <ID>CyclomaticComplexMethod:UserPreferences.kt$@Composable private fun ReflowableUserPreferences( commit: () -&gt; Unit, backgroundColor: Preference&lt;Color&gt;? = null, columnCount: EnumPreference&lt;ColumnCount&gt;? = null, fontFamily: Preference&lt;FontFamily?&gt;? = null, fontSize: RangePreference&lt;Double&gt;? = null, fontWeight: RangePreference&lt;Double&gt;? = null, hyphens: Preference&lt;Boolean&gt;? = null, imageFilter: EnumPreference&lt;ImageFilter?&gt;? = null, language: Preference&lt;Language?&gt;? = null, letterSpacing: RangePreference&lt;Double&gt;? = null, ligatures: Preference&lt;Boolean&gt;? = null, lineHeight: RangePreference&lt;Double&gt;? = null, pageMargins: RangePreference&lt;Double&gt;? = null, paragraphIndent: RangePreference&lt;Double&gt;? = null, paragraphSpacing: RangePreference&lt;Double&gt;? = null, publisherStyles: Preference&lt;Boolean&gt;? = null, readingProgression: EnumPreference&lt;ReadingProgression&gt;? = null, scroll: Preference&lt;Boolean&gt;? = null, textAlign: EnumPreference&lt;ReadiumTextAlign?&gt;? = null, textColor: Preference&lt;Color&gt;? = null, textNormalization: Preference&lt;Boolean&gt;? = null, theme: EnumPreference&lt;Theme&gt;? = null, typeScale: RangePreference&lt;Double&gt;? = null, verticalText: Preference&lt;Boolean&gt;? = null, wordSpacing: RangePreference&lt;Double&gt;? = null, )</ID>
+    <ID>ExplicitItLambdaParameter:ReaderActivity.kt$ReaderActivity${ it -&gt; supportFragmentManager.commitNow { replace(R.id.activity_container, it, Bundle(), READER_FRAGMENT_TAG) } }</ID>
+    <ID>ForbiddenComment:VisualReaderFragment.kt$VisualReaderFragment$// FIXME: should anchor on noteref and be scrollable if the note is too long.</ID>
+    <ID>FunctionParameterNaming:BookAPI.kt$BookAPI$book_title: String</ID>
+    <ID>FunctionParameterNaming:BookAPI.kt$BookAPI$wikidata_qid: String</ID>
+    <ID>LongMethod:AboutScreen.kt$@Composable fun AboutScreen(navController: NavController)</ID>
+    <ID>LongMethod:AboutScreen.kt$@Composable private fun AppInfoCard()</ID>
+    <ID>LongMethod:BookDetailScreen.kt$@Composable fun BookDetailScreen( bookId: String, navController: NavController, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current )</ID>
+    <ID>LongMethod:BookDetailScreen.kt$@Composable private fun BookDetailContents( viewModel: BookDetailViewModel, libraryViewModel: LibraryViewModel, navController: NavController, snackBarHostState: SnackbarHostState )</ID>
+    <ID>LongMethod:BookDetailScreen.kt$@Composable private fun MiddleBar( bookLang: String, pageCount: String, viewCount: String, progressValue: Float, buttonText: String, showProgressBar: Boolean, onButtonClick: () -&gt; Unit )</ID>
+    <ID>LongMethod:BookDetailTopUI.kt$@Composable fun BookDetailTopUI( title: String, authors: String, imageData: Any?, currentThemeMode: ThemeMode, showReaderBackground: Boolean = false, progressPercent: String? = null )</ID>
+    <ID>LongMethod:BookDownloader.kt$BookDownloader$@SuppressLint("Range") fun downloadBook( book: Book, downloadProgressListener: (progress: Float, status: Int) -&gt; Unit, onDownloadSuccess: (filePath: String) -&gt; Unit )</ID>
+    <ID>LongMethod:BookItemCard.kt$@Composable fun BookItemCard( title: String, author: String, language: String, /*subjects: String,*/ coverImageUrl: String?, loadingEffect: Boolean = false, onClick: () -&gt; Unit )</ID>
+    <ID>LongMethod:CategoryDetailScreen.kt$@Composable fun CategoryDetailScreen( category: String, navController: NavController, networkStatus: NetworkObserver.Status )</ID>
+    <ID>LongMethod:EpubReaderFragment.kt$EpubReaderFragment$fun getNextChapterPosition( positionCache: Map&lt;String, PositionInfo&gt;, locator: Locator? ): ChapterNavigation</ID>
+    <ID>LongMethod:EpubReaderFragment.kt$EpubReaderFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
+    <ID>LongMethod:HomeScreen.kt$@Composable private fun AllBooksList( allBooksState: AllBooksState, networkStatus: NetworkObserver.Status, navController: NavController, onRetryClicked: () -&gt; Unit, onLoadNextItems: () -&gt; Unit )</ID>
+    <ID>LongMethod:HomeScreen.kt$@Composable private fun SearchAppBar( onCloseIconClicked: () -&gt; Unit, onInputValueChange: (String) -&gt; Unit, text: String, onSearchClicked: () -&gt; Unit )</ID>
+    <ID>LongMethod:HomeScreen.kt$@Composable private fun SearchBookList(searchBarState: SearchBarState, navController: NavController)</ID>
+    <ID>LongMethod:HomeScreen.kt$@Composable private fun TapTargetScope.HomeScreenScaffold( viewModel: HomeViewModel, networkStatus: NetworkObserver.Status, navController: NavController, sysBackButtonState: MutableState&lt;Boolean&gt;, showLanguageSheet: MutableState&lt;Boolean&gt;, showSortSheet: MutableState&lt;Boolean&gt; )</ID>
+    <ID>LongMethod:HomeScreen.kt$@Composable private fun TapTargetScope.HomeTopAppBar( bookLanguage: BookLanguage, onSearchIconClicked: () -&gt; Unit, onLanguageIconClicked: () -&gt; Unit, onSortIconClicked: () -&gt; Unit )</ID>
+    <ID>LongMethod:LibraryScreen.kt$@Composable private fun LibraryCard( title: String, author: String, href: String, cover: String?, mediaType: String, date: String, onReadClick: () -&gt; Unit, onDeleteClick: () -&gt; Unit, onRefreshClick: () -&gt; Unit, progression: Int )</ID>
+    <ID>LongMethod:LibraryScreen.kt$@Composable private fun LibraryContents( viewModel: LibraryViewModel, bookDetailsviewModel: BookDetailViewModel, lazyListState: LazyListState, snackBarHostState: SnackbarHostState, navController: NavController, paddingValues: PaddingValues )</ID>
+    <ID>LongMethod:LibraryScreen.kt$@Composable private fun LibraryLazyItem( modifier: Modifier, item: Book, snackBarHostState: SnackbarHostState, navController: NavController, viewModel: LibraryViewModel, bookDetailsviewModel: BookDetailViewModel, settingsVm: SettingsViewModel )</ID>
+    <ID>LongMethod:LibraryScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun LibraryScreen(navController: NavController, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current)</ID>
+    <ID>LongMethod:NavGraph.kt$@Composable fun NavGraph( startDestination: String, navController: NavHostController, networkStatus: NetworkObserver.Status, settingsViewModel: SettingsViewModel )</ID>
+    <ID>LongMethod:PlaceHolder.kt$fun Modifier.placeholder( visible: Boolean, color: Color, shape: Shape = RectangleShape, highlight: PlaceholderHighlight? = null, placeholderFadeTransitionSpec: @Composable Transition.Segment&lt;Boolean&gt;.() -&gt; FiniteAnimationSpec&lt;Float&gt; = { spring() }, contentFadeTransitionSpec: @Composable Transition.Segment&lt;Boolean&gt;.() -&gt; FiniteAnimationSpec&lt;Float&gt; = { spring() }, ): Modifier</ID>
+    <ID>LongMethod:SettingsItems.kt$@Composable fun SettingItem(icon: ImageVector, mainText: String, subText: String, onClick: () -&gt; Unit)</ID>
+    <ID>LongMethod:SettingsItems.kt$@Composable fun SettingItemWIthSwitch( icon: ImageVector, mainText: String, subText: String, switchState: MutableState&lt;Boolean&gt;, onCheckChange: (Boolean) -&gt; Unit )</ID>
+    <ID>LongMethod:SettingsScreen.kt$@Composable @ExperimentalMaterial3Api private fun SettingsCard()</ID>
+    <ID>LongMethod:SettingsScreen.kt$@Composable private fun DisplayOptionsUI( viewModel: SettingsViewModel, snackBarHostState: SnackbarHostState, )</ID>
+    <ID>LongMethod:UserPreferences.kt$@Composable private fun &lt;P : Configurable.Preferences&lt;P&gt;, E : PreferencesEditor&lt;P&gt;&gt; UserPreferences( editor: E, commit: () -&gt; Unit, title: String, )</ID>
+    <ID>LongMethod:UserPreferences.kt$@Composable private fun FixedLayoutUserPreferences( commit: () -&gt; Unit, language: Preference&lt;Language?&gt;? = null, readingProgression: EnumPreference&lt;ReadingProgression&gt;? = null, backgroundColor: Preference&lt;Color&gt;? = null, scroll: Preference&lt;Boolean&gt;? = null, scrollAxis: EnumPreference&lt;Axis&gt;? = null, fit: EnumPreference&lt;Fit&gt;? = null, spread: EnumPreference&lt;Spread&gt;? = null, offsetFirstPage: Preference&lt;Boolean&gt;? = null, pageSpacing: RangePreference&lt;Double&gt;? = null, )</ID>
+    <ID>LongMethod:UserPreferences.kt$@Composable private fun ReflowableUserPreferences( commit: () -&gt; Unit, backgroundColor: Preference&lt;Color&gt;? = null, columnCount: EnumPreference&lt;ColumnCount&gt;? = null, fontFamily: Preference&lt;FontFamily?&gt;? = null, fontSize: RangePreference&lt;Double&gt;? = null, fontWeight: RangePreference&lt;Double&gt;? = null, hyphens: Preference&lt;Boolean&gt;? = null, imageFilter: EnumPreference&lt;ImageFilter?&gt;? = null, language: Preference&lt;Language?&gt;? = null, letterSpacing: RangePreference&lt;Double&gt;? = null, ligatures: Preference&lt;Boolean&gt;? = null, lineHeight: RangePreference&lt;Double&gt;? = null, pageMargins: RangePreference&lt;Double&gt;? = null, paragraphIndent: RangePreference&lt;Double&gt;? = null, paragraphSpacing: RangePreference&lt;Double&gt;? = null, publisherStyles: Preference&lt;Boolean&gt;? = null, readingProgression: EnumPreference&lt;ReadingProgression&gt;? = null, scroll: Preference&lt;Boolean&gt;? = null, textAlign: EnumPreference&lt;ReadiumTextAlign?&gt;? = null, textColor: Preference&lt;Color&gt;? = null, textNormalization: Preference&lt;Boolean&gt;? = null, theme: EnumPreference&lt;Theme&gt;? = null, typeScale: RangePreference&lt;Double&gt;? = null, verticalText: Preference&lt;Boolean&gt;? = null, wordSpacing: RangePreference&lt;Double&gt;? = null, )</ID>
+    <ID>LongMethod:WelcomeScreen.kt$@Composable fun WelcomeScreen(navController: NavController)</ID>
+    <ID>LongMethod:WelcomeScreen.kt$@Composable private fun ReaderDialog( internalReaderValue: String, onDismissRequest: () -&gt; Unit, onConfirmClicked: (String) -&gt; Unit, onCancelClicked: () -&gt; Unit )</ID>
+    <ID>LongParameterList:BookDetailScreen.kt$( bookLang: String, pageCount: String, viewCount: String, progressValue: Float, buttonText: String, showProgressBar: Boolean, onButtonClick: () -&gt; Unit )</ID>
+    <ID>LongParameterList:BookDetailTopUI.kt$( title: String, authors: String, imageData: Any?, currentThemeMode: ThemeMode, showReaderBackground: Boolean = false, progressPercent: String? = null )</ID>
+    <ID>LongParameterList:BookItemCard.kt$( title: String, author: String, language: String, /*subjects: String,*/ coverImageUrl: String?, loadingEffect: Boolean = false, onClick: () -&gt; Unit )</ID>
+    <ID>LongParameterList:BookRepository.kt$BookRepository$( url: Url, mediaType: MediaType, publication: Publication, cover: File, wdIdentifier: String? = null, thumbnailUrl: String? = null )</ID>
+    <ID>LongParameterList:HomeScreen.kt$( viewModel: HomeViewModel, networkStatus: NetworkObserver.Status, navController: NavController, sysBackButtonState: MutableState&lt;Boolean&gt;, showLanguageSheet: MutableState&lt;Boolean&gt;, showSortSheet: MutableState&lt;Boolean&gt; )</ID>
+    <ID>LongParameterList:LibraryScreen.kt$( modifier: Modifier, item: Book, snackBarHostState: SnackbarHostState, navController: NavController, viewModel: LibraryViewModel, bookDetailsviewModel: BookDetailViewModel, settingsVm: SettingsViewModel )</ID>
+    <ID>LongParameterList:LibraryScreen.kt$( title: String, author: String, href: String, cover: String?, mediaType: String, date: String, onReadClick: () -&gt; Unit, onDeleteClick: () -&gt; Unit, onRefreshClick: () -&gt; Unit, progression: Int )</ID>
+    <ID>LongParameterList:LibraryScreen.kt$( viewModel: LibraryViewModel, bookDetailsviewModel: BookDetailViewModel, lazyListState: LazyListState, snackBarHostState: SnackbarHostState, navController: NavController, paddingValues: PaddingValues )</ID>
+    <ID>LongParameterList:PlaceHolder.kt$( shape: Shape, color: Color, highlight: PlaceholderHighlight?, progress: Float, lastOutline: Outline?, lastLayoutDirection: LayoutDirection?, lastSize: Size?, )</ID>
+    <ID>LongParameterList:PlaceHolder.kt$( visible: Boolean, color: Color, shape: Shape = RectangleShape, highlight: PlaceholderHighlight? = null, placeholderFadeTransitionSpec: @Composable Transition.Segment&lt;Boolean&gt;.() -&gt; FiniteAnimationSpec&lt;Float&gt; = { spring() }, contentFadeTransitionSpec: @Composable Transition.Segment&lt;Boolean&gt;.() -&gt; FiniteAnimationSpec&lt;Float&gt; = { spring() }, )</ID>
+    <ID>LongParameterList:Preferences.kt$( title: String, isActive: Boolean, value: ReadiumColor, noValueSelected: Boolean, onColorChanged: (ReadiumColor?) -&gt; Unit, onClear: (() -&gt; Unit)?, )</ID>
+    <ID>LongParameterList:Preferences.kt$( title: String, isActive: Boolean, value: T, formatValue: (T) -&gt; String, onDecrement: () -&gt; Unit, onIncrement: () -&gt; Unit, onClear: (() -&gt; Unit)?, )</ID>
+    <ID>LongParameterList:Preferences.kt$( title: String, options: List&lt;T&gt;, isActive: Boolean, activeOption: T, selectedOption: T?, formatValue: (T) -&gt; String, onClear: (() -&gt; Unit)?, onSelectedOptionChanged: (T) -&gt; Unit, )</ID>
+    <ID>LongParameterList:Preferences.kt$( title: String, value: Boolean, isActive: Boolean, onCheckedChange: (Boolean) -&gt; Unit, onToggle: () -&gt; Unit, onClear: (() -&gt; Unit)?, )</ID>
+    <ID>LongParameterList:Preferences.kt$( title: String, value: T, values: List&lt;T&gt;, isActive: Boolean, formatValue: (T) -&gt; String, onValueChanged: (T) -&gt; Unit, onClear: (() -&gt; Unit)?, )</ID>
+    <ID>LongParameterList:Preferences.kt$( title: String, values: List&lt;T&gt;, selection: T, formatValue: (T) -&gt; String, onSelected: (T) -&gt; Unit, enabled: Boolean = values.isNotEmpty(), )</ID>
+    <ID>LongParameterList:ToggleButton.kt$( options: List&lt;T&gt;, activeOption: T?, selectedOption: T?, onSelectOption: (T) -&gt; Unit, enabled: (T) -&gt; Boolean = { true }, content: @Composable RowScope.(T) -&gt; Unit, )</ID>
+    <ID>LongParameterList:TopAppBars.kt$( headerText: String, actionIcon1: ImageVector, actionIcon2: ImageVector, onBackButtonClicked: () -&gt; Unit, onAction1Clicked: () -&gt; Unit, onAction2Clicked: () -&gt; Unit )</ID>
+    <ID>LongParameterList:TtsControls.kt$( playing: Boolean, onPlayPause: () -&gt; Unit, onStop: () -&gt; Unit, onPrevious: () -&gt; Unit, onNext: () -&gt; Unit, onPreferences: () -&gt; Unit, modifier: Modifier = Modifier, )</ID>
+    <ID>LongParameterList:UserPreferences.kt$( commit: () -&gt; Unit, backgroundColor: Preference&lt;Color&gt;? = null, columnCount: EnumPreference&lt;ColumnCount&gt;? = null, fontFamily: Preference&lt;FontFamily?&gt;? = null, fontSize: RangePreference&lt;Double&gt;? = null, fontWeight: RangePreference&lt;Double&gt;? = null, hyphens: Preference&lt;Boolean&gt;? = null, imageFilter: EnumPreference&lt;ImageFilter?&gt;? = null, language: Preference&lt;Language?&gt;? = null, letterSpacing: RangePreference&lt;Double&gt;? = null, ligatures: Preference&lt;Boolean&gt;? = null, lineHeight: RangePreference&lt;Double&gt;? = null, pageMargins: RangePreference&lt;Double&gt;? = null, paragraphIndent: RangePreference&lt;Double&gt;? = null, paragraphSpacing: RangePreference&lt;Double&gt;? = null, publisherStyles: Preference&lt;Boolean&gt;? = null, readingProgression: EnumPreference&lt;ReadingProgression&gt;? = null, scroll: Preference&lt;Boolean&gt;? = null, textAlign: EnumPreference&lt;ReadiumTextAlign?&gt;? = null, textColor: Preference&lt;Color&gt;? = null, textNormalization: Preference&lt;Boolean&gt;? = null, theme: EnumPreference&lt;Theme&gt;? = null, typeScale: RangePreference&lt;Double&gt;? = null, verticalText: Preference&lt;Boolean&gt;? = null, wordSpacing: RangePreference&lt;Double&gt;? = null, )</ID>
+    <ID>LongParameterList:UserPreferences.kt$( commit: () -&gt; Unit, language: Preference&lt;Language?&gt;? = null, readingProgression: EnumPreference&lt;ReadingProgression&gt;? = null, backgroundColor: Preference&lt;Color&gt;? = null, scroll: Preference&lt;Boolean&gt;? = null, scrollAxis: EnumPreference&lt;Axis&gt;? = null, fit: EnumPreference&lt;Fit&gt;? = null, spread: EnumPreference&lt;Spread&gt;? = null, offsetFirstPage: Preference&lt;Boolean&gt;? = null, pageSpacing: RangePreference&lt;Double&gt;? = null, )</ID>
+    <ID>MagicNumber:Bitmap.kt$100</ID>
+    <ID>MagicNumber:BookAPI.kt$BookAPI$100</ID>
+    <ID>MagicNumber:BookAPI.kt$BookAPI$60</ID>
+    <ID>MagicNumber:BookDetailViewModel.kt$BookDetailViewModel$400</ID>
+    <ID>MagicNumber:BookDownloader.kt$BookDownloader$100</ID>
+    <ID>MagicNumber:BookDownloader.kt$BookDownloader$500L</ID>
+    <ID>MagicNumber:BookmarksFragment.kt$BookmarkAdapter.ViewHolder$100</ID>
+    <ID>MagicNumber:CategoryViewModel.kt$CategoryViewModel$400</ID>
+    <ID>MagicNumber:Color.kt$0xFF000000</ID>
+    <ID>MagicNumber:Color.kt$0xFF001F29</ID>
+    <ID>MagicNumber:Color.kt$0xFF003545</ID>
+    <ID>MagicNumber:Color.kt$0xFF004D62</ID>
+    <ID>MagicNumber:Color.kt$0xFF071E26</ID>
+    <ID>MagicNumber:Color.kt$0xFF0A0F11</ID>
+    <ID>MagicNumber:Color.kt$0xFF0D6681</ID>
+    <ID>MagicNumber:Color.kt$0xFF0F1417</ID>
+    <ID>MagicNumber:Color.kt$0xFF171C1F</ID>
+    <ID>MagicNumber:Color.kt$0xFF181837</ID>
+    <ID>MagicNumber:Color.kt$0xFF1B2023</ID>
+    <ID>MagicNumber:Color.kt$0xFF1E333C</ID>
+    <ID>MagicNumber:Color.kt$0xFF252B2D</ID>
+    <ID>MagicNumber:Color.kt$0xFF2C3134</ID>
+    <ID>MagicNumber:Color.kt$0xFF2D2D4D</ID>
+    <ID>MagicNumber:Color.kt$0xFF303638</ID>
+    <ID>MagicNumber:Color.kt$0xFF353A3D</ID>
+    <ID>MagicNumber:Color.kt$0xFF354A53</ID>
+    <ID>MagicNumber:Color.kt$0xFF40484C</ID>
+    <ID>MagicNumber:Color.kt$0xFF410002</ID>
+    <ID>MagicNumber:Color.kt$0xFF444465</ID>
+    <ID>MagicNumber:Color.kt$0xFF4C616B</ID>
+    <ID>MagicNumber:Color.kt$0xFF5C5B7E</ID>
+    <ID>MagicNumber:Color.kt$0xFF690005</ID>
+    <ID>MagicNumber:Color.kt$0xFF70787D</ID>
+    <ID>MagicNumber:Color.kt$0xFF89D0EE</ID>
+    <ID>MagicNumber:Color.kt$0xFF8A9296</ID>
+    <ID>MagicNumber:Color.kt$0xFF93000A</ID>
+    <ID>MagicNumber:Color.kt$0xFFB4CAD5</ID>
+    <ID>MagicNumber:Color.kt$0xFFBA1A1A</ID>
+    <ID>MagicNumber:Color.kt$0xFFBBEAFF</ID>
+    <ID>MagicNumber:Color.kt$0xFFC0C8CC</ID>
+    <ID>MagicNumber:Color.kt$0xFFC5C3EA</ID>
+    <ID>MagicNumber:Color.kt$0xFFCFE6F1</ID>
+    <ID>MagicNumber:Color.kt$0xFFD6DBDE</ID>
+    <ID>MagicNumber:Color.kt$0xFFDCE4E8</ID>
+    <ID>MagicNumber:Color.kt$0xFFDEE3E6</ID>
+    <ID>MagicNumber:Color.kt$0xFFE2DFFF</ID>
+    <ID>MagicNumber:Color.kt$0xFFE4E9EC</ID>
+    <ID>MagicNumber:Color.kt$0xFFEAEEF2</ID>
+    <ID>MagicNumber:Color.kt$0xFFEDF1F5</ID>
+    <ID>MagicNumber:Color.kt$0xFFF0F4F7</ID>
+    <ID>MagicNumber:Color.kt$0xFFF5FAFD</ID>
+    <ID>MagicNumber:Color.kt$0xFFFFB4AB</ID>
+    <ID>MagicNumber:Color.kt$0xFFFFDAD6</ID>
+    <ID>MagicNumber:Color.kt$0xFFFFFFFF</ID>
+    <ID>MagicNumber:CoverStorage.kt$CoverStorage$120</ID>
+    <ID>MagicNumber:CoverStorage.kt$CoverStorage$200</ID>
+    <ID>MagicNumber:CoverStorage.kt$CoverStorage$80</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment$100</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment$12</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment$200</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment$900</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment.&lt;no name provided&gt;$0.000001</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment.&lt;no name provided&gt;$0.0001</ID>
+    <ID>MagicNumber:EpubReaderFragment.kt$EpubReaderFragment.&lt;no name provided&gt;$100</ID>
+    <ID>MagicNumber:HomeViewModel.kt$HomeViewModel$1513</ID>
+    <ID>MagicNumber:HomeViewModel.kt$HomeViewModel$400L</ID>
+    <ID>MagicNumber:HomeViewModel.kt$HomeViewModel$500L</ID>
+    <ID>MagicNumber:HorizontalSwipeDisableLayout.kt$HorizontalSwipeDisableLayout$20</ID>
+    <ID>MagicNumber:LibraryViewModel.kt$LibraryViewModel$800</ID>
+    <ID>MagicNumber:MainViewModel.kt$MainViewModel$150</ID>
+    <ID>MagicNumber:MediaService.kt$MediaService.Binder$3000</ID>
+    <ID>MagicNumber:NavAnimation.kt$0.05f</ID>
+    <ID>MagicNumber:NavAnimation.kt$0.19f</ID>
+    <ID>MagicNumber:NavAnimation.kt$0.2f</ID>
+    <ID>MagicNumber:NavAnimation.kt$0.4f</ID>
+    <ID>MagicNumber:NavAnimation.kt$0.6f</ID>
+    <ID>MagicNumber:NavAnimation.kt$0.95f</ID>
+    <ID>MagicNumber:NavigationFragment.kt$NavigationAdapter.ViewHolder$50</ID>
+    <ID>MagicNumber:PlaceHolder.kt$0.01f</ID>
+    <ID>MagicNumber:PlaceHolder.kt$0.6f</ID>
+    <ID>MagicNumber:PlaceHolder.kt$0.99f</ID>
+    <ID>MagicNumber:PlaceHolder.kt$0xFFDBD6D1</ID>
+    <ID>MagicNumber:PlaceholderHighlight.kt$Shimmer$0.01f</ID>
+    <ID>MagicNumber:UserPreferences.kt$0.6</ID>
+    <ID>MagicNumber:UserPreferences.kt$1.4</ID>
+    <ID>MagicNumber:UserPreferencesBottomSheetDialogFragment.kt$UserPreferencesBottomSheetDialogFragment$0.1f</ID>
+    <ID>MagicNumber:UserPreferencesBottomSheetDialogFragment.kt$UserPreferencesBottomSheetDialogFragment$1000</ID>
+    <ID>MagicNumber:Utils.kt$Utils$1024</ID>
+    <ID>MagicNumber:Utils.kt$Utils$3</ID>
+    <ID>MagicNumber:VerticalScrollbar.kt$150</ID>
+    <ID>MagicNumber:VerticalScrollbar.kt$500</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$123</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$124</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$125</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$153</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$173</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$182</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$198</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$239</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$247</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$249</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$255</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$5.0f</ID>
+    <ID>MagicNumber:VisualReaderFragment.kt$VisualReaderFragment$60</ID>
+    <ID>MagicNumber:WikisourceReader.kt$WikisourceReader$0.05</ID>
+    <ID>MagicNumber:WikisourceReader.kt$WikisourceReader$0.25</ID>
+    <ID>MagicNumber:WikisourceReader.kt$WikisourceReader$100</ID>
+    <ID>MagicNumber:WikisourceReader.kt$WikisourceReader$60</ID>
+    <ID>MatchingDeclarationName:Preferencesutils.kt$PreferenceUtil</ID>
+    <ID>MatchingDeclarationName:ViewLifecycleDelegates.kt$LifecycleDelegates : DefaultLifecycleObserver</ID>
+    <ID>MaxLineLength:BookDetailScreen.kt$InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)</ID>
+    <ID>MaxLineLength:BookDetailScreen.kt$val currentBook = foundBookInLibrary ?: libraryItems.firstOrNull { it.identifier.toIntOrNull() == bookDetailId }</ID>
+    <ID>MaxLineLength:BookDetailScreen.kt$val placeOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.place_of_publication, firstLanguage, unknownPlaceOfPublicationString)</ID>
+    <ID>MaxLineLength:BookDetailScreen.kt$val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage, unknownPublisherString)</ID>
+    <ID>MaxLineLength:BookDownloader.kt$BookDownloader$cursor.getLong(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR))</ID>
+    <ID>MaxLineLength:BookDownloader.kt$BookDownloader$private val notificationManager by lazy { context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager }</ID>
+    <ID>MaxLineLength:BookUtils.kt$BookUtils$suspend</ID>
+    <ID>MaxLineLength:BookUtils.kt$BookUtils$val apiUrl = "https://www.wikidata.org/w/api.php?action=wbgetentities&amp;props=labels&amp;ids=$wikidataId&amp;languages=$language&amp;format=json"</ID>
+    <ID>MaxLineLength:BooksDao.kt$BooksDao$"SELECT * FROM ${Highlight.TABLE_NAME} WHERE ${Highlight.BOOK_ID} = :bookId ORDER BY ${Highlight.TOTAL_PROGRESSION} ASC"</ID>
+    <ID>MaxLineLength:BooksDao.kt$BooksDao$"UPDATE ${Highlight.TABLE_NAME} SET ${Highlight.TINT} = :tint, ${Highlight.STYLE} = :style WHERE ${Highlight.ID} = :id"</ID>
+    <ID>MaxLineLength:Bookshelf.kt$Bookshelf$.</ID>
+    <ID>MaxLineLength:CatalogDao.kt$CatalogDao$"SELECT * FROM " + Catalog.TABLE_NAME + " WHERE " + Catalog.TITLE + " = :title AND " + Catalog.HREF + " = :href AND " + Catalog.TYPE + " = :type"</ID>
+    <ID>MaxLineLength:CategoryDetailScreen.kt$if</ID>
+    <ID>MaxLineLength:CategoryDetailScreen.kt$val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)</ID>
+    <ID>MaxLineLength:CategoryDetailScreen.kt$val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)</ID>
+    <ID>MaxLineLength:HomeScreen.kt$fun</ID>
+    <ID>MaxLineLength:HomeScreen.kt$stringResource(id = R.string.home_header)</ID>
+    <ID>MaxLineLength:HomeScreen.kt$val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)</ID>
+    <ID>MaxLineLength:HomeScreen.kt$var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }</ID>
+    <ID>MaxLineLength:ImageReaderFragment.kt$ImageReaderFragment$navigator = childFragmentManager.findFragmentByTag(org.cis_india.wsreader.reader.ImageReaderFragment.Companion.NAVIGATOR_FRAGMENT_TAG)!! as Navigator</ID>
+    <ID>MaxLineLength:LibraryScreen.kt$Text("Warning: Refreshing this book will replace the current version. Any existing notes, highlights, and reading progress might be lost.")</ID>
+    <ID>MaxLineLength:NavGraph.kt$if</ID>
+    <ID>MaxLineLength:PlaceHolder.kt$placeholderFadeTransitionSpec: @Composable Transition.Segment&lt;Boolean&gt;.() -&gt; FiniteAnimationSpec&lt;Float&gt; = { spring() }</ID>
+    <ID>MaxLineLength:ReaderActivity.kt$ReaderActivity$window.attributes.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES</ID>
+    <ID>MaxLineLength:SearchResultAdapter.kt$SearchResultAdapter$"${locator.text.before}&lt;span style=\"background:yellow;\"&gt;&lt;b&gt;${locator.text.highlight}&lt;/b&gt;&lt;/span&gt;${locator.text.after}"</ID>
+    <ID>MaxLineLength:SettingsScreen.kt$coroutineScope.launch { snackBarHostState.showSnackbar(context.getString(R.string.material_you_error)) }</ID>
+    <ID>MaxLineLength:VisualReaderFragment.kt$VisualReaderFragment$//Only show Toast in Android 12L (API level 32) and lower. Android 13 and higher has standard feedback when content enters the clipboard</ID>
+    <ID>NewLineAtEndOfFile:AboutScreen.kt$org.cis_india.wsreader.ui.screens.settings.composables.AboutScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:Author.kt$org.cis_india.wsreader.api.models.Author.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseReaderFragment.kt$org.cis_india.wsreader.reader.BaseReaderFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:BookAPI.kt$org.cis_india.wsreader.api.BookAPI.kt</ID>
+    <ID>NewLineAtEndOfFile:BookDetailScreen.kt$org.cis_india.wsreader.ui.screens.detail.composables.BookDetailScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:BookDetailTopUI.kt$org.cis_india.wsreader.ui.common.BookDetailTopUI.kt</ID>
+    <ID>NewLineAtEndOfFile:BookDetailViewModel.kt$org.cis_india.wsreader.ui.screens.detail.viewmodels.BookDetailViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:BookDownloader.kt$org.cis_india.wsreader.helpers.book.BookDownloader.kt</ID>
+    <ID>NewLineAtEndOfFile:BookLanguageSheeet.kt$org.cis_india.wsreader.ui.common.BookLanguageSheeet.kt</ID>
+    <ID>NewLineAtEndOfFile:BookSet.kt$org.cis_india.wsreader.api.models.BookSet.kt</ID>
+    <ID>NewLineAtEndOfFile:Bookshelf.kt$org.cis_india.wsreader.domain.Bookshelf.kt</ID>
+    <ID>NewLineAtEndOfFile:BottomBarScreen.kt$org.cis_india.wsreader.ui.navigation.BottomBarScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:CacheInterceptor.kt$org.cis_india.wsreader.api.CacheInterceptor.kt</ID>
+    <ID>NewLineAtEndOfFile:CategoriesScreen.kt$org.cis_india.wsreader.ui.screens.categories.composables.CategoriesScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:CategoryDetailScreen.kt$org.cis_india.wsreader.ui.screens.categories.composables.CategoryDetailScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:CategoryViewModel.kt$org.cis_india.wsreader.ui.screens.categories.viewmodels.CategoryViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$org.cis_india.wsreader.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Editor.kt$org.cis_india.wsreader.api.models.Editor.kt</ID>
+    <ID>NewLineAtEndOfFile:EpubReaderFragment.kt$org.cis_india.wsreader.reader.EpubReaderFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:Extensions.kt$org.cis_india.wsreader.helpers.Extensions.kt</ID>
+    <ID>NewLineAtEndOfFile:Formats.kt$org.cis_india.wsreader.api.models.Formats.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeScreen.kt$org.cis_india.wsreader.ui.screens.home.composables.HomeScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeViewModel.kt$org.cis_india.wsreader.ui.screens.home.viewmodels.HomeViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:LibraryViewModel.kt$org.cis_india.wsreader.ui.screens.library.viewmodels.LibraryViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$org.cis_india.wsreader.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainModule.kt$org.cis_india.wsreader.di.MainModule.kt</ID>
+    <ID>NewLineAtEndOfFile:MainScreen.kt$org.cis_india.wsreader.ui.screens.main.MainScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:MainViewModel.kt$org.cis_india.wsreader.MainViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:NavGraph.kt$org.cis_india.wsreader.ui.navigation.NavGraph.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkObserver.kt$org.cis_india.wsreader.helpers.NetworkObserver.kt</ID>
+    <ID>NewLineAtEndOfFile:NoBooksAvailable.kt$org.cis_india.wsreader.ui.common.NoBooksAvailable.kt</ID>
+    <ID>NewLineAtEndOfFile:OSLScreen.kt$org.cis_india.wsreader.ui.screens.settings.composables.OSLScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:Paginator.kt$org.cis_india.wsreader.helpers.Paginator.kt</ID>
+    <ID>NewLineAtEndOfFile:PaginatorTest.kt$org.cis_india.wsreader.PaginatorTest.kt</ID>
+    <ID>NewLineAtEndOfFile:PlaceHolder.kt$org.cis_india.wsreader.ui.common.placeholder.PlaceHolder.kt</ID>
+    <ID>NewLineAtEndOfFile:PlaceholderHighlight.kt$org.cis_india.wsreader.ui.common.placeholder.PlaceholderHighlight.kt</ID>
+    <ID>NewLineAtEndOfFile:Preferencesutils.kt$org.cis_india.wsreader.helpers.Preferencesutils.kt</ID>
+    <ID>NewLineAtEndOfFile:SettingsItems.kt$org.cis_india.wsreader.ui.screens.settings.composables.SettingsItems.kt</ID>
+    <ID>NewLineAtEndOfFile:SettingsScreen.kt$org.cis_india.wsreader.ui.screens.settings.composables.SettingsScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:SettingsViewModel.kt$org.cis_india.wsreader.ui.screens.settings.viewmodels.SettingsViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:SlideInContainer.kt$org.cis_india.wsreader.ui.common.SlideInContainer.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$org.cis_india.wsreader.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:TopAppBars.kt$org.cis_india.wsreader.ui.common.TopAppBars.kt</ID>
+    <ID>NewLineAtEndOfFile:Translator.kt$org.cis_india.wsreader.api.models.Translator.kt</ID>
+    <ID>NewLineAtEndOfFile:UserPreferences.kt$org.cis_india.wsreader.reader.preferences.UserPreferences.kt</ID>
+    <ID>NewLineAtEndOfFile:Utils.kt$org.cis_india.wsreader.helpers.Utils.kt</ID>
+    <ID>NewLineAtEndOfFile:UtilsTest.kt$org.cis_india.wsreader.UtilsTest.kt</ID>
+    <ID>NewLineAtEndOfFile:VerticalScrollbar.kt$org.cis_india.wsreader.ui.common.VerticalScrollbar.kt</ID>
+    <ID>NewLineAtEndOfFile:WelcomeDataStore.kt$org.cis_india.wsreader.ui.screens.welcome.viewmodels.WelcomeDataStore.kt</ID>
+    <ID>NewLineAtEndOfFile:WelcomeViewModel.kt$org.cis_india.wsreader.ui.screens.welcome.viewmodels.WelcomeViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:WikisourceReader.kt$org.cis_india.wsreader.WikisourceReader.kt</ID>
+    <ID>PrintStackTrace:Context.kt$e</ID>
+    <ID>PrintStackTrace:Utils.kt$Utils$e</ID>
+    <ID>PrintStackTrace:Utils.kt$Utils$exc</ID>
+    <ID>ReturnCount:BaseReaderFragment.kt$BaseReaderFragment.&lt;no name provided&gt;$override fun onMenuItemSelected(menuItem: MenuItem): Boolean</ID>
+    <ID>ReturnCount:BookmarksFragment.kt$BookmarkAdapter$private fun getBookSpineItem(href: Url): String?</ID>
+    <ID>ReturnCount:Bookshelf.kt$Bookshelf$private suspend fun addBook( url: AbsoluteUrl, format: Format? = null, coverUrl: AbsoluteUrl? = null, wdIdentifier: String? = null, thumbnailUrl: String? = null, ): Try&lt;Unit, ImportError&gt;</ID>
+    <ID>ReturnCount:EpubReaderFragment.kt$EpubReaderFragment.&lt;no name provided&gt;$override fun onDrag(event: DragEvent): Boolean</ID>
+    <ID>ReturnCount:EpubReaderFragment.kt$EpubReaderFragment.&lt;no name provided&gt;$override fun onMenuItemSelected(menuItem: MenuItem): Boolean</ID>
+    <ID>ReturnCount:HorizontalSwipeDisableLayout.kt$HorizontalSwipeDisableLayout$override fun onInterceptTouchEvent(ev: MotionEvent): Boolean</ID>
+    <ID>ReturnCount:PublicationRetriever.kt$OpdsPublicationRetriever$suspend fun retrieve(publication: Publication): Try&lt;Result, ImportError&gt;</ID>
+    <ID>ReturnCount:PublicationRetriever.kt$PublicationRetriever$private suspend fun moveToBookshelfDir( tempFile: File, format: Format?, coverUrl: AbsoluteUrl?, ): Try&lt;Result, ImportError&gt;</ID>
+    <ID>ReturnCount:PublicationRetriever.kt$PublicationRetriever$suspend fun retrieveFromHttp( url: AbsoluteUrl, ): Try&lt;Result, ImportError&gt;</ID>
+    <ID>ReturnCount:PublicationRetriever.kt$PublicationRetriever$suspend fun retrieveFromOpds( publication: Publication, ): Try&lt;Result, ImportError&gt;</ID>
+    <ID>ReturnCount:ReaderRepository.kt$ReaderRepository$private suspend fun doOpen(bookId: Long): Try&lt;Unit, OpeningError&gt;</ID>
+    <ID>ReturnCount:ReaderRepository.kt$ReaderRepository$private suspend fun openAudio( bookId: Long, publication: Publication, initialLocator: Locator?, ): Try&lt;MediaReaderInitData, OpeningError&gt;</ID>
+    <ID>ReturnCount:Uri.kt$suspend fun Uri.copyToTempFile(context: Context, dir: File): Try&lt;File, ContentResolverError&gt;</ID>
+    <ID>SpreadOperator:UserError.kt$UserError$(userMessageId, *args)</ID>
+    <ID>SpreadOperator:UserError.kt$UserError$(userMessageId, quantity, *args)</ID>
+    <ID>SpreadOperator:UserError.kt$UserError.Content.LocalizedString$( userMessageId, quantity, *(args.toTypedArray()) )</ID>
+    <ID>SpreadOperator:UserError.kt$UserError.Content.LocalizedString$(userMessageId, *(args.toTypedArray()))</ID>
+    <ID>SwallowedException:Exception.kt$e: Exception</ID>
+    <ID>SwallowedException:LibraryScreen.kt$e: Exception</ID>
+    <ID>SwallowedException:ReaderViewModel.kt$ReaderViewModel$e: Exception</ID>
+    <ID>SwallowedException:WebLauncher.kt$e: ActivityNotFoundException</ID>
+    <ID>TooGenericExceptionCaught:Bitmap.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:BookDetailViewModel.kt$BookDetailViewModel$exc: Exception</ID>
+    <ID>TooGenericExceptionCaught:BookUtils.kt$BookUtils$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:CategoryViewModel.kt$CategoryViewModel$exc: Exception</ID>
+    <ID>TooGenericExceptionCaught:Context.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:CoroutineQueue.kt$CoroutineQueue.Task$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:CoverStorage.kt$CoverStorage$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:Exception.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileSystem.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:HomeViewModel.kt$HomeViewModel$exc: Exception</ID>
+    <ID>TooGenericExceptionCaught:LibraryScreen.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:MediaServiceFacade.kt$MediaServiceFacade$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:PublicationRetriever.kt$PublicationRetriever$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:ReaderViewModel.kt$ReaderViewModel$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:SearchPagingSource.kt$SearchPagingSource$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:TtsViewModel.kt$TtsViewModel$e: Exception</ID>
+    <ID>TooGenericExceptionThrown:Bitmap.kt$throw Exception("Can't compress image to PNG")</ID>
+    <ID>TooManyFunctions:AudioReaderFragment.kt$AudioReaderFragment : BaseReaderFragmentOnSeekBarChangeListener</ID>
+    <ID>TooManyFunctions:BookRepository.kt$BookRepository</ID>
+    <ID>TooManyFunctions:BookUtils.kt$BookUtils</ID>
+    <ID>TooManyFunctions:BooksDao.kt$BooksDao</ID>
+    <ID>TooManyFunctions:EpubReaderFragment.kt$EpubReaderFragment : VisualReaderFragment</ID>
+    <ID>TooManyFunctions:Preferences.kt$org.cis_india.wsreader.shared.views.Preferences.kt</ID>
+    <ID>TooManyFunctions:ReaderViewModel.kt$ReaderViewModel : ViewModelListenerListenerListener</ID>
+    <ID>TooManyFunctions:SettingsViewModel.kt$SettingsViewModel : ViewModel</ID>
+    <ID>TooManyFunctions:VisualReaderFragment.kt$VisualReaderFragment : BaseReaderFragment</ID>
+    <ID>UnusedParameter:AboutScreen.kt$context: Context</ID>
+    <ID>UnusedParameter:BookDetailScreen.kt$navController: NavController</ID>
+    <ID>UnusedParameter:BookDetailScreen.kt$snackBarHostState: SnackbarHostState</ID>
+    <ID>UnusedParameter:LibraryScreen.kt$date: String</ID>
+    <ID>UnusedParameter:LibraryScreen.kt$modifier: Modifier</ID>
+    <ID>UnusedParameter:LibraryScreen.kt$navController: NavController</ID>
+    <ID>UnusedParameter:LibraryScreen.kt$settingsVm: SettingsViewModel</ID>
+    <ID>UnusedParameter:LibraryScreen.kt$snackBarHostState: SnackbarHostState</ID>
+    <ID>UnusedParameter:LibraryViewModel.kt$LibraryViewModel$context: Context</ID>
+    <ID>UnusedPrivateMember:AboutScreen.kt$@Composable private fun LinkButton( text: String, icon: ImageVector, onClick: () -&gt; Unit, )</ID>
+    <ID>UnusedPrivateMember:TopAppBars.kt$@Preview(showBackground = true) @Composable private fun TopAppBarsPV()</ID>
+    <ID>UnusedPrivateMember:WelcomeScreen.kt$@Preview(showBackground = true) @Composable private fun WelcomePV()</ID>
+    <ID>UnusedPrivateProperty:BookDetailScreen.kt$val bookItems = viewModel.allItems.observeAsState(listOf()).value</ID>
+    <ID>UnusedPrivateProperty:BookDetailScreen.kt$val coroutineScope = rememberCoroutineScope()</ID>
+    <ID>UnusedPrivateProperty:BookDetailViewModel.kt$BookDetailViewModel$private val preferenceUtil: PreferenceUtil</ID>
+    <ID>UnusedPrivateProperty:BookDetailViewModel.kt$BookDetailViewModel$val extraInfo = null</ID>
+    <ID>UnusedPrivateProperty:BookshelfFragment.kt$BookshelfFragment$private val app: WikisourceReader get() = requireContext().applicationContext as WikisourceReader</ID>
+    <ID>UnusedPrivateProperty:LibraryScreen.kt$val importBookLauncher = rememberLauncherForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) { uris -&gt; // If no files are selected, return. if (uris.isEmpty()) return@rememberLauncherForActivityResult // Show dialog to indicate import process. showImportDialog.value = true // Start books import. viewModel.importBooks( context = context, fileUris = uris, onComplete = { // Hide dialog and show success message. showImportDialog.value = false coroutineScope.launch { snackBarHostState.showSnackbar( message = context.getString(R.string.epub_imported), actionLabel = context.getString(R.string.ok), duration = SnackbarDuration.Short ) } }, onError = { // Hide dialog and show error message. showImportDialog.value = false coroutineScope.launch { snackBarHostState.showSnackbar( message = context.getString(R.string.error), actionLabel = context.getString(R.string.ok), duration = SnackbarDuration.Short ) } } ) }</ID>
+    <ID>UnusedPrivateProperty:LibraryScreen.kt$val view = LocalView.current</ID>
+    <ID>UnusedPrivateProperty:MainActivity.kt$MainActivity$private lateinit var navController: NavController</ID>
+    <ID>UnusedPrivateProperty:MainViewModel.kt$MainViewModel$private val welcomeDataStore: WelcomeDataStore</ID>
+    <ID>UnusedPrivateProperty:WikisourceReader.kt$WikisourceReader$private val coroutineScope: CoroutineScope = MainScope()</ID>
+    <ID>UseCheckOrError:ViewLifecycleDelegates.kt$LifecycleDelegates.ViewLifecycleAwareVar$throw IllegalStateException("Lifecycle-aware value not available at the moment.")</ID>
+    <ID>WildcardImport:AppDatabase.kt$import org.cis_india.wsreader.data.model.*</ID>
+    <ID>WildcardImport:BookUtils.kt$import kotlinx.coroutines.*</ID>
+    <ID>WildcardImport:ColorPicker.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:DropdownMenuButton.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:EpubReaderFragment.kt$import android.view.*</ID>
+    <ID>WildcardImport:EpubReaderFragment.kt$import org.readium.r2.navigator.epub.*</ID>
+    <ID>WildcardImport:Highlight.kt$import androidx.room.*</ID>
+    <ID>WildcardImport:MediaService.kt$import kotlinx.coroutines.*</ID>
+    <ID>WildcardImport:MediaService.kt$import kotlinx.coroutines.flow.*</ID>
+    <ID>WildcardImport:MediaServiceFacade.kt$import kotlinx.coroutines.*</ID>
+    <ID>WildcardImport:MediaServiceFacade.kt$import kotlinx.coroutines.flow.*</ID>
+    <ID>WildcardImport:NavigationFragment.kt$import androidx.recyclerview.widget.*</ID>
+    <ID>WildcardImport:Preferences.kt$import androidx.compose.material3.*</ID>
+    <ID>WildcardImport:Preferences.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:Preferences.kt$import org.readium.r2.navigator.preferences.*</ID>
+    <ID>WildcardImport:ReaderInitData.kt$import org.readium.r2.shared.publication.*</ID>
+    <ID>WildcardImport:TtsControls.kt$import androidx.compose.material.icons.filled.*</ID>
+    <ID>WildcardImport:TtsPreferencesEditor.kt$import org.readium.r2.navigator.preferences.*</ID>
+    <ID>WildcardImport:TtsViewModel.kt$import kotlinx.coroutines.flow.*</ID>
+    <ID>WildcardImport:UserPreferences.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:UserPreferences.kt$import androidx.compose.material3.*</ID>
+    <ID>WildcardImport:UserPreferences.kt$import org.cis_india.wsreader.shared.views.*</ID>
+    <ID>WildcardImport:UserPreferences.kt$import org.readium.r2.navigator.preferences.*</ID>
+    <ID>WildcardImport:UserPreferencesViewModel.kt$import org.cis_india.wsreader.reader.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

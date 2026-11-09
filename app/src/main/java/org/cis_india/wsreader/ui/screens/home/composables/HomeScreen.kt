@@ -36,7 +36,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -49,6 +51,7 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material.icons.filled.Translate
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -103,6 +106,7 @@ import org.cis_india.wsreader.ui.navigation.Screens
 import org.cis_india.wsreader.ui.screens.home.viewmodels.AllBooksState
 import org.cis_india.wsreader.ui.screens.home.viewmodels.HomeViewModel
 import org.cis_india.wsreader.ui.screens.home.viewmodels.SearchBarState
+import org.cis_india.wsreader.ui.screens.home.viewmodels.SearchResultsState
 import org.cis_india.wsreader.ui.screens.home.viewmodels.UserAction
 import org.cis_india.wsreader.ui.screens.main.bottomNavPadding
 import org.cis_india.wsreader.ui.theme.pacificoFont
@@ -294,7 +298,13 @@ fun HomeScreenContents(
                 onLoadNextItems = { viewModel.loadNextItems() }
             )
         } else {
-            SearchBookList(searchBarState = topBarState, navController = navController)
+            SearchBookList(
+                searchBarState = topBarState,
+                resultsState = viewModel.searchResultsState,
+                networkStatus = networkStatus,
+                navController = navController,
+                onLoadNextItems = { viewModel.loadNextSearchItems() }
+            )
         }
     }
 }
@@ -440,7 +450,13 @@ private fun AllBooksList(
 }
 
 @Composable
-private fun SearchBookList(searchBarState: SearchBarState, navController: NavController) {
+private fun SearchBookList(
+    searchBarState: SearchBarState,
+    resultsState: SearchResultsState,
+    networkStatus: NetworkObserver.Status,
+    navController: NavController,
+    onLoadNextItems: () -> Unit
+) {
     val languageMap = remember { BookLanguage.getAllLanguages().associateBy { it.isoCode } }
 
     LazyVerticalGrid(
@@ -450,21 +466,8 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
             .padding(start = 8.dp, end = 8.dp),
         columns = GridCells.Adaptive(295.dp)
     ) {
-        if (searchBarState.isSearching) {
-            item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    ProgressDots()
-                }
-            }
-        }
-
-        items(searchBarState.searchResults.size) { i ->
-            val item = searchBarState.searchResults[i]
+        items(resultsState.books.size) { i ->
+            val item = resultsState.books[i]
             val systemLanguage = Locale.getDefault().language
 
             val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
@@ -516,6 +519,29 @@ private fun SearchBookList(searchBarState: SearchBarState, navController: NavCon
                 }
             }
         }
+        item(span = { GridItemSpan(maxLineSpan) }) {
+            val loading = searchBarState.isSearching || resultsState.isLoading
+            LaunchedEffect(
+                searchBarState.searchText, resultsState.books.size, loading,
+                resultsState.endReached, resultsState.error, networkStatus
+            ) {
+                if (!loading && !resultsState.endReached && resultsState.error == null &&
+                    networkStatus == NetworkObserver.Status.Available
+                ) onLoadNextItems()
+            }
+            Column(
+                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                if (loading) ProgressDots()
+                if (resultsState.error != null) {
+                    Text(text = resultsState.error)
+                    TextButton(onClick = onLoadNextItems) {
+                        Text(stringResource(R.string.network_error_retry))
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -530,7 +556,7 @@ private fun TapTargetScope.HomeTopAppBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .windowInsetsPadding(WindowInsets.statusBars),
+                .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top)),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
@@ -647,7 +673,7 @@ private fun SearchAppBar(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .windowInsetsPadding(WindowInsets.statusBars)
+            .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top))
     ) {
         val focusRequester = remember { FocusRequester() }
         OutlinedTextField(
