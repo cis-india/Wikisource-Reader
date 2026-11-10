@@ -80,6 +80,10 @@ class HomeViewModel @Inject constructor(
     private val _sortOption: MutableState<BookSortOption> = mutableStateOf(getPreferredSortOption())
     val sortOption: State<BookSortOption> = _sortOption
 
+    // Seed for the random sort, so all pages of the list come from the same shuffle.
+    // A new one is picked when the list is reloaded.
+    private var randomSortSeed = (1..1_000_000).random()
+
     private var searchJob: Job? = null
     private val searchPagination = SearchPagination { query, page -> bookAPI.searchBooks(query, page) }
     internal val searchResultsState: SearchResultsState get() = searchPagination.state
@@ -97,7 +101,8 @@ class HomeViewModel @Inject constructor(
             // and avoid flickering when navigating to home from welcome screen
             // and immediately loading the first page.
             if (nextPage == 1L) delay(400L)
-            bookAPI.getAllBooks(nextPage, language.value, sortOption.value.apiValue)
+            val seed = if (sortOption.value == BookSortOption.Random) randomSortSeed else null
+            bookAPI.getAllBooks(nextPage, language.value, sortOption.value.apiValue, seed)
         } catch (exc: Exception) {
             Result.failure(exc)
         }
@@ -135,6 +140,7 @@ class HomeViewModel @Inject constructor(
     fun reloadItems() {
         pagination.reset()
         allBooksState = AllBooksState()
+        randomSortSeed = (1..1_000_000).random()
         loadNextItems()
     }
 
