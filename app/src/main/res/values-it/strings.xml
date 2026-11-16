@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Beta16
+* Candalua
 * Neonsn0w
 * OrbiliusMagister
 -->
@@ -58,7 +59,9 @@
   <string name="catalan_language_label">Catalano</string>
   <string name="czech_language_label">Ceco</string>
   <string name="danish_language_lebel">Danese</string>
+  <string name="german_language_lebel">Tedesco</string>
   <string name="english_language_label">Inglese</string>
+  <string name="esperanto_language_label">Esperanto</string>
   <string name="spanish_language_label">Spagnolo</string>
   <string name="french_language_label">Francese</string>
   <string name="gujarati_language_label">Gujarati</string>
@@ -70,8 +73,11 @@
   <string name="malayalam_language_label">Malayalam</string>
   <string name="marathi_language_label">Marathi</string>
   <string name="malay_language_label">Malese</string>
+  <string name="norwegian_language_lebel">Norvegese</string>
   <string name="polish_language_label">Polacco</string>
+  <string name="portuguese_language_label">Portoghese</string>
   <string name="punjabi_language_label">Punjabi</string>
+  <string name="russian_language_lebel">Russo</string>
   <string name="sundanese_language_label">Sundanese</string>
   <string name="swedish_language_label">Svedese</string>
   <string name="tamil_language_label">Tamil</string>
@@ -125,6 +131,9 @@
   <string name="license_setting_desc">Licenze open source.</string>
   <string name="about_setting">Info sull\'App</string>
   <string name="about_setting_desc">Mostra info sull\'App &amp; link utili</string>
+  <string name="onboarding_guide_active">Mostra la guida di onboarding</string>
+  <string name="onboarding_guide_inactive">Nascondi la guida di onboarding</string>
+  <string name="toggle_guide_title">Attiva/disattiva la guida di onboarding</string>
   <string name="cover_image_desc">Immagine di copertina</string>
   <string name="book_detail_header">Dettagli del libro</string>
   <string name="back_button_desc">Indietro.</string>
@@ -139,6 +148,7 @@
   <string name="translators_info">Traduttori</string>
   <string name="genres_info">Genere</string>
   <string name="subjects_info">Soggetti</string>
+  <string name="form_of_work_info">Forma letteraria</string>
   <string name="publishers_info">Editore</string>
   <string name="unknown_publishers_info">Editore sconosciuto</string>
   <string name="place_of_publication_info">Luogo di pubblicazione</string>
@@ -151,6 +161,7 @@
   <string name="link_privacy_policy_desc">Leggi la nostra ultima informativa sulla privacy.</string>
   <string name="open_source_licenses_header">Licenze</string>
   <string name="category_novels">Romanzi</string>
+  <string name="category_plays">Teatro</string>
   <string name="category_poetry">Poesia</string>
   <string name="category_essays">Saggi</string>
   <string name="developed_by_ws">Sviluppato per Wikisource da</string>
@@ -210,17 +221,87 @@
   <string name="return_button">Ritorna</string>
   <string name="opening_publication_cannot_render">Impossibile visualizzare la pubblicazione.</string>
   <string name="opening_publication_audio_engine_initialization">Impossibile aprire la pubblicazione a causa di un errore durante l\'inizializzazione del motore audio.</string>
+  <string name="import_publication_unexpected_io_exception">Impossibile aggiungere la pubblicazione a causa di un errore imprevisto sul dispositivo.</string>
+  <string name="import_publication_download_failed">Download della pubblicazione non riuscito.</string>
+  <string name="import_publication_no_acquisition">L\'acquisizione non è possibile.</string>
+  <string name="import_publication_success">Pubblicazione aggiunta alla tua biblioteca</string>
+  <string name="import_publication_unable_add_pub_database">Impossibile aggiungere la pubblicazione al database</string>
   <string name="import_publication_inconsistent_state">Importazione non riuscita a causa di condizioni eccezionali. Riprova.</string>
+  <string name="publication_error_unsupported_asset">Il formato della risorsa non è supportato</string>
+  <string name="publication_error_network_forbidden">Il server ha negato l\'accesso alla risorsa.</string>
+  <string name="publication_error_network_not_found">Non è stata trovata alcuna risorsa sul server.</string>
+  <string name="publication_error_network_unreachable">Impossibile raggiungere il server.</string>
+  <string name="publication_error_network_timeout">Il server ha impiegato troppo tempo a rispondere.</string>
   <string name="publication_error_network_ssl_handshake">Si è verificato un errore SSL.</string>
+  <string name="publication_error_network_unexpected">Si è verificato un errore di rete imprevisto.</string>
+  <string name="publication_error_filesystem_not_found">Non è stato trovato nessun file.</string>
+  <string name="publication_error_filesystem_forbidden">Non sei autorizzato ad accedere al file.</string>
+  <string name="publication_error_filesystem_unexpected">Si è verificato un errore imprevisto del file system.</string>
+  <string name="publication_error_filesystem_insufficient_space">Non c\'è abbastanza spazio libero sul dispositivo.</string>
+  <string name="publication_error_incorrect_credentials">Le credenziali fornite non erano corrette</string>
+  <string name="publication_error_out_of_memory">Non c\'è abbastanza memoria su questo dispositivo per aprire la pubblicazione.</string>
+  <string name="publication_error_scheme_not_supported">La fonte della pubblicazione non è supportata.</string>
+  <string name="publication_error_invalid_publication">La pubblicazione sembra danneggiata.</string>
+  <string name="publication_error_unexpected">Si è verificato un errore imprevisto.</string>
+  <plurals name="lcp_error_license_status.revoked">
+    <item quantity="one">Questa licenza è stata revocata dal suo fornitore il %1$s. È stata registrata dal dispositivo %2$d.</item>
+    <item quantity="other">Questa licenza è stata revocata dal suo fornitore il %1$s. È stata registrata dai dispositivi %2$d.</item>
+  </plurals>
+  <string name="missing_lcp_support">L\'applicazione è stata compilata senza il supporto di LCP.</string>
+  <string name="reader_error">Errore</string>
+  <string name="opening_error">Impossibile aprire la pubblicazione</string>
   <string name="import_error">Errore importazione</string>
+  <string name="failed_parsing_catalog">Analisi del catalogo non riuscita</string>
+  <string name="no_result">Nessun risultato</string>
   <string name="note">Nota</string>
+  <string name="add_a_note">Aggiungi una nota</string>
+  <string name="add_an_annotation">Aggiungi un\'annotazione</string>
+  <string name="delete_highlight_or_annotation">Elimina evidenziazione o annotazione</string>
   <string name="yellow">Giallo</string>
+  <string name="green">Verde</string>
+  <string name="blue">Blu</string>
   <string name="red">Rosso</string>
+  <string name="purple">Viola</string>
+  <string name="seek_bar">Barra di ricerca</string>
+  <string name="go_backward_30_seconds">Indietro di 30 secondi</string>
+  <string name="play_or_pause">Riproduci o fai pausa</string>
+  <string name="go_forward_30_seconds">Avanti di 30 secondi</string>
+  <string name="tts_error_initialization">Impossibile inizializzare il motore TTS</string>
+  <string name="tts_error_language_support_incomplete">La lingua %s richiede dati aggiuntivi. Vuoi scaricarli?</string>
+  <string name="tts_error_network">Si è verificato un errore di rete.</string>
+  <string name="tts_error_other">Si è verificato un errore TTS.</string>
+  <string name="tts_next">Vai avanti</string>
+  <string name="tts_pause">Pausa</string>
+  <string name="tts_play">Riproduci</string>
+  <string name="tts_previous">Vai indietro</string>
+  <string name="speed_rate">Velocità</string>
+  <string name="pitch_rate">Tono</string>
+  <string name="tts_settings">Impostazioni vocali</string>
+  <string name="tts_stop">Ferma</string>
   <string name="tts_voice">Voce</string>
+  <string name="search_error_not_searchable">Questa pubblicazione non è ricercabile</string>
+  <string name="search_error_cancelled">La ricerca è stata annullata</string>
+  <string name="search_error_other">Si è verificato un errore durante la ricerca</string>
+  <string name="error_unexpected">Si è verificato un errore imprevisto.</string>
+  <string name="go_to_library">Vai alla biblioteca</string>
+  <string name="link_metapage_desc">Visita la nostra pagina</string>
+  <string name="link_sourcecode_repo">Vedi il repository GitHub</string>
+  <string name="link_sourcecode">GitHub</string>
   <string name="woops">Ops!</string>
+  <string name="tutorial_search_title">Cerca</string>
   <string name="tutorial_search_desc">Cerca nel libro</string>
+  <string name="tutorial_tts_title">TTS (sintesi vocale)</string>
+  <string name="tutorial_tts_desc">La sintesi vocale permette di ascoltare i libri</string>
   <string name="tutorial_bookmark_title">Segnalibro</string>
+  <string name="tutorial_bookmark_desc">Fai clic per aggiungere ai segnalibri la posizione corrente del libro per trovarla più facilmente.</string>
   <string name="tutorial_settings_title">Impostazioni</string>
+  <string name="tutorial_settings_desc">Configura le preferenze, ad esempio lingua, caratteri, temi, scorrimento ecc.</string>
+  <string name="tutorial_toc_title">Navigazione del libro</string>
+  <string name="tutorial_toc_desc">Questo contiene i capitoli e i segnalibri salvati</string>
+  <string name="tutorial_menu_toggle_title">Apri o chiudi il menu</string>
+  <string name="tutorial_menu_toggle_desc">Tocca il centro dello schermo per aprire o chiudere il menu</string>
   <string name="tutorial_select_text_title">Seleziona testo</string>
   <string name="tutorial_select_text_desc">Tieni premuto su una parola qualsiasi per visualizzare io menu di selezione e gli strumenti, ad esempio sottolinea, evidenza e aggiungi note!</string>
+  <string name="persian_language_label">Persiano</string>
+  <string name="results_count">%1$s risultati</string>
 </resources>

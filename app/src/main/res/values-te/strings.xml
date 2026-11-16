@@ -65,7 +65,7 @@
   <string name="import_button_text">దిగుమతి</string>
   <string name="share_app_chooser">పంచుకోండి...</string>
   <string name="library_read_button">చదువు</string>
-  <string name="library_delete_button">తీసివేయు</string>
+  <string name="library_delete_button">తొలగించు</string>
   <string name="downloading_book">పుస్తకం డౌన్లోడ్ అవుతోంది</string>
   <string name="downloading">డౌన్లోడ్ అవుతోంది...</string>
   <string name="download_complete">డౌన్లోడ్ పూర్తి</string>
