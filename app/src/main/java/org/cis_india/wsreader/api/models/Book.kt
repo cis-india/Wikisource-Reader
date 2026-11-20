@@ -61,7 +61,10 @@ data class Book(
     val mainSubjects: List<Subject> = emptyList(),
     @SerialName("form_of_work")
     val formOfWork: List<FormOfWork> = emptyList(),
-) {
+    @SerialName("description")
+    val description: Map<String, String> = emptyMap()
+
+    ) {
     val id: Int
         get() = wikidataQid.removePrefix("Q").toInt()
 }
