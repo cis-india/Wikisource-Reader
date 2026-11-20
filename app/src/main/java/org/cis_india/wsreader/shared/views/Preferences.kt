@@ -289,7 +289,7 @@ fun SwitchItem(
  * Switch
  */
 @Composable
-private fun SwitchItem(
+fun SwitchItem(
     title: String,
     value: Boolean,
     isActive: Boolean,

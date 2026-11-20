@@ -27,8 +27,9 @@ abstract class UserPreferencesBottomSheetDialogFragment(
             window?.setDimAmount(0.1f)
 
             behavior.apply {
-                peekHeight = 1000
-                maxHeight = 1000
+                val dialogHeight = (resources.displayMetrics.heightPixels * 0.6f).toInt()
+                peekHeight = dialogHeight
+                maxHeight = dialogHeight
             }
         }
 
