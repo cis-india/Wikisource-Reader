@@ -52,7 +52,7 @@ internal class SearchPagination(
             })
         } catch (cancelled: CancellationException) {
             throw cancelled
-        } catch (error: Exception) {
+        } catch (error: IllegalArgumentException) {
             if (currentGeneration == generation) {
                 state = state.copy(error = error.localizedMessage ?: Constants.UNKNOWN_ERR)
             }
