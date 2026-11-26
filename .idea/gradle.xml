@@ -27,7 +27,6 @@
             <option value="$PROJECT_DIR$/readium/streamer" />
           </set>
         </option>
-        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

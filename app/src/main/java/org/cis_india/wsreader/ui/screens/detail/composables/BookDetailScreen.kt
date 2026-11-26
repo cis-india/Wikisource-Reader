@@ -231,20 +231,20 @@ private fun BookDetailContents(
         val firstLanguage = Locale.getDefault().language ?: "en"
         //val authors = remember { BookUtils.getAuthorsAsString(book.authors, firstLanguage) }
         var authors by remember { mutableStateOf("Loading...") }
-        var publishers by remember { mutableStateOf("Loading...") }
-        var placeOfPublication by remember { mutableStateOf("Loading...") }
-        val unknownPlaceOfPublicationString = stringResource(id = R.string.unknown_place_of_publication_info)
-        val unknownPublisherString = stringResource(id = R.string.unknown_publishers_info)
-
 
         LaunchedEffect(book.authors, firstLanguage) {
             val authorsString = BookUtils.getAuthorsAsString(book.authors, firstLanguage, unknownAuthorString)
-            val publisherString = BookUtils.getPublishersAsString(book.publishers, firstLanguage, unknownPublisherString)
-            val placeOfPublicationString = BookUtils.getPlacesOfPublicationAsString(book.place_of_publication, firstLanguage, unknownPlaceOfPublicationString)
-
             authors = authorsString // Update the authors state once the data is fetched
-            publishers = publisherString
-            placeOfPublication = placeOfPublicationString
+        }
+
+        var publishers by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.publishers, firstLanguage) {
+            publishers = BookUtils.getPublishers(book.publishers, firstLanguage)
+        }
+
+        var placeOfPublication by remember { mutableStateOf<List<String>>(emptyList()) }
+        LaunchedEffect(book.place_of_publication, firstLanguage) {
+            placeOfPublication = BookUtils.getPlacesOfPublication(book.place_of_publication, firstLanguage)
         }
 
         var editors by remember { mutableStateOf<List<String>>(emptyList()) }
@@ -475,13 +475,13 @@ private fun BookDetailContents(
             */
         } else {
             Column {
-                InfoLine(stringResource(R.string.translators_info), translators)
-                InfoLine(stringResource(id = R.string.editors_info), editors)
-                InfoStringContent(stringResource(R.string.publishers_info), publishers, isPublishersBlank)
-                InfoStringContent(stringResource(R.string.place_of_publication_info),placeOfPublication, isPlaceOfPublicationBlank)
-                InfoLine(stringResource(R.string.form_of_work_info), formOfWork)
-                InfoLine(stringResource(R.string.genres_info), literaryGenres)
-                InfoLine(stringResource(R.string.subjects_info), mainSubjects)
+                InfoLine(R.string.translators_info, translators)
+                InfoLine(R.string.editors_info, editors)
+                InfoLine(R.string.publishers_info, publishers)
+                InfoLine(R.string.place_of_publication_info, placeOfPublication)
+                InfoLine(R.string.form_of_work_info, formOfWork)
+                InfoLine(R.string.genre_info, literaryGenres)
+                InfoLine(R.string.subject_info, mainSubjects)
             }
         }
     }
@@ -742,11 +742,11 @@ private fun NoSynopsisUI() {
 */
 
 @Composable
-fun InfoLine(label: String, values: List<String>) {
+fun InfoLine(labelRes: Int, values: List<String>) {
     val filtered = values.filter { it.isNotBlank() }
     if (filtered.isNotEmpty()) {
-        // Decide label based on count
-        val labelToShow = if (filtered.size > 1) label else label.removeSuffix("s")
+        val resources = LocalContext.current.resources
+        val labelToShow = resources.getQuantityString(labelRes, filtered.size)
         Text(
             text = "$labelToShow: ${filtered.joinToString(", ")}",
             modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
