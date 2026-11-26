@@ -61,6 +61,10 @@ class CategoryViewModel @Inject constructor(
     private val _sortOption: MutableState<BookSortOption> = mutableStateOf(getPreferredSortOption())
     val sortOption: State<BookSortOption> = _sortOption
 
+    // Seed for the random sort, so all pages of the list come from the same shuffle.
+    // A new one is picked when the list is reloaded.
+    private var randomSortSeed = (1..1_000_000).random()
+
     fun loadBookByCategory(category: String) {
         if (!this::pagination.isInitialized) {
             pagination = Paginator(
@@ -75,7 +79,8 @@ class CategoryViewModel @Inject constructor(
                         // which could cause flickering, so we add artificial delay of
                         // 400ms as it doesn't do any harm and improves the overall UX
                         delay(400)
-                        booksApi.getBooksByCategory(category, nextPage, language.value, sortOption.value.apiValue)
+                        val seed = if (sortOption.value == BookSortOption.Random) randomSortSeed else null
+                        booksApi.getBooksByCategory(category, nextPage, language.value, sortOption.value.apiValue, seed)
                     } catch (exc: Exception) {
                         Result.failure(exc)
                     }
@@ -109,6 +114,7 @@ class CategoryViewModel @Inject constructor(
     fun reloadItems() {
         pagination.reset()
         state = CategorisedBooksState()
+        randomSortSeed = (1..1_000_000).random()
         loadNextItems()
     }
 
