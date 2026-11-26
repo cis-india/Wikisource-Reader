@@ -92,6 +92,7 @@ import com.psoffritti.taptargetcompose.TapTargetScope
 import com.psoffritti.taptargetcompose.TapTargetStyle
 import com.psoffritti.taptargetcompose.TextDefinition
 import org.cis_india.wsreader.R
+import org.cis_india.wsreader.api.models.Book
 import org.cis_india.wsreader.helpers.NetworkObserver
 import org.cis_india.wsreader.helpers.book.BookLanguage
 import org.cis_india.wsreader.helpers.book.BookUtils
@@ -467,79 +468,103 @@ private fun SearchBookList(
         columns = GridCells.Adaptive(295.dp)
     ) {
         items(resultsState.books.size) { i ->
-            val item = resultsState.books[i]
-            val systemLanguage = Locale.getDefault().language
-
-            val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
-                val bookLanguage = languageMap[isoCode]
-                val stringFromApp = if (bookLanguage != null) {
-                    val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
-                    val appLocalisedString = stringResource(id = bookLanguage.name)
-
-                    if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
-                        Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
-                    }else{
-                        appLocalisedString
-                    }
-                } else {
-                    Locale(isoCode).getDisplayLanguage(Locale.getDefault())
-                }
-
-                LanguageStringItem(code = isoCode, label = stringFromApp)
-            }
-            Box(
-                modifier = Modifier
-                    .padding(4.dp)
-                    .fillMaxWidth(),
-                contentAlignment = Alignment.Center
-            ) {
-                val unknownAuthorString = stringResource(R.string.unknown_author_info)
-                val firstLanguage = Locale.getDefault().language ?: "en"
-                var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }
-                LaunchedEffect(item.authors, firstLanguage) {
-                    val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)
-                    authors = authorsString
-                }
-                BookItemCard(
-                    title = item.titleNativeLanguage ?: item.title,
-                    author = authors,
-                    language = BookUtils.getLanguagesAsString(localizedLanguageList),
-                    /*
-                    subjects = BookUtils.getSubjectsAsString(
-                        item.subjects, 3
-                    ),
-                    */
-                    coverImageUrl = item.thumbnailUrl
-                ) {
-                    navController.navigate(
-                        Screens.BookDetailScreen.withBookId(
-                            item.id.toString()
-                        )
-                    )
-                }
-            }
+            SearchBookItem(
+                item = resultsState.books[i],
+                languageMap = languageMap,
+                navController = navController
+            )
         }
         item(span = { GridItemSpan(maxLineSpan) }) {
-            val loading = searchBarState.isSearching || resultsState.isLoading
-            LaunchedEffect(
-                searchBarState.searchText, resultsState.books.size, loading,
-                resultsState.endReached, resultsState.error, networkStatus
-            ) {
-                if (!loading && !resultsState.endReached && resultsState.error == null &&
-                    networkStatus == NetworkObserver.Status.Available
-                ) onLoadNextItems()
+            SearchBookListFooter(
+                searchBarState = searchBarState,
+                resultsState = resultsState,
+                networkStatus = networkStatus,
+                onLoadNextItems = onLoadNextItems
+            )
+        }
+    }
+}
+
+@Composable
+private fun SearchBookItem(item: Book, languageMap: Map<String, BookLanguage>, navController: NavController) {
+    val systemLanguage = Locale.getDefault().language
+    val localizedLanguageList: List<LanguageStringItem> = item.languages.map { isoCode ->
+        val bookLanguage = languageMap[isoCode]
+        val stringFromApp = if (bookLanguage != null) {
+            val languageInEnglish = Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.ENGLISH)
+            val appLocalisedString = stringResource(id = bookLanguage.name)
+
+            if(systemLanguage != "en" && languageInEnglish == appLocalisedString){
+                Locale(bookLanguage.isoCode).getDisplayLanguage(Locale.getDefault())
+            }else{
+                appLocalisedString
             }
-            Column(
-                modifier = Modifier.fillMaxWidth().padding(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                if (loading) ProgressDots()
-                if (resultsState.error != null) {
-                    Text(text = resultsState.error)
-                    TextButton(onClick = onLoadNextItems) {
-                        Text(stringResource(R.string.network_error_retry))
-                    }
-                }
+        } else {
+            Locale(isoCode).getDisplayLanguage(Locale.getDefault())
+        }
+
+        LanguageStringItem(code = isoCode, label = stringFromApp)
+    }
+    Box(
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth(),
+        contentAlignment = Alignment.Center
+    ) {
+        val unknownAuthorString = stringResource(R.string.unknown_author_info)
+        val firstLanguage = Locale.getDefault().language ?: "en"
+        var authors by remember { mutableStateOf(BookUtils.getAuthorsAsStringen(item.authors, firstLanguage)) }
+        LaunchedEffect(item.authors, firstLanguage) {
+            val authorsString = BookUtils.getAuthorsAsString(item.authors, firstLanguage, unknownAuthorString)
+            authors = authorsString
+        }
+        BookItemCard(
+            title = item.titleNativeLanguage ?: item.title,
+            author = authors,
+            language = BookUtils.getLanguagesAsString(localizedLanguageList),
+            /*
+            subjects = BookUtils.getSubjectsAsString(
+                item.subjects, 3
+            ),
+            */
+            coverImageUrl = item.thumbnailUrl
+        ) {
+            navController.navigate(
+                Screens.BookDetailScreen.withBookId(
+                    item.id.toString()
+                )
+            )
+        }
+    }
+}
+
+@Composable
+private fun SearchBookListFooter(
+    searchBarState: SearchBarState,
+    resultsState: SearchResultsState,
+    networkStatus: NetworkObserver.Status,
+    onLoadNextItems: () -> Unit
+) {
+    val loading = searchBarState.isSearching || resultsState.isLoading
+    LaunchedEffect(
+        searchBarState.searchText, resultsState.books.size, loading,
+        resultsState.endReached, resultsState.error, networkStatus
+    ) {
+        val shouldLoadNextPage = !loading &&
+            !resultsState.endReached &&
+            resultsState.error == null &&
+            networkStatus == NetworkObserver.Status.Available
+        if (shouldLoadNextPage) onLoadNextItems()
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth().padding(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        if (loading) ProgressDots()
+        if (resultsState.error != null) {
+            Text(text = resultsState.error)
+            TextButton(onClick = onLoadNextItems) {
+                Text(stringResource(R.string.network_error_retry))
             }
         }
     }
