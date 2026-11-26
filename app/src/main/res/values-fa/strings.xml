@@ -2,6 +2,7 @@
 <!-- Authors:
 * Darafsh
 * Jeeputer
+* LProfo
 -->
 <resources>
   <string name="not_applicable">ن/م</string>
@@ -10,7 +11,7 @@
   <string name="ok">تأیید</string>
   <string name="got_it">گرفتم</string>
   <string name="network_error">اوه! اتصال به سرور ناموفق بود.</string>
-  <string name="network_error_retry">تلاش مجدد</string>
+  <string name="network_error_retry">تلاش دوباره</string>
   <string name="error">اوه. خطایی در کار است!</string>
   <string name="navigation_home">صفحهٔ اصلی</string>
   <string name="navigation_categories">رده‌ها</string>
